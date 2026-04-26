@@ -1,0 +1,94 @@
+{
+  "runs": [
+    {
+      "run_id": "70a5859f-ec06-4c74-b15e-f9c9ff2470b2",
+      "date": "2026-04-26",
+      "results": [
+        {
+          "ticker": "MRVL",
+          "action": "ADD_NOTE",
+          "new_score": 5.5,
+          "note": "RSI=87.5 EXTREME OVERBOUGHT\u3002\u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19$128.36\u304c\u73fe\u5024$164.31\u309222%\u4e0b\u56de\u308b\u3002\u30a4\u30f3\u30b5\u30a4\u30c0\u30fc$25.1M\u58f2\u308a\u3002Options NEUTRAL_BEARISH\u3002\u5165\u53e3\u30be\u30fc\u30f3$148-158\uff08ATR\u62bc\u3057\u76ee\uff09\u306b\u66f4\u65b0\u3002",
+          "flag": "EXTREME_RSI"
+        },
+        {
+          "ticker": "MU",
+          "action": "ADD_NOTE",
+          "new_score": 6.5,
+          "note": "52W\u9ad8\u5024\u30d6\u30ec\u30a4\u30af($506.99)\u3002\u5143\u3005\u306e\u30bf\u30fc\u30b2\u30c3\u30c8$500-525\u306b\u307b\u307c\u5230\u9054\u3002\u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19$533\u307e\u3067+7.5%\u306e\u307f\u3002Options NEUTRAL_BEARISH\u3001\u30a4\u30f3\u30b5\u30a4\u30c0\u30fc$42.7M\u58f2\u308a\u3002\u65b0\u898f\u30a8\u30f3\u30c8\u30ea\u30fc\u306f\u898b\u9001\u308a\u3002",
+          "flag": "NEAR_TARGET"
+        },
+        {
+          "ticker": "NVDA",
+          "action": "ADD_NOTE",
+          "new_score": 8.2,
+          "note": "2026-04-25\u306b\u30dd\u30fc\u30c8\u30d5\u30a9\u30ea\u30aa\u3078BUY\uff087\u682a@$208.27\uff09\u3002RSI=71.6\u3002Options BULLISH\u300252W\u9ad8\u5024$212.19\u307e\u3067+1.9%\u3002Monitor\u3067\u7ba1\u7406\u4e2d\u3002",
+          "flag": "IN_PORTFOLIO"
+        },
+        {
+          "ticker": "AVGO",
+          "action": "ADD_NOTE",
+          "new_score": 7.8,
+          "note": "\u521d\u56de\u30d5\u30eb\u30ea\u30b5\u30fc\u30c1\u3002AI\u534a\u5c0e\u4f53thesis intact\u3002RSI=78.2\uff08\u9ad8\u3081\uff09\u300252W\u9ad8\u5024$429\u307e\u3067+1.6%\u306e\u30d6\u30ec\u30a4\u30af\u30a2\u30a6\u30c8\u76f4\u524d\u3002\u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19$475(+12.5%)\u3002Options NEUTRAL_BULLISH\u3002\u5165\u53e3\u30be\u30fc\u30f3$405-415(\u62bc\u3057\u76ee)\u307e\u305f\u306f$430\u30d6\u30ec\u30a4\u30af\u5f8c\u3002",
+          "flag": "NEAR_52W_HIGH"
+        },
+        {
+          "ticker": "VRT",
+          "action": "MAINTAIN",
+          "new_score": 5.5,
+          "note": "Options BEARISH(P/C vol=2.854)\u3002\u30a4\u30f3\u30b5\u30a4\u30c0\u30fc$123M\u58f2\u308a\u3002\u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19$327.44\u2252\u73fe\u5024\u3002\u5143\u306e\u76ee\u6a19$280\u3092\u5927\u304d\u304f\u8d85\u904e\u3002Industrials NEUTRAL sector\u3002",
+          "flag": "BEARISH_OPTIONS"
+        },
+        {
+          "ticker": "AMAT",
+          "action": "ADD_NOTE",
+          "new_score": 6.0,
+          "note": "\u521d\u56de\u30d5\u30eb\u30ea\u30b5\u30fc\u30c1\u3002\u4eca\u65e552W\u9ad8\u5024\u30d6\u30ec\u30a4\u30af($420.50)\u3002\u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19$422.97\u307e\u3067+1.4%\u306e\u307f\u3002\u58f2\u4e0a-2.1% YoY\u3002Options NEUTRAL_BEARISH\u3002\u62bc\u3057\u76ee$390-405\u3067\u518d\u691c\u8a0e\u3002",
+          "flag": "NEAR_ANALYST_TARGET"
+        },
+        {
+          "ticker": "COHR",
+          "action": "MAINTAIN",
+          "new_score": 5.5,
+          "note": "\u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19$313.50\u304c\u73fe\u5024$336.09\u3092-6.7%\u4e0b\u56de\u308b\u3002Options BEARISH(P/C vol=2.079)\u3002\u76f4\u8fd1Q\u7d14\u5229\u76ca\u30de\u30a4\u30ca\u30b9\u3042\u308a\u3002earnings quality\u61f8\u5ff5\u3002\u5165\u53e3\u30be\u30fc\u30f3$310-320\u3002",
+          "flag": "ANALYST_TARGET_BELOW_PRICE"
+        },
+        {
+          "ticker": "TSM",
+          "action": "ESCALATE",
+          "new_score": 8.0,
+          "note": "52W\u9ad8\u5024\u30d6\u30ec\u30a4\u30af($409.49)\u3002RSI=68.4\uff08\u904e\u71b1\u306a\u3057\uff09\u3002\u30a4\u30f3\u30b5\u30a4\u30c0\u30fc\u8cb7\u3044($322K\u30013/31)\u3002\u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19$463.45(+15.1%)\u300118\u540dSTRONG_BUY\u3002\u7c97\u522962%\u3001PEG=1.30\u3002\u5165\u53e3$395-408\u3001\u30b9\u30c8\u30c3\u30d7$389.25\u3001\u76ee\u6a19$428.87(ATR)/$463(\u30a2\u30ca\u30ea\u30b9\u30c8)\u3002\u30ea\u30b9\u30af\uff1a\u53f0\u6e7e\u5730\u653f\u5b66\u30fbNEUTRAL_BEARISH options\u3002",
+          "flag": "ESCALATE_TO_DECISION"
+        },
+        {
+          "ticker": "LRCX",
+          "action": "MAINTAIN",
+          "new_score": 7.0,
+          "note": "52W\u9ad8\u5024\u30d6\u30ec\u30a4\u30af($275.84)\u3002RSI=61\uff08\u7406\u60f3\u7684\uff09\u3002\u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19$305.97(+14.3%)\u3002\u305f\u3060\u3057Options BEARISH(P/C vol=2.388)\u304c\u524d\u56de\u30b9\u30af\u30ea\u30fc\u30f3\u304b\u3089\u7d99\u7d9a\u3002\u30a4\u30f3\u30b5\u30a4\u30c0\u30fc$29.7M\u58f2\u308a\u3002Options\u6539\u5584\u6642\u306bESCALATE\u691c\u8a0e\u3002",
+          "flag": "AWAITING_OPTIONS_IMPROVEMENT"
+        },
+        {
+          "ticker": "VST",
+          "action": "ESCALATE",
+          "new_score": 6.5,
+          "note": "RSI=56.84\uff08\u7406\u60f3\u5165\u53e3\u57df\uff09\u3002MACD histogram\u30d7\u30e9\u30b9\u8ee2\u63db(+0.60)\u3002Options NEUTRAL_BULLISH\u3002\u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19$233.37(+42%)\u300119\u540dSTRONG_BUY\u3002forward PE=14.75\uff08\u5272\u5b89\uff09\u3002\u672c\u65e5+4.35%\u3002\u30ea\u30b9\u30af\uff1aD/E=399\u3001Utilities NEUTRAL sector\u3001EPS -52.3% YoY\u3002\u5165\u53e3$155-165\u3001\u30b9\u30c8\u30c3\u30d7$158\u3001\u76ee\u6a19$177(ATR)\u3002LOW\u78ba\u4fe1\u63a8\u5968\u3002",
+          "flag": "ESCALATE_TO_DECISION"
+        },
+        {
+          "ticker": "UAL",
+          "action": "ESCALATE",
+          "new_score": 6.5,
+          "note": "\u521d\u56de\u30d5\u30eb\u30ea\u30b5\u30fc\u30c1\u3002RSI=47\uff08\u7406\u60f3\u5165\u53e3\u57df\uff09\u3002Options BULLISH(P/C vol=0.596)\u3002Forward PE=6.61\uff08\u6975\u7aef\u306a\u5272\u5b89\uff09\u3002\u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19$129.29(+39%)\u300124\u540dSTRONG_BUY\u3002EPS+84.5% YoY\u3002\u53c2\u7167\u5024+0.9%\u306e\u307f\u3067\u76f8\u5bfe\u5f31\u3055\u3002\u5165\u53e3$88-93\u3001\u30b9\u30c8\u30c3\u30d7$87.78\u3001\u76ee\u6a19$103.45(ATR)\u3002\u5206\u6563\u76ee\u7684LOW\u78ba\u4fe1\u3002",
+          "flag": "ESCALATE_TO_DECISION"
+        },
+        {
+          "ticker": "PLTR",
+          "action": "MAINTAIN",
+          "new_score": 5.5,
+          "note": "\u53c2\u7167\u5024-3.6%\u30a2\u30f3\u30c0\u30fc\u30d1\u30d5\u30a9\u30fc\u30e0\u3002Cloud/Software LAGGING(-13.77% 3m)\u3002\u30a4\u30f3\u30b5\u30a4\u30c0\u30fc$435.1M\u58f2\u308a(90\u65e5\u300111\u53d6\u5f15)\u306f\u91cd\u5927\u30d5\u30e9\u30b0\u3002Forward PE=76.8\u3067\u5272\u9ad8\u3002MACD histogram \u30d7\u30e9\u30b9\u8ee2\u63db(+0.642)\u3068Options BULLISH\u304c\u552f\u4e00\u306e\u597d\u6750\u6599\u3002\u5165\u53e3\u30be\u30fc\u30f3$138-142\u3067\u5b89\u5b9a\u5f85\u3061\u3002",
+          "flag": "HEAVY_INSIDER_SELL"
+        }
+      ]
+    }
+  ]
+}

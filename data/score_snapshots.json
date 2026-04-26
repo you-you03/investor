@@ -1,0 +1,1687 @@
+{
+  "snapshots": [
+    {
+      "run_id": "8cfe6f43-f9af-4691-9d1f-569b86a8160d",
+      "scored_at": "2026-04-19",
+      "ticker": "NVDA",
+      "company_name": "NVIDIA Corporation",
+      "score": 8.65,
+      "score_breakdown": {
+        "momentum": 8,
+        "fundamentals": 10,
+        "catalyst": 9,
+        "technical": 8,
+        "sentiment": 8
+      },
+      "rank_in_run": 1,
+      "total_scored_in_run": 18,
+      "price_at_score": 201.68,
+      "passed_threshold": true,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-04-26",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-05-03",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-05-10",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-05-17",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "8cfe6f43-f9af-4691-9d1f-569b86a8160d",
+      "scored_at": "2026-04-19",
+      "ticker": "VRT",
+      "company_name": "Vertiv Holdings Co",
+      "score": 7.5,
+      "score_breakdown": {
+        "momentum": 8,
+        "fundamentals": 7,
+        "catalyst": 8,
+        "technical": 7,
+        "sentiment": 7
+      },
+      "rank_in_run": 2,
+      "total_scored_in_run": 18,
+      "price_at_score": 307.34,
+      "passed_threshold": true,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-04-26",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-05-03",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-05-10",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-05-17",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "8cfe6f43-f9af-4691-9d1f-569b86a8160d",
+      "scored_at": "2026-04-19",
+      "ticker": "AVGO",
+      "company_name": "Broadcom Inc.",
+      "score": 7.2,
+      "score_breakdown": {
+        "momentum": 7,
+        "fundamentals": 8,
+        "catalyst": 7,
+        "technical": 6,
+        "sentiment": 8
+      },
+      "rank_in_run": 3,
+      "total_scored_in_run": 18,
+      "price_at_score": 406.54,
+      "passed_threshold": true,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-04-26",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-05-03",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-05-10",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-05-17",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "8cfe6f43-f9af-4691-9d1f-569b86a8160d",
+      "scored_at": "2026-04-19",
+      "ticker": "MU",
+      "company_name": "Micron Technology, Inc.",
+      "score": 7.1,
+      "score_breakdown": {
+        "momentum": 6,
+        "fundamentals": 10,
+        "catalyst": 6,
+        "technical": 7,
+        "sentiment": 7
+      },
+      "rank_in_run": 4,
+      "total_scored_in_run": 18,
+      "price_at_score": 455.07,
+      "passed_threshold": true,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-04-26",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-05-03",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-05-10",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-05-17",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "8cfe6f43-f9af-4691-9d1f-569b86a8160d",
+      "scored_at": "2026-04-19",
+      "ticker": "LRCX",
+      "company_name": "Lam Research Corporation",
+      "score": 7.05,
+      "score_breakdown": {
+        "momentum": 7,
+        "fundamentals": 6,
+        "catalyst": 8,
+        "technical": 7,
+        "sentiment": 7
+      },
+      "rank_in_run": 5,
+      "total_scored_in_run": 18,
+      "price_at_score": 267.6,
+      "passed_threshold": true,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-04-26",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-05-03",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-05-10",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-05-17",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "8cfe6f43-f9af-4691-9d1f-569b86a8160d",
+      "scored_at": "2026-04-19",
+      "ticker": "ALK",
+      "company_name": "Alaska Air Group, Inc.",
+      "score": 6.85,
+      "score_breakdown": {
+        "momentum": 7,
+        "fundamentals": 5,
+        "catalyst": 8,
+        "technical": 7,
+        "sentiment": 7
+      },
+      "rank_in_run": 6,
+      "total_scored_in_run": 18,
+      "price_at_score": 45.4,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-04-26",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-05-03",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-05-10",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-05-17",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "8cfe6f43-f9af-4691-9d1f-569b86a8160d",
+      "scored_at": "2026-04-19",
+      "ticker": "MSTR",
+      "company_name": "Strategy Inc",
+      "score": 6.65,
+      "score_breakdown": {
+        "momentum": 8,
+        "fundamentals": 4,
+        "catalyst": 7,
+        "technical": 7,
+        "sentiment": 7
+      },
+      "rank_in_run": 7,
+      "total_scored_in_run": 18,
+      "price_at_score": 166.52,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-04-26",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-05-03",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-05-10",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-05-17",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "8cfe6f43-f9af-4691-9d1f-569b86a8160d",
+      "scored_at": "2026-04-19",
+      "ticker": "MRVL",
+      "company_name": "Marvell Technology, Inc.",
+      "score": 6.3,
+      "score_breakdown": {
+        "momentum": 8,
+        "fundamentals": 7,
+        "catalyst": 5,
+        "technical": 4,
+        "sentiment": 7
+      },
+      "rank_in_run": 8,
+      "total_scored_in_run": 18,
+      "price_at_score": 139.69,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-04-26",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-05-03",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-05-10",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-05-17",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "8cfe6f43-f9af-4691-9d1f-569b86a8160d",
+      "scored_at": "2026-04-19",
+      "ticker": "ROAD",
+      "company_name": "Construction Partners, Inc.",
+      "score": 6.25,
+      "score_breakdown": {
+        "momentum": 7,
+        "fundamentals": 6,
+        "catalyst": 6,
+        "technical": 7,
+        "sentiment": 5
+      },
+      "rank_in_run": 9,
+      "total_scored_in_run": 18,
+      "price_at_score": 125.64,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-04-26",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-05-03",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-05-10",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-05-17",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "8cfe6f43-f9af-4691-9d1f-569b86a8160d",
+      "scored_at": "2026-04-19",
+      "ticker": "VST",
+      "company_name": "Vistra Corp.",
+      "score": 6.0,
+      "score_breakdown": {
+        "momentum": 5,
+        "fundamentals": 6,
+        "catalyst": 7,
+        "technical": 6,
+        "sentiment": 6
+      },
+      "rank_in_run": 10,
+      "total_scored_in_run": 18,
+      "price_at_score": 163.46,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-04-26",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-05-03",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-05-10",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-05-17",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "8cfe6f43-f9af-4691-9d1f-569b86a8160d",
+      "scored_at": "2026-04-19",
+      "ticker": "PLTR",
+      "company_name": "Palantir Technologies Inc.",
+      "score": 5.35,
+      "score_breakdown": {
+        "momentum": 4,
+        "fundamentals": 6,
+        "catalyst": 6,
+        "technical": 5,
+        "sentiment": 6
+      },
+      "rank_in_run": 11,
+      "total_scored_in_run": 18,
+      "price_at_score": 146.39,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-04-26",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-05-03",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-05-10",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-05-17",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "8cfe6f43-f9af-4691-9d1f-569b86a8160d",
+      "scored_at": "2026-04-19",
+      "ticker": "HIMS",
+      "company_name": "Hims & Hers Health, Inc.",
+      "score": 5.0,
+      "score_breakdown": {
+        "momentum": 7,
+        "fundamentals": 4,
+        "catalyst": 4,
+        "technical": 6,
+        "sentiment": 4
+      },
+      "rank_in_run": 12,
+      "total_scored_in_run": 18,
+      "price_at_score": 28.82,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-04-26",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-05-03",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-05-10",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-05-17",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "8cfe6f43-f9af-4691-9d1f-569b86a8160d",
+      "scored_at": "2026-04-19",
+      "ticker": "COMP",
+      "company_name": "Compass, Inc.",
+      "score": 5.0,
+      "score_breakdown": {
+        "momentum": 5,
+        "fundamentals": 4,
+        "catalyst": 5,
+        "technical": 4,
+        "sentiment": 5
+      },
+      "rank_in_run": 13,
+      "total_scored_in_run": 18,
+      "price_at_score": 8.14,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-04-26",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-05-03",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-05-10",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-05-17",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "8cfe6f43-f9af-4691-9d1f-569b86a8160d",
+      "scored_at": "2026-04-19",
+      "ticker": "KOD",
+      "company_name": "Kodiak Sciences Inc.",
+      "score": 4.5,
+      "score_breakdown": {
+        "momentum": 5,
+        "fundamentals": 2,
+        "catalyst": 5,
+        "technical": 6,
+        "sentiment": 4
+      },
+      "rank_in_run": 14,
+      "total_scored_in_run": 18,
+      "price_at_score": 44.9,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-04-26",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-05-03",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-05-10",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-05-17",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "8cfe6f43-f9af-4691-9d1f-569b86a8160d",
+      "scored_at": "2026-04-19",
+      "ticker": "MXL",
+      "company_name": "MaxLinear, Inc.",
+      "score": 4.0,
+      "score_breakdown": {
+        "momentum": 8,
+        "fundamentals": 3,
+        "catalyst": 3,
+        "technical": 3,
+        "sentiment": 4
+      },
+      "rank_in_run": 15,
+      "total_scored_in_run": 18,
+      "price_at_score": 26.27,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-04-26",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-05-03",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-05-10",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-05-17",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "8cfe6f43-f9af-4691-9d1f-569b86a8160d",
+      "scored_at": "2026-04-19",
+      "ticker": "INFQ",
+      "company_name": "Infleqtion, Inc.",
+      "score": 4.0,
+      "score_breakdown": {
+        "momentum": 7,
+        "fundamentals": 2,
+        "catalyst": 4,
+        "technical": 6,
+        "sentiment": 3
+      },
+      "rank_in_run": 16,
+      "total_scored_in_run": 18,
+      "price_at_score": 17.42,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-04-26",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-05-03",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-05-10",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-05-17",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "8cfe6f43-f9af-4691-9d1f-569b86a8160d",
+      "scored_at": "2026-04-19",
+      "ticker": "LION",
+      "company_name": "Lionsgate Studios Corp.",
+      "score": 4.0,
+      "score_breakdown": {
+        "momentum": 6,
+        "fundamentals": 2,
+        "catalyst": 3,
+        "technical": 6,
+        "sentiment": 4
+      },
+      "rank_in_run": 17,
+      "total_scored_in_run": 18,
+      "price_at_score": 12.45,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-04-26",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-05-03",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-05-10",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-05-17",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "8cfe6f43-f9af-4691-9d1f-569b86a8160d",
+      "scored_at": "2026-04-19",
+      "ticker": "SMR",
+      "company_name": "NuScale Power Corporation",
+      "score": 3.0,
+      "score_breakdown": {
+        "momentum": 5,
+        "fundamentals": 1,
+        "catalyst": 4,
+        "technical": 4,
+        "sentiment": 4
+      },
+      "rank_in_run": 18,
+      "total_scored_in_run": 18,
+      "price_at_score": 12.65,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-04-26",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-05-03",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-05-10",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-05-17",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "de6f7af6-3031-44f5-b734-9ce4f9de0825",
+      "scored_at": "2026-04-23",
+      "ticker": "MU",
+      "company_name": "Micron Technology, Inc.",
+      "score": 8.7,
+      "score_breakdown": {
+        "momentum": 9,
+        "fundamentals": 10,
+        "catalyst": 7,
+        "technical": 9,
+        "sentiment": 9
+      },
+      "rank_in_run": 1,
+      "total_scored_in_run": 15,
+      "price_at_score": 487.48,
+      "passed_threshold": true,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-04-30",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-05-07",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-05-14",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-05-21",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "de6f7af6-3031-44f5-b734-9ce4f9de0825",
+      "scored_at": "2026-04-23",
+      "ticker": "NVDA",
+      "company_name": "NVIDIA Corporation",
+      "score": 8.1,
+      "score_breakdown": {
+        "momentum": 7,
+        "fundamentals": 9,
+        "catalyst": 8,
+        "technical": 8,
+        "sentiment": 9
+      },
+      "rank_in_run": 2,
+      "total_scored_in_run": 15,
+      "price_at_score": 202.5,
+      "passed_threshold": true,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-04-30",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-05-07",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-05-14",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-05-21",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "de6f7af6-3031-44f5-b734-9ce4f9de0825",
+      "scored_at": "2026-04-23",
+      "ticker": "AVGO",
+      "company_name": "Broadcom Inc.",
+      "score": 7.6,
+      "score_breakdown": {
+        "momentum": 8,
+        "fundamentals": 8,
+        "catalyst": 7,
+        "technical": 7,
+        "sentiment": 8
+      },
+      "rank_in_run": 3,
+      "total_scored_in_run": 15,
+      "price_at_score": 422.65,
+      "passed_threshold": true,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-04-30",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-05-07",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-05-14",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-05-21",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "de6f7af6-3031-44f5-b734-9ce4f9de0825",
+      "scored_at": "2026-04-23",
+      "ticker": "AMD",
+      "company_name": "Advanced Micro Devices, Inc.",
+      "score": 7.05,
+      "score_breakdown": {
+        "momentum": 8,
+        "fundamentals": 8,
+        "catalyst": 6,
+        "technical": 6,
+        "sentiment": 7
+      },
+      "rank_in_run": 4,
+      "total_scored_in_run": 15,
+      "price_at_score": 303.46,
+      "passed_threshold": true,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-04-30",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-05-07",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-05-14",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-05-21",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "de6f7af6-3031-44f5-b734-9ce4f9de0825",
+      "scored_at": "2026-04-23",
+      "ticker": "MRVL",
+      "company_name": "Marvell Technology, Inc.",
+      "score": 6.3,
+      "score_breakdown": {
+        "momentum": 8,
+        "fundamentals": 7,
+        "catalyst": 5,
+        "technical": 5,
+        "sentiment": 6
+      },
+      "rank_in_run": 5,
+      "total_scored_in_run": 15,
+      "price_at_score": 157.32,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-04-30",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-05-07",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-05-14",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-05-21",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "de6f7af6-3031-44f5-b734-9ce4f9de0825",
+      "scored_at": "2026-04-23",
+      "ticker": "LRCX",
+      "company_name": "Lam Research Corporation",
+      "score": 6.7,
+      "score_breakdown": {
+        "momentum": 6,
+        "fundamentals": 8,
+        "catalyst": 6,
+        "technical": 7,
+        "sentiment": 7
+      },
+      "rank_in_run": 6,
+      "total_scored_in_run": 15,
+      "price_at_score": 265.55,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-04-30",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-05-07",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-05-14",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-05-21",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "de6f7af6-3031-44f5-b734-9ce4f9de0825",
+      "scored_at": "2026-04-23",
+      "ticker": "COHR",
+      "company_name": "Coherent Corp.",
+      "score": 6.65,
+      "score_breakdown": {
+        "momentum": 8,
+        "fundamentals": 6,
+        "catalyst": 6,
+        "technical": 7,
+        "sentiment": 6
+      },
+      "rank_in_run": 7,
+      "total_scored_in_run": 15,
+      "price_at_score": 350.47,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-04-30",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-05-07",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-05-14",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-05-21",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "de6f7af6-3031-44f5-b734-9ce4f9de0825",
+      "scored_at": "2026-04-23",
+      "ticker": "PLTR",
+      "company_name": "Palantir Technologies Inc.",
+      "score": 5.95,
+      "score_breakdown": {
+        "momentum": 4,
+        "fundamentals": 4,
+        "catalyst": 6,
+        "technical": 5,
+        "sentiment": 6
+      },
+      "rank_in_run": 8,
+      "total_scored_in_run": 15,
+      "price_at_score": 152.62,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-04-30",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-05-07",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-05-14",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-05-21",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "de6f7af6-3031-44f5-b734-9ce4f9de0825",
+      "scored_at": "2026-04-23",
+      "ticker": "VRT",
+      "company_name": "Vertiv Holdings Co",
+      "score": 5.7,
+      "score_breakdown": {
+        "momentum": 6,
+        "fundamentals": 7,
+        "catalyst": 4,
+        "technical": 7,
+        "sentiment": 5
+      },
+      "rank_in_run": 9,
+      "total_scored_in_run": 15,
+      "price_at_score": 305.14,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-04-30",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-05-07",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-05-14",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-05-21",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "de6f7af6-3031-44f5-b734-9ce4f9de0825",
+      "scored_at": "2026-04-23",
+      "ticker": "RDW",
+      "company_name": "Redwire Corporation",
+      "score": 5.0,
+      "score_breakdown": {
+        "momentum": 6,
+        "fundamentals": 3,
+        "catalyst": 5,
+        "technical": 6,
+        "sentiment": 5
+      },
+      "rank_in_run": 10,
+      "total_scored_in_run": 15,
+      "price_at_score": 11.93,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-04-30",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-05-07",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-05-14",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-05-21",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "de6f7af6-3031-44f5-b734-9ce4f9de0825",
+      "scored_at": "2026-04-23",
+      "ticker": "OKLO",
+      "company_name": "Oklo Inc.",
+      "score": 4.65,
+      "score_breakdown": {
+        "momentum": 6,
+        "fundamentals": 1,
+        "catalyst": 4,
+        "technical": 7,
+        "sentiment": 6
+      },
+      "rank_in_run": 11,
+      "total_scored_in_run": 15,
+      "price_at_score": 72.41,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-04-30",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-05-07",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-05-14",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-05-21",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "de6f7af6-3031-44f5-b734-9ce4f9de0825",
+      "scored_at": "2026-04-23",
+      "ticker": "LEU",
+      "company_name": "Centrus Energy Corp.",
+      "score": 4.6,
+      "score_breakdown": {
+        "momentum": 5,
+        "fundamentals": 3,
+        "catalyst": 5,
+        "technical": 6,
+        "sentiment": 4
+      },
+      "rank_in_run": 12,
+      "total_scored_in_run": 15,
+      "price_at_score": 217.08,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-04-30",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-05-07",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-05-14",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-05-21",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "de6f7af6-3031-44f5-b734-9ce4f9de0825",
+      "scored_at": "2026-04-23",
+      "ticker": "AXTI",
+      "company_name": "AXT, Inc.",
+      "score": 4.45,
+      "score_breakdown": {
+        "momentum": 8,
+        "fundamentals": 1,
+        "catalyst": 3,
+        "technical": 7,
+        "sentiment": 3
+      },
+      "rank_in_run": 13,
+      "total_scored_in_run": 15,
+      "price_at_score": 86.94,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-04-30",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-05-07",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-05-14",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-05-21",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "de6f7af6-3031-44f5-b734-9ce4f9de0825",
+      "scored_at": "2026-04-23",
+      "ticker": "SMR",
+      "company_name": "NuScale Power Corporation",
+      "score": 4.1,
+      "score_breakdown": {
+        "momentum": 5,
+        "fundamentals": 1,
+        "catalyst": 4,
+        "technical": 6,
+        "sentiment": 5
+      },
+      "rank_in_run": 14,
+      "total_scored_in_run": 15,
+      "price_at_score": 13.57,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-04-30",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-05-07",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-05-14",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-05-21",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "de6f7af6-3031-44f5-b734-9ce4f9de0825",
+      "scored_at": "2026-04-23",
+      "ticker": "NVTS",
+      "company_name": "Navitas Semiconductor Corporation",
+      "score": 3.35,
+      "score_breakdown": {
+        "momentum": 6,
+        "fundamentals": 1,
+        "catalyst": 3,
+        "technical": 3,
+        "sentiment": 3
+      },
+      "rank_in_run": 15,
+      "total_scored_in_run": 15,
+      "price_at_score": 18.47,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-04-30",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-05-07",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-05-14",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-05-21",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    }
+  ]
+}

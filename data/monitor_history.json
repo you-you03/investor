@@ -1,0 +1,434 @@
+[
+  {
+    "date": "2026-04-07",
+    "position_count": 15,
+    "alert_count": 0,
+    "high_alert_count": 0,
+    "positions": [
+      {
+        "ticker": "ASTS",
+        "shares": 36.0,
+        "entry_price": 92.62,
+        "current_price": 94.80999755859375,
+        "target_price": "109.59",
+        "stop_loss": "84.13"
+      },
+      {
+        "ticker": "AAOI",
+        "shares": 19.0,
+        "entry_price": 103.91,
+        "current_price": 107.44999694824219,
+        "target_price": "131.18",
+        "stop_loss": "90.28"
+      },
+      {
+        "ticker": "ALAB",
+        "shares": 0.0,
+        "entry_price": 117.14,
+        "current_price": 117.98999786376953,
+        "target_price": null,
+        "stop_loss": null
+      },
+      {
+        "ticker": "MU",
+        "shares": 0.0,
+        "entry_price": 366.24,
+        "current_price": 377.760009765625,
+        "target_price": null,
+        "stop_loss": null
+      },
+      {
+        "ticker": "NVDA",
+        "shares": 0.0,
+        "entry_price": 177.39,
+        "current_price": 177.63999938964844,
+        "target_price": null,
+        "stop_loss": null
+      },
+      {
+        "ticker": "MRVL",
+        "shares": 0.0,
+        "entry_price": 107.11,
+        "current_price": 109.51000213623047,
+        "target_price": null,
+        "stop_loss": null
+      },
+      {
+        "ticker": "AVGO",
+        "shares": 0.0,
+        "entry_price": 314.55,
+        "current_price": 314.42999267578125,
+        "target_price": null,
+        "stop_loss": null
+      },
+      {
+        "ticker": "VRT",
+        "shares": 0.0,
+        "entry_price": 261.29,
+        "current_price": 258.7300109863281,
+        "target_price": null,
+        "stop_loss": null
+      },
+      {
+        "ticker": "AMAT",
+        "shares": 0.0,
+        "entry_price": 348.47,
+        "current_price": 352.6199951171875,
+        "target_price": null,
+        "stop_loss": null
+      },
+      {
+        "ticker": "COHR",
+        "shares": 0.0,
+        "entry_price": 258.16,
+        "current_price": 253.22000122070312,
+        "target_price": null,
+        "stop_loss": null
+      },
+      {
+        "ticker": "TSM",
+        "shares": 0.0,
+        "entry_price": 339.04,
+        "current_price": 341.760009765625,
+        "target_price": null,
+        "stop_loss": null
+      },
+      {
+        "ticker": "LRCX",
+        "shares": 0.0,
+        "entry_price": 218.44,
+        "current_price": 220.64999389648438,
+        "target_price": null,
+        "stop_loss": null
+      },
+      {
+        "ticker": "VST",
+        "shares": 0.0,
+        "entry_price": 151.18,
+        "current_price": 151.58999633789062,
+        "target_price": null,
+        "stop_loss": null
+      },
+      {
+        "ticker": "UAL",
+        "shares": 0.0,
+        "entry_price": 92.21,
+        "current_price": 90.97000122070312,
+        "target_price": null,
+        "stop_loss": null
+      },
+      {
+        "ticker": "PLTR",
+        "shares": 0.0,
+        "entry_price": 148.46,
+        "current_price": 147.92999267578125,
+        "target_price": null,
+        "stop_loss": null
+      }
+    ],
+    "alerts": []
+  },
+  {
+    "date": "2026-04-11",
+    "position_count": 15,
+    "alert_count": 2,
+    "high_alert_count": 0,
+    "positions": [
+      {
+        "ticker": "ASTS",
+        "shares": 36.0,
+        "entry_price": 92.62,
+        "current_price": 94.9000015258789,
+        "target_price": "109.59",
+        "stop_loss": "84.13"
+      },
+      {
+        "ticker": "AAOI",
+        "shares": 19.0,
+        "entry_price": 103.91,
+        "current_price": 150.60000610351562,
+        "target_price": "131.18",
+        "stop_loss": "90.28"
+      },
+      {
+        "ticker": "ALAB",
+        "shares": 0.0,
+        "entry_price": 117.14,
+        "current_price": 149.0500030517578,
+        "target_price": null,
+        "stop_loss": null
+      },
+      {
+        "ticker": "MU",
+        "shares": 0.0,
+        "entry_price": 366.24,
+        "current_price": 420.5899963378906,
+        "target_price": null,
+        "stop_loss": null
+      },
+      {
+        "ticker": "NVDA",
+        "shares": 0.0,
+        "entry_price": 177.39,
+        "current_price": 188.6300048828125,
+        "target_price": null,
+        "stop_loss": null
+      },
+      {
+        "ticker": "MRVL",
+        "shares": 0.0,
+        "entry_price": 107.11,
+        "current_price": 128.49000549316406,
+        "target_price": null,
+        "stop_loss": null
+      },
+      {
+        "ticker": "AVGO",
+        "shares": 0.0,
+        "entry_price": 314.55,
+        "current_price": 371.54998779296875,
+        "target_price": null,
+        "stop_loss": null
+      },
+      {
+        "ticker": "VRT",
+        "shares": 0.0,
+        "entry_price": 261.29,
+        "current_price": 295.1099853515625,
+        "target_price": null,
+        "stop_loss": null
+      },
+      {
+        "ticker": "AMAT",
+        "shares": 0.0,
+        "entry_price": 348.47,
+        "current_price": 399.489990234375,
+        "target_price": null,
+        "stop_loss": null
+      },
+      {
+        "ticker": "COHR",
+        "shares": 0.0,
+        "entry_price": 258.16,
+        "current_price": 307.5,
+        "target_price": null,
+        "stop_loss": null
+      },
+      {
+        "ticker": "TSM",
+        "shares": 0.0,
+        "entry_price": 339.04,
+        "current_price": 370.6000061035156,
+        "target_price": null,
+        "stop_loss": null
+      },
+      {
+        "ticker": "LRCX",
+        "shares": 0.0,
+        "entry_price": 218.44,
+        "current_price": 263.6600036621094,
+        "target_price": null,
+        "stop_loss": null
+      },
+      {
+        "ticker": "VST",
+        "shares": 0.0,
+        "entry_price": 151.18,
+        "current_price": 154.72999572753906,
+        "target_price": null,
+        "stop_loss": null
+      },
+      {
+        "ticker": "UAL",
+        "shares": 0.0,
+        "entry_price": 92.21,
+        "current_price": 96.4000015258789,
+        "target_price": null,
+        "stop_loss": null
+      },
+      {
+        "ticker": "PLTR",
+        "shares": 0.0,
+        "entry_price": 148.46,
+        "current_price": 128.05999755859375,
+        "target_price": null,
+        "stop_loss": null
+      }
+    ],
+    "alerts": [
+      {
+        "date": "2026-04-11",
+        "ticker": "AAOI",
+        "alert_type": "TARGET_REACHED",
+        "severity": "MEDIUM",
+        "message": "Price $150.60 reached target $131.18",
+        "current_price": 150.60000610351562,
+        "entry_price": 103.91,
+        "unrealized_pnl_pct": 44.93,
+        "stop_loss": 90.28,
+        "target_price": 131.18
+      },
+      {
+        "date": "2026-04-11",
+        "ticker": "PLTR",
+        "alert_type": "SIGNIFICANT_DRAWDOWN",
+        "severity": "MEDIUM",
+        "message": "Unrealized loss -13.7%",
+        "current_price": 128.05999755859375,
+        "entry_price": 148.46,
+        "unrealized_pnl_pct": -13.74,
+        "stop_loss": null,
+        "target_price": null
+      }
+    ]
+  },
+  {
+    "date": "2026-04-18",
+    "position_count": 3,
+    "alert_count": 1,
+    "high_alert_count": 1,
+    "positions": [
+      {
+        "ticker": "ALAB",
+        "shares": 11.0,
+        "entry_price": 149.05,
+        "current_price": null,
+        "target_price": "176.81",
+        "stop_loss": "139.80"
+      },
+      {
+        "ticker": "CRDO",
+        "shares": 8.0,
+        "entry_price": 119.59,
+        "current_price": 160.69000244140625,
+        "target_price": "134.12",
+        "stop_loss": "112.32"
+      },
+      {
+        "ticker": "CRWV",
+        "shares": 6.0,
+        "entry_price": 102.0,
+        "current_price": 116.8499984741211,
+        "target_price": "119.90",
+        "stop_loss": "94.84"
+      }
+    ],
+    "alerts": [
+      {
+        "date": "2026-04-18",
+        "ticker": "CRDO",
+        "alert_type": "TARGET_REACHED",
+        "severity": "HIGH",
+        "message": "Price $160.69 reached target $134.12",
+        "current_price": 160.69000244140625,
+        "entry_price": 119.59,
+        "unrealized_pnl_pct": 34.37,
+        "stop_loss": 112.32,
+        "target_price": 134.12
+      }
+    ]
+  },
+  {
+    "date": "2026-04-19",
+    "position_count": 3,
+    "alert_count": 0,
+    "high_alert_count": 0,
+    "positions": [
+      {
+        "ticker": "ALAB",
+        "shares": 11.0,
+        "entry_price": 149.05,
+        "current_price": 174.0500030517578,
+        "target_price": "176.81",
+        "stop_loss": "162.00"
+      },
+      {
+        "ticker": "CRDO",
+        "shares": 4.0,
+        "entry_price": 119.59,
+        "current_price": 160.69000244140625,
+        "target_price": "185.00",
+        "stop_loss": "148.00"
+      },
+      {
+        "ticker": "CRWV",
+        "shares": 6.0,
+        "entry_price": 102.0,
+        "current_price": 116.8499984741211,
+        "target_price": "119.90",
+        "stop_loss": "94.84"
+      }
+    ],
+    "alerts": []
+  },
+  {
+    "date": "2026-04-25",
+    "position_count": 3,
+    "alert_count": 3,
+    "high_alert_count": 3,
+    "positions": [
+      {
+        "ticker": "ALAB",
+        "shares": 11.0,
+        "entry_price": 149.05,
+        "current_price": 212.83999633789062,
+        "target_price": "176.81",
+        "stop_loss": "162.00"
+      },
+      {
+        "ticker": "CRDO",
+        "shares": 4.0,
+        "entry_price": 119.59,
+        "current_price": 195.0399932861328,
+        "target_price": "185.00",
+        "stop_loss": "148.00"
+      },
+      {
+        "ticker": "CRWV",
+        "shares": 6.0,
+        "entry_price": 102.0,
+        "current_price": 110.13999938964844,
+        "target_price": "119.90",
+        "stop_loss": "94.84"
+      }
+    ],
+    "alerts": [
+      {
+        "date": "2026-04-25",
+        "ticker": "ALAB",
+        "alert_type": "TARGET_REACHED",
+        "severity": "HIGH",
+        "message": "Price $212.84 reached target $176.81",
+        "current_price": 212.83999633789062,
+        "entry_price": 149.05,
+        "unrealized_pnl_pct": 42.8,
+        "stop_loss": 162.0,
+        "target_price": 176.81
+      },
+      {
+        "date": "2026-04-25",
+        "ticker": "CRDO",
+        "alert_type": "TARGET_REACHED",
+        "severity": "HIGH",
+        "message": "Price $195.04 reached target $185.00",
+        "current_price": 195.0399932861328,
+        "entry_price": 119.59,
+        "unrealized_pnl_pct": 63.09,
+        "stop_loss": 148.0,
+        "target_price": 185.0
+      },
+      {
+        "date": "2026-04-25",
+        "ticker": "CRWV",
+        "alert_type": "SHARP_DROP",
+        "severity": "HIGH",
+        "message": "Intraday drop -7.5%",
+        "current_price": 110.13999938964844,
+        "entry_price": 102.0,
+        "unrealized_pnl_pct": 7.98,
+        "stop_loss": 94.84,
+        "target_price": 119.9
+      }
+    ]
+  }
+]
