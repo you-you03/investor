@@ -11,144 +11,98 @@
 | **1銘柄最大配分** | 予算の25%（¥250,000 / 約$1,675） |
 | **ストップロス** | 厳格遵守（ATR 1×またはリサーチ指定値） |
 
-### ポジションサイジング方針
-
-- **HIGH確信** → 予算の20-25%（¥200,000-250,000 / $1,340-1,675）
-- **MEDIUM確信** → 予算の15%（¥150,000 / $1,005）
-- **LOW確信** → 予算の10%（¥100,000 / $670）
-- **集中投資（1銘柄に50%以上）は禁止** — 分散によるリスク低減を優先
-
-週次8%目標は3-5銘柄に分散し、各銘柄で+2-4%の寄与を積み上げる形を想定。
+ポジションサイジング: HIGH確信=20-25%、MEDIUM=15%、LOW=10%。1銘柄50%以上は禁止。
 
 ---
 
-## Architecture Overview
+## Critical Design Rule: Claude Code IS the Agent
+
+**Python スクリプトは Anthropic SDK を呼ばない。** Claude Code セッション自体がエージェント。
+
+- Python スクリプト → データ収集 → stdout に JSON 出力
+- Claude → 出力を読んで分析・判断
+- Claude → 保存スクリプトまたは通知スクリプトを呼ぶ
+
+`ANTHROPIC_API_KEY` は不要。`investor/` 内のどのファイルも `anthropic` ライブラリを import してはならない。
+
+---
+
+## Repository Layout
 
 ```
-skills/          ← Entry points (Claude Code Skills / CLI commands)
+skills/                    ← Claude Code Skills エントリポイント
 investor/
-  agents/        ← Orchestrators (Research + Decision)
-  data/          ← Data layer (yfinance_client.py)
-  core/          ← Business logic (planned)
-  notifications/ ← Slack (slack.py)
-  prompts/       ← Claude prompts
-  tools/         ← Tool functions called by agents
-  utils/         ← logger.py, cache.py
-data/            ← File persistence (CSV/JSON)
-scripts/         ← Cron-compatible standalone runners
+  agents/                  ← Research / Decision のオーケストレーター（旧設計、現在は Claude が担当）
+  clients/                 ← yfinance_client.py
+  core/                    ← ビジネスロジック
+  notifications/           ← Slack webhook
+  prompts/                 ← Claude に渡すプロンプトテンプレート
+  tools/                   ← Claude 用ツール関数（JSON Schema 付き）
+  utils/                   ← logger.py, cache.py
+data/                      ← CSV/JSON 永続化
+  portfolio.csv            ← オープン/クローズポジション
+  research_history.json    ← リサーチ実行履歴
+  watchlist.json           ← ウォッチリスト銘柄
+  watchlist_research_history.json
+  cache/{key}_{date}.json  ← 24時間 TTL キャッシュ
+reports/
+  research/research_{date}.md    ← /research 実行後に作成
+  decision/decision_{date}.md    ← /decision 実行後に作成
+scripts/                   ← Cron 対応スタンドアロンランナー
 ```
 
-## Design Principle: Claude Code as the Agent
+---
 
-**No Anthropic SDK calls in agents.** Claude Code (the current session) IS the agent.
-- Python scripts collect data and print to stdout
-- Claude reads the output, performs analysis/debate
-- Claude saves results or calls send scripts
+## Skills (エントリポイント)
+
+詳細は [SKILL.md](SKILL.md) を参照。
+
+| スキル | CLI | 出力 |
+|---|---|---|
+| `/research` | `python skills/research.py` | `data/research_history.json` + `reports/research/` |
+| `/watchlist-research` | `python skills/watchlist_research.py` | `data/watchlist_research_history.json` + `reports/research/` |
+| `/decision` | `python skills/decision.py` | Slack 通知 + `reports/decision/` |
+| `/portfolio` | `python skills/portfolio.py list\|add\|close\|snapshot` | ターミナル表示 |
+
+---
 
 ## Data Flow
 
 ```
 /research:
-  Step 1 (Python): python skills/research.py
-    → YFinanceClient.get_market_movers()
-    → per-ticker: snapshot, technicals, financials, news (yfinance)
-    → prints JSON report to stdout
-
-  Step 2 (Claude Code): reads output, screens top 3-5 candidates
-    → python skills/research.py --save '{"run_id":"...","candidates":[...]}'
-    → saves → data/research_history.json
+  1. python skills/research.py
+       → yf.screen() でマーケットムーバー取得
+       → 銘柄ごとに snapshot/technicals/financials/news
+       → stdout に JSON 出力
+  2. Claude がスクリーニング → top 3-5 候補を選定
+       → python skills/research.py --save '{"run_id":"...","candidates":[...]}'
 
 /decision:
-  Step 1 (Python): python skills/decision.py
-    → reads data/research_history.json
-    → prints candidates + open positions to stdout
-
-  Step 2 (Claude Code): Bullish → Bearish → PM debate internally
-    → python skills/decision.py --send '[{...proposals...}]'
-    → sends → Slack (Block Kit)
-
-/portfolio  → reads/writes data/portfolio.csv
-/watchlist  → reads/writes data/watchlist.json
+  1. python skills/decision.py
+       → research_history.json + watchlist_research_history.json を読む
+       → ESCALATED 銘柄が market-scan より優先
+       → stdout に候補を出力
+  2. Claude が Bullish → Bearish → PM ディベートを内部実行
+       → python skills/decision.py --send '[{...proposals...}]'
+       → Slack (Block Kit) に送信
 ```
 
-## Module Responsibilities
-
-| Module | Role |
-|---|---|
-| `investor/data/yfinance_client.py` | Fetch market data (no API key needed) |
-| `investor/utils/cache.py` | 24-hr TTL JSON cache in data/cache/ |
-| `investor/tools/market_tools.py` | Tool functions + JSON Schema for Claude |
-| `investor/tools/news_tools.py` | News (yfinance primary), optional Perplexity/Grok |
-| `investor/agents/research_agent.py` | Sequential/parallel research loop |
-| `investor/agents/decision_agent.py` | Bullish/Bearish/PM debate pipeline |
-| `investor/notifications/slack.py` | Slack webhook + Block Kit formatters |
-
-## Persistence Files
-
-| File | Format | Content |
-|---|---|---|
-| `data/portfolio.csv` | CSV | Open/closed positions, entry/exit prices |
-| `data/research_history.json` | JSON | Research runs with candidates |
-| `data/watchlist.json` | JSON | Watchlist tickers |
-| `data/cache/{key}_{date}.json` | JSON | 24-hr yfinance cache |
-
-## Reports Directory
-
-ユーザーへの提案レポート・調査レポートはすべて `reports/` 以下に保存する。
-
-```
-reports/
-  research/    ← /research 実行後のリサーチレポート（research_YYYY-MM-DD.md）
-  decision/    ← /decision 実行後の投資判断レポート（decision_YYYY-MM-DD.md）
-```
-
-- リサーチ実行後は `reports/research/research_{date}.md` を作成すること
-- 投資判断レポートは `reports/decision/decision_{date}.md` を作成すること
+---
 
 ## Environment Variables
 
 | Variable | Required | Purpose |
 |---|---|---|
-| `SLACK_WEBHOOK_URL` | **Yes** | Slack notifications |
-| `ANTHROPIC_API_KEY` | Yes (Research/Decision) | Claude API calls |
-| `PERPLEXITY_API_KEY` | No | Web search enhancement |
-| `XAI_API_KEY` | No | X/Twitter sentiment via Grok |
+| `SLACK_WEBHOOK_URL` | **Yes** | Slack 通知 |
+| `PERPLEXITY_API_KEY` | No | Web 検索強化 |
+| `XAI_API_KEY` | No | X/Twitter センチメント (Grok) |
 
-## Running Skills
+---
 
-```bash
-# Research scan (140+ stocks → Phase 1 screen → Phase 2 deep research)
-python skills/research.py
-python skills/research.py --sequential
-python skills/research.py --tickers NVDA,TSLA
+## yfinance 注意点（非自明なもの）
 
-# Watchlist deep research (active watchlist only, ~10 stocks, fast)
-python skills/watchlist_research.py
-python skills/watchlist_research.py --sequential
-python skills/watchlist_research.py --save '{"run_id":"...","results":[...]}'
-
-# Investment decision (auto-merges latest watchlist research if available)
-python skills/decision.py
-python skills/decision.py --run-id <uuid>
-python skills/decision.py --watchlist-run-id <uuid>
-
-# Portfolio management
-python skills/portfolio.py list
-python skills/portfolio.py add --ticker NVDA --shares 10 --price 875
-python skills/portfolio.py close --ticker NVDA --price 950
-python skills/portfolio.py snapshot
-
-# Watchlist CRUD
-python skills/watchlist.py list
-python skills/watchlist.py add --ticker NVDA --reason "AI chip momentum"
-python skills/watchlist.py remove --ticker NVDA
-```
-
-## yfinance Notes
-
-- `yf.screen()` returns `{"quotes": [...]}` for market movers
-- `Ticker.fast_info` for real-time price/volume (no delay)
-- `Ticker.history()` for OHLCV bars
-- `Ticker.news` returns structured dicts with nested `content` key
-- ETF check: use `bool(val)` not `is not None` for list fields
-- Cache all per-ticker calls to avoid rate limiting
+- `yf.screen()` の戻り値は `{"quotes": [...]}` — `quotes` キーを参照する
+- `Ticker.news` はネストされた `content` キーを持つ構造体
+- ETF チェックは `bool(val)` を使う（`is not None` では不足）
+- レート制限を避けるため、銘柄ごとの呼び出しはすべてキャッシュすること
+- `Ticker.fast_info` でリアルタイム価格/出来高（遅延なし）

@@ -430,5 +430,54 @@
         "target_price": 119.9
       }
     ]
+  },
+  {
+    "date": "2026-04-29",
+    "position_count": 5,
+    "alert_count": 0,
+    "high_alert_count": 0,
+    "positions": [
+      {
+        "ticker": "CRWV",
+        "shares": 6.0,
+        "entry_price": 102.0,
+        "current_price": 105.52999877929688,
+        "target_price": "119.90",
+        "stop_loss": "94.84"
+      },
+      {
+        "ticker": "NVDA",
+        "shares": 7.0,
+        "entry_price": 208.27,
+        "current_price": 213.1699981689453,
+        "target_price": "218.83",
+        "stop_loss": "202.99"
+      },
+      {
+        "ticker": "PANW",
+        "shares": 5.0,
+        "entry_price": 178.54,
+        "current_price": 180.99000549316406,
+        "target_price": "194.69",
+        "stop_loss": "170.47"
+      },
+      {
+        "ticker": "TSM",
+        "shares": 3.0,
+        "entry_price": 402.46,
+        "current_price": 392.3399963378906,
+        "target_price": "428.87",
+        "stop_loss": "389.25"
+      },
+      {
+        "ticker": "UAL",
+        "shares": 7.0,
+        "entry_price": 93.0,
+        "current_price": 90.41000366210938,
+        "target_price": "103.45",
+        "stop_loss": "87.78"
+      }
+    ],
+    "alerts": []
   }
 ]
