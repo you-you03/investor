@@ -83,9 +83,15 @@ def _format_proposals(proposals: list[dict]) -> tuple[list[dict], str]:
         if p.get("entry_price_range"):
             price_parts.append(f"Entry: ${p['entry_price_range']}")
         if p.get("target_price"):
-            price_parts.append(f"Target: ${p['target_price']:,.2f}")
+            try:
+                price_parts.append(f"Target: ${float(p['target_price']):,.2f}")
+            except (ValueError, TypeError):
+                price_parts.append(f"Target: ${p['target_price']}")
         if p.get("stop_loss"):
-            price_parts.append(f"Stop: ${p['stop_loss']:,.2f}")
+            try:
+                price_parts.append(f"Stop: ${float(p['stop_loss']):,.2f}")
+            except (ValueError, TypeError):
+                price_parts.append(f"Stop: ${p['stop_loss']}")
         if p.get("shares_suggested") and p.get("position_size_usd"):
             price_parts.append(f"Size: {p['shares_suggested']:.0f} shares (~${p['position_size_usd']:,.0f})")
         elif p.get("position_size_usd"):
@@ -195,6 +201,14 @@ def _format_portfolio_summary(positions: list[dict], alerts: list[dict]) -> tupl
         blocks.append({
             "type": "section",
             "text": {"type": "mrkdwn", "text": "\n".join(alert_lines)},
+        })
+        blocks.append({
+            "type": "context",
+            "elements": [{"type": "mrkdwn", "text": (
+                ":warning: このアラートは市場クローズ後の確認です。"
+                " イントラデイに大きく動いた場合、現在値はストップ価格と乖離している可能性があります。"
+                " 証券口座で現在の約定可能価格を確認してください。"
+            )}],
         })
 
     fallback = f"Daily monitor: {len(positions)} position(s) | Total P&L: {'+' if total_pnl >= 0 else ''}${total_pnl:,.0f}"

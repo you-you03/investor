@@ -70,5 +70,17 @@
     "unrealized_pnl_pct": 7.98,
     "stop_loss": 94.84,
     "target_price": 119.9
+  },
+  {
+    "date": "2026-05-04",
+    "ticker": "NVDA",
+    "alert_type": "STOP_LOSS",
+    "severity": "HIGH",
+    "message": "Price $198.45 hit stop loss $202.99",
+    "current_price": 198.4499969482422,
+    "entry_price": 208.27,
+    "unrealized_pnl_pct": -4.72,
+    "stop_loss": 202.99,
+    "target_price": 218.83
   }
 ]

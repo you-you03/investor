@@ -479,5 +479,67 @@
       }
     ],
     "alerts": []
+  },
+  {
+    "date": "2026-05-04",
+    "position_count": 5,
+    "alert_count": 1,
+    "high_alert_count": 1,
+    "positions": [
+      {
+        "ticker": "CRWV",
+        "shares": 6.0,
+        "entry_price": 102.0,
+        "current_price": 119.01000213623047,
+        "target_price": "119.90",
+        "stop_loss": "94.84"
+      },
+      {
+        "ticker": "NVDA",
+        "shares": 7.0,
+        "entry_price": 208.27,
+        "current_price": 198.4499969482422,
+        "target_price": "218.83",
+        "stop_loss": "202.99"
+      },
+      {
+        "ticker": "PANW",
+        "shares": 5.0,
+        "entry_price": 178.54,
+        "current_price": 181.0800018310547,
+        "target_price": "194.69",
+        "stop_loss": "170.47"
+      },
+      {
+        "ticker": "TSM",
+        "shares": 3.0,
+        "entry_price": 402.46,
+        "current_price": 397.6700134277344,
+        "target_price": "428.87",
+        "stop_loss": "389.25"
+      },
+      {
+        "ticker": "UAL",
+        "shares": 7.0,
+        "entry_price": 93.0,
+        "current_price": 92.5199966430664,
+        "target_price": "103.45",
+        "stop_loss": "87.78"
+      }
+    ],
+    "alerts": [
+      {
+        "date": "2026-05-04",
+        "ticker": "NVDA",
+        "alert_type": "STOP_LOSS",
+        "severity": "HIGH",
+        "message": "Price $198.45 hit stop loss $202.99",
+        "current_price": 198.4499969482422,
+        "entry_price": 208.27,
+        "unrealized_pnl_pct": -4.72,
+        "stop_loss": 202.99,
+        "target_price": 218.83
+      }
+    ]
   }
 ]

@@ -87,10 +87,21 @@ For each watchlist ticker, check the following alert conditions:
 | days_until_earnings ≤ 14 | `WATCHLIST_EARNINGS` | 決算接近 → リサーチ推奨 |
 | `reference_price` が存在し、現在値が +15% 以上 | `WATCHLIST_MOVED` | 大幅上昇（乗り遅れリスク確認） |
 | `reference_price` が存在し、現在値が -10% 以下 | `WATCHLIST_DROPPED` | 大幅下落（ウォッチリスト除外検討） |
+| 下記 RSI_COOLED 条件を満たす | `RSI_COOLED` | RSI 冷却 → エントリー条件成立。ESCALATE 推奨 |
+
+**RSI_COOLED フラグ判定ルール**:
+
+以下を **すべて** 満たす場合に `RSI_COOLED` を発動する:
+1. `last_monitor_flag` が `EXTREME_RSI` または `reason` 欄に "RSI" + "WAIT" / "押し目待ち" / "rsi_wait_entry" の記述がある（＝過去にRSI過熱でWAITと判断された銘柄）
+2. `last_score` が **7.5 以上**（スコアが低い銘柄はスルー）
+3. 現在の RSI が **65 以下**（過熱が解消された）
+4. `status == "active"`（まだポートフォリオに入っていない）
+
+`RSI_COOLED` が立った銘柄はリサーチ推奨だけでなく、**即 ESCALATE 推奨** とする（= `/decision` で最優先候補として扱う）。
 
 `reference_price` が null の場合、WATCHLIST_MOVED / WATCHLIST_DROPPED はスキップ。
 
-リサーチ推奨フラグ: `WATCHLIST_BREAKOUT`, `WATCHLIST_SETUP`, `WATCHLIST_EARNINGS` のいずれかが立った銘柄には `/research --seed {TICKER}` を推奨。
+リサーチ推奨フラグ: `WATCHLIST_BREAKOUT`, `WATCHLIST_SETUP`, `WATCHLIST_EARNINGS`, `RSI_COOLED` のいずれかが立った銘柄には `/research --seed {TICKER}` を推奨（RSI_COOLED は加えて `/decision` も推奨）。
 
 ---
 
@@ -201,6 +212,13 @@ For each ticker that triggered any flag OTHER than `WATCHLIST_DROPPED` (or no fl
 - Set `consecutive_drops` to 0
 - Update `last_monitor_flag` to the flag name (or `null` if no flag)
 - Update `last_monitor_date` to today's date
+
+### Rule 2b — RSI_COOLED → ESCALATE_TO_DECISION に昇格
+
+`RSI_COOLED` フラグが立った銘柄:
+- `last_monitor_flag` を `"ESCALATE_TO_DECISION"` に更新
+- `reason` 欄に `【{TODAY} RSI_COOLED】RSI={現RSI値} < 65 に冷却。last_score={last_score}。エントリー条件成立。/decision 最優先候補。` を追記
+- `consecutive_drops` を 0 にリセット
 
 ### Rule 3 — WATCHLIST_MOVED (未リサーチ) → note in reason
 

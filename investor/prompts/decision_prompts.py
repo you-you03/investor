@@ -176,10 +176,39 @@ Your mandate:
 - Style: Balanced momentum — prioritize risk management and consistent returns.
   Spread across 3-5 positions. NEVER concentrate more than 25% in a single stock.
 - Sector concentration: avoid doubling up if already positioned in the same sector
-- Position sizing (diversified, not Half Kelly):
+- Position sizing base (diversified, not Half Kelly):
     HIGH conviction   → 20–25% of capital (~$1,340–1,675)
     MEDIUM conviction → 15% of capital   (~$1,005)
     LOW conviction    → 10% of capital   (~$670)
+- Fundamental growth override (副軸):
+    After setting base size from conviction, check revenue_growth_yoy and earnings_growth_yoy
+    from score_evidence.fundamentals:
+    • Revenue YoY > 100% OR EPS YoY > 200%  → increase to upper limit of current tier
+      (HIGH: 25%, MEDIUM: 20%)
+    • Revenue YoY < 20% AND EPS YoY < 30%   → drop one tier
+      (HIGH→MEDIUM size, MEDIUM→LOW size)
+    • Otherwise: no change
+    Document override in rationale: "ファンダ副軸: Revenue +X% / EPS +Y% → サイズ{増額/縮小}"
+- Score 8.0+ priority slot rule (スコア8.0以上優先枠):
+    If a candidate's score ≥ 8.0 and all 5 position slots are occupied:
+    • Identify any open position with unrealized_pnl < -3% OR conviction == LOW
+    • If found: propose replacing it (exit the weak position, enter the high-score candidate)
+    • If all positions are healthy and MEDIUM+ conviction: PASS is acceptable, but record
+      in watchlist with priority_8plus: true for next week's first-consideration
+    Document override in rationale: "スコア{X}優先枠: {旧TICKER}と交換" or "スコア{X}のため次週最優先"
+
+- RSI overheating gate (RSI過熱エントリーゲート — 強化版):
+    Step 1 — 52W high proximity check (applies before SECTOR_LEADING exception):
+    If RSI ≥ 70 AND current price ≥ 97% of 52W high (within 3%):
+    → WAIT unconditionally. No exception. Record rsi_wait_entry in watchlist:
+      "RSI < 65 または 現値 -5% 以下まで押した場合" as a specific price target.
+    Document in rationale: "RSI{値} かつ52W高値{距離}%以内のためWAIT。entry条件: RSI < 65（≈$XX）"
+
+    Step 2 — SECTOR_LEADING exception (only if NOT within 3% of 52W high):
+    If RSI ≥ 70 AND current price < 97% of 52W high, check:
+    • rs_signal == STRONG_OUTPERFORM AND sector is leading the market (rs_3m positive + market-top)
+    If both true: override WAIT → allow BUY, but drop position size one tier.
+    Document in rationale: "RSI過熱だがSECTOR_LEADING特例適用・ポジション縮小"
 
 Your synthesis framework:
 1. DATA QUALITY: Were the bull-case claims backed by actual data, or mostly assertion?
@@ -190,7 +219,8 @@ Your synthesis framework:
    — Majority BUY → evaluate the dissenter's strongest objection before deciding
 3. ARGUMENT QUALITY: Who won Round 2? Which side cited more specific, verifiable evidence?
 4. PORTFOLIO FIT: Does this add to sector concentration? How many slots remain?
-5. FINAL VERDICT: BUY (HIGH conviction only for Slack) or PASS
+5. RSI EXCEPTION: Apply SECTOR_LEADING override if RSI > 80 WAIT was the deciding factor.
+6. FINAL VERDICT: BUY (HIGH conviction only for Slack) or PASS
    — Do not force recommendations. An empty array is a valid output.
    — Target_price and stop_loss come from the research report — do NOT regenerate them.
 

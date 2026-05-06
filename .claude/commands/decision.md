@@ -24,6 +24,22 @@ Check the arguments **before** proceeding:
 ## Step 0: Load Persona Definitions
 
 Read the file `investor/investor/prompts/personas.py` in its entirety.
+
+---
+
+## Step 0.5: 確信度校正レポート（自動表示）
+
+ディベート開始前に、過去の判断精度を確認する。
+
+```bash
+.venv/bin/python scripts/record_outcomes.py
+.venv/bin/python scripts/fetch_returns.py
+.venv/bin/python scripts/show_calibration_stats.py
+```
+
+このレポートを見た上で確信度を判断すること。サンプルが少ない（n < 20）場合は、確信度ラベルは参考値として扱い、過信しないこと。
+
+---
 This file contains the 5 investor persona definitions (PERSONAS dict) and the
 `select_personas()` selection rules. Internalize all 5 persona system prompts —
 you will embody each selected persona in the debate rounds below.
@@ -55,6 +71,52 @@ cat data/portfolio.csv
 ```
 
 Count open positions and note which sectors are already represented.
+
+### 繰り返し登場銘柄フラグ
+
+`research_history.json` の全 runs を遡り、今回の各候補が過去に何回 `candidates` に含まれたかをカウントする。
+
+```
+appearance_counts = {}
+for each run in all_runs:
+    for each candidate in run["candidates"]:
+        appearance_counts[ticker] += 1
+```
+
+**登場回数 ≥ 3 の銘柄が今回の候補にある場合、Step 6 PM Synthesis で以下を必ず数値で明示すること:**
+- 目標株価余地: `(target_price / current_price - 1) × 100` の%
+- エントリーゾーンと現在値の位置関係（現在値はゾーン内・ゾーン上・ゾーン下のどれか）
+- 過去の WAIT/PASS 理由と今回の状況の変化点（変化なければその旨を明記）
+
+このチェックを省略したまま WAIT/PASS 判断することは禁じる。
+
+### priority_8plus 強制候補チェック
+
+```bash
+cat data/watchlist.json
+```
+
+`watchlist.json` の中で `priority_8plus: true` かつ `status: "active"` の銘柄をすべて抽出する。
+
+これらの銘柄は **今回の research_history に含まれていなくても、必ずディベート候補に追加する**。追加した銘柄には最新の market data を取得する:
+
+```bash
+.venv/bin/python scripts/tool.py get_stock_snapshot --ticker {TICKER}
+.venv/bin/python scripts/tool.py get_technical_indicators --ticker {TICKER}
+.venv/bin/python scripts/tool.py get_financials --ticker {TICKER}
+.venv/bin/python scripts/tool.py get_ticker_details --ticker {TICKER}
+```
+
+追加候補として出力:
+```
+priority_8plus 強制追加:
+⭐ {TICKER} — 前回スコア {last_score}（{added_at} 追加、watchlist 経由）
+```
+
+priority_8plus 銘柄が 0 件の場合: "priority_8plus 銘柄なし — スキップ" と表示してスキップ。
+
+ディベート完了後、BUY 採用された priority_8plus 銘柄は `priority_8plus` フラグを削除する。
+PASS/WAIT の場合は `priority_8plus` を維持し、次回も強制追跡を継続する。
 
 ---
 
@@ -239,6 +301,7 @@ for this ticker). Make the final investment decision.
 **PM synthesis checklist (work through in order):**
 
 1. **Data quality**: Was any `data_gap_flag: true` raised? If yes → cap conviction at MEDIUM
+1.5. **スコアなし銘柄の確信度キャップ**: 候補に `score` フィールドが存在しない、または `null` の銘柄（watchlist 手動追加など5軸スコアリング未実施のもの）は、確信度を **最大 MEDIUM** にキャップする。HIGH 確信を付与してはならない。rationale に「スコア未取得のため確信度 MEDIUM キャップ適用」と明記。
 2. **Persona consensus**: 
    - All PASS → force PASS
    - 1 BUY vs rest PASS/WAIT → require overwhelming evidence to proceed
@@ -246,12 +309,50 @@ for this ticker). Make the final investment decision.
 3. **Argument quality**: Which side cited more specific, verifiable data in Round 2?
 4. **Portfolio fit**: Sector overlap with existing positions? Slots remaining?
    If 3+ positions already open in same sector → PASS even for HIGH conviction.
-5. **Final verdict**: BUY (state conviction) or PASS
+
+4.5. **スコア8.0以上の優先枠ルール**:
+   候補銘柄のスコアが **8.0以上** の場合、ポジション満杯（5枠）であっても以下を評価すること:
+   - 現オープンポジションを確認し、「最低確信度の銘柄」または「含み損が -3% 以下の銘柄」が1件でもあれば、**その銘柄との入れ替えを検討する**
+   - 入れ替え対象候補: 含み損 < -3% の銘柄 → 損切り + 新規エントリー / LOW確信ポジションの縮小 + 新規エントリー
+   - 入れ替えを採用した場合は rationale に「スコア{X}優先枠: {旧TICKER}と交換」と明記
+   - 入れ替え対象が存在しない（全ポジションが健全かつ全てMEDIUM以上確信）かつスロットが埋まっている場合: PASS は許容するが、reason に「スコア{X}のため次週最優先候補」と記録し、watchlist に `priority_8plus: true` フラグで追記すること
+5. **RSI過熱 × エントリーゲート（強化版）**:
+
+   まず RSI の水準と52W高値との距離で場合分けする:
+
+   | 条件 | 判定 |
+   |---|---|
+   | RSI ≥ 70 かつ 現値が52W高値の **97%以上**（= 高値まで3%以内） | **無条件WAIT** — 特例なし。エントリー禁止。 |
+   | RSI ≥ 70 かつ 52W高値まで 3%超の余地あり | 下記のSECTOR_LEADING特例を適用可能 |
+   | RSI < 70 | RSI条件は問題なし（他条件で判断） |
+
+   **無条件WAITの場合**: BUY禁止。watchlist に `rsi_wait_entry` フィールドとして **「RSI < 65 または 現値の -5% 以下まで押した場合」** を具体的な価格で記録すること。rationale に「RSI{値} かつ52W高値{距離}% 以内のためWAIT。entry条件: RSI < 65（≈$XX）」と明記。
+
+   **SECTOR_LEADING特例（RSI 70–90 かつ 52W高値まで3%超の場合）**:
+   - `rs_signal == STRONG_OUTPERFORM` が真か → **これ単独で特例適用必須**（セクター条件は補強情報として参照）
+   - セクターが市場全体をリードしているか（rs_3m がポジティブかつ市場上位）→ 両方真ならさらに確証
+   - `rs_signal == STRONG_OUTPERFORM` が真の場合: RSI 過熱を理由とした WAIT を **覆さなければならない**（WAIT 継続は禁止）
+   - ただし、ポジションサイズを **2段階** 下げること（HIGH→LOWサイズ、MEDIUM→LOWサイズ）。モメンタム加速リスクへの補償。
+   - rationale に「RSI過熱だがSECTOR_LEADING特例適用・ポジション縮小（2段階）」と明記すること
+   - アナリスト目標が現値を下回っている場合でも、`rs_signal == STRONG_OUTPERFORM` であれば Sentiment スコアへの減点材料として使用しないこと（モメンタム先行でアナリスト目標は陳腐化している可能性が高い）
+6. **Final verdict**: BUY (state conviction) or PASS
 
 **Position sizing (diversified — NOT Half Kelly):**
 - HIGH conviction   → 20–25% of capital (~$1,340–1,675)
 - MEDIUM conviction → 15% of capital   (~$1,005)
 - LOW conviction    → 10% of capital   (~$670)
+
+**ファンダメンタル成長 副軸（ポジションサイズ調整）:**
+
+確信度による基本サイズを決定した後、`score_evidence.fundamentals` の成長率数値を確認して以下を適用する:
+
+| ファンダ条件 | 適用 |
+|---|---|
+| Revenue YoY > 100% **または** EPS YoY > 200% | 上限まで増額可（HIGH: 25%上限まで、MEDIUM: 20%まで引き上げ可） |
+| Revenue YoY < 20% **かつ** EPS YoY < 30% | 1段階縮小（HIGH→MEDIUMサイズ、MEDIUM→LOWサイズ） |
+| それ以外 | 変更なし |
+
+副軸を適用した場合は rationale に「ファンダ副軸適用: Revenue +{X}% / EPS +{Y}% → サイズ{増額/縮小}」と明記すること。
 
 Output a JSON array (one object per BUY recommendation):
 ```json
@@ -286,6 +387,22 @@ Output a JSON array (one object per BUY recommendation):
 
 If no candidates meet the HIGH conviction bar, return `[]`.
 `debate_summary` is for internal logging only — NOT sent to Slack.
+
+**全銘柄 PASS の場合: `no_trade_week` 出力**
+
+全候補に対して PM が PASS / WAIT と判断した場合（BUY が 0件）、以下の JSON を出力する:
+
+```json
+{
+  "no_trade_week": true,
+  "reason": "候補銘柄の理由を記載。例: 全候補が過去2週間で30%以上上昇済み。新規エントリーのリスクリワードが成立しない。",
+  "action": "HOLD_CASH"
+}
+```
+
+この出力が得られた場合:
+1. `proposals = []` として扱い、Slack に「今週はエントリーなし」通知を送る（Step 8参照）
+2. `no_trade_week: true` として `decision_history.json` に記録する（Step 7a参照）
 
 ---
 
@@ -343,6 +460,37 @@ Watchlist sync:
 ✅ COHR — score 7.15, new entry added (research_seeded)
 ⏭ CRWV — score 7.4 < 7.0 threshold, skipped
 ```
+
+---
+
+## Step 7a: Save Decision Log to decision_history.json
+
+ディベート結果を `data/decision_history.json` に追記する。PASS 件数の蓄積により週次レビューを可能にする。
+
+```bash
+# ファイルが存在しない場合は [] で初期化
+# 以下の形式で末尾に追記する
+```
+
+追記する JSON オブジェクト（配列の要素として追加）:
+
+```json
+{
+  "date": "{TODAY_YYYY-MM-DD}",
+  "run_id": "{RUN_ID}",
+  "candidates_evaluated": ["{TICKER1}", "{TICKER2}", "..."],
+  "buy_decisions": ["{BUY_TICKER1}", "..."],
+  "pass_decisions": ["{PASS_TICKER1}", "..."],
+  "no_trade_week": false
+}
+```
+
+- `candidates_evaluated`: ディベートした全銘柄のリスト
+- `buy_decisions`: PM が BUY と判断した銘柄のリスト（空でも `[]`）
+- `pass_decisions`: PM が PASS / WAIT と判断した銘柄のリスト
+- `no_trade_week`: 全候補 PASS の場合 `true`
+
+ファイルを読んで JSON 配列として更新し、書き戻す。
 
 ---
 
@@ -569,10 +717,16 @@ The Portfolio Manager synthesizes all 5 stances and outputs one of four actions:
 
 | アクション | 条件の目安 |
 |---|---|
-| `FULL_EXIT` | 多数(3+)が SELL / RSI 過熱 / マクロ逆風 / テーゼ破綻 |
+| `FULL_EXIT` | 多数(3+)が SELL / RSI 過熱 / マクロ逆風 / **テーゼ破綻**（テーゼが壊れた場合のみ）|
 | `PARTIAL_EXIT` | 意見が割れる / トレンド継続だがリスク高め |
 | `RAISE_TARGET` | 多数が HOLD / カタリスト残存 / テーゼ変わらず |
 | `HOLD` | 全員 HOLD / 現状維持が最善 |
+
+**TARGET_HIT トリガーの優先ルール**:
+トリガーが `TARGET_HIT` の場合、**テーゼが継続中かどうかを最初に判定する**。
+- テーゼ継続中（元の上昇thesis に変化なし、カタリスト残存）→ `PARTIAL_EXIT` または `RAISE_TARGET` を優先。`FULL_EXIT` は原則禁止。
+- テーゼ破綻（元の上昇根拠が消えた、競合逆風、決算ミス等）→ `FULL_EXIT` を選択可。
+- デフォルト行動として TARGET_HIT = フルイグジットにしないこと。初期ターゲットは最低ラインであり、モメンタムが続いている限り継続保有が期待値上有利。
 
 For `PARTIAL_EXIT`: specify `exit_shares` (how many to sell) and `remaining_shares`.
 For `RAISE_TARGET`: specify `new_target_price` and `new_trailing_stop_pct`.

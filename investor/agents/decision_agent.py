@@ -13,6 +13,8 @@ from __future__ import annotations
 
 import csv
 import json
+import subprocess
+import sys
 from datetime import date
 from pathlib import Path
 
@@ -24,6 +26,7 @@ logger = get_logger(__name__)
 
 HISTORY_PATH = Path("data/research_history.json")
 PORTFOLIO_PATH = Path("data/portfolio.csv")
+DECISION_HISTORY_PATH = Path("data/decision_history.json")
 
 # Diversified position sizing (not Half Kelly).
 # Max 25% per position to spread risk across 3-5 stocks.
@@ -119,6 +122,54 @@ def send_proposals(proposals: list[dict]) -> None:
     logger.info(f"Sent {len(proposals)} proposals to Slack")
 
 
+def log_decision_history(
+    proposals: list[dict],
+    run_id: str,
+    all_candidates: list[dict],
+) -> None:
+    """Append decision record to decision_history.json.
+
+    Tracks which tickers were BUY vs PASS so calibration and weekly_review
+    can compute PASS rates and no-trade weeks over time.
+    """
+    history: list[dict] = []
+    if DECISION_HISTORY_PATH.exists():
+        try:
+            history = json.loads(DECISION_HISTORY_PATH.read_text())
+        except Exception:
+            history = []
+
+    buy_tickers = [p["ticker"] for p in proposals if p.get("action") == "BUY"]
+    all_tickers = [c.get("ticker", "") for c in all_candidates if c.get("ticker")]
+    pass_tickers = [t for t in all_tickers if t not in buy_tickers]
+
+    history.append({
+        "date": date.today().isoformat(),
+        "run_id": run_id,
+        "candidates_evaluated": all_tickers,
+        "buy_decisions": buy_tickers,
+        "pass_decisions": pass_tickers,
+        "no_trade_week": len(buy_tickers) == 0,
+    })
+    DECISION_HISTORY_PATH.write_text(json.dumps(history, indent=2, ensure_ascii=False))
+    logger.info(f"Logged decision: {len(buy_tickers)} BUY / {len(pass_tickers)} PASS")
+
+
+def _get_calibration_report() -> str:
+    """Return calibration stats output for prepending to the decision context."""
+    script = Path("scripts/show_calibration_stats.py")
+    if not script.exists():
+        return ""
+    try:
+        result = subprocess.run(
+            [sys.executable, str(script)],
+            capture_output=True, text=True, timeout=15,
+        )
+        return result.stdout.strip()
+    except Exception:
+        return ""
+
+
 def _parse_entry_price(entry_price_range: str) -> float | None:
     if not entry_price_range:
         return None
@@ -145,7 +196,13 @@ def format_research_for_claude(run_id: str, watchlist_run_id: str | None = None)
         return f"No candidates found for run_id={run_id}"
 
     positions = load_open_positions()
-    lines = [
+
+    calibration = _get_calibration_report()
+    lines = []
+    if calibration:
+        lines += ["## 確信度校正レポート（判断前参照）", "", "```", calibration, "```", ""]
+
+    lines += [
         f"# Research Run: {run_id}",
         f"Date: {date.today().isoformat()}",
         f"Capital available: ${settings.available_capital_usd:,.0f}",

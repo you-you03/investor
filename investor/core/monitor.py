@@ -6,7 +6,7 @@ Threshold rules:
   current_price <= stop_loss          → HIGH  (STOP_LOSS)
   intraday change < -5%               → HIGH  (SHARP_DROP)
   current_price >= target_price       → HIGH  (TARGET_REACHED)
-  cumulative P&L < -8%                → MEDIUM (SIGNIFICANT_DRAWDOWN)
+  cumulative P&L < -5%                → MEDIUM (SIGNIFICANT_DRAWDOWN)
 """
 
 from __future__ import annotations
@@ -115,8 +115,8 @@ def check_position(position: dict, snapshot: dict) -> list[Alert]:
             **base,
         ))
 
-    # MEDIUM: cumulative drawdown exceeds 8%
-    if unrealized_pnl_pct < -8.0:
+    # MEDIUM: cumulative drawdown exceeds 5% (early warning before stop-loss)
+    if unrealized_pnl_pct < -5.0:
         alerts.append(Alert(
             alert_type="SIGNIFICANT_DRAWDOWN",
             severity="MEDIUM",

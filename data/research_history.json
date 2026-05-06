@@ -11,16 +11,16 @@
           "rationale": "test",
           "outcome": {
             "status": "open",
-            "outcome_type": "OPEN",
-            "entry_price": 177.39,
-            "entry_date": "2026-04-05",
-            "current_price": 177.63999938964844,
-            "days_held": 2,
-            "unrealized_return_pct": 0.14,
-            "pnl_usd": null,
-            "spy_return_pct": 0.47,
-            "alpha_pct": -0.33,
-            "recorded_at": "2026-04-07"
+            "outcome_type": "AT_TARGET",
+            "entry_price": 208.27,
+            "entry_date": "2026-04-25",
+            "current_price": 213.1699981689453,
+            "days_held": 4,
+            "unrealized_return_pct": 2.35,
+            "pnl_usd": 34.3,
+            "spy_return_pct": -0.32,
+            "alpha_pct": 2.67,
+            "recorded_at": "2026-04-29"
           }
         }
       ]
@@ -48,17 +48,19 @@
           ],
           "time_horizon": "4-8\u9031\u9593",
           "outcome": {
-            "status": "open",
-            "outcome_type": "OPEN",
+            "status": "closed",
+            "outcome_type": "TIME_EXIT",
             "entry_price": 92.62,
+            "exit_price": 94.9,
             "entry_date": "2026-04-05",
-            "current_price": 94.80999755859375,
-            "days_held": 2,
-            "unrealized_return_pct": 2.36,
-            "pnl_usd": 78.84,
-            "spy_return_pct": 0.47,
-            "alpha_pct": 1.89,
-            "recorded_at": "2026-04-07"
+            "exit_date": "2026-04-11",
+            "days_held": 6,
+            "realized_return_pct": 2.46,
+            "pnl_usd": 82.08,
+            "spy_return_pct": 3.6,
+            "alpha_pct": -1.14,
+            "win": true,
+            "recorded_at": "2026-04-29"
           }
         },
         {
@@ -80,17 +82,19 @@
           ],
           "time_horizon": "3-6\u9031\u9593",
           "outcome": {
-            "status": "open",
-            "outcome_type": "OPEN",
+            "status": "closed",
+            "outcome_type": "TARGET_HIT",
             "entry_price": 103.91,
+            "exit_price": 150.6,
             "entry_date": "2026-04-05",
-            "current_price": 107.44999694824219,
-            "days_held": 2,
-            "unrealized_return_pct": 3.41,
-            "pnl_usd": 67.26,
-            "spy_return_pct": 0.47,
-            "alpha_pct": 2.94,
-            "recorded_at": "2026-04-07"
+            "exit_date": "2026-04-11",
+            "days_held": 6,
+            "realized_return_pct": 44.93,
+            "pnl_usd": 887.11,
+            "spy_return_pct": 3.6,
+            "alpha_pct": 41.33,
+            "win": true,
+            "recorded_at": "2026-04-29"
           }
         },
         {
@@ -199,7 +203,22 @@
           "atr_multiplier_reason": "\u6c7a\u7b9725\u65e5\u524d+\u30d5\u30a1\u30f3\u30c0\u30e1\u30f3\u30bf\u30eb\u30ba\u5f37\u56fa \u2192 3\u00d7ATR\u63a1\u7528",
           "analyst_upside_pct": 37.0,
           "macro_regime": "NORMAL",
-          "data_notes": "Financial data as of Q4 2025. Market data 2026-04-11."
+          "data_notes": "Financial data as of Q4 2025. Market data 2026-04-11.",
+          "outcome": {
+            "status": "closed",
+            "outcome_type": "TARGET_HIT",
+            "entry_price": 149.05,
+            "exit_price": 212.84,
+            "entry_date": "2026-04-11",
+            "exit_date": "2026-04-25",
+            "days_held": 14,
+            "realized_return_pct": 42.8,
+            "pnl_usd": 701.69,
+            "spy_return_pct": 5.07,
+            "alpha_pct": 37.73,
+            "win": true,
+            "recorded_at": "2026-04-29"
+          }
         },
         {
           "ticker": "CRDO",
@@ -244,7 +263,22 @@
           "atr_multiplier_reason": "\u6c7a\u7b9752\u65e5\u5f8c\u3067\u7d14\u6280\u8853/\u30d5\u30a1\u30f3\u30c0\u30e1\u30f3\u30bf\u30eb\u30bb\u30c3\u30c8\u30a2\u30c3\u30d7 \u2192 \u30c7\u30d5\u30a9\u30eb\u30c82\u00d7ATR\u63a1\u7528",
           "analyst_upside_pct": 66.7,
           "macro_regime": "NORMAL",
-          "data_notes": "Financial data as of Q3 FY2026(\u6700\u65b0). Market data 2026-04-11."
+          "data_notes": "Financial data as of Q3 FY2026(\u6700\u65b0). Market data 2026-04-11.",
+          "outcome": {
+            "status": "closed",
+            "outcome_type": "TARGET_HIT",
+            "entry_price": 119.59,
+            "exit_price": 160.69,
+            "entry_date": "2026-04-11",
+            "exit_date": "2026-04-18",
+            "days_held": 7,
+            "realized_return_pct": 34.37,
+            "pnl_usd": 164.4,
+            "spy_return_pct": 4.52,
+            "alpha_pct": 29.85,
+            "win": true,
+            "recorded_at": "2026-04-29"
+          }
         },
         {
           "ticker": "MRVL",
@@ -335,7 +369,20 @@
           "atr_multiplier_reason": "\u5f37\u529b\u306a\u4e8c\u91cd\u30ab\u30bf\u30ea\u30b9\u30c8(Meta+Anthropic)\u304c\u3042\u308b\u304c\u9ad8\u8ca0\u50b5\u30ea\u30b9\u30af\u3067\u3084\u3084\u4fdd\u5b88\u7684\u306b2.5\u00d7ATR",
           "analyst_upside_pct": 17.6,
           "macro_regime": "NORMAL",
-          "data_notes": "Financial data as of Q3 2025. Market data 2026-04-11. Meta deal $21B and Anthropic deal announced today."
+          "data_notes": "Financial data as of Q3 2025. Market data 2026-04-11. Meta deal $21B and Anthropic deal announced today.",
+          "outcome": {
+            "status": "open",
+            "outcome_type": "OPEN",
+            "entry_price": 102.0,
+            "entry_date": "2026-04-11",
+            "current_price": 105.52999877929688,
+            "days_held": 18,
+            "unrealized_return_pct": 3.46,
+            "pnl_usd": 21.18,
+            "spy_return_pct": 4.74,
+            "alpha_pct": -1.28,
+            "recorded_at": "2026-04-29"
+          }
         },
         {
           "ticker": "COHR",
@@ -425,7 +472,20 @@
           "atr_multiplier_reason": "\u6c7a\u7b9740\u65e5\u5f8c\u3001\u30e2\u30e1\u30f3\u30bf\u30e0\u5f31\u3081 \u2192 \u30c7\u30d5\u30a9\u30eb\u30c82\u00d7ATR\u63a1\u7528",
           "analyst_upside_pct": 42.2,
           "macro_regime": "NORMAL",
-          "data_notes": "Financial data as of Q4 FY2025. Market data 2026-04-11. \u30e2\u30e1\u30f3\u30bf\u30e0\u5f31\u3067Sub-priority\u5019\u88dc\u3002"
+          "data_notes": "Financial data as of Q4 FY2025. Market data 2026-04-11. \u30e2\u30e1\u30f3\u30bf\u30e0\u5f31\u3067Sub-priority\u5019\u88dc\u3002",
+          "outcome": {
+            "status": "open",
+            "outcome_type": "AT_TARGET",
+            "entry_price": 208.27,
+            "entry_date": "2026-04-25",
+            "current_price": 213.1699981689453,
+            "days_held": 4,
+            "unrealized_return_pct": 2.35,
+            "pnl_usd": 34.3,
+            "spy_return_pct": -0.32,
+            "alpha_pct": 2.67,
+            "recorded_at": "2026-04-29"
+          }
         }
       ],
       "proposals": [
@@ -592,7 +652,22 @@
           "atr_multiplier_used": 2.0,
           "atr_multiplier_reason": "\u6c7a\u7b9724\u65e5\u5f8c(>14\u65e5)\u2192\u6a19\u6e962.0\u00d7ATR\u63a1\u7528",
           "analyst_upside_pct": 36.0,
-          "data_notes": "Semiconductor\u30bb\u30af\u30bf\u30fc(LEADING). options pc_vol=0.306(\u30b3\u30fc\u30eb\u652f\u914d). 52w high\u4ed8\u8fd1\u30d6\u30ec\u30a4\u30af\u30a2\u30a6\u30c8\u4e2d\u3002"
+          "data_notes": "Semiconductor\u30bb\u30af\u30bf\u30fc(LEADING). options pc_vol=0.306(\u30b3\u30fc\u30eb\u652f\u914d). 52w high\u4ed8\u8fd1\u30d6\u30ec\u30a4\u30af\u30a2\u30a6\u30c8\u4e2d\u3002",
+          "outcome": {
+            "status": "closed",
+            "outcome_type": "TARGET_HIT",
+            "entry_price": 149.05,
+            "exit_price": 212.84,
+            "entry_date": "2026-04-11",
+            "exit_date": "2026-04-25",
+            "days_held": 14,
+            "realized_return_pct": 42.8,
+            "pnl_usd": 701.69,
+            "spy_return_pct": 5.07,
+            "alpha_pct": 37.73,
+            "win": true,
+            "recorded_at": "2026-04-29"
+          }
         },
         {
           "ticker": "CRDO",
@@ -637,7 +712,22 @@
           "atr_multiplier_used": 2.0,
           "atr_multiplier_reason": "\u6c7a\u7b9751\u65e5\u5f8c\u30fb\u5f37\u30d5\u30a1\u30f3\u30c0\u30fb\u6700\u5927\u30a2\u30ca\u30ea\u30b9\u30c8upside\u2192\u6a19\u6e962.0\u00d7ATR",
           "analyst_upside_pct": 66.7,
-          "data_notes": "Semiconductor\u30bb\u30af\u30bf\u30fc(LEADING). \u5168\u5019\u88dc\u4e2d\u6700\u9ad8\u30a2\u30ca\u30ea\u30b9\u30c8upside+66.7%. \u30d5\u30a1\u30f3\u30c0\u30b9\u30b3\u30a210/10\u3002"
+          "data_notes": "Semiconductor\u30bb\u30af\u30bf\u30fc(LEADING). \u5168\u5019\u88dc\u4e2d\u6700\u9ad8\u30a2\u30ca\u30ea\u30b9\u30c8upside+66.7%. \u30d5\u30a1\u30f3\u30c0\u30b9\u30b3\u30a210/10\u3002",
+          "outcome": {
+            "status": "closed",
+            "outcome_type": "TARGET_HIT",
+            "entry_price": 119.59,
+            "exit_price": 160.69,
+            "entry_date": "2026-04-11",
+            "exit_date": "2026-04-18",
+            "days_held": 7,
+            "realized_return_pct": 34.37,
+            "pnl_usd": 164.4,
+            "spy_return_pct": 4.52,
+            "alpha_pct": 29.85,
+            "win": true,
+            "recorded_at": "2026-04-29"
+          }
         },
         {
           "ticker": "MRVL",
@@ -726,7 +816,20 @@
           "atr_multiplier_used": 2.0,
           "atr_multiplier_reason": "\u6c7a\u7b9739\u65e5\u5f8c\u30fb\u6a19\u6e962.0\u00d7ATR\u3002\u9577\u671f\u76ee\u7dda\u3067\u306f\u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19$268\u304c\u771f\u306e\u30bf\u30fc\u30b2\u30c3\u30c8\u3002",
           "analyst_upside_pct": 42.2,
-          "data_notes": "Semiconductor\u30bb\u30af\u30bf\u30fc(LEADING). fPE=16.97\u306f\u5927\u578bAI\u682a\u3068\u3057\u3066\u6975\u5272\u5b89\u3002ATR\u76ee\u6a19\u4fdd\u5b88\u7684\u3001\u771f\u306e\u9577\u671f\u76ee\u6a19$268\u3002"
+          "data_notes": "Semiconductor\u30bb\u30af\u30bf\u30fc(LEADING). fPE=16.97\u306f\u5927\u578bAI\u682a\u3068\u3057\u3066\u6975\u5272\u5b89\u3002ATR\u76ee\u6a19\u4fdd\u5b88\u7684\u3001\u771f\u306e\u9577\u671f\u76ee\u6a19$268\u3002",
+          "outcome": {
+            "status": "open",
+            "outcome_type": "AT_TARGET",
+            "entry_price": 208.27,
+            "entry_date": "2026-04-25",
+            "current_price": 213.1699981689453,
+            "days_held": 4,
+            "unrealized_return_pct": 2.35,
+            "pnl_usd": 34.3,
+            "spy_return_pct": -0.32,
+            "alpha_pct": 2.67,
+            "recorded_at": "2026-04-29"
+          }
         },
         {
           "ticker": "AVGO",
@@ -821,7 +924,22 @@
           "atr_multiplier_used": 2.0,
           "atr_multiplier_reason": "\u6c7a\u7b9724\u65e5\u5f8c(>14\u65e5)\u2192\u6a19\u6e962.0\u00d7ATR\u63a1\u7528",
           "analyst_upside_pct": 36.0,
-          "data_notes": "Semiconductor\u30bb\u30af\u30bf\u30fc(LEADING). options pc_vol=0.306(\u30b3\u30fc\u30eb\u652f\u914d). 52w high\u4ed8\u8fd1\u30d6\u30ec\u30a4\u30af\u30a2\u30a6\u30c8\u4e2d\u3002"
+          "data_notes": "Semiconductor\u30bb\u30af\u30bf\u30fc(LEADING). options pc_vol=0.306(\u30b3\u30fc\u30eb\u652f\u914d). 52w high\u4ed8\u8fd1\u30d6\u30ec\u30a4\u30af\u30a2\u30a6\u30c8\u4e2d\u3002",
+          "outcome": {
+            "status": "closed",
+            "outcome_type": "TARGET_HIT",
+            "entry_price": 149.05,
+            "exit_price": 212.84,
+            "entry_date": "2026-04-11",
+            "exit_date": "2026-04-25",
+            "days_held": 14,
+            "realized_return_pct": 42.8,
+            "pnl_usd": 701.69,
+            "spy_return_pct": 5.07,
+            "alpha_pct": 37.73,
+            "win": true,
+            "recorded_at": "2026-04-29"
+          }
         },
         {
           "ticker": "CRDO",
@@ -866,7 +984,22 @@
           "atr_multiplier_used": 2.0,
           "atr_multiplier_reason": "\u6c7a\u7b9751\u65e5\u5f8c\u30fb\u5f37\u30d5\u30a1\u30f3\u30c0\u30fb\u6700\u5927\u30a2\u30ca\u30ea\u30b9\u30c8upside\u2192\u6a19\u6e962.0\u00d7ATR",
           "analyst_upside_pct": 66.7,
-          "data_notes": "Semiconductor\u30bb\u30af\u30bf\u30fc(LEADING). \u5168\u5019\u88dc\u4e2d\u6700\u9ad8\u30a2\u30ca\u30ea\u30b9\u30c8upside+66.7%. \u30d5\u30a1\u30f3\u30c0\u30b9\u30b3\u30a210/10\u3002"
+          "data_notes": "Semiconductor\u30bb\u30af\u30bf\u30fc(LEADING). \u5168\u5019\u88dc\u4e2d\u6700\u9ad8\u30a2\u30ca\u30ea\u30b9\u30c8upside+66.7%. \u30d5\u30a1\u30f3\u30c0\u30b9\u30b3\u30a210/10\u3002",
+          "outcome": {
+            "status": "closed",
+            "outcome_type": "TARGET_HIT",
+            "entry_price": 119.59,
+            "exit_price": 160.69,
+            "entry_date": "2026-04-11",
+            "exit_date": "2026-04-18",
+            "days_held": 7,
+            "realized_return_pct": 34.37,
+            "pnl_usd": 164.4,
+            "spy_return_pct": 4.52,
+            "alpha_pct": 29.85,
+            "win": true,
+            "recorded_at": "2026-04-29"
+          }
         },
         {
           "ticker": "MRVL",
@@ -955,7 +1088,20 @@
           "atr_multiplier_used": 2.0,
           "atr_multiplier_reason": "\u6c7a\u7b9739\u65e5\u5f8c\u30fb\u6a19\u6e962.0\u00d7ATR\u3002\u9577\u671f\u76ee\u7dda\u3067\u306f\u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19$268\u304c\u771f\u306e\u30bf\u30fc\u30b2\u30c3\u30c8\u3002",
           "analyst_upside_pct": 42.2,
-          "data_notes": "Semiconductor\u30bb\u30af\u30bf\u30fc(LEADING). fPE=16.97\u306f\u5927\u578bAI\u682a\u3068\u3057\u3066\u6975\u5272\u5b89\u3002ATR\u76ee\u6a19\u4fdd\u5b88\u7684\u3001\u771f\u306e\u9577\u671f\u76ee\u6a19$268\u3002"
+          "data_notes": "Semiconductor\u30bb\u30af\u30bf\u30fc(LEADING). fPE=16.97\u306f\u5927\u578bAI\u682a\u3068\u3057\u3066\u6975\u5272\u5b89\u3002ATR\u76ee\u6a19\u4fdd\u5b88\u7684\u3001\u771f\u306e\u9577\u671f\u76ee\u6a19$268\u3002",
+          "outcome": {
+            "status": "open",
+            "outcome_type": "AT_TARGET",
+            "entry_price": 208.27,
+            "entry_date": "2026-04-25",
+            "current_price": 213.1699981689453,
+            "days_held": 4,
+            "unrealized_return_pct": 2.35,
+            "pnl_usd": 34.3,
+            "spy_return_pct": -0.32,
+            "alpha_pct": 2.67,
+            "recorded_at": "2026-04-29"
+          }
         },
         {
           "ticker": "AVGO",
@@ -1103,7 +1249,20 @@
           "analyst_upside_pct": 33.2,
           "macro_regime": "NORMAL",
           "data_notes": "Financial data as of latest quarter 2026.",
-          "rank_in_run": 1
+          "rank_in_run": 1,
+          "outcome": {
+            "status": "open",
+            "outcome_type": "AT_TARGET",
+            "entry_price": 208.27,
+            "entry_date": "2026-04-25",
+            "current_price": 213.1699981689453,
+            "days_held": 4,
+            "unrealized_return_pct": 2.35,
+            "pnl_usd": 34.3,
+            "spy_return_pct": -0.32,
+            "alpha_pct": 2.67,
+            "recorded_at": "2026-04-29"
+          }
         },
         {
           "ticker": "VRT",
@@ -1385,7 +1544,20 @@
           "atr_multiplier_reason": "\u30c7\u30d5\u30a9\u30eb\u30c82\u00d7ATR\uff08\u6c7a\u7b9728\u65e5\u5f8c\u300252\u9031\u9ad8\u5024$212.19\u304c\u62b5\u6297\u7dda\u306e\u305f\u30811.5\u00d7\u3082\u691c\u8a0e\u3057\u305f\u304c\u3001\u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19$268\u3092\u8003\u616e\u30572\u00d7\u7dad\u6301\uff09",
           "analyst_upside_pct": 32.6,
           "macro_regime": "NORMAL",
-          "data_notes": "\u30a2\u30ca\u30ea\u30b9\u30c8\u30c7\u30fc\u30bf\u672a\u53d6\u5f97\uff08Yahoo Finance API\u5236\u9650\uff09\u3002analyst_recommendation/count \u306fticker_details\u3088\u308a\u53d6\u5f97\u3002"
+          "data_notes": "\u30a2\u30ca\u30ea\u30b9\u30c8\u30c7\u30fc\u30bf\u672a\u53d6\u5f97\uff08Yahoo Finance API\u5236\u9650\uff09\u3002analyst_recommendation/count \u306fticker_details\u3088\u308a\u53d6\u5f97\u3002",
+          "outcome": {
+            "status": "open",
+            "outcome_type": "AT_TARGET",
+            "entry_price": 208.27,
+            "entry_date": "2026-04-25",
+            "current_price": 213.1699981689453,
+            "days_held": 4,
+            "unrealized_return_pct": 2.35,
+            "pnl_usd": 34.3,
+            "spy_return_pct": -0.32,
+            "alpha_pct": 2.67,
+            "recorded_at": "2026-04-29"
+          }
         },
         {
           "ticker": "AVGO",
@@ -1495,7 +1667,20 @@
           "allocation_pct": 25,
           "shares": 8,
           "rationale": "\u534a\u5c0e\u4f53LEADING\u30bb\u30af\u30bf\u30fc\u3002rev+73%/EPS+96%\u3002STRONG_BUY 56\u540d\u3001\u76ee\u6a19$268(+29%)\u300252w\u9ad8\u5024$212\u8fd1\u63a5\u3001\u30d6\u30ec\u30a4\u30af\u30a2\u30a6\u30c8\u671f\u5f85\u3002Options BULLISH\u3002",
-          "risks": "RSI71.6\u3067\u904e\u8cb7\u3044\u570f\u3002\u30a4\u30f3\u30b5\u30a4\u30c0\u30fc\u58f2\u308a\u7d99\u7d9a\u3002"
+          "risks": "RSI71.6\u3067\u904e\u8cb7\u3044\u570f\u3002\u30a4\u30f3\u30b5\u30a4\u30c0\u30fc\u58f2\u308a\u7d99\u7d9a\u3002",
+          "outcome": {
+            "status": "open",
+            "outcome_type": "AT_TARGET",
+            "entry_price": 208.27,
+            "entry_date": "2026-04-25",
+            "current_price": 213.1699981689453,
+            "days_held": 4,
+            "unrealized_return_pct": 2.35,
+            "pnl_usd": 34.3,
+            "spy_return_pct": -0.32,
+            "alpha_pct": 2.67,
+            "recorded_at": "2026-04-29"
+          }
         },
         {
           "ticker": "TSM",
@@ -1506,7 +1691,20 @@
           "allocation_pct": 20,
           "shares": 3,
           "rationale": "52w\u9ad8\u5024\u30d6\u30ec\u30a4\u30af\u30a2\u30a6\u30c8\u3002\u30a4\u30f3\u30b5\u30a4\u30c0\u30fc\u8cb7\u3044\u3002STRONG_BUY\u3001\u76ee\u6a19$463(+15.1%)\u3002rev+35%/EPS+58%\u3001\u5229\u76ca\u738758%\u306e\u9ad8\u54c1\u8cea\u9298\u67c4\u3002",
-          "risks": "Options NEUTRAL_BEARISH\u3002\u53f0\u6e7e\u5730\u653f\u5b66\u30ea\u30b9\u30af\u3002"
+          "risks": "Options NEUTRAL_BEARISH\u3002\u53f0\u6e7e\u5730\u653f\u5b66\u30ea\u30b9\u30af\u3002",
+          "outcome": {
+            "status": "open",
+            "outcome_type": "AT_STOP",
+            "entry_price": 402.46,
+            "entry_date": "2026-04-26",
+            "current_price": 392.3399963378906,
+            "days_held": 3,
+            "unrealized_return_pct": -2.51,
+            "pnl_usd": -30.36,
+            "spy_return_pct": -0.32,
+            "alpha_pct": -2.19,
+            "recorded_at": "2026-04-29"
+          }
         },
         {
           "ticker": "PANW",
@@ -1517,7 +1715,20 @@
           "allocation_pct": 15,
           "shares": 5,
           "rationale": "CEO Nikesh Arora\u304c3/27\u306b$10M\u81ea\u793e\u682a\u8cb7\u3044\u3002Options BULLISH\u3002EPS+60.5%\u3002\u76ee\u6a19$206(+15.4%)\u3002",
-          "risks": "Cloud/Software\u30bb\u30af\u30bf\u30fc\u304clagging\u3002PEG 3.04\u3067\u5272\u9ad8\u3002"
+          "risks": "Cloud/Software\u30bb\u30af\u30bf\u30fc\u304clagging\u3002PEG 3.04\u3067\u5272\u9ad8\u3002",
+          "outcome": {
+            "status": "open",
+            "outcome_type": "OPEN",
+            "entry_price": 178.54,
+            "entry_date": "2026-04-25",
+            "current_price": 180.99000549316406,
+            "days_held": 4,
+            "unrealized_return_pct": 1.37,
+            "pnl_usd": 12.25,
+            "spy_return_pct": -0.32,
+            "alpha_pct": 1.69,
+            "recorded_at": "2026-04-29"
+          }
         },
         {
           "ticker": "MU",
@@ -1529,6 +1740,121 @@
           "shares": 2,
           "rationale": "52w\u9ad8\u5024\u30d6\u30ec\u30a4\u30af\u3002Forward PE 4.91\u3067\u6975\u3081\u3066\u5272\u5b89\u3002rev+196%/EPS+756%\u3002STRONG_BUY\u3002",
           "risks": "Options NEUTRAL_BEARISH\u3002\u30a4\u30f3\u30b5\u30a4\u30c0\u30fc\u5927\u91cf\u58f2\u308a$42.7M\u3002\u76ee\u6a19\u307e\u3067+7.5%\u3068\u5c11\u306a\u3044\u3002"
+        }
+      ]
+    },
+    {
+      "run_id": "b1b40615-91e4-4fdb-8e33-ec727e5eda5a",
+      "date": "2026-04-29",
+      "candidates": [
+        {
+          "ticker": "MU",
+          "conviction": "MEDIUM",
+          "entry_price": 504.29,
+          "target_price": 556.79,
+          "stop_loss": 478.04,
+          "allocation_pct": 15,
+          "shares": 2,
+          "rationale": "Revenue+196%YoY(HBM\u30b5\u30a4\u30af\u30eb\u6700\u76db\u671f)\u3002Forward PE=4.97/PEG=0.29 \u2014 \u30bb\u30df\u30b3\u30f3\u6700\u5b89\u5024\u6c34\u6e96\u3002Options BULLISH(Call186K/Put130K)\u3002\u672c\u65e5-2.83%\u62bc\u3057\u76ee\u3067RSI=65.96(\u5065\u5168)\u3002\u30a2\u30ca\u30ea\u30b9\u30c841\u540dstrong_buy\u76ee\u6a19$537\u3002\u30dd\u30fc\u30c8\u30d5\u30a9\u30ea\u30aa\u6e80\u676f\u306e\u305f\u3081WATCHLIST\u3002TSM/UAL\u505c\u6b62\u5f8c\u306b\u512a\u5148\u30a8\u30f3\u30c8\u30ea\u30fc\u3002",
+          "risks": "\u30a4\u30f3\u30b5\u30a4\u30c0\u30fc\u58f2\u308a$37M\u3002HBM\u30b5\u30a4\u30af\u30eb\u4f9d\u5b58\u300252w\u9ad8\u5024$531\u8fd1\u508d\u3002"
+        },
+        {
+          "ticker": "SANM",
+          "conviction": "LOW",
+          "entry_price": 215.46,
+          "target_price": 237.32,
+          "stop_loss": 204.53,
+          "allocation_pct": 10,
+          "shares": 0,
+          "rationale": "Revenue+102%YoY(AI\u57fa\u677fEMS\u6025\u5897)\u3002\u672c\u65e5+14.6%\u306752w\u65b0\u9ad8\u5024\u3002Options\u6975\u5f37BULLISH(Call5658/Put1161)\u3002Forward PE=17\u3002RSI=85.1\u3067\u73fe\u5728\u30a8\u30f3\u30c8\u30ea\u30fc\u4e0d\u53ef\u3002RSI<65\u307e\u3067\u5f85\u6a5f\u306eWATCHLIST\u3002",
+          "risks": "RSI=85.1 \u2014 \u6975\u904e\u71b1\u3002\u30a2\u30ca\u30ea\u30b9\u30c84\u540d\u306e\u307f(\u30ab\u30d0\u30ec\u30c3\u30b8\u8584)\u3002\u76ee\u6a19$173.75 < \u73fe\u5728\u5024(\u53e4\u3044\u30c7\u30fc\u30bf\u53ef\u80fd\u6027)\u3002"
+        },
+        {
+          "ticker": "HRI",
+          "conviction": "LOW",
+          "entry_price": 133.96,
+          "target_price": 147.52,
+          "stop_loss": 127.18,
+          "allocation_pct": 10,
+          "shares": 0,
+          "rationale": "\u53d6\u7de0\u5f79\u30a4\u30f3\u30b5\u30a4\u30c0\u30fc\u8cb7\u3044$427K(2\u6708)\u3002Revenue+32.3%\u3002Options\u6975\u5f37BULLISH(PC vol ratio=0.083)\u3002Forward PE=12.9\u300252w\u9ad8\u5024$188\u304b\u3089-29%\u3002\u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19$162.3(+21%)\u3002WATCHLIST\u3002",
+          "risks": "D/E=508(\u9ad8\u30ec\u30d0\u30ec\u30c3\u30b8)\u3002\u666f\u6c17\u654f\u611f\u696d\u7a2e\u3002\u534a\u5c0e\u4f53LEADING\u30bb\u30af\u30bf\u30fc\u306b\u6bd4\u3079\u52a3\u5f8c\u3002"
+        }
+      ]
+    },
+    {
+      "run_id": "aec305c5-7fb9-469a-a7a2-e3fe8cdd16ee",
+      "date": "2026-05-04",
+      "candidates": [
+        {
+          "ticker": "MU",
+          "conviction": "HIGH",
+          "entry_price": 542.21,
+          "target_price": 600.09,
+          "stop_loss": 513.27,
+          "allocation_pct": 24,
+          "shares": 3,
+          "rationale": "Revenue+196%YoY($23.86B)\u3002Forward PE=5.34\u3001PEG=0.19 \u2014 \u534a\u5c0e\u4f53\u30bb\u30af\u30bf\u30fc\u6700\u5272\u5b89\u3002\u672c\u65e552w\u9ad8\u5024\u30d6\u30ec\u30a4\u30af($545.91)\u3002MACD histogram\u6025\u52a0\u901f(7.68)\u3002EPS surprise+33.2%\u3002\u30a2\u30ca\u30ea\u30b9\u30c842\u540dstrong_buy\u3002",
+          "risks": "RSI=72(\u9ad8\u3081)\u300252w\u9ad8\u5024\u4ed8\u8fd1\u306e\u305f\u3081\u30d7\u30eb\u30d0\u30c3\u30af\u53ef\u80fd\u6027\u3002\u30b5\u30a4\u30af\u30eb\u9298\u67c4\u306e\u305f\u3081\u666f\u6c17\u920d\u5316\u30ea\u30b9\u30af\u3002"
+        },
+        {
+          "ticker": "NVDA",
+          "conviction": "HIGH",
+          "entry_price": 198.45,
+          "target_price": 211.26,
+          "stop_loss": 192.04,
+          "allocation_pct": 24,
+          "shares": 8,
+          "rationale": "RSI=53\u3067\u5065\u5168\u3002Forward PE=17.66\u3001PEG=0.63 \u2014 AI\u6700\u5927\u53d7\u76ca\u682a\u3068\u3057\u3066\u5272\u5b89\u3002Net income=Q\u5f53\u305f\u308a$42.96B\u3002Options BULLISH(PC ratio=0.484)\u300257\u540dstrong_buy\u3001\u76ee\u6a19$269.17(+35%\u4e0a\u6607\u4f59\u5730)\u3002",
+          "risks": "MACD histogram\u5fae\u5f31\u30d9\u30a2\u30ea\u30c3\u30b7\u30e5(-0.171)\u3002\u30a4\u30f3\u30b5\u30a4\u30c0\u30fc\u58f2\u5374$172M\u3002\u5927\u578b\u682a\u306e\u305f\u3081\u77ed\u671f\u5024\u52d5\u304d\u9650\u5b9a\u7684\u3002"
+        },
+        {
+          "ticker": "TEAM",
+          "conviction": "HIGH",
+          "entry_price": 88.88,
+          "target_price": 100.68,
+          "stop_loss": 82.98,
+          "allocation_pct": 20,
+          "shares": 15,
+          "rationale": "\u672c\u65e5EPS surprise+31%(Q1 2026)\u3002BB\u30d0\u30f3\u30c9\u4e0a\u629c\u3051(\u4e0a\u4f4d$81)\u3067\u5f37\u529b\u30d6\u30ec\u30a4\u30af\u30a2\u30a6\u30c8\u3002Revenue+31.7%YoY\u3002Options BULLISH(PC ratio=0.489)\u3002\u30a2\u30ca\u30ea\u30b9\u30c831\u540dbuy\u3001\u76ee\u6a19$142.34(+60%\u4e0a\u6607\u4f59\u5730)\u3002PEG=0.8\u3002",
+          "risks": "GAAP\u8d64\u5b57\u7d99\u7d9a\u300252w\u9ad8\u5024$232\u304b\u308962%\u4e0b\u65b9\u3067\u307e\u3060\u56de\u5fa9\u9014\u4e2d\u3002D/E=141(\u9ad8\u30ec\u30d0\u30ec\u30c3\u30b8)\u3002"
+        },
+        {
+          "ticker": "RDDT",
+          "conviction": "MEDIUM",
+          "entry_price": 166.48,
+          "target_price": 185.2,
+          "stop_loss": 157.12,
+          "allocation_pct": 15,
+          "shares": 6,
+          "rationale": "Revenue+69%YoY($725.6M)\u3001\u9ed2\u5b57(\u5229\u76ca\u738727.6%)\u3002\u53d6\u7de0\u5f79\u30a4\u30f3\u30b5\u30a4\u30c0\u30fc2\u6708-3\u6708$8.87M\u8cfc\u5165\u3002Options BULLISH(PC ratio=0.382)\u3002\u30a2\u30ca\u30ea\u30b9\u30c831\u540dbuy\u3001\u76ee\u6a19$224.53(+35%\u4e0a\u6607\u4f59\u5730)\u3002Forward PE=19.74\u3002",
+          "risks": "MACD histogram\u5fae\u5f31\u30cd\u30ac\u30c6\u30a3\u30d6(-0.264)\u3002Communication sector\u306fLAGGING\u300252w\u9ad8\u5024$282.95\u304b\u308941%\u4e0b\u65b9\u3002"
+        }
+      ]
+    },
+    {
+      "run_id": "ce3b44d4-a83e-4832-a8bc-6649ecb95576",
+      "date": "2026-05-06",
+      "candidates": [
+        {
+          "ticker": "WAT",
+          "score": 7.0,
+          "action": "WATCHLIST_ADD",
+          "reason": "Waters Corp\uff08\u5206\u6790\u8a08\u6e2c\u6a5f\u5668\uff09\u3002EPS+85.3%\u30fbRev+40.9%\u306e\u6c7a\u7b97\u30d3\u30fc\u30c8\u3002fwd_PE=21/PEG=1.31\u3067\u5272\u5b89\u3002RSI=63\u30fbOptions BULLISH(pc=0.333)\u30fbInsider NET_BUYER\u3002vs52wH -17%\u3067\u4e0a\u6607\u4f59\u5730\u3042\u308a\u3002EMA20/50\u3092\u672c\u65e5\u4e0a\u629c\u3051\u3002\u30a8\u30f3\u30c8\u30ea\u30fc\u30be\u30fc\u30f3$330-345\u3001stop $328\u3001target $372(ATR)\u3002",
+          "entry_zone": "$330-345",
+          "stop": "$328.07",
+          "target": "$372.10",
+          "conviction": "MEDIUM"
+        },
+        {
+          "ticker": "STRL",
+          "score": 5.5,
+          "action": "WATCH_LATER",
+          "reason": "Sterling Infrastructure\uff08\u5efa\u8a2d\uff09\u3002EPS+120.9%\u30fbRev+75.3%\u306e\u30d5\u30a1\u30f3\u30c0\u5f37\u3044\u3002\u305f\u3060\u3057\u672c\u65e5+24.5%\u3067RSI=86\u6975\u904e\u71b1\u3001Options BEARISH(pc=1.58)\u3001Insider $68.2M\u58f2\u308a\u3002$600-650\u30d7\u30eb\u30d0\u30c3\u30af\u3067\u518d\u8a55\u4fa1\uff08RSI\u51b7\u5374\u5f8c\uff09\u3002",
+          "entry_zone": "$600-650\uff08\u30d7\u30eb\u30d0\u30c3\u30af\u5f8c\uff09",
+          "stop": "N/A",
+          "target": "N/A",
+          "conviction": "LOW"
         }
       ]
     }

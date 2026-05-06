@@ -14,7 +14,7 @@ from __future__ import annotations
 import json
 import uuid
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from datetime import date
+from datetime import date, datetime
 from pathlib import Path
 
 from investor.data.yfinance_client import SCREEN_UNIVERSE
@@ -39,6 +39,7 @@ logger = get_logger(__name__)
 
 HISTORY_PATH = Path("data/research_history.json")
 WATCHLIST_PATH = Path("data/watchlist.json")
+REPORTS_DIR = Path("reports/research")
 
 
 def load_history() -> dict:
@@ -69,14 +70,75 @@ def _load_watchlist_tickers() -> list[str]:
 def save_run(run_id: str, candidates: list[dict]) -> None:
     """Save a completed research run to data/research_history.json."""
     HISTORY_PATH.parent.mkdir(parents=True, exist_ok=True)
+    today = date.today().isoformat()
     history = load_history()
     history["runs"].append({
         "run_id": run_id,
-        "date": date.today().isoformat(),
+        "date": today,
         "candidates": candidates,
     })
     HISTORY_PATH.write_text(json.dumps(history, indent=2))
     logger.info(f"Saved {len(candidates)} candidates | run_id={run_id}")
+    _save_research_markdown(run_id, today, candidates)
+
+
+def _save_research_markdown(run_id: str, today: str, candidates: list[dict]) -> None:
+    """Generate and save a markdown report to reports/research/research_{date}.md."""
+    REPORTS_DIR.mkdir(parents=True, exist_ok=True)
+    report_path = REPORTS_DIR / f"research_{today}.md"
+
+    conviction_label = {"HIGH": "HIGH確信", "MEDIUM": "MEDIUM確信", "LOW": "LOW確信"}
+
+    lines: list[str] = [
+        f"# リサーチレポート — {today}",
+        "",
+        f"**run_id**: `{run_id}`",
+        "",
+        "---",
+        "",
+        f"## 選択候補 ({len(candidates)} 銘柄)",
+        "",
+    ]
+
+    for i, c in enumerate(candidates, 1):
+        ticker = c.get("ticker", "—")
+        conviction = c.get("conviction", "—")
+        label = conviction_label.get(conviction, conviction)
+        entry = c.get("entry_price")
+        target = c.get("target_price")
+        stop = c.get("stop_loss")
+        alloc = c.get("allocation_pct")
+        shares = c.get("shares")
+        rationale = c.get("rationale", "—")
+        risks = c.get("risks", "—")
+
+        upside = f"+{(target - entry) / entry * 100:.1f}%" if target and entry else "—"
+        downside = f"{(stop - entry) / entry * 100:.1f}%" if stop and entry else "—"
+
+        lines += [
+            f"### {i}. {ticker} — {label}",
+            "",
+            "| 項目 | 値 |",
+            "|------|-----|",
+            f"| エントリー | ${entry:.2f} |" if entry else "| エントリー | — |",
+            f"| 目標 | ${target:.2f} ({upside}) |" if target else "| 目標 | — |",
+            f"| ストップ | ${stop:.2f} ({downside}) |" if stop else "| ストップ | — |",
+            f"| 配分 | {alloc}% / {shares}株 |" if alloc else "| 配分 | — |",
+            "",
+            f"**根拠**: {rationale}",
+            "",
+            f"**リスク**: {risks}",
+            "",
+            "---",
+            "",
+        ]
+
+    lines += [
+        f"*生成: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} | {HISTORY_PATH}*",
+    ]
+
+    report_path.write_text("\n".join(lines))
+    logger.info(f"Saved markdown report to {report_path}")
 
 
 def collect_ticker_data(ticker: str) -> dict:

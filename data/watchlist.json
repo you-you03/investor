@@ -57,12 +57,12 @@
       "added_at": "2026-04-05",
       "source": "manual",
       "last_research_run_id": "de6f7af6-3031-44f5-b734-9ce4f9de0825",
-      "last_score": 5.5,
+      "last_score": 6.0,
       "reference_price": 128.49,
-      "reason": "\u30b9\u30b3\u30a27.85(2026-04-11)\u3002Barclays OW $150\u3001BofA Top Pick\u3002RSI=79.75 \u904e\u71b1\u57df\u3067\u62bc\u3057\u76ee\u5f85\u3061\u3002\u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19$122.38\u304c\u73fe\u5024\u4e0b\u56de\u308b\u305f\u3081\u4eca\u56deWAIT\u3002\u62bc\u3057\u76ee $120-124 \u3067BUY\u30b7\u30b0\u30ca\u30eb\u3002 | 2026-04-26 RSI=87.5 EXTREME OVERBOUGHT\u3002\u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19$128.36\u304c\u73fe\u5024$164.31\u309222%\u4e0b\u56de\u308b\u3002\u30a4\u30f3\u30b5\u30a4\u30c0\u30fc$25.1M\u58f2\u308a\u3002Options NEUTRAL_BEARISH\u3002\u5165\u53e3\u30be\u30fc\u30f3$148-158\uff08ATR\u62bc\u3057\u76ee\uff09\u306b\u66f4\u65b0\u3002",
+      "reason": "\u30b9\u30b3\u30a27.85(2026-04-11)\u3002Barclays OW $150\u3001BofA Top Pick\u3002RSI=79.75 \u904e\u71b1\u57df\u3067\u62bc\u3057\u76ee\u5f85\u3061\u3002\u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19$122.38\u304c\u73fe\u5024\u4e0b\u56de\u308b\u305f\u3081\u4eca\u56deWAIT\u3002\u62bc\u3057\u76ee $120-124 \u3067BUY\u30b7\u30b0\u30ca\u30eb\u3002 | 2026-04-26 RSI=87.5 EXTREME OVERBOUGHT\u3002\u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19$128.36\u304c\u73fe\u5024$164.31\u309222%\u4e0b\u56de\u308b\u3002\u30a4\u30f3\u30b5\u30a4\u30c0\u30fc$25.1M\u58f2\u308a\u3002Options NEUTRAL_BEARISH\u3002\u5165\u53e3\u30be\u30fc\u30f3$148-158\uff08ATR\u62bc\u3057\u76ee\uff09\u306b\u66f4\u65b0\u3002 | 2026-05-06 RSI 87\u219277\u306b\u51b7\u5374\u3002Options BULLISH(pc=0.602)\u3002\u305f\u3060\u3057analyst target $130.28\u306f\u73fe\u5024$168.75\u304b\u3089-22.8%\u4e56\u96e2\u3002\u30a8\u30f3\u30c8\u30ea\u30fc\u30be\u30fc\u30f3$148-158\u5f85\u3061\u7d99\u7d9a\u3002 | 2026-05-06 RSI 87\u219277\u306b\u51b7\u5374\u4e2d\u3002$168.75\u306f\u30a8\u30f3\u30c8\u30ea\u30fc\u30be\u30fc\u30f3$148-158\u3092\u5927\u304d\u304f\u4e0a\u56de\u308b\u3002Options BULLISH(pc=0.602)\u306f\u597d\u6750\u6599\u3002Analyst target ~$130\u304c\u73fe\u5024\u4e0b\u56de\u308b\u3002\u30a8\u30f3\u30c8\u30ea\u30fc\u30be\u30fc\u30f3\u56de\u5e30\u5f85\u3061\u3002",
       "status": "active",
-      "last_monitor_flag": "EXTREME_RSI",
-      "last_monitor_date": "2026-04-26",
+      "last_monitor_flag": "RSI_ELEVATED",
+      "last_monitor_date": "2026-05-06",
       "consecutive_drops": 0
     },
     {
@@ -83,12 +83,12 @@
       "added_at": "2026-04-05",
       "source": "manual",
       "last_research_run_id": "de6f7af6-3031-44f5-b734-9ce4f9de0825",
-      "last_score": 6.5,
+      "last_score": 7.5,
       "reference_price": 366.24,
-      "reason": "2026\u5e74\u5206HBM\u4f9b\u7d66\u67a0\u5b8c\u58f2\u6e08\u307f\uff08HBM4\u542b\u3080\uff09\u3002DRAM\u54c1\u4e0d\u8db33\u5e74\u3076\u308a\u306e\u6df1\u523b\u6c34\u6e96\u3002\u6b21Q EPS +440%\u4e88\u60f3\u3002\u30bf\u30fc\u30b2\u30c3\u30c8$500\u301c525\uff08+80%\uff09 | 2026-04-26 52W\u9ad8\u5024\u30d6\u30ec\u30a4\u30af($506.99)\u3002\u5143\u3005\u306e\u30bf\u30fc\u30b2\u30c3\u30c8$500-525\u306b\u307b\u307c\u5230\u9054\u3002\u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19$533\u307e\u3067+7.5%\u306e\u307f\u3002Options NEUTRAL_BEARISH\u3001\u30a4\u30f3\u30b5\u30a4\u30c0\u30fc$42.7M\u58f2\u308a\u3002\u65b0\u898f\u30a8\u30f3\u30c8\u30ea\u30fc\u306f\u898b\u9001\u308a\u3002",
+      "reason": "2026\u5e74\u5206HBM\u4f9b\u7d66\u67a0\u5b8c\u58f2\u6e08\u307f\uff08HBM4\u542b\u3080\uff09\u3002DRAM\u54c1\u4e0d\u8db33\u5e74\u3076\u308a\u306e\u6df1\u523b\u6c34\u6e96\u3002\u6b21Q EPS +440%\u4e88\u60f3\u3002\u30bf\u30fc\u30b2\u30c3\u30c8$500\u301c525\uff08+80%\uff09 | 2026-04-26 52W\u9ad8\u5024\u30d6\u30ec\u30a4\u30af($506.99)\u3002\u5143\u3005\u306e\u30bf\u30fc\u30b2\u30c3\u30c8$500-525\u306b\u307b\u307c\u5230\u9054\u3002\u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19$533\u307e\u3067+7.5%\u306e\u307f\u3002Options NEUTRAL_BEARISH\u3001\u30a4\u30f3\u30b5\u30a4\u30c0\u30fc$42.7M\u58f2\u308a\u3002\u65b0\u898f\u30a8\u30f3\u30c8\u30ea\u30fc\u306f\u898b\u9001\u308a\u3002 | 2026-05-06 \u53c2\u7167\u4fa1\u683c$366\u304b\u3089+74.8%\u306e\u5927\u5e45\u4e0a\u6607\u300252w\u9ad8\u5024($592.80)\u30928%\u4e0a\u56de\u308b\u65b0\u9ad8\u5024\u30be\u30fc\u30f3\u3002RSI=82(\u904e\u71b1)\u3002analyst consensus $551.40\u3092-13.9%\u4e0a\u56de\u308b\u3002PEG=0.20\u30fbfwd_PE=6.3\u30fbRevenue+196%\u3067fundamental\u6700\u5f37\u3002\u65b0\u898f\u30a8\u30f3\u30c8\u30ea\u30fc\u306f$580-600\u30d7\u30eb\u30d0\u30c3\u30af\u5f85\u3061\u3002 | 2026-05-06 \u65b052w\u9ad8\u5024\u66f4\u65b0($640\u3001+10.78%)\u3002RSI=82\u3067\u904e\u71b1\u7d99\u7d9a\u3002fwd_PE=6.3/PEG=0.2\u306e\u30d5\u30a1\u30f3\u30c0\u306f\u6700\u5f37\u3060\u304c\u65b0\u898f\u30a8\u30f3\u30c8\u30ea\u30fc\u30be\u30fc\u30f3\u3092$610-620\u306b\u5f15\u304d\u4e0a\u3052\u3002$580-600\u30d7\u30eb\u30d0\u30c3\u30af\u76ee\u5b89\u304b\u3089\u4e56\u96e2\u62e1\u5927\u3002",
       "status": "active",
-      "last_monitor_flag": "NEAR_TARGET",
-      "last_monitor_date": "2026-04-26",
+      "last_monitor_flag": "EXTREME_BREAKOUT",
+      "last_monitor_date": "2026-05-06",
       "consecutive_drops": 0
     },
     {
@@ -96,12 +96,12 @@
       "added_at": "2026-04-05",
       "source": "manual",
       "last_research_run_id": "de6f7af6-3031-44f5-b734-9ce4f9de0825",
-      "last_score": 8.2,
+      "last_score": 8.0,
       "reference_price": 188.63,
-      "reason": "\u30b9\u30b3\u30a27.3(2026-04-11)\u3002PEG=0.18\u3001FCF=$36.2B\u3001forward PE=17\u3067\u6700\u5f37\u30d5\u30a1\u30f3\u30c0\u3002\u30102026-04-18\u3011$200\u30d6\u30ec\u30a4\u30af\u30a2\u30a6\u30c8\u6761\u4ef6\u6210\u7acb\uff08$201.68\uff09\u3002RSI=92.8\u3067\u5373\u30a8\u30f3\u30c8\u30ea\u30fc\u898b\u9001\u308a\u3002\u62bc\u3057\u76ee$192-195\uff08RSI 65-70\u307e\u3067\u51b7\u5374\uff09\u3067LOW\u78ba\u4fe1\u30a8\u30f3\u30c8\u30ea\u30fc\u691c\u8a0e\u3002$670\u67a0\u3002 | 2026-04-26 2026-04-25\u306b\u30dd\u30fc\u30c8\u30d5\u30a9\u30ea\u30aa\u3078BUY\uff087\u682a@$208.27\uff09\u3002RSI=71.6\u3002Options BULLISH\u300252W\u9ad8\u5024$212.19\u307e\u3067+1.9%\u3002Monitor\u3067\u7ba1\u7406\u4e2d\u3002",
+      "reason": "\u30b9\u30b3\u30a27.3(2026-04-11)\u3002PEG=0.18\u3001FCF=$36.2B\u3001forward PE=17\u3067\u6700\u5f37\u30d5\u30a1\u30f3\u30c0\u3002\u30102026-04-18\u3011$200\u30d6\u30ec\u30a4\u30af\u30a2\u30a6\u30c8\u6761\u4ef6\u6210\u7acb\uff08$201.68\uff09\u3002RSI=92.8\u3067\u5373\u30a8\u30f3\u30c8\u30ea\u30fc\u898b\u9001\u308a\u3002\u62bc\u3057\u76ee$192-195\uff08RSI 65-70\u307e\u3067\u51b7\u5374\uff09\u3067LOW\u78ba\u4fe1\u30a8\u30f3\u30c8\u30ea\u30fc\u691c\u8a0e\u3002$670\u67a0\u3002 | 2026-04-26 2026-04-25\u306b\u30dd\u30fc\u30c8\u30d5\u30a9\u30ea\u30aa\u3078BUY\uff087\u682a@$208.27\uff09\u3002RSI=71.6\u3002Options BULLISH\u300252W\u9ad8\u5024$212.19\u307e\u3067+1.9%\u3002Monitor\u3067\u7ba1\u7406\u4e2d\u3002 | 2026-05-06 IN_PORTFOLIO\u7d99\u7d9a\u3002RSI=50.8\u306b\u6b63\u5e38\u5316\uff0871.6\u219250.8\uff09\u3002ema20($198)\u4e0b\u30fbema50($191)\u4e0a\u3002Options BULLISH\u3001PEG=0.63\u3001analyst +37%\u3002\u8ffd\u52a0\u30a8\u30f3\u30c8\u30ea\u30fc\u5019\u88dc$190-195\u3002 | 2026-05-06 IN_PORTFOLIO\u7d99\u7d9a\u3002EMA20($198)\u76f4\u4e0b\u30fbEMA50($192)\u4e0a\u3067\u30ec\u30f3\u30b8\u63a8\u79fb\u3002RSI50.8\u6b63\u5e38\u3002Options BULLISH\u3002\u8ffd\u52a0\u30a8\u30f3\u30c8\u30ea\u30fc\u5019\u88dc$190-195\u3067\u5f85\u6a5f\u3002Insider $163.7M\u58f2\u308a\u306f\u7d99\u7d9a\u3060\u304c\u65e2\u77e5\u3002",
       "status": "active",
       "last_monitor_flag": "IN_PORTFOLIO",
-      "last_monitor_date": "2026-04-26",
+      "last_monitor_date": "2026-05-06",
       "consecutive_drops": 0
     },
     {
@@ -109,12 +109,12 @@
       "added_at": "2026-04-05",
       "source": "manual",
       "last_research_run_id": "de6f7af6-3031-44f5-b734-9ce4f9de0825",
-      "last_score": 7.8,
+      "last_score": 8.2,
       "reference_price": 314.55,
-      "reason": "Q1 2026 AI\u534a\u5c0e\u4f53\u53ce\u76ca+106% YoY\u3002CEO\u304c2027\u5e74AI\u30c1\u30c3\u30d7$1000\u5104\u8d85\u898b\u901a\u3057\u3002\u30ab\u30b9\u30bf\u30e0\u30a2\u30af\u30bb\u30e9\u30ec\u30fc\u30bf+140%\u3002Q2\u30ac\u30a4\u30c0\u30f3\u30b9$22B\uff08+47%\uff09\u3002\u30102026-04-11 WATCHLIST_MOVED\u3011\u53c2\u7167\u6bd4+18.1%\uff08$314.55\u2192$371.55\uff09\u3002\u672a\u30ea\u30b5\u30fc\u30c1\u3002/research --seed \u691c\u8a0e\u3002 | 2026-04-26 \u521d\u56de\u30d5\u30eb\u30ea\u30b5\u30fc\u30c1\u3002AI\u534a\u5c0e\u4f53thesis intact\u3002RSI=78.2\uff08\u9ad8\u3081\uff09\u300252W\u9ad8\u5024$429\u307e\u3067+1.6%\u306e\u30d6\u30ec\u30a4\u30af\u30a2\u30a6\u30c8\u76f4\u524d\u3002\u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19$475(+12.5%)\u3002Options NEUTRAL_BULLISH\u3002\u5165\u53e3\u30be\u30fc\u30f3$405-415(\u62bc\u3057\u76ee)\u307e\u305f\u306f$430\u30d6\u30ec\u30a4\u30af\u5f8c\u3002",
+      "reason": "Q1 2026 AI\u534a\u5c0e\u4f53\u53ce\u76ca+106% YoY\u3002CEO\u304c2027\u5e74AI\u30c1\u30c3\u30d7$1000\u5104\u8d85\u898b\u901a\u3057\u3002\u30ab\u30b9\u30bf\u30e0\u30a2\u30af\u30bb\u30e9\u30ec\u30fc\u30bf+140%\u3002Q2\u30ac\u30a4\u30c0\u30f3\u30b9$22B\uff08+47%\uff09\u3002\u30102026-04-11 WATCHLIST_MOVED\u3011\u53c2\u7167\u6bd4+18.1%\uff08$314.55\u2192$371.55\uff09\u3002\u672a\u30ea\u30b5\u30fc\u30c1\u3002/research --seed \u691c\u8a0e\u3002 | 2026-04-26 \u521d\u56de\u30d5\u30eb\u30ea\u30b5\u30fc\u30c1\u3002AI\u534a\u5c0e\u4f53thesis intact\u3002RSI=78.2\uff08\u9ad8\u3081\uff09\u300252W\u9ad8\u5024$429\u307e\u3067+1.6%\u306e\u30d6\u30ec\u30a4\u30af\u30a2\u30a6\u30c8\u76f4\u524d\u3002\u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19$475(+12.5%)\u3002Options NEUTRAL_BULLISH\u3002\u5165\u53e3\u30be\u30fc\u30f3$405-415(\u62bc\u3057\u76ee)\u307e\u305f\u306f$430\u30d6\u30ec\u30a4\u30af\u5f8c\u3002 | 2026-05-06 52w\u9ad8\u5024$429.31\u76f4\u4e0b(\u73fe$427.36\u3001-0.5%)\u3002RSI 78\u219269.5\u306b\u51b7\u5374\u3002Options BULLISH(pc=0.618)\u3002analyst target $475(+11.3%)\u3002$430\u30d6\u30ec\u30a4\u30af\u3067\u30a8\u30f3\u30c8\u30ea\u30fc\u78ba\u5b9a\u3002/decision\u5bfe\u8c61\u3002 | 2026-05-06 $430\u30d6\u30ec\u30a4\u30af\u6c34\u6e96\u307e\u3067-0.5%\uff08\u73fe$427.36\uff09\u3002RSI 78\u219269.5\u51b7\u5374\u6e08\u307f\u3002Options BULLISH(pc=0.618)\u3002EMA20/50\u4e0a\u3002$430\u30d6\u30ec\u30a4\u30af\u3067\u30a8\u30f3\u30c8\u30ea\u30fc\u78ba\u5b9a / stop $414",
       "status": "active",
-      "last_monitor_flag": "NEAR_52W_HIGH",
-      "last_monitor_date": "2026-04-26",
+      "last_monitor_flag": "ESCALATE_TO_DECISION",
+      "last_monitor_date": "2026-05-06",
       "consecutive_drops": 0
     },
     {
@@ -122,12 +122,12 @@
       "added_at": "2026-04-05",
       "source": "manual",
       "last_research_run_id": "de6f7af6-3031-44f5-b734-9ce4f9de0825",
-      "last_score": 5.5,
+      "last_score": 6.0,
       "reference_price": 261.29,
-      "reason": "Q4 2025 \u58f2\u4e0a+23%\u30012026\u5e74\u30ac\u30a4\u30c0\u30f3\u30b9\u6709\u6a5f\u6210\u9577+27\u301c29%\u3002AI\u30c7\u30fc\u30bf\u30bb\u30f3\u30bf\u30fc\u96fb\u529b\u30fb\u51b7\u5374\u30a4\u30f3\u30d5\u30e9\u3002Strong Buy\u3001\u30bf\u30fc\u30b2\u30c3\u30c8\u4e2d\u592e\u5024$280 | 2026-04-26 Options BEARISH(P/C vol=2.854)\u3002\u30a4\u30f3\u30b5\u30a4\u30c0\u30fc$123M\u58f2\u308a\u3002\u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19$327.44\u2252\u73fe\u5024\u3002\u5143\u306e\u76ee\u6a19$280\u3092\u5927\u304d\u304f\u8d85\u904e\u3002Industrials NEUTRAL sector\u3002",
+      "reason": "Q4 2025 \u58f2\u4e0a+23%\u30012026\u5e74\u30ac\u30a4\u30c0\u30f3\u30b9\u6709\u6a5f\u6210\u9577+27\u301c29%\u3002AI\u30c7\u30fc\u30bf\u30bb\u30f3\u30bf\u30fc\u96fb\u529b\u30fb\u51b7\u5374\u30a4\u30f3\u30d5\u30e9\u3002Strong Buy\u3001\u30bf\u30fc\u30b2\u30c3\u30c8\u4e2d\u592e\u5024$280 | 2026-04-26 Options BEARISH(P/C vol=2.854)\u3002\u30a4\u30f3\u30b5\u30a4\u30c0\u30fc$123M\u58f2\u308a\u3002\u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19$327.44\u2252\u73fe\u5024\u3002\u5143\u306e\u76ee\u6a19$280\u3092\u5927\u304d\u304f\u8d85\u904e\u3002Industrials NEUTRAL sector\u3002 | 2026-05-06 52w\u9ad8\u5024$332.95\u3092\u30d6\u30ec\u30a4\u30af(\u73fe$341.02\u3001+2.4%)\u3002RSI=69\u3002\u305f\u3060\u3057Options BEARISH(pc=1.396)\u3068insider$123M\u58f2\u308a\u304c\u91cd\u5927\u30d5\u30e9\u30b0\u3002analyst target $327.44\u306f\u73fe\u5024-4%\u3002Options pc_ratio<1.0\u306b\u306a\u308b\u307e\u3067ESCALATE\u898b\u9001\u308a\u3002 | 2026-05-06 52w\u9ad8\u5024\u30d6\u30ec\u30a4\u30af(+2.4%)\u3060\u304cOptions BEARISH(pc=1.396)\u7d99\u7d9a\u30fbInsider $123.4M\u58f2\u308a\u7d99\u7d9a\u3002Analyst target $327\u304c\u73fe\u5024-4%\u3002pc<1.0\u306b\u306a\u308b\u307e\u3067ESCALATE\u898b\u9001\u308a\u3002",
       "status": "active",
       "last_monitor_flag": "BEARISH_OPTIONS",
-      "last_monitor_date": "2026-04-26",
+      "last_monitor_date": "2026-05-06",
       "consecutive_drops": 0
     },
     {
@@ -135,12 +135,12 @@
       "added_at": "2026-04-05",
       "source": "manual",
       "last_research_run_id": null,
-      "last_score": 6.0,
+      "last_score": 5.5,
       "reference_price": 348.47,
-      "reason": "Q1 FY2026 EPS\u8d85\u904e+\u7fcc\u65e5+11%\u6025\u9a30\u3002Q2\u30ac\u30a4\u30c0\u30f3\u30b9$7.65B\u3002AI\u5411\u3051HBM\u30fb\u5148\u7aef\u30ed\u30b8\u30c3\u30af\u88c5\u7f6e\u9700\u8981\u6025\u5897 | 2026-04-26 \u521d\u56de\u30d5\u30eb\u30ea\u30b5\u30fc\u30c1\u3002\u4eca\u65e552W\u9ad8\u5024\u30d6\u30ec\u30a4\u30af($420.50)\u3002\u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19$422.97\u307e\u3067+1.4%\u306e\u307f\u3002\u58f2\u4e0a-2.1% YoY\u3002Options NEUTRAL_BEARISH\u3002\u62bc\u3057\u76ee$390-405\u3067\u518d\u691c\u8a0e\u3002",
+      "reason": "Q1 FY2026 EPS\u8d85\u904e+\u7fcc\u65e5+11%\u6025\u9a30\u3002Q2\u30ac\u30a4\u30c0\u30f3\u30b9$7.65B\u3002AI\u5411\u3051HBM\u30fb\u5148\u7aef\u30ed\u30b8\u30c3\u30af\u88c5\u7f6e\u9700\u8981\u6025\u5897 | 2026-04-26 \u521d\u56de\u30d5\u30eb\u30ea\u30b5\u30fc\u30c1\u3002\u4eca\u65e552W\u9ad8\u5024\u30d6\u30ec\u30a4\u30af($420.50)\u3002\u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19$422.97\u307e\u3067+1.4%\u306e\u307f\u3002\u58f2\u4e0a-2.1% YoY\u3002Options NEUTRAL_BEARISH\u3002\u62bc\u3057\u76ee$390-405\u3067\u518d\u691c\u8a0e\u3002 | 2026-05-06 Revenue -2.1% YoY\u3068\u6e1b\u53ce\u8ee2\u843d\u3002Options NEUTRAL_BEARISH\u7d99\u7d9a(pc=1.295)\u3002analyst target $424(+3.3%)\u306e\u307f\u300252w\u9ad8\u5024$420.50\u76f4\u4e0b\u3002\u30a8\u30f3\u30c8\u30ea\u30fc$390-405\u5f85\u3061\u3002Options\u304c\u6539\u5584\u3059\u308b\u307e\u3067WAIT\u3002 | 2026-05-06 \u30a8\u30f3\u30c8\u30ea\u30fc\u30be\u30fc\u30f3$390-405\u3092\u4e0a\u629c\u3051\u3066$410.82\u3002Options NEUTRAL_BEARISH(pc=1.295)\u6539\u5584\u306a\u3057\u3002Revenue -1.2% YoY\u6e1b\u53ce\u7d99\u7d9a\u3002MACD hist -1.089\u3002Options\u6539\u5584\u307e\u3067\u5f85\u6a5f\u3002",
       "status": "active",
-      "last_monitor_flag": "NEAR_ANALYST_TARGET",
-      "last_monitor_date": "2026-04-26",
+      "last_monitor_flag": "REVENUE_DECLINING",
+      "last_monitor_date": "2026-05-06",
       "consecutive_drops": 0
     },
     {
@@ -150,10 +150,10 @@
       "last_research_run_id": "de6f7af6-3031-44f5-b734-9ce4f9de0825",
       "last_score": 5.5,
       "reference_price": 307.5,
-      "reason": "\u30b9\u30b3\u30a27.15(2026-04-11)\u3002\u73fe\u5024$307.50\u304c\u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19$287\u3092\u4e0a\u56de\u308a\u3001volume=0.99x\u3002Tenbagger\u3068Tape Reader\u304c\u5171\u306bPASS\u3002\u4e00\u90e8\u30a2\u30ca\u30ea\u30b9\u30c8SELL\u63a8\u5968\u3042\u308a\u3002\u6b21\u306e\u30a8\u30f3\u30c8\u30ea\u30fc\u306f$280-290\u62bc\u3057\u76ee\u3002 | 2026-04-26 \u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19$313.50\u304c\u73fe\u5024$336.09\u3092-6.7%\u4e0b\u56de\u308b\u3002Options BEARISH(P/C vol=2.079)\u3002\u76f4\u8fd1Q\u7d14\u5229\u76ca\u30de\u30a4\u30ca\u30b9\u3042\u308a\u3002earnings quality\u61f8\u5ff5\u3002\u5165\u53e3\u30be\u30fc\u30f3$310-320\u3002",
+      "reason": "\u30b9\u30b3\u30a27.15(2026-04-11)\u3002\u73fe\u5024$307.50\u304c\u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19$287\u3092\u4e0a\u56de\u308a\u3001volume=0.99x\u3002Tenbagger\u3068Tape Reader\u304c\u5171\u306bPASS\u3002\u4e00\u90e8\u30a2\u30ca\u30ea\u30b9\u30c8SELL\u63a8\u5968\u3042\u308a\u3002\u6b21\u306e\u30a8\u30f3\u30c8\u30ea\u30fc\u306f$280-290\u62bc\u3057\u76ee\u3002 | 2026-04-26 \u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19$313.50\u304c\u73fe\u5024$336.09\u3092-6.7%\u4e0b\u56de\u308b\u3002Options BEARISH(P/C vol=2.079)\u3002\u76f4\u8fd1Q\u7d14\u5229\u76ca\u30de\u30a4\u30ca\u30b9\u3042\u308a\u3002earnings quality\u61f8\u5ff5\u3002\u5165\u53e3\u30be\u30fc\u30f3$310-320\u3002 | 2026-05-06 Options BEARISH\u2192NEUTRAL_BULLISH(pc=0.999)\u306b\u6539\u5584\u3002RSI=61.7\u3002analyst target $326.78\u306f\u73fe\u5024$335.73\u304b\u3089-2.7%\u306e\u307f\u3002MACD histogram -1.947\u3068\u4e0b\u5411\u304d\u7d99\u7d9a\u3002\u30a8\u30f3\u30c8\u30ea\u30fc$310-320\u30d7\u30eb\u30d0\u30c3\u30af\u5f85\u3061\u3002 | 2026-05-06 \u30a8\u30f3\u30c8\u30ea\u30fc\u30be\u30fc\u30f3$310-320\u3092\u5927\u304d\u304f\u4e0a\u56de\u308b$335.73\u3002MACD hist -1.947\u7d99\u7d9a\u7684\u5f31\u3055\u3002Options NEUTRAL_BULLISH(pc=0.999)\u306f\u6539\u5584\u7dad\u6301\u3002$310-320\u30d7\u30eb\u30d0\u30c3\u30af\u5f85\u3061\u7d99\u7d9a\u3002",
       "status": "active",
-      "last_monitor_flag": "ANALYST_TARGET_BELOW_PRICE",
-      "last_monitor_date": "2026-04-26",
+      "last_monitor_flag": "OPTIONS_IMPROVING",
+      "last_monitor_date": "2026-05-06",
       "consecutive_drops": 0
     },
     {
@@ -161,12 +161,12 @@
       "added_at": "2026-04-05",
       "source": "manual",
       "last_research_run_id": null,
-      "last_score": 8.0,
+      "last_score": 8.2,
       "reference_price": 339.04,
-      "reason": "2nm/3nm\u30ce\u30fc\u30c9\u91cf\u7523\u30e9\u30f3\u30d7\u30a2\u30c3\u30d7\u30022026\u5e74\u58f2\u4e0a+30%\u4e88\u60f3\u3002AI\u534a\u5c0e\u4f53\u4f01\u696d\u307b\u307c\u5168\u793e\u304c\u88fd\u9020\u4f9d\u5b58\u3002Goldman\u5e73\u5747\u30bf\u30fc\u30b2\u30c3\u30c8$401\uff08+17%\uff09 | 2026-04-26 52W\u9ad8\u5024\u30d6\u30ec\u30a4\u30af($409.49)\u3002RSI=68.4\uff08\u904e\u71b1\u306a\u3057\uff09\u3002\u30a4\u30f3\u30b5\u30a4\u30c0\u30fc\u8cb7\u3044($322K\u30013/31)\u3002\u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19$463.45(+15.1%)\u300118\u540dSTRONG_BUY\u3002\u7c97\u522962%\u3001PEG=1.30\u3002\u5165\u53e3$395-408\u3001\u30b9\u30c8\u30c3\u30d7$389.25\u3001\u76ee\u6a19$428.87(ATR)/$463(\u30a2\u30ca\u30ea\u30b9\u30c8)\u3002\u30ea\u30b9\u30af\uff1a\u53f0\u6e7e\u5730\u653f\u5b66\u30fbNEUTRAL_BEARISH options\u3002",
+      "reason": "2nm/3nm\u30ce\u30fc\u30c9\u91cf\u7523\u30e9\u30f3\u30d7\u30a2\u30c3\u30d7\u30022026\u5e74\u58f2\u4e0a+30%\u4e88\u60f3\u3002AI\u534a\u5c0e\u4f53\u4f01\u696d\u307b\u307c\u5168\u793e\u304c\u88fd\u9020\u4f9d\u5b58\u3002Goldman\u5e73\u5747\u30bf\u30fc\u30b2\u30c3\u30c8$401\uff08+17%\uff09 | 2026-04-26 52W\u9ad8\u5024\u30d6\u30ec\u30a4\u30af($409.49)\u3002RSI=68.4\uff08\u904e\u71b1\u306a\u3057\uff09\u3002\u30a4\u30f3\u30b5\u30a4\u30c0\u30fc\u8cb7\u3044($322K\u30013/31)\u3002\u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19$463.45(+15.1%)\u300118\u540dSTRONG_BUY\u3002\u7c97\u522962%\u3001PEG=1.30\u3002\u5165\u53e3$395-408\u3001\u30b9\u30c8\u30c3\u30d7$389.25\u3001\u76ee\u6a19$428.87(ATR)/$463(\u30a2\u30ca\u30ea\u30b9\u30c8)\u3002\u30ea\u30b9\u30af\uff1a\u53f0\u6e7e\u5730\u653f\u5b66\u30fbNEUTRAL_BEARISH options\u3002 | 2026-05-06 \u30a8\u30f3\u30c8\u30ea\u30fc\u30be\u30fc\u30f3$395-408\u306e\u5e95\u5024$394.41\u306b\u5230\u9054\u3002RSI=60(\u7406\u60f3)\u3002MACD histogram +0.985(\u6b63)\u3002Insider NET_BUYER\u3002analyst target $463.45(+17.5%)\u30fb18\u540dSTRONG_BUY\u3002Options BEARISH(pc=1.472)\u306f\u552f\u4e00\u306e\u30ea\u30b9\u30af\u3002/decision\u5bfe\u8c61\u3002stop$380.75\u3002 | 2026-05-06 \u30a8\u30f3\u30c8\u30ea\u30fc\u30be\u30fc\u30f3\u5e95\u5024$394.41\u5230\u9054(-1.4%\u62bc\u3057\u76ee)\u3002RSI60\u7406\u60f3\u7684\u3002MACD hist +0.985(\u6b63)\u3002Insider NET_BUYER\u3002Options BEARISH(pc=1.472)\u306f\u4e8b\u524d\u8a8d\u8b58\u6e08\u307f\u30ea\u30b9\u30af\u3002stop $380.75 / target $421",
       "status": "active",
       "last_monitor_flag": "ESCALATE_TO_DECISION",
-      "last_monitor_date": "2026-04-26",
+      "last_monitor_date": "2026-05-06",
       "consecutive_drops": 0
     },
     {
@@ -174,12 +174,12 @@
       "added_at": "2026-04-05",
       "source": "manual",
       "last_research_run_id": "de6f7af6-3031-44f5-b734-9ce4f9de0825",
-      "last_score": 7.0,
+      "last_score": 8.0,
       "reference_price": 218.44,
-      "reason": "Q2 FY2026 \u58f2\u4e0a+22% YoY\u3001EPS+39%\u3002DRAM/HBM\u88fd\u9020\u88c5\u7f6e\u9700\u8981\u304c\u904e\u53bb\u6700\u9ad8\u6c34\u6e96\u3002WFE\u5e02\u58342026\u5e74+20%\u8d85\u62e1\u5927\u3002\u30102026-04-11 WATCHLIST_MOVED\u3011\u53c2\u7167\u6bd4+20.7%\uff08$218.44\u2192$263.66\uff09\u3002\u672a\u30ea\u30b5\u30fc\u30c1\u3002/research --seed \u691c\u8a0e\u3002 | 2026-04-26 52W\u9ad8\u5024\u30d6\u30ec\u30a4\u30af($275.84)\u3002RSI=61\uff08\u7406\u60f3\u7684\uff09\u3002\u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19$305.97(+14.3%)\u3002\u305f\u3060\u3057Options BEARISH(P/C vol=2.388)\u304c\u524d\u56de\u30b9\u30af\u30ea\u30fc\u30f3\u304b\u3089\u7d99\u7d9a\u3002\u30a4\u30f3\u30b5\u30a4\u30c0\u30fc$29.7M\u58f2\u308a\u3002Options\u6539\u5584\u6642\u306bESCALATE\u691c\u8a0e\u3002",
+      "reason": "Q2 FY2026 \u58f2\u4e0a+22% YoY\u3001EPS+39%\u3002DRAM/HBM\u88fd\u9020\u88c5\u7f6e\u9700\u8981\u304c\u904e\u53bb\u6700\u9ad8\u6c34\u6e96\u3002WFE\u5e02\u58342026\u5e74+20%\u8d85\u62e1\u5927\u3002\u30102026-04-11 WATCHLIST_MOVED\u3011\u53c2\u7167\u6bd4+20.7%\uff08$218.44\u2192$263.66\uff09\u3002\u672a\u30ea\u30b5\u30fc\u30c1\u3002/research --seed \u691c\u8a0e\u3002 | 2026-04-26 52W\u9ad8\u5024\u30d6\u30ec\u30a4\u30af($275.84)\u3002RSI=61\uff08\u7406\u60f3\u7684\uff09\u3002\u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19$305.97(+14.3%)\u3002\u305f\u3060\u3057Options BEARISH(P/C vol=2.388)\u304c\u524d\u56de\u30b9\u30af\u30ea\u30fc\u30f3\u304b\u3089\u7d99\u7d9a\u3002\u30a4\u30f3\u30b5\u30a4\u30c0\u30fc$29.7M\u58f2\u308a\u3002Options\u6539\u5584\u6642\u306bESCALATE\u691c\u8a0e\u3002 | 2026-05-06 \u524d\u56de\u8a2d\u5b9a\u30c8\u30ea\u30ac\u30fc\u6210\u7acb: Options BEARISH(pc=2.388)\u2192NEUTRAL_BULLISH(pc=0.837)\u306b\u6539\u5584\u300252w\u9ad8\u5024$275.84\u306b\u5230\u9054(\u73fe$275.80)\u3002RSI=63(\u7406\u60f3)\u3002analyst target $310.47(+12.6%)\u3002Revenue+23.8%\u3002/decision\u5bfe\u8c61\u3002\u30a8\u30f3\u30c8\u30ea\u30fc$270-276\u3001stop$264\u3001target$299\u3002 | 2026-05-06 52w\u9ad8\u5024$275.84\u306b\u5230\u9054(+6.9%\u30d6\u30ec\u30a4\u30af\u30a2\u30a6\u30c8)\u3002Options NEUTRAL_BULLISH(pc=0.837)\u6539\u5584\u7dad\u6301\u3002RSI63\u5065\u5168\u3002\u30a8\u30f3\u30c8\u30ea\u30fc$270-276 / stop $264 / target $299",
       "status": "active",
-      "last_monitor_flag": "AWAITING_OPTIONS_IMPROVEMENT",
-      "last_monitor_date": "2026-04-26",
+      "last_monitor_flag": "ESCALATE_TO_DECISION",
+      "last_monitor_date": "2026-05-06",
       "consecutive_drops": 0
     },
     {
@@ -187,12 +187,12 @@
       "added_at": "2026-04-05",
       "source": "manual",
       "last_research_run_id": "8cfe6f43-f9af-4691-9d1f-569b86a8160d",
-      "last_score": 6.5,
+      "last_score": 7.5,
       "reference_price": 151.18,
-      "reason": "Meta\u3068\u306ePJM\u6838\u30a8\u30cd\u30eb\u30ae\u30fc20\u5e74PPA\uff082,600MW\uff09\u3002AI\u30c7\u30fc\u30bf\u30bb\u30f3\u30bf\u30fc\u5411\u3051\u8131\u70ad\u7d20\u96fb\u529b\u306e\u5e0c\u5c11\u6027\u30022026\u5e74EPS+68%\u4e88\u60f3 | 2026-04-26 RSI=56.84\uff08\u7406\u60f3\u5165\u53e3\u57df\uff09\u3002MACD histogram\u30d7\u30e9\u30b9\u8ee2\u63db(+0.60)\u3002Options NEUTRAL_BULLISH\u3002\u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19$233.37(+42%)\u300119\u540dSTRONG_BUY\u3002forward PE=14.75\uff08\u5272\u5b89\uff09\u3002\u672c\u65e5+4.35%\u3002\u30ea\u30b9\u30af\uff1aD/E=399\u3001Utilities NEUTRAL sector\u3001EPS -52.3% YoY\u3002\u5165\u53e3$155-165\u3001\u30b9\u30c8\u30c3\u30d7$158\u3001\u76ee\u6a19$177(ATR)\u3002LOW\u78ba\u4fe1\u63a8\u5968\u3002",
+      "reason": "Meta\u3068\u306ePJM\u6838\u30a8\u30cd\u30eb\u30ae\u30fc20\u5e74PPA\uff082,600MW\uff09\u3002AI\u30c7\u30fc\u30bf\u30bb\u30f3\u30bf\u30fc\u5411\u3051\u8131\u70ad\u7d20\u96fb\u529b\u306e\u5e0c\u5c11\u6027\u30022026\u5e74EPS+68%\u4e88\u60f3 | 2026-04-26 RSI=56.84\uff08\u7406\u60f3\u5165\u53e3\u57df\uff09\u3002MACD histogram\u30d7\u30e9\u30b9\u8ee2\u63db(+0.60)\u3002Options NEUTRAL_BULLISH\u3002\u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19$233.37(+42%)\u300119\u540dSTRONG_BUY\u3002forward PE=14.75\uff08\u5272\u5b89\uff09\u3002\u672c\u65e5+4.35%\u3002\u30ea\u30b9\u30af\uff1aD/E=399\u3001Utilities NEUTRAL sector\u3001EPS -52.3% YoY\u3002\u5165\u53e3$155-165\u3001\u30b9\u30c8\u30c3\u30d7$158\u3001\u76ee\u6a19$177(ATR)\u3002LOW\u78ba\u4fe1\u63a8\u5968\u3002 | 2026-05-06 \u30a8\u30f3\u30c8\u30ea\u30fc\u30be\u30fc\u30f3$155-165\u5185(\u73fe$160.38)\u3002Options BULLISH(pc=0.588\u3001\u524d\u56deNEUTRAL_BULLISH\u304b\u3089\u6539\u5584)\u3002RSI=51.8(\u7406\u60f3)\u3002analyst target $228.16(+42.3%)\u30fb19\u540dSTRONG_BUY\u3002fwd_PE=14.3\u5272\u5b89\u3002Meta\u3068PJM\u6838\u30a8\u30cd\u30eb\u30ae\u30fcPPA(2600MW)thesis intact\u3002stop$153.96\u3002/decision\u5bfe\u8c61\u3002 | 2026-05-06 \u30a8\u30f3\u30c8\u30ea\u30fc\u30be\u30fc\u30f3$155-165\u5185($160.38)\u3002EMA20/50\u304c$158\u53ce\u675f\u3067\u5e95\u5024\u56fa\u3081\u3002Options BULLISH(pc=0.588)\u6539\u5584\u3002RSI51.8\u7406\u60f3\u7684\u3002nuclear PPA thesis intact\u3002stop $153.96 / target $173",
       "status": "active",
       "last_monitor_flag": "ESCALATE_TO_DECISION",
-      "last_monitor_date": "2026-04-26",
+      "last_monitor_date": "2026-05-06",
       "consecutive_drops": 0
     },
     {
@@ -200,12 +200,12 @@
       "added_at": "2026-04-05",
       "source": "manual",
       "last_research_run_id": null,
-      "last_score": 6.5,
+      "last_score": 7.5,
       "reference_price": 92.21,
-      "reason": "Q4 2025\u904e\u53bb\u6700\u9ad8\u58f2\u4e0a$15.4B\u3002EPS $3.10\uff08\u4e88\u60f3\u8d85\uff09\u30022026\u5e74\u901a\u5e74EPS $12\u301c14\u30ac\u30a4\u30c0\u30f3\u30b9\u3002\u975e\u30c6\u30c3\u30af\u306e\u5206\u6563\u9298\u67c4 | 2026-04-26 \u521d\u56de\u30d5\u30eb\u30ea\u30b5\u30fc\u30c1\u3002RSI=47\uff08\u7406\u60f3\u5165\u53e3\u57df\uff09\u3002Options BULLISH(P/C vol=0.596)\u3002Forward PE=6.61\uff08\u6975\u7aef\u306a\u5272\u5b89\uff09\u3002\u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19$129.29(+39%)\u300124\u540dSTRONG_BUY\u3002EPS+84.5% YoY\u3002\u53c2\u7167\u5024+0.9%\u306e\u307f\u3067\u76f8\u5bfe\u5f31\u3055\u3002\u5165\u53e3$88-93\u3001\u30b9\u30c8\u30c3\u30d7$87.78\u3001\u76ee\u6a19$103.45(ATR)\u3002\u5206\u6563\u76ee\u7684LOW\u78ba\u4fe1\u3002",
+      "reason": "Q4 2025\u904e\u53bb\u6700\u9ad8\u58f2\u4e0a$15.4B\u3002EPS $3.10\uff08\u4e88\u60f3\u8d85\uff09\u30022026\u5e74\u901a\u5e74EPS $12\u301c14\u30ac\u30a4\u30c0\u30f3\u30b9\u3002\u975e\u30c6\u30c3\u30af\u306e\u5206\u6563\u9298\u67c4 | 2026-04-26 \u521d\u56de\u30d5\u30eb\u30ea\u30b5\u30fc\u30c1\u3002RSI=47\uff08\u7406\u60f3\u5165\u53e3\u57df\uff09\u3002Options BULLISH(P/C vol=0.596)\u3002Forward PE=6.61\uff08\u6975\u7aef\u306a\u5272\u5b89\uff09\u3002\u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19$129.29(+39%)\u300124\u540dSTRONG_BUY\u3002EPS+84.5% YoY\u3002\u53c2\u7167\u5024+0.9%\u306e\u307f\u3067\u76f8\u5bfe\u5f31\u3055\u3002\u5165\u53e3$88-93\u3001\u30b9\u30c8\u30c3\u30d7$87.78\u3001\u76ee\u6a19$103.45(ATR)\u3002\u5206\u6563\u76ee\u7684LOW\u78ba\u4fe1\u3002 | 2026-05-06 Options \u6975\u3081\u3066BULLISH(pc=0.373)\u306b\u5f37\u5316\u3002RSI=50.1(\u7406\u60f3)\u3002\u30a8\u30f3\u30c8\u30ea\u30fc\u30be\u30fc\u30f3$88-93\u306e\u4e0a\u7aef$93.67\u3002Insider NEUTRAL\u3002analyst target $129.83(+38.6%)\u30fb24\u540dSTRONG_BUY\u3002fwd_PE=6.6\u3067\u5272\u5b89\u6975\u9650\u3002/decision\u5bfe\u8c61\u3002stop$89.31\u3002 | 2026-05-06 \u30a8\u30f3\u30c8\u30ea\u30fc\u30be\u30fc\u30f3$88-93\u4e0a\u7aef$93.67\u3002Options \u6975BULLISH(pc=0.373)\u3002RSI50.1\u7406\u60f3\u7684\u3002EMA20($92.95)\u4e0a\u629c\u3051\u3002fwd_PE=6.6\u5272\u5b89\u3002Revenue -4.1%\u306f\u5b63\u7bc0\u5909\u52d5\u60f3\u5b9a\u5185\u3002stop $89.31 / target $102",
       "status": "active",
       "last_monitor_flag": "ESCALATE_TO_DECISION",
-      "last_monitor_date": "2026-04-26",
+      "last_monitor_date": "2026-05-06",
       "consecutive_drops": 0
     },
     {
@@ -213,13 +213,19 @@
       "added_at": "2026-04-05",
       "source": "manual",
       "last_research_run_id": "de6f7af6-3031-44f5-b734-9ce4f9de0825",
-      "last_score": 5.5,
+      "last_score": 3.5,
       "reference_price": 148.46,
-      "reason": "Q4 2025 \u58f2\u4e0a$1.41B\uff08\u4e88\u60f3\u5927\u5e45\u8d85\uff09\u30022026\u5e74\u30ac\u30a4\u30c0\u30f3\u30b9$7.2B\u3002\u30102026-04-11 WATCHLIST_DROPPED 1\u56de\u76ee -13.7%\u3011\u2192\u30102026-04-18 \u56de\u5fa9 -1.4%\uff08$146.39\uff09\u3011\u3002WATCHLIST_DROPPED\u89e3\u9664\u3002\u30a8\u30f3\u30c8\u30ea\u30fc\u306f$138-142\u306e\u62bc\u3057\u76ee\u5f85\u3061\u3002 | 2026-04-26 \u53c2\u7167\u5024-3.6%\u30a2\u30f3\u30c0\u30fc\u30d1\u30d5\u30a9\u30fc\u30e0\u3002Cloud/Software LAGGING(-13.77% 3m)\u3002\u30a4\u30f3\u30b5\u30a4\u30c0\u30fc$435.1M\u58f2\u308a(90\u65e5\u300111\u53d6\u5f15)\u306f\u91cd\u5927\u30d5\u30e9\u30b0\u3002Forward PE=76.8\u3067\u5272\u9ad8\u3002MACD histogram \u30d7\u30e9\u30b9\u8ee2\u63db(+0.642)\u3068Options BULLISH\u304c\u552f\u4e00\u306e\u597d\u6750\u6599\u3002\u5165\u53e3\u30be\u30fc\u30f3$138-142\u3067\u5b89\u5b9a\u5f85\u3061\u3002",
-      "status": "active",
-      "last_monitor_flag": "HEAVY_INSIDER_SELL",
-      "last_monitor_date": "2026-04-26",
+      "reason": "Q4 2025 \u58f2\u4e0a$1.41B\uff08\u4e88\u60f3\u5927\u5e45\u8d85\uff09\u30022026\u5e74\u30ac\u30a4\u30c0\u30f3\u30b9$7.2B\u3002\u30102026-04-11 WATCHLIST_DROPPED 1\u56de\u76ee -13.7%\u3011\u2192\u30102026-04-18 \u56de\u5fa9 -1.4%\uff08$146.39\uff09\u3011\u3002WATCHLIST_DROPPED\u89e3\u9664\u3002\u30a8\u30f3\u30c8\u30ea\u30fc\u306f$138-142\u306e\u62bc\u3057\u76ee\u5f85\u3061\u3002 | 2026-04-26 \u53c2\u7167\u5024-3.6%\u30a2\u30f3\u30c0\u30fc\u30d1\u30d5\u30a9\u30fc\u30e0\u3002Cloud/Software LAGGING(-13.77% 3m)\u3002\u30a4\u30f3\u30b5\u30a4\u30c0\u30fc$435.1M\u58f2\u308a(90\u65e5\u300111\u53d6\u5f15)\u306f\u91cd\u5927\u30d5\u30e9\u30b0\u3002Forward PE=76.8\u3067\u5272\u9ad8\u3002MACD histogram \u30d7\u30e9\u30b9\u8ee2\u63db(+0.642)\u3068Options BULLISH\u304c\u552f\u4e00\u306e\u597d\u6750\u6599\u3002\u5165\u53e3\u30be\u30fc\u30f3$138-142\u3067\u5b89\u5b9a\u5f85\u3061\u3002 | 2026-05-06 REMOVE: insider\u58f2\u308a$432M(90\u65e5\u30fb11\u53d6\u5f15)\u7d99\u7d9a\u3002ema20($142.45)\u30fbema50($143.55)\u4e21\u65b9\u4e0b\u629c\u3051\u306e\u6280\u8853\u7684breakdown\u3002\u30a8\u30f3\u30c8\u30ea\u30fc\u30be\u30fc\u30f3$138-142\u3082\u4e0d\u4fdd\u6301\u3002RSI=43\u3067\u4e0b\u843d\u7d99\u7d9a\u3002fwd_PE=67.6\u3067\u5272\u9ad8\u3002Options BULLISH(pc=0.553)\u3068 analyst target +33%\u304c\u552f\u4e00\u306e\u597d\u6750\u6599\u3060\u304c\u3001insider\u58f2\u308a\u306e\u898f\u6a21\u304c\u81f4\u547d\u7684\u3002$145\u56de\u5fa9\u3067\u518d\u8ffd\u52a0\u3092\u691c\u8a0e\u3002 | 2026-05-06 \u672c\u65e5-4.27%\u3067\u3055\u3089\u306b\u4e0b\u843d($135.91)\u3002EMA20($142.45)/EMA50($143.55)\u4e0b\u629c\u3051\u7d99\u7d9a(death cross)\u3002RSI=43\u4e0b\u964d\u3002$432M insider\u58f2\u308a(90\u65e5)\u5909\u308f\u3089\u305a\u3002$145\u56de\u5fa9\u6761\u4ef6\u672a\u9054\u3002REMOVE\u5b9f\u884c\u3002",
+      "status": "removed",
+      "last_monitor_flag": "REMOVED",
+      "last_monitor_date": "2026-05-06",
       "consecutive_drops": 0
+    },
+    {
+      "ticker": "WAT",
+      "added_at": "2026-05-06",
+      "reason": "Waters Corp\uff08\u5206\u6790\u8a08\u6e2c\u6a5f\u5668\uff09\u3002EPS+85.3%\u30fbRev+40.9%\u306e\u6c7a\u7b97\u30d3\u30fc\u30c8\u3002fwd_PE=21/PEG=1.31\u5272\u5b89\u3002RSI=63\u30fbOptions BULLISH(pc=0.333)\u30fbInsider NET_BUYER\u3002vs52wH -17%\u3067\u4e0a\u6607\u4f59\u5730\u3042\u308a\u3002\u30a8\u30f3\u30c8\u30ea\u30fc\u30be\u30fc\u30f3-345\u3001stop \u3001target \u3002",
+      "status": "active"
     }
   ]
 }

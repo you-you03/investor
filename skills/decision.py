@@ -49,6 +49,7 @@ def main(
         format_research_for_claude,
         get_latest_run_id,
         load_run,
+        log_decision_history,
         send_proposals,
     )
 
@@ -73,6 +74,7 @@ def main(
             return
 
         send_proposals(proposals)
+        log_decision_history(proposals, target_run_id or "", candidates)
         console.print(f"[green]Sent {len(proposals)} proposal(s) to Slack[/green]")
         for p in proposals:
             console.print(f"  {p['action']} {p['ticker']} ({p['conviction']}) | size ${p.get('position_size_usd'):,.0f}")

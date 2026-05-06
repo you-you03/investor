@@ -18,7 +18,7 @@ from __future__ import annotations
 import json
 import uuid
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from datetime import date
+from datetime import date, datetime
 from pathlib import Path
 
 from investor.agents.research_agent import collect_ticker_data
@@ -29,6 +29,7 @@ logger = get_logger(__name__)
 
 WATCHLIST_PATH = Path("data/watchlist.json")
 WR_HISTORY_PATH = Path("data/watchlist_research_history.json")
+REPORTS_DIR = Path("reports/research")
 
 
 # ---------------------------------------------------------------------------
@@ -193,6 +194,65 @@ def save_watchlist_research(run_id: str, results: list[dict]) -> None:
     })
     WR_HISTORY_PATH.write_text(json.dumps(history, indent=2))
     logger.info(f"Saved watchlist research run | run_id={run_id}")
+    _save_watchlist_research_markdown(run_id, today, results)
+
+
+def _save_watchlist_research_markdown(run_id: str, today: str, results: list[dict]) -> None:
+    """Generate and save a markdown report to reports/research/watchlist_research_{date}.md."""
+    REPORTS_DIR.mkdir(parents=True, exist_ok=True)
+    report_path = REPORTS_DIR / f"watchlist_research_{today}.md"
+
+    action_icon = {
+        "ESCALATE": "🚀",
+        "MAINTAIN": "✅",
+        "REMOVE": "❌",
+        "ADD_NOTE": "📝",
+    }
+
+    escalated = [r for r in results if r.get("action", "").upper() == "ESCALATE"]
+    removed = [r for r in results if r.get("action", "").upper() == "REMOVE"]
+
+    lines: list[str] = [
+        f"# ウォッチリストリサーチ — {today}",
+        "",
+        f"**run_id**: `{run_id}`",
+        "",
+        "---",
+        "",
+        "## サマリー",
+        "",
+        "| 指標 | 値 |",
+        "|---|---|",
+        f"| 対象銘柄 | {len(results)} 銘柄 |",
+        f"| 🚀 ESCALATE | {len(escalated)} 銘柄 |",
+        f"| ❌ REMOVE | {len(removed)} 銘柄 |",
+        "",
+        "---",
+        "",
+        "## 銘柄別結果",
+        "",
+        "| Ticker | アクション | スコア | メモ |",
+        "|--------|-----------|-------|------|",
+    ]
+
+    for r in results:
+        action = r.get("action", "—").upper()
+        icon = action_icon.get(action, "")
+        ticker = r.get("ticker", "—")
+        score = r.get("new_score")
+        note = r.get("note", "—")
+        score_str = f"{score:.1f}" if score is not None else "—"
+        lines.append(f"| {ticker} | {icon} {action} | {score_str} | {note} |")
+
+    lines += [
+        "",
+        "---",
+        "",
+        f"*生成: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} | {WR_HISTORY_PATH}*",
+    ]
+
+    report_path.write_text("\n".join(lines))
+    logger.info(f"Saved markdown report to {report_path}")
 
 
 def load_wr_run(run_id: str) -> list[dict]:

@@ -132,10 +132,43 @@ End with:
 .venv/bin/python scripts/tool.py get_market_context
 ```
 
-Classify the regime from the output:
-- `HIGH_FEAR` (VIX > 30): cap all conviction scores at MEDIUM; reduce suggested position sizes by 50%
-- `DOWNTREND` (SPY < EMA50): add "market headwind" to every candidate's risk_factors; raise the bar for BUY recommendations
-- `NORMAL`: proceed with standard criteria
+Classify the regime from the output and apply the gate below **before proceeding**:
+
+### HIGH_FEAR ゲート（ハードストップ）
+
+**`HIGH_FEAR` (VIX > 30) の場合、ここで処理を停止する。**
+
+以下を表示してセッションを終了する:
+
+```
+⛔ マクロゲート: BLOCKED
+
+VIX={VIX値} / regime=HIGH_FEAR
+
+新規ポジション非推奨。市場が極度の恐怖状態にあります。
+既存ポジションのモニタリングに集中してください。
+
+推奨アクション:
+  - /monitor を実行して既存ポジションを確認
+  - VIX が 25 以下に低下するまで /research を保留
+```
+
+Slack に通知する:
+```bash
+.venv/bin/python -c "
+from investor.notifications.slack import SlackNotifier
+SlackNotifier().send_text(':no_entry: /research BLOCKED — VIX高水準(HIGH_FEAR)のため新規リサーチを中止。既存ポジション監視に集中。')
+"
+```
+
+**Steps 2–8 は実行しない。**
+
+---
+
+### その他のレジーム
+
+- `DOWNTREND` (SPY < EMA50): 全候補の `risk_factors` に "market headwind" を追加。BUY 推奨の閾値を引き上げる。
+- `NORMAL`: 通常の基準で進む。
 
 State the regime before moving on.
 
@@ -199,7 +232,7 @@ Use only data returned by the tools. Do not fabricate numbers. For each score, r
 | Fundamentals | 20% | revenue_growth_yoy + earnings_growth_yoy + forward_pe from get_ticker_details; forward_pe > 50 → add "高バリュエーションリスク"; peg_ratio > 3 → add "成長織り込み済みリスク" |
 | Catalyst | 25% | Upcoming events, analyst upside % from get_ticker_details; days_until_earnings ≤ 14 → +1pt and add "決算前カタリスト" to key_catalysts + "決算ギャップリスク" to risk_factors; no catalyst → cap at 6; downgrade 1-2pts if DOWNTREND or HIGH_FEAR |
 | Technical | 15% | RSI positioning, MACD crossovers, BB squeeze, EMA20/50 alignment |
-| Sentiment | 15% | News tone, X posts, analyst_recommendation + analyst_count from get_ticker_details; strong_buy with ≥10 analysts = score 8+ |
+| Sentiment | 15% | News tone, X posts, analyst_recommendation + analyst_count from get_ticker_details; strong_buy with ≥10 analysts = score 8+. **例外**: `rs_signal == STRONG_OUTPERFORM` かつ `analyst_upside_pct < 0`（アナリスト目標が現値を下回る）の場合、アナリスト目標のマイナス乖離を Sentiment スコアの減点材料として使用しないこと。モメンタム先行でアナリスト目標が陳腐化している可能性が高いため。この場合は analyst_upside 以外の要素（news tone、X、recommendation 方向性）でスコアを判定する。 |
 
 Score 1–10 per factor. Compute weighted total: (momentum×0.25 + fundamentals×0.20 + catalyst×0.25 + technical×0.15 + sentiment×0.15).
 
@@ -453,4 +486,39 @@ Write back the updated `data/watchlist.json` and report:
 Watchlist score update:
 🔄 ALAB — last_score updated: null → 8.1 (run: c9ac08aa)
 🔄 MRVL — last_score updated: null → 7.85 (run: c9ac08aa)
+```
+
+---
+
+## Step 9: Decision強制トリガー（standard mode only）
+
+After saving watchlist updates (Step 8), check portfolio slots:
+
+```bash
+cat data/portfolio.csv
+```
+
+Count rows where `status == "open"`. Call this `open_count`.
+
+**空きスロットがある場合（open_count < 5）:**
+
+```
+⚠️ MANDATORY NEXT STEP
+────────────────────────────────────────────────────────────────
+ポジション: {open_count}/5（空き {5 - open_count}枠）
+候補銘柄: {スコア ≥ 7.0 の銘柄数}件
+
+空きスロットがある状態でリサーチを完了しました。
+必ず次のコマンドを実行してください:
+
+  /decision {run_id}
+
+候補が出ているのに Decision を実行しないことは運用漏れです。
+────────────────────────────────────────────────────────────────
+```
+
+**ポジション満杯の場合（open_count == 5）:**
+
+```
+✅ ポジション満杯（5/5）— Decision 不要。既存ポジションのモニタリングに集中してください。
 ```

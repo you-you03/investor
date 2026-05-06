@@ -1,0 +1,37 @@
+[
+  {
+    "date": "2026-05-04",
+    "run_id": "aec305c5-7fb9-469a-a7a2-e3fe8cdd16ee",
+    "candidates_evaluated": [
+      "MU",
+      "NVDA",
+      "TEAM",
+      "RDDT"
+    ],
+    "buy_decisions": [
+      "TEAM"
+    ],
+    "pass_decisions": [
+      "MU",
+      "NVDA",
+      "RDDT"
+    ],
+    "no_trade_week": false
+  },
+  {
+    "date": "2026-05-06",
+    "run_id": "ce3b44d4-a83e-4832-a8bc-6649ecb95576",
+    "candidates_evaluated": [
+      "WAT",
+      "STRL"
+    ],
+    "buy_decisions": [
+      "VST"
+    ],
+    "pass_decisions": [
+      "WAT",
+      "STRL"
+    ],
+    "no_trade_week": false
+  }
+]

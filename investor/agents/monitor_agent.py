@@ -16,7 +16,7 @@ from __future__ import annotations
 
 import csv
 import json
-from datetime import date
+from datetime import date, datetime
 from pathlib import Path
 from investor.core.monitor import Alert, check_all_positions
 from investor.data.yfinance_client import YFinanceClient
@@ -28,6 +28,7 @@ logger = get_logger(__name__)
 PORTFOLIO_PATH = Path("data/portfolio.csv")
 ALERTS_PATH = Path("data/monitor_alerts.json")
 HISTORY_PATH = Path("data/monitor_history.json")
+REPORTS_DIR = Path("reports/monitor")
 
 
 def _load_open_positions() -> list[dict]:
@@ -73,6 +74,99 @@ def _save_daily_summary(positions: list[dict], alerts: list[dict]) -> None:
     }
     history.append(record)
     HISTORY_PATH.write_text(json.dumps(history, indent=2))
+    _save_markdown_report(positions, alerts)
+
+
+def _save_markdown_report(positions: list[dict], alerts: list[dict]) -> None:
+    """Generate and save a markdown report to reports/monitor/monitor_{date}.md."""
+    today = date.today().isoformat()
+    REPORTS_DIR.mkdir(parents=True, exist_ok=True)
+    report_path = REPORTS_DIR / f"monitor_{today}.md"
+
+    severity_icon = {"HIGH": "🔴", "MEDIUM": "🟡", "LOW": "🔵"}
+
+    total_pnl = 0.0
+    position_rows: list[str] = []
+    for p in positions:
+        current = p.get("current_price")
+        entry = p.get("entry_price", 0.0)
+        shares = p.get("shares", 0.0)
+        target = p.get("target_price", "—")
+        stop = p.get("stop_loss", "—")
+        ticker = p.get("ticker", "")
+
+        if current and entry and shares:
+            pnl = (current - entry) * shares
+            pnl_pct = (current - entry) / entry * 100
+            total_pnl += pnl
+            state = "✅" if pnl >= 0 else "⚠️"
+            position_rows.append(
+                f"| {ticker} | ${current:.2f} | ${entry:.2f} | {shares:.0f} "
+                f"| {pnl:+.2f} | {pnl_pct:+.1f}% | ${stop} | ${target} | {state} |"
+            )
+        else:
+            position_rows.append(
+                f"| {ticker} | — | ${entry:.2f} | {shares:.0f} | — | — | ${stop} | ${target} | — |"
+            )
+
+    high_count = sum(1 for a in alerts if a.get("severity") == "HIGH")
+    med_count = sum(1 for a in alerts if a.get("severity") == "MEDIUM")
+    low_count = sum(1 for a in alerts if a.get("severity") == "LOW")
+
+    alert_rows: list[str] = []
+    for a in alerts:
+        icon = severity_icon.get(a.get("severity", "LOW"), "🔵")
+        alert_rows.append(
+            f"| {icon} {a.get('severity', '—')} | {a.get('ticker', '—')} "
+            f"| {a.get('alert_type', '—')} | {a.get('message', '—')} |"
+        )
+
+    lines: list[str] = [
+        f"# Monitor Report — {today}",
+        "",
+        "## サマリー",
+        "",
+        "| 指標 | 値 |",
+        "|---|---|",
+        f"| オープンポジション | {len(positions)} 銘柄 |",
+        f"| 合計未実現損益 | **{total_pnl:+.2f}** |",
+        f"| 🔴 HIGH アラート | {high_count} 件 |",
+        f"| 🟡 MEDIUM アラート | {med_count} 件 |",
+        f"| 🔵 LOW アラート | {low_count} 件 |",
+        "",
+        "---",
+        "",
+        "## ポジション損益",
+        "",
+        "| Ticker | 現在値 | 買値 | 株数 | 損益 | 損益% | ストップ | 目標 | 状態 |",
+        "|--------|-------|------|------|------|------|---------|------|------|",
+    ]
+    lines.extend(position_rows)
+    lines += [
+        "",
+        "---",
+        "",
+        "## アラート",
+        "",
+    ]
+    if alert_rows:
+        lines += [
+            "| 重要度 | Ticker | タイプ | メッセージ |",
+            "|--------|--------|--------|-----------|",
+        ]
+        lines.extend(alert_rows)
+    else:
+        lines.append("アラートなし — 全ポジション正常範囲内。")
+
+    lines += [
+        "",
+        "---",
+        "",
+        f"*生成: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} | {HISTORY_PATH}*",
+    ]
+
+    report_path.write_text("\n".join(lines))
+    logger.info(f"Saved markdown report to {report_path}")
 
 
 class MonitorAgent:
