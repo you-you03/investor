@@ -82,5 +82,17 @@
     "unrealized_pnl_pct": -4.72,
     "stop_loss": 202.99,
     "target_price": 218.83
+  },
+  {
+    "date": "2026-05-09",
+    "ticker": "PANW",
+    "alert_type": "TARGET_REACHED",
+    "severity": "HIGH",
+    "message": "Price $207.88 reached target $194.69",
+    "current_price": 207.8800048828125,
+    "entry_price": 178.54,
+    "unrealized_pnl_pct": 16.43,
+    "stop_loss": 170.47,
+    "target_price": 194.69
   }
 ]

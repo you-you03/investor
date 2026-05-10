@@ -110,7 +110,15 @@ Your research process:
              - No near-term catalyst, pure technical setup: target = entry + 1.5×ATR
              - If a clear support level is closer than 1×ATR, use that as stop_loss instead
              Always state the multiplier used and the reason in data_notes.
-   Step 7 — Synthesis: Aggregate scores, apply macro penalty if needed, output final JSON
+   Step 7 — Conviction Floor (確信度フロア):
+             Based on revenue_growth_yoy and earnings_growth_yoy from Step 1, assign conviction_floor:
+             • Revenue YoY > 200% AND EPS YoY > 300% → conviction_floor = "HIGH"
+               (exceptional growth; PM cannot assign LOW; reduces to MEDIUM only if strong bear case)
+             • Revenue YoY > 100% OR EPS YoY > 200%  → conviction_floor = "MEDIUM"
+               (strong growth; PM cannot assign LOW conviction)
+             • Otherwise                               → conviction_floor = "NONE"
+             Record the triggering metric in score_evidence.conviction_floor_reason.
+   Step 8 — Synthesis: Aggregate scores, apply macro penalty if needed, output final JSON
 
 Scoring criteria (be strict — reserve scores above 8 for truly exceptional setups):
 - Momentum (25%): price action, volume trend; REQUIRE rs_signal from get_relative_strength.
@@ -162,7 +170,8 @@ After completing all research, return ONLY a valid JSON array. No prose before o
       "fundamentals": "Revenue +122% YoY Q4 2024, EPS $5.16 vs $4.60 est",
       "catalyst": "GTC conference Mar 18, H200 supply ramp Q2 confirmed",
       "technical": "Above EMA20/EMA50, MACD bullish crossover, BB squeeze resolving up",
-      "sentiment": "X search shows 78% positive mentions, institutional accumulation noted by @quantopian"
+      "sentiment": "X search shows 78% positive mentions, institutional accumulation noted by @quantopian",
+      "conviction_floor_reason": "Revenue +122% YoY → MEDIUM floor applied"
     },
     "thesis": "2-3 sentence investment thesis explaining why this is a compelling opportunity now.",
     "key_catalysts": ["GTC conference upcoming", "H200 supply ramp", "AI capex cycle"],
@@ -178,6 +187,7 @@ After completing all research, return ONLY a valid JSON array. No prose before o
     "atr_multiplier_used": 2.5,
     "atr_multiplier_reason": "決算18日前・強ファンダで2.5×ATR採用",
     "analyst_upside_pct": 51.7,
+    "conviction_floor": "MEDIUM",
     "data_notes": "RSI unavailable due to API error. Financial data Q3 2025."
   }
 ]"""
@@ -230,7 +240,7 @@ Your job is to quickly shortlist the 10-15 most promising tickers for Phase 2 de
 ### Soft scoring (rank survivors by these signals):
 1. **Momentum** (highest weight): daily change % and recent price trend. Prefer +2% or more today.
 2. **Volume surge**: volume vs average ratio > 1.5x suggests institutional activity.
-3. **RSI zone**: 45-75 is ideal. Below 40 = weak momentum. Above 80 = overheated (lower priority).
+3. **RSI zone**: 45-75 is ideal. Below 40 = weak momentum. 80-84 = overheated (lower priority, flag for PM). 85+ = exclude unless on watchlist (PM applies unconditional WAIT at RSI≥85).
 4. **EMA alignment**: price above EMA20 and EMA20 above EMA50 = uptrend confirmed.
 5. **Sector RS**: prefer tickers whose sector appears in sector_rs.top_sectors.
    In DOWNTREND regime: ONLY consider tickers from top_sectors unless they are on the watchlist.

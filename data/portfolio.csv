@@ -1,12 +1,14 @@
-ticker,shares,entry_price,entry_date,exit_price,exit_date,status,target_price,stop_loss,note
-ASTS,36.0,92.62,2026-04-05,94.90,2026-04-11,closed,109.59,84.13,HIGH確信。宇宙D2D通信、268%QoQ成長。フルサイズ$3350 | TIME_EXIT +2.5%
-AAOI,19.0,103.91,2026-04-05,150.60,2026-04-11,closed,131.18,90.28,HIGH確信・初期60%。MACD回復後に追加予定($2000初期) | TARGET_HIT +44.9%
-ALAB,11.0,149.05,2026-04-11,212.84,2026-04-25,closed,176.81,162.00,HIGH確信。TARGET_REACHED +42.8% | 2026-04-25 利確SELL（monitor alert）
-CRDO,4.0,119.59,2026-04-11,160.69,2026-04-18,closed,134.12,112.32,MEDIUM確信。TARGET_REACHED +34.4% | 2026-04-18 部分利確4株 Zacks Strong Buy upgrade
-CRDO,4.0,119.59,2026-04-11,195.04,2026-04-25,closed,185.00,148.00,MEDIUM確信継続。TARGET_REACHED 2回目 +63.1% | 2026-04-25 利確SELL（monitor alert）
-CRWV,6.0,102.00,2026-04-11,119.90,2026-05-05,closed,119.90,94.84,LOW確信・ハイリスク。Meta $21B+Anthropic契約。volume 2.88x。D/E=894のため最小ポジション。$612枠 | Jane Street $1B購入+$6B deal(2026-04-17) | 2026-04-25 SHARP_DROP -7.5%アラートも$94.84ストップ上、継続HOLD | TARGET_REACHED +17.5% | 2026-05-05 利確SELL（decision）
-NVDA,7.0,208.27,2026-04-25,198.45,2026-05-05,closed,218.83,202.99,HIGH確信。AI最強銘柄。rev+73%/EPS+96%。52週高値ブレイク。Options BULLISH。コンセンサス目標$268(+29%)。$1458枠 | STOP_LOSS -4.72% | 2026-05-05 損切りSELL（monitor alert → decision）
-PANW,5.0,178.54,2026-04-25,,,open,194.69,170.47,MEDIUM確信。CEO Nikesh Arora $10M自社株買い(3/27)。Options BULLISH。EPS+60.5%。$893枠
-TSM,3.0,402.46,2026-04-26,,,open,428.87,389.25,HIGH確信・スコア8.0。52W高値ブレイク。インサイダー買い(K)。アナリスト目標$463(+15.1%)。Watchlist-Research ESCALATE 2026-04-26
-UAL,7.0,93.0,2026-04-26,,,open,103.45,87.78,LOW確信・スコア6.5。RSI=47理想入口。Options BULLISH。Forward PE=6.61。半導体偏重への分散。Watchlist-Research ESCALATE 2026-04-26
-TEAM,11.0,88.88,2026-05-05,,,open,100.68,82.98,MEDIUM確信（HIGH→格下げ）。EPS +31%サプライズ（Q1 2026）。BB上限ブレイクアウト。Revenue +31.7% YoY。Options BULLISH PC=0.489。アナリスト目標$142.34(+60%)。$1005枠 | GAAP赤字・D/E=141リスク | NVDAストップアウト後スロット活用
+ticker,shares,entry_price,entry_date,exit_price,exit_date,status,target_price,stop_loss,note,signal_type,exit_stage,mae_pct,mfe_pct
+ASTS,36.0,92.62,2026-04-05,94.90,2026-04-11,closed,109.59,84.13,HIGH確信。宇宙D2D通信、268%QoQ成長。フルサイズ$3350 | TIME_EXIT +2.5%,technical_breakout,,,
+AAOI,19.0,103.91,2026-04-05,150.60,2026-04-11,closed,131.18,90.28,HIGH確信・初期60%。MACD回復後に追加予定($2000初期) | TARGET_HIT +44.9%,technical_breakout,,,
+ALAB,11.0,149.05,2026-04-11,212.84,2026-04-25,closed,176.81,162.00,HIGH確信。TARGET_REACHED +42.8% | 2026-04-25 利確SELL（monitor alert）,earnings_beat,,,
+CRDO,4.0,119.59,2026-04-11,160.69,2026-04-18,closed,134.12,112.32,MEDIUM確信。TARGET_REACHED +34.4% | 2026-04-18 部分利確4株 Zacks Strong Buy upgrade,analyst_upgrade,,,
+CRDO,4.0,119.59,2026-04-11,195.04,2026-04-25,closed,185.00,148.00,MEDIUM確信継続。TARGET_REACHED 2回目 +63.1% | 2026-04-25 利確SELL（monitor alert）,analyst_upgrade,,,
+CRWV,6.0,102.00,2026-04-11,119.90,2026-05-05,closed,119.90,94.84,LOW確信・ハイリスク。Meta $21B+Anthropic契約。volume 2.88x。D/E=894のため最小ポジション。$612枠 | Jane Street $1B購入+$6B deal(2026-04-17) | 2026-04-25 SHARP_DROP -7.5%アラートも$94.84ストップ上、継続HOLD | TARGET_REACHED +17.5% | 2026-05-05 利確SELL（decision）,analyst_upgrade,,,
+NVDA,7.0,208.27,2026-04-25,198.45,2026-05-05,closed,218.83,202.99,HIGH確信。AI最強銘柄。rev+73%/EPS+96%。52週高値ブレイク。Options BULLISH。コンセンサス目標$268(+29%)。$1458枠 | STOP_LOSS -4.72% | 2026-05-05 損切りSELL（monitor alert → decision）,earnings_beat,,,
+PANW,5.0,178.54,2026-04-25,207.88,2026-05-09,closed,194.69,170.47,MEDIUM確信。CEO Nikesh Arora $10M自社株買い(3/27)。Options BULLISH。EPS+60.5%。$893枠,earnings_beat,,,
+TSM,3.0,402.46,2026-04-26,,,open,428.87,389.25,HIGH確信・スコア8.0。52W高値ブレイク。インサイダー買い(K)。アナリスト目標$463(+15.1%)。Watchlist-Research ESCALATE 2026-04-26,watchlist_escalate,0,,2.29
+UAL,6.0,93.0,2026-04-26,,,open,103.45,93.0,"LOW確信・スコア6.5。RSI=47理想入口。Options BULLISH。Forward PE=6.61。半導体偏重への分散。Watchlist-Research ESCALATE 2026-04-26 | 【2026-05-09 STAGE1】$99.58で1株売却(25%利確)。ストップ→買値$93.00",watchlist_escalate,1,0.0,7.08
+TEAM,11.0,88.88,2026-05-05,,,open,100.68,82.98,MEDIUM確信（HIGH→格下げ）。EPS +31%サプライズ（Q1 2026）。BB上限ブレイクアウト。Revenue +31.7% YoY。Options BULLISH PC=0.489。アナリスト目標$142.34(+60%)。$1005枠 | GAAP赤字・D/E=141リスク | NVDAストップアウト後スロット活用,earnings_beat,0,,3.06
+AVGO,3.0,432.0,2026-05-09,,,open,461.0,414.57,"HIGH確信。$430ブレイクトリガー達成。半導体LEADING最大手。Options BULLISH(pc=0.355)。analyst target $475(+10.6%)/Strong Buy 42名。$1,296枠",technical_breakout,0,-0.46,
+WAT,3.0,355.0,2026-05-09,,,open,397.0,339.39,"MEDIUM確信。Options pc=0.156全候補中最強シグナル。Revenue+91.5% YoY。Insider NET_BUYER $451K。Healthcare逆風リスク。$1,065枠",analyst_upgrade,0,,0.04

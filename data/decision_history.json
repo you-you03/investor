@@ -33,5 +33,44 @@
       "STRL"
     ],
     "no_trade_week": false
+  },
+  {
+    "date": "2026-05-09",
+    "run_id": "59e29cdb-cf2b-4582-aad2-cfd1f566a95f",
+    "candidates_evaluated": [
+      "AVGO",
+      "AMD",
+      "INTC",
+      "RKLB"
+    ],
+    "buy_decisions": [
+      "AVGO"
+    ],
+    "pass_decisions": [
+      "AMD",
+      "INTC",
+      "RKLB"
+    ],
+    "no_trade_week": false
+  },
+  {
+    "date": "2026-05-09",
+    "run_id": "59e29cdb-cf2b-4582-aad2-cfd1f566a95f",
+    "candidates_evaluated": [
+      "AVGO",
+      "AMD",
+      "INTC",
+      "RKLB"
+    ],
+    "buy_decisions": [
+      "AVGO",
+      "WAT"
+    ],
+    "pass_decisions": [
+      "AMD",
+      "INTC",
+      "RKLB"
+    ],
+    "no_trade_week": false
   }
 ]

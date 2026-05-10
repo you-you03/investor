@@ -1857,6 +1857,72 @@
           "conviction": "LOW"
         }
       ]
+    },
+    {
+      "run_id": "59e29cdb-cf2b-4582-aad2-cfd1f566a95f",
+      "date": "2026-05-09",
+      "candidates": [
+        {
+          "ticker": "AVGO",
+          "score": 8.5,
+          "note": "\u524d\u56deESCALATE\u8a2d\u5b9a\u306e$430\u30d6\u30ec\u30a4\u30af\u6761\u4ef6\u3092\u672c\u65e5\u9054\u6210\u3002RSI=66.09\u5065\u5168\u3002Options BULLISH(pc_vol=0.355)\u300252w\u9ad8\u5024$437.68\u307e\u3067+1.8%\u3002EMA20/50\u4e0a($404/$374)\u3002analyst target $475.49(+10.6%)/42\u540dstrong_buy\u3002\u30a8\u30f3\u30c8\u30ea\u30fc$430-435\u3001stop $414.57\u3001target $461",
+          "entry_zone": "$430-435",
+          "stop": "$414.57",
+          "target": "$461"
+        },
+        {
+          "ticker": "AMD",
+          "score": 7.5,
+          "note": "52w\u9ad8\u5024\u30d6\u30ec\u30a4\u30af(105.7%/volume 1.5x confirmed)\u3002Q1 FY2026 EPS $1.37 vs $1.295(+5.8%\u30b5\u30d7\u30e9\u30a4\u30ba)\u3002\u30bb\u30df\u30b3\u30f3LEADING\u30bb\u30af\u30bf\u30fc\u6700\u5927\u624b\u3002\u672c\u65e5+11.44%\u3067\u62bc\u3057\u76ee\u5f85\u3061\u63a8\u5968\u3002\u30a8\u30f3\u30c8\u30ea\u30fc\u30be\u30fc\u30f3$420-430(ATR\u30d7\u30eb\u30d0\u30c3\u30af)",
+          "entry_zone": "$420-430(\u62bc\u3057\u76ee)",
+          "stop": "$438",
+          "target": "$490"
+        },
+        {
+          "ticker": "INTC",
+          "score": 7.0,
+          "note": "EPS 2108%\u30b5\u30d7\u30e9\u30a4\u30ba(0.013\u21920.29)\u3067Intel turnaround\u78ba\u8a8d\u300252w\u9ad8\u5024\u30d6\u30ec\u30a4\u30af(109.1%/volume 2.07x)\u3002\u672c\u65e5+13.96%\u3067\u904e\u71b1\u6c17\u5473\u3002\u62bc\u3057\u76ee$115-120\u304c\u7406\u60f3\u7684\u306a\u30a8\u30f3\u30c8\u30ea\u30fc\u3002\u30bb\u30df\u30b3\u30f3\u5fa9\u6d3b\u30b9\u30c8\u30fc\u30ea\u30fc",
+          "entry_zone": "$115-120(\u62bc\u3057\u76ee)",
+          "stop": "$112",
+          "target": "$138"
+        },
+        {
+          "ticker": "RKLB",
+          "score": 6.5,
+          "note": "52w\u9ad8\u5024\u30d6\u30ec\u30a4\u30af(105.9%/volume 3.61x\u78ba\u8a8d)\u3002Rocket Lab\u3001\u5b87\u5b99\u30ed\u30b1\u30c3\u30c8\u4e8b\u696d\u3002Options BULLISH(pc_vol=0.297)\u3002RSI=69.04\u5065\u5168\u3002\u305f\u3060\u3057\u8d64\u5b57\u7d99\u7d9a/analyst target $87.56(\u73fe\u5024\u4e0b)\u3002\u30a6\u30a9\u30c3\u30c1\u30ea\u30b9\u30c8\u8ffd\u52a0\u5019\u88dc\u3068\u3057\u3066\u6ce8\u76ee\u3002\u672c\u65e5+28.64%\u3067\u5373\u30a8\u30f3\u30c8\u30ea\u30fc\u4e0d\u53ef",
+          "entry_zone": "$90-98(\u30d7\u30eb\u30d0\u30c3\u30af)",
+          "stop": "$85",
+          "target": "$115"
+        }
+      ]
+    },
+    {
+      "run_id": "59e29cdb-cf2b-4582-aad2-cfd1f566a95f",
+      "date": "2026-05-09",
+      "candidates": [
+        {
+          "ticker": "AVGO",
+          "conviction": "HIGH",
+          "entry_price": 430.0,
+          "target_price": 461.0,
+          "stop_loss": 414.57,
+          "allocation_pct": 20,
+          "shares": 3,
+          "rationale": "\u524d\u56deESCALATE\u8a2d\u5b9a\u306e$430\u30d6\u30ec\u30a4\u30af\u6761\u4ef6\u3092\u672c\u65e5\u9054\u6210(+4.17%)\u3002RSI=66.09\u5065\u5168\u3001Options BULLISH(pc_vol=0.355)\u3002EMA20/50\u4e0a($404/$374)\u300252w\u9ad8\u5024$437.68\u307e\u3067+1.8%\u3067\u4e0a\u6607\u4f59\u5730\u3042\u308a\u3002Analyst target $475.49(+10.6%)/42\u540dstrong_buy\u3002AI\u534a\u5c0e\u4f53thesis\uff08\u30ab\u30b9\u30bf\u30e0\u30a2\u30af\u30bb\u30e9\u30ec\u30fc\u30bf+106% YoY\uff09intact\u3002",
+          "risks": "52w\u9ad8\u5024$437.68\u5230\u9054\u5f8c\u306e\u5229\u76ca\u78ba\u5b9a\u58f2\u308a\u3002$430\u30d6\u30ec\u30a4\u30af\u5931\u6557\u6642\u306e\u53cd\u843d\u30ea\u30b9\u30af\u3002Insider $106M\u58f2\u308a(NET_SELLER)\u7d99\u7d9a\u3002"
+        },
+        {
+          "ticker": "RKLB",
+          "conviction": "LOW",
+          "entry_price": 90.0,
+          "target_price": 115.0,
+          "stop_loss": 83.0,
+          "allocation_pct": 10,
+          "shares": 7,
+          "rationale": "52w\u9ad8\u5024\u30d6\u30ec\u30a4\u30af(105.9%)+volume 3.61x\u78ba\u8a8d\u3002\u5b87\u5b99\u30c6\u30fc\u30de(IREN+7.65%/RDW+22%/FLY+21%\u3068\u5b87\u5b99\u95a2\u9023\u9298\u67c4\u5168\u822c\u5f37\u3044)\u3002Options BULLISH(pc_vol=0.297)\u3002RSI=69.04\u3067\u904e\u71b1\u306a\u3057\u3002Revenue+35.7% YoY\u3002\u672c\u65e5+28.64%\u3067\u5373\u30a8\u30f3\u30c8\u30ea\u30fc\u4e0d\u53ef\u3001$90-98\u30d7\u30eb\u30d0\u30c3\u30af\u5f85\u3061\u3002",
+          "risks": "\u8d64\u5b57\u7d99\u7d9a(EPS -0.09)\u3002Analyst target $87.56\u304c\u73fe\u5024$105.47\u309217%\u4e0b\u56de\u308b\u3002\u5b87\u5b99\u30c6\u30fc\u30de\u904e\u71b1\u306e\u53cd\u52d5\u30ea\u30b9\u30af\u3002Insider $16.5M\u58f2\u308a\u3002"
+        }
+      ]
     }
   ]
 }

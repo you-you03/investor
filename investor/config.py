@@ -14,7 +14,7 @@ class Settings(BaseSettings):
 
     # Portfolio sizing
     available_capital_usd: float = 6700.0  # ~1,000,000 JPY
-    weekly_return_target_pct: float = 0.08  # +8%/週 (¥80,000) 目標
+    weekly_return_target_pct: float = 0.025  # +2.5%/週（年換算+130%）目標
     max_position_pct: float = 0.25          # 1銘柄最大25%（¥250,000 / ~$1,675）
 
     # Agent behavior
