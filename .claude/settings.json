@@ -2,6 +2,7 @@
   "permissions": {
     "allow": [
       "Bash(python*)",
+      "Bash(python3*)",
       "Bash(.venv/bin/python*)",
       "Bash(pip*)",
       "Bash(ls*)",
@@ -15,6 +16,9 @@
       "Bash(date*)",
       "Bash(echo*)",
       "Bash(cp*)",
+      "Bash(mv*)",
+      "Bash(touch*)",
+      "Bash(cd \"/Users/yutaobayashi/PERSONAL DEV/1_now/investor\"*)",
       "Bash(git status*)",
       "Bash(git log*)",
       "Bash(git diff*)",

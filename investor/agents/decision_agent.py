@@ -20,6 +20,7 @@ from pathlib import Path
 
 from investor.config import settings
 from investor.notifications.slack import SlackNotifier
+from investor.utils.price_parser import normalize_price_range, parse_entry_price
 from investor.utils.logger import get_logger
 
 logger = get_logger(__name__)
@@ -93,16 +94,18 @@ def enrich_proposals(raw_proposals: list[dict], candidates: list[dict]) -> list[
     for p in raw_proposals:
         ticker = p.get("ticker", "UNKNOWN").upper()
         conviction = p.get("conviction", "LOW").upper()
+        action = p.get("action", "HOLD").upper()
         position_size_usd = compute_position_size(conviction)
-        entry_price = _parse_entry_price(p.get("entry_price_range", ""))
+        entry_price_range = normalize_price_range(p.get("entry_price_range", ""))
+        entry_price = parse_entry_price(entry_price_range)
         shares_suggested = position_size_usd / entry_price if entry_price else None
 
         research = candidate_map.get(ticker, {})
         proposals.append({
             "ticker": ticker,
-            "action": p.get("action", "HOLD").upper(),
+            "action": action,
             "conviction": conviction,
-            "entry_price_range": p.get("entry_price_range"),
+            "entry_price_range": entry_price_range or p.get("entry_price_range"),
             "target_price": p.get("target_price") or research.get("target_price"),
             "stop_loss": p.get("stop_loss") or research.get("stop_loss"),
             "position_size_usd": round(position_size_usd, 0),
@@ -111,14 +114,81 @@ def enrich_proposals(raw_proposals: list[dict], candidates: list[dict]) -> list[
             "key_catalysts": p.get("key_catalysts", []),
             "risk_factors": p.get("risk_factors", []),
             "time_horizon": p.get("time_horizon"),
+            "signal_type": p.get("signal_type") or research.get("signal_type"),
         })
     return proposals
 
 
+_MAX_POSITION_USD = settings.available_capital_usd * 0.25  # 25% cap = ~$1,675
+_MAX_OPEN_POSITIONS = 5
+
+
+def validate_proposals(proposals: list[dict], is_paper: bool = False) -> list[str]:
+    """
+    Check enriched proposals against mandate rules.
+    Returns a list of violation strings; empty = all clear.
+
+    is_paper: skip position-count check for B枠 paper decisions (paper tracks
+    independently from the A-frame portfolio.csv).
+    """
+    violations: list[str] = []
+
+    buy_proposals = [p for p in proposals if p.get("action") == "BUY"]
+    open_positions = [] if is_paper else load_open_positions()
+
+    if not is_paper:
+        open_count = len(open_positions)
+        if open_count + len(buy_proposals) > _MAX_OPEN_POSITIONS:
+            violations.append(
+                f"ポジション上限超過: open={open_count} + new_buy={len(buy_proposals)} > {_MAX_OPEN_POSITIONS}"
+            )
+
+    for p in buy_proposals:
+        ticker = p.get("ticker", "?")
+        size = p.get("position_size_usd", 0) or 0
+        if size > _MAX_POSITION_USD:
+            violations.append(
+                f"{ticker}: position_size_usd ${size:,.0f} > 上限 ${_MAX_POSITION_USD:,.0f} (25%)"
+            )
+        if not p.get("ticker"):
+            violations.append("ticker が未設定のプロポーザルがあります")
+        stop = p.get("stop_loss")
+        if stop is None or stop == "":
+            violations.append(f"{ticker}: stop_loss が未設定です（必須）")
+        else:
+            try:
+                float(stop)
+            except (TypeError, ValueError):
+                violations.append(f"{ticker}: stop_loss '{stop}' が数値ではありません")
+
+        current_ticker_exposure = 0.0
+        for row in open_positions:
+            if str(row.get("ticker", "")).upper() != ticker:
+                continue
+            try:
+                current_ticker_exposure += float(row.get("shares") or 0) * float(row.get("entry_price") or 0)
+            except (TypeError, ValueError):
+                continue
+
+        total_exposure = current_ticker_exposure + float(size)
+        if total_exposure > _MAX_POSITION_USD:
+            violations.append(
+                f"{ticker}: 既存保有 ${current_ticker_exposure:,.0f} + 新規 ${size:,.0f} = "
+                f"${total_exposure:,.0f} が 25% 上限 ${_MAX_POSITION_USD:,.0f} を超えます"
+            )
+
+    return violations
+
+
 def send_proposals(proposals: list[dict]) -> None:
-    """Send enriched proposals to Slack."""
+    """Send enriched proposals to Slack. Raises RuntimeError on failure."""
     slack = SlackNotifier()
-    slack.send_proposals(proposals)
+    ok = slack.send_proposals(proposals)
+    if not ok:
+        raise RuntimeError(
+            "Slack 送信失敗 — SLACK_WEBHOOK_URL を確認してください。"
+            " BUY 通知が送信されていません。"
+        )
     logger.info(f"Sent {len(proposals)} proposals to Slack")
 
 
@@ -140,8 +210,30 @@ def log_decision_history(
             history = []
 
     buy_tickers = [p["ticker"] for p in proposals if p.get("action") == "BUY"]
+    hold_cash = [p["ticker"] for p in proposals if p.get("action") in {"HOLD_CASH", "NO_TRADE"}]
     all_tickers = [c.get("ticker", "") for c in all_candidates if c.get("ticker")]
     pass_tickers = [t for t in all_tickers if t not in buy_tickers]
+    candidate_map = {c.get("ticker", "").upper(): c for c in all_candidates if c.get("ticker")}
+    pass_records = [
+        {
+            "ticker": ticker,
+            "score": candidate_map.get(ticker, {}).get("score"),
+            "conviction": candidate_map.get(ticker, {}).get("conviction"),
+            "entry_price_range": candidate_map.get(ticker, {}).get("entry_price_range"),
+            "signal_type": candidate_map.get(ticker, {}).get("signal_type"),
+        }
+        for ticker in pass_tickers
+    ]
+    proposal_records = [
+        {
+            "ticker": p.get("ticker"),
+            "action": p.get("action"),
+            "conviction": p.get("conviction"),
+            "position_size_usd": p.get("position_size_usd"),
+            "signal_type": p.get("signal_type"),
+        }
+        for p in proposals
+    ]
 
     history.append({
         "date": date.today().isoformat(),
@@ -149,6 +241,14 @@ def log_decision_history(
         "candidates_evaluated": all_tickers,
         "buy_decisions": buy_tickers,
         "pass_decisions": pass_tickers,
+        "hold_cash_decisions": hold_cash,
+        "proposal_records": proposal_records,
+        "pass_records": pass_records,
+        "proposal_summary": {
+            "buy_count": len(buy_tickers),
+            "pass_count": len(pass_tickers),
+            "hold_cash_count": len(hold_cash),
+        },
         "no_trade_week": len(buy_tickers) == 0,
     })
     DECISION_HISTORY_PATH.write_text(json.dumps(history, indent=2, ensure_ascii=False))
@@ -168,21 +268,6 @@ def _get_calibration_report() -> str:
         return result.stdout.strip()
     except Exception:
         return ""
-
-
-def _parse_entry_price(entry_price_range: str) -> float | None:
-    if not entry_price_range:
-        return None
-    try:
-        parts = entry_price_range.replace("$", "").split("-")
-        nums = [float(p.strip()) for p in parts if p.strip()]
-        if len(nums) == 2:
-            return (nums[0] + nums[1]) / 2
-        if len(nums) == 1:
-            return nums[0]
-    except (ValueError, AttributeError):
-        pass
-    return None
 
 
 def format_research_for_claude(run_id: str, watchlist_run_id: str | None = None) -> str:

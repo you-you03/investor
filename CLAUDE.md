@@ -45,6 +45,8 @@
     SKILL.md                  ← パフォーマンス分析・スコア校正
   watchlist-research/
     SKILL.md                  ← ウォッチリスト集中リサーチ
+  daily-lite/
+    SKILL.md                  ← 日次軽量サマリー（monitor-lite + watchlist-lite + research-lite）
 
 investor/
   prompts/                    ← Claude に渡すプロンプトテンプレート
@@ -89,6 +91,7 @@ docs/
 | `/research` | マーケットスキャン → 5軸スコアリング → 候補選定 | なし（常時実行可） | 週1〜2回 |
 | `/research --seed {TICKER}` | 単一銘柄の深研究 + 前回比較 | watchlist.json に対象が存在することが望ましい | ウォッチリストアラート時 |
 | `/watchlist-research` | 全ウォッチリスト銘柄を深研究 → ESCALATE/MAINTAIN/REMOVE 判断 | watchlist.json に active 銘柄が存在すること | 週1回または手動 |
+| `/daily-lite` | monitor-lite + watchlist-lite + research-lite を一括実行 → Slack送信 | なし | 毎朝（Scheduled 推奨） |
 | `/decision` | 5ペルソナディベート → PMとして最終BUY/PASS判断 → Slack送信 | research_history.json に最新 run が存在すること | /research の直後 |
 | `/decision --mode exit --ticker {TICKER}` | 全5ペルソナで Exit 議論 → FULL_EXIT/PARTIAL_EXIT/RAISE_TARGET/HOLD | portfolio.csv に open ポジションが存在すること | TARGET_HIT/STOP_BREACH 時 |
 | `/monitor` | ポジション P&L + アラート判定 + ウォッチリスト監視 → Slack送信 | なし（ポジションなしでも実行可） | 毎営業日 |
@@ -100,6 +103,7 @@ docs/
 |---|---|
 | `/research` | `python skills/research.py` |
 | `/watchlist-research` | `python skills/watchlist_research.py` |
+| `/daily-lite` | `python skills/daily_lite.py` |
 | `/decision` | `python skills/decision.py --send '[...]'` |
 | `/decision --paper` | `python skills/decision.py --paper --send '[...]'` |
 | `/monitor` | `python scripts/run_monitor.py` |
@@ -113,12 +117,18 @@ docs/
 ### 毎営業日
 
 ```
+/daily-lite
+  ↓ HIGH exit alert         → /decision --mode exit --ticker {TICKER}
+  ↓ WATCHLIST / MARKET seed → /research --seed {TICKER}
+  ↓ WATCHLIST escalation    → /decision
+```
+
+### イントラデイ監視
+
+```
 /monitor
   ↓ STAGE1_HIT / STAGE2_HIT → 自動利確処理
   ↓ STOP_BREACH             → /decision --mode exit --ticker {TICKER}
-  ↓ WATCHLIST_BREAKOUT
-  ↓ WATCHLIST_SETUP         → /research --seed {TICKER} → /decision
-  ↓ RSI_COOLED              ↗
 ```
 
 ### 週次スキャン
@@ -207,6 +217,55 @@ B枠を使うケース:
   2. ウォッチリスト監視 → フラグ判定 → watchlist.json 更新
   3. python scripts/run_monitor.py → Slack 送信
 ```
+
+---
+
+## Pipeline State Machine（エージェント分業設計）
+
+`watchlist.json` の各エントリは `pipeline_status` フィールドでステートマシンを構成する。
+**DBが状態管理、エージェントが実行、人間が判断** の三角形を維持する。
+
+```
+watching
+  ↓ /monitor: WATCHLIST_BREAKOUT / RSI_COOLED / WATCHLIST_SETUP
+research_queued          ← 「/research --seed TICKER を実行せよ」
+  ↓ /research --seed TICKER 完了
+researched               ← 「/decision の候補として取り込め」
+  ↓ /decision: WAIT判定
+  ↑ researched に戻す（条件待ちの場合）
+  ↓ /decision: PASS判定
+watching                 ← リセット
+  ↓ /decision: BUY採用 / /monitor: ESCALATE_TO_DECISION
+decision_queued          ← 「次回 /decision で必ず議論せよ」
+  ↓ /decision: BUY確定
+promoted                 ← portfolio.csv への add_position 待ち
+  ↓ add_position.py 実行
+（portfolio.csv で管理、watchlist 側は promoted のまま）
+  ↓ /decision --mode exit / STOP_BREACH
+exited                   ← terminal state
+```
+
+### 各エージェントの pipeline_status 更新責任
+
+| エージェント | 検出 | 変更 |
+|---|---|---|
+| `/monitor` | WATCHLIST_BREAKOUT / RSI_COOLED | `watching → research_queued` |
+| `/monitor` | ESCALATE_TO_DECISION | `* → decision_queued` |
+| `/monitor` | IN_PORTFOLIO確認 | `* → promoted` |
+| `/monitor` | REMOVED / STOP_BREACH | `* → exited` |
+| `/research --seed` | 完了時 | `research_queued → researched` |
+| `/decision` | BUY採用 | `* → promoted` |
+| `/decision` | WAIT | `* → researched`（条件待ち）|
+| `/decision` | PASS | `* → watching`（リセット）|
+| `/watchlist-research` | ESCALATE | `* → decision_queued` |
+| `/watchlist-research` | REMOVE | `* → exited` |
+
+### 人間の介入ポイント
+
+`pipeline_status` を直接編集することで、どのステップにも割り込める：
+- `watching → research_queued`：手動でリサーチをキューに入れる
+- `researched → decision_queued`：デシジョン優先度を上げる
+- `exited → watching`：一度外した銘柄を再監視に戻す
 
 ---
 

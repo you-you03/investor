@@ -28,59 +28,59 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 
 import typer
 from rich.console import Console
+from investor.utils.portfolio_contract import (
+    PORTFOLIO_FIELDNAMES,
+    build_position_id,
+    read_portfolio_rows,
+    write_portfolio_rows,
+)
+from investor.utils.price_parser import parse_entry_price
 
 app = typer.Typer(add_completion=False)
 console = Console(stderr=True)
 
 PAPER_PATH = Path("data/paper_portfolio.csv")
-PAPER_FIELDNAMES = [
-    "ticker", "shares", "entry_price", "entry_date",
-    "exit_price", "exit_date", "status",
-    "target_price", "stop_loss", "note",
-    "signal_type", "exit_stage", "mae_pct", "mfe_pct",
-]
 
 
 def _log_paper_proposals(proposals: list[dict]) -> None:
-    """Write BUY proposals to paper_portfolio.csv (B枠) without sending to Slack."""
-    existing: list[dict] = []
-    if PAPER_PATH.exists():
-        with open(PAPER_PATH) as f:
-            existing = list(csv.DictReader(f))
+    """Write BUY proposals to paper_portfolio.csv (B枠) as hypothesis trades."""
+    existing = read_portfolio_rows(PAPER_PATH)
 
     today = date.today().isoformat()
     for p in proposals:
         if p.get("action", "").upper() != "BUY":
             continue
-        entry_range = p.get("entry_price_range", "")
-        try:
-            mid = sum(float(x.strip().lstrip("$")) for x in entry_range.split("-")) / max(len(entry_range.split("-")), 1)
-        except (ValueError, ZeroDivisionError):
-            mid = 0.0
+        mid = parse_entry_price(p.get("entry_price_range"))
         size_usd = p.get("position_size_usd", 0) or 0
         shares = round(size_usd / mid, 1) if mid else 0
+        note = p.get("note") or f"[B枠] {p.get('conviction', '?')}確信。{p.get('rationale', '')[:80]}"
+        hypothesis_id = ""
+        if "[H-" in note:
+            hypothesis_id = note.split("[", 1)[1].split("]", 1)[0]
         existing.append({
+            "position_id": build_position_id(existing),
             "ticker": p["ticker"],
             "shares": shares,
             "entry_price": round(mid, 2) if mid else "",
             "entry_date": today,
+            "proposal_date": today,
             "exit_price": "",
             "exit_date": "",
             "status": "open",
             "target_price": p.get("target_price", ""),
             "stop_loss": p.get("stop_loss", ""),
-            "note": f"[B枠] {p.get('conviction','?')}確信。{p.get('rationale','')[:80]}",
-            "signal_type": "",
+            "note": note,
+            "signal_type": p.get("signal_type", ""),
+            "conviction": p.get("conviction", ""),
+            "hypothesis_id": hypothesis_id,
             "exit_stage": "0",
             "mae_pct": "",
             "mfe_pct": "",
+            "mfe_capture_pct": "",
+            "rule_adherence_score": "",
         })
 
-    PAPER_PATH.parent.mkdir(parents=True, exist_ok=True)
-    with open(PAPER_PATH, "w", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=PAPER_FIELDNAMES)
-        writer.writeheader()
-        writer.writerows(existing)
+    write_portfolio_rows(PAPER_PATH, existing)
 
 
 @app.command()
@@ -108,6 +108,7 @@ def main(
         load_run,
         log_decision_history,
         send_proposals,
+        validate_proposals,
     )
 
     # --send mode: deliver Claude's decision to Slack (or paper portfolio)
@@ -125,6 +126,13 @@ def main(
         candidates = load_run(target_run_id) if target_run_id else []
         proposals = enrich_proposals(raw_proposals, candidates)
 
+        violations = validate_proposals(proposals, is_paper=paper)
+        if violations:
+            console.print("[red]MANDATE 違反 — 送信ブロック:[/red]")
+            for v in violations:
+                console.print(f"  [red]• {v}[/red]")
+            raise typer.Exit(1)
+
         if dry_run:
             console.print("[yellow][DRY RUN] Proposals:[/yellow]")
             print(json.dumps(proposals, indent=2))
@@ -132,14 +140,21 @@ def main(
 
         if paper:
             _log_paper_proposals(proposals)
-            console.print(f"[cyan][B枠] Logged {len([p for p in proposals if p.get('action')=='BUY'])} paper position(s) to data/paper_portfolio.csv[/cyan]")
+            console.print(
+                f"[cyan][B枠] Logged {len([p for p in proposals if p.get('action')=='BUY'])} "
+                "paper hypothesis position(s) to data/paper_portfolio.csv[/cyan]"
+            )
             console.print("[cyan]  Use `python skills/paper_portfolio.py list` to view.[/cyan]")
             for p in proposals:
                 if p.get("action") == "BUY":
                     console.print(f"  {p['action']} {p['ticker']} ({p['conviction']}) | size ${p.get('position_size_usd'):,.0f}")
             return
 
-        send_proposals(proposals)
+        try:
+            send_proposals(proposals)
+        except RuntimeError as e:
+            console.print(f"[red]CRITICAL: {e}[/red]")
+            raise typer.Exit(1)
         log_decision_history(proposals, target_run_id or "", candidates)
         console.print(f"[green]Sent {len(proposals)} proposal(s) to Slack[/green]")
         for p in proposals:

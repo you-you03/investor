@@ -22,6 +22,8 @@ from typing import Optional
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
+from investor.utils.portfolio_contract import closed_row_issues
+
 PORTFOLIO_PATH = Path("data/portfolio.csv")
 RESEARCH_HISTORY_PATH = Path("data/research_history.json")
 
@@ -128,6 +130,10 @@ def build_outcome(
         matching = sorted(matching, key=date_distance)
 
     row = matching[0]
+    issues = closed_row_issues(row)
+    if issues:
+        print(f"WARNING: {' | '.join(issues)}", file=sys.stderr)
+        return None
     status = row.get("status", "open")
     entry_price_str = row.get("entry_price") or ""
     if not entry_price_str:

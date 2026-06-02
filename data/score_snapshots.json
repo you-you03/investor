@@ -20,27 +20,27 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-04-26",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 208.27,
+        "return_pct": 3.2676,
+        "spy_return_pct": 0.5351,
+        "alpha_pct": 2.7325,
+        "fetched_at": "2026-05-16T10:29:49"
       },
       "week2": {
         "target_date": "2026-05-03",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 198.45,
+        "return_pct": -1.6015,
+        "spy_return_pct": 1.48,
+        "alpha_pct": -3.0815,
+        "fetched_at": "2026-05-16T10:29:49"
       },
       "week3": {
         "target_date": "2026-05-10",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 215.2,
+        "return_pct": 6.7037,
+        "spy_return_pct": 3.8697,
+        "alpha_pct": 2.834,
+        "fetched_at": "2026-05-16T10:29:49"
       },
       "week4": {
         "target_date": "2026-05-17",
@@ -71,27 +71,27 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-04-26",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 323.46,
+        "return_pct": 5.245,
+        "spy_return_pct": 0.5351,
+        "alpha_pct": 4.7099,
+        "fetched_at": "2026-05-16T10:29:49"
       },
       "week2": {
         "target_date": "2026-05-03",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 328.31,
+        "return_pct": 6.8231,
+        "spy_return_pct": 1.48,
+        "alpha_pct": 5.3431,
+        "fetched_at": "2026-05-16T10:29:50"
       },
       "week3": {
         "target_date": "2026-05-10",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 339.97,
+        "return_pct": 10.6169,
+        "spy_return_pct": 3.8697,
+        "alpha_pct": 6.7472,
+        "fetched_at": "2026-05-16T10:29:50"
       },
       "week4": {
         "target_date": "2026-05-17",
@@ -122,27 +122,27 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-04-26",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 422.76,
+        "return_pct": 3.9898,
+        "spy_return_pct": 0.5351,
+        "alpha_pct": 3.4547,
+        "fetched_at": "2026-05-16T10:29:50"
       },
       "week2": {
         "target_date": "2026-05-03",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 421.28,
+        "return_pct": 3.6257,
+        "spy_return_pct": 1.48,
+        "alpha_pct": 2.1457,
+        "fetched_at": "2026-05-16T10:29:50"
       },
       "week3": {
         "target_date": "2026-05-10",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 430.0,
+        "return_pct": 5.7706,
+        "spy_return_pct": 3.8697,
+        "alpha_pct": 1.9009,
+        "fetched_at": "2026-05-16T10:29:50"
       },
       "week4": {
         "target_date": "2026-05-17",
@@ -173,27 +173,27 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-04-26",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 496.72,
+        "return_pct": 9.1524,
+        "spy_return_pct": 0.5351,
+        "alpha_pct": 8.6173,
+        "fetched_at": "2026-05-16T10:29:51"
       },
       "week2": {
         "target_date": "2026-05-03",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 542.21,
+        "return_pct": 19.1487,
+        "spy_return_pct": 1.48,
+        "alpha_pct": 17.6687,
+        "fetched_at": "2026-05-16T10:29:51"
       },
       "week3": {
         "target_date": "2026-05-10",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 746.81,
+        "return_pct": 64.1088,
+        "spy_return_pct": 3.8697,
+        "alpha_pct": 60.2391,
+        "fetched_at": "2026-05-16T10:29:51"
       },
       "week4": {
         "target_date": "2026-05-17",
@@ -224,27 +224,27 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-04-26",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 267.78,
+        "return_pct": 0.0673,
+        "spy_return_pct": 0.5351,
+        "alpha_pct": -0.4678,
+        "fetched_at": "2026-05-16T10:29:51"
       },
       "week2": {
         "target_date": "2026-05-03",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 256.72,
+        "return_pct": -4.0658,
+        "spy_return_pct": 1.48,
+        "alpha_pct": -5.5458,
+        "fetched_at": "2026-05-16T10:29:51"
       },
       "week3": {
         "target_date": "2026-05-10",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 294.05,
+        "return_pct": 9.8842,
+        "spy_return_pct": 3.8697,
+        "alpha_pct": 6.0145,
+        "fetched_at": "2026-05-16T10:29:52"
       },
       "week4": {
         "target_date": "2026-05-17",
@@ -275,27 +275,27 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-04-26",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 41.59,
+        "return_pct": -8.3921,
+        "spy_return_pct": 0.5351,
+        "alpha_pct": -8.9272,
+        "fetched_at": "2026-05-16T10:29:52"
       },
       "week2": {
         "target_date": "2026-05-03",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 38.55,
+        "return_pct": -15.0881,
+        "spy_return_pct": 1.48,
+        "alpha_pct": -16.5681,
+        "fetched_at": "2026-05-16T10:29:52"
       },
       "week3": {
         "target_date": "2026-05-10",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 40.84,
+        "return_pct": -10.0441,
+        "spy_return_pct": 3.8697,
+        "alpha_pct": -13.9138,
+        "fetched_at": "2026-05-16T10:29:52"
       },
       "week4": {
         "target_date": "2026-05-17",
@@ -326,27 +326,27 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-04-26",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 171.02,
+        "return_pct": 2.7024,
+        "spy_return_pct": 0.5351,
+        "alpha_pct": 2.1673,
+        "fetched_at": "2026-05-16T10:29:52"
       },
       "week2": {
         "target_date": "2026-05-03",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 177.17,
+        "return_pct": 6.3956,
+        "spy_return_pct": 1.48,
+        "alpha_pct": 4.9156,
+        "fetched_at": "2026-05-16T10:29:52"
       },
       "week3": {
         "target_date": "2026-05-10",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 187.59,
+        "return_pct": 12.6531,
+        "spy_return_pct": 3.8697,
+        "alpha_pct": 8.7834,
+        "fetched_at": "2026-05-16T10:29:52"
       },
       "week4": {
         "target_date": "2026-05-17",
@@ -377,27 +377,27 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-04-26",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 164.31,
+        "return_pct": 17.6247,
+        "spy_return_pct": 0.5351,
+        "alpha_pct": 17.0896,
+        "fetched_at": "2026-05-16T10:29:53"
       },
       "week2": {
         "target_date": "2026-05-03",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 164.95,
+        "return_pct": 18.0829,
+        "spy_return_pct": 1.48,
+        "alpha_pct": 16.6029,
+        "fetched_at": "2026-05-16T10:29:53"
       },
       "week3": {
         "target_date": "2026-05-10",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 170.13,
+        "return_pct": 21.7911,
+        "spy_return_pct": 3.8697,
+        "alpha_pct": 17.9214,
+        "fetched_at": "2026-05-16T10:29:53"
       },
       "week4": {
         "target_date": "2026-05-17",
@@ -428,27 +428,27 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-04-26",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 120.17,
+        "return_pct": -4.3537,
+        "spy_return_pct": 0.5351,
+        "alpha_pct": -4.8888,
+        "fetched_at": "2026-05-16T10:29:53"
       },
       "week2": {
         "target_date": "2026-05-03",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 126.53,
+        "return_pct": 0.7084,
+        "spy_return_pct": 1.48,
+        "alpha_pct": -0.7716,
+        "fetched_at": "2026-05-16T10:29:53"
       },
       "week3": {
         "target_date": "2026-05-10",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 140.48,
+        "return_pct": 11.8115,
+        "spy_return_pct": 3.8697,
+        "alpha_pct": 7.9418,
+        "fetched_at": "2026-05-16T10:29:53"
       },
       "week4": {
         "target_date": "2026-05-17",
@@ -479,27 +479,27 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-04-26",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 164.35,
+        "return_pct": 0.5445,
+        "spy_return_pct": 0.5351,
+        "alpha_pct": 0.0094,
+        "fetched_at": "2026-05-16T10:29:54"
       },
       "week2": {
         "target_date": "2026-05-03",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 155.28,
+        "return_pct": -5.0043,
+        "spy_return_pct": 1.48,
+        "alpha_pct": -6.4843,
+        "fetched_at": "2026-05-16T10:29:54"
       },
       "week3": {
         "target_date": "2026-05-10",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 147.72,
+        "return_pct": -9.6293,
+        "spy_return_pct": 3.8697,
+        "alpha_pct": -13.499,
+        "fetched_at": "2026-05-16T10:29:54"
       },
       "week4": {
         "target_date": "2026-05-17",
@@ -530,27 +530,27 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-04-26",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 143.09,
+        "return_pct": -2.2543,
+        "spy_return_pct": 0.5351,
+        "alpha_pct": -2.7894,
+        "fetched_at": "2026-05-16T10:29:54"
       },
       "week2": {
         "target_date": "2026-05-03",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 144.07,
+        "return_pct": -1.5848,
+        "spy_return_pct": 1.48,
+        "alpha_pct": -3.0648,
+        "fetched_at": "2026-05-16T10:29:54"
       },
       "week3": {
         "target_date": "2026-05-10",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 137.8,
+        "return_pct": -5.8679,
+        "spy_return_pct": 3.8697,
+        "alpha_pct": -9.7376,
+        "fetched_at": "2026-05-16T10:29:54"
       },
       "week4": {
         "target_date": "2026-05-17",
@@ -581,27 +581,27 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-04-26",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 30.56,
+        "return_pct": 6.0375,
+        "spy_return_pct": 0.5351,
+        "alpha_pct": 5.5024,
+        "fetched_at": "2026-05-16T10:29:54"
       },
       "week2": {
         "target_date": "2026-05-03",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 27.41,
+        "return_pct": -4.8924,
+        "spy_return_pct": 1.48,
+        "alpha_pct": -6.3724,
+        "fetched_at": "2026-05-16T10:29:55"
       },
       "week3": {
         "target_date": "2026-05-10",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 28.27,
+        "return_pct": -1.9084,
+        "spy_return_pct": 3.8697,
+        "alpha_pct": -5.7781,
+        "fetched_at": "2026-05-16T10:29:55"
       },
       "week4": {
         "target_date": "2026-05-17",
@@ -632,27 +632,27 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-04-26",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 7.85,
+        "return_pct": -3.5627,
+        "spy_return_pct": 0.5351,
+        "alpha_pct": -4.0978,
+        "fetched_at": "2026-05-16T10:29:55"
       },
       "week2": {
         "target_date": "2026-05-03",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 7.39,
+        "return_pct": -9.2138,
+        "spy_return_pct": 1.48,
+        "alpha_pct": -10.6938,
+        "fetched_at": "2026-05-16T10:29:55"
       },
       "week3": {
         "target_date": "2026-05-10",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 8.72,
+        "return_pct": 7.1253,
+        "spy_return_pct": 3.8697,
+        "alpha_pct": 3.2556,
+        "fetched_at": "2026-05-16T10:29:55"
       },
       "week4": {
         "target_date": "2026-05-17",
@@ -683,27 +683,27 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-04-26",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 44.84,
+        "return_pct": -0.1336,
+        "spy_return_pct": 0.5351,
+        "alpha_pct": -0.6687,
+        "fetched_at": "2026-05-16T10:29:56"
       },
       "week2": {
         "target_date": "2026-05-03",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 43.96,
+        "return_pct": -2.0935,
+        "spy_return_pct": 1.48,
+        "alpha_pct": -3.5735,
+        "fetched_at": "2026-05-16T10:29:56"
       },
       "week3": {
         "target_date": "2026-05-10",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 41.01,
+        "return_pct": -8.6637,
+        "spy_return_pct": 3.8697,
+        "alpha_pct": -12.5334,
+        "fetched_at": "2026-05-16T10:29:56"
       },
       "week4": {
         "target_date": "2026-05-17",
@@ -734,27 +734,27 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-04-26",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 60.32,
+        "return_pct": 129.6155,
+        "spy_return_pct": 0.5351,
+        "alpha_pct": 129.0804,
+        "fetched_at": "2026-05-16T10:29:56"
       },
       "week2": {
         "target_date": "2026-05-03",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 77.18,
+        "return_pct": 193.7952,
+        "spy_return_pct": 1.48,
+        "alpha_pct": 192.3152,
+        "fetched_at": "2026-05-16T10:29:56"
       },
       "week3": {
         "target_date": "2026-05-10",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 99.83,
+        "return_pct": 280.0152,
+        "spy_return_pct": 3.8697,
+        "alpha_pct": 276.1455,
+        "fetched_at": "2026-05-16T10:29:56"
       },
       "week4": {
         "target_date": "2026-05-17",
@@ -785,27 +785,27 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-04-26",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 13.27,
+        "return_pct": -23.8232,
+        "spy_return_pct": 0.5351,
+        "alpha_pct": -24.3583,
+        "fetched_at": "2026-05-16T10:29:56"
       },
       "week2": {
         "target_date": "2026-05-03",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 12.41,
+        "return_pct": -28.76,
+        "spy_return_pct": 1.48,
+        "alpha_pct": -30.24,
+        "fetched_at": "2026-05-16T10:29:57"
       },
       "week3": {
         "target_date": "2026-05-10",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 12.12,
+        "return_pct": -30.4248,
+        "spy_return_pct": 3.8697,
+        "alpha_pct": -34.2945,
+        "fetched_at": "2026-05-16T10:29:57"
       },
       "week4": {
         "target_date": "2026-05-17",
@@ -836,27 +836,27 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-04-26",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 11.43,
+        "return_pct": -8.1928,
+        "spy_return_pct": 0.5351,
+        "alpha_pct": -8.7279,
+        "fetched_at": "2026-05-16T10:29:57"
       },
       "week2": {
         "target_date": "2026-05-03",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 12.65,
+        "return_pct": 1.6064,
+        "spy_return_pct": 1.48,
+        "alpha_pct": 0.1264,
+        "fetched_at": "2026-05-16T10:29:57"
       },
       "week3": {
         "target_date": "2026-05-10",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 12.24,
+        "return_pct": -1.6867,
+        "spy_return_pct": 3.8697,
+        "alpha_pct": -5.5564,
+        "fetched_at": "2026-05-16T10:29:57"
       },
       "week4": {
         "target_date": "2026-05-17",
@@ -887,27 +887,27 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-04-26",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 11.96,
+        "return_pct": -5.4545,
+        "spy_return_pct": 0.5351,
+        "alpha_pct": -5.9896,
+        "fetched_at": "2026-05-16T10:29:57"
       },
       "week2": {
         "target_date": "2026-05-03",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 12.14,
+        "return_pct": -4.0316,
+        "spy_return_pct": 1.48,
+        "alpha_pct": -5.5116,
+        "fetched_at": "2026-05-16T10:29:58"
       },
       "week3": {
         "target_date": "2026-05-10",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 12.55,
+        "return_pct": -0.7905,
+        "spy_return_pct": 3.8697,
+        "alpha_pct": -4.6602,
+        "fetched_at": "2026-05-16T10:29:58"
       },
       "week4": {
         "target_date": "2026-05-17",
@@ -938,27 +938,27 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-04-30",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 517.16,
+        "return_pct": 6.0884,
+        "spy_return_pct": 1.4412,
+        "alpha_pct": 4.6472,
+        "fetched_at": "2026-05-16T10:29:58"
       },
       "week2": {
         "target_date": "2026-05-07",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 646.63,
+        "return_pct": 32.6475,
+        "spy_return_pct": 3.2649,
+        "alpha_pct": 29.3826,
+        "fetched_at": "2026-05-16T10:29:58"
       },
       "week3": {
         "target_date": "2026-05-14",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 776.01,
+        "return_pct": 59.1881,
+        "spy_return_pct": 5.6066,
+        "alpha_pct": 53.5815,
+        "fetched_at": "2026-05-16T10:29:59"
       },
       "week4": {
         "target_date": "2026-05-21",
@@ -989,27 +989,27 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-04-30",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 199.57,
+        "return_pct": -1.4469,
+        "spy_return_pct": 1.4412,
+        "alpha_pct": -2.8881,
+        "fetched_at": "2026-05-16T10:29:59"
       },
       "week2": {
         "target_date": "2026-05-07",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 211.5,
+        "return_pct": 4.4444,
+        "spy_return_pct": 3.2649,
+        "alpha_pct": 1.1795,
+        "fetched_at": "2026-05-16T10:29:59"
       },
       "week3": {
         "target_date": "2026-05-14",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 235.74,
+        "return_pct": 16.4148,
+        "spy_return_pct": 5.6066,
+        "alpha_pct": 10.8082,
+        "fetched_at": "2026-05-16T10:29:59"
       },
       "week4": {
         "target_date": "2026-05-21",
@@ -1040,27 +1040,27 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-04-30",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 417.43,
+        "return_pct": -1.2351,
+        "spy_return_pct": 1.4412,
+        "alpha_pct": -2.6763,
+        "fetched_at": "2026-05-16T10:29:59"
       },
       "week2": {
         "target_date": "2026-05-07",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 412.56,
+        "return_pct": -2.3873,
+        "spy_return_pct": 3.2649,
+        "alpha_pct": -5.6522,
+        "fetched_at": "2026-05-16T10:30:00"
       },
       "week3": {
         "target_date": "2026-05-14",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 439.79,
+        "return_pct": 4.0554,
+        "spy_return_pct": 5.6066,
+        "alpha_pct": -1.5512,
+        "fetched_at": "2026-05-16T10:30:00"
       },
       "week4": {
         "target_date": "2026-05-21",
@@ -1091,27 +1091,27 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-04-30",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 354.49,
+        "return_pct": 16.8161,
+        "spy_return_pct": 1.4412,
+        "alpha_pct": 15.3749,
+        "fetched_at": "2026-05-16T10:30:00"
       },
       "week2": {
         "target_date": "2026-05-07",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 408.46,
+        "return_pct": 34.6009,
+        "spy_return_pct": 3.2649,
+        "alpha_pct": 31.336,
+        "fetched_at": "2026-05-16T10:30:00"
       },
       "week3": {
         "target_date": "2026-05-14",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 449.7,
+        "return_pct": 48.1909,
+        "spy_return_pct": 5.6066,
+        "alpha_pct": 42.5843,
+        "fetched_at": "2026-05-16T10:30:00"
       },
       "week4": {
         "target_date": "2026-05-21",
@@ -1142,27 +1142,27 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-04-30",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 165.15,
+        "return_pct": 4.9771,
+        "spy_return_pct": 1.4412,
+        "alpha_pct": 3.5359,
+        "fetched_at": "2026-05-16T10:30:00"
       },
       "week2": {
         "target_date": "2026-05-07",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 160.01,
+        "return_pct": 1.7099,
+        "spy_return_pct": 3.2649,
+        "alpha_pct": -1.555,
+        "fetched_at": "2026-05-16T10:30:00"
       },
       "week3": {
         "target_date": "2026-05-14",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 182.58,
+        "return_pct": 16.0564,
+        "spy_return_pct": 5.6066,
+        "alpha_pct": 10.4498,
+        "fetched_at": "2026-05-16T10:30:01"
       },
       "week4": {
         "target_date": "2026-05-21",
@@ -1193,27 +1193,27 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-04-30",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 257.86,
+        "return_pct": -2.8959,
+        "spy_return_pct": 1.4412,
+        "alpha_pct": -4.3371,
+        "fetched_at": "2026-05-16T10:30:01"
       },
       "week2": {
         "target_date": "2026-05-07",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 286.52,
+        "return_pct": 7.8968,
+        "spy_return_pct": 3.2649,
+        "alpha_pct": 4.6319,
+        "fetched_at": "2026-05-16T10:30:01"
       },
       "week3": {
         "target_date": "2026-05-14",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 299.15,
+        "return_pct": 12.653,
+        "spy_return_pct": 5.6066,
+        "alpha_pct": 7.0464,
+        "fetched_at": "2026-05-16T10:30:01"
       },
       "week4": {
         "target_date": "2026-05-21",
@@ -1244,27 +1244,27 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-04-30",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 319.71,
+        "return_pct": -8.7768,
+        "spy_return_pct": 1.4412,
+        "alpha_pct": -10.218,
+        "fetched_at": "2026-05-16T10:30:01"
       },
       "week2": {
         "target_date": "2026-05-07",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 319.19,
+        "return_pct": -8.9252,
+        "spy_return_pct": 3.2649,
+        "alpha_pct": -12.1901,
+        "fetched_at": "2026-05-16T10:30:02"
       },
       "week3": {
         "target_date": "2026-05-14",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 404.94,
+        "return_pct": 15.542,
+        "spy_return_pct": 5.6066,
+        "alpha_pct": 9.9354,
+        "fetched_at": "2026-05-16T10:30:02"
       },
       "week4": {
         "target_date": "2026-05-21",
@@ -1295,27 +1295,27 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-04-30",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 139.11,
+        "return_pct": -8.8521,
+        "spy_return_pct": 1.4412,
+        "alpha_pct": -10.2933,
+        "fetched_at": "2026-05-16T10:30:02"
       },
       "week2": {
         "target_date": "2026-05-07",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 137.05,
+        "return_pct": -10.2018,
+        "spy_return_pct": 3.2649,
+        "alpha_pct": -13.4667,
+        "fetched_at": "2026-05-16T10:30:02"
       },
       "week3": {
         "target_date": "2026-05-14",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 133.73,
+        "return_pct": -12.3771,
+        "spy_return_pct": 5.6066,
+        "alpha_pct": -17.9837,
+        "fetched_at": "2026-05-16T10:30:02"
       },
       "week4": {
         "target_date": "2026-05-21",
@@ -1346,27 +1346,27 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-04-30",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 328.49,
+        "return_pct": 7.6522,
+        "spy_return_pct": 1.4412,
+        "alpha_pct": 6.211,
+        "fetched_at": "2026-05-16T10:30:02"
       },
       "week2": {
         "target_date": "2026-05-07",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 340.01,
+        "return_pct": 11.4275,
+        "spy_return_pct": 3.2649,
+        "alpha_pct": 8.1626,
+        "fetched_at": "2026-05-16T10:30:02"
       },
       "week3": {
         "target_date": "2026-05-14",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 376.23,
+        "return_pct": 23.2975,
+        "spy_return_pct": 5.6066,
+        "alpha_pct": 17.6909,
+        "fetched_at": "2026-05-16T10:30:03"
       },
       "week4": {
         "target_date": "2026-05-21",
@@ -1397,27 +1397,27 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-04-30",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 9.19,
+        "return_pct": -22.9673,
+        "spy_return_pct": 1.4412,
+        "alpha_pct": -24.4085,
+        "fetched_at": "2026-05-16T10:30:03"
       },
       "week2": {
         "target_date": "2026-05-07",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 9.2,
+        "return_pct": -22.8835,
+        "spy_return_pct": 3.2649,
+        "alpha_pct": -26.1484,
+        "fetched_at": "2026-05-16T10:30:03"
       },
       "week3": {
         "target_date": "2026-05-14",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 13.99,
+        "return_pct": 17.2674,
+        "spy_return_pct": 5.6066,
+        "alpha_pct": 11.6608,
+        "fetched_at": "2026-05-16T10:30:03"
       },
       "week4": {
         "target_date": "2026-05-21",
@@ -1448,27 +1448,27 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-04-30",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 72.5,
+        "return_pct": 0.1243,
+        "spy_return_pct": 1.4412,
+        "alpha_pct": -1.3169,
+        "fetched_at": "2026-05-16T10:30:03"
       },
       "week2": {
         "target_date": "2026-05-07",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 71.83,
+        "return_pct": -0.801,
+        "spy_return_pct": 3.2649,
+        "alpha_pct": -4.0659,
+        "fetched_at": "2026-05-16T10:30:03"
       },
       "week3": {
         "target_date": "2026-05-14",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 67.21,
+        "return_pct": -7.1813,
+        "spy_return_pct": 5.6066,
+        "alpha_pct": -12.7879,
+        "fetched_at": "2026-05-16T10:30:03"
       },
       "week4": {
         "target_date": "2026-05-21",
@@ -1499,27 +1499,27 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-04-30",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 210.96,
+        "return_pct": -2.8192,
+        "spy_return_pct": 1.4412,
+        "alpha_pct": -4.2604,
+        "fetched_at": "2026-05-16T10:30:04"
       },
       "week2": {
         "target_date": "2026-05-07",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 206.3,
+        "return_pct": -4.9659,
+        "spy_return_pct": 3.2649,
+        "alpha_pct": -8.2308,
+        "fetched_at": "2026-05-16T10:30:04"
       },
       "week3": {
         "target_date": "2026-05-14",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 192.32,
+        "return_pct": -11.4059,
+        "spy_return_pct": 5.6066,
+        "alpha_pct": -17.0125,
+        "fetched_at": "2026-05-16T10:30:04"
       },
       "week4": {
         "target_date": "2026-05-21",
@@ -1550,27 +1550,27 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-04-30",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 79.22,
+        "return_pct": -8.8797,
+        "spy_return_pct": 1.4412,
+        "alpha_pct": -10.3209,
+        "fetched_at": "2026-05-16T10:30:04"
       },
       "week2": {
         "target_date": "2026-05-07",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 108.42,
+        "return_pct": 24.7067,
+        "spy_return_pct": 3.2649,
+        "alpha_pct": 21.4418,
+        "fetched_at": "2026-05-16T10:30:04"
       },
       "week3": {
         "target_date": "2026-05-14",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 114.98,
+        "return_pct": 32.2521,
+        "spy_return_pct": 5.6066,
+        "alpha_pct": 26.6455,
+        "fetched_at": "2026-05-16T10:30:04"
       },
       "week4": {
         "target_date": "2026-05-21",
@@ -1601,27 +1601,27 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-04-30",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 12.46,
+        "return_pct": -8.1798,
+        "spy_return_pct": 1.4412,
+        "alpha_pct": -9.621,
+        "fetched_at": "2026-05-16T10:30:04"
       },
       "week2": {
         "target_date": "2026-05-07",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 12.58,
+        "return_pct": -7.2955,
+        "spy_return_pct": 3.2649,
+        "alpha_pct": -10.5604,
+        "fetched_at": "2026-05-16T10:30:05"
       },
       "week3": {
         "target_date": "2026-05-14",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 12.06,
+        "return_pct": -11.1275,
+        "spy_return_pct": 5.6066,
+        "alpha_pct": -16.7341,
+        "fetched_at": "2026-05-16T10:30:05"
       },
       "week4": {
         "target_date": "2026-05-21",
@@ -1652,6 +1652,56 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-04-30",
+        "price": 16.5,
+        "return_pct": -10.6659,
+        "spy_return_pct": 1.4412,
+        "alpha_pct": -12.1071,
+        "fetched_at": "2026-05-16T10:30:05"
+      },
+      "week2": {
+        "target_date": "2026-05-07",
+        "price": 15.79,
+        "return_pct": -14.51,
+        "spy_return_pct": 3.2649,
+        "alpha_pct": -17.7749,
+        "fetched_at": "2026-05-16T10:30:05"
+      },
+      "week3": {
+        "target_date": "2026-05-14",
+        "price": 22.32,
+        "return_pct": 20.8446,
+        "spy_return_pct": 5.6066,
+        "alpha_pct": 15.238,
+        "fetched_at": "2026-05-16T10:30:05"
+      },
+      "week4": {
+        "target_date": "2026-05-21",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "4105f34b-119f-478d-bebb-cc9a64525e1e",
+      "scored_at": "2026-05-16",
+      "ticker": "NVDA",
+      "score": 8.5,
+      "score_breakdown": {
+        "momentum": 8,
+        "fundamentals": 9,
+        "catalyst": 9,
+        "technical": 8,
+        "sentiment": 8
+      },
+      "rank_in_run": 1,
+      "total_scored_in_run": 20,
+      "price_at_score": 225.32,
+      "passed_threshold": true,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-05-23",
         "price": null,
         "return_pct": null,
         "spy_return_pct": null,
@@ -1659,7 +1709,7 @@
         "fetched_at": null
       },
       "week2": {
-        "target_date": "2026-05-07",
+        "target_date": "2026-05-30",
         "price": null,
         "return_pct": null,
         "spy_return_pct": null,
@@ -1667,7 +1717,7 @@
         "fetched_at": null
       },
       "week3": {
-        "target_date": "2026-05-14",
+        "target_date": "2026-06-06",
         "price": null,
         "return_pct": null,
         "spy_return_pct": null,
@@ -1675,7 +1725,2607 @@
         "fetched_at": null
       },
       "week4": {
-        "target_date": "2026-05-21",
+        "target_date": "2026-06-13",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "4105f34b-119f-478d-bebb-cc9a64525e1e",
+      "scored_at": "2026-05-16",
+      "ticker": "NVDA",
+      "score": 8.5,
+      "score_breakdown": {
+        "momentum": 8,
+        "fundamentals": 9,
+        "catalyst": 9,
+        "technical": 8,
+        "sentiment": 8
+      },
+      "rank_in_run": 2,
+      "total_scored_in_run": 20,
+      "price_at_score": 225.32,
+      "passed_threshold": true,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-05-23",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-05-30",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-06-06",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-06-13",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "4105f34b-119f-478d-bebb-cc9a64525e1e",
+      "scored_at": "2026-05-16",
+      "ticker": "AMD",
+      "score": 7.6,
+      "score_breakdown": {
+        "momentum": 9,
+        "fundamentals": 8,
+        "catalyst": 6,
+        "technical": 8,
+        "sentiment": 7
+      },
+      "rank_in_run": 3,
+      "total_scored_in_run": 20,
+      "price_at_score": 424.1,
+      "passed_threshold": true,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-05-23",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-05-30",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-06-06",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-06-13",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "4105f34b-119f-478d-bebb-cc9a64525e1e",
+      "scored_at": "2026-05-16",
+      "ticker": "AMD",
+      "score": 7.6,
+      "score_breakdown": {
+        "momentum": 9,
+        "fundamentals": 8,
+        "catalyst": 6,
+        "technical": 8,
+        "sentiment": 7
+      },
+      "rank_in_run": 4,
+      "total_scored_in_run": 20,
+      "price_at_score": 424.1,
+      "passed_threshold": true,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-05-23",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-05-30",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-06-06",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-06-13",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "4105f34b-119f-478d-bebb-cc9a64525e1e",
+      "scored_at": "2026-05-16",
+      "ticker": "VG",
+      "score": 7.4,
+      "score_breakdown": {
+        "momentum": 8,
+        "fundamentals": 8,
+        "catalyst": 7,
+        "technical": 7,
+        "sentiment": 7
+      },
+      "rank_in_run": 5,
+      "total_scored_in_run": 20,
+      "price_at_score": 14.23,
+      "passed_threshold": true,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-05-23",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-05-30",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-06-06",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-06-13",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "4105f34b-119f-478d-bebb-cc9a64525e1e",
+      "scored_at": "2026-05-16",
+      "ticker": "VG",
+      "score": 7.4,
+      "score_breakdown": {
+        "momentum": 8,
+        "fundamentals": 8,
+        "catalyst": 7,
+        "technical": 7,
+        "sentiment": 7
+      },
+      "rank_in_run": 6,
+      "total_scored_in_run": 20,
+      "price_at_score": 14.23,
+      "passed_threshold": true,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-05-23",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-05-30",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-06-06",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-06-13",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "4105f34b-119f-478d-bebb-cc9a64525e1e",
+      "scored_at": "2026-05-16",
+      "ticker": "MRVL",
+      "score": 7.3,
+      "score_breakdown": {
+        "momentum": 7,
+        "fundamentals": 7,
+        "catalyst": 8,
+        "technical": 6,
+        "sentiment": 8
+      },
+      "rank_in_run": 7,
+      "total_scored_in_run": 20,
+      "price_at_score": 176.89,
+      "passed_threshold": true,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-05-23",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-05-30",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-06-06",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-06-13",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "4105f34b-119f-478d-bebb-cc9a64525e1e",
+      "scored_at": "2026-05-16",
+      "ticker": "MRVL",
+      "score": 7.3,
+      "score_breakdown": {
+        "momentum": 7,
+        "fundamentals": 7,
+        "catalyst": 8,
+        "technical": 6,
+        "sentiment": 8
+      },
+      "rank_in_run": 8,
+      "total_scored_in_run": 20,
+      "price_at_score": 176.89,
+      "passed_threshold": true,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-05-23",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-05-30",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-06-06",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-06-13",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "4105f34b-119f-478d-bebb-cc9a64525e1e",
+      "scored_at": "2026-05-16",
+      "ticker": "INOD",
+      "score": 7.1,
+      "score_breakdown": {
+        "momentum": 8,
+        "fundamentals": 7,
+        "catalyst": 7,
+        "technical": 6,
+        "sentiment": 7
+      },
+      "rank_in_run": 9,
+      "total_scored_in_run": 20,
+      "price_at_score": 96.1,
+      "passed_threshold": true,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-05-23",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-05-30",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-06-06",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-06-13",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "4105f34b-119f-478d-bebb-cc9a64525e1e",
+      "scored_at": "2026-05-16",
+      "ticker": "INOD",
+      "score": 7.1,
+      "score_breakdown": {
+        "momentum": 8,
+        "fundamentals": 7,
+        "catalyst": 7,
+        "technical": 6,
+        "sentiment": 7
+      },
+      "rank_in_run": 10,
+      "total_scored_in_run": 20,
+      "price_at_score": 96.1,
+      "passed_threshold": true,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-05-23",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-05-30",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-06-06",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-06-13",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "4105f34b-119f-478d-bebb-cc9a64525e1e",
+      "scored_at": "2026-05-16",
+      "ticker": "LRCX",
+      "score": 6.9,
+      "score_breakdown": {
+        "momentum": 7,
+        "fundamentals": 7,
+        "catalyst": 6,
+        "technical": 8,
+        "sentiment": 7
+      },
+      "rank_in_run": 11,
+      "total_scored_in_run": 20,
+      "price_at_score": 284.72,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-05-23",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-05-30",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-06-06",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-06-13",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "4105f34b-119f-478d-bebb-cc9a64525e1e",
+      "scored_at": "2026-05-16",
+      "ticker": "RKLB",
+      "score": 6.1,
+      "score_breakdown": {
+        "momentum": 8,
+        "fundamentals": 3,
+        "catalyst": 6,
+        "technical": 6,
+        "sentiment": 7
+      },
+      "rank_in_run": 12,
+      "total_scored_in_run": 20,
+      "price_at_score": 124.77,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-05-23",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-05-30",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-06-06",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-06-13",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "4105f34b-119f-478d-bebb-cc9a64525e1e",
+      "scored_at": "2026-05-16",
+      "ticker": "SEDG",
+      "score": 5.0,
+      "score_breakdown": {
+        "momentum": 6,
+        "fundamentals": 3,
+        "catalyst": 5,
+        "technical": 5,
+        "sentiment": 4
+      },
+      "rank_in_run": 13,
+      "total_scored_in_run": 20,
+      "price_at_score": 61.76,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-05-23",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-05-30",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-06-06",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-06-13",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "4105f34b-119f-478d-bebb-cc9a64525e1e",
+      "scored_at": "2026-05-16",
+      "ticker": "DXCM",
+      "score": 5.0,
+      "score_breakdown": {
+        "momentum": 5,
+        "fundamentals": 6,
+        "catalyst": 5,
+        "technical": 5,
+        "sentiment": 4
+      },
+      "rank_in_run": 14,
+      "total_scored_in_run": 20,
+      "price_at_score": 61.63,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-05-23",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-05-30",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-06-06",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-06-13",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "4105f34b-119f-478d-bebb-cc9a64525e1e",
+      "scored_at": "2026-05-16",
+      "ticker": "PATH",
+      "score": 5.0,
+      "score_breakdown": {
+        "momentum": 6,
+        "fundamentals": 5,
+        "catalyst": 4,
+        "technical": 4,
+        "sentiment": 5
+      },
+      "rank_in_run": 15,
+      "total_scored_in_run": 20,
+      "price_at_score": 10.27,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-05-23",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-05-30",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-06-06",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-06-13",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "4105f34b-119f-478d-bebb-cc9a64525e1e",
+      "scored_at": "2026-05-16",
+      "ticker": "ENPH",
+      "score": 4.5,
+      "score_breakdown": {
+        "momentum": 7,
+        "fundamentals": 3,
+        "catalyst": 4,
+        "technical": 5,
+        "sentiment": 4
+      },
+      "rank_in_run": 16,
+      "total_scored_in_run": 20,
+      "price_at_score": 52.89,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-05-23",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-05-30",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-06-06",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-06-13",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "4105f34b-119f-478d-bebb-cc9a64525e1e",
+      "scored_at": "2026-05-16",
+      "ticker": "HUBS",
+      "score": 4.5,
+      "score_breakdown": {
+        "momentum": 4,
+        "fundamentals": 6,
+        "catalyst": 5,
+        "technical": 4,
+        "sentiment": 4
+      },
+      "rank_in_run": 17,
+      "total_scored_in_run": 20,
+      "price_at_score": 198.38,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-05-23",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-05-30",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-06-06",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-06-13",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "4105f34b-119f-478d-bebb-cc9a64525e1e",
+      "scored_at": "2026-05-16",
+      "ticker": "FIG",
+      "score": 4.5,
+      "score_breakdown": {
+        "momentum": 4,
+        "fundamentals": 4,
+        "catalyst": 5,
+        "technical": 5,
+        "sentiment": 5
+      },
+      "rank_in_run": 18,
+      "total_scored_in_run": 20,
+      "price_at_score": 22.92,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-05-23",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-05-30",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-06-06",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-06-13",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "4105f34b-119f-478d-bebb-cc9a64525e1e",
+      "scored_at": "2026-05-16",
+      "ticker": "WING",
+      "score": 4.0,
+      "score_breakdown": {
+        "momentum": 4,
+        "fundamentals": 4,
+        "catalyst": 4,
+        "technical": 3,
+        "sentiment": 5
+      },
+      "rank_in_run": 19,
+      "total_scored_in_run": 20,
+      "price_at_score": 129.21,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-05-23",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-05-30",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-06-06",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-06-13",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "4105f34b-119f-478d-bebb-cc9a64525e1e",
+      "scored_at": "2026-05-16",
+      "ticker": "AXTI",
+      "score": 3.5,
+      "score_breakdown": {
+        "momentum": 7,
+        "fundamentals": 1,
+        "catalyst": 4,
+        "technical": 6,
+        "sentiment": 3
+      },
+      "rank_in_run": 20,
+      "total_scored_in_run": 20,
+      "price_at_score": 123.78,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-05-23",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-05-30",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-06-06",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-06-13",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "1c812073-444d-48f0-b667-37946f9e9a45",
+      "scored_at": "2026-05-23",
+      "ticker": "MRVL",
+      "score": 8.5,
+      "score_breakdown": {
+        "momentum": 9,
+        "fundamentals": 8,
+        "catalyst": 9,
+        "technical": 8,
+        "sentiment": 8
+      },
+      "rank_in_run": 1,
+      "total_scored_in_run": 18,
+      "price_at_score": 196.33,
+      "passed_threshold": true,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-05-30",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-06-06",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-06-13",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-06-20",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "1c812073-444d-48f0-b667-37946f9e9a45",
+      "scored_at": "2026-05-23",
+      "ticker": "MU",
+      "score": 7.55,
+      "score_breakdown": {
+        "momentum": 8,
+        "fundamentals": 9,
+        "catalyst": 6,
+        "technical": 7,
+        "sentiment": 8
+      },
+      "rank_in_run": 2,
+      "total_scored_in_run": 18,
+      "price_at_score": 751.0,
+      "passed_threshold": true,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-05-30",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-06-06",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-06-13",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-06-20",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "1c812073-444d-48f0-b667-37946f9e9a45",
+      "scored_at": "2026-05-23",
+      "ticker": "TSM",
+      "score": 7.55,
+      "score_breakdown": {
+        "momentum": 7,
+        "fundamentals": 9,
+        "catalyst": 7,
+        "technical": 7,
+        "sentiment": 8
+      },
+      "rank_in_run": 3,
+      "total_scored_in_run": 18,
+      "price_at_score": 404.52,
+      "passed_threshold": true,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-05-30",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-06-06",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-06-13",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-06-20",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "1c812073-444d-48f0-b667-37946f9e9a45",
+      "scored_at": "2026-05-23",
+      "ticker": "AMAT",
+      "score": 7.35,
+      "score_breakdown": {
+        "momentum": 7,
+        "fundamentals": 8,
+        "catalyst": 7,
+        "technical": 7,
+        "sentiment": 8
+      },
+      "rank_in_run": 4,
+      "total_scored_in_run": 18,
+      "price_at_score": 432.16,
+      "passed_threshold": true,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-05-30",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-06-06",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-06-13",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-06-20",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "1c812073-444d-48f0-b667-37946f9e9a45",
+      "scored_at": "2026-05-23",
+      "ticker": "AXTI",
+      "score": 7.3,
+      "score_breakdown": {
+        "momentum": 9,
+        "fundamentals": 4,
+        "catalyst": 8,
+        "technical": 8,
+        "sentiment": 8
+      },
+      "rank_in_run": 5,
+      "total_scored_in_run": 18,
+      "price_at_score": 140.83,
+      "passed_threshold": true,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-05-30",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-06-06",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-06-13",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-06-20",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "1c812073-444d-48f0-b667-37946f9e9a45",
+      "scored_at": "2026-05-23",
+      "ticker": "NVDA",
+      "score": 7.15,
+      "score_breakdown": {
+        "momentum": 6,
+        "fundamentals": 9,
+        "catalyst": 7,
+        "technical": 6,
+        "sentiment": 8
+      },
+      "rank_in_run": 6,
+      "total_scored_in_run": 18,
+      "price_at_score": 215.33,
+      "passed_threshold": true,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-05-30",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-06-06",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-06-13",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-06-20",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "1c812073-444d-48f0-b667-37946f9e9a45",
+      "scored_at": "2026-05-23",
+      "ticker": "AMD",
+      "score": 6.95,
+      "score_breakdown": {
+        "momentum": 7,
+        "fundamentals": 8,
+        "catalyst": 6,
+        "technical": 6,
+        "sentiment": 8
+      },
+      "rank_in_run": 7,
+      "total_scored_in_run": 18,
+      "price_at_score": 467.51,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-05-30",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-06-06",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-06-13",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-06-20",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "1c812073-444d-48f0-b667-37946f9e9a45",
+      "scored_at": "2026-05-23",
+      "ticker": "FLY",
+      "score": 6.9,
+      "score_breakdown": {
+        "momentum": 9,
+        "fundamentals": 3,
+        "catalyst": 8,
+        "technical": 8,
+        "sentiment": 8
+      },
+      "rank_in_run": 8,
+      "total_scored_in_run": 18,
+      "price_at_score": 49.5,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-05-30",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-06-06",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-06-13",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-06-20",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "1c812073-444d-48f0-b667-37946f9e9a45",
+      "scored_at": "2026-05-23",
+      "ticker": "RKLB",
+      "score": 6.8,
+      "score_breakdown": {
+        "momentum": 8,
+        "fundamentals": 4,
+        "catalyst": 7,
+        "technical": 8,
+        "sentiment": 7
+      },
+      "rank_in_run": 9,
+      "total_scored_in_run": 18,
+      "price_at_score": 135.76,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-05-30",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-06-06",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-06-13",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-06-20",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "1c812073-444d-48f0-b667-37946f9e9a45",
+      "scored_at": "2026-05-23",
+      "ticker": "LUNR",
+      "score": 6.8,
+      "score_breakdown": {
+        "momentum": 8,
+        "fundamentals": 5,
+        "catalyst": 8,
+        "technical": 7,
+        "sentiment": 6
+      },
+      "rank_in_run": 10,
+      "total_scored_in_run": 18,
+      "price_at_score": 38.26,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-05-30",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-06-06",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-06-13",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-06-20",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "1c812073-444d-48f0-b667-37946f9e9a45",
+      "scored_at": "2026-05-23",
+      "ticker": "VRT",
+      "score": 6.7,
+      "score_breakdown": {
+        "momentum": 5,
+        "fundamentals": 8,
+        "catalyst": 7,
+        "technical": 6,
+        "sentiment": 8
+      },
+      "rank_in_run": 11,
+      "total_scored_in_run": 18,
+      "price_at_score": 327.46,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-05-30",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-06-06",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-06-13",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-06-20",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "1c812073-444d-48f0-b667-37946f9e9a45",
+      "scored_at": "2026-05-23",
+      "ticker": "BB",
+      "score": 6.6,
+      "score_breakdown": {
+        "momentum": 7,
+        "fundamentals": 5,
+        "catalyst": 8,
+        "technical": 5,
+        "sentiment": 7
+      },
+      "rank_in_run": 12,
+      "total_scored_in_run": 18,
+      "price_at_score": 7.91,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-05-30",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-06-06",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-06-13",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-06-20",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "1c812073-444d-48f0-b667-37946f9e9a45",
+      "scored_at": "2026-05-23",
+      "ticker": "COHR",
+      "score": 6.3,
+      "score_breakdown": {
+        "momentum": 7,
+        "fundamentals": 6,
+        "catalyst": 5,
+        "technical": 7,
+        "sentiment": 7
+      },
+      "rank_in_run": 13,
+      "total_scored_in_run": 18,
+      "price_at_score": 377.57,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-05-30",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-06-06",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-06-13",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-06-20",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "1c812073-444d-48f0-b667-37946f9e9a45",
+      "scored_at": "2026-05-23",
+      "ticker": "RDW",
+      "score": 6.2,
+      "score_breakdown": {
+        "momentum": 8,
+        "fundamentals": 2,
+        "catalyst": 8,
+        "technical": 6,
+        "sentiment": 7
+      },
+      "rank_in_run": 14,
+      "total_scored_in_run": 18,
+      "price_at_score": 17.49,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-05-30",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-06-06",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-06-13",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-06-20",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "1c812073-444d-48f0-b667-37946f9e9a45",
+      "scored_at": "2026-05-23",
+      "ticker": "SWKS",
+      "score": 6.1,
+      "score_breakdown": {
+        "momentum": 7,
+        "fundamentals": 4,
+        "catalyst": 7,
+        "technical": 6,
+        "sentiment": 6
+      },
+      "rank_in_run": 15,
+      "total_scored_in_run": 18,
+      "price_at_score": 82.42,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-05-30",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-06-06",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-06-13",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-06-20",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "1c812073-444d-48f0-b667-37946f9e9a45",
+      "scored_at": "2026-05-23",
+      "ticker": "QBTS",
+      "score": 6.1,
+      "score_breakdown": {
+        "momentum": 7,
+        "fundamentals": 2,
+        "catalyst": 8,
+        "technical": 5,
+        "sentiment": 8
+      },
+      "rank_in_run": 16,
+      "total_scored_in_run": 18,
+      "price_at_score": 29.4,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-05-30",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-06-06",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-06-13",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-06-20",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "1c812073-444d-48f0-b667-37946f9e9a45",
+      "scored_at": "2026-05-23",
+      "ticker": "NVTS",
+      "score": 5.6,
+      "score_breakdown": {
+        "momentum": 8,
+        "fundamentals": 2,
+        "catalyst": 6,
+        "technical": 6,
+        "sentiment": 5
+      },
+      "rank_in_run": 17,
+      "total_scored_in_run": 18,
+      "price_at_score": 29.25,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-05-30",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-06-06",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-06-13",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-06-20",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "1c812073-444d-48f0-b667-37946f9e9a45",
+      "scored_at": "2026-05-23",
+      "ticker": "NTAP",
+      "score": 5.5,
+      "score_breakdown": {
+        "momentum": 7,
+        "fundamentals": 5,
+        "catalyst": 6,
+        "technical": 5,
+        "sentiment": 5
+      },
+      "rank_in_run": 18,
+      "total_scored_in_run": 18,
+      "price_at_score": 139.36,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-05-30",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-06-06",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-06-13",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-06-20",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "a84445db-5cb2-4e9e-af53-29bae6f5e8e5",
+      "scored_at": "2026-05-24",
+      "ticker": "RKLB",
+      "score": 7.4,
+      "score_breakdown": {
+        "momentum": 9,
+        "fundamentals": 5,
+        "catalyst": 7,
+        "technical": 8,
+        "sentiment": 8
+      },
+      "rank_in_run": 1,
+      "total_scored_in_run": 15,
+      "price_at_score": 135.76,
+      "passed_threshold": true,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-05-31",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-06-07",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-06-14",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-06-21",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "a84445db-5cb2-4e9e-af53-29bae6f5e8e5",
+      "scored_at": "2026-05-24",
+      "ticker": "AMD",
+      "score": 7.4,
+      "score_breakdown": {
+        "momentum": 8,
+        "fundamentals": 7,
+        "catalyst": 7,
+        "technical": 7,
+        "sentiment": 8
+      },
+      "rank_in_run": 2,
+      "total_scored_in_run": 15,
+      "price_at_score": 467.51,
+      "passed_threshold": true,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-05-31",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-06-07",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-06-14",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-06-21",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "a84445db-5cb2-4e9e-af53-29bae6f5e8e5",
+      "scored_at": "2026-05-24",
+      "ticker": "LUNR",
+      "score": 7.1,
+      "score_breakdown": {
+        "momentum": 8,
+        "fundamentals": 5,
+        "catalyst": 8,
+        "technical": 7,
+        "sentiment": 7
+      },
+      "rank_in_run": 3,
+      "total_scored_in_run": 15,
+      "price_at_score": 38.26,
+      "passed_threshold": true,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-05-31",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-06-07",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-06-14",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-06-21",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "a84445db-5cb2-4e9e-af53-29bae6f5e8e5",
+      "scored_at": "2026-05-24",
+      "ticker": "QBTS",
+      "score": 6.9,
+      "score_breakdown": {
+        "momentum": 8,
+        "fundamentals": 2,
+        "catalyst": 9,
+        "technical": 7,
+        "sentiment": 8
+      },
+      "rank_in_run": 4,
+      "total_scored_in_run": 15,
+      "price_at_score": 29.4,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-05-31",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-06-07",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-06-14",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-06-21",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "a84445db-5cb2-4e9e-af53-29bae6f5e8e5",
+      "scored_at": "2026-05-24",
+      "ticker": "FLY",
+      "score": 6.8,
+      "score_breakdown": {
+        "momentum": 8,
+        "fundamentals": 4,
+        "catalyst": 7,
+        "technical": 8,
+        "sentiment": 7
+      },
+      "rank_in_run": 5,
+      "total_scored_in_run": 15,
+      "price_at_score": 49.5,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-05-31",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-06-07",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-06-14",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-06-21",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "a84445db-5cb2-4e9e-af53-29bae6f5e8e5",
+      "scored_at": "2026-05-24",
+      "ticker": "INFQ",
+      "score": 6.7,
+      "score_breakdown": {
+        "momentum": 8,
+        "fundamentals": 3,
+        "catalyst": 8,
+        "technical": 7,
+        "sentiment": 7
+      },
+      "rank_in_run": 6,
+      "total_scored_in_run": 15,
+      "price_at_score": 16.35,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-05-31",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-06-07",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-06-14",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-06-21",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "a84445db-5cb2-4e9e-af53-29bae6f5e8e5",
+      "scored_at": "2026-05-24",
+      "ticker": "RGTI",
+      "score": 6.7,
+      "score_breakdown": {
+        "momentum": 8,
+        "fundamentals": 3,
+        "catalyst": 8,
+        "technical": 7,
+        "sentiment": 7
+      },
+      "rank_in_run": 7,
+      "total_scored_in_run": 15,
+      "price_at_score": 26.42,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-05-31",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-06-07",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-06-14",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-06-21",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "a84445db-5cb2-4e9e-af53-29bae6f5e8e5",
+      "scored_at": "2026-05-24",
+      "ticker": "NOK",
+      "score": 6.7,
+      "score_breakdown": {
+        "momentum": 8,
+        "fundamentals": 5,
+        "catalyst": 7,
+        "technical": 6,
+        "sentiment": 7
+      },
+      "rank_in_run": 8,
+      "total_scored_in_run": 15,
+      "price_at_score": 15.47,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-05-31",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-06-07",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-06-14",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-06-21",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "a84445db-5cb2-4e9e-af53-29bae6f5e8e5",
+      "scored_at": "2026-05-24",
+      "ticker": "BB",
+      "score": 6.5,
+      "score_breakdown": {
+        "momentum": 8,
+        "fundamentals": 6,
+        "catalyst": 6,
+        "technical": 5,
+        "sentiment": 7
+      },
+      "rank_in_run": 9,
+      "total_scored_in_run": 15,
+      "price_at_score": 7.91,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-05-31",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-06-07",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-06-14",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-06-21",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "a84445db-5cb2-4e9e-af53-29bae6f5e8e5",
+      "scored_at": "2026-05-24",
+      "ticker": "RDW",
+      "score": 6.5,
+      "score_breakdown": {
+        "momentum": 8,
+        "fundamentals": 4,
+        "catalyst": 7,
+        "technical": 6,
+        "sentiment": 7
+      },
+      "rank_in_run": 10,
+      "total_scored_in_run": 15,
+      "price_at_score": 17.49,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-05-31",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-06-07",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-06-14",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-06-21",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "a84445db-5cb2-4e9e-af53-29bae6f5e8e5",
+      "scored_at": "2026-05-24",
+      "ticker": "AXTI",
+      "score": 6.45,
+      "score_breakdown": {
+        "momentum": 8,
+        "fundamentals": 3,
+        "catalyst": 7,
+        "technical": 7,
+        "sentiment": 7
+      },
+      "rank_in_run": 11,
+      "total_scored_in_run": 15,
+      "price_at_score": 140.83,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-05-31",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-06-07",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-06-14",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-06-21",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "a84445db-5cb2-4e9e-af53-29bae6f5e8e5",
+      "scored_at": "2026-05-24",
+      "ticker": "LION",
+      "score": 6.45,
+      "score_breakdown": {
+        "momentum": 8,
+        "fundamentals": 5,
+        "catalyst": 6,
+        "technical": 6,
+        "sentiment": 7
+      },
+      "rank_in_run": 12,
+      "total_scored_in_run": 15,
+      "price_at_score": 14.95,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-05-31",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-06-07",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-06-14",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-06-21",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "a84445db-5cb2-4e9e-af53-29bae6f5e8e5",
+      "scored_at": "2026-05-24",
+      "ticker": "SWKS",
+      "score": 6.35,
+      "score_breakdown": {
+        "momentum": 9,
+        "fundamentals": 4,
+        "catalyst": 6,
+        "technical": 6,
+        "sentiment": 6
+      },
+      "rank_in_run": 13,
+      "total_scored_in_run": 15,
+      "price_at_score": 82.42,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-05-31",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-06-07",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-06-14",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-06-21",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "a84445db-5cb2-4e9e-af53-29bae6f5e8e5",
+      "scored_at": "2026-05-24",
+      "ticker": "VSH",
+      "score": 6.2,
+      "score_breakdown": {
+        "momentum": 8,
+        "fundamentals": 5,
+        "catalyst": 6,
+        "technical": 5,
+        "sentiment": 6
+      },
+      "rank_in_run": 14,
+      "total_scored_in_run": 15,
+      "price_at_score": 47.25,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-05-31",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-06-07",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-06-14",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-06-21",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "a84445db-5cb2-4e9e-af53-29bae6f5e8e5",
+      "scored_at": "2026-05-24",
+      "ticker": "NVTS",
+      "score": 6.1,
+      "score_breakdown": {
+        "momentum": 8,
+        "fundamentals": 2,
+        "catalyst": 7,
+        "technical": 7,
+        "sentiment": 6
+      },
+      "rank_in_run": 15,
+      "total_scored_in_run": 15,
+      "price_at_score": 29.25,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-05-31",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-06-07",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-06-14",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-06-21",
         "price": null,
         "return_pct": null,
         "spy_return_pct": null,

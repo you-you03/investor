@@ -7,7 +7,7 @@ Usage:
 
 Runs MonitorAgent on all open positions and sends daily summary to Slack.
 Intended for daily cron execution (weekdays 7:00 AM):
-  0 7 * * 1-5 cd "/Users/yutaobayashi/PERSONAL DEV/investor" && \
+  0 7 * * 1-5 cd "/Users/yutaobayashi/PERSONAL DEV/1_now/investor" && \
     .venv/bin/python skills/monitor.py >> logs/cron.log 2>&1
 """
 

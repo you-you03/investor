@@ -10,7 +10,7 @@ Python スクリプトがデータを収集し、Claude が分析・判断し、
 | 項目 | 値 |
 |---|---|
 | 予算 | ¥1,000,000（約 $6,700 USD） |
-| 週次目標リターン | +8%（¥80,000/週） |
+| 週次目標リターン | +2.5%（¥25,000/週、年換算+130%） |
 | 戦略スタイル | モメンタム — リスク管理優先、分散投資 |
 | 最大同時ポジション数 | 5銘柄 |
 | 1銘柄最大配分 | 予算の25%（$1,675） |
@@ -27,7 +27,8 @@ Python スクリプトがデータを収集し、Claude が分析・判断し、
 
 /decision
   Python → research_history.json + watchlist を読み込み → stdout に出力
-  Claude → 5ペルソナ討論 → PM 合成判断 → Slack 通知
+  Claude → 5ペルソナ討論 → PM 合成判断（BUY / PASS / HOLD_CASH）
+  Python → BUY提案だけを Slack 通知、decision_history.json へ提案ログを保存
 
 /monitor（cron 毎平日 7:00）
   Python → ポジション × 現在値 → stdout
@@ -63,7 +64,7 @@ RSI 特例: RSI > 80 でも `STRONG_OUTPERFORM` × セクターLEADING の場合
 ### 2. 依存関係のインストール
 
 ```bash
-cd "/Users/yutaobayashi/PERSONAL DEV/investor"
+cd "/Users/yutaobayashi/PERSONAL DEV/1_now/investor"
 python3.11 -m venv .venv
 source .venv/bin/activate
 pip install -e ".[dev]"
@@ -79,7 +80,7 @@ cp .env.example .env
 
 | 変数名 | 必須 | 用途 |
 |---|---|---|
-| `SLACK_WEBHOOK_URL` | **必須** | Decision・Monitor の通知先 |
+| `SLACK_WEBHOOK_URL` | 条件付き必須 | Decision / Monitor の通知先。読み取り専用経路・`/decision --paper`・レビュー系では不要 |
 | `PERPLEXITY_API_KEY` | 任意 | Web 検索強化（Sonar モデル） |
 | `XAI_API_KEY` | 任意 | X/Twitter センチメント（Grok） |
 
@@ -137,7 +138,8 @@ print('Price:', snap.last_price)
 1. 最新リサーチの候補 + ウォッチリスト ESCALATED 銘柄を読み込み
 2. 5ペルソナ討論（Round 1 → データ補完 → Round 2 クロスファイア → PM 合成）
 3. BUY 推奨を Slack に送信（Block Kit 形式）
-4. `data/decision_history.json` に結果を記録
+4. `data/decision_history.json` に提案ログを記録
+5. 実際に約定したものだけを `data/portfolio.csv` に記録
 
 ### ポジションを管理する
 
@@ -171,21 +173,31 @@ print('Price:', snap.last_price)
 
 active なウォッチリスト銘柄に対して深研究を実行し、`ESCALATE / MAINTAIN / REMOVE / ADD_NOTE` を判断する。ESCALATE になった銘柄は次回 `/decision` で自動的に優先候補に昇格する。
 
-### 日次モニタリング
+### 日次軽量サマリー
 
 ```
-/monitor
+/daily-lite
 ```
 
-保有銘柄の現在値・テクニカル指標を確認し、ストップロス接近・目標達成・異常値を検知して Slack に通知する。
+1回の実行で以下をまとめて処理する。
 
-自動化（毎平日 7:00）:
+- monitor-lite: open position の価格監視とアラート検知
+- watchlist-lite: active watchlist のフラグ判定と `pipeline_status` 更新
+- research-lite: 市場全体の軽量スクリーニングから `/research --seed` 候補抽出
+
+`decision` は自動実行しない。必要なものだけ pending action として Slack に送る。
+
+自動化（推奨: Codex Scheduled / 毎朝 8:00 JST）:
+
+Codex automation から以下を毎朝実行する:
 
 ```bash
-crontab -e
-# 以下を追加:
-0 7 * * 1-5 cd "/Users/yutaobayashi/PERSONAL DEV/investor" && .venv/bin/python skills/monitor.py >> logs/cron.log 2>&1
+.venv/bin/python skills/daily_lite.py
 ```
+
+ローカル cron は代替手段としてのみ使う。クラウド側で安定して回したいなら Scheduled を優先する。
+
+イントラデイのポジション監視は従来どおり `scripts/run_monitor.py` を別スケジュールで残す。
 
 ### 出口判断を出す
 
@@ -203,12 +215,13 @@ crontab -e
 |---|---|---|
 | `/research` | `python skills/research.py` | `data/research_history.json` + `reports/research/` |
 | `/research --seed {TICKER}` | 同上 | 単一銘柄の深研究レポート |
-| `/watchlist-research` | `python skills/watchlist_research.py` | `data/watchlist_research_history.json` + `reports/research/` |
+| `/watchlist-research` | `python skills/watchlist_research.py` | `data/watchlist_research_history.json` |
 | `/decision` | `python skills/decision.py` | Slack 通知 + `reports/decision/` |
 | `/decision --mode exit` | 同上 | 出口判断レポート + Slack |
-| `/portfolio` | `python skills/portfolio.py` | ターミナル表示 |
-| `/watchlist` | `python skills/watchlist.py` | ターミナル表示 |
-| `/monitor` | `python skills/monitor.py` | Slack 通知 + `reports/monitor/` |
+| `/decision --paper` | `python skills/decision.py --paper --send '...'` | `data/paper_portfolio.csv`（B枠の仮説検証ログ、Slack送信なし） |
+| `/daily-lite` | `python skills/daily_lite.py` | Slack 通知 + `reports/daily/` + `data/daily_lite_history.json` |
+| `/monitor` | `python scripts/run_monitor.py` | Slack 通知 + `reports/monitor/` |
+| `/review` | `python scripts/show_calibration_stats.py` / `python scripts/weekly_review.py` | 校正レポート / 週次レビュー |
 
 ---
 
@@ -221,11 +234,17 @@ investor/
 ├── pyproject.toml
 │
 ├── .claude/
-│   └── commands/           # Claude Code スキル定義（Markdown）
-│       ├── research.md
-│       ├── decision.md
-│       ├── monitor.md
-│       └── review.md
+│   └── skills/             # Claude Code スキル定義（Markdown）
+│       ├── research/
+│       │   └── SKILL.md
+│       ├── decision/
+│       │   └── SKILL.md
+│       ├── monitor/
+│       │   └── SKILL.md
+│       ├── watchlist-research/
+│       │   └── SKILL.md
+│       └── review/
+│           └── SKILL.md
 │
 ├── investor/               # Python パッケージ（データ収集層）
 │   ├── config.py
@@ -264,13 +283,14 @@ investor/
 │   └── send_slack_proposals.py
 │
 ├── data/                   # 永続化データ（CSV/JSON）
-│   ├── portfolio.csv               # オープン/クローズポジション
+│   ├── portfolio.csv               # A枠 オープン/クローズポジション（position_id付き）
+│   ├── paper_portfolio.csv         # B枠 仮説検証用仮想ポジション
 │   ├── research_history.json       # リサーチ実行履歴
 │   ├── watchlist.json              # ウォッチリスト銘柄
 │   ├── watchlist_research_history.json
-│   ├── decision_history.json       # ディベート結果ログ
-│   ├── score_snapshots.json        # 全スコア記録（週次検証用）
-│   ├── monitor_alerts.json
+│   ├── decision_history.json       # BUY/PASS/HOLD_CASH 提案ログ
+│   ├── score_snapshots.json        # 全スコア記録（週次リターン・SPY alpha込み）
+│   ├── trade_journal.json          # クローズトレード詳細記録
 │   └── cache/                      # 24時間 TTL キャッシュ
 │
 ├── reports/                # 実行レポート（Markdown）
@@ -289,13 +309,19 @@ investor/
 
 ## データ構造
 
-### portfolio.csv
+### portfolio.csv / paper_portfolio.csv
+
+共通スキーマ（A枠 / B枠の共有列）:
 
 ```
-ticker, shares, entry_price, entry_date, exit_price, exit_date, status, target_price, stop_loss, note
-NVDA, 10, 875.00, 2026-04-25, , , open, 1000.00, 820.00, HIGH確信
-AAOI, 19, 103.91, 2026-04-05, 150.60, 2026-04-11, closed, 131.18, 90.28, TARGET_HIT +44.9%
+position_id,ticker,shares,entry_price,entry_date,proposal_date,exit_price,exit_date,status,target_price,stop_loss,note,signal_type,conviction,hypothesis_id,exit_stage,mae_pct,mfe_pct,mfe_capture_pct,rule_adherence_score
+pos-001,NVDA,10,875.00,2026-04-25,2026-04-25,,,open,1000.00,820.00,HIGH確信,technical_breakout,HIGH,,0,,,,
+pos-002,AAOI,19,103.91,2026-04-05,2026-04-05,150.60,2026-04-11,closed,131.18,90.28,TARGET_HIT +44.9%,analyst_upgrade,HIGH,,0,,,,
 ```
+
+- `decision_history.json` は「AIが何を提案したか」
+- `portfolio.csv` は「人間が何を執行したか」
+- `paper_portfolio.csv` は「B枠でどの仮説を試したか」
 
 ### research_history.json（骨格）
 

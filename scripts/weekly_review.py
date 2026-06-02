@@ -1,16 +1,6 @@
 #!/usr/bin/env python3
 """
-weekly_review.py — 週次パフォーマンスレビュー
-
-portfolio.csv + research_history.json + decision_history.json を集計し、
-SPY ベンチマーク比較・確信度別 Alpha・PASS 判断数を含む週次レポートを生成する。
-
-Usage:
-  .venv/bin/python scripts/weekly_review.py                    # 先週を対象
-  .venv/bin/python scripts/weekly_review.py --week 2026-04-21  # 特定週（月曜日付）を指定
-
-cron (毎週月曜 JST 8時):
-  0 8 * * 1 cd "/Users/yutaobayashi/PERSONAL DEV/investor" && .venv/bin/python scripts/weekly_review.py >> logs/cron.log 2>&1
+weekly_review.py — 提案と実約定を分けて振り返る週次レビュー
 """
 
 from __future__ import annotations
@@ -22,7 +12,10 @@ from datetime import date, datetime, timedelta
 from pathlib import Path
 from statistics import mean
 
+from investor.utils.portfolio_contract import closed_row_issues, read_portfolio_rows
+
 PORTFOLIO_PATH = Path("data/portfolio.csv")
+PAPER_PATH = Path("data/paper_portfolio.csv")
 RESEARCH_HISTORY_PATH = Path("data/research_history.json")
 DECISION_HISTORY_PATH = Path("data/decision_history.json")
 REPORTS_DIR = Path("reports/review")
@@ -38,10 +31,9 @@ def _infer_conviction(candidate: dict) -> str:
             s = float(score)
             if s >= 8.0:
                 return "HIGH"
-            elif s >= 7.0:
+            if s >= 7.0:
                 return "MEDIUM"
-            else:
-                return "LOW"
+            return "LOW"
         except (TypeError, ValueError):
             pass
     return "?"
@@ -50,13 +42,6 @@ def _infer_conviction(candidate: dict) -> str:
 def _week_range(ref: date) -> tuple[date, date]:
     monday = ref - timedelta(days=ref.weekday())
     return monday, monday + timedelta(days=6)
-
-
-def _load_portfolio() -> list[dict]:
-    if not PORTFOLIO_PATH.exists():
-        return []
-    with open(PORTFOLIO_PATH) as f:
-        return list(csv.DictReader(f))
 
 
 def _load_history() -> dict:
@@ -74,8 +59,28 @@ def _load_decision_history() -> list[dict]:
         return []
 
 
+def _date_in_range(value: str, week_start: date, week_end: date) -> bool:
+    if not value:
+        return False
+    try:
+        current = datetime.fromisoformat(value).date()
+    except ValueError:
+        return False
+    return week_start <= current <= week_end
+
+
+def _portfolio_rows(path: Path) -> list[dict]:
+    rows = read_portfolio_rows(path)
+    valid_rows: list[dict] = []
+    for row in rows:
+        issues = closed_row_issues(row)
+        if issues:
+            continue
+        valid_rows.append(row)
+    return valid_rows
+
+
 def _get_outcome(ticker: str, entry_date: str, history: dict) -> dict | None:
-    """Match portfolio row to research_history outcome by ticker + entry_date proximity."""
     best: dict | None = None
     best_delta = 9999
     for run in history.get("runs", []):
@@ -88,135 +93,186 @@ def _get_outcome(ticker: str, entry_date: str, history: dict) -> dict | None:
                 continue
             try:
                 delta = abs(
-                    (datetime.fromisoformat(run_date).date()
-                     - datetime.fromisoformat(entry_date).date()).days
+                    (
+                        datetime.fromisoformat(run_date).date()
+                        - datetime.fromisoformat(entry_date).date()
+                    ).days
                 )
             except Exception:
                 delta = 9999
             if delta < best_delta:
                 best_delta = delta
-                best = {
-                    "conviction": _infer_conviction(candidate),
-                    **outcome,
-                }
+                best = {"conviction": _infer_conviction(candidate), **outcome}
     return best
 
 
-def _generate(week_start: date, week_end: date) -> str:
-    portfolio = _load_portfolio()
-    history = _load_history()
-    decision_history = _load_decision_history()
+def _proposal_summary(decision_history: list[dict], week_start: date, week_end: date) -> list[str]:
+    week_decisions = [
+        d for d in decision_history if week_start.isoformat() <= d.get("date", "") <= week_end.isoformat()
+    ]
+    if not week_decisions:
+        return [
+            "### 提案サマリー",
+            "",
+            "- BUY提案: 不明 / PASS提案: 不明（decision_history.json に記録なし）",
+            "",
+        ]
 
-    # Positions active during this week
-    rows = []
-    for row in portfolio:
-        entry_str = row.get("entry_date", "")
-        if not entry_str:
-            continue
-        try:
-            entry_dt = datetime.fromisoformat(entry_str).date()
-        except Exception:
-            continue
+    total_buy = 0
+    total_pass = 0
+    total_hold_cash = 0
+    for decision in week_decisions:
+        summary = decision.get("proposal_summary") or {}
+        total_buy += summary.get("buy_count", len(decision.get("buy_decisions", [])))
+        total_pass += summary.get("pass_count", len(decision.get("pass_decisions", [])))
+        total_hold_cash += summary.get("hold_cash_count", len(decision.get("hold_cash_decisions", [])))
 
-        exit_str = row.get("exit_date", "")
-        try:
-            exit_dt = datetime.fromisoformat(exit_str).date() if exit_str else None
-        except Exception:
-            exit_dt = None
-
-        if entry_dt > week_end:
-            continue
-        if exit_dt and exit_dt < week_start:
-            continue
-
-        outcome = _get_outcome(row["ticker"], entry_str, history)
-        conviction = outcome.get("conviction", "?") if outcome else "?"
-
-        entry_price = float(row.get("entry_price") or 0)
-        exit_price_str = row.get("exit_price", "")
-        exit_price = float(exit_price_str) if exit_price_str else None
-
-        if row.get("status") == "closed" and exit_price:
-            return_pct = round((exit_price - entry_price) / entry_price * 100, 2)
-        else:
-            return_pct = None
-
-        rows.append({
-            "ticker": row["ticker"],
-            "status": row.get("status", "open"),
-            "conviction": conviction,
-            "entry_date": entry_str,
-            "exit_date": exit_str or "open",
-            "return_pct": return_pct,
-            "spy_return": outcome.get("spy_return_pct") if outcome else None,
-            "alpha_pct": outcome.get("alpha_pct") if outcome else None,
-        })
-
-    lines: list[str] = [
-        f"## 週次パフォーマンスレビュー ({week_start} 〜 {week_end})",
-        f"生成: {datetime.now().isoformat(timespec='seconds')}",
+    no_trade_count = sum(1 for d in week_decisions if d.get("no_trade_week", False))
+    return [
+        "### 提案サマリー",
         "",
-        "### ポジション損益",
+        f"- BUY提案: {total_buy}件",
+        f"- PASS提案: {total_pass}件",
+        f"- HOLD_CASH / NO_TRADE: {total_hold_cash}件",
+        f"- 今週エントリー見送り回数: {no_trade_count}件",
         "",
+    ]
+
+
+def _execution_summary(history: dict, week_start: date, week_end: date) -> list[str]:
+    portfolio = _portfolio_rows(PORTFOLIO_PATH)
+    week_entries = [r for r in portfolio if _date_in_range(r.get("entry_date", ""), week_start, week_end)]
+    week_closes = [
+        r for r in portfolio
+        if r.get("status") == "closed" and _date_in_range(r.get("exit_date", ""), week_start, week_end)
+    ]
+
+    realized_pnl = 0.0
+    alpha_values: list[float] = []
+    lines = [
+        "### 実約定サマリー",
+        "",
+        f"- 実約定数: {len(week_entries)}件",
+        f"- 実クローズ数: {len(week_closes)}件",
+    ]
+
+    for row in week_closes:
+        try:
+            realized_pnl += (float(row["exit_price"]) - float(row["entry_price"])) * float(row["shares"])
+        except (TypeError, ValueError):
+            continue
+        outcome = _get_outcome(row["ticker"], row["entry_date"], history)
+        alpha = outcome.get("alpha_pct") if outcome else None
+        if alpha is not None:
+            alpha_values.append(alpha)
+
+    lines.append(f"- 実現損益: {realized_pnl:+,.2f} USD")
+    lines.append(
+        f"- SPY alpha: {mean(alpha_values):+.1f}%" if alpha_values
+        else "- SPY alpha: データなし"
+    )
+    lines.append("")
+
+    lines += [
         "| Ticker | 確信度 | ステータス | リターン | SPY同期間 | Alpha |",
         "|--------|--------|-----------|---------|----------|-------|",
     ]
 
-    closed_rows = [r for r in rows if r["status"] == "closed" and r["return_pct"] is not None]
-    open_rows = [r for r in rows if r["status"] == "open"]
+    active_rows = [
+        r for r in portfolio
+        if _date_in_range(r.get("entry_date", ""), week_start, week_end)
+        or (
+            r.get("status") == "open"
+            and not _date_in_range(r.get("entry_date", ""), week_start, week_end)
+        )
+        or (
+            r.get("status") == "closed"
+            and _date_in_range(r.get("exit_date", ""), week_start, week_end)
+        )
+    ]
+    seen = set()
+    for row in active_rows:
+        position_id = row.get("position_id", "")
+        if position_id and position_id in seen:
+            continue
+        seen.add(position_id)
 
-    for r in closed_rows:
-        ret = f"{r['return_pct']:+.1f}%" if r["return_pct"] is not None else "—"
-        spy = f"{r['spy_return']:+.1f}%" if r["spy_return"] is not None else "—"
-        alp = f"{r['alpha_pct']:+.1f}%" if r["alpha_pct"] is not None else "—"
-        lines.append(f"| {r['ticker']} | {r['conviction']} | closed | {ret} | {spy} | {alp} |")
+        outcome = _get_outcome(row["ticker"], row["entry_date"], history)
+        conviction = outcome.get("conviction", row.get("conviction") or "?") if outcome else (row.get("conviction") or "?")
+        ret = "—"
+        spy = "—"
+        alpha = "—"
+        if row.get("status") == "closed" and row.get("exit_price"):
+            try:
+                ret_value = (float(row["exit_price"]) - float(row["entry_price"])) / float(row["entry_price"]) * 100
+                ret = f"{ret_value:+.1f}%"
+            except (TypeError, ValueError, ZeroDivisionError):
+                pass
+            if outcome:
+                if outcome.get("spy_return_pct") is not None:
+                    spy = f"{outcome['spy_return_pct']:+.1f}%"
+                if outcome.get("alpha_pct") is not None:
+                    alpha = f"{outcome['alpha_pct']:+.1f}%"
+        lines.append(f"| {row['ticker']} | {conviction} | {row.get('status', '')} | {ret} | {spy} | {alpha} |")
 
-    for r in open_rows:
-        lines.append(f"| {r['ticker']} | {r['conviction']} | open | — | — | — |")
-
-    if not rows:
+    if len(lines) == 7:
         lines.append("| — | — | — | — | — | — |")
 
-    lines += ["", "### 累積確信度校正（クローズド済み全ポジション）", ""]
+    lines.append("")
+    return lines
 
-    # All-time conviction stats from research_history
-    all_closed: list[dict] = []
-    for run in history.get("runs", []):
-        for candidate in run.get("candidates", []):
-            outcome = candidate.get("outcome", {}) or {}
-            if outcome.get("status") == "closed" and outcome.get("alpha_pct") is not None:
-                all_closed.append({
-                    "conviction": _infer_conviction(candidate),
-                    "alpha_pct": outcome["alpha_pct"],
-                })
 
-    for conviction in ("HIGH", "MEDIUM", "LOW"):
-        items = [r for r in all_closed if r["conviction"] == conviction]
-        if not items:
-            lines.append(f"{conviction} の平均 Alpha: データなし")
-            continue
-        avg_alpha = mean(r["alpha_pct"] for r in items)
-        lines.append(f"{conviction} の平均 Alpha: {avg_alpha:+.1f}%  (n={len(items)})")
-
-    lines += ["", "### 判断数サマリー", ""]
-
-    # Decision history for this week
-    week_decisions = [
-        d for d in decision_history
-        if week_start.isoformat() <= d.get("date", "") <= week_end.isoformat()
+def _paper_summary(week_start: date, week_end: date) -> list[str]:
+    paper_rows = _portfolio_rows(PAPER_PATH)
+    real_rows = _portfolio_rows(PORTFOLIO_PATH)
+    week_paper = [
+        r for r in paper_rows
+        if _date_in_range(r.get("entry_date", ""), week_start, week_end)
+        or _date_in_range(r.get("exit_date", ""), week_start, week_end)
     ]
 
-    if week_decisions:
-        total_buy = sum(len(d.get("buy_decisions", [])) for d in week_decisions)
-        total_pass = sum(len(d.get("pass_decisions", [])) for d in week_decisions)
-        no_trade_count = sum(1 for d in week_decisions if d.get("no_trade_week", False))
-        lines.append(
-            f"BUY実行: {total_buy}件 / PASS: {total_pass}件 / 今週エントリーなし: {no_trade_count}件"
-        )
-    else:
-        lines.append("BUY実行: 不明 / PASS: 不明（decision_history.json に記録なし）")
+    if not week_paper and not paper_rows:
+        return ["### B枠 仮説検証", "", "- B枠トレードなし", ""]
 
-    lines += ["", "---"]
+    def _closed_returns(rows: list[dict]) -> list[float]:
+        values = []
+        for row in rows:
+            if row.get("status") != "closed" or not row.get("exit_price"):
+                continue
+            try:
+                values.append((float(row["exit_price"]) - float(row["entry_price"])) / float(row["entry_price"]) * 100)
+            except (TypeError, ValueError, ZeroDivisionError):
+                continue
+        return values
+
+    paper_closed = _closed_returns(paper_rows)
+    real_closed = _closed_returns(real_rows)
+    lines = [
+        "### B枠 仮説検証",
+        "",
+        f"- 週内B枠トレード数: {len(week_paper)}件",
+        f"- Paper平均リターン: {mean(paper_closed):+.1f}%" if paper_closed else "- Paper平均リターン: データなし",
+        f"- Paper勝率: {sum(1 for r in paper_closed if r > 0)/len(paper_closed):.0%}" if paper_closed else "- Paper勝率: データなし",
+        f"- Real平均リターン: {mean(real_closed):+.1f}%" if real_closed else "- Real平均リターン: データなし",
+        f"- Real勝率: {sum(1 for r in real_closed if r > 0)/len(real_closed):.0%}" if real_closed else "- Real勝率: データなし",
+        "",
+    ]
+    return lines
+
+
+def _generate(week_start: date, week_end: date) -> str:
+    history = _load_history()
+    decision_history = _load_decision_history()
+
+    lines: list[str] = [
+        f"## 週次レビュー ({week_start} 〜 {week_end})",
+        f"生成: {datetime.now().isoformat(timespec='seconds')}",
+        "",
+    ]
+    lines += _proposal_summary(decision_history, week_start, week_end)
+    lines += _execution_summary(history, week_start, week_end)
+    lines += _paper_summary(week_start, week_end)
+    lines += ["---"]
     return "\n".join(lines)
 
 

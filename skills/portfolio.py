@@ -9,8 +9,6 @@ Usage:
   python skills/portfolio.py snapshot
 """
 
-import csv
-import json
 import sys
 from datetime import date
 from pathlib import Path
@@ -21,34 +19,22 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 import typer
 from rich.console import Console
 from rich.table import Table
+from investor.utils.portfolio_contract import (
+    build_position_id,
+    read_portfolio_rows,
+    write_portfolio_rows,
+)
 
 app = typer.Typer(add_completion=False)
 console = Console()
 
 PORTFOLIO_PATH = Path("data/portfolio.csv")
-FIELDNAMES = ["ticker", "shares", "entry_price", "entry_date", "exit_price", "exit_date", "status", "target_price", "stop_loss", "note"]
-
-
-def _read_portfolio() -> list[dict]:
-    if not PORTFOLIO_PATH.exists():
-        return []
-    with open(PORTFOLIO_PATH) as f:
-        reader = csv.DictReader(f)
-        return [row for row in reader]
-
-
-def _write_portfolio(rows: list[dict]) -> None:
-    PORTFOLIO_PATH.parent.mkdir(parents=True, exist_ok=True)
-    with open(PORTFOLIO_PATH, "w", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=FIELDNAMES)
-        writer.writeheader()
-        writer.writerows(rows)
 
 
 @app.command()
 def list() -> None:
     """Show all open positions."""
-    rows = _read_portfolio()
+    rows = read_portfolio_rows(PORTFOLIO_PATH)
     open_rows = [r for r in rows if r.get("status") == "open"]
 
     if not open_rows:
@@ -56,10 +42,10 @@ def list() -> None:
         return
 
     table = Table(title="Open Positions")
-    for col in ["ticker", "shares", "entry_price", "entry_date", "target_price", "stop_loss", "note"]:
+    for col in ["position_id", "ticker", "shares", "entry_price", "entry_date", "target_price", "stop_loss", "signal_type", "note"]:
         table.add_column(col)
     for r in open_rows:
-        table.add_row(*[str(r.get(c, "")) for c in ["ticker", "shares", "entry_price", "entry_date", "target_price", "stop_loss", "note"]])
+        table.add_row(*[str(r.get(c, "")) for c in ["position_id", "ticker", "shares", "entry_price", "entry_date", "target_price", "stop_loss", "signal_type", "note"]])
     console.print(table)
 
 
@@ -71,22 +57,29 @@ def add(
     target: Optional[float] = typer.Option(None, "--target"),
     stop: Optional[float] = typer.Option(None, "--stop"),
     note: str = typer.Option("", "--note"),
+    signal: str = typer.Option("", "--signal"),
+    conviction: str = typer.Option("", "--conviction"),
+    proposal_date: Optional[str] = typer.Option(None, "--proposal-date"),
 ) -> None:
     """Add a new position to portfolio.csv."""
-    rows = _read_portfolio()
+    rows = read_portfolio_rows(PORTFOLIO_PATH)
     rows.append({
+        "position_id": build_position_id(rows),
         "ticker": ticker.upper(),
         "shares": shares,
         "entry_price": price,
         "entry_date": date.today().isoformat(),
+        "proposal_date": proposal_date or date.today().isoformat(),
         "exit_price": "",
         "exit_date": "",
         "status": "open",
         "target_price": target or "",
         "stop_loss": stop or "",
         "note": note,
+        "signal_type": signal,
+        "conviction": conviction.upper(),
     })
-    _write_portfolio(rows)
+    write_portfolio_rows(PORTFOLIO_PATH, rows)
     console.print(f"[green]Added {shares} shares of {ticker.upper()} @ ${price}[/green]")
 
 
@@ -96,7 +89,7 @@ def close(
     price: float = typer.Option(..., "--price"),
 ) -> None:
     """Close an open position."""
-    rows = _read_portfolio()
+    rows = read_portfolio_rows(PORTFOLIO_PATH)
     closed = False
     for row in rows:
         if row["ticker"].upper() == ticker.upper() and row["status"] == "open":
@@ -113,13 +106,13 @@ def close(
     if not closed:
         console.print(f"[red]No open position found for {ticker.upper()}[/red]")
         return
-    _write_portfolio(rows)
+    write_portfolio_rows(PORTFOLIO_PATH, rows)
 
 
 @app.command()
 def snapshot() -> None:
     """Show portfolio P&L snapshot using current yfinance prices."""
-    rows = _read_portfolio()
+    rows = read_portfolio_rows(PORTFOLIO_PATH)
     open_rows = [r for r in rows if r.get("status") == "open"]
     if not open_rows:
         console.print("[yellow]No open positions.[/yellow]")

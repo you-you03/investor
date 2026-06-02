@@ -49,6 +49,7 @@ def main() -> None:
 
     from investor.tools.market_tools import (
         get_atr_targets,
+        get_contrarian_screener,
         get_earnings_calendar,
         get_financials,
         get_market_context,
@@ -57,6 +58,7 @@ def main() -> None:
         get_stock_snapshot,
         get_technical_indicators,
         get_ticker_details,
+        get_timeframe_alignment,
     )
     from investor.tools.news_tools import (
         get_analyst_ratings,
@@ -75,6 +77,8 @@ def main() -> None:
         "get_ticker_details": get_ticker_details,
         "get_relative_strength": get_relative_strength,
         "get_earnings_calendar": get_earnings_calendar,
+        "get_contrarian_screener": get_contrarian_screener,
+        "get_timeframe_alignment": get_timeframe_alignment,
         "get_news": get_news,
         "get_web_search": get_web_search,
         "get_x_search": get_x_search,

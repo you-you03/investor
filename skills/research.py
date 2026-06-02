@@ -24,6 +24,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 
 import typer
 from rich.console import Console
+from investor.utils.portfolio_contract import closed_row_issues
 
 app = typer.Typer(add_completion=False)
 console = Console(stderr=True)  # progress messages go to stderr
@@ -42,8 +43,12 @@ def _print_calibration_stats() -> None:
         for row in reader:
             if row.get("status") != "closed":
                 continue
+            issues = closed_row_issues(row)
+            if issues:
+                for issue in issues:
+                    console.print(f"[yellow]WARN {issue}[/yellow]")
+                continue
             note = row.get("note", "")
-            ret_str = row.get("exit_price", ""), row.get("entry_price", "")
             try:
                 ret_pct = (float(row["exit_price"]) - float(row["entry_price"])) / float(row["entry_price"]) * 100
             except (ValueError, ZeroDivisionError):
@@ -80,6 +85,7 @@ def _print_feedback_stats() -> None:
     import json as _json
 
     csv_path = Path(__file__).parent.parent / "data" / "portfolio.csv"
+    journal_path = Path(__file__).parent.parent / "data" / "trade_journal.json"
     if not csv_path.exists():
         return
 
@@ -94,6 +100,11 @@ def _print_feedback_stats() -> None:
         reader = csv.DictReader(f)
         for row in reader:
             if row.get("status") != "closed":
+                continue
+            issues = closed_row_issues(row)
+            if issues:
+                for issue in issues:
+                    console.print(f"[yellow]WARN {issue}[/yellow]")
                 continue
             try:
                 ret_pct = (float(row["exit_price"]) - float(row["entry_price"])) / float(row["entry_price"]) * 100
@@ -111,12 +122,6 @@ def _print_feedback_stats() -> None:
                 hold_buckets[bucket].append(ret_pct)
             except (ValueError, KeyError):
                 pass
-            mfe_cap = row.get("mfe_capture_pct", "")
-            if mfe_cap:
-                try:
-                    mfe_captures.append(float(mfe_cap))
-                except ValueError:
-                    pass
 
     if not all_returns:
         return
@@ -125,7 +130,7 @@ def _print_feedback_stats() -> None:
     all_ev = sum(all_returns) / len(all_returns)
     recent = all_returns[-10:]
     recent_ev = sum(recent) / len(recent)
-    warn = " ⚠️ エッジ減衰の兆候" if len(recent) >= 5 and recent_ev < all_ev * 0.5 else ""
+    warn = " ⚠️ エッジ減衰の兆候" if len(recent) >= 5 and all_ev > 0 and recent_ev < all_ev * 0.5 else ""
     lines.append(f"  全期間EV: {all_ev:+.1f}% (n={len(all_returns)}) | 直近10: {recent_ev:+.1f}%{warn}")
 
     if signal_returns:
@@ -142,10 +147,16 @@ def _print_feedback_stats() -> None:
     if mfe_captures:
         lines.append(f"  MFE捕捉率平均: {sum(mfe_captures)/len(mfe_captures):.0f}% (n={len(mfe_captures)})")
 
-    journal_path = Path(__file__).parent.parent / "data" / "trade_journal.json"
     if journal_path.exists():
         try:
             journal = _json.loads(journal_path.read_text())
+            for entry in journal:
+                mfe_cap = entry.get("mfe_capture_pct")
+                if mfe_cap not in ("", None):
+                    try:
+                        mfe_captures.append(float(mfe_cap))
+                    except (TypeError, ValueError):
+                        pass
             score3 = [e["pnl_pct"] for e in journal if e.get("rule_adherence_score") == 3]
             score1 = [e["pnl_pct"] for e in journal if e.get("rule_adherence_score") == 1]
             if score3:

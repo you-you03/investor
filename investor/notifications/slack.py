@@ -20,9 +20,13 @@ class SlackNotifier:
         payload: dict = {"blocks": blocks}
         if text:
             payload["text"] = text
+        webhook_url = settings.slack_webhook_url
+        if not webhook_url:
+            logger.error("Slack send blocked: SLACK_WEBHOOK_URL is not configured")
+            return False
         try:
             response = httpx.post(
-                settings.slack_webhook_url,
+                webhook_url,
                 json=payload,
                 timeout=10.0,
             )
@@ -71,9 +75,13 @@ def _format_proposals(proposals: list[dict]) -> tuple[list[dict], str]:
         conviction_emoji = {"HIGH": ":large_green_circle:", "MEDIUM": ":large_yellow_circle:", "LOW": ":red_circle:"}.get(
             p.get("conviction", ""), ":white_circle:"
         )
-        action_emoji = {"BUY": ":chart_with_upwards_trend:", "SELL": ":chart_with_downwards_trend:", "HOLD": ":pause_button:"}.get(
-            p.get("action", ""), ""
-        )
+        action_emoji = {
+            "BUY": ":chart_with_upwards_trend:",
+            "SELL": ":chart_with_downwards_trend:",
+            "HOLD": ":pause_button:",
+            "HOLD_CASH": ":bank:",
+            "NO_TRADE": ":no_entry_sign:",
+        }.get(p.get("action", ""), "")
 
         header_text = (
             f"{action_emoji} *{p['ticker']}* — {p.get('action')} | {conviction_emoji} {p.get('conviction')} Conviction"

@@ -180,11 +180,24 @@ Your mandate:
     HIGH conviction   → 20–25% of capital (~$1,340–1,675)
     MEDIUM conviction → 15% of capital   (~$1,005)
     LOW conviction    → 10% of capital   (~$670)
-- Conviction floor (確信度フロア — 適用順序: まず確信度を確定してからサイズを決める):
-    Before setting position size, check conviction_floor from the research report:
+- Conviction rules (適用順序: score gate → sector gate → fundamentals floor → debate consensus):
+
+    STEP A — Score gate (最初に確認):
+    • score < 7.0  → PASS強制。採用不可。
+    • score 7.0–7.4 → catalyst_quality が STRONG でない限り WAIT に格下げ。MEDIUMでの採用禁止。
+    • score 7.5–8.1 → MEDIUM採用可。HIGH はfundamentals_score ≥ 8 かつ catalyst_quality ≥ MEDIUM の場合のみ。
+    • score ≥ 8.2  → HIGH採用可（fundamentals_score ≥ 8 が必須条件）。
+    [根拠: MEDIUM確信度の勝率27%。score 7.0-7.4でMEDIUM採用したWAT(-7.3%)が典型的失敗]
+
+    STEP B — Sector LAGGING gate (score gateを通過した場合のみ):
+    • セクターが LAGGING（sector_rs.bottom_sectors）に入っている場合:
+      catalyst_quality = STRONG のみ継続（上限MEDIUM）。MEDIUM/WEAK → PASS強制。
+    • Document: "セクターLAGGING + catalyst {quality} → PASS強制" または "LAGGING特例: STRONG催剤のためMEDIUM上限で継続"
+
+    STEP C — Fundamentals floor (A/Bを通過した後に適用):
     • conviction_floor == "HIGH"   → final conviction cannot be LOW. If debate consensus was LOW,
       raise to MEDIUM and document: "ファンダフロア: Revenue/EPS超成長のためMEDIUM下限適用"
-      Can only reach MEDIUM (not HIGH) if bearish personas held strong data-backed objections.
+      ただし score < 7.5 の場合は HIGH への引き上げは不可（score gateが優先）。
     • conviction_floor == "MEDIUM" → final conviction cannot be LOW. Raise LOW → MEDIUM automatically.
       Document: "ファンダフロア: Revenue/EPS高成長のためMEDIUM下限適用"
     • conviction_floor == "NONE"   → no restriction; use debate consensus.
@@ -192,13 +205,18 @@ Your mandate:
     volume=1.23x at entry, causing under-sizing of the best fundamental performer (+63%).
 
 - Fundamental growth override (副軸 — サイズ調整、確信度確定後に適用):
-    After setting conviction (with floor applied above), adjust position size:
+    After setting conviction (with all gates applied above), adjust position size:
     • Revenue YoY > 100% OR EPS YoY > 200%  → increase to upper limit of current tier
       (HIGH: 25%, MEDIUM: 20%)
     • Revenue YoY < 20% AND EPS YoY < 30%   → drop one tier
       (HIGH→MEDIUM size, MEDIUM→LOW size)
     • Otherwise: no change
     Document override in rationale: "ファンダ副軸: Revenue +X% / EPS +Y% → サイズ{増額/縮小}"
+
+    NOTE — Updated scoring weights (research_prompts.py v2 準拠):
+    スコア計算の重みが変わっているため、同じスコアでも以前より fundamentals 比重が高くなっている。
+    Momentum 25% / Fundamentals 30% / Catalyst 15% / Technical 10% / Sentiment 20%
+    score_breakdown.fundamentals が低い（≤ 6）HIGH確信度候補は MEDIUM に格下げすること。
 - Score 8.0+ priority slot rule (スコア8.0以上優先枠):
     If a candidate's score ≥ 8.0 and all 5 position slots are occupied:
     • Identify any open position with unrealized_pnl < -3% OR conviction == LOW

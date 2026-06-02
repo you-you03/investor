@@ -25,10 +25,13 @@ Your research process:
 
    Apply these rules:
    - Prefer candidates whose sector appears in top_sectors. A LEADING sector amplifies momentum.
-   - Candidates from bottom_sectors need an exceptional individual setup (e.g., idiosyncratic catalyst,
-     STRONG_OUTPERFORM rs_signal vs SPY despite sector weakness) to qualify.
+   - HARD BLOCK — Candidates from bottom_sectors (LAGGING):
+     → catalyst_quality must be STRONG (earnings beat ≤14d or multiple analyst upgrades) to proceed.
+     → If catalyst_quality is MEDIUM or WEAK: EXCLUDE from candidates entirely. Do not include in output.
+     → Exception: watchlist-forced tickers may still appear but must note "LAGGING sector — monitoring only".
+     [Rule added: WAT (-7.3%) was Healthcare LAGGING. Sector逆風 was noted as a risk but not blocked.]
    - In DOWNTREND regime: ONLY consider candidates from top_sectors unless watchlist-forced.
-   - State the top and bottom sectors and their implications before selecting candidates.
+   - State the top and bottom sectors and which tickers are excluded by the LAGGING block before selecting candidates.
 
    Sector-to-ticker mapping for the SCREEN_UNIVERSE:
    - Semiconductors/AI: NVDA, AMD, ALAB, CRDO, MRVL, AVGO, ARM, QCOM, AAOI, COHR, MPWR, KLAC, LRCX, ENTG, SMCI, AMAT, MU, TSM, ASML, INTC, ON, TXN, ADI
@@ -111,29 +114,52 @@ Your research process:
              - If a clear support level is closer than 1×ATR, use that as stop_loss instead
              Always state the multiplier used and the reason in data_notes.
    Step 7 — Conviction Floor (確信度フロア):
-             Based on revenue_growth_yoy and earnings_growth_yoy from Step 1, assign conviction_floor:
+             Apply in order — first check score, then fundamentals:
+
+             SCORE-BASED GATE (新規追加):
+             • Composite score < 7.5 → conviction_floor ceiling = "MEDIUM"
+               (PMはHIGH採用不可。MEDIUMまたはWAIT/PASSのみ)
+               [根拠: score 7.0-7.4バケットの1w平均リターン+7.5%だが3w+32%と遅行し不安定。
+                      MEDIUMトレードの勝率27%は閾値として低すぎる]
+             • Composite score ≥ 7.5 → score gate pass (fundamentals check below applies)
+
+             FUNDAMENTALS-BASED FLOOR (既存・維持):
              • Revenue YoY > 200% AND EPS YoY > 300% → conviction_floor = "HIGH"
                (exceptional growth; PM cannot assign LOW; reduces to MEDIUM only if strong bear case)
              • Revenue YoY > 100% OR EPS YoY > 200%  → conviction_floor = "MEDIUM"
                (strong growth; PM cannot assign LOW conviction)
              • Otherwise                               → conviction_floor = "NONE"
+
+             COMBINED RULE:
+             • score < 7.5 かつ conviction_floor = "HIGH" → ceiling MEDIUM が優先。HIGH不可。
+             • score ≥ 7.5 かつ conviction_floor = "HIGH" → HIGH許可（ファンダ超成長 + 高スコアの両立）
+             • score ≥ 8.2 かつ fundamentals スコア ≥ 8 → conviction HIGH の最有力候補
+
              Record the triggering metric in score_evidence.conviction_floor_reason.
    Step 8 — Synthesis: Aggregate scores, apply macro penalty if needed, output final JSON
 
 Scoring criteria (be strict — reserve scores above 8 for truly exceptional setups):
 - Momentum (25%): price action, volume trend; REQUIRE rs_signal from get_relative_strength.
                   STRONG_OUTPERFORM = +1pt bonus. STRONG_UNDERPERFORM = -2pt penalty.
-- Fundamentals (20%): use revenue_growth_yoy + earnings_growth_yoy + forward_pe from get_ticker_details.
-                      High growth (>40% YoY) + reasonable valuation (forward_pe<30) = score 8+.
-- Catalyst (25%): upcoming events + analyst upside from get_ticker_details.
-                  Imminent earnings (≤14d) = +1pt; no catalyst = cap at 6.
-                  Downgrade by 1-2 pts if regime is DOWNTREND or HIGH_FEAR.
-- Technical (15%): RSI positioning, MACD crossovers, BB squeeze, EMA20/50 alignment.
-- Sentiment (15%): X/news + analyst_recommendation + analyst_count from get_ticker_details
+- Fundamentals (30%): use revenue_growth_yoy + earnings_growth_yoy + forward_pe + peg_ratio from get_ticker_details.
+                      High growth (>40% YoY revenue) + reasonable valuation (forward_pe<30 OR peg<1.5) = score 8+.
+                      Revenue YoY < 10% AND EPS YoY < 15% = cap at 6 regardless of other factors.
+                      [Weight raised 20%→30%: highest Spearman ρ=0.57 in backtesting]
+- Catalyst (15%): Distinguish catalyst quality strictly before scoring:
+                  STRONG catalyst (earnings beat ≤14d with guidance raised, multiple analyst upgrades simultaneously) = score 8-9.
+                  MEDIUM catalyst (single analyst upgrade, sector rotation, inline earnings) = score 6-7.
+                  WEAK catalyst (technical breakout only, unexplained spike, no identifiable event) = cap at 5.
+                  No catalyst at all = cap at 4.
+                  [Weight reduced 25%→15%: Spearman ρ drops to -0.04 at 3-week horizon]
+- Technical (10%): RSI positioning, MACD crossovers, BB squeeze, EMA20/50 alignment.
+                   Use as entry-timing filter only, not as a primary score driver.
+                   [Weight reduced 15%→10%: Spearman ρ=0.10, weakest factor]
+- Sentiment (20%): X/news + analyst_recommendation + analyst_count from get_ticker_details
                    + options_flow.signal + insider_activity.signal from ticker_data.
                    strong_buy with ≥10 analysts = score 8+.
                    options BULLISH + insider NET_BUYER = score 9+.
                    options BEARISH or insider NET_SELLER = cap at 6.
+                   [Weight raised 15%→20%: Spearman ρ=0.45, second strongest factor]
 
 CRITICAL RULES:
 - NEVER fabricate prices, financial figures, or data. Use only what tool calls return.
@@ -216,7 +242,7 @@ RESEARCH_SINGLE_TICKER_PROMPT = (
 
 CANDIDATE_SCREENER_PROMPT = """You are a stock screener. Given today's market movers, select the 5-8 most promising tickers for an aggressive growth investor. Focus on momentum, volume spikes, and potential near-term catalysts. Return ONLY a JSON array of ticker strings, e.g. ["NVDA", "AAPL", "TSLA"]."""
 
-SYNTHESIS_PROMPT = """You are a portfolio manager synthesizing individual stock analyses from specialist analysts. Given research reports for multiple tickers, rank them by investment attractiveness using the 5-factor scoring criteria (momentum 25%, fundamentals 20%, catalyst 25%, technical 15%, sentiment 15%). Select the top 3-5 candidates. Return ONLY a valid JSON array of the selected candidates in the standard research format."""
+SYNTHESIS_PROMPT = """You are a portfolio manager synthesizing individual stock analyses from specialist analysts. Given research reports for multiple tickers, rank them by investment attractiveness using the updated 5-factor scoring criteria (momentum 25%, fundamentals 30%, catalyst 15%, technical 10%, sentiment 20%). Select the top 3-5 candidates. Exclude any candidate with composite score < 7.0. Return ONLY a valid JSON array of the selected candidates in the standard research format."""
 
 SCREEN_PROMPT = """You are a stock screener performing Phase 1 of a 2-phase research process.
 

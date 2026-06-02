@@ -1,1 +1,54 @@
-[]
+[
+  {
+    "trade_id": "WAT_2026-05-09",
+    "signal_type": "analyst_upgrade",
+    "conviction": "MEDIUM",
+    "conviction_driver": "Options BULLISH(pc=0.156)全銘柄最強 + Revenue+91.5% YoY + Insider NET_BUYER",
+    "regime_at_entry": "中立 (VIX ~18)",
+    "hold_days": 7,
+    "pnl_pct": -7.27,
+    "mae_pct": -7.26,
+    "mfe_pct": 0.04,
+    "mfe_capture_pct": 0,
+    "rule_adherence_score": 3,
+    "decision_quality": 2,
+    "outcome_quality": 1,
+    "would_take_again": false,
+    "what_i_missed": "Healthcare SECTORがLAGGING(-8.22% 1m)でセクター逆風を過小評価。Options BULLISHは正しかったが単一指標への過信。MFE +0.04%はテーゼが市場に受け入れられなかった証拠。期待内の損失: ルールに従った正しい判断。プロセスを変えない。"
+  },
+  {
+    "trade_id": "UAL_2026-04-26",
+    "signal_type": "watchlist_escalate",
+    "conviction": "LOW",
+    "conviction_driver": "分散目的。Forward PE=6.61割安、Options BULLISH、STAGE1利確.58達成済み",
+    "regime_at_entry": "中立",
+    "hold_days": 20,
+    "pnl_pct": -0.16,
+    "mae_pct": -0.16,
+    "mfe_pct": 7.08,
+    "mfe_capture_pct": 0.0,
+    "rule_adherence_score": 3,
+    "decision_quality": 3,
+    "outcome_quality": 2,
+    "would_take_again": true,
+    "what_i_missed": "STAGE1で.58(+7.08%)の最高値を一時達成。残株はブレークイーブンで損切り。目標.45まで達せず。EMA20/50下抜けとOptions悪化のサインを早期察知できた可能性。STAGE1利確の仕組みが機能した良トレード。"
+  }
+,
+  {
+    "trade_id": "AVGO_2026-05-09",
+    "signal_type": "technical_breakout",
+    "conviction": "HIGH",
+    "conviction_driver": "$430テクニカルブレイクアウト達成 + AI半導体LEADING + Options BULLISH(pc=0.355) + PEG=0.93",
+    "regime_at_entry": "中立 (VIX ~18)",
+    "hold_days": 15,
+    "pnl_pct": -4.13,
+    "mae_pct": -4.13,
+    "mfe_pct": 0.0,
+    "mfe_capture_pct": null,
+    "rule_adherence_score": 3,
+    "decision_quality": 2,
+    "outcome_quality": 1,
+    "would_take_again": false,
+    "what_i_missed": "$430ブレイクアウト後に即$430割れ→エントリー根拠が初日から不安定だった。Options BULLISH(pc=0.355)→NEUTRAL_BEARISH(pc=1.042)への急速悪化を過小評価。ストップを$418に締めた判断は正しかったがエントリー自体の確信度が過大だった。期待内の損失: ルールに従ったSTOP遵守。プロセスを変えない。"
+  }
+]

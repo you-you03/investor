@@ -359,6 +359,316 @@
           "flag": null
         }
       ]
+    },
+    {
+      "run_id": "f96d3c4a-6c9e-4822-9c02-1c60eebe5ecf",
+      "date": "2026-05-16",
+      "results": [
+        {
+          "ticker": "NVDA",
+          "action": "ADD_NOTE",
+          "new_score": 8.2,
+          "note": "2026-05-16 IN_PORTFOLIO\u7d99\u7d9a(7\u682a@$208.27)\u3002\u73fe\u5024$225.32(-5.27%)\u3082\u5065\u5168\u3002RSI=64.74\u3001MACD hist+1.87\u3001EMA20/50\u4e0a\u3002Options BULLISH(pc=0.46)\u3002Analyst target $272.94(+21.1%)\u30fb57\u540dSTRONG_BUY\u3002\u4eca\u65e5\u306f\u5e02\u5834\u5168\u4f53\u8abf\u6574\u306b\u3088\u308b\u62bc\u3057\u76ee\u3002Monitor\u7ba1\u7406\u4e2d\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "MRVL",
+          "action": "MAINTAIN",
+          "new_score": 7.0,
+          "note": "2026-05-16 \u73fe\u5024$176.89\u306f\u30a8\u30f3\u30c8\u30ea\u30fc\u30be\u30fc\u30f3$148-158\u3092+12%\u4e0a\u56de\u308b\u3002Options BULLISH(pc=0.658)\u306f\u597d\u6750\u6599\u3002Analyst target $137.05\u306f\u73fe\u5024-22.5%\u4e56\u96e2\u7d99\u7d9a\u304c\u6700\u5927\u61f8\u5ff5\u3002RSI=65.94\u3067\u30be\u30fc\u30f3\u5916\u7d99\u7d9a\u3002\u30a8\u30f3\u30c8\u30ea\u30fc\u30be\u30fc\u30f3\u56de\u5e30\u5f85\u3061\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "MU",
+          "action": "MAINTAIN",
+          "new_score": 7.0,
+          "note": "2026-05-16 \u73fe\u5024$724.66\u304c\u30a8\u30f3\u30c8\u30ea\u30fc\u30be\u30fc\u30f3$700-720\u306b\u5230\u9054(\u307b\u307c\u30be\u30fc\u30f3\u5185)\u3002RSI=66.31\u51b7\u5374\u7d99\u7d9a\u30fbMACD hist+14.85\u5f37\u3044\u3002\u30d5\u30a1\u30f3\u30c0\u6700\u5f37\u7d99\u7d9a(PEG=0.27/fwd_PE=7.06/Revenue+196%)\u3002\u305f\u3060\u3057Options BEARISH(pc=1.854)\u672a\u6539\u5584\u3002Options NEUTRAL\u4ee5\u4e0a\u3078\u306e\u6539\u5584\u3067ESCALATE\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "VRT",
+          "action": "MAINTAIN",
+          "new_score": 5.5,
+          "note": "2026-05-16 Options BEARISH\u7d99\u7d9a(pc_oi=4.021\u3001\u524d\u56de2.377\u304b\u3089\u3055\u3089\u306b\u60aa\u5316)\u3002Insider $123.4M\u58f2\u308a\u7d99\u7d9a\u3002Analyst target $355.52\u304c\u73fe\u5024$370.94\u306e-4%\u4e0b\u56de\u308b\u3002MACD hist+2.57\u306f\u6539\u5584\u3002ESCALATE\u6761\u4ef6pc<1.0\u306f\u5927\u5e45\u672a\u9054\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "AMAT",
+          "action": "ADD_NOTE",
+          "new_score": 6.3,
+          "note": "2026-05-16 Options BULLISH(pc_vol=0.673)\u306b\u6539\u5584(\u524d\u56deNEUTRAL_BEARISH)\u2192\u6761\u4ef6\u2460\u6210\u7acb\u3002Analyst target $485.65(+11.2%)\u306b\u5927\u5e45\u5f15\u304d\u4e0a\u3052\u3002MACD hist+2.32\u306b\u6539\u5584\u3002Revenue -2.1% YoY\u7d99\u7d9a\u3067\u6761\u4ef6\u2461(Revenue\u6210\u9577\u8ee2\u63db)\u672a\u9054\u3002ESCALATE\u6761\u4ef6: Revenue YoY>0%\u306e\u78ba\u8a8d\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "COHR",
+          "action": "MAINTAIN",
+          "new_score": 5.5,
+          "note": "2026-05-16 MACD hist -2.11\u2192+4.82\u306b\u5927\u5e45\u6539\u5584\u3002RSI=62.97\u5065\u5168\u3002\u305f\u3060\u3057Options BEARISH(pc=1.779)\u7d99\u7d9a\u3002\u30a8\u30f3\u30c8\u30ea\u30fc\u30be\u30fc\u30f3$310-320\u306b\u5bfe\u3057\u73fe\u5024$382.45(+19%)\u3002Analyst target $376.26\u304c\u73fe\u5024-1.6%\u4e0b\u56de\u308b\u3002Options NEUTRAL_BULLISH\u56de\u5fa9\u307e\u3067\u5f85\u6a5f\u7d99\u7d9a\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "TSM",
+          "action": "ADD_NOTE",
+          "new_score": 8.0,
+          "note": "2026-05-16 IN_PORTFOLIO\u7d99\u7d9a(3\u682a@$402.46)\u3002\u73fe\u5024$404.35(+0.5%)\u3002RSI=56.21\u5065\u5168\u3002MACD hist -0.88(\u3084\u3084\u5f31\u3081)\u3002Options BEARISH(pc=2.047)\u7d99\u7d9a\u30ea\u30b9\u30af\u3002Insider NET_BUYER\u7dad\u6301($329K)\u597d\u6750\u6599\u3002Analyst target $463.45(+14.6%)\u3002\u76ee\u6a19$428.87\u307e\u3067+6.1%\u3002Monitor\u7ba1\u7406\u4e2d\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "LRCX",
+          "action": "ESCALATE",
+          "new_score": 7.6,
+          "note": "2026-05-16 \u8a2d\u5b9a\u6761\u4ef6\u4e21\u65b9\u6210\u7acb: \u2460\u30a8\u30f3\u30c8\u30ea\u30fc\u30be\u30fc\u30f3$280-295\u5185($284.72) \u2461Options NEUTRAL_BULLISH(pc_vol=0.746<0.9)\u306b\u6539\u5584\u3002RSI=57.07\u7406\u60f3\u7684\u3002MACD hist+1.07\u6b63\u3002Revenue+23.8%/EPS+40.8%/analyst target $310.47(+9%)\u3002/decision\u6700\u512a\u5148\u5019\u88dc\u3002\u30a8\u30f3\u30c8\u30ea\u30fc$280-290 / stop $270.98 / target $312\u3002",
+          "flag": "ESCALATE_TO_DECISION"
+        },
+        {
+          "ticker": "UAL",
+          "action": "ADD_NOTE",
+          "new_score": 6.5,
+          "note": "2026-05-16 IN_PORTFOLIO\u7d99\u7d9a(7\u682a@$93.00)\u3002\u73fe\u5024$92.85(-0.2%)\u3002RSI=46.11\u306b\u5927\u5e45\u60aa\u5316(\u524d\u56de57.83)\u3002EMA20($94.93)/EMA50($96.39)\u3092\u4e0b\u629c\u3051\u3002Options NEUTRAL_BEARISH(pc=1.267)\u306b\u60aa\u5316(\u524d\u56deBULLISH)\u3002Stop $89.29\u306f\u4fdd\u6301\u4e2d\u3002/monitor\u76e3\u8996\u5f37\u5316\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "WAT",
+          "action": "ADD_NOTE",
+          "new_score": 7.0,
+          "note": "2026-05-16 IN_PORTFOLIO\u7d99\u7d9a\u3002\u73fe\u5024$329.22\u3002\u26a0\ufe0f\u524d\u56destop $339.39\u3092\u4e0b\u56de\u308b\u2192/monitor\u78ba\u8a8d\u8981(STOP_BREACH\u53ef\u80fd\u6027)\u3002RSI=51.38\u4e2d\u7acb\u3002Options BULLISH(pc=0.556)\u30fbInsider NET_BUYER\u7dad\u6301\u306f\u597d\u6750\u6599\u3002Analyst target $399.81(+21.4%)\u3002Healthcare\u30bb\u30af\u30bf\u30fcLAGGING\u7d99\u7d9a\u30ea\u30b9\u30af\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "RKLB",
+          "action": "MAINTAIN",
+          "new_score": 5.8,
+          "note": "2026-05-16 RSI=71.03\u3067\u904e\u71b1\u7d99\u7d9a\u3002Analyst target $100.84\u304c\u73fe\u5024$124.77\u306e-19.3%\u4e0b\u56de\u308b\u3002Options BULLISH(pc=0.606)\u306f\u597d\u6750\u6599\u3002Revenue+63.5%\u306f\u5f37\u3044\u3002\u8d64\u5b57\u7d99\u7d9a\u30fbP/S=106x\u8d85\u5272\u9ad8\u3002\u30a8\u30f3\u30c8\u30ea\u30fc\u30be\u30fc\u30f3$98\u524d\u5f8c\u307e\u3067-21%\u306e\u62bc\u3057\u76ee\u5fc5\u8981\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "AMD",
+          "action": "MAINTAIN",
+          "new_score": 6.7,
+          "note": "2026-05-16 \u521d\u56de\u30d5\u30eb\u30ea\u30b5\u30fc\u30c1\u3002Revenue+37.8%/EPS+91.2%/PEG=1.08\u30d5\u30a1\u30f3\u30c0\u5065\u5168\u3002RSI=67.44\u3002Options NEUTRAL_BEARISH(pc=1.118)\u304c\u61f8\u5ff5\u3002Analyst target $457.83(+7.9%)\u30fb48\u540dBUY\u3002\u30a8\u30f3\u30c8\u30ea\u30fc\u30be\u30fc\u30f3$410-430(\u4eca\u65e5\u306e\u62bc\u3057\u76ee)\u3002Options\u6539\u5584(pc<1.0)\u3067ESCALATE\u691c\u8a0e\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "AVGO",
+          "action": "ADD_NOTE",
+          "new_score": 7.8,
+          "note": "2026-05-16 IN_PORTFOLIO(\u79fb\u884c\u5f85\u3061\u542b\u3080)\u3002\u73fe\u5024$425.19(-3.37%\u3001$430\u30a8\u30f3\u30c8\u30ea\u30fc\u30e9\u30a4\u30f3\u5272\u308c)\u3002Options NEUTRAL_BEARISH(pc=1.042)\u306b\u60aa\u5316(\u524d\u56deBULLISH pc=0.355)\u3002MACD hist -2.13\u3002Analyst target $480.25(+12.9%)\u3002$430\u518d\u30d6\u30ec\u30a4\u30af or $415-420\u62bc\u3057\u76ee\u3067\u30a8\u30f3\u30c8\u30ea\u30fc\u518d\u691c\u8a0e\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "INTC",
+          "action": "REMOVE",
+          "new_score": 3.6,
+          "note": "2026-05-16 \u30c6\u30fc\u30bc\u7834\u7dbb\u78ba\u8a8d\u3002Net income -$3.73B(\u8d64\u5b57\u7d99\u7d9a\u30fb\u60aa\u5316)\u3002Analyst recommendation HOLD(42\u540d\u3001\u30a6\u30a9\u30c3\u30c1\u30ea\u30b9\u30c8\u552f\u4e00\u306eHOLD)\u3002Analyst target $85.00\u304c\u73fe\u5024$108.77\u306e-21.8%\u4e0b\u56de\u308a(\u5168\u9298\u67c4\u6700\u60aa)\u3002Options BEARISH(pc=1.498)\u3002Revenue+7.2%\u306e\u307f(\u6700\u5f31\u6c34\u6e96)\u3002Foundry\u9ed2\u5b57\u8ee2\u63db\u672a\u78ba\u8a8d\u3067\u30c6\u30fc\u30bc\u4e0d\u6210\u7acb\u3002REMOVE\u3002",
+          "flag": null
+        }
+      ]
+    },
+    {
+      "run_id": "2f003654-e577-4291-adc8-218f971a9fb9",
+      "date": "2026-05-30",
+      "results": [
+        {
+          "ticker": "MRVL",
+          "action": "MAINTAIN",
+          "new_score": 7.2,
+          "note": "\u6c7a\u7b97\u901a\u904e\u5f8c\u3082\u696d\u7e3e\u306f\u5f37\u3044\u304c\u3001\u73fe\u5024$205\u306f\u66f4\u65b0\u30be\u30fc\u30f3$185-195\u3092\u518d\u3073\u4e0a\u629c\u304d\u3002RSI69.6\u3067\u3084\u3084\u904e\u71b1\u3001options BEARISH\u7d99\u7d9a\u3002\u62bc\u3057\u76ee\u5f85\u3061\u7dad\u6301\u3002"
+        },
+        {
+          "ticker": "MU",
+          "action": "MAINTAIN",
+          "new_score": 7.1,
+          "note": "\u30d5\u30a1\u30f3\u30c0\u306f\u6700\u5f37\u3060\u304c\u73fe\u5024$971\u306f\u53c2\u7167\u4fa1\u683c\u6bd4+165%\u3067\u904e\u71b1\u611f\u304c\u5f37\u3044\u3002RSI78.1\u3001options BEARISH\u3001\u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19\u3092\u5927\u304d\u304f\u4e0a\u56de\u308b\u305f\u3081\u65b0\u898f\u6607\u683c\u306f\u898b\u9001\u308a\u3002"
+        },
+        {
+          "ticker": "VRT",
+          "action": "ESCALATE",
+          "new_score": 7.9,
+          "note": "Q1\u3067\u30ac\u30a4\u30c0\u30f3\u30b9\u5f15\u304d\u4e0a\u3052\u5f8c\u3082\u5d29\u308c\u305a\u3001RSI45\u307e\u3067\u51b7\u5374\u3002EPS\u6210\u9577+135.7%\u3001\u73fe\u5024$315\u306f\u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19$376.8\u307e\u3067\u4f59\u5730\u3042\u308a\u3002\u62bc\u3057\u76ee\u5019\u88dc\u3068\u3057\u3066decision\u3078\u6607\u683c\u3002",
+          "flag": "ESCALATE_TO_DECISION"
+        },
+        {
+          "ticker": "AMAT",
+          "action": "ESCALATE",
+          "new_score": 7.8,
+          "note": "Q2 record\u6c7a\u7b97\u306e\u88cf\u4ed8\u3051\u304c\u5f37\u304f\u3001RSI62\u3067\u904e\u71b1\u306f\u9650\u5b9a\u7684\u3002\u73fe\u5024$450\u306f\u76ee\u6a19$511\u307e\u3067\u4e0a\u5024\u4f59\u5730\u304c\u3042\u308a\u3001options\u3082NEUTRAL_BULLISH\u3002\u534a\u5c0e\u4f53\u672c\u6d41\u3068\u3057\u3066decision\u3078\u6607\u683c\u3002",
+          "flag": "ESCALATE_TO_DECISION"
+        },
+        {
+          "ticker": "COHR",
+          "action": "MAINTAIN",
+          "new_score": 6.4,
+          "note": "\u58f2\u4e0a\u6210\u9577\u306f\u7d9a\u304f\u304c\u3001\u73fe\u5024\u306f\u53c2\u7167\u4fa1\u683c\u6bd4+17.6%\u306b\u5bfe\u3057\u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19\u3068\u306e\u5dee\u306f\u5c0f\u3055\u3044\u3002options NEUTRAL_BEARISH\u3001MACD\u3082\u5f31\u304f\u76e3\u8996\u7d99\u7d9a\u3002"
+        },
+        {
+          "ticker": "TSM",
+          "action": "REMOVE",
+          "new_score": 8.0,
+          "note": "portfolio.csv\u3067\u65e2\u306b\u4fdd\u6709\u4e2d\u3002watchlist\u306eactive\u67a0\u3067\u306f\u306a\u304f\u4fdd\u6709\u76e3\u8996\u3067\u6271\u3046\u3079\u304d\u305f\u3081\u3001watchlist\u304b\u3089\u6574\u7406\u3059\u308b\u3002"
+        },
+        {
+          "ticker": "RKLB",
+          "action": "MAINTAIN",
+          "new_score": 6.8,
+          "note": "\u5b87\u5b99\u30c6\u30fc\u30de\u306f\u7d99\u7d9a\u3057options\u3082BULLISH\u3060\u304c\u3001\u73fe\u5024\u306f\u65e2\u306b\u5927\u304d\u304f\u8d70\u3063\u305f\u5f8c\u3067RSI67.9\u3002\u65b0\u898f\u6607\u683c\u3088\u308a\u62bc\u3057\u76ee\u5f62\u6210\u5f85\u3061\u3002"
+        },
+        {
+          "ticker": "AMD",
+          "action": "MAINTAIN",
+          "new_score": 7.0,
+          "note": "Revenue/EPS\u6210\u9577\u306f\u5f37\u3044\u304c\u3001RSI76.2\u3067\u904e\u71b1\u3001options BEARISH\u3001\u73fe\u5024\u304c\u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19\u3092\u4e0a\u56de\u308b\u3002\u62bc\u3057\u76ee\u307e\u3067\u5f85\u6a5f\u3002"
+        },
+        {
+          "ticker": "FLY",
+          "action": "MAINTAIN",
+          "new_score": 7.0,
+          "note": "SpaceX\u9023\u60f3\u306f\u6709\u52b9\u3067\u3001\u73fe\u5024$46.49\u306f\u8a2d\u5b9a\u30be\u30fc\u30f346-49.5\u306b\u623b\u3063\u305f\u3002BULLISH\u6750\u6599\u306f\u3042\u308b\u304c\u3001\u307e\u305a\u5024\u56fa\u3081\u78ba\u8a8d\u3092\u512a\u5148\u3002"
+        },
+        {
+          "ticker": "LUNR",
+          "action": "MAINTAIN",
+          "new_score": 7.0,
+          "note": "\u58f2\u4e0a\u6210\u9577\u3068\u53d7\u6ce8\u6b8b\u306f\u5f37\u3044\u304c\u3001\u73fe\u5024$43.83\u306f\u65e2\u5b58\u76ee\u6a19$46.13\u306b\u8fd1\u304f\u3001RSI69.3\u3067\u3084\u3084\u904e\u71b1\u3002\u65b0\u898f\u6607\u683c\u306f\u898b\u9001\u308a\u3002"
+        },
+        {
+          "ticker": "BB",
+          "action": "REMOVE",
+          "new_score": 4.8,
+          "note": "QNX\u7269\u7406AI\u306e\u7269\u8a9e\u306b\u5bfe\u3057\u3066\u696d\u7e3e\u88cf\u4ed8\u3051\u304c\u5f31\u304f\u3001analyst recommendation\u306fHOLD\u3001\u76ee\u6a19\u682a\u4fa1\u3082\u73fe\u5024\u3092\u5927\u304d\u304f\u4e0b\u56de\u308b\u3002RSI89\u3067\u904e\u71b1\u3057\u3059\u304e\u3002"
+        },
+        {
+          "ticker": "RDW",
+          "action": "REMOVE",
+          "new_score": 5.6,
+          "note": "NATO\u5951\u7d04\u306f\u6750\u6599\u3060\u304c\u3001\u73fe\u5024\u306f\u53c2\u7167\u4fa1\u683c\u6bd4+40%\u30fbRSI81.8\u3067\u904e\u71b1\u3002\u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19\u3082\u73fe\u5024\u3092\u5927\u304d\u304f\u4e0b\u56de\u308a\u3001risk/reward\u304c\u60aa\u5316\u3002"
+        },
+        {
+          "ticker": "SWKS",
+          "action": "REMOVE",
+          "new_score": 5.9,
+          "note": "Android design win\u3060\u3051\u3067\u306f\u5f31\u304f\u3001Revenue\u30de\u30a4\u30ca\u30b9\u30fbEPS\u30de\u30a4\u30ca\u30b9\u3067\u30c6\u30fc\u30bc\u304c\u8584\u3044\u3002HOLD\u8a55\u4fa1\u3067\u5f37\u3044\u6607\u683c\u6750\u6599\u3082\u4e0d\u8db3\u3002"
+        },
+        {
+          "ticker": "QBTS",
+          "action": "MAINTAIN",
+          "new_score": 6.7,
+          "note": "\u653f\u7b56\u30ab\u30bf\u30ea\u30b9\u30c8\u306f\u5f37\u3044\u304c\u3001Revenue\u6210\u9577\u304c\u5d29\u308c\u3066\u304a\u308a\u5909\u52d5\u3082\u5927\u304d\u3044\u3002\u73fe\u5024\u306f\u30a8\u30f3\u30c8\u30ea\u30fc\u8fd1\u8fba\u3067\u76e3\u8996\u306f\u7d99\u7d9a\u3059\u308b\u304c\u3001\u6607\u683c\u306f\u5c1a\u65e9\u3002"
+        },
+        {
+          "ticker": "INFQ",
+          "action": "MAINTAIN",
+          "new_score": 7.2,
+          "note": "\u91cf\u5b50\u30c6\u30fc\u30de\u3068BULLISH\u30d5\u30ed\u30fc\u306f\u8ffd\u3044\u98a8\u3067\u3001\u73fe\u5024$16.22\u306f\u30a8\u30f3\u30c8\u30ea\u30fc\u30be\u30fc\u30f3\u5185\u3002\u76f4\u8fd1-10%\u306e\u65e5\u8db3\u5909\u52d5\u304c\u5927\u304d\u304f\u3001\u307e\u305a\u53cd\u767a\u78ba\u8a8d\u3092\u5f85\u3064\u3002"
+        },
+        {
+          "ticker": "RGTI",
+          "action": "MAINTAIN",
+          "new_score": 7.0,
+          "note": "\u58f2\u4e0a\u6210\u9577\u3068\u653f\u7b56\u6750\u6599\u306f\u5f37\u3044\u3002\u73fe\u5024\u306f\u30a8\u30f3\u30c8\u30ea\u30fc\u8fd1\u8fba\u3067BULLISH\u3060\u304c\u3001\u30dc\u30e9\u30c6\u30a3\u30ea\u30c6\u30a3\u304c\u9ad8\u304f\u3001\u5358\u72ec\u3067\u306e\u6607\u683c\u3088\u308a\u7d99\u7d9a\u76e3\u8996\u3002"
+        },
+        {
+          "ticker": "NOK",
+          "action": "MAINTAIN",
+          "new_score": 6.4,
+          "note": "AI\u30cd\u30c3\u30c8\u30ef\u30fc\u30af\u6750\u6599\u306f\u3042\u308b\u304c\u3001Revenue\u6210\u9577\u306f\u9650\u5b9a\u7684\u3067MACD\u306f\u307b\u307c\u30d5\u30e9\u30c3\u30c8\u3002\u3059\u3050\u306e\u6607\u683c\u3067\u306f\u306a\u304f\u63a8\u79fb\u78ba\u8a8d\u3002"
+        },
+        {
+          "ticker": "AXTI",
+          "action": "REMOVE",
+          "new_score": 4.2,
+          "note": "\u53c2\u7167\u4fa1\u683c\u6bd4-26.7%\u3001options BEARISH\u3001\u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19\u3082\u73fe\u5024\u4e0b\u3067\u3001\u5143\u306e\u76e3\u8996\u30c6\u30fc\u30bc\u304c\u8584\u3044\u3002watchlist\u7d99\u7d9a\u512a\u5148\u5ea6\u306f\u4f4e\u3044\u3002"
+        }
+      ]
+    },
+    {
+      "run_id": "6ec38e37-f69b-4e05-9ea3-9737499af87c",
+      "date": "2026-06-03",
+      "results": [
+        {
+          "ticker": "AMAT",
+          "action": "ESCALATE",
+          "new_score": 7.3,
+          "note": "52\u9031\u9ad8\u5024\u66f4\u65b0\u3001\u5229\u76ca\u6210\u9577+33.5%\u3001\u55b6\u696d\u5229\u76ca\u738731.9%\u3001options NEUTRAL_BULLISH\u3002RSI72\u3067\u3084\u3084\u904e\u71b1\u3060\u304c\u534a\u5c0e\u4f53\u8a2d\u5099\u306e\u8cea\u304c\u9ad8\u304fdecision\u5019\u88dc\u3078\u6607\u683c\u3002\u91cd\u8907: latest /research\u5019\u88dc\u3002",
+          "flag": "ESCALATE_TO_DECISION"
+        },
+        {
+          "ticker": "MRVL",
+          "action": "ADD_NOTE",
+          "new_score": 7.1,
+          "note": "/research\u5019\u88dc\u3068\u91cd\u8907\u3002\u4eca\u65e5+32.5%\u3001\u51fa\u6765\u9ad8\u6025\u5897\u3001options BULLISH\u3060\u304cRSI85.9\u3067\u904e\u71b1\u3002analyst target\u306f\u73fe\u5024-23.5%\u3001insider NET_SELLER\u3002\u8ffd\u3044\u8cb7\u3044\u4e0d\u53ef\u3001\u62bc\u3057\u76ee270-285\u5f85\u3061\u3002",
+          "flag": "WATCHLIST_OVERHEATED"
+        },
+        {
+          "ticker": "MU",
+          "action": "ADD_NOTE",
+          "new_score": 7.0,
+          "note": "/research\u5019\u88dc\u3068\u91cd\u8907\u3002\u58f2\u4e0a+196%\u3001\u5229\u76ca+756%\u3001Forward PE10.1\u3067\u30d5\u30a1\u30f3\u30c0\u6700\u5f37\u3002\u305f\u3060\u3057RSI82.0\u3001analyst target\u73fe\u5024-31.8%\u3001options NEUTRAL_BEARISH\u30021000-1040\u4ed8\u8fd1\u307e\u3067\u306e\u62bc\u3057\u76ee\u5f85\u3061\u3002",
+          "flag": "WATCHLIST_OVERHEATED"
+        },
+        {
+          "ticker": "COHR",
+          "action": "MAINTAIN",
+          "new_score": 6.4,
+          "note": "\u4eca\u65e5+17.8%\u3067\u5f37\u3044\u304c\u3001options NEUTRAL_BEARISH\u3001analyst target\u73fe\u5024-10.8%\u3001insider NET_SELLER\u3002MACD\u306f\u6539\u5584\u3057\u305f\u304c\u65b0\u898f\u6607\u683c\u306f\u898b\u9001\u308a\u3002",
+          "flag": "MAINTAIN_WATCH"
+        },
+        {
+          "ticker": "RKLB",
+          "action": "MAINTAIN",
+          "new_score": 6.8,
+          "note": "RSI53.9\u307e\u3067\u51b7\u5374\u3001options BULLISH\u3001\u58f2\u4e0a+63.5%\u3002\u4e00\u65b9\u3067\u8d64\u5b57\u3001P/S105\u3001analyst target\u73fe\u5024-15.7%\u3002\u5b87\u5b99\u30c6\u30fc\u30de\u7d99\u7d9a\u3060\u304c\u6c7a\u5b9a\u5019\u88dc\u306b\u306f\u672a\u9054\u3002",
+          "flag": "MAINTAIN_WATCH"
+        },
+        {
+          "ticker": "AMD",
+          "action": "ADD_NOTE",
+          "new_score": 7.2,
+          "note": "\u58f2\u4e0a+37.8%\u3001\u5229\u76ca+91.2%\u3001options BULLISH\u3001strong_buy 48\u540d\u3002\u3060\u304cRSI75.4\u3001analyst target\u73fe\u5024-8.0%\u3001insider\u58f2\u308a\u5927\u304d\u3044\u3002\u5f37\u3044\u304c\u62bc\u3057\u76ee\u5f85\u3061\u3002",
+          "flag": "WATCHLIST_OVERHEATED"
+        },
+        {
+          "ticker": "FLY",
+          "action": "MAINTAIN",
+          "new_score": 6.2,
+          "note": "RSI51.2\u3067\u904e\u71b1\u306f\u306a\u3044\u3002\u58f2\u4e0a+44.8%\u3001options BULLISH\u3001analyst upside +8.7%\u3002\u305f\u3060\u3057\u8d64\u5b57\u3001\u55b6\u696d\u5229\u76ca\u7387-115.9%\u3001P/S38.5\u3001insider NET_SELLER\u3002\u5c0f\u578b\u5b87\u5b99\u30c6\u30fc\u30de\u3068\u3057\u3066\u76e3\u8996\u7dad\u6301\u3002",
+          "flag": "MAINTAIN_WATCH"
+        },
+        {
+          "ticker": "LUNR",
+          "action": "MAINTAIN",
+          "new_score": 6.6,
+          "note": "\u58f2\u4e0a+198.7%\u3001RSI59.6\u3001MACD\u6b63\u3001options BULLISH\u3002\u3060\u304c\u8d64\u5b57\u3001insider NET_SELLER\u3001analyst upside +3.1%\u3067\u4e0a\u5024\u4f59\u5730\u306f\u8584\u3044\u3002\u76e3\u8996\u7dad\u6301\u3002",
+          "flag": "MAINTAIN_WATCH"
+        },
+        {
+          "ticker": "QBTS",
+          "action": "MAINTAIN",
+          "new_score": 6.3,
+          "note": "\u91cf\u5b50\u30c6\u30fc\u30de\u3068options BULLISH\u306f\u5f37\u3044\u3002analyst upside +17.6%\u3002\u4e00\u65b9\u3067\u58f2\u4e0a-80.9%\u3001\u55b6\u696d\u5229\u76ca\u7387-1914.9%\u3001P/S890\u3001insider NET_SELLER\u3002\u30c6\u30fc\u30de\u76e3\u8996\u306b\u9650\u5b9a\u3002",
+          "flag": "SPECULATIVE_WATCH"
+        },
+        {
+          "ticker": "INFQ",
+          "action": "MAINTAIN",
+          "new_score": 6.1,
+          "note": "\u4eca\u65e5+10.7%\u3001options BULLISH(pc=0.132)\u3002\u305f\u3060\u3057\u55b6\u696d\u5229\u76ca\u7387-354.9%\u3001P/S129\u3001analyst\u65702\u540d\u306e\u307f\u3002\u4e0a\u5024\u4f59\u5730+5.7%\u3067\u6c7a\u5b9a\u5019\u88dc\u306b\u306f\u4e0d\u8db3\u3002",
+          "flag": "SPECULATIVE_WATCH"
+        },
+        {
+          "ticker": "RGTI",
+          "action": "MAINTAIN",
+          "new_score": 6.4,
+          "note": "\u58f2\u4e0a+198.9%\u3001options BULLISH\u3001RSI66.7\u3002\u3060\u304c\u55b6\u696d\u5229\u76ca\u7387-589.8%\u3001P/S892\u3001insider NET_SELLER\u3002\u91cf\u5b50\u30c6\u30fc\u30de\u76e3\u8996\u306f\u7d99\u7d9a\u3001\u6607\u683c\u306f\u898b\u9001\u308a\u3002",
+          "flag": "SPECULATIVE_WATCH"
+        },
+        {
+          "ticker": "NOK",
+          "action": "MAINTAIN",
+          "new_score": 6.0,
+          "note": "52\u9031\u9ad8\u5024\u8fd1\u8fba\u3001options BULLISH\u3001FCF\u306f\u826f\u3044\u3002\u305f\u3060\u3057\u58f2\u4e0a\u6210\u9577+2.4%\u306b\u3068\u3069\u307e\u308a\u3001analyst target\u73fe\u5024-23.4%\u3002\u30e2\u30e1\u30f3\u30bf\u30e0\u76e3\u8996\u306e\u307f\u3002",
+          "flag": "MAINTAIN_WATCH"
+        }
+      ]
     }
   ]
 }

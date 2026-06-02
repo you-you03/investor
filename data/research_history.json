@@ -10,17 +10,19 @@
           "conviction": "HIGH",
           "rationale": "test",
           "outcome": {
-            "status": "open",
-            "outcome_type": "AT_TARGET",
+            "status": "closed",
+            "outcome_type": "STOP_HIT",
             "entry_price": 208.27,
+            "exit_price": 198.45,
             "entry_date": "2026-04-25",
-            "current_price": 213.1699981689453,
-            "days_held": 4,
-            "unrealized_return_pct": 2.35,
-            "pnl_usd": 34.3,
-            "spy_return_pct": -0.32,
-            "alpha_pct": 2.67,
-            "recorded_at": "2026-04-29"
+            "exit_date": "2026-05-05",
+            "days_held": 10,
+            "realized_return_pct": -4.72,
+            "pnl_usd": -68.74,
+            "spy_return_pct": 0.57,
+            "alpha_pct": -5.29,
+            "win": false,
+            "recorded_at": "2026-05-16"
           }
         }
       ]
@@ -371,17 +373,19 @@
           "macro_regime": "NORMAL",
           "data_notes": "Financial data as of Q3 2025. Market data 2026-04-11. Meta deal $21B and Anthropic deal announced today.",
           "outcome": {
-            "status": "open",
-            "outcome_type": "OPEN",
+            "status": "closed",
+            "outcome_type": "TARGET_HIT",
             "entry_price": 102.0,
+            "exit_price": 119.9,
             "entry_date": "2026-04-11",
-            "current_price": 105.52999877929688,
-            "days_held": 18,
-            "unrealized_return_pct": 3.46,
-            "pnl_usd": 21.18,
-            "spy_return_pct": 4.74,
-            "alpha_pct": -1.28,
-            "recorded_at": "2026-04-29"
+            "exit_date": "2026-05-05",
+            "days_held": 24,
+            "realized_return_pct": 17.55,
+            "pnl_usd": 107.4,
+            "spy_return_pct": 5.67,
+            "alpha_pct": 11.88,
+            "win": true,
+            "recorded_at": "2026-05-16"
           }
         },
         {
@@ -474,17 +478,19 @@
           "macro_regime": "NORMAL",
           "data_notes": "Financial data as of Q4 FY2025. Market data 2026-04-11. \u30e2\u30e1\u30f3\u30bf\u30e0\u5f31\u3067Sub-priority\u5019\u88dc\u3002",
           "outcome": {
-            "status": "open",
-            "outcome_type": "AT_TARGET",
+            "status": "closed",
+            "outcome_type": "STOP_HIT",
             "entry_price": 208.27,
+            "exit_price": 198.45,
             "entry_date": "2026-04-25",
-            "current_price": 213.1699981689453,
-            "days_held": 4,
-            "unrealized_return_pct": 2.35,
-            "pnl_usd": 34.3,
-            "spy_return_pct": -0.32,
-            "alpha_pct": 2.67,
-            "recorded_at": "2026-04-29"
+            "exit_date": "2026-05-05",
+            "days_held": 10,
+            "realized_return_pct": -4.72,
+            "pnl_usd": -68.74,
+            "spy_return_pct": 0.57,
+            "alpha_pct": -5.29,
+            "win": false,
+            "recorded_at": "2026-05-16"
           }
         }
       ],
@@ -818,17 +824,19 @@
           "analyst_upside_pct": 42.2,
           "data_notes": "Semiconductor\u30bb\u30af\u30bf\u30fc(LEADING). fPE=16.97\u306f\u5927\u578bAI\u682a\u3068\u3057\u3066\u6975\u5272\u5b89\u3002ATR\u76ee\u6a19\u4fdd\u5b88\u7684\u3001\u771f\u306e\u9577\u671f\u76ee\u6a19$268\u3002",
           "outcome": {
-            "status": "open",
-            "outcome_type": "AT_TARGET",
+            "status": "closed",
+            "outcome_type": "STOP_HIT",
             "entry_price": 208.27,
+            "exit_price": 198.45,
             "entry_date": "2026-04-25",
-            "current_price": 213.1699981689453,
-            "days_held": 4,
-            "unrealized_return_pct": 2.35,
-            "pnl_usd": 34.3,
-            "spy_return_pct": -0.32,
-            "alpha_pct": 2.67,
-            "recorded_at": "2026-04-29"
+            "exit_date": "2026-05-05",
+            "days_held": 10,
+            "realized_return_pct": -4.72,
+            "pnl_usd": -68.74,
+            "spy_return_pct": 0.57,
+            "alpha_pct": -5.29,
+            "win": false,
+            "recorded_at": "2026-05-16"
           }
         },
         {
@@ -873,7 +881,22 @@
           "atr_multiplier_used": 2.0,
           "atr_multiplier_reason": "\u6c7a\u7b9753\u65e5\u5f8c\u30fb\u8fd1\u63a5\u30ab\u30bf\u30ea\u30b9\u30c8\u8584\u3081\u2192\u6a19\u6e962.0\u00d7ATR",
           "analyst_upside_pct": 27.3,
-          "data_notes": "Semiconductor\u30bb\u30af\u30bf\u30fc(LEADING). ATR14=$12.90\u30025\u9298\u67c4\u4e2d\u6700\u3082\u5b89\u5b9a\u3057\u305f\u5927\u578b\u682a\u3002"
+          "data_notes": "Semiconductor\u30bb\u30af\u30bf\u30fc(LEADING). ATR14=$12.90\u30025\u9298\u67c4\u4e2d\u6700\u3082\u5b89\u5b9a\u3057\u305f\u5927\u578b\u682a\u3002",
+          "outcome": {
+            "status": "closed",
+            "outcome_type": "STOP_HIT",
+            "entry_price": 432.0,
+            "exit_price": 414.14,
+            "entry_date": "2026-05-09",
+            "exit_date": "2026-05-24",
+            "days_held": 15,
+            "realized_return_pct": -4.13,
+            "pnl_usd": -53.58,
+            "spy_return_pct": 1.09,
+            "alpha_pct": -5.22,
+            "win": false,
+            "recorded_at": "2026-05-24"
+          }
         }
       ]
     },
@@ -1090,17 +1113,19 @@
           "analyst_upside_pct": 42.2,
           "data_notes": "Semiconductor\u30bb\u30af\u30bf\u30fc(LEADING). fPE=16.97\u306f\u5927\u578bAI\u682a\u3068\u3057\u3066\u6975\u5272\u5b89\u3002ATR\u76ee\u6a19\u4fdd\u5b88\u7684\u3001\u771f\u306e\u9577\u671f\u76ee\u6a19$268\u3002",
           "outcome": {
-            "status": "open",
-            "outcome_type": "AT_TARGET",
+            "status": "closed",
+            "outcome_type": "STOP_HIT",
             "entry_price": 208.27,
+            "exit_price": 198.45,
             "entry_date": "2026-04-25",
-            "current_price": 213.1699981689453,
-            "days_held": 4,
-            "unrealized_return_pct": 2.35,
-            "pnl_usd": 34.3,
-            "spy_return_pct": -0.32,
-            "alpha_pct": 2.67,
-            "recorded_at": "2026-04-29"
+            "exit_date": "2026-05-05",
+            "days_held": 10,
+            "realized_return_pct": -4.72,
+            "pnl_usd": -68.74,
+            "spy_return_pct": 0.57,
+            "alpha_pct": -5.29,
+            "win": false,
+            "recorded_at": "2026-05-16"
           }
         },
         {
@@ -1145,7 +1170,22 @@
           "atr_multiplier_used": 2.0,
           "atr_multiplier_reason": "\u6c7a\u7b9753\u65e5\u5f8c\u30fb\u8fd1\u63a5\u30ab\u30bf\u30ea\u30b9\u30c8\u8584\u3081\u2192\u6a19\u6e962.0\u00d7ATR",
           "analyst_upside_pct": 27.3,
-          "data_notes": "Semiconductor\u30bb\u30af\u30bf\u30fc(LEADING). ATR14=$12.90\u30025\u9298\u67c4\u4e2d\u6700\u3082\u5b89\u5b9a\u3057\u305f\u5927\u578b\u682a\u3002"
+          "data_notes": "Semiconductor\u30bb\u30af\u30bf\u30fc(LEADING). ATR14=$12.90\u30025\u9298\u67c4\u4e2d\u6700\u3082\u5b89\u5b9a\u3057\u305f\u5927\u578b\u682a\u3002",
+          "outcome": {
+            "status": "closed",
+            "outcome_type": "STOP_HIT",
+            "entry_price": 432.0,
+            "exit_price": 414.14,
+            "entry_date": "2026-05-09",
+            "exit_date": "2026-05-24",
+            "days_held": 15,
+            "realized_return_pct": -4.13,
+            "pnl_usd": -53.58,
+            "spy_return_pct": 1.09,
+            "alpha_pct": -5.22,
+            "win": false,
+            "recorded_at": "2026-05-24"
+          }
         }
       ]
     },
@@ -1251,17 +1291,19 @@
           "data_notes": "Financial data as of latest quarter 2026.",
           "rank_in_run": 1,
           "outcome": {
-            "status": "open",
-            "outcome_type": "AT_TARGET",
+            "status": "closed",
+            "outcome_type": "STOP_HIT",
             "entry_price": 208.27,
+            "exit_price": 198.45,
             "entry_date": "2026-04-25",
-            "current_price": 213.1699981689453,
-            "days_held": 4,
-            "unrealized_return_pct": 2.35,
-            "pnl_usd": 34.3,
-            "spy_return_pct": -0.32,
-            "alpha_pct": 2.67,
-            "recorded_at": "2026-04-29"
+            "exit_date": "2026-05-05",
+            "days_held": 10,
+            "realized_return_pct": -4.72,
+            "pnl_usd": -68.74,
+            "spy_return_pct": 0.57,
+            "alpha_pct": -5.29,
+            "win": false,
+            "recorded_at": "2026-05-16"
           }
         },
         {
@@ -1353,7 +1395,22 @@
           "analyst_upside_pct": 16.9,
           "macro_regime": "NORMAL",
           "data_notes": "Financial data current.",
-          "rank_in_run": 3
+          "rank_in_run": 3,
+          "outcome": {
+            "status": "closed",
+            "outcome_type": "STOP_HIT",
+            "entry_price": 432.0,
+            "exit_price": 414.14,
+            "entry_date": "2026-05-09",
+            "exit_date": "2026-05-24",
+            "days_held": 15,
+            "realized_return_pct": -4.13,
+            "pnl_usd": -53.58,
+            "spy_return_pct": 1.09,
+            "alpha_pct": -5.22,
+            "win": false,
+            "recorded_at": "2026-05-24"
+          }
         },
         {
           "ticker": "MU",
@@ -1445,7 +1502,20 @@
           "analyst_upside_pct": 5.1,
           "macro_regime": "NORMAL",
           "data_notes": "Deutsche Bank raised PT to $300 today.",
-          "rank_in_run": 5
+          "rank_in_run": 5,
+          "outcome": {
+            "status": "open",
+            "outcome_type": "AT_TARGET",
+            "entry_price": 284.72,
+            "entry_date": "2026-05-16",
+            "current_price": 305.3500061035156,
+            "days_held": 8,
+            "unrealized_return_pct": 7.25,
+            "pnl_usd": 41.26,
+            "spy_return_pct": 0.88,
+            "alpha_pct": 6.37,
+            "recorded_at": "2026-05-24"
+          }
         }
       ]
     },
@@ -1546,17 +1616,19 @@
           "macro_regime": "NORMAL",
           "data_notes": "\u30a2\u30ca\u30ea\u30b9\u30c8\u30c7\u30fc\u30bf\u672a\u53d6\u5f97\uff08Yahoo Finance API\u5236\u9650\uff09\u3002analyst_recommendation/count \u306fticker_details\u3088\u308a\u53d6\u5f97\u3002",
           "outcome": {
-            "status": "open",
-            "outcome_type": "AT_TARGET",
+            "status": "closed",
+            "outcome_type": "STOP_HIT",
             "entry_price": 208.27,
+            "exit_price": 198.45,
             "entry_date": "2026-04-25",
-            "current_price": 213.1699981689453,
-            "days_held": 4,
-            "unrealized_return_pct": 2.35,
-            "pnl_usd": 34.3,
-            "spy_return_pct": -0.32,
-            "alpha_pct": 2.67,
-            "recorded_at": "2026-04-29"
+            "exit_date": "2026-05-05",
+            "days_held": 10,
+            "realized_return_pct": -4.72,
+            "pnl_usd": -68.74,
+            "spy_return_pct": 0.57,
+            "alpha_pct": -5.29,
+            "win": false,
+            "recorded_at": "2026-05-16"
           }
         },
         {
@@ -1603,7 +1675,22 @@
           "atr_multiplier_reason": "\u30c7\u30d5\u30a9\u30eb\u30c82\u00d7ATR\uff08\u6c7a\u7b9742\u65e5\u5148\u3001RSI\u904e\u71b1\u3092\u8003\u616e\u3057\u30bf\u30fc\u30b2\u30c3\u30c8\u63a7\u3048\u3081\u8a2d\u5b9a\uff09",
           "analyst_upside_pct": 12.5,
           "macro_regime": "NORMAL",
-          "data_notes": "ATR\u8a08\u7b97\u306f\u65e7\u30a8\u30f3\u30c8\u30ea\u30fc\u4fa1\u683c$234\u3067\u5b9f\u884c\u3055\u308c\u305f\u305f\u3081\u3001ATR_14=$12.76\u3092\u73fe\u5728\u5024$422.65\u3067\u624b\u52d5\u9069\u7528\u3002"
+          "data_notes": "ATR\u8a08\u7b97\u306f\u65e7\u30a8\u30f3\u30c8\u30ea\u30fc\u4fa1\u683c$234\u3067\u5b9f\u884c\u3055\u308c\u305f\u305f\u3081\u3001ATR_14=$12.76\u3092\u73fe\u5728\u5024$422.65\u3067\u624b\u52d5\u9069\u7528\u3002",
+          "outcome": {
+            "status": "closed",
+            "outcome_type": "STOP_HIT",
+            "entry_price": 432.0,
+            "exit_price": 414.14,
+            "entry_date": "2026-05-09",
+            "exit_date": "2026-05-24",
+            "days_held": 15,
+            "realized_return_pct": -4.13,
+            "pnl_usd": -53.58,
+            "spy_return_pct": 1.09,
+            "alpha_pct": -5.22,
+            "win": false,
+            "recorded_at": "2026-05-24"
+          }
         },
         {
           "ticker": "AMD",
@@ -1669,17 +1756,19 @@
           "rationale": "\u534a\u5c0e\u4f53LEADING\u30bb\u30af\u30bf\u30fc\u3002rev+73%/EPS+96%\u3002STRONG_BUY 56\u540d\u3001\u76ee\u6a19$268(+29%)\u300252w\u9ad8\u5024$212\u8fd1\u63a5\u3001\u30d6\u30ec\u30a4\u30af\u30a2\u30a6\u30c8\u671f\u5f85\u3002Options BULLISH\u3002",
           "risks": "RSI71.6\u3067\u904e\u8cb7\u3044\u570f\u3002\u30a4\u30f3\u30b5\u30a4\u30c0\u30fc\u58f2\u308a\u7d99\u7d9a\u3002",
           "outcome": {
-            "status": "open",
-            "outcome_type": "AT_TARGET",
+            "status": "closed",
+            "outcome_type": "STOP_HIT",
             "entry_price": 208.27,
+            "exit_price": 198.45,
             "entry_date": "2026-04-25",
-            "current_price": 213.1699981689453,
-            "days_held": 4,
-            "unrealized_return_pct": 2.35,
-            "pnl_usd": 34.3,
-            "spy_return_pct": -0.32,
-            "alpha_pct": 2.67,
-            "recorded_at": "2026-04-29"
+            "exit_date": "2026-05-05",
+            "days_held": 10,
+            "realized_return_pct": -4.72,
+            "pnl_usd": -68.74,
+            "spy_return_pct": 0.57,
+            "alpha_pct": -5.29,
+            "win": false,
+            "recorded_at": "2026-05-16"
           }
         },
         {
@@ -1694,16 +1783,16 @@
           "risks": "Options NEUTRAL_BEARISH\u3002\u53f0\u6e7e\u5730\u653f\u5b66\u30ea\u30b9\u30af\u3002",
           "outcome": {
             "status": "open",
-            "outcome_type": "AT_STOP",
+            "outcome_type": "OPEN",
             "entry_price": 402.46,
             "entry_date": "2026-04-26",
-            "current_price": 392.3399963378906,
-            "days_held": 3,
-            "unrealized_return_pct": -2.51,
-            "pnl_usd": -30.36,
-            "spy_return_pct": -0.32,
-            "alpha_pct": -2.19,
-            "recorded_at": "2026-04-29"
+            "current_price": 404.5199890136719,
+            "days_held": 28,
+            "unrealized_return_pct": 0.51,
+            "pnl_usd": 6.18,
+            "spy_return_pct": 4.44,
+            "alpha_pct": -3.93,
+            "recorded_at": "2026-05-24"
           }
         },
         {
@@ -1717,17 +1806,19 @@
           "rationale": "CEO Nikesh Arora\u304c3/27\u306b$10M\u81ea\u793e\u682a\u8cb7\u3044\u3002Options BULLISH\u3002EPS+60.5%\u3002\u76ee\u6a19$206(+15.4%)\u3002",
           "risks": "Cloud/Software\u30bb\u30af\u30bf\u30fc\u304clagging\u3002PEG 3.04\u3067\u5272\u9ad8\u3002",
           "outcome": {
-            "status": "open",
-            "outcome_type": "OPEN",
+            "status": "closed",
+            "outcome_type": "TARGET_HIT",
             "entry_price": 178.54,
+            "exit_price": 207.88,
             "entry_date": "2026-04-25",
-            "current_price": 180.99000549316406,
-            "days_held": 4,
-            "unrealized_return_pct": 1.37,
-            "pnl_usd": 12.25,
-            "spy_return_pct": -0.32,
-            "alpha_pct": 1.69,
-            "recorded_at": "2026-04-29"
+            "exit_date": "2026-05-09",
+            "days_held": 14,
+            "realized_return_pct": 16.43,
+            "pnl_usd": 146.7,
+            "spy_return_pct": 3.32,
+            "alpha_pct": 13.11,
+            "win": true,
+            "recorded_at": "2026-05-16"
           }
         },
         {
@@ -1806,7 +1897,22 @@
           "allocation_pct": 24,
           "shares": 8,
           "rationale": "RSI=53\u3067\u5065\u5168\u3002Forward PE=17.66\u3001PEG=0.63 \u2014 AI\u6700\u5927\u53d7\u76ca\u682a\u3068\u3057\u3066\u5272\u5b89\u3002Net income=Q\u5f53\u305f\u308a$42.96B\u3002Options BULLISH(PC ratio=0.484)\u300257\u540dstrong_buy\u3001\u76ee\u6a19$269.17(+35%\u4e0a\u6607\u4f59\u5730)\u3002",
-          "risks": "MACD histogram\u5fae\u5f31\u30d9\u30a2\u30ea\u30c3\u30b7\u30e5(-0.171)\u3002\u30a4\u30f3\u30b5\u30a4\u30c0\u30fc\u58f2\u5374$172M\u3002\u5927\u578b\u682a\u306e\u305f\u3081\u77ed\u671f\u5024\u52d5\u304d\u9650\u5b9a\u7684\u3002"
+          "risks": "MACD histogram\u5fae\u5f31\u30d9\u30a2\u30ea\u30c3\u30b7\u30e5(-0.171)\u3002\u30a4\u30f3\u30b5\u30a4\u30c0\u30fc\u58f2\u5374$172M\u3002\u5927\u578b\u682a\u306e\u305f\u3081\u77ed\u671f\u5024\u52d5\u304d\u9650\u5b9a\u7684\u3002",
+          "outcome": {
+            "status": "closed",
+            "outcome_type": "STOP_HIT",
+            "entry_price": 208.27,
+            "exit_price": 198.45,
+            "entry_date": "2026-04-25",
+            "exit_date": "2026-05-05",
+            "days_held": 10,
+            "realized_return_pct": -4.72,
+            "pnl_usd": -68.74,
+            "spy_return_pct": 0.57,
+            "alpha_pct": -5.29,
+            "win": false,
+            "recorded_at": "2026-05-16"
+          }
         },
         {
           "ticker": "TEAM",
@@ -1817,7 +1923,20 @@
           "allocation_pct": 20,
           "shares": 15,
           "rationale": "\u672c\u65e5EPS surprise+31%(Q1 2026)\u3002BB\u30d0\u30f3\u30c9\u4e0a\u629c\u3051(\u4e0a\u4f4d$81)\u3067\u5f37\u529b\u30d6\u30ec\u30a4\u30af\u30a2\u30a6\u30c8\u3002Revenue+31.7%YoY\u3002Options BULLISH(PC ratio=0.489)\u3002\u30a2\u30ca\u30ea\u30b9\u30c831\u540dbuy\u3001\u76ee\u6a19$142.34(+60%\u4e0a\u6607\u4f59\u5730)\u3002PEG=0.8\u3002",
-          "risks": "GAAP\u8d64\u5b57\u7d99\u7d9a\u300252w\u9ad8\u5024$232\u304b\u308962%\u4e0b\u65b9\u3067\u307e\u3060\u56de\u5fa9\u9014\u4e2d\u3002D/E=141(\u9ad8\u30ec\u30d0\u30ec\u30c3\u30b8)\u3002"
+          "risks": "GAAP\u8d64\u5b57\u7d99\u7d9a\u300252w\u9ad8\u5024$232\u304b\u308962%\u4e0b\u65b9\u3067\u307e\u3060\u56de\u5fa9\u9014\u4e2d\u3002D/E=141(\u9ad8\u30ec\u30d0\u30ec\u30c3\u30b8)\u3002",
+          "outcome": {
+            "status": "open",
+            "outcome_type": "AT_STOP",
+            "entry_price": 88.88,
+            "entry_date": "2026-05-05",
+            "current_price": 85.41999816894531,
+            "days_held": 19,
+            "unrealized_return_pct": -3.89,
+            "pnl_usd": -38.06,
+            "spy_return_pct": 3.02,
+            "alpha_pct": -6.91,
+            "recorded_at": "2026-05-24"
+          }
         },
         {
           "ticker": "RDDT",
@@ -1844,7 +1963,22 @@
           "entry_zone": "$330-345",
           "stop": "$328.07",
           "target": "$372.10",
-          "conviction": "MEDIUM"
+          "conviction": "MEDIUM",
+          "outcome": {
+            "status": "closed",
+            "outcome_type": "STOP_HIT",
+            "entry_price": 355.0,
+            "exit_price": 329.22,
+            "entry_date": "2026-05-09",
+            "exit_date": "2026-05-16",
+            "days_held": 7,
+            "realized_return_pct": -7.26,
+            "pnl_usd": -77.34,
+            "spy_return_pct": 0.21,
+            "alpha_pct": -7.47,
+            "win": false,
+            "recorded_at": "2026-05-24"
+          }
         },
         {
           "ticker": "STRL",
@@ -1868,7 +2002,22 @@
           "note": "\u524d\u56deESCALATE\u8a2d\u5b9a\u306e$430\u30d6\u30ec\u30a4\u30af\u6761\u4ef6\u3092\u672c\u65e5\u9054\u6210\u3002RSI=66.09\u5065\u5168\u3002Options BULLISH(pc_vol=0.355)\u300252w\u9ad8\u5024$437.68\u307e\u3067+1.8%\u3002EMA20/50\u4e0a($404/$374)\u3002analyst target $475.49(+10.6%)/42\u540dstrong_buy\u3002\u30a8\u30f3\u30c8\u30ea\u30fc$430-435\u3001stop $414.57\u3001target $461",
           "entry_zone": "$430-435",
           "stop": "$414.57",
-          "target": "$461"
+          "target": "$461",
+          "outcome": {
+            "status": "closed",
+            "outcome_type": "STOP_HIT",
+            "entry_price": 432.0,
+            "exit_price": 414.14,
+            "entry_date": "2026-05-09",
+            "exit_date": "2026-05-24",
+            "days_held": 15,
+            "realized_return_pct": -4.13,
+            "pnl_usd": -53.58,
+            "spy_return_pct": 1.09,
+            "alpha_pct": -5.22,
+            "win": false,
+            "recorded_at": "2026-05-24"
+          }
         },
         {
           "ticker": "AMD",
@@ -1909,7 +2058,22 @@
           "allocation_pct": 20,
           "shares": 3,
           "rationale": "\u524d\u56deESCALATE\u8a2d\u5b9a\u306e$430\u30d6\u30ec\u30a4\u30af\u6761\u4ef6\u3092\u672c\u65e5\u9054\u6210(+4.17%)\u3002RSI=66.09\u5065\u5168\u3001Options BULLISH(pc_vol=0.355)\u3002EMA20/50\u4e0a($404/$374)\u300252w\u9ad8\u5024$437.68\u307e\u3067+1.8%\u3067\u4e0a\u6607\u4f59\u5730\u3042\u308a\u3002Analyst target $475.49(+10.6%)/42\u540dstrong_buy\u3002AI\u534a\u5c0e\u4f53thesis\uff08\u30ab\u30b9\u30bf\u30e0\u30a2\u30af\u30bb\u30e9\u30ec\u30fc\u30bf+106% YoY\uff09intact\u3002",
-          "risks": "52w\u9ad8\u5024$437.68\u5230\u9054\u5f8c\u306e\u5229\u76ca\u78ba\u5b9a\u58f2\u308a\u3002$430\u30d6\u30ec\u30a4\u30af\u5931\u6557\u6642\u306e\u53cd\u843d\u30ea\u30b9\u30af\u3002Insider $106M\u58f2\u308a(NET_SELLER)\u7d99\u7d9a\u3002"
+          "risks": "52w\u9ad8\u5024$437.68\u5230\u9054\u5f8c\u306e\u5229\u76ca\u78ba\u5b9a\u58f2\u308a\u3002$430\u30d6\u30ec\u30a4\u30af\u5931\u6557\u6642\u306e\u53cd\u843d\u30ea\u30b9\u30af\u3002Insider $106M\u58f2\u308a(NET_SELLER)\u7d99\u7d9a\u3002",
+          "outcome": {
+            "status": "closed",
+            "outcome_type": "STOP_HIT",
+            "entry_price": 432.0,
+            "exit_price": 414.14,
+            "entry_date": "2026-05-09",
+            "exit_date": "2026-05-24",
+            "days_held": 15,
+            "realized_return_pct": -4.13,
+            "pnl_usd": -53.58,
+            "spy_return_pct": 1.09,
+            "alpha_pct": -5.22,
+            "win": false,
+            "recorded_at": "2026-05-24"
+          }
         },
         {
           "ticker": "RKLB",
@@ -1921,6 +2085,907 @@
           "shares": 7,
           "rationale": "52w\u9ad8\u5024\u30d6\u30ec\u30a4\u30af(105.9%)+volume 3.61x\u78ba\u8a8d\u3002\u5b87\u5b99\u30c6\u30fc\u30de(IREN+7.65%/RDW+22%/FLY+21%\u3068\u5b87\u5b99\u95a2\u9023\u9298\u67c4\u5168\u822c\u5f37\u3044)\u3002Options BULLISH(pc_vol=0.297)\u3002RSI=69.04\u3067\u904e\u71b1\u306a\u3057\u3002Revenue+35.7% YoY\u3002\u672c\u65e5+28.64%\u3067\u5373\u30a8\u30f3\u30c8\u30ea\u30fc\u4e0d\u53ef\u3001$90-98\u30d7\u30eb\u30d0\u30c3\u30af\u5f85\u3061\u3002",
           "risks": "\u8d64\u5b57\u7d99\u7d9a(EPS -0.09)\u3002Analyst target $87.56\u304c\u73fe\u5024$105.47\u309217%\u4e0b\u56de\u308b\u3002\u5b87\u5b99\u30c6\u30fc\u30de\u904e\u71b1\u306e\u53cd\u52d5\u30ea\u30b9\u30af\u3002Insider $16.5M\u58f2\u308a\u3002"
+        }
+      ]
+    },
+    {
+      "run_id": "4105f34b-119f-478d-bebb-cc9a64525e1e",
+      "date": "2026-05-16",
+      "macro_regime": "NORMAL",
+      "candidates": [
+        {
+          "ticker": "NVDA",
+          "company_name": "NVIDIA Corporation",
+          "score": 8.5,
+          "current_price": 225.32,
+          "score_breakdown": {
+            "momentum": 8,
+            "fundamentals": 9,
+            "catalyst": 9,
+            "technical": 8,
+            "sentiment": 8
+          },
+          "score_evidence": {
+            "momentum": "RSI=64.74\u5065\u5168\u3001MACD hist +1.87(bullish)\u3001RS STRONG_OUTPERFORM(1m +7.6%/3m +13.3%)\u3001+1pt bonus",
+            "fundamentals": "Revenue+73.2% YoY, EPS+95.6%, fwd_PE=19.7, PEG=0.75, gross margin 71%, FCF=$36.2B",
+            "catalyst": "\u6c7a\u7b975\u65e5\u5f8c(2026-05-21)\u2192+1pt\u3001analyst target $272.94(+21.1%)\u300157\u540dstrong_buy",
+            "technical": "EMA20($211)/$EMA50($200)\u4e0a\u3001BB\u4e2d\u592e\u4e0a\u300152w\u9ad8\u5024$236.54\u306e-5%\u570f",
+            "sentiment": "57\u540dstrong_buy(\u226510\u21928+)\u3001earnings\u524d\u3067bullish news\u591a\u6570\u3001tariff\u30ea\u30b9\u30af\u306f\u8a8d\u8b58\u6e08\u307f",
+            "conviction_floor_reason": "Revenue+73%\u2192HIGH floor\u9069\u7528"
+          },
+          "thesis": "AI datacenter\u9700\u8981\u6025\u62e1\u5927\u3067Revenue+73%/EPS+96%\u3092\u9054\u6210\u3057\u3001PEG=0.75\u3067\u534a\u5c0e\u4f53\u6700\u5272\u5b89\u30025\u65e5\u5f8c\u306e\u6c7a\u7b97\uff08\u58f2\u4e0a\u4e88\u60f3$85.5B\uff09\u3067\u6b21\u306e\u4e0a\u6607\u30ec\u30b0\u304c\u671f\u5f85\u3055\u308c\u308b\u3002\u672c\u65e5-5.3%\u306e\u5e02\u5834\u5168\u4f53\u58f2\u308a\u306f\u62bc\u3057\u76ee\u8cb7\u3044\u306e\u597d\u6a5f\u3002",
+          "key_catalysts": [
+            "\u6c7a\u7b972026-05-21(5\u65e5\u5f8c)\u3001EPS\u4e88\u60f3$1.69-1.99",
+            "AI datacenter\u30ab\u30da\u30c3\u30af\u30b9\u52a0\u901f(Meta/$1B/quarter)",
+            "H200\u4e2d\u56fd\u8ca9\u58f2\u518d\u958b\u4ea4\u6e09"
+          ],
+          "key_risks": [
+            "\u6c7a\u7b97\u30ae\u30e3\u30c3\u30d7\u30ea\u30b9\u30af(miss\u6642-10%+)",
+            "\u4e2d\u56fd\u8f38\u51fa\u898f\u5236\u518d\u5f37\u5316\u30ea\u30b9\u30af",
+            "Arm CPU\u306b\u3088\u308bGPU\u30b7\u30a7\u30a2\u4fb5\u98df\u61f8\u5ff5"
+          ],
+          "entry_zone": "220-228",
+          "target_price": 250,
+          "stop_loss": 217,
+          "time_horizon": "2-3 weeks (\u6c7a\u7b97\u8de8\u304e)",
+          "rs_signal": "STRONG_OUTPERFORM",
+          "rs_1m": 7.63,
+          "rs_3m": 13.28,
+          "days_until_earnings": 5,
+          "atr_multiplier_used": 3.0,
+          "atr_multiplier_reason": "\u6c7a\u7b975\u65e5\u5f8c+\u5f37\u30d5\u30a1\u30f3\u30c0\u21923\u00d7ATR",
+          "analyst_upside_pct": 21.1,
+          "conviction_floor": "HIGH",
+          "macro_regime": "NORMAL",
+          "data_notes": "Q4 FY2026(Jan) revenue $68.1B\u3002",
+          "outcome": {
+            "status": "closed",
+            "outcome_type": "STOP_HIT",
+            "entry_price": 208.27,
+            "exit_price": 198.45,
+            "entry_date": "2026-04-25",
+            "exit_date": "2026-05-05",
+            "days_held": 10,
+            "realized_return_pct": -4.72,
+            "pnl_usd": -68.74,
+            "spy_return_pct": 0.57,
+            "alpha_pct": -5.29,
+            "win": false,
+            "recorded_at": "2026-05-16"
+          }
+        },
+        {
+          "ticker": "AMD",
+          "company_name": "Advanced Micro Devices, Inc.",
+          "score": 7.6,
+          "current_price": 424.1,
+          "score_breakdown": {
+            "momentum": 9,
+            "fundamentals": 8,
+            "catalyst": 6,
+            "technical": 8,
+            "sentiment": 7
+          },
+          "score_evidence": {
+            "momentum": "RSI=67.44\u5065\u5168\u3001MACD hist +3.38(\u5f37bullish)\u3001RS STRONG_OUTPERFORM(1m +48.3%/3m +100.3%)\u3001+1pt bonus",
+            "fundamentals": "Revenue+37.8% YoY, EPS+91.2%, fwd_PE=32.7, PEG=1.08, FCF=$2.6B\u6210\u9577",
+            "catalyst": "\u6c7a\u7b9781\u65e5\u5f8c(cap=6)\u3001analyst target $457.83(+8.0%)\u3001AI GPU MI300X\u9700\u8981\u7d99\u7d9a",
+            "technical": "EMA20($379)/EMA50($310)\u4e0a\u3001MACD hist\u5f37\u3044\u300152w\u9ad8\u5024$469\u304b\u3089-9%",
+            "sentiment": "48\u540dbuy analysts\u3001bubble\u8b66\u544a\u8a18\u4e8b\u3042\u308a\uff08Arm CEO\uff09\u304cRS exceptional\u3067\u76f8\u6bba",
+            "conviction_floor_reason": "Revenue+37.8%+EPS+91.2%\u2192MEDIUM floor"
+          },
+          "thesis": "AI GPU\u5e02\u5834\u3067NVDA\u5bfe\u6297\u30dd\u30b8\u30b7\u30e7\u30f3\u3092\u5f37\u5316\u3057\u3001Revenue+37.8%/EPS+91.2%\u30021m RS\u304c+48%\u30013m RS\u304c+100%\u3068\u3044\u3046\u4f8b\u5916\u7684\u306a\u76f8\u5bfe\u5f37\u5ea6\u3092\u793a\u3059\u3002\u672c\u65e5\u306e-5.2%\u5e02\u5834\u5168\u4f53\u58f2\u308a\u3067\u62bc\u3057\u76ee\u8cb7\u3044\u306e\u6a5f\u4f1a\u3002",
+          "key_catalysts": [
+            "MI300X AI GPU\u53d7\u6ce8\u62e1\u5927",
+            "\u30c7\u30fc\u30bf\u30bb\u30f3\u30bf\u30fc\u58f2\u4e0a\u9ad8\u52a0\u901f(Q1 2025: $2.3B\u2192Q1 2026: $3.7B+\u63a8\u5b9a)",
+            "PC\u30b2\u30fc\u30df\u30f3\u30b0\u56de\u5fa9"
+          ],
+          "key_risks": [
+            "ARM CPU\u306b\u3088\u308b\u5e02\u5834\u30b7\u30a7\u30a2\u8105\u5a01",
+            "\u30c1\u30c3\u30d7\u30d0\u30d6\u30eb\u8b66\u544a(Barron's\u7b49)",
+            "\u6c7a\u7b9781\u65e5\u5f8c\u3067\u30ab\u30bf\u30ea\u30b9\u30c8\u4e0d\u8db3"
+          ],
+          "entry_zone": "415-432",
+          "target_price": 480,
+          "stop_loss": 396,
+          "time_horizon": "4-6 weeks",
+          "rs_signal": "STRONG_OUTPERFORM",
+          "rs_1m": 48.25,
+          "rs_3m": 100.29,
+          "days_until_earnings": 81,
+          "atr_multiplier_used": 2.0,
+          "atr_multiplier_reason": "\u8fd1\u63a5\u30ab\u30bf\u30ea\u30b9\u30c8\u306a\u3057\u21922\u00d7ATR",
+          "analyst_upside_pct": 8.0,
+          "conviction_floor": "MEDIUM",
+          "macro_regime": "NORMAL",
+          "data_notes": "Q1 2026 revenue $10.27B\u3002"
+        },
+        {
+          "ticker": "VG",
+          "company_name": "Venture Global, Inc.",
+          "score": 7.4,
+          "current_price": 14.23,
+          "score_breakdown": {
+            "momentum": 8,
+            "fundamentals": 8,
+            "catalyst": 7,
+            "technical": 7,
+            "sentiment": 7
+          },
+          "score_evidence": {
+            "momentum": "RSI=58.72\u7406\u60f3\u3001\u4eca\u65e5+9.1%\u30cb\u30e5\u30fc\u30b9\u4e3b\u5c0e\u3001RS STRONG_OUTPERFORM(1m +20.1%/3m +54.0%)+1pt",
+            "fundamentals": "Revenue+191.7% YoY, fwd_PE=15.8, PEG=0.85, FCF=$2.1B\u3001operating margin 38.7%",
+            "catalyst": "Q1\u6c7a\u7b97\u30d3\u30fc\u30c8(2026-05-13)\u30fb2026\u5e74EBITDA\u6307\u91dd\u5f15\u304d\u4e0a\u3052\u30fbTotalEnergies/Vitol\u3068\u306e\u65b0\u9577\u671f\u5951\u7d04",
+            "technical": "RSI\u7406\u60f3\u3001BB upper$14.10\u3092\u30d6\u30ec\u30a4\u30af(+)\u3001EMA20/50\u4e0a",
+            "sentiment": "19\u540dbuy\u3001Jim Cramer bullish\u3001LNG supply deal news\u591a\u6570",
+            "conviction_floor_reason": "Revenue+191.7%\u2192HIGH\u76f8\u5f53\u3060\u304c\u4f4e\u4fa1\u683c\u682a\u3001MEDIUM floor\u9069\u7528"
+          },
+          "thesis": "\u7c73\u56fdLNG\u8f38\u51fa\u30ea\u30fc\u30c0\u30fc\u3068\u3057\u3066 Revenue+191.7%/FCF $2.1B\u3092\u9054\u6210\u3002TotalEnergies\u30fbVitol\u3068\u306e\u65b0binding LNG\u5951\u7d04\u30672026\u5e74\u4ee5\u964d\u306e\u53ce\u76ca\u53ef\u8996\u6027\u304c\u9ad8\u307e\u3063\u305f\u3002\u4e2d\u6771\u5730\u653f\u5b66\u30ea\u30b9\u30af\u304c\u7c73\u56fdLNG\u9700\u8981\u3092\u62bc\u3057\u4e0a\u3052\u3066\u304a\u308a\u3001PEG=0.85\u306f\u540c\u30bb\u30af\u30bf\u30fc\u6700\u5272\u5b89\u3002",
+          "key_catalysts": [
+            "TotalEnergies\u30fbVitol\u3068\u306e\u65b0\u9577\u671fLNG\u5951\u7d04(2026-05-12)",
+            "2026\u5e74EBITDA\u30ac\u30a4\u30c0\u30f3\u30b9\u5f15\u304d\u4e0a\u3052",
+            "\u4e2d\u6771\u4e0d\u5b89\u5b9a\u5316\u306b\u3088\u308b\u7c73\u56fdLNG\u9700\u8981\u5897"
+          ],
+          "key_risks": [
+            "\u9ad8D/E=293.6x(\u904e\u5270\u8ca0\u50b5)",
+            "LNG\u30a4\u30f3\u30d5\u30e9\u5efa\u8a2d\u30b3\u30b9\u30c8\u8d85\u904e\u30ea\u30b9\u30af",
+            "European LNG import\u9700\u8981\u5909\u52d5"
+          ],
+          "entry_zone": "13.80-14.50",
+          "target_price": 16.11,
+          "stop_loss": 13.29,
+          "time_horizon": "4-6 weeks",
+          "rs_signal": "STRONG_OUTPERFORM",
+          "rs_1m": 20.08,
+          "rs_3m": 53.94,
+          "days_until_earnings": 88,
+          "atr_multiplier_used": 2.0,
+          "atr_multiplier_reason": "\u8fd1\u63a5\u30ab\u30bf\u30ea\u30b9\u30c8\u306a\u3057\u21922\u00d7ATR(\u6700\u8fd1Q1\u6c7a\u7b97\u3067level\u4e0a\u6607)",
+          "analyst_upside_pct": 6.3,
+          "conviction_floor": "MEDIUM",
+          "macro_regime": "NORMAL",
+          "data_notes": "Q1 2026 revenue $4.45B\u3002\u30a8\u30cd\u30eb\u30ae\u30fc\u30bb\u30af\u30bf\u30fc\u3002"
+        },
+        {
+          "ticker": "MRVL",
+          "company_name": "Marvell Technology, Inc.",
+          "score": 7.3,
+          "current_price": 176.89,
+          "score_breakdown": {
+            "momentum": 7,
+            "fundamentals": 7,
+            "catalyst": 8,
+            "technical": 6,
+            "sentiment": 8
+          },
+          "score_evidence": {
+            "momentum": "RSI=65.94\u3084\u3084\u9ad8\u3081\u3001MACD hist -0.64(bearish crossover\u6ce8\u610f)\u3001RS STRONG_OUTPERFORM(1m +22.5%/3m +115.5%)+1pt",
+            "fundamentals": "Revenue+22.1% YoY, EPS+106.3%, fwd_PE=32.6, PEG=2.14\u3001\u5149\u30a4\u30f3\u30bf\u30fc\u30b3\u30cd\u30af\u30c8FY27+50%\u6210\u9577",
+            "catalyst": "\u6c7a\u7b9712\u65e5\u5f8c(2026-05-28)\u2192+1pt\u3001AMD equity\u6295\u8cc7+Google/Amazon custom AI chip deals",
+            "technical": "EMA20($161)/EMA50($137)\u4e0a\u3060\u304cMACD bearish crossover\u3001RSI\u9ad8\u3081",
+            "sentiment": "39\u540dstrong_buy(\u226510\u21928+)\u3001analyst target $137(\u73fe\u5024-22.5%\u3060\u304cSTRONG_OUTPERFORM\u306e\u305f\u3081\u6e1b\u70b9\u306a\u3057)",
+            "conviction_floor_reason": "EPS+106%\u2192MEDIUM floor"
+          },
+          "thesis": "AMD\u30fbGoogle\u30fbAmazon\u304b\u3089\u306e\u6226\u7565\u7684AI chip\u6295\u8cc7\u3067\u30ab\u30b9\u30bf\u30e0AI\u30a2\u30af\u30bb\u30e9\u30ec\u30fc\u30bf\u30fc\u9700\u8981\u304c\u6025\u62e1\u5927\u3002\u5149\u30cd\u30c3\u30c8\u30ef\u30fc\u30ad\u30f3\u30b0\u306eFY27+50%\u6210\u9577\u4e88\u6e2c\u306812\u65e5\u5f8c\u306e\u6c7a\u7b97\u304c\u4e8c\u91cd\u306e\u30ab\u30bf\u30ea\u30b9\u30c8\u30023m\u76f8\u5bfe\u5f37\u5ea6+115.5%\u306f\u5168\u5019\u88dc\u4e2d\u6700\u5f37\u3002",
+          "key_catalysts": [
+            "\u6c7a\u7b972026-05-28(12\u65e5\u5f8c)",
+            "AMD equity investment\uff0bGoogle/Amazon custom chip deals",
+            "\u5149\u30a4\u30f3\u30bf\u30fc\u30b3\u30cd\u30af\u30c8FY27+50%\u6210\u9577\u898b\u901a\u3057"
+          ],
+          "key_risks": [
+            "\u6c7a\u7b97\u30ae\u30e3\u30c3\u30d7\u30ea\u30b9\u30af",
+            "MACD bearish crossover(\u77ed\u671f\u8abf\u6574\u30b7\u30b0\u30ca\u30eb)",
+            "analyst target $137\u304c\u73fe\u5024\u3092\u5927\u5e45\u4e0b\u56de\u308b"
+          ],
+          "entry_zone": "172-180",
+          "target_price": 209,
+          "stop_loss": 166,
+          "time_horizon": "2-4 weeks",
+          "rs_signal": "STRONG_OUTPERFORM",
+          "rs_1m": 22.54,
+          "rs_3m": 115.46,
+          "days_until_earnings": 12,
+          "atr_multiplier_used": 3.0,
+          "atr_multiplier_reason": "\u6c7a\u7b9712\u65e5\u5f8c+\u5f37\u30d5\u30a1\u30f3\u30c0\u21923\u00d7ATR",
+          "analyst_upside_pct": -22.5,
+          "conviction_floor": "MEDIUM",
+          "macro_regime": "NORMAL",
+          "data_notes": "Q1 FY2027(Apr) revenue $2.22B\u3002"
+        },
+        {
+          "ticker": "INOD",
+          "company_name": "Innodata Inc.",
+          "score": 7.1,
+          "current_price": 96.1,
+          "score_breakdown": {
+            "momentum": 8,
+            "fundamentals": 7,
+            "catalyst": 7,
+            "technical": 6,
+            "sentiment": 7
+          },
+          "score_evidence": {
+            "momentum": "RSI=76.57(\u9ad8\u3081/overbought\u6ce8\u610f)\u3001MACD hist +5.20(\u975e\u5e38\u306b\u5f37\u3044bullish)\u3001RS STRONG_OUTPERFORM(1m +100.7%/3m +114.8%)+1pt",
+            "fundamentals": "Revenue+54.4% YoY, EPS+90.9%, PEG=0.87, gross margin 41.5%, ROE=38.6%\u3001\u305f\u3060\u3057fwd_PE=47.9",
+            "catalyst": "Q1\u30d6\u30ed\u30c3\u30af\u30d0\u30b9\u30bf\u30fc\u6c7a\u7b97(2026-05-09\u3001Revenue+54%)+$51M Big Tech\u65b0\u5951\u7d04\u3001Barron's 'stay long'",
+            "technical": "EMA20/50\u4e0a\u3060\u304cRSI=76.57\u3067\u904e\u71b1\u3001BB upper($104)\u306b\u63a5\u8fd1",
+            "sentiment": "4\u540d\u306e\u307f(\u226510\u306a\u3057)\u3060\u304cstrong_buy\u3001Benzinga momentum 95.88/100\u3001all-time high",
+            "conviction_floor_reason": "Revenue+54%+EPS+91%\u2192MEDIUM floor"
+          },
+          "thesis": "AI\u30c7\u30fc\u30bf\u8a13\u7df4\u30fb\u30a2\u30e9\u30a4\u30e1\u30f3\u30c8\u4f01\u696d\u3068\u3057\u3066 Q1 Revenue+54%/profits nearly doubled \u3092\u9054\u6210\u3002BigTech\uff08OpenAI\u7b49\u8d85\u5927\u624b\uff09\u5411\u3051\u306e$51M\u5951\u7d04\u3068\u3001Barron's\u306e\u300cstay long\u300d\u63a8\u5968\u304c\u8ffd\u3044\u98a8\u3002\u5e02\u5834cap $3.1B\u306e\u5c0f\u578b\u682a\u3067\u904e\u53bb1\u30f6\u6708+100.7%\u306e\u76f8\u5bfe\u5f37\u5ea6\u306f\u5168\u5019\u88dc\u4e2d\u6700\u9ad8\u3002",
+          "key_catalysts": [
+            "Q1 blowout\u5f8c\u306e\u7d9a\u4f38\u30e2\u30e1\u30f3\u30bf\u30e0(2026-05-09\u4ee5\u964d)",
+            "BigTech $51M\u65b0\u5951\u7d04(\u4eca\u5e74\u7b2c2\u4f4d\u9867\u5ba2\u5316)",
+            "AI training/alignment\u9700\u8981\u69cb\u9020\u7684\u62e1\u5927"
+          ],
+          "key_risks": [
+            "RSI=76.57(\u904e\u71b1)\u3067\u30d7\u30eb\u30d0\u30c3\u30af\u30ea\u30b9\u30af\u5927",
+            "analyst coverage 4\u540d\u306e\u307f(\u6d41\u52d5\u6027\u30ea\u30b9\u30af)",
+            "\u4e00\u793e\u4f9d\u5b58\u5ea6\u9ad8\uff08BigTech\u96c6\u4e2d\u30ea\u30b9\u30af\uff09"
+          ],
+          "entry_zone": "90-97",
+          "target_price": 118,
+          "stop_loss": 85,
+          "time_horizon": "4-6 weeks",
+          "rs_signal": "STRONG_OUTPERFORM",
+          "rs_1m": 100.68,
+          "rs_3m": 114.84,
+          "days_until_earnings": 76,
+          "atr_multiplier_used": 2.0,
+          "atr_multiplier_reason": "\u8fd1\u63a5\u30ab\u30bf\u30ea\u30b9\u30c8\u306a\u3057(\u76f4\u8fd1\u6c7a\u7b97\u6e08\u307f)\u21922\u00d7ATR",
+          "analyst_upside_pct": 4.3,
+          "conviction_floor": "MEDIUM",
+          "macro_regime": "NORMAL",
+          "data_notes": "Q1 2026 revenue $90.1M(record)\u3002Small cap $3.1B\u3002"
+        }
+      ]
+    },
+    {
+      "run_id": "1c812073-444d-48f0-b667-37946f9e9a45",
+      "date": "2026-05-23",
+      "macro_regime": "NORMAL",
+      "candidates": [
+        {
+          "ticker": "MRVL",
+          "company_name": "Marvell Technology, Inc.",
+          "score": 8.5,
+          "current_price": 196.33,
+          "score_breakdown": {
+            "momentum": 9,
+            "fundamentals": 8,
+            "catalyst": 9,
+            "technical": 8,
+            "sentiment": 8
+          },
+          "score_evidence": {
+            "momentum": "RSI 71.24, MACD +0.378, 3M RS +141.8% vs SPY. STRONG_OUTPERFORM +1pt",
+            "fundamentals": "\u58f2\u4e0a+22.1% YoY, \u5229\u76ca+106.3% YoY, Forward PE 36.0, PEG 2.24",
+            "catalyst": "\u6c7a\u7b97\u307e\u30675\u65e5(5/28). Stifel\u304cPT\u5f15\u4e0a\u3052, BofA $200 PT. \u6c7a\u7b97\u30ae\u30e3\u30c3\u30d7\u30ea\u30b9\u30af\u3042\u308a",
+            "technical": "EMA20(170.81)/EMA50(145.50)\u4e0a\u65b9. ALIGNED_UP, tf_warning=false",
+            "sentiment": "strong_buy 40\u540d. X\u5f37\u6c17. rs_signal=STRONG_OUTPERFORM+analyst_upside<0\u2192\u6e1b\u70b9\u306a\u3057"
+          },
+          "thesis": "AI\u30c7\u30fc\u30bf\u30bb\u30f3\u30bf\u30fc\u5411\u3051\u30ab\u30b9\u30bf\u30e0ASIC/\u30cd\u30c3\u30c8\u30ef\u30fc\u30ad\u30f3\u30b0\u9700\u8981\u30673M+150%\u8d85\u306eRS\u30025\u65e5\u5f8c\u306e\u6c7a\u7b97\u304c\u30ab\u30bf\u30ea\u30b9\u30c8\u3002\u58f2\u4e0a/\u5229\u76ca\u4e8c\u6841\u6210\u9577\u7d99\u7d9a\u3001\u5168TF\u4e0a\u6607\u6574\u5408\u3002",
+          "key_catalysts": [
+            "2026-05-28 Q1\u6c7a\u7b97(5\u65e5\u5f8c)",
+            "Stifel PT\u5f15\u4e0a\u3052",
+            "BofA $200 PT",
+            "AI\u30ab\u30b9\u30bf\u30e0ASIC\u9700\u8981\u52a0\u901f"
+          ],
+          "key_risks": [
+            "\u6c7a\u7b97\u30ae\u30e3\u30c3\u30d7\u30ea\u30b9\u30af(5\u65e5\u5f8c)",
+            "RSI 71\u8d85\u904e\u71b1",
+            "analyst target $149.93\u304c\u73fe\u5024\u5927\u5e45\u4e0b\u56de\u308a",
+            "D/E 33.5"
+          ],
+          "entry_zone": "177-185",
+          "target_price": 215.49,
+          "stop_loss": 164.17,
+          "time_horizon": "4-6 weeks",
+          "rs_signal": "STRONG_OUTPERFORM",
+          "rs_1m": 15.05,
+          "rs_3m": 141.8,
+          "days_until_earnings": 5,
+          "atr_multiplier_used": 3.0,
+          "atr_multiplier_reason": "\u6c7a\u7b975\u65e5\u5f8c+\u30d5\u30a1\u30f3\u30c0\u5f37\u529b\u21923.0\u00d7ATR",
+          "analyst_upside_pct": -23.6,
+          "conviction_floor": "HIGH",
+          "macro_regime": "NORMAL",
+          "data_notes": ""
+        },
+        {
+          "ticker": "MU",
+          "company_name": "Micron Technology, Inc.",
+          "score": 7.55,
+          "current_price": 751.0,
+          "score_breakdown": {
+            "momentum": 8,
+            "fundamentals": 9,
+            "catalyst": 6,
+            "technical": 7,
+            "sentiment": 8
+          },
+          "score_evidence": {
+            "momentum": "RSI 65.12, MACD histogram -2.71. RS STRONG_OUTPERFORM: 1m+46.75%, 3m+70.96%",
+            "fundamentals": "Revenue+196.3% YoY, EPS+756%. Forward PE 7.31, PEG 0.25. \u6975\u3081\u3066\u5272\u5b89",
+            "catalyst": "\u6c7a\u7b9733\u65e5\u5f8c. CEO:\u30e1\u30e2\u30ea\u4e0d\u8db32026\u5e74\u4ee5\u964d\u7d99\u7d9a. AI/HBM\u9700\u8981\u69cb\u9020\u7684",
+            "technical": "EMA20($672)/EMA50($567)\u4e0a\u65b9. ALIGNED_UP. MACD histogram\u5fae\u30de\u30a4\u30ca\u30b9",
+            "sentiment": "strong_buy 40\u540d. X\u77ed\u671fmixed/\u9577\u671fbullish. CEO\u5f37\u6c17\u30ca\u30e9\u30c6\u30a3\u30d6"
+          },
+          "thesis": "AI/HBM\u9700\u8981\u3067Rev+196%/EPS+756%\u306e\u7206\u767a\u7684\u6210\u9577\u3002Forward PE 7.3\u306f\u30bb\u30af\u30bf\u30fc\u6700\u5272\u5b89\u3002\u30e1\u30e2\u30ea\u4e0d\u8db32026\u5e74\u4ee5\u964d\u7d99\u7d9a\u3068CEO\u304c\u660e\u8a00\u3002",
+          "key_catalysts": [
+            "\u30e1\u30e2\u30ea\u4e0d\u8db32026\u5e74\u4ee5\u964d\u7d99\u7d9a",
+            "HBM\u9700\u89812028\u5e74\u307e\u3067\u78ba\u7d04",
+            "\u7c73\u56fd\u5185DRAM\u88fd\u9020\u958b\u59cb",
+            "USTR\u95a2\u7a0e\u660e\u78ba\u5316"
+          ],
+          "key_risks": [
+            "analyst target $613\u304c\u73fe\u5024\u4e0b\u56de\u308a",
+            "52W\u5b89\u5024$91\u304b\u3089650%\u4e0a\u6607\u5f8c",
+            "MACD bearish cross",
+            "Section 232\u8abf\u67fb"
+          ],
+          "entry_zone": "730-755",
+          "target_price": 870.46,
+          "stop_loss": 691.27,
+          "time_horizon": "4-6 weeks",
+          "rs_signal": "STRONG_OUTPERFORM",
+          "rs_1m": 46.75,
+          "rs_3m": 70.96,
+          "days_until_earnings": 33,
+          "atr_multiplier_used": 2.0,
+          "atr_multiplier_reason": "\u6c7a\u7b9733\u65e5\u5f8c, \u30c7\u30d5\u30a9\u30eb\u30c82.0\u00d7ATR",
+          "analyst_upside_pct": -18.4,
+          "conviction_floor": "MEDIUM",
+          "macro_regime": "NORMAL",
+          "data_notes": ""
+        },
+        {
+          "ticker": "TSM",
+          "company_name": "Taiwan Semiconductor Manufacturing Company Limited",
+          "score": 7.55,
+          "current_price": 404.52,
+          "score_breakdown": {
+            "momentum": 7,
+            "fundamentals": 9,
+            "catalyst": 7,
+            "technical": 7,
+            "sentiment": 8
+          },
+          "score_evidence": {
+            "momentum": "RSI 55.4, MACD histogram -1.91. RS NEUTRAL. 1m-3.93%, 3m-3.62%",
+            "fundamentals": "Revenue+35.1% YoY, EPS+58.4%. Forward PE 20.73, PEG 1.25. \u55b6\u696d\u5229\u76ca\u738758%",
+            "catalyst": "\u6c7a\u7b9754\u65e5\u5f8c. AMD 2nm EPYC\u91cf\u7523, CoWoS\u5bb9\u91cf\u500d\u5897, Bernstein PT$430",
+            "technical": "EMA20($398)/EMA50($384)\u4e0a\u65b9. ALIGNED_UP, tf_warning=false",
+            "sentiment": "strong_buy 18\u540d. Bernstein outperform\u7dad\u6301"
+          },
+          "thesis": "AI\u5148\u7aef\u30d5\u30a1\u30a6\u30f3\u30c9\u30ea\u72ec\u5360\u30d7\u30ec\u30a4\u30e4\u30fc\u30022nm\u91cf\u7523+CoWoS\u5bb9\u91cf\u62e1\u5927\u3067\u9ad8\u6210\u9577\u6301\u7d9a\u3002Forward PE 20\u500d+EPS+58%\u306f\u30bb\u30af\u30bf\u30fc\u6700\u826fR/R\u3002",
+          "key_catalysts": [
+            "AMD 2nm EPYC\u91cf\u7523",
+            "CoWoS\u5bb9\u91cf2026\u5e74\u672b\u500d\u5897",
+            "7/16\u6c7a\u7b97",
+            "Bernstein PT$430"
+          ],
+          "key_risks": [
+            "\u53f0\u6e7e\u5730\u653f\u5b66\u30ea\u30b9\u30af",
+            "Intel Foundry\u7af6\u5408",
+            "ARK\u30c8\u30ea\u30e0",
+            "MACD negative"
+          ],
+          "entry_zone": "396-404",
+          "target_price": 432.53,
+          "stop_loss": 386.74,
+          "time_horizon": "4-6 weeks",
+          "rs_signal": "NEUTRAL",
+          "rs_1m": -3.93,
+          "rs_3m": -3.62,
+          "days_until_earnings": 54,
+          "atr_multiplier_used": 2.0,
+          "atr_multiplier_reason": "\u30c7\u30d5\u30a9\u30eb\u30c82.0\u00d7ATR",
+          "analyst_upside_pct": 15.65,
+          "conviction_floor": "MEDIUM",
+          "macro_regime": "NORMAL",
+          "data_notes": "",
+          "outcome": {
+            "status": "open",
+            "outcome_type": "OPEN",
+            "entry_price": 402.46,
+            "entry_date": "2026-04-26",
+            "current_price": 404.5199890136719,
+            "days_held": 28,
+            "unrealized_return_pct": 0.51,
+            "pnl_usd": 6.18,
+            "spy_return_pct": 4.44,
+            "alpha_pct": -3.93,
+            "recorded_at": "2026-05-24"
+          }
+        },
+        {
+          "ticker": "AMAT",
+          "company_name": "Applied Materials, Inc.",
+          "score": 7.35,
+          "current_price": 432.16,
+          "score_breakdown": {
+            "momentum": 7,
+            "fundamentals": 8,
+            "catalyst": 7,
+            "technical": 7,
+            "sentiment": 8
+          },
+          "score_evidence": {
+            "momentum": "RSI 58.04, MACD histogram -1.18. RS NEUTRAL. 3m+5.71%",
+            "fundamentals": "Revenue+11.4% YoY, EPS+33.5%. Forward PE 26.8, PEG 1.45. ROE 39.7%",
+            "catalyst": "\u6c7a\u7b9783\u65e5\u5f8c. AI\u534a\u5c0e\u4f53\u88c5\u7f6e\u30b5\u30a4\u30af\u30eb, 2026\u5e74WFE+30%\u8d85\u898b\u901a\u3057, Broadcom\u5354\u696d",
+            "technical": "EMA20($417)/EMA50($398)\u4e0a\u65b9. ALIGNED_UP, tf_warning=false",
+            "sentiment": "35\u540dbuy\u63a8\u5968, \u76ee\u6a19$509.63. X\u5f37\u6c17"
+          },
+          "thesis": "AI\u534a\u5c0e\u4f53\u30b5\u30a4\u30af\u30eb\u306e\u300c\u88c5\u7f6e\u4f9b\u7d66\u8005\u300d\u3002TSMC/Micron/SK hynix\u306eHBM\u30fb\u5148\u7aef\u30d1\u30c3\u30b1\u30fc\u30b8\u30f3\u30b0\u6295\u8cc7\u62e1\u5927\u304b\u3089\u76f4\u63a5\u6069\u6075\u3002WFE+30%\u898b\u901a\u3057\u5f15\u4e0a\u3052\u3002",
+          "key_catalysts": [
+            "AI CapEx\u62e1\u5927",
+            "\u5148\u9032\u30d1\u30c3\u30b1\u30fc\u30b8\u30f3\u30b0\u53ce\u76ca+50%\u6210\u9577",
+            "Broadcom\u5354\u696d",
+            "2026\u5e74WFE+30%\u8d85"
+          ],
+          "key_risks": [
+            "\u5bfe\u4e2d\u8f38\u51fa\u898f\u5236\u5f37\u5316",
+            "MACD\u5fae\u30cd\u30ac\u30c6\u30a3\u30d6",
+            "\u6c7a\u7b9783\u65e5\u5f8c\u3067\u30ab\u30bf\u30ea\u30b9\u30c8\u4e0d\u5728",
+            "\u5b8c\u74a7\u7e54\u308a\u8fbc\u307f\u30ea\u30b9\u30af"
+          ],
+          "entry_zone": "425-440",
+          "target_price": 518.0,
+          "stop_loss": 389.0,
+          "time_horizon": "4-6 weeks",
+          "rs_signal": "NEUTRAL",
+          "rs_1m": -0.69,
+          "rs_3m": 5.71,
+          "days_until_earnings": 83,
+          "atr_multiplier_used": 2.0,
+          "atr_multiplier_reason": "\u30c7\u30d5\u30a9\u30eb\u30c82.0\u00d7ATR",
+          "analyst_upside_pct": 17.9,
+          "conviction_floor": "MEDIUM",
+          "macro_regime": "NORMAL",
+          "data_notes": ""
+        },
+        {
+          "ticker": "AXTI",
+          "company_name": "AXT, Inc.",
+          "score": 7.3,
+          "current_price": 140.83,
+          "score_breakdown": {
+            "momentum": 9,
+            "fundamentals": 4,
+            "catalyst": 8,
+            "technical": 8,
+            "sentiment": 8
+          },
+          "score_evidence": {
+            "momentum": "RS 1m+80.47, 3m+292.67. STRONG_OUTPERFORM. +15.6%\u4eca\u65e5, 52W\u9ad8\u5024\u66f4\u65b0",
+            "fundamentals": "Revenue+39.1% YoY. \u8d64\u5b57\u7d99\u7d9a, P/S 96x, forward PE 187. \u7c97\u522921%",
+            "catalyst": "$632.5M\u5897\u8cc7\u3067InP\u88fd\u9020\u62e1\u5927. B.Riley\u30ab\u30f3\u30d5\u30a1\u30ec\u30f3\u30b9. AI\u30c7\u30fc\u30bf\u30bb\u30f3\u30bf\u30fcInP\u9700\u8981",
+            "technical": "ALIGNED_UP\u5168TF. EMA20($107)/EMA50($86)\u5927\u5e45\u4e0a\u65b9. RSI 68.1",
+            "sentiment": "1\u5e74\u30ea\u30bf\u30fc\u30f38,436%. \u5149\u5b66/\u30d5\u30a9\u30c8\u30cb\u30af\u30b9ETF\u8cc7\u91d1\u6d41\u5165"
+          },
+          "thesis": "InP\u57fa\u677f\u306e\u30c9\u30df\u30ca\u30f3\u30c8\u30b5\u30d7\u30e9\u30a4\u30e4\u30fc\u3002AI\u30c7\u30fc\u30bf\u30bb\u30f3\u30bf\u30fc\u5411\u3051\u30b7\u30ea\u30b3\u30f3\u30d5\u30a9\u30c8\u30cb\u30af\u30b9\u9700\u8981\u3067\u69cb\u9020\u7684\u6210\u9577\u3002$632.5M\u5897\u8cc7\u3067\u30ad\u30e3\u30d1\u62e1\u5927\u3002\u305f\u3060\u3057P/S 96x\u30fb\u8d64\u5b57\u7d99\u7d9a\u306e\u30cf\u30a4\u30ea\u30b9\u30af\u3002",
+          "key_catalysts": [
+            "AI\u30c7\u30fc\u30bf\u30bb\u30f3\u30bf\u30fc\u5149\u63a5\u7d9aInP\u9700\u8981",
+            "$632.5M\u5897\u8cc7\u3067InP\u88fd\u9020\u62e1\u5927",
+            "\u6c7a\u7b97\u9ed2\u5b57\u5316\u898b\u901a\u30572026\u5e74"
+          ],
+          "key_risks": [
+            "P/S 96x\u30fbfwd PE 187\u306e\u6975\u7aef\u30d0\u30ea\u30e5\u30a8\u30fc\u30b7\u30e7\u30f3",
+            "$632.5M\u5897\u8cc7\u5e0c\u8584\u5316",
+            "\u8d64\u5b57\u7d99\u7d9a\u30fbFCF\u8ca0",
+            "analyst target $87.75\u304c\u73fe\u5024\u5927\u5e45\u4e0b"
+          ],
+          "entry_zone": "130-141",
+          "target_price": 174.81,
+          "stop_loss": 107.2,
+          "time_horizon": "4-6 weeks",
+          "rs_signal": "STRONG_OUTPERFORM",
+          "rs_1m": 80.47,
+          "rs_3m": 292.67,
+          "days_until_earnings": 69,
+          "atr_multiplier_used": 2.0,
+          "atr_multiplier_reason": "\u30c7\u30d5\u30a9\u30eb\u30c82.0\u00d7ATR",
+          "analyst_upside_pct": -37.8,
+          "conviction_floor": "MEDIUM",
+          "macro_regime": "NORMAL",
+          "data_notes": ""
+        },
+        {
+          "ticker": "NVDA",
+          "company_name": "NVIDIA Corporation",
+          "score": 7.15,
+          "current_price": 215.33,
+          "score_breakdown": {
+            "momentum": 6,
+            "fundamentals": 9,
+            "catalyst": 7,
+            "technical": 6,
+            "sentiment": 8
+          },
+          "score_evidence": {
+            "momentum": "RSI 53.86, MACD histogram -0.92. RS NEUTRAL. \u6c7a\u7b97\u5f8c-2.18%",
+            "fundamentals": "Revenue+85.2% YoY, EPS+214.5%. Forward PE 17.03, PEG 0.71. \u7c97\u522974%",
+            "catalyst": "\u6c7a\u7b97\u901a\u904e(-2\u65e5). Blackwell\u30e9\u30f3\u30d7, Uber\u30ed\u30dc\u30bf\u30af\u30b7\u30fc, Q2\u30ac\u30a4\u30c0\u30f3\u30b9$91.6B",
+            "technical": "EMA20($214.6)/EMA50($202.37)\u4e0a\u65b9. ALIGNED_UP. MACD\u77ed\u671f\u5f31\u6c17",
+            "sentiment": "strong_buy 57\u540d. \u8907\u6570PT\u5f15\u4e0a\u3052($280-$413)"
+          },
+          "thesis": "Q1\u6c7a\u7b97EPS\u30fb\u58f2\u4e0a\u4e88\u60f3\u8d85\u904e\u3001Blackwell\u30e9\u30f3\u30d7\u9806\u8abf\u3002Forward PE 17\u500d\u30fbPEG 0.71\u306f\u6210\u9577\u7387\u5bfe\u6bd4\u3067\u8457\u3057\u304f\u5272\u5b89\u3002\u6c7a\u7b97\u5f8c-2%\u306f\u300c\u671f\u5f85\u7e54\u308a\u8fbc\u307f\u300d\u53cd\u5fdc\u3002",
+          "key_catalysts": [
+            "Blackwell\u30e9\u30f3\u30d7\u52a0\u901f",
+            "Q2\u30ac\u30a4\u30c0\u30f3\u30b9$91.6B",
+            "Uber\u30ed\u30dc\u30bf\u30af\u30b7\u30fc\u63a1\u7528",
+            "\u63a8\u8ad6\u9700\u8981\u672c\u683c\u5316"
+          ],
+          "key_risks": [
+            "\u6c7a\u7b97\u5f8csell-off\u7d99\u7d9a\u30ea\u30b9\u30af",
+            "\u4e2d\u56fd\u8f38\u51fa\u898f\u5236",
+            "MACD bearish cross",
+            "\u4f9b\u7d66\u5236\u7d04"
+          ],
+          "entry_zone": "210-216",
+          "target_price": 231.56,
+          "stop_loss": 206.72,
+          "time_horizon": "4-6 weeks",
+          "rs_signal": "NEUTRAL",
+          "rs_1m": -1.05,
+          "rs_3m": 2.88,
+          "days_until_earnings": -2,
+          "atr_multiplier_used": 2.0,
+          "atr_multiplier_reason": "\u6c7a\u7b97\u901a\u904e\u6e08\u307f\u3001\u30c7\u30d5\u30a9\u30eb\u30c82.0\u00d7ATR",
+          "analyst_upside_pct": 29.1,
+          "conviction_floor": "MEDIUM",
+          "macro_regime": "NORMAL",
+          "data_notes": "",
+          "outcome": {
+            "status": "open",
+            "outcome_type": "OPEN",
+            "entry_price": 215.33,
+            "entry_date": "2026-05-24",
+            "current_price": 215.3300018310547,
+            "days_held": 0,
+            "unrealized_return_pct": 0.0,
+            "pnl_usd": 0.0,
+            "spy_return_pct": 0.0,
+            "alpha_pct": 0.0,
+            "recorded_at": "2026-05-24"
+          }
+        }
+      ]
+    },
+    {
+      "run_id": "a84445db-5cb2-4e9e-af53-29bae6f5e8e5",
+      "date": "2026-05-24",
+      "macro_regime": "NORMAL",
+      "candidates": [
+        {
+          "ticker": "RKLB",
+          "company_name": "Rocket Lab Corporation",
+          "score": 7.4,
+          "current_price": 135.76,
+          "score_breakdown": {
+            "momentum": 9,
+            "fundamentals": 5,
+            "catalyst": 7,
+            "technical": 8,
+            "sentiment": 8
+          },
+          "score_evidence": {
+            "momentum": "RSI 68.89\uff08\u5f37\u6c17\u570f\u30fb\u904e\u71b1\u672a\u9054\uff09\u3001MACD\u30d2\u30b9\u30c8\u30b0\u30e9\u30e0+2.35\u3067\u4e0a\u6607\u30af\u30ed\u30b9\u7d99\u7d9a\u3001\u5f53\u65e5+7.48%\u306752\u9031\u9ad8\u5024\u66f4\u65b0\u3001\u51fa\u6765\u9ad832.8M\uff08\u5f37\uff09\u3002STRONG_OUTPERFORM: 1m +70.4% vs SPY +4.4%\u3002+1pt\u9069\u7528\u3002",
+            "fundamentals": "\u58f2\u4e0a\u6210\u9577YoY +63.5%\uff08\u512a\u79c0\uff09\u3002\u305f\u3060\u3057\u4f9d\u7136\u8d64\u5b57\uff08EPS -$0.07\u3001FCF -$50M\uff09\u3001\u55b6\u696d\u5229\u76ca\u7387-22.4%\u3001P/S 115.6\u500d\uff08\u6975\u3081\u3066\u9ad8\u3044\uff09\u3001D/E 6.1\u500d\u3002",
+            "catalyst": "$90M\u7c73\u5b87\u5b99\u8ecdGEO\u885b\u661f\u5951\u7d04\uff08\u521d\u306e\u4e3b\u8981\u30d7\u30e9\u30a4\u30e0\u5951\u7d04\uff09\u3001SpaceX IPO\u7533\u8acb\u306b\u3088\u308b\u30b9\u30da\u30fc\u30b9\u30bb\u30af\u30bf\u30fc\u5168\u4f53\u3078\u306e\u8ffd\u3044\u98a8\u3002$3B ATM\u30d7\u30ed\u30b0\u30e9\u30e0\uff08\u5e0c\u8584\u5316\u61f8\u5ff5\uff09\u3002\u6c7a\u7b97\u307e\u306775\u65e5\u3002",
+            "technical": "EMA20($111.06)\u30fbEMA50($93.15)\u3068\u3082\u306b\u5927\u5e45\u4e0a\u629c\u3051\u3002MACD\u30d2\u30b9\u30c8\u30b0\u30e9\u30e0\u6b63\u5024\u3067\u4e0a\u6607\u7d99\u7d9a\u300252\u9031\u9ad8\u5024\u66f4\u65b0\u3067\u30d6\u30ec\u30a4\u30af\u30a2\u30a6\u30c8\u78ba\u8a8d\u3002TF\u8b66\u544a\u306a\u3057\u3002",
+            "sentiment": "\u30a2\u30ca\u30ea\u30b9\u30c8\u63a8\u5968'buy'\u30fb15\u540d\uff08\u226510\u540d\u30678+\u57fa\u6e96\u5230\u9054\uff09\u3002STRONG_OUTPERFORM\u306b\u3088\u308a\u76ee\u6a19\u682a\u4fa1\u4e56\u96e2\u306f\u6e1b\u70b9\u306a\u3057\u3002$3B ATM\u5e0c\u8584\u5316\u304c\u4e00\u90e8\u4e2d\u7acb\u30fb\u5f31\u6c17\u610f\u898b\u3092\u751f\u6210\u3002"
+          },
+          "thesis": "Rocket Lab \u306f$90M\u5b87\u5b99\u8ecdGEO\u885b\u661f\u5951\u7d04\u306b\u3088\u308b\u4e8b\u696d\u9818\u57df\u62e1\u5927\u3068SpaceX IPO\u8ffd\u3044\u98a8\u3067\u5168\u30bf\u30a4\u30e0\u30d5\u30ec\u30fc\u30e0\u3067\u4e0a\u6607\u30c8\u30ec\u30f3\u30c9\u3092\u7dad\u6301\u3002\u58f2\u4e0a\u6210\u9577+63.5%\u3068\u76f8\u5bfe\u5f37\u5ea6STRONG_OUTPERFORM\u304c\u793a\u3059\u901a\u308a\u3001\u30d5\u30a1\u30f3\u30c0\u30e1\u30f3\u30bf\u30eb\u30ba\u3068\u30e2\u30e1\u30f3\u30bf\u30e0\u304c\u4e21\u7acb\u3057\u3066\u3044\u308b\u3002\u305f\u3060\u3057$3B ATM\u682a\u5f0f\u58f2\u51fa\u30d7\u30ed\u30b0\u30e9\u30e0\u304c\u5e0c\u8584\u5316\u30ea\u30b9\u30af\u3068\u3057\u3066\u77ed\u671f\u306e\u4e0a\u5024\u3092\u6291\u5236\u3059\u308b\u53ef\u80fd\u6027\u304c\u3042\u308b\u3002",
+          "key_catalysts": [
+            "$90M\u7c73\u5b87\u5b99\u8ecdGEO\u885b\u661f\u30d7\u30e9\u30a4\u30e0\u5951\u7d04\uff08\u521d\u53d7\u6ce8\uff09",
+            "SpaceX IPO\u7533\u8acb\u306b\u3088\u308b\u30b9\u30da\u30fc\u30b9\u30bb\u30af\u30bf\u30fc\u5168\u4f53\u3078\u306e\u6a5f\u95a2\u6295\u8cc7\u5bb6\u95a2\u5fc3\u5897\u52a0",
+            "Neutron\u30ed\u30b1\u30c3\u30c8\u958b\u767a\u9032\u6357",
+            "2026\u5e74Q4\u6c7a\u7b97\u306b\u5411\u3051\u305f\u58f2\u4e0a\u6210\u9577\u7d99\u7d9a"
+          ],
+          "key_risks": [
+            "$3B ATM\u30d7\u30ed\u30b0\u30e9\u30e0\u306b\u3088\u308b\u5927\u898f\u6a21\u682a\u5f0f\u5e0c\u8584\u5316\u30ea\u30b9\u30af",
+            "\u7d99\u7d9a\u8d64\u5b57\u30fbFCF\u30de\u30a4\u30ca\u30b9\uff08P/S 115\u500d\u306e\u30d0\u30ea\u30e5\u30a8\u30fc\u30b7\u30e7\u30f3\u6b63\u5f53\u5316\u304c\u56f0\u96e3\uff09",
+            "\u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19\u682a\u4fa1$100.84\uff08\u73fe\u5728\u5024\u3088\u308a-25.7%\uff09\u3068\u306e\u4e56\u96e2"
+          ],
+          "entry_zone": "130\u2013136",
+          "target_price": 159.82,
+          "stop_loss": 122.59,
+          "time_horizon": "4\u20136 weeks",
+          "rs_signal": "STRONG_OUTPERFORM",
+          "rs_1m": 65.94,
+          "rs_3m": 85.25,
+          "days_until_earnings": 75,
+          "atr_multiplier_used": 2.0,
+          "atr_multiplier_reason": "\u6c7a\u7b97\u307e\u306775\u65e5\uff08>14\u65e5\uff09\u3067\u30ab\u30bf\u30ea\u30b9\u30c8\u8fd1\u63a5\u306a\u3057\u3002\u30c7\u30d5\u30a9\u30eb\u30c82.0\u00d7ATR\u9069\u7528\u3002",
+          "analyst_upside_pct": -25.74,
+          "conviction_floor": "MEDIUM",
+          "tf_alignment": "ALIGNED_UP",
+          "contrarian_tag": false,
+          "macro_regime": "NORMAL",
+          "data_notes": ""
+        },
+        {
+          "ticker": "AMD",
+          "company_name": "Advanced Micro Devices, Inc.",
+          "score": 7.4,
+          "current_price": 467.51,
+          "score_breakdown": {
+            "momentum": 8,
+            "fundamentals": 7,
+            "catalyst": 7,
+            "technical": 7,
+            "sentiment": 8
+          },
+          "score_evidence": {
+            "momentum": "RSI 72.76\uff08\u5f37\u3044\u52e2\u3044\u3001\u3084\u3084\u904e\u71b1\uff09\u30011M +34.4%\u30fb3M +118.6%\u3067SPY\u3092\u5927\u5e45\u30a2\u30a6\u30c8\u30d1\u30d5\u30a9\u30fc\u30e0\u3002MACD histogram -1.57\uff08\u8efd\u5fae\u306a\u5f31\u6c17\u30c0\u30a4\u30d0\u30fc\u30b8\u30a7\u30f3\u30b9\uff09\u3002RS=STRONG_OUTPERFORM +1pt\u52a0\u7b97\u3002\u51fa\u6765\u9ad834.7M\uff08\u6d3b\u767a\uff09",
+            "fundamentals": "\u58f2\u4e0a\u6210\u9577+37.8% YoY\u3001\u5229\u76ca\u6210\u9577+91.2% YoY\uff08\u5f37\u3044\uff09\u3002Forward PE 36.1\uff08\u904e\u71b1\u306a\u3057\uff09\u3001PEG 1.12\uff08\u6210\u9577\u5bfe\u6bd4\u3067\u5272\u5b89\uff09\u3002D/E 6.0\uff08\u3084\u3084\u9ad8\u3081\uff09\u3001ROE 8.1%\uff08\u4f4e\u3081\uff09\u3002",
+            "catalyst": "\u53f0\u6e7eAI/\u5148\u9032\u30d1\u30c3\u30b1\u30fc\u30b8\u30f3\u30b0\u3078$100\u5104\u6295\u8cc7\u767a\u8868\uff082026-05-21\uff09\u30022nm\u300cVenice\u300dCPU\u91cf\u7523\u958b\u59cb\u78ba\u8a8d\u3002EverCore\u304cPT $358\u2192$579\u306b\u5f15\u304d\u4e0a\u3052\uff08Outperform\u7dad\u6301\uff09\u30027\u6708Advancing AI\u30a4\u30d9\u30f3\u30c8\uff087/22-23\uff09\u3002\u6c7a\u7b9773\u65e5\u5f8c\u3067\u8fd1\u63a5\u30dc\u30fc\u30ca\u30b9\u306a\u3057",
+            "technical": "EMA20 $404\u30fbEMA50 $333\u3092\u5927\u304d\u304f\u4e0a\u56de\u308a\u5f37\u6c17\u3002BB\u4e0a\u9650$502.7\u307e\u3067\u4f59\u5730\u3042\u308a\u3002MACD histogram\u5fae\u30de\u30a4\u30ca\u30b9\uff08-1.57\uff09\u3002TF\u6574\u5408ALIGNED_UP\u30fbtf_warning=false\u3002RSI 72.76\u306f\u904e\u71b1\u57df\u3067\u3084\u3084\u6ce8\u610f",
+            "sentiment": "\u30a2\u30ca\u30ea\u30b9\u30c848\u540d\u304cstrong_buy\uff08\u30b3\u30f3\u30bb\u30f3\u30b5\u30b9\u76ee\u6a19$472\uff09\u3002Evercore PT $579\u3002X\u3067\u306f\u6a5f\u95a2\u6295\u8cc7\u5bb6\u306e\u5927\u91cf\u8cb7\u3044\u30fbAI\u30ef\u30fc\u30af\u30ed\u30fc\u30c9\u62e1\u5927\u306e\u30c6\u30fc\u30de\u304c\u512a\u52e2\u3067\u30d6\u30eb\u30bb\u30f3\u30c1\u30e1\u30f3\u30c8\u652f\u914d\u7684\u3002"
+          },
+          "thesis": "AMD\u306fMI300X/MI400\u7cfbAI\u30a2\u30af\u30bb\u30e9\u30ec\u30fc\u30bf\u306e\u63a1\u7528\u62e1\u5927\u3068$100\u5104\u53f0\u6e7e\u6295\u8cc7\u306b\u3088\u308b2nm Venice CPU\u30e9\u30e0\u30d7\u3067\u3001\u30c7\u30fc\u30bf\u30bb\u30f3\u30bf\u30fc\u30fbAI\u9700\u8981\u306e\u9577\u671f\u7684\u53d7\u76ca\u8005\u3068\u3057\u3066\u6700\u6709\u529b\u3002\u682a\u4fa1\u306f\u3059\u3067\u306b52\u9031\u9ad8\u5024\u3092\u66f4\u65b0\u3057118%\u8d85\u306eYTD\u4e0a\u6607\u3092\u9054\u6210\u3057\u3066\u3044\u308b\u304c\u3001\u30d5\u30a1\u30f3\u30c0\u30e1\u30f3\u30bf\u30eb\u30ba\uff08\u58f2\u4e0a+38%\u30fb\u5229\u76ca+91%\uff09\u304c\u8ffd\u3044\u3064\u3044\u3066\u304a\u308a\u30017\u6708Advancing AI\u30a4\u30d9\u30f3\u30c8\u3068\u6b21\u671fMI400\u51fa\u8377\u304c\u6b21\u306e\u4e0a\u5024\u50ac\u4fc3\u6750\u6599\u3002",
+          "key_catalysts": [
+            "\u53f0\u6e7e$100\u5104\u6295\u8cc7\u30fb2nm Venice CPU\u91cf\u7523\u958b\u59cb\uff082026-05\uff09",
+            "Evercore PT $579\u5f15\u304d\u4e0a\u3052\uff08Outperform\uff09",
+            "7\u6708Advancing AI\u30a4\u30d9\u30f3\u30c8\uff082026-07-22\u301c23\uff09",
+            "\u30cf\u30a4\u30d1\u30fc\u30b9\u30b1\u30fc\u30e9\u30fc\u306b\u3088\u308bMI400\u63a1\u7528\u62e1\u5927"
+          ],
+          "key_risks": [
+            "RSI 72.76\u904e\u71b1\u30fb\u77ed\u671f\u8abf\u6574\u30ea\u30b9\u30af",
+            "\u30b3\u30f3\u30bb\u30f3\u30b5\u30b9\u76ee\u6a19$472\u3068\u73fe\u5728\u5024\u306e\u4e56\u96e2\u304c\u5c0f\u3055\u304f\u8fd1\u63a5\u4e0a\u5024\u304c\u9650\u5b9a\u7684",
+            "Nvidia\u3068\u306e\u30b7\u30a7\u30a2\u4e89\u3044",
+            "D/E 6.0\u306e\u8ca1\u52d9\u30ec\u30d0\u30ec\u30c3\u30b8\u30ea\u30b9\u30af"
+          ],
+          "entry_zone": "420\u2013435",
+          "target_price": 485.99,
+          "stop_loss": 393.01,
+          "time_horizon": "4\u20136 weeks",
+          "rs_signal": "STRONG_OUTPERFORM",
+          "rs_1m": 29.98,
+          "rs_3m": 109.85,
+          "days_until_earnings": 73,
+          "atr_multiplier_used": 2.0,
+          "atr_multiplier_reason": "\u6a19\u6e962\u00d7ATR\u3002ALIGNED_UP\u30fbNORMAL regime\u30fb\u5f37\u3044\u30e2\u30e1\u30f3\u30bf\u30e0\u30672\u00d7\u3092\u63a1\u7528\u3002",
+          "analyst_upside_pct": 1.0,
+          "conviction_floor": "MEDIUM",
+          "tf_alignment": "ALIGNED_UP",
+          "contrarian_tag": false,
+          "macro_regime": "NORMAL",
+          "data_notes": "\u73fe\u5728\u5024$467.51\u306f\u30a8\u30f3\u30c8\u30ea\u30fc\u60f3\u5b9a$424\u3092+10.3%\u4e0a\u56de\u3063\u3066\u304a\u308a\u3001entry_zone\u306f\u62bc\u3057\u76ee\u60f3\u5b9a"
+        },
+        {
+          "ticker": "LUNR",
+          "company_name": "Intuitive Machines, Inc.",
+          "score": 7.1,
+          "current_price": 38.26,
+          "score_breakdown": {
+            "momentum": 8,
+            "fundamentals": 5,
+            "catalyst": 8,
+            "technical": 7,
+            "sentiment": 7
+          },
+          "score_evidence": {
+            "momentum": "RSI 70.43\uff08\u5f37\u3044\u30e2\u30e1\u30f3\u30bf\u30e0\uff09\u3001MACD histogram +0.44\uff08\u5f37\u6c17\uff09\u3001\u672c\u65e5+11.29%\u30013M+102.43%\u3001rs_1m=45.42/rs_3m=93.65\u3067STRONG_OUTPERFORM\u2192+1pt\u52a0\u7b97",
+            "fundamentals": "\u58f2\u4e0aYoY+198.7%\uff08\u6025\u6210\u9577\uff09\u3060\u304c\u7d14\u5229\u76ca-$37M\u3001\u7c97\u5229\u73879.7%\u3001\u55b6\u696d\u5229\u76ca\u7387-10.3%\u3001D/E=62.25\u3068\u8ca1\u52d9\u30ec\u30d0\u30ec\u30c3\u30b8\u9ad8\u3002PSR=18.4x\u3067\u9ad8\u30d0\u30ea\u30e5\u30a8\u30fc\u30b7\u30e7\u30f3\u30ea\u30b9\u30af\u3002",
+            "catalyst": "SpaceX IPO\u671f\u5f85\u3067\u5b87\u5b99\u30bb\u30af\u30bf\u30fc\u5168\u4f53\u304c\u4e0a\u6607\u3001Q1 2026\u58f2\u4e0a$186.7M\uff08\u524d\u5e74\u6bd4+331%\uff09\u3067$1.1B\u30d0\u30c3\u30af\u30ed\u30b0\u904e\u53bb\u6700\u9ad8\u3001Lunar Terrain Vehicle\u5951\u7d04\u5019\u88dc\u3001Cantor PT$43\u3002days_until_earnings=74\uff0814\u65e5\u8d85\u306e\u305f\u3081+1pt\u975e\u9069\u7528\uff09",
+            "technical": "\u4fa1\u683c$38.26\u306f52w\u9ad8\u5024$38.55\u306b\u8feb\u308b\u3002EMA20=$31.13/EMA50=$26.62\u3092\u5927\u5e45\u306b\u4e0a\u56de\u308b\u3002BB\u4e0a\u9650=$39.20\u306b\u63a5\u8fd1\u4e2d\u3002\u5168\u30bf\u30a4\u30e0\u30d5\u30ec\u30fc\u30e0\u4e0a\u6607\u30c8\u30ec\u30f3\u30c9\u6574\u5408\u3002tf_warning=false",
+            "sentiment": "X\u4e0a\u306e\u30bb\u30f3\u30c1\u30e1\u30f3\u30c8\u306f\u5727\u5012\u7684\u5f37\u6c17\u3002Cantor PT$43\u30fbStifel PT$32\uff08Hold\uff09\u3002analyst_recommendation=buy\u30019\u30a2\u30ca\u30ea\u30b9\u30c8\uff0810\u540d\u672a\u6e80\u306e\u305f\u30818+\u975e\u9069\u7528\uff09\u3002\u77ed\u671f\u58f2\u308a\u304c28.15%\u3068\u9ad8\u304f\u30b9\u30af\u30a4\u30fc\u30ba\u30ea\u30b9\u30af\u3042\u308a"
+          },
+          "thesis": "Intuitive Machines\u306fNASA/\u56fd\u9632\u7701\u5411\u3051\u5b87\u5b99\u30a4\u30f3\u30d5\u30e9\u306e\u4e3b\u8981\u30d7\u30ec\u30a4\u30e4\u30fc\u3068\u3057\u3066\u6025\u6210\u9577\u4e2d\u3002Q1 2026\u58f2\u4e0a$186.7M\u3067\u524d\u5e74\u6bd44\u500d\u8d85\u3001$1.1B\u30d0\u30c3\u30af\u30ed\u30b0\u306f\u4e8b\u696d\u306e\u8996\u8a8d\u6027\u3092\u9ad8\u3081\u3066\u3044\u308b\u3002SpaceX IPO\u671f\u5f85\u306b\u3088\u308b\u5b87\u5b99\u30bb\u30af\u30bf\u30fc\u3078\u306e\u8cc7\u91d1\u6d41\u5165\u3068\u77ed\u671f\u58f2\u308a28%\u306b\u3088\u308b\u30b7\u30e7\u30fc\u30c8\u30b9\u30af\u30a4\u30fc\u30ba\u5727\u529b\u304c\u77ed\u671f\u7684\u306a\u4e0a\u6607\u30e2\u30e1\u30f3\u30bf\u30e0\u3092\u5f8c\u62bc\u3057\u3059\u308b\u4e00\u65b9\u300152w\u9ad8\u5024\u570f\u3067\u306e\u9ad8RSI\u3068\u8d64\u5b57\u7d99\u7d9a\u304c\u8ffd\u52a0\u4e0a\u6607\u4f59\u5730\u3092\u5236\u9650\u3059\u308b\u30ea\u30b9\u30af\u8981\u56e0\u3002",
+          "key_catalysts": [
+            "SpaceX S-1\u63d0\u51fa\u306b\u3088\u308b\u5b87\u5b99\u30bb\u30af\u30bf\u30fc\u3078\u306e\u8cc7\u91d1\u6d41\u5165\u7d99\u7d9a",
+            "Lunar Terrain Vehicle\uff08LTV\uff09\u5951\u7d04\u7372\u5f97\u306e\u53ef\u80fd\u6027",
+            "$1.1B\u30d0\u30c3\u30af\u30ed\u30b0\u306e\u53ce\u76ca\u5316\u9032\u5c55",
+            "Cantor Fitzgerald PT $43\uff08Overweight\uff09"
+          ],
+          "key_risks": [
+            "28.15%\u306e\u9ad8\u3044\u7a7a\u58f2\u308a\u6bd4\u7387\u306b\u3088\u308b\u6025\u843d\u30ea\u30b9\u30af",
+            "\u8d64\u5b57\u7d99\u7d9a\u3068FCF\u30de\u30a4\u30ca\u30b9\uff08-$54.8M\uff09",
+            "\u7c97\u5229\u73879.7%\u3068\u4f4e\u30de\u30fc\u30b8\u30f3\u69cb\u9020",
+            "52w\u9ad8\u5024\u570f\u3067\u306e\u904e\u71b1\uff08RSI 70.43\uff09"
+          ],
+          "entry_zone": "37.00\u201338.50",
+          "target_price": 46.39,
+          "stop_loss": 34.19,
+          "time_horizon": "4\u20136 weeks",
+          "rs_signal": "STRONG_OUTPERFORM",
+          "rs_1m": 45.42,
+          "rs_3m": 93.65,
+          "days_until_earnings": 74,
+          "atr_multiplier_used": 2.0,
+          "atr_multiplier_reason": "\u6a19\u6e962\u00d7ATR\u9069\u7528\u3002\u9ad8\u30dc\u30e9\u30c6\u30a3\u30ea\u30c6\u30a3\u9298\u67c4\uff08ATR=4.07\uff09\u3060\u304c52w\u9ad8\u5024\u570f\u3067\u306e\u65b0\u898f\u30a8\u30f3\u30c8\u30ea\u30fc\u306e\u305f\u3081\u6a19\u6e96\u500d\u7387\u3092\u7dad\u6301",
+          "analyst_upside_pct": 12.4,
+          "conviction_floor": "MEDIUM",
+          "tf_alignment": "ALIGNED_UP",
+          "contrarian_tag": false,
+          "macro_regime": "NORMAL",
+          "data_notes": "analyst_upside_pct\u306fCantor Fitzgerald PT$43\u3092\u4f7f\u7528"
+        }
+      ]
+    },
+    {
+      "run_id": "0f77866d-252a-45db-943a-e9bb89b18886",
+      "date": "2026-06-03",
+      "candidates": [
+        {
+          "ticker": "LITE",
+          "company_name": "Lumentum Holdings Inc.",
+          "score": 7.4,
+          "conviction": "MEDIUM",
+          "current_price": 1029.15,
+          "entry_price": 1029.15,
+          "target_price": 1188.4,
+          "stop_loss": 949.52,
+          "allocation_pct": 15,
+          "shares": 1,
+          "score_breakdown": {
+            "momentum": 8,
+            "fundamentals": 8,
+            "catalyst": 7,
+            "technical": 7,
+            "sentiment": 6
+          },
+          "score_evidence": {
+            "momentum": "\u5f53\u65e5+12.6%\u3001EMA20/EMA50\u3092\u4e0a\u56de\u308a\u300152\u9031\u9ad8\u5024\u306b\u8fd1\u3044\u3002RSI 60.1\u3067\u904e\u71b1\u306f\u5f37\u304f\u306a\u3044\u3002",
+            "fundamentals": "\u58f2\u4e0a\u6210\u9577YoY +90.1%\u3001\u55b6\u696d\u5229\u76ca\u738721.8%\u3001PEG 0.63\u3002AI/\u30af\u30e9\u30a6\u30c9\u5411\u3051\u5149\u901a\u4fe1\u30c6\u30fc\u30de\u306b\u5408\u3046\u3002\u4e00\u65b9\u3067P/S 32.2\u3001D/E 111.4\u306f\u91cd\u3044\u3002",
+            "catalyst": "\u534a\u5c0e\u4f53\u30fb\u30c6\u30c3\u30af\u304c\u5e02\u5834\u3092\u30ea\u30fc\u30c9\u3002\u5149\u901a\u4fe1\u3068AI\u30c7\u30fc\u30bf\u30bb\u30f3\u30bf\u30fc\u9700\u8981\u306e\u6d41\u308c\u306b\u4e57\u308b\u3002",
+            "technical": "\u4fa1\u683c\u306fEMA20 921\u3001EMA50 870\u3092\u4e0a\u56de\u308b\u3002ATR\u76ee\u6a191188.40\u3001\u30b9\u30c8\u30c3\u30d7949.52\u3002MACD\u30d2\u30b9\u30c8\u30b0\u30e9\u30e0\u306f-3.45\u3067\u77ed\u671f\u306e\u52e2\u3044\u306f\u3084\u3084\u920d\u3044\u3002",
+            "sentiment": "\u30a2\u30ca\u30ea\u30b9\u30c8buy\u3001\u76ee\u6a191104.68\u3002\u30aa\u30d7\u30b7\u30e7\u30f3\u306fNEUTRAL_BEARISH\u3001\u30a4\u30f3\u30b5\u30a4\u30c0\u30fc\u306fNET_SELLER\u3067\u5f37\u6c17\u4e00\u8fba\u5012\u3067\u306f\u306a\u3044\u3002"
+          },
+          "thesis": "LITE\u306fAI\u30c7\u30fc\u30bf\u30bb\u30f3\u30bf\u30fc\u5411\u3051\u5149\u901a\u4fe1\u9700\u8981\u306e\u53d7\u76ca\u5019\u88dc\u3002\u58f2\u4e0a\u6210\u9577\u3068\u5229\u76ca\u7387\u304c\u3042\u308a\u3001RSI\u3082\u904e\u71b1\u3057\u3059\u304e\u3066\u3044\u306a\u3044\u3002\u9ad8\u30d0\u30ea\u30e5\u30a8\u30fc\u30b7\u30e7\u30f3\u3068\u30a4\u30f3\u30b5\u30a4\u30c0\u30fc\u58f2\u308a\u304c\u3042\u308b\u305f\u3081\u30011\u682a\u7a0b\u5ea6\u306e\u5c0f\u3055\u3081\u5019\u88dc\u306b\u3068\u3069\u3081\u308b\u3002",
+          "key_catalysts": [
+            "AI\u30c7\u30fc\u30bf\u30bb\u30f3\u30bf\u30fc\u5411\u3051\u5149\u901a\u4fe1\u9700\u8981",
+            "\u30c6\u30c3\u30af\u30fb\u534a\u5c0e\u4f53\u30bb\u30af\u30bf\u30fc\u306e\u76f8\u5bfe\u5f37\u5ea6",
+            "\u58f2\u4e0a\u6210\u9577YoY +90.1%"
+          ],
+          "key_risks": [
+            "P/S 32.2\u3068Forward PE 56.9",
+            "D/E 111.4",
+            "\u30aa\u30d7\u30b7\u30e7\u30f3\u304cNEUTRAL_BEARISH\u3001\u30a4\u30f3\u30b5\u30a4\u30c0\u30fcNET_SELLER"
+          ],
+          "rationale": "\u58f2\u4e0a\u6210\u9577+90.1%\u3001\u55b6\u696d\u5229\u76ca\u738721.8%\u3001RSI 60.1\u3002AI\u30c7\u30fc\u30bf\u30bb\u30f3\u30bf\u30fc\u5411\u3051\u5149\u901a\u4fe1\u30c6\u30fc\u30de\u306b\u5408\u3044\u3001ATR\u4e0a\u306e\u4e0a\u5024\u4f59\u5730\u3082\u3042\u308b\u3002",
+          "risks": "\u9ad8\u30d0\u30ea\u30e5\u30a8\u30fc\u30b7\u30e7\u30f3\u3001\u8ca0\u50b5\u3001\u30a4\u30f3\u30b5\u30a4\u30c0\u30fc\u58f2\u308a\u3001\u30aa\u30d7\u30b7\u30e7\u30f3\u9700\u7d66\u306e\u5f31\u3055\u3002",
+          "entry_zone": "1000\u20131030",
+          "time_horizon": "4\u20136 weeks",
+          "rs_signal": "OUTPERFORM",
+          "macro_regime": "NORMAL",
+          "data_notes": "\u30cb\u30e5\u30fc\u30b9\u53d6\u5f97\u306fyfinance\u5074\u306elimit\u5f15\u6570\u30a8\u30e9\u30fc\u3067\u6b20\u843d\u3002"
+        },
+        {
+          "ticker": "AMAT",
+          "company_name": "Applied Materials, Inc.",
+          "score": 7.3,
+          "conviction": "MEDIUM",
+          "current_price": 490.05,
+          "entry_price": 490.05,
+          "target_price": 530.67,
+          "stop_loss": 469.74,
+          "allocation_pct": 15,
+          "shares": 2,
+          "score_breakdown": {
+            "momentum": 8,
+            "fundamentals": 8,
+            "catalyst": 7,
+            "technical": 7,
+            "sentiment": 7
+          },
+          "score_evidence": {
+            "momentum": "52\u9031\u9ad8\u5024\u3092\u4e0a\u629c\u3051\u3001\u5f53\u65e5+7.5%\u3002\u534a\u5c0e\u4f53\u8a2d\u5099\u306f\u30ea\u30fc\u30c9\u30bb\u30af\u30bf\u30fc\u5185\u3002",
+            "fundamentals": "\u58f2\u4e0a\u6210\u9577+11.4%\u3001\u5229\u76ca\u6210\u9577+33.5%\u3001\u55b6\u696d\u5229\u76ca\u738731.9%\u3001Forward PE 30.3\u3002\u8cea\u306f\u4eca\u56de\u5019\u88dc\u5185\u3067\u9ad8\u3044\u3002",
+            "catalyst": "\u534a\u5c0e\u4f53\u8a2d\u5099\u30fb\u5148\u7aef\u30d1\u30c3\u30b1\u30fc\u30b8\u6295\u8cc7\u306e\u8ffd\u3044\u98a8\u3002\u904e\u53bb\u5b9f\u7e3e\u3067\u5f37\u3044technical_breakout\u7cfb\u306b\u3082\u8a72\u5f53\u3002",
+            "technical": "RSI 72.2\u3067\u3084\u3084\u904e\u71b1\u3060\u304c\u3001MACD\u30d2\u30b9\u30c8\u30b0\u30e9\u30e0+3.33\u3001EMA20/EMA50\u4e0a\u3002ATR\u30b9\u30c8\u30c3\u30d7469.74\u3067\u30ea\u30b9\u30af\u5e45\u306f\u7d044.1%\u3002",
+            "sentiment": "\u30a2\u30ca\u30ea\u30b9\u30c8strong_buy\u300136\u540d\u3001\u76ee\u6a19511.17\u3002\u30aa\u30d7\u30b7\u30e7\u30f3\u306fNEUTRAL_BULLISH\u3002\u30a4\u30f3\u30b5\u30a4\u30c0\u30fc\u58f2\u308a\u306f\u6e1b\u70b9\u3002"
+          },
+          "thesis": "AMAT\u306f\u534a\u5c0e\u4f53\u8a2d\u5099\u306e\u5927\u578b\u30fb\u9ad8\u54c1\u8cea\u5019\u88dc\u3002\u5229\u76ca\u6210\u9577\u3068\u9ad8\u3044\u55b6\u696d\u5229\u76ca\u7387\u304c\u3042\u308a\u300152\u9031\u9ad8\u5024\u30d6\u30ec\u30a4\u30af\u3082\u78ba\u8a8d\u6e08\u307f\u3002RSI\u306f\u9ad8\u3081\u306a\u306e\u3067\u3001\u8ffd\u3046\u306a\u3089\u5c0f\u3055\u304f\u3001\u307e\u305f\u306f\u62bc\u3057\u76ee\u3092\u5f85\u3064\u3002",
+          "key_catalysts": [
+            "\u534a\u5c0e\u4f53\u8a2d\u5099\u30b5\u30a4\u30af\u30eb\u306e\u56de\u5fa9",
+            "52\u9031\u9ad8\u5024\u30d6\u30ec\u30a4\u30af",
+            "\u5229\u76ca\u6210\u9577YoY +33.5%"
+          ],
+          "key_risks": [
+            "RSI 72.2\u3067\u77ed\u671f\u904e\u71b1",
+            "\u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19\u3068\u306e\u4e0a\u5024\u5e45\u306f\u5927\u304d\u304f\u306a\u3044",
+            "\u30a4\u30f3\u30b5\u30a4\u30c0\u30fcNET_SELLER"
+          ],
+          "rationale": "\u8cea\u306e\u9ad8\u3044\u534a\u5c0e\u4f53\u8a2d\u5099\u9298\u67c4\u3002\u55b6\u696d\u5229\u76ca\u738731.9%\u3001\u5229\u76ca\u6210\u9577+33.5%\u3001strong_buy\u300152\u9031\u9ad8\u5024\u66f4\u65b0\u3002",
+          "risks": "RSI\u904e\u71b1\u3001\u76ee\u6a19\u4fa1\u683c\u3068\u306e\u8ddd\u96e2\u304c\u5c0f\u3055\u3044\u3001\u534a\u5c0e\u4f53\u8a2d\u5099\u30b5\u30a4\u30af\u30eb\u306e\u53cd\u8ee2\u3002",
+          "entry_zone": "470\u2013490",
+          "time_horizon": "4\u20136 weeks",
+          "rs_signal": "OUTPERFORM",
+          "macro_regime": "NORMAL",
+          "data_notes": "\u30cb\u30e5\u30fc\u30b9\u53d6\u5f97\u306fyfinance\u5074\u306elimit\u5f15\u6570\u30a8\u30e9\u30fc\u3067\u6b20\u843d\u3002"
+        },
+        {
+          "ticker": "MRVL",
+          "company_name": "Marvell Technology, Inc.",
+          "score": 7.1,
+          "conviction": "LOW",
+          "current_price": 290.79,
+          "entry_price": 290.79,
+          "target_price": 330.52,
+          "stop_loss": 270.93,
+          "allocation_pct": 10,
+          "shares": 2,
+          "score_breakdown": {
+            "momentum": 10,
+            "fundamentals": 6,
+            "catalyst": 8,
+            "technical": 6,
+            "sentiment": 6
+          },
+          "score_evidence": {
+            "momentum": "\u5f53\u65e5+32.5%\u3001\u51fa\u6765\u9ad8101.9M\u300152\u9031\u9ad8\u5024\u3092\u5927\u304d\u304f\u4e0a\u629c\u3051\u3002\u30bb\u30af\u30bf\u30fc\u3082LEADING\u3002",
+            "fundamentals": "\u58f2\u4e0a\u6210\u9577+27.6%\u3001\u7c97\u5229\u738751.5%\u3001\u55b6\u696d\u5229\u76ca\u738714.5%\u3002\u4e00\u65b9\u3067\u5229\u76ca\u6210\u9577\u306f-80.4%\u3001P/S 29.2\u3001Forward PE 47.6\u3002",
+            "catalyst": "AI\u30a4\u30f3\u30d5\u30e9\u30fb\u30ab\u30b9\u30bf\u30e0\u30b7\u30ea\u30b3\u30f3\u95a2\u9023\u306e\u5f37\u3044\u30c6\u30fc\u30de\u6027\u3002\u30a6\u30a9\u30c3\u30c1\u30ea\u30b9\u30c8\u512a\u5148\u67a0\u304b\u3089\u3082\u6d6e\u4e0a\u3002",
+            "technical": "RSI 85.9\u3067\u660e\u78ba\u306b\u904e\u71b1\u3002MACD\u306f\u5f37\u3044\u304c\u3001\u77ed\u671f\u306e\u53cd\u843d\u30ea\u30b9\u30af\u304c\u5927\u304d\u3044\u3002ATR\u30b9\u30c8\u30c3\u30d7270.93\u3002",
+            "sentiment": "\u30a2\u30ca\u30ea\u30b9\u30c8strong_buy 41\u540d\u3001\u30aa\u30d7\u30b7\u30e7\u30f3BULLISH\u3002\u305f\u3060\u3057\u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19222.55\u306f\u73fe\u5728\u5024\u3092\u4e0b\u56de\u308a\u3001\u30a4\u30f3\u30b5\u30a4\u30c0\u30fc\u306fNET_SELLER\u3002"
+          },
+          "thesis": "MRVL\u306f\u4eca\u65e5\u306e\u6700\u5f37\u30e2\u30e1\u30f3\u30bf\u30e0\u5019\u88dc\u3060\u304c\u3001RSI 85.9\u3067\u8ffd\u3044\u304b\u3051\u308b\u306b\u306f\u71b1\u3059\u304e\u308b\u3002\u30ea\u30b5\u30fc\u30c1\u5019\u88dc\u306b\u306f\u6b8b\u3059\u304c\u3001\u30a8\u30f3\u30c8\u30ea\u30fc\u306f\u62bc\u3057\u76ee\u307e\u305f\u306f\u77ed\u671f\u306e\u51fa\u6765\u9ad8\u7d99\u7d9a\u78ba\u8a8d\u304c\u524d\u63d0\u3002",
+          "key_catalysts": [
+            "AI\u30a4\u30f3\u30d5\u30e9\u30fb\u30ab\u30b9\u30bf\u30e0\u30b7\u30ea\u30b3\u30f3\u9700\u8981",
+            "52\u9031\u9ad8\u5024\u30d6\u30ec\u30a4\u30af",
+            "\u51fa\u6765\u9ad8\u6025\u5897"
+          ],
+          "key_risks": [
+            "RSI 85.9\u3067\u77ed\u671f\u904e\u71b1",
+            "\u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19\u304c\u73fe\u5728\u5024\u3092\u4e0b\u56de\u308b",
+            "\u5229\u76ca\u6210\u9577-80.4%\u3001\u9ad8\u3044P/S"
+          ],
+          "rationale": "\u51fa\u6765\u9ad8\u3092\u4f34\u3046\u5f37\u3044\u30d6\u30ec\u30a4\u30af\u30a2\u30a6\u30c8\u3002AI\u30a4\u30f3\u30d5\u30e9\u30c6\u30fc\u30de\u3068\u30a2\u30ca\u30ea\u30b9\u30c8strong_buy\u304c\u652f\u3048\u308b\u3002",
+          "risks": "\u904e\u71b1\u3001\u76ee\u6a19\u682a\u4fa1\u3068\u306e\u9006\u884c\u3001\u30a4\u30f3\u30b5\u30a4\u30c0\u30fc\u58f2\u308a\u3002\u4eca\u306f\u8ffd\u3044\u8cb7\u3044\u3088\u308a\u76e3\u8996\u3002",
+          "entry_zone": "270\u2013285",
+          "time_horizon": "2\u20134 weeks",
+          "rs_signal": "STRONG_OUTPERFORM",
+          "macro_regime": "NORMAL",
+          "data_notes": "\u30cb\u30e5\u30fc\u30b9\u53d6\u5f97\u306fyfinance\u5074\u306elimit\u5f15\u6570\u30a8\u30e9\u30fc\u3067\u6b20\u843d\u3002"
+        },
+        {
+          "ticker": "MU",
+          "company_name": "Micron Technology, Inc.",
+          "score": 7.0,
+          "conviction": "LOW",
+          "current_price": 1064.1,
+          "entry_price": 1064.1,
+          "target_price": 1190.29,
+          "stop_loss": 1001.01,
+          "allocation_pct": 15,
+          "shares": 1,
+          "score_breakdown": {
+            "momentum": 9,
+            "fundamentals": 9,
+            "catalyst": 7,
+            "technical": 6,
+            "sentiment": 5
+          },
+          "score_evidence": {
+            "momentum": "52\u9031\u9ad8\u5024\u66f4\u65b0\u3001RSI 82.0\u3001MACD\u30d2\u30b9\u30c8\u30b0\u30e9\u30e0+23.34\u3002\u534a\u5c0e\u4f53\u30ea\u30fc\u30c9\u30bb\u30af\u30bf\u30fc\u5185\u3002",
+            "fundamentals": "\u58f2\u4e0a\u6210\u9577YoY +196.3%\u3001\u5229\u76ca\u6210\u9577+756%\u3001\u55b6\u696d\u5229\u76ca\u738767.6%\u3001Forward PE 10.1\u3001PEG 0.36\u3002\u30d5\u30a1\u30f3\u30c0\u306f\u975e\u5e38\u306b\u5f37\u3044\u3002",
+            "catalyst": "\u30e1\u30e2\u30ea\u5e02\u6cc1\u3068AI\u9700\u8981\u306e\u8ffd\u3044\u98a8\u3002\u904e\u53bb\u5b9f\u7e3e\u3067\u306fearnings_beat\u7cfb\u306eEV\u304c\u9ad8\u3044\u3002",
+            "technical": "EMA20/EMA50\u3092\u5927\u5e45\u306b\u4e0a\u56de\u308b\u304c\u3001RSI 82.0\u3067\u77ed\u671f\u904e\u71b1\u3002ATR\u30b9\u30c8\u30c3\u30d71001.01\u3002",
+            "sentiment": "\u30a2\u30ca\u30ea\u30b9\u30c8strong_buy 40\u540d\u3060\u304c\u3001\u76ee\u6a19726.23\u306f\u73fe\u5728\u5024\u3092\u5927\u304d\u304f\u4e0b\u56de\u308b\u3002\u30aa\u30d7\u30b7\u30e7\u30f3\u306fNEUTRAL_BEARISH\u3001\u30a4\u30f3\u30b5\u30a4\u30c0\u30fcNET_SELLER\u3002"
+          },
+          "thesis": "MU\u306f\u30d5\u30a1\u30f3\u30c0\u30e1\u30f3\u30bf\u30eb\u30ba\u3060\u3051\u306a\u3089\u6700\u4e0a\u4f4d\u3002\u305f\u3060\u3057\u4fa1\u683c\u304c\u3059\u3067\u306b\u5927\u304d\u304f\u8d70\u3063\u3066\u304a\u308a\u3001\u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19\u3068\u306e\u4e56\u96e2\u3068RSI 82.0\u304c\u91cd\u3044\u3002\u6c7a\u7b97\u30fb\u30e1\u30e2\u30ea\u5e02\u6cc1\u30c6\u30fc\u30de\u306e\u7d99\u7d9a\u76e3\u8996\u5019\u88dc\u3068\u3057\u3066\u4fdd\u5b58\u3059\u308b\u3002",
+          "key_catalysts": [
+            "\u30e1\u30e2\u30ea\u5e02\u6cc1\u6539\u5584",
+            "AI\u5411\u3051\u30e1\u30e2\u30ea\u9700\u8981",
+            "\u58f2\u4e0a+196.3%\u3001\u5229\u76ca+756%"
+          ],
+          "key_risks": [
+            "RSI 82.0\u3067\u77ed\u671f\u904e\u71b1",
+            "\u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19\u304c\u73fe\u5728\u5024\u3092\u5927\u5e45\u306b\u4e0b\u56de\u308b",
+            "\u30aa\u30d7\u30b7\u30e7\u30f3NEUTRAL_BEARISH\u3001\u30a4\u30f3\u30b5\u30a4\u30c0\u30fcNET_SELLER"
+          ],
+          "rationale": "\u58f2\u4e0a\u6210\u9577+196.3%\u3001\u5229\u76ca\u6210\u9577+756%\u3001Forward PE 10.1\u3002\u534a\u5c0e\u4f53\u5185\u3067\u3082\u30d5\u30a1\u30f3\u30c0\u306e\u5f37\u3055\u304c\u76ee\u7acb\u3064\u3002",
+          "risks": "\u4fa1\u683c\u304c\u5148\u884c\u3057\u3059\u304e\u3002\u4eca\u306f\u62bc\u3057\u76ee\u5f85\u3061\u304c\u81ea\u7136\u3002",
+          "entry_zone": "1000\u20131040",
+          "time_horizon": "4\u20136 weeks",
+          "rs_signal": "STRONG_OUTPERFORM",
+          "macro_regime": "NORMAL",
+          "data_notes": "\u30cb\u30e5\u30fc\u30b9\u53d6\u5f97\u306fyfinance\u5074\u306elimit\u5f15\u6570\u30a8\u30e9\u30fc\u3067\u6b20\u843d\u3002"
         }
       ]
     }

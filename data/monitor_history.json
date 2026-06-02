@@ -644,5 +644,351 @@
       }
     ],
     "alerts": []
+  },
+  {
+    "date": "2026-05-16",
+    "position_count": 5,
+    "alert_count": 3,
+    "high_alert_count": 2,
+    "positions": [
+      {
+        "ticker": "TSM",
+        "shares": 3.0,
+        "entry_price": 402.46,
+        "current_price": 404.3500061035156,
+        "target_price": "428.87",
+        "stop_loss": "389.25"
+      },
+      {
+        "ticker": "UAL",
+        "shares": 5.0,
+        "entry_price": 93.0,
+        "current_price": 92.8499984741211,
+        "target_price": "103.45",
+        "stop_loss": "93.0"
+      },
+      {
+        "ticker": "TEAM",
+        "shares": 11.0,
+        "entry_price": 88.88,
+        "current_price": 87.45999908447266,
+        "target_price": "100.68",
+        "stop_loss": "82.98"
+      },
+      {
+        "ticker": "AVGO",
+        "shares": 3.0,
+        "entry_price": 432.0,
+        "current_price": 425.19000244140625,
+        "target_price": "461.0",
+        "stop_loss": "414.57"
+      },
+      {
+        "ticker": "WAT",
+        "shares": 3.0,
+        "entry_price": 355.0,
+        "current_price": 329.2200012207031,
+        "target_price": "397.0",
+        "stop_loss": "339.39"
+      }
+    ],
+    "alerts": [
+      {
+        "date": "2026-05-16",
+        "ticker": "UAL",
+        "alert_type": "STOP_LOSS",
+        "severity": "HIGH",
+        "message": "Price $92.85 hit stop loss $93.00",
+        "current_price": 92.8499984741211,
+        "entry_price": 93.0,
+        "unrealized_pnl_pct": -0.16,
+        "stop_loss": 93.0,
+        "target_price": 103.45
+      },
+      {
+        "date": "2026-05-16",
+        "ticker": "WAT",
+        "alert_type": "STOP_LOSS",
+        "severity": "HIGH",
+        "message": "Price $329.22 hit stop loss $339.39",
+        "current_price": 329.2200012207031,
+        "entry_price": 355.0,
+        "unrealized_pnl_pct": -7.26,
+        "stop_loss": 339.39,
+        "target_price": 397.0
+      },
+      {
+        "date": "2026-05-16",
+        "ticker": "WAT",
+        "alert_type": "SIGNIFICANT_DRAWDOWN",
+        "severity": "MEDIUM",
+        "message": "Unrealized loss -7.3%",
+        "current_price": 329.2200012207031,
+        "entry_price": 355.0,
+        "unrealized_pnl_pct": -7.26,
+        "stop_loss": 339.39,
+        "target_price": 397.0
+      }
+    ]
+  },
+  {
+    "date": "2026-05-22",
+    "position_count": 4,
+    "alert_count": 3,
+    "high_alert_count": 2,
+    "positions": [
+      {
+        "ticker": "TSM",
+        "shares": 3.0,
+        "entry_price": 402.46,
+        "current_price": 407.1499938964844,
+        "target_price": "428.87",
+        "stop_loss": "389.25"
+      },
+      {
+        "ticker": "TEAM",
+        "shares": 11.0,
+        "entry_price": 88.88,
+        "current_price": 82.18000030517578,
+        "target_price": "100.68",
+        "stop_loss": "82.98"
+      },
+      {
+        "ticker": "AVGO",
+        "shares": 3.0,
+        "entry_price": 432.0,
+        "current_price": 414.57000732421875,
+        "target_price": "461.0",
+        "stop_loss": "418.0"
+      },
+      {
+        "ticker": "LRCX",
+        "shares": 3.0,
+        "entry_price": 284.72,
+        "current_price": 302.239990234375,
+        "target_price": "312.0",
+        "stop_loss": "270.98"
+      }
+    ],
+    "alerts": [
+      {
+        "date": "2026-05-22",
+        "ticker": "TEAM",
+        "alert_type": "STOP_LOSS",
+        "severity": "HIGH",
+        "message": "Price $82.18 hit stop loss $82.98",
+        "current_price": 82.18000030517578,
+        "entry_price": 88.88,
+        "unrealized_pnl_pct": -7.54,
+        "stop_loss": 82.98,
+        "target_price": 100.68
+      },
+      {
+        "date": "2026-05-22",
+        "ticker": "TEAM",
+        "alert_type": "SIGNIFICANT_DRAWDOWN",
+        "severity": "MEDIUM",
+        "message": "Unrealized loss -7.5%",
+        "current_price": 82.18000030517578,
+        "entry_price": 88.88,
+        "unrealized_pnl_pct": -7.54,
+        "stop_loss": 82.98,
+        "target_price": 100.68
+      },
+      {
+        "date": "2026-05-22",
+        "ticker": "AVGO",
+        "alert_type": "STOP_LOSS",
+        "severity": "HIGH",
+        "message": "Price $414.57 hit stop loss $418.00",
+        "current_price": 414.57000732421875,
+        "entry_price": 432.0,
+        "unrealized_pnl_pct": -4.03,
+        "stop_loss": 418.0,
+        "target_price": 461.0
+      }
+    ]
+  },
+  {
+    "date": "2026-05-23",
+    "position_count": 4,
+    "alert_count": 1,
+    "high_alert_count": 1,
+    "positions": [
+      {
+        "ticker": "TSM",
+        "shares": 3.0,
+        "entry_price": 402.46,
+        "current_price": 404.5199890136719,
+        "target_price": "428.87",
+        "stop_loss": "389.25"
+      },
+      {
+        "ticker": "TEAM",
+        "shares": 11.0,
+        "entry_price": 88.88,
+        "current_price": 85.41999816894531,
+        "target_price": "100.68",
+        "stop_loss": "82.98"
+      },
+      {
+        "ticker": "AVGO",
+        "shares": 3.0,
+        "entry_price": 432.0,
+        "current_price": 414.1400146484375,
+        "target_price": "461.0",
+        "stop_loss": "418.0"
+      },
+      {
+        "ticker": "LRCX",
+        "shares": 2.0,
+        "entry_price": 284.72,
+        "current_price": 305.3500061035156,
+        "target_price": "312.0",
+        "stop_loss": "284.72"
+      }
+    ],
+    "alerts": [
+      {
+        "date": "2026-05-23",
+        "ticker": "AVGO",
+        "alert_type": "STOP_LOSS",
+        "severity": "HIGH",
+        "message": "Price $414.14 hit stop loss $418.00",
+        "current_price": 414.1400146484375,
+        "entry_price": 432.0,
+        "unrealized_pnl_pct": -4.13,
+        "stop_loss": 418.0,
+        "target_price": 461.0
+      }
+    ]
+  },
+  {
+    "date": "2026-05-30",
+    "position_count": 4,
+    "alert_count": 2,
+    "high_alert_count": 2,
+    "positions": [
+      {
+        "ticker": "TSM",
+        "shares": 3.0,
+        "entry_price": 402.46,
+        "current_price": 418.45001220703125,
+        "target_price": "428.87",
+        "stop_loss": "389.25"
+      },
+      {
+        "ticker": "TEAM",
+        "shares": 11.0,
+        "entry_price": 88.88,
+        "current_price": 107.61000061035156,
+        "target_price": "100.68",
+        "stop_loss": "82.98"
+      },
+      {
+        "ticker": "LRCX",
+        "shares": 2.0,
+        "entry_price": 284.72,
+        "current_price": 318.17999267578125,
+        "target_price": "312.0",
+        "stop_loss": "284.72"
+      },
+      {
+        "ticker": "NVDA",
+        "shares": 5.0,
+        "entry_price": 215.33,
+        "current_price": 211.13999938964844,
+        "target_price": "255.0",
+        "stop_loss": "205.0"
+      }
+    ],
+    "alerts": [
+      {
+        "date": "2026-05-30",
+        "ticker": "TEAM",
+        "alert_type": "TARGET_REACHED",
+        "severity": "HIGH",
+        "message": "Price $107.61 reached target $100.68",
+        "current_price": 107.61000061035156,
+        "entry_price": 88.88,
+        "unrealized_pnl_pct": 21.07,
+        "stop_loss": 82.98,
+        "target_price": 100.68
+      },
+      {
+        "date": "2026-05-30",
+        "ticker": "LRCX",
+        "alert_type": "TARGET_REACHED",
+        "severity": "HIGH",
+        "message": "Price $318.18 reached target $312.00",
+        "current_price": 318.17999267578125,
+        "entry_price": 284.72,
+        "unrealized_pnl_pct": 11.75,
+        "stop_loss": 284.72,
+        "target_price": 312.0
+      }
+    ]
+  },
+  {
+    "date": "2026-06-03",
+    "position_count": 5,
+    "alert_count": 1,
+    "high_alert_count": 1,
+    "positions": [
+      {
+        "ticker": "TSM",
+        "shares": 3.0,
+        "entry_price": 402.46,
+        "current_price": 446.69000244140625,
+        "target_price": "428.87",
+        "stop_loss": "389.25"
+      },
+      {
+        "ticker": "TEAM",
+        "shares": 5.0,
+        "entry_price": 88.88,
+        "current_price": 109.0999984741211,
+        "target_price": "120.0",
+        "stop_loss": "99.0"
+      },
+      {
+        "ticker": "LRCX",
+        "shares": 2.0,
+        "entry_price": 284.72,
+        "current_price": 334.4100036621094,
+        "target_price": "335.0",
+        "stop_loss": "305.0"
+      },
+      {
+        "ticker": "NVDA",
+        "shares": 5.0,
+        "entry_price": 215.33,
+        "current_price": 222.82000732421875,
+        "target_price": "255.0",
+        "stop_loss": "205.0"
+      },
+      {
+        "ticker": "VRT",
+        "shares": 4.0,
+        "entry_price": 315.71,
+        "current_price": 334.489990234375,
+        "target_price": "355.0",
+        "stop_loss": "296.0"
+      }
+    ],
+    "alerts": [
+      {
+        "date": "2026-06-03",
+        "ticker": "TSM",
+        "alert_type": "TARGET_REACHED",
+        "severity": "HIGH",
+        "message": "Price $446.69 reached target $428.87",
+        "current_price": 446.69000244140625,
+        "entry_price": 402.46,
+        "unrealized_pnl_pct": 10.99,
+        "stop_loss": 389.25,
+        "target_price": 428.87
+      }
+    ]
   }
 ]

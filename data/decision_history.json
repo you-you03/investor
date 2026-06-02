@@ -72,5 +72,103 @@
       "RKLB"
     ],
     "no_trade_week": false
+  },
+  {
+    "date": "2026-05-16",
+    "run_id": "4105f34b-119f-478d-bebb-cc9a64525e1e",
+    "candidates_evaluated": [
+      "NVDA",
+      "AMD",
+      "VG",
+      "MRVL",
+      "INOD"
+    ],
+    "buy_decisions": [
+      "LRCX"
+    ],
+    "pass_decisions": [
+      "NVDA",
+      "AMD",
+      "VG",
+      "MRVL",
+      "INOD"
+    ],
+    "no_trade_week": false
+  },
+  {
+    "date": "2026-05-24",
+    "run_id": "1c812073-444d-48f0-b667-37946f9e9a45",
+    "candidates_evaluated": [
+      "NVDA",
+      "MRVL",
+      "MU"
+    ],
+    "buy_decisions": [
+      "NVDA"
+    ],
+    "pass_decisions": [],
+    "wait_decisions": [
+      "MRVL",
+      "MU"
+    ],
+    "no_trade_week": false,
+    "note": "AVGO FULL_EXIT同日。セクター集中考慮でNVDA 5株(縮小)のみ採用。MRVL=5/28決算待ち、MU=MACD回復待ち。"
+  },
+  {
+    "date": "2026-06-03",
+    "run_id": "0f77866d-252a-45db-943a-e9bb89b18886",
+    "candidates_evaluated": [
+      "LITE",
+      "AMAT",
+      "MRVL",
+      "MU"
+    ],
+    "buy_decisions": [
+      "AMAT"
+    ],
+    "pass_decisions": [
+      "LITE",
+      "MRVL",
+      "MU"
+    ],
+    "hold_cash_decisions": [],
+    "proposal_records": [
+      {
+        "ticker": "AMAT",
+        "action": "BUY",
+        "conviction": "MEDIUM",
+        "position_size_usd": 1005.0,
+        "signal_type": "watchlist_escalate"
+      }
+    ],
+    "pass_records": [
+      {
+        "ticker": "LITE",
+        "score": 7.4,
+        "conviction": "MEDIUM",
+        "entry_price_range": null,
+        "signal_type": null
+      },
+      {
+        "ticker": "MRVL",
+        "score": 7.1,
+        "conviction": "LOW",
+        "entry_price_range": null,
+        "signal_type": null
+      },
+      {
+        "ticker": "MU",
+        "score": 7.0,
+        "conviction": "LOW",
+        "entry_price_range": null,
+        "signal_type": null
+      }
+    ],
+    "proposal_summary": {
+      "buy_count": 1,
+      "pass_count": 3,
+      "hold_cash_count": 0
+    },
+    "no_trade_week": false
   }
 ]

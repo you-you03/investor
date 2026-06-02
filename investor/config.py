@@ -4,8 +4,8 @@ from pydantic_settings import BaseSettings
 
 
 class Settings(BaseSettings):
-    # Required
-    slack_webhook_url: str
+    # Notification-only dependency. Read-only and paper flows must work without it.
+    slack_webhook_url: Optional[str] = None
 
     # Optional API Keys
     anthropic_api_key: Optional[str] = None

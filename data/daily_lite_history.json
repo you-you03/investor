@@ -1,0 +1,1600 @@
+{
+  "runs": [
+    {
+      "run_id": "d0629e49-d710-4437-854d-9a0c4dcf710f",
+      "date": "2026-05-31",
+      "macro_context": {
+        "SPY": {
+          "label": "S&P 500 ETF",
+          "price": 756.47998046875,
+          "change_pct": 0.19,
+          "ema_50": 715.96,
+          "above_ema50": true
+        },
+        "QQQ": {
+          "label": "NASDAQ 100 ETF",
+          "price": 738.3099975585938,
+          "change_pct": 0.38
+        },
+        "^VIX": {
+          "label": "VIX Fear Index",
+          "price": 15.319999694824219,
+          "change_pct": -2.79
+        },
+        "TLT": {
+          "label": "20Y Treasury Bond ETF",
+          "price": 85.76000213623047,
+          "change_pct": 0.01
+        },
+        "regime": "NORMAL",
+        "regime_note": "通常リスク環境。通常の判断基準を適用。"
+      },
+      "positions": [
+        {
+          "ticker": "TSM",
+          "shares": 3.0,
+          "entry_price": 402.46,
+          "current_price": 418.45001220703125,
+          "target_price": 428.87,
+          "stop_loss": 389.25,
+          "pnl_pct": 3.97,
+          "change_pct": -1.51,
+          "note": "HIGH確信・スコア8.0。52W高値ブレイク。インサイダー買い(K)。アナリスト目標$463(+15.1%)。Watchlist-Research ESCALATE 2026-04-26"
+        },
+        {
+          "ticker": "TEAM",
+          "shares": 5.0,
+          "entry_price": 88.88,
+          "current_price": 107.61000061035156,
+          "target_price": 120.0,
+          "stop_loss": 99.0,
+          "pnl_pct": 21.07,
+          "change_pct": 13.4,
+          "note": "MEDIUM確信（HIGH→格下げ）。EPS +31%サプライズ（Q1 2026）。BB上限ブレイクアウト。Revenue +31.7% YoY。Options BULLISH PC=0.489。アナリスト目標$142.34(+60%)。$1005枠 | GAAP赤字・D/E=141リスク | NVDAストップアウト後スロット活用 | 【2026-05-30 PARTIAL_EXIT】6株を$107.61で利確。残り5株は継続。新target=$120.00 / new stop=$99.00"
+        },
+        {
+          "ticker": "LRCX",
+          "shares": 2.0,
+          "entry_price": 284.72,
+          "current_price": 318.17999267578125,
+          "target_price": 335.0,
+          "stop_loss": 305.0,
+          "pnl_pct": 11.75,
+          "change_pct": -0.01,
+          "note": "MEDIUM確信・スコア7.6。ESCALATE条件両方成立:①エントリーゾーン$280-295内 ②Options NEUTRAL_BULLISH(pc=0.746)。記録的売上・EPS更新、WFE支出見通し引き上げ。PEG=1.75。$854枠(3株)。 | 【2026-05-23 STAGE1】$305.35で1株売却(25%利確)。ストップ→買値$284.72 | 【2026-05-30 RAISE_TARGET】残り2株を継続。新target=$335.00 / new stop=$305.00"
+        },
+        {
+          "ticker": "NVDA",
+          "shares": 5.0,
+          "entry_price": 215.33,
+          "current_price": 211.13999938964844,
+          "target_price": 255.0,
+          "stop_loss": 205.0,
+          "pnl_pct": -1.95,
+          "change_pct": -1.41,
+          "note": "MEDIUM確信。EMA20($214.60)テスト・PEG=0.66・ROE114%・アナリスト目標$294(+36.6%)。Blackwellランプ継続。セクター集中考慮で縮小(5株)。decision 2026-05-24採用。"
+        },
+        {
+          "ticker": "VRT",
+          "shares": 4.0,
+          "entry_price": 315.71,
+          "current_price": 315.7099914550781,
+          "target_price": 355.0,
+          "stop_loss": 296.0,
+          "pnl_pct": -0.0,
+          "change_pct": -0.25,
+          "note": "HIGH確信。Q1ガイダンス引き上げ後も崩れず、EPS成長+135.7%。AIデータセンター電力・冷却インフラ。本日decision採用。エントリー$305-316、理想は$300前後押し目。4株@$315.71で反映。"
+        }
+      ],
+      "position_alerts": [],
+      "watchlist_results": [
+        {
+          "ticker": "AMAT",
+          "price": 450.05999755859375,
+          "change_pct": -0.22,
+          "reference_price": 348.47,
+          "ref_change_pct": 29.15,
+          "rsi": 62.13,
+          "days_until_earnings": 75,
+          "flags": [
+            "WATCHLIST_MOVED",
+            "RSI_COOLED"
+          ],
+          "primary_flag": "RSI_COOLED",
+          "action": "ESCALATE_TO_DECISION",
+          "pipeline_status": "decision_queued",
+          "next_step": "/decision",
+          "last_score": 7.8
+        },
+        {
+          "ticker": "AMD",
+          "price": 516.0999755859375,
+          "change_pct": -1.07,
+          "reference_price": null,
+          "ref_change_pct": null,
+          "rsi": 76.15,
+          "days_until_earnings": 66,
+          "flags": [],
+          "primary_flag": null,
+          "action": "MAINTAIN",
+          "pipeline_status": "researched",
+          "next_step": null,
+          "last_score": 7.0
+        },
+        {
+          "ticker": "COHR",
+          "price": 361.4700012207031,
+          "change_pct": -4.88,
+          "reference_price": 307.5,
+          "ref_change_pct": 17.55,
+          "rsi": 52.89,
+          "days_until_earnings": -24,
+          "flags": [
+            "WATCHLIST_MOVED"
+          ],
+          "primary_flag": "WATCHLIST_MOVED",
+          "action": "RESEARCH_SEED",
+          "pipeline_status": "research_queued",
+          "next_step": "/research --seed COHR",
+          "last_score": 6.4
+        },
+        {
+          "ticker": "FLY",
+          "price": 46.4900016784668,
+          "change_pct": -9.46,
+          "reference_price": 49.5,
+          "ref_change_pct": -6.08,
+          "rsi": 55.41,
+          "days_until_earnings": 66,
+          "flags": [
+            "WATCHLIST_SETUP"
+          ],
+          "primary_flag": "WATCHLIST_SETUP",
+          "action": "RESEARCH_SEED",
+          "pipeline_status": "research_queued",
+          "next_step": "/research --seed FLY",
+          "last_score": 7.0
+        },
+        {
+          "ticker": "INFQ",
+          "price": 16.219999313354492,
+          "change_pct": -10.39,
+          "reference_price": 16.35,
+          "ref_change_pct": -0.8,
+          "rsi": 59.3,
+          "days_until_earnings": 75,
+          "flags": [
+            "WATCHLIST_SETUP"
+          ],
+          "primary_flag": "WATCHLIST_SETUP",
+          "action": "RESEARCH_SEED",
+          "pipeline_status": "research_queued",
+          "next_step": "/research --seed INFQ",
+          "last_score": 7.2
+        },
+        {
+          "ticker": "LUNR",
+          "price": 43.83000183105469,
+          "change_pct": -4.13,
+          "reference_price": 38.26,
+          "ref_change_pct": 14.56,
+          "rsi": 69.25,
+          "days_until_earnings": 67,
+          "flags": [],
+          "primary_flag": null,
+          "action": "MAINTAIN",
+          "pipeline_status": "researched",
+          "next_step": null,
+          "last_score": 7.0
+        },
+        {
+          "ticker": "MRVL",
+          "price": 205.0,
+          "change_pct": 0.81,
+          "reference_price": 128.49,
+          "ref_change_pct": 59.55,
+          "rsi": 69.6,
+          "days_until_earnings": 89,
+          "flags": [
+            "WATCHLIST_MOVED"
+          ],
+          "primary_flag": "WATCHLIST_MOVED",
+          "action": "RESEARCH_SEED",
+          "pipeline_status": "research_queued",
+          "next_step": "/research --seed MRVL",
+          "last_score": 7.2
+        },
+        {
+          "ticker": "MU",
+          "price": 971.0,
+          "change_pct": 3.75,
+          "reference_price": 366.24,
+          "ref_change_pct": 165.13,
+          "rsi": 78.14,
+          "days_until_earnings": 25,
+          "flags": [
+            "WATCHLIST_MOVED"
+          ],
+          "primary_flag": "WATCHLIST_MOVED",
+          "action": "RESEARCH_SEED",
+          "pipeline_status": "research_queued",
+          "next_step": "/research --seed MU",
+          "last_score": 7.1
+        },
+        {
+          "ticker": "NOK",
+          "price": 14.84000015258789,
+          "change_pct": -3.64,
+          "reference_price": 15.47,
+          "ref_change_pct": -4.07,
+          "rsi": 60.27,
+          "days_until_earnings": 53,
+          "flags": [],
+          "primary_flag": null,
+          "action": "MAINTAIN",
+          "pipeline_status": "watching",
+          "next_step": null,
+          "last_score": 6.4
+        },
+        {
+          "ticker": "QBTS",
+          "price": 30.139999389648438,
+          "change_pct": 2.52,
+          "reference_price": 29.4,
+          "ref_change_pct": 2.52,
+          "rsi": 68.52,
+          "days_until_earnings": 67,
+          "flags": [],
+          "primary_flag": null,
+          "action": "MAINTAIN",
+          "pipeline_status": "watching",
+          "next_step": null,
+          "last_score": 6.7
+        },
+        {
+          "ticker": "RGTI",
+          "price": 25.540000915527344,
+          "change_pct": -5.15,
+          "reference_price": 26.42,
+          "ref_change_pct": -3.33,
+          "rsi": 64.17,
+          "days_until_earnings": -19,
+          "flags": [],
+          "primary_flag": null,
+          "action": "MAINTAIN",
+          "pipeline_status": "watching",
+          "next_step": null,
+          "last_score": 7.0
+        },
+        {
+          "ticker": "RKLB",
+          "price": 143.47999572753906,
+          "change_pct": -2.52,
+          "reference_price": null,
+          "ref_change_pct": null,
+          "rsi": 67.94,
+          "days_until_earnings": 68,
+          "flags": [],
+          "primary_flag": null,
+          "action": "MAINTAIN",
+          "pipeline_status": "researched",
+          "next_step": null,
+          "last_score": 6.8
+        }
+      ],
+      "research_candidates": [
+        {
+          "ticker": "BEAM",
+          "score": 6.5,
+          "price": 32.93000030517578,
+          "change_pct": 1.36,
+          "rsi": 62.37,
+          "reason": "day change +1.4%; RSI 62.4 in trend zone; MACD positive",
+          "next_step": "/research --seed BEAM"
+        },
+        {
+          "ticker": "MDB",
+          "score": 5.75,
+          "price": 335.54998779296875,
+          "change_pct": 2.99,
+          "rsi": 63.83,
+          "reason": "day change +3.0%; RSI 63.8 in trend zone; MACD positive",
+          "next_step": "/research --seed MDB"
+        },
+        {
+          "ticker": "NET",
+          "score": 5.75,
+          "price": 241.82000732421875,
+          "change_pct": 5.68,
+          "rsi": 63.54,
+          "reason": "day change +5.7%; RSI 63.5 in trend zone; MACD positive",
+          "next_step": "/research --seed NET"
+        },
+        {
+          "ticker": "VEEV",
+          "score": 5.75,
+          "price": 174.33999633789062,
+          "change_pct": 4.71,
+          "rsi": 61.54,
+          "reason": "day change +4.7%; RSI 61.5 in trend zone; MACD positive",
+          "next_step": "/research --seed VEEV"
+        },
+        {
+          "ticker": "AXON",
+          "score": 5.75,
+          "price": 448.7200012207031,
+          "change_pct": 1.47,
+          "rsi": 64.9,
+          "reason": "day change +1.5%; RSI 64.9 in trend zone; MACD positive",
+          "next_step": "/research --seed AXON"
+        }
+      ],
+      "pending_actions": [
+        {
+          "ticker": "AMAT",
+          "type": "entry_decision",
+          "detail": "RSI_COOLED",
+          "command": "/decision"
+        },
+        {
+          "ticker": "COHR",
+          "type": "watchlist_seed",
+          "detail": "WATCHLIST_MOVED",
+          "command": "/research --seed COHR"
+        },
+        {
+          "ticker": "FLY",
+          "type": "watchlist_seed",
+          "detail": "WATCHLIST_SETUP",
+          "command": "/research --seed FLY"
+        },
+        {
+          "ticker": "INFQ",
+          "type": "watchlist_seed",
+          "detail": "WATCHLIST_SETUP",
+          "command": "/research --seed INFQ"
+        },
+        {
+          "ticker": "MRVL",
+          "type": "watchlist_seed",
+          "detail": "WATCHLIST_MOVED",
+          "command": "/research --seed MRVL"
+        },
+        {
+          "ticker": "MU",
+          "type": "watchlist_seed",
+          "detail": "WATCHLIST_MOVED",
+          "command": "/research --seed MU"
+        },
+        {
+          "ticker": "BEAM",
+          "type": "market_seed",
+          "detail": "score=6.5",
+          "command": "/research --seed BEAM"
+        },
+        {
+          "ticker": "MDB",
+          "type": "market_seed",
+          "detail": "score=5.75",
+          "command": "/research --seed MDB"
+        },
+        {
+          "ticker": "NET",
+          "type": "market_seed",
+          "detail": "score=5.75",
+          "command": "/research --seed NET"
+        },
+        {
+          "ticker": "VEEV",
+          "type": "market_seed",
+          "detail": "score=5.75",
+          "command": "/research --seed VEEV"
+        },
+        {
+          "ticker": "AXON",
+          "type": "market_seed",
+          "detail": "score=5.75",
+          "command": "/research --seed AXON"
+        }
+      ],
+      "report_path": "reports/daily/daily_lite_2026-05-31.md"
+    },
+    {
+      "run_id": "b434be66-9aaf-4fbe-ba39-9b1df6b0e8b8",
+      "date": "2026-05-31",
+      "macro_context": {
+        "SPY": {
+          "label": "S&P 500 ETF",
+          "price": 756.47998046875,
+          "change_pct": 0.19,
+          "ema_50": 715.96,
+          "above_ema50": true
+        },
+        "QQQ": {
+          "label": "NASDAQ 100 ETF",
+          "price": 738.3099975585938,
+          "change_pct": 0.38
+        },
+        "^VIX": {
+          "label": "VIX Fear Index",
+          "price": 15.319999694824219,
+          "change_pct": -2.79
+        },
+        "TLT": {
+          "label": "20Y Treasury Bond ETF",
+          "price": 85.76000213623047,
+          "change_pct": 0.01
+        },
+        "regime": "NORMAL",
+        "regime_note": "通常リスク環境。通常の判断基準を適用。"
+      },
+      "positions": [
+        {
+          "ticker": "TSM",
+          "shares": 3.0,
+          "entry_price": 402.46,
+          "current_price": 418.45001220703125,
+          "target_price": 428.87,
+          "stop_loss": 389.25,
+          "pnl_pct": 3.97,
+          "change_pct": -1.51,
+          "note": "HIGH確信・スコア8.0。52W高値ブレイク。インサイダー買い(K)。アナリスト目標$463(+15.1%)。Watchlist-Research ESCALATE 2026-04-26"
+        },
+        {
+          "ticker": "TEAM",
+          "shares": 5.0,
+          "entry_price": 88.88,
+          "current_price": 107.61000061035156,
+          "target_price": 120.0,
+          "stop_loss": 99.0,
+          "pnl_pct": 21.07,
+          "change_pct": 13.4,
+          "note": "MEDIUM確信（HIGH→格下げ）。EPS +31%サプライズ（Q1 2026）。BB上限ブレイクアウト。Revenue +31.7% YoY。Options BULLISH PC=0.489。アナリスト目標$142.34(+60%)。$1005枠 | GAAP赤字・D/E=141リスク | NVDAストップアウト後スロット活用 | 【2026-05-30 PARTIAL_EXIT】6株を$107.61で利確。残り5株は継続。新target=$120.00 / new stop=$99.00"
+        },
+        {
+          "ticker": "LRCX",
+          "shares": 2.0,
+          "entry_price": 284.72,
+          "current_price": 318.17999267578125,
+          "target_price": 335.0,
+          "stop_loss": 305.0,
+          "pnl_pct": 11.75,
+          "change_pct": -0.01,
+          "note": "MEDIUM確信・スコア7.6。ESCALATE条件両方成立:①エントリーゾーン$280-295内 ②Options NEUTRAL_BULLISH(pc=0.746)。記録的売上・EPS更新、WFE支出見通し引き上げ。PEG=1.75。$854枠(3株)。 | 【2026-05-23 STAGE1】$305.35で1株売却(25%利確)。ストップ→買値$284.72 | 【2026-05-30 RAISE_TARGET】残り2株を継続。新target=$335.00 / new stop=$305.00"
+        },
+        {
+          "ticker": "NVDA",
+          "shares": 5.0,
+          "entry_price": 215.33,
+          "current_price": 211.13999938964844,
+          "target_price": 255.0,
+          "stop_loss": 205.0,
+          "pnl_pct": -1.95,
+          "change_pct": -1.41,
+          "note": "MEDIUM確信。EMA20($214.60)テスト・PEG=0.66・ROE114%・アナリスト目標$294(+36.6%)。Blackwellランプ継続。セクター集中考慮で縮小(5株)。decision 2026-05-24採用。"
+        },
+        {
+          "ticker": "VRT",
+          "shares": 4.0,
+          "entry_price": 315.71,
+          "current_price": 315.7099914550781,
+          "target_price": 355.0,
+          "stop_loss": 296.0,
+          "pnl_pct": -0.0,
+          "change_pct": -0.25,
+          "note": "HIGH確信。Q1ガイダンス引き上げ後も崩れず、EPS成長+135.7%。AIデータセンター電力・冷却インフラ。本日decision採用。エントリー$305-316、理想は$300前後押し目。4株@$315.71で反映。"
+        }
+      ],
+      "position_alerts": [],
+      "watchlist_results": [
+        {
+          "ticker": "AMAT",
+          "price": 450.05999755859375,
+          "change_pct": -0.22,
+          "reference_price": 348.47,
+          "ref_change_pct": 29.15,
+          "rsi": 62.13,
+          "days_until_earnings": 75,
+          "flags": [
+            "WATCHLIST_MOVED",
+            "RSI_COOLED"
+          ],
+          "primary_flag": "RSI_COOLED",
+          "action": "ESCALATE_TO_DECISION",
+          "pipeline_status": "decision_queued",
+          "next_step": "/decision",
+          "last_score": 7.8
+        },
+        {
+          "ticker": "AMD",
+          "price": 516.0999755859375,
+          "change_pct": -1.07,
+          "reference_price": null,
+          "ref_change_pct": null,
+          "rsi": 76.15,
+          "days_until_earnings": 66,
+          "flags": [],
+          "primary_flag": null,
+          "action": "MAINTAIN",
+          "pipeline_status": "researched",
+          "next_step": null,
+          "last_score": 7.0
+        },
+        {
+          "ticker": "COHR",
+          "price": 361.4700012207031,
+          "change_pct": -4.88,
+          "reference_price": 307.5,
+          "ref_change_pct": 17.55,
+          "rsi": 52.89,
+          "days_until_earnings": -24,
+          "flags": [
+            "WATCHLIST_MOVED"
+          ],
+          "primary_flag": "WATCHLIST_MOVED",
+          "action": "RESEARCH_SEED",
+          "pipeline_status": "research_queued",
+          "next_step": "/research --seed COHR",
+          "last_score": 6.4
+        },
+        {
+          "ticker": "FLY",
+          "price": 46.4900016784668,
+          "change_pct": -9.46,
+          "reference_price": 49.5,
+          "ref_change_pct": -6.08,
+          "rsi": 55.41,
+          "days_until_earnings": 66,
+          "flags": [
+            "WATCHLIST_SETUP"
+          ],
+          "primary_flag": "WATCHLIST_SETUP",
+          "action": "RESEARCH_SEED",
+          "pipeline_status": "research_queued",
+          "next_step": "/research --seed FLY",
+          "last_score": 7.0
+        },
+        {
+          "ticker": "INFQ",
+          "price": 16.219999313354492,
+          "change_pct": -10.39,
+          "reference_price": 16.35,
+          "ref_change_pct": -0.8,
+          "rsi": 59.3,
+          "days_until_earnings": 75,
+          "flags": [
+            "WATCHLIST_SETUP"
+          ],
+          "primary_flag": "WATCHLIST_SETUP",
+          "action": "RESEARCH_SEED",
+          "pipeline_status": "research_queued",
+          "next_step": "/research --seed INFQ",
+          "last_score": 7.2
+        },
+        {
+          "ticker": "LUNR",
+          "price": 43.83000183105469,
+          "change_pct": -4.13,
+          "reference_price": 38.26,
+          "ref_change_pct": 14.56,
+          "rsi": 69.25,
+          "days_until_earnings": 67,
+          "flags": [],
+          "primary_flag": null,
+          "action": "MAINTAIN",
+          "pipeline_status": "researched",
+          "next_step": null,
+          "last_score": 7.0
+        },
+        {
+          "ticker": "MRVL",
+          "price": 205.0,
+          "change_pct": 0.81,
+          "reference_price": 128.49,
+          "ref_change_pct": 59.55,
+          "rsi": 69.6,
+          "days_until_earnings": 89,
+          "flags": [
+            "WATCHLIST_MOVED"
+          ],
+          "primary_flag": "WATCHLIST_MOVED",
+          "action": "RESEARCH_SEED",
+          "pipeline_status": "research_queued",
+          "next_step": "/research --seed MRVL",
+          "last_score": 7.2
+        },
+        {
+          "ticker": "MU",
+          "price": 971.0,
+          "change_pct": 3.75,
+          "reference_price": 366.24,
+          "ref_change_pct": 165.13,
+          "rsi": 78.14,
+          "days_until_earnings": 25,
+          "flags": [
+            "WATCHLIST_MOVED"
+          ],
+          "primary_flag": "WATCHLIST_MOVED",
+          "action": "RESEARCH_SEED",
+          "pipeline_status": "research_queued",
+          "next_step": "/research --seed MU",
+          "last_score": 7.1
+        },
+        {
+          "ticker": "NOK",
+          "price": 14.84000015258789,
+          "change_pct": -3.64,
+          "reference_price": 15.47,
+          "ref_change_pct": -4.07,
+          "rsi": 60.27,
+          "days_until_earnings": 53,
+          "flags": [],
+          "primary_flag": null,
+          "action": "MAINTAIN",
+          "pipeline_status": "watching",
+          "next_step": null,
+          "last_score": 6.4
+        },
+        {
+          "ticker": "QBTS",
+          "price": 30.139999389648438,
+          "change_pct": 2.52,
+          "reference_price": 29.4,
+          "ref_change_pct": 2.52,
+          "rsi": 68.52,
+          "days_until_earnings": 67,
+          "flags": [],
+          "primary_flag": null,
+          "action": "MAINTAIN",
+          "pipeline_status": "watching",
+          "next_step": null,
+          "last_score": 6.7
+        },
+        {
+          "ticker": "RGTI",
+          "price": 25.540000915527344,
+          "change_pct": -5.15,
+          "reference_price": 26.42,
+          "ref_change_pct": -3.33,
+          "rsi": 64.17,
+          "days_until_earnings": -19,
+          "flags": [],
+          "primary_flag": null,
+          "action": "MAINTAIN",
+          "pipeline_status": "watching",
+          "next_step": null,
+          "last_score": 7.0
+        },
+        {
+          "ticker": "RKLB",
+          "price": 143.47999572753906,
+          "change_pct": -2.52,
+          "reference_price": null,
+          "ref_change_pct": null,
+          "rsi": 67.94,
+          "days_until_earnings": 68,
+          "flags": [],
+          "primary_flag": null,
+          "action": "MAINTAIN",
+          "pipeline_status": "researched",
+          "next_step": null,
+          "last_score": 6.8
+        }
+      ],
+      "research_candidates": [
+        {
+          "ticker": "BEAM",
+          "score": 6.5,
+          "price": 32.93000030517578,
+          "change_pct": 1.36,
+          "rsi": 62.37,
+          "reason": "day change +1.4%; RSI 62.4 in trend zone; MACD positive",
+          "next_step": "/research --seed BEAM"
+        },
+        {
+          "ticker": "MDB",
+          "score": 5.75,
+          "price": 335.54998779296875,
+          "change_pct": 2.99,
+          "rsi": 63.83,
+          "reason": "day change +3.0%; RSI 63.8 in trend zone; MACD positive",
+          "next_step": "/research --seed MDB"
+        },
+        {
+          "ticker": "NET",
+          "score": 5.75,
+          "price": 241.82000732421875,
+          "change_pct": 5.68,
+          "rsi": 63.54,
+          "reason": "day change +5.7%; RSI 63.5 in trend zone; MACD positive",
+          "next_step": "/research --seed NET"
+        },
+        {
+          "ticker": "VEEV",
+          "score": 5.75,
+          "price": 174.33999633789062,
+          "change_pct": 4.71,
+          "rsi": 61.54,
+          "reason": "day change +4.7%; RSI 61.5 in trend zone; MACD positive",
+          "next_step": "/research --seed VEEV"
+        },
+        {
+          "ticker": "AXON",
+          "score": 5.75,
+          "price": 448.7200012207031,
+          "change_pct": 1.47,
+          "rsi": 64.9,
+          "reason": "day change +1.5%; RSI 64.9 in trend zone; MACD positive",
+          "next_step": "/research --seed AXON"
+        }
+      ],
+      "pending_actions": [
+        {
+          "ticker": "AMAT",
+          "type": "entry_decision",
+          "detail": "RSI_COOLED",
+          "command": "/decision"
+        },
+        {
+          "ticker": "COHR",
+          "type": "watchlist_seed",
+          "detail": "WATCHLIST_MOVED",
+          "command": "/research --seed COHR"
+        },
+        {
+          "ticker": "FLY",
+          "type": "watchlist_seed",
+          "detail": "WATCHLIST_SETUP",
+          "command": "/research --seed FLY"
+        },
+        {
+          "ticker": "INFQ",
+          "type": "watchlist_seed",
+          "detail": "WATCHLIST_SETUP",
+          "command": "/research --seed INFQ"
+        },
+        {
+          "ticker": "MRVL",
+          "type": "watchlist_seed",
+          "detail": "WATCHLIST_MOVED",
+          "command": "/research --seed MRVL"
+        },
+        {
+          "ticker": "MU",
+          "type": "watchlist_seed",
+          "detail": "WATCHLIST_MOVED",
+          "command": "/research --seed MU"
+        },
+        {
+          "ticker": "BEAM",
+          "type": "market_seed",
+          "detail": "score=6.5",
+          "command": "/research --seed BEAM"
+        },
+        {
+          "ticker": "MDB",
+          "type": "market_seed",
+          "detail": "score=5.75",
+          "command": "/research --seed MDB"
+        },
+        {
+          "ticker": "NET",
+          "type": "market_seed",
+          "detail": "score=5.75",
+          "command": "/research --seed NET"
+        },
+        {
+          "ticker": "VEEV",
+          "type": "market_seed",
+          "detail": "score=5.75",
+          "command": "/research --seed VEEV"
+        },
+        {
+          "ticker": "AXON",
+          "type": "market_seed",
+          "detail": "score=5.75",
+          "command": "/research --seed AXON"
+        }
+      ],
+      "report_path": "reports/daily/daily_lite_2026-05-31.md"
+    },
+    {
+      "run_id": "7d59fe5a-f743-4716-b4be-efb47b3a2432",
+      "date": "2026-05-31",
+      "macro_context": {
+        "SPY": {
+          "label": "S&P 500 ETF",
+          "price": 756.47998046875,
+          "change_pct": 0.19,
+          "ema_50": 715.96,
+          "above_ema50": true
+        },
+        "QQQ": {
+          "label": "NASDAQ 100 ETF",
+          "price": 738.3099975585938,
+          "change_pct": 0.38
+        },
+        "^VIX": {
+          "label": "VIX Fear Index",
+          "price": 15.319999694824219,
+          "change_pct": -2.79
+        },
+        "TLT": {
+          "label": "20Y Treasury Bond ETF",
+          "price": 85.76000213623047,
+          "change_pct": 0.01
+        },
+        "regime": "NORMAL",
+        "regime_note": "通常リスク環境。通常の判断基準を適用。"
+      },
+      "positions": [
+        {
+          "ticker": "TSM",
+          "shares": 3.0,
+          "entry_price": 402.46,
+          "current_price": 418.45001220703125,
+          "target_price": 428.87,
+          "stop_loss": 389.25,
+          "pnl_pct": 3.97,
+          "change_pct": -1.51,
+          "note": "HIGH確信・スコア8.0。52W高値ブレイク。インサイダー買い(K)。アナリスト目標$463(+15.1%)。Watchlist-Research ESCALATE 2026-04-26"
+        },
+        {
+          "ticker": "TEAM",
+          "shares": 5.0,
+          "entry_price": 88.88,
+          "current_price": 107.61000061035156,
+          "target_price": 120.0,
+          "stop_loss": 99.0,
+          "pnl_pct": 21.07,
+          "change_pct": 13.4,
+          "note": "MEDIUM確信（HIGH→格下げ）。EPS +31%サプライズ（Q1 2026）。BB上限ブレイクアウト。Revenue +31.7% YoY。Options BULLISH PC=0.489。アナリスト目標$142.34(+60%)。$1005枠 | GAAP赤字・D/E=141リスク | NVDAストップアウト後スロット活用 | 【2026-05-30 PARTIAL_EXIT】6株を$107.61で利確。残り5株は継続。新target=$120.00 / new stop=$99.00"
+        },
+        {
+          "ticker": "LRCX",
+          "shares": 2.0,
+          "entry_price": 284.72,
+          "current_price": 318.17999267578125,
+          "target_price": 335.0,
+          "stop_loss": 305.0,
+          "pnl_pct": 11.75,
+          "change_pct": -0.01,
+          "note": "MEDIUM確信・スコア7.6。ESCALATE条件両方成立:①エントリーゾーン$280-295内 ②Options NEUTRAL_BULLISH(pc=0.746)。記録的売上・EPS更新、WFE支出見通し引き上げ。PEG=1.75。$854枠(3株)。 | 【2026-05-23 STAGE1】$305.35で1株売却(25%利確)。ストップ→買値$284.72 | 【2026-05-30 RAISE_TARGET】残り2株を継続。新target=$335.00 / new stop=$305.00"
+        },
+        {
+          "ticker": "NVDA",
+          "shares": 5.0,
+          "entry_price": 215.33,
+          "current_price": 211.13999938964844,
+          "target_price": 255.0,
+          "stop_loss": 205.0,
+          "pnl_pct": -1.95,
+          "change_pct": -1.41,
+          "note": "MEDIUM確信。EMA20($214.60)テスト・PEG=0.66・ROE114%・アナリスト目標$294(+36.6%)。Blackwellランプ継続。セクター集中考慮で縮小(5株)。decision 2026-05-24採用。"
+        },
+        {
+          "ticker": "VRT",
+          "shares": 4.0,
+          "entry_price": 315.71,
+          "current_price": 315.7099914550781,
+          "target_price": 355.0,
+          "stop_loss": 296.0,
+          "pnl_pct": -0.0,
+          "change_pct": -0.25,
+          "note": "HIGH確信。Q1ガイダンス引き上げ後も崩れず、EPS成長+135.7%。AIデータセンター電力・冷却インフラ。本日decision採用。エントリー$305-316、理想は$300前後押し目。4株@$315.71で反映。"
+        }
+      ],
+      "position_alerts": [],
+      "watchlist_results": [
+        {
+          "ticker": "AMAT",
+          "price": 450.05999755859375,
+          "change_pct": -0.22,
+          "reference_price": 348.47,
+          "ref_change_pct": 29.15,
+          "rsi": 62.13,
+          "days_until_earnings": 75,
+          "flags": [
+            "WATCHLIST_MOVED",
+            "RSI_COOLED"
+          ],
+          "primary_flag": "RSI_COOLED",
+          "action": "ESCALATE_TO_DECISION",
+          "pipeline_status": "decision_queued",
+          "next_step": "/decision",
+          "last_score": 7.8
+        },
+        {
+          "ticker": "AMD",
+          "price": 516.0999755859375,
+          "change_pct": -1.07,
+          "reference_price": null,
+          "ref_change_pct": null,
+          "rsi": 76.15,
+          "days_until_earnings": 66,
+          "flags": [],
+          "primary_flag": null,
+          "action": "MAINTAIN",
+          "pipeline_status": "researched",
+          "next_step": null,
+          "last_score": 7.0
+        },
+        {
+          "ticker": "COHR",
+          "price": 361.4700012207031,
+          "change_pct": -4.88,
+          "reference_price": 307.5,
+          "ref_change_pct": 17.55,
+          "rsi": 52.89,
+          "days_until_earnings": -24,
+          "flags": [
+            "WATCHLIST_MOVED"
+          ],
+          "primary_flag": "WATCHLIST_MOVED",
+          "action": "RESEARCH_SEED",
+          "pipeline_status": "research_queued",
+          "next_step": "/research --seed COHR",
+          "last_score": 6.4
+        },
+        {
+          "ticker": "FLY",
+          "price": 46.4900016784668,
+          "change_pct": -9.46,
+          "reference_price": 49.5,
+          "ref_change_pct": -6.08,
+          "rsi": 55.41,
+          "days_until_earnings": 66,
+          "flags": [
+            "WATCHLIST_SETUP"
+          ],
+          "primary_flag": "WATCHLIST_SETUP",
+          "action": "RESEARCH_SEED",
+          "pipeline_status": "research_queued",
+          "next_step": "/research --seed FLY",
+          "last_score": 7.0
+        },
+        {
+          "ticker": "INFQ",
+          "price": 16.219999313354492,
+          "change_pct": -10.39,
+          "reference_price": 16.35,
+          "ref_change_pct": -0.8,
+          "rsi": 59.3,
+          "days_until_earnings": 75,
+          "flags": [
+            "WATCHLIST_SETUP"
+          ],
+          "primary_flag": "WATCHLIST_SETUP",
+          "action": "RESEARCH_SEED",
+          "pipeline_status": "research_queued",
+          "next_step": "/research --seed INFQ",
+          "last_score": 7.2
+        },
+        {
+          "ticker": "LUNR",
+          "price": 43.83000183105469,
+          "change_pct": -4.13,
+          "reference_price": 38.26,
+          "ref_change_pct": 14.56,
+          "rsi": 69.25,
+          "days_until_earnings": 67,
+          "flags": [],
+          "primary_flag": null,
+          "action": "MAINTAIN",
+          "pipeline_status": "researched",
+          "next_step": null,
+          "last_score": 7.0
+        },
+        {
+          "ticker": "MRVL",
+          "price": 205.0,
+          "change_pct": 0.81,
+          "reference_price": 128.49,
+          "ref_change_pct": 59.55,
+          "rsi": 69.6,
+          "days_until_earnings": 89,
+          "flags": [
+            "WATCHLIST_MOVED"
+          ],
+          "primary_flag": "WATCHLIST_MOVED",
+          "action": "RESEARCH_SEED",
+          "pipeline_status": "research_queued",
+          "next_step": "/research --seed MRVL",
+          "last_score": 7.2
+        },
+        {
+          "ticker": "MU",
+          "price": 971.0,
+          "change_pct": 3.75,
+          "reference_price": 366.24,
+          "ref_change_pct": 165.13,
+          "rsi": 78.14,
+          "days_until_earnings": 25,
+          "flags": [
+            "WATCHLIST_MOVED"
+          ],
+          "primary_flag": "WATCHLIST_MOVED",
+          "action": "RESEARCH_SEED",
+          "pipeline_status": "research_queued",
+          "next_step": "/research --seed MU",
+          "last_score": 7.1
+        },
+        {
+          "ticker": "NOK",
+          "price": 14.84000015258789,
+          "change_pct": -3.64,
+          "reference_price": 15.47,
+          "ref_change_pct": -4.07,
+          "rsi": 60.27,
+          "days_until_earnings": 53,
+          "flags": [],
+          "primary_flag": null,
+          "action": "MAINTAIN",
+          "pipeline_status": "watching",
+          "next_step": null,
+          "last_score": 6.4
+        },
+        {
+          "ticker": "QBTS",
+          "price": 30.139999389648438,
+          "change_pct": 2.52,
+          "reference_price": 29.4,
+          "ref_change_pct": 2.52,
+          "rsi": 68.52,
+          "days_until_earnings": 67,
+          "flags": [],
+          "primary_flag": null,
+          "action": "MAINTAIN",
+          "pipeline_status": "watching",
+          "next_step": null,
+          "last_score": 6.7
+        },
+        {
+          "ticker": "RGTI",
+          "price": 25.540000915527344,
+          "change_pct": -5.15,
+          "reference_price": 26.42,
+          "ref_change_pct": -3.33,
+          "rsi": 64.17,
+          "days_until_earnings": -19,
+          "flags": [],
+          "primary_flag": null,
+          "action": "MAINTAIN",
+          "pipeline_status": "watching",
+          "next_step": null,
+          "last_score": 7.0
+        },
+        {
+          "ticker": "RKLB",
+          "price": 143.47999572753906,
+          "change_pct": -2.52,
+          "reference_price": null,
+          "ref_change_pct": null,
+          "rsi": 67.94,
+          "days_until_earnings": 68,
+          "flags": [],
+          "primary_flag": null,
+          "action": "MAINTAIN",
+          "pipeline_status": "researched",
+          "next_step": null,
+          "last_score": 6.8
+        }
+      ],
+      "research_candidates": [
+        {
+          "ticker": "BEAM",
+          "score": 6.5,
+          "price": 32.93000030517578,
+          "change_pct": 1.36,
+          "rsi": 62.37,
+          "reason": "day change +1.4%; RSI 62.4 in trend zone; MACD positive",
+          "next_step": "/research --seed BEAM"
+        },
+        {
+          "ticker": "MDB",
+          "score": 5.75,
+          "price": 335.54998779296875,
+          "change_pct": 2.99,
+          "rsi": 63.83,
+          "reason": "day change +3.0%; RSI 63.8 in trend zone; MACD positive",
+          "next_step": "/research --seed MDB"
+        },
+        {
+          "ticker": "NET",
+          "score": 5.75,
+          "price": 241.82000732421875,
+          "change_pct": 5.68,
+          "rsi": 63.54,
+          "reason": "day change +5.7%; RSI 63.5 in trend zone; MACD positive",
+          "next_step": "/research --seed NET"
+        },
+        {
+          "ticker": "VEEV",
+          "score": 5.75,
+          "price": 174.33999633789062,
+          "change_pct": 4.71,
+          "rsi": 61.54,
+          "reason": "day change +4.7%; RSI 61.5 in trend zone; MACD positive",
+          "next_step": "/research --seed VEEV"
+        },
+        {
+          "ticker": "AXON",
+          "score": 5.75,
+          "price": 448.7200012207031,
+          "change_pct": 1.47,
+          "rsi": 64.9,
+          "reason": "day change +1.5%; RSI 64.9 in trend zone; MACD positive",
+          "next_step": "/research --seed AXON"
+        }
+      ],
+      "pending_actions": [
+        {
+          "ticker": "AMAT",
+          "type": "entry_decision",
+          "detail": "RSI_COOLED",
+          "command": "/decision"
+        },
+        {
+          "ticker": "COHR",
+          "type": "watchlist_seed",
+          "detail": "WATCHLIST_MOVED",
+          "command": "/research --seed COHR"
+        },
+        {
+          "ticker": "FLY",
+          "type": "watchlist_seed",
+          "detail": "WATCHLIST_SETUP",
+          "command": "/research --seed FLY"
+        },
+        {
+          "ticker": "INFQ",
+          "type": "watchlist_seed",
+          "detail": "WATCHLIST_SETUP",
+          "command": "/research --seed INFQ"
+        },
+        {
+          "ticker": "MRVL",
+          "type": "watchlist_seed",
+          "detail": "WATCHLIST_MOVED",
+          "command": "/research --seed MRVL"
+        },
+        {
+          "ticker": "MU",
+          "type": "watchlist_seed",
+          "detail": "WATCHLIST_MOVED",
+          "command": "/research --seed MU"
+        },
+        {
+          "ticker": "BEAM",
+          "type": "market_seed",
+          "detail": "score=6.5",
+          "command": "/research --seed BEAM"
+        },
+        {
+          "ticker": "MDB",
+          "type": "market_seed",
+          "detail": "score=5.75",
+          "command": "/research --seed MDB"
+        },
+        {
+          "ticker": "NET",
+          "type": "market_seed",
+          "detail": "score=5.75",
+          "command": "/research --seed NET"
+        },
+        {
+          "ticker": "VEEV",
+          "type": "market_seed",
+          "detail": "score=5.75",
+          "command": "/research --seed VEEV"
+        },
+        {
+          "ticker": "AXON",
+          "type": "market_seed",
+          "detail": "score=5.75",
+          "command": "/research --seed AXON"
+        }
+      ],
+      "report_path": "reports/daily/daily_lite_2026-05-31.md"
+    },
+    {
+      "run_id": "3d18e8ee-a268-4f68-b577-9239269dce03",
+      "date": "2026-05-31",
+      "macro_context": {
+        "SPY": {
+          "label": "S&P 500 ETF",
+          "price": 756.47998046875,
+          "change_pct": 0.19,
+          "ema_50": 715.96,
+          "above_ema50": true
+        },
+        "QQQ": {
+          "label": "NASDAQ 100 ETF",
+          "price": 738.3099975585938,
+          "change_pct": 0.38
+        },
+        "^VIX": {
+          "label": "VIX Fear Index",
+          "price": 15.319999694824219,
+          "change_pct": -2.79
+        },
+        "TLT": {
+          "label": "20Y Treasury Bond ETF",
+          "price": 85.76000213623047,
+          "change_pct": 0.01
+        },
+        "regime": "NORMAL",
+        "regime_note": "通常リスク環境。通常の判断基準を適用。"
+      },
+      "positions": [
+        {
+          "ticker": "TSM",
+          "shares": 3.0,
+          "entry_price": 402.46,
+          "current_price": 418.45001220703125,
+          "target_price": 428.87,
+          "stop_loss": 389.25,
+          "pnl_pct": 3.97,
+          "change_pct": -1.51,
+          "note": "HIGH確信・スコア8.0。52W高値ブレイク。インサイダー買い(K)。アナリスト目標$463(+15.1%)。Watchlist-Research ESCALATE 2026-04-26"
+        },
+        {
+          "ticker": "TEAM",
+          "shares": 5.0,
+          "entry_price": 88.88,
+          "current_price": 107.61000061035156,
+          "target_price": 120.0,
+          "stop_loss": 99.0,
+          "pnl_pct": 21.07,
+          "change_pct": 13.4,
+          "note": "MEDIUM確信（HIGH→格下げ）。EPS +31%サプライズ（Q1 2026）。BB上限ブレイクアウト。Revenue +31.7% YoY。Options BULLISH PC=0.489。アナリスト目標$142.34(+60%)。$1005枠 | GAAP赤字・D/E=141リスク | NVDAストップアウト後スロット活用 | 【2026-05-30 PARTIAL_EXIT】6株を$107.61で利確。残り5株は継続。新target=$120.00 / new stop=$99.00"
+        },
+        {
+          "ticker": "LRCX",
+          "shares": 2.0,
+          "entry_price": 284.72,
+          "current_price": 318.17999267578125,
+          "target_price": 335.0,
+          "stop_loss": 305.0,
+          "pnl_pct": 11.75,
+          "change_pct": -0.01,
+          "note": "MEDIUM確信・スコア7.6。ESCALATE条件両方成立:①エントリーゾーン$280-295内 ②Options NEUTRAL_BULLISH(pc=0.746)。記録的売上・EPS更新、WFE支出見通し引き上げ。PEG=1.75。$854枠(3株)。 | 【2026-05-23 STAGE1】$305.35で1株売却(25%利確)。ストップ→買値$284.72 | 【2026-05-30 RAISE_TARGET】残り2株を継続。新target=$335.00 / new stop=$305.00"
+        },
+        {
+          "ticker": "NVDA",
+          "shares": 5.0,
+          "entry_price": 215.33,
+          "current_price": 211.13999938964844,
+          "target_price": 255.0,
+          "stop_loss": 205.0,
+          "pnl_pct": -1.95,
+          "change_pct": -1.41,
+          "note": "MEDIUM確信。EMA20($214.60)テスト・PEG=0.66・ROE114%・アナリスト目標$294(+36.6%)。Blackwellランプ継続。セクター集中考慮で縮小(5株)。decision 2026-05-24採用。"
+        },
+        {
+          "ticker": "VRT",
+          "shares": 4.0,
+          "entry_price": 315.71,
+          "current_price": 315.7099914550781,
+          "target_price": 355.0,
+          "stop_loss": 296.0,
+          "pnl_pct": -0.0,
+          "change_pct": -0.25,
+          "note": "HIGH確信。Q1ガイダンス引き上げ後も崩れず、EPS成長+135.7%。AIデータセンター電力・冷却インフラ。本日decision採用。エントリー$305-316、理想は$300前後押し目。4株@$315.71で反映。"
+        }
+      ],
+      "position_alerts": [],
+      "watchlist_results": [
+        {
+          "ticker": "AMAT",
+          "price": 450.05999755859375,
+          "change_pct": -0.22,
+          "reference_price": 348.47,
+          "ref_change_pct": 29.15,
+          "rsi": 62.13,
+          "days_until_earnings": 75,
+          "flags": [
+            "WATCHLIST_MOVED",
+            "RSI_COOLED"
+          ],
+          "primary_flag": "RSI_COOLED",
+          "action": "ESCALATE_TO_DECISION",
+          "pipeline_status": "decision_queued",
+          "next_step": "/decision",
+          "last_score": 7.8
+        },
+        {
+          "ticker": "AMD",
+          "price": 516.0999755859375,
+          "change_pct": -1.07,
+          "reference_price": null,
+          "ref_change_pct": null,
+          "rsi": 76.15,
+          "days_until_earnings": 66,
+          "flags": [],
+          "primary_flag": null,
+          "action": "MAINTAIN",
+          "pipeline_status": "researched",
+          "next_step": null,
+          "last_score": 7.0
+        },
+        {
+          "ticker": "COHR",
+          "price": 361.4700012207031,
+          "change_pct": -4.88,
+          "reference_price": 307.5,
+          "ref_change_pct": 17.55,
+          "rsi": 52.89,
+          "days_until_earnings": -24,
+          "flags": [
+            "WATCHLIST_MOVED"
+          ],
+          "primary_flag": "WATCHLIST_MOVED",
+          "action": "RESEARCH_SEED",
+          "pipeline_status": "research_queued",
+          "next_step": "/research --seed COHR",
+          "last_score": 6.4
+        },
+        {
+          "ticker": "FLY",
+          "price": 46.4900016784668,
+          "change_pct": -9.46,
+          "reference_price": 49.5,
+          "ref_change_pct": -6.08,
+          "rsi": 55.41,
+          "days_until_earnings": 66,
+          "flags": [
+            "WATCHLIST_SETUP"
+          ],
+          "primary_flag": "WATCHLIST_SETUP",
+          "action": "RESEARCH_SEED",
+          "pipeline_status": "research_queued",
+          "next_step": "/research --seed FLY",
+          "last_score": 7.0
+        },
+        {
+          "ticker": "INFQ",
+          "price": 16.219999313354492,
+          "change_pct": -10.39,
+          "reference_price": 16.35,
+          "ref_change_pct": -0.8,
+          "rsi": 59.3,
+          "days_until_earnings": 75,
+          "flags": [
+            "WATCHLIST_SETUP"
+          ],
+          "primary_flag": "WATCHLIST_SETUP",
+          "action": "RESEARCH_SEED",
+          "pipeline_status": "research_queued",
+          "next_step": "/research --seed INFQ",
+          "last_score": 7.2
+        },
+        {
+          "ticker": "LUNR",
+          "price": 43.83000183105469,
+          "change_pct": -4.13,
+          "reference_price": 38.26,
+          "ref_change_pct": 14.56,
+          "rsi": 69.25,
+          "days_until_earnings": 67,
+          "flags": [],
+          "primary_flag": null,
+          "action": "MAINTAIN",
+          "pipeline_status": "researched",
+          "next_step": null,
+          "last_score": 7.0
+        },
+        {
+          "ticker": "MRVL",
+          "price": 205.0,
+          "change_pct": 0.81,
+          "reference_price": 128.49,
+          "ref_change_pct": 59.55,
+          "rsi": 69.6,
+          "days_until_earnings": 89,
+          "flags": [
+            "WATCHLIST_MOVED"
+          ],
+          "primary_flag": "WATCHLIST_MOVED",
+          "action": "RESEARCH_SEED",
+          "pipeline_status": "research_queued",
+          "next_step": "/research --seed MRVL",
+          "last_score": 7.2
+        },
+        {
+          "ticker": "MU",
+          "price": 971.0,
+          "change_pct": 3.75,
+          "reference_price": 366.24,
+          "ref_change_pct": 165.13,
+          "rsi": 78.14,
+          "days_until_earnings": 25,
+          "flags": [
+            "WATCHLIST_MOVED"
+          ],
+          "primary_flag": "WATCHLIST_MOVED",
+          "action": "RESEARCH_SEED",
+          "pipeline_status": "research_queued",
+          "next_step": "/research --seed MU",
+          "last_score": 7.1
+        },
+        {
+          "ticker": "NOK",
+          "price": 14.84000015258789,
+          "change_pct": -3.64,
+          "reference_price": 15.47,
+          "ref_change_pct": -4.07,
+          "rsi": 60.27,
+          "days_until_earnings": 53,
+          "flags": [],
+          "primary_flag": null,
+          "action": "MAINTAIN",
+          "pipeline_status": "watching",
+          "next_step": null,
+          "last_score": 6.4
+        },
+        {
+          "ticker": "QBTS",
+          "price": 30.139999389648438,
+          "change_pct": 2.52,
+          "reference_price": 29.4,
+          "ref_change_pct": 2.52,
+          "rsi": 68.52,
+          "days_until_earnings": 67,
+          "flags": [],
+          "primary_flag": null,
+          "action": "MAINTAIN",
+          "pipeline_status": "watching",
+          "next_step": null,
+          "last_score": 6.7
+        },
+        {
+          "ticker": "RGTI",
+          "price": 25.540000915527344,
+          "change_pct": -5.15,
+          "reference_price": 26.42,
+          "ref_change_pct": -3.33,
+          "rsi": 64.17,
+          "days_until_earnings": -19,
+          "flags": [],
+          "primary_flag": null,
+          "action": "MAINTAIN",
+          "pipeline_status": "watching",
+          "next_step": null,
+          "last_score": 7.0
+        },
+        {
+          "ticker": "RKLB",
+          "price": 143.47999572753906,
+          "change_pct": -2.52,
+          "reference_price": null,
+          "ref_change_pct": null,
+          "rsi": 67.94,
+          "days_until_earnings": 68,
+          "flags": [],
+          "primary_flag": null,
+          "action": "MAINTAIN",
+          "pipeline_status": "researched",
+          "next_step": null,
+          "last_score": 6.8
+        }
+      ],
+      "research_candidates": [
+        {
+          "ticker": "BEAM",
+          "score": 6.5,
+          "price": 32.93000030517578,
+          "change_pct": 1.36,
+          "rsi": 62.37,
+          "reason": "day change +1.4%; RSI 62.4 in trend zone; MACD positive",
+          "next_step": "/research --seed BEAM"
+        },
+        {
+          "ticker": "NET",
+          "score": 5.75,
+          "price": 241.82000732421875,
+          "change_pct": 5.68,
+          "rsi": 63.54,
+          "reason": "day change +5.7%; RSI 63.5 in trend zone; MACD positive",
+          "next_step": "/research --seed NET"
+        },
+        {
+          "ticker": "MDB",
+          "score": 5.75,
+          "price": 335.54998779296875,
+          "change_pct": 2.99,
+          "rsi": 63.83,
+          "reason": "day change +3.0%; RSI 63.8 in trend zone; MACD positive",
+          "next_step": "/research --seed MDB"
+        },
+        {
+          "ticker": "VEEV",
+          "score": 5.75,
+          "price": 174.33999633789062,
+          "change_pct": 4.71,
+          "rsi": 61.54,
+          "reason": "day change +4.7%; RSI 61.5 in trend zone; MACD positive",
+          "next_step": "/research --seed VEEV"
+        },
+        {
+          "ticker": "AXON",
+          "score": 5.75,
+          "price": 448.7200012207031,
+          "change_pct": 1.47,
+          "rsi": 64.9,
+          "reason": "day change +1.5%; RSI 64.9 in trend zone; MACD positive",
+          "next_step": "/research --seed AXON"
+        }
+      ],
+      "pending_actions": [
+        {
+          "ticker": "AMAT",
+          "type": "entry_decision",
+          "detail": "RSI_COOLED",
+          "command": "/decision"
+        },
+        {
+          "ticker": "COHR",
+          "type": "watchlist_seed",
+          "detail": "WATCHLIST_MOVED",
+          "command": "/research --seed COHR"
+        },
+        {
+          "ticker": "FLY",
+          "type": "watchlist_seed",
+          "detail": "WATCHLIST_SETUP",
+          "command": "/research --seed FLY"
+        },
+        {
+          "ticker": "INFQ",
+          "type": "watchlist_seed",
+          "detail": "WATCHLIST_SETUP",
+          "command": "/research --seed INFQ"
+        },
+        {
+          "ticker": "MRVL",
+          "type": "watchlist_seed",
+          "detail": "WATCHLIST_MOVED",
+          "command": "/research --seed MRVL"
+        },
+        {
+          "ticker": "MU",
+          "type": "watchlist_seed",
+          "detail": "WATCHLIST_MOVED",
+          "command": "/research --seed MU"
+        },
+        {
+          "ticker": "BEAM",
+          "type": "market_seed",
+          "detail": "score=6.5",
+          "command": "/research --seed BEAM"
+        },
+        {
+          "ticker": "NET",
+          "type": "market_seed",
+          "detail": "score=5.75",
+          "command": "/research --seed NET"
+        },
+        {
+          "ticker": "MDB",
+          "type": "market_seed",
+          "detail": "score=5.75",
+          "command": "/research --seed MDB"
+        },
+        {
+          "ticker": "VEEV",
+          "type": "market_seed",
+          "detail": "score=5.75",
+          "command": "/research --seed VEEV"
+        },
+        {
+          "ticker": "AXON",
+          "type": "market_seed",
+          "detail": "score=5.75",
+          "command": "/research --seed AXON"
+        }
+      ],
+      "report_path": "reports/daily/daily_lite_2026-05-31.md"
+    }
+  ]
+}

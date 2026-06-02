@@ -173,6 +173,51 @@ def get_earnings_surprises(min_surprise_pct: float = 5.0) -> str:
     return json.dumps(result)
 
 
+def get_contrarian_screener(
+    rsi_threshold: float = 32.0,
+    ma200_discount: float = 0.92,
+    max_results: int = 20,
+) -> str:
+    """
+    Screen GROWTH_UNIVERSE for oversold contrarian candidates.
+
+    Criteria (all must pass):
+      1. RSI(14) ≤ rsi_threshold (default 32 — deep oversold)
+      2. price ≤ 200-day MA × ma200_discount (default 0.92 = at least -8% below 200MA)
+      3. ≥3 consecutive down-days (close < open)
+      4. Market cap ≥ $500M
+
+    Each result includes contrarian_tag=true and oversold_severity (EXTREME/MODERATE).
+    Use when momentum screener returns 0 candidates, or when seeking sector-diversified
+    entries during a downturn. Tags allow Claude to distinguish these from momentum picks.
+    """
+    result = _yf.get_contrarian_candidates(
+        rsi_threshold=rsi_threshold,
+        ma200_discount=ma200_discount,
+        max_results=max_results,
+    )
+    return json.dumps(result)
+
+
+def get_timeframe_alignment(ticker: str) -> str:
+    """
+    Check whether the daily trend is confirmed by weekly and monthly timeframes.
+
+    Returns:
+      daily_trend:   "up"/"down" (price vs EMA50 daily)
+      weekly_trend:  "up"/"down"/"neutral" (price vs EMA13 weekly)
+      monthly_trend: "up"/"down"/"neutral" (price vs EMA6 monthly)
+      alignment:     ALIGNED_UP / ALIGNED_DOWN / PARTIAL_UP / PARTIAL_DOWN / MIXED
+      tf_warning:    true if daily=up but weekly OR monthly is down
+
+    When tf_warning=true, apply to scoring:
+      - Technical score: −1pt
+      - Conviction cap: MEDIUM (regardless of debate consensus)
+    """
+    result = _yf.get_timeframe_alignment(ticker)
+    return json.dumps(result)
+
+
 # --------------------------------------------------------------------------- #
 #  Local technical computations (pure Python, no external API)
 # --------------------------------------------------------------------------- #

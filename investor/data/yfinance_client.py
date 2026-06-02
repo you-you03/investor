@@ -939,6 +939,257 @@ class YFinanceClient:
         return result
 
     # ------------------------------------------------------------------
+    # Contrarian oversold screener
+    # ------------------------------------------------------------------
+
+    def get_contrarian_candidates(
+        self,
+        universe: list[str] | None = None,
+        max_results: int = 20,
+        rsi_threshold: float = 32.0,
+        ma200_discount: float = 0.92,
+        consecutive_down_days: int = 3,
+    ) -> list[dict]:
+        """
+        Screen for oversold contrarian candidates.
+
+        Criteria (ALL must pass):
+          1. RSI(14) ≤ rsi_threshold (default 32 — deep oversold)
+          2. price ≤ 200-day MA × ma200_discount (default 0.92 — at least -8% below 200MA)
+             Falls back to 52W high × 0.78 when 200d data is unavailable.
+          3. At least `consecutive_down_days` recent bars with close < open
+          4. Market cap ≥ $500M (excludes micro-caps and dead stocks)
+
+        Tags each result with:
+          - `contrarian_tag: true`
+          - `oversold_severity`: EXTREME (RSI<25) / MODERATE (25–32)
+        """
+        if universe is None:
+            universe = GROWTH_UNIVERSE
+
+        cache_key = f"contrarian_{rsi_threshold}_{ma200_discount}_{consecutive_down_days}"
+        cached = cache_store.get(cache_key)
+        if cached is not None:
+            return cached
+
+        def _check(ticker: str) -> dict | None:
+            try:
+                # Fetch 220 days of daily bars for 200-day MA
+                hist = yf.Ticker(ticker).history(period="220d")
+                if hist is None or len(hist) < 30:
+                    return None
+
+                bars = [
+                    {"close": float(row["Close"]), "open": float(row["Open"]), "volume": int(row["Volume"])}
+                    for _, row in hist.iterrows()
+                ]
+
+                # 1. RSI check (14-day)
+                try:
+                    import pandas as pd
+                    import ta.momentum as mom
+                    closes = pd.Series([b["close"] for b in bars])
+                    rsi_val = float(mom.RSIIndicator(closes, window=14).rsi().iloc[-1])
+                    if pd.isna(rsi_val) or rsi_val > rsi_threshold:
+                        return None
+                except Exception:
+                    return None
+
+                # 2. 200-day MA check
+                price = bars[-1]["close"]
+                if len(bars) >= 200:
+                    import pandas as pd
+                    closes_s = pd.Series([b["close"] for b in bars])
+                    ma200 = float(closes_s.rolling(200).mean().iloc[-1])
+                    if price > ma200 * ma200_discount:
+                        return None
+                    ma200_used = round(ma200, 2)
+                    ma200_source = "200d_MA"
+                else:
+                    # Fallback: use 52W high proxy
+                    fi = yf.Ticker(ticker).fast_info
+                    year_high = getattr(fi, "year_high", None)
+                    if not year_high or price > year_high * 0.78:
+                        return None
+                    ma200_used = round(year_high * 0.78, 2)
+                    ma200_source = "52W_high_proxy"
+
+                # 3. Consecutive down-days check
+                recent = bars[-consecutive_down_days:]
+                down_days = sum(1 for b in recent if b["close"] < b["open"])
+                if down_days < consecutive_down_days:
+                    return None
+
+                # 4. Market cap filter
+                fi_check = yf.Ticker(ticker).fast_info
+                mktcap = getattr(fi_check, "market_cap", None)
+                if not mktcap or mktcap < 500_000_000:
+                    return None
+
+                # Build result
+                severity = "EXTREME" if rsi_val < 25 else "MODERATE"
+                pct_below_ma = round((price / ma200_used - 1) * 100, 1)
+
+                return {
+                    "ticker": ticker,
+                    "price": round(price, 2),
+                    "rsi_14": round(rsi_val, 1),
+                    "ma200": ma200_used,
+                    "ma200_source": ma200_source,
+                    "pct_below_ma200": pct_below_ma,
+                    "consecutive_down_days": down_days,
+                    "market_cap": mktcap,
+                    "contrarian_tag": True,
+                    "oversold_severity": severity,
+                }
+            except Exception as e:
+                logger.debug(f"Contrarian check failed for {ticker}: {e}")
+                return None
+
+        results: list[dict] = []
+        with ThreadPoolExecutor(max_workers=6) as executor:
+            futures = {executor.submit(_check, t): t for t in universe}
+            for future in as_completed(futures):
+                r = future.result()
+                if r is not None:
+                    results.append(r)
+
+        # Sort by severity first (EXTREME before MODERATE), then by RSI ascending
+        results.sort(key=lambda x: (0 if x["oversold_severity"] == "EXTREME" else 1, x["rsi_14"]))
+        results = results[:max_results]
+
+        cache_store.set(cache_key, results)
+        return results
+
+    # ------------------------------------------------------------------
+    # Multi-timeframe alignment check
+    # ------------------------------------------------------------------
+
+    def get_timeframe_alignment(self, ticker: str) -> dict:
+        """
+        Check weekly and monthly trend direction to validate daily signals.
+
+        Fetches:
+          - Weekly bars (1y, interval=1wk) → EMA13 weekly
+          - Monthly bars (2y, interval=1mo) → EMA6 monthly
+
+        Returns:
+          daily_trend:   "up" / "down" (price vs EMA50 daily, inferred from snapshot)
+          weekly_trend:  "up" / "down" / "neutral" (price vs EMA13 weekly)
+          monthly_trend: "up" / "down" / "neutral" (price vs EMA6 monthly)
+          alignment:     "ALIGNED" / "PARTIAL" / "MISALIGNED"
+          tf_warning:    true if daily is up but weekly OR monthly is down
+          summary:       human-readable description
+
+        tf_warning == true → apply −1pt to Technical score, cap conviction at MEDIUM.
+        """
+        cache_key = f"tf_align_{ticker.upper()}"
+        cached = cache_store.get(cache_key)
+        if cached is not None:
+            return cached
+
+        result: dict = {"ticker": ticker.upper()}
+
+        try:
+            t = yf.Ticker(ticker)
+
+            # --- Weekly: EMA13 ---
+            weekly = t.history(period="1y", interval="1wk")
+            if weekly is not None and len(weekly) >= 13:
+                w_closes = pd.Series([float(r["Close"]) for _, r in weekly.iterrows()])
+                w_ema13 = float(w_closes.ewm(span=13, adjust=False).mean().iloc[-1])
+                w_price = float(weekly["Close"].iloc[-1])
+                if w_price > w_ema13 * 1.005:
+                    weekly_trend = "up"
+                elif w_price < w_ema13 * 0.995:
+                    weekly_trend = "down"
+                else:
+                    weekly_trend = "neutral"
+                result["weekly_ema13"] = round(w_ema13, 2)
+                result["weekly_price"] = round(w_price, 2)
+            else:
+                weekly_trend = "unknown"
+                result["weekly_note"] = "insufficient weekly bars"
+
+            # --- Monthly: EMA6 ---
+            monthly = t.history(period="2y", interval="1mo")
+            if monthly is not None and len(monthly) >= 6:
+                m_closes = pd.Series([float(r["Close"]) for _, r in monthly.iterrows()])
+                m_ema6 = float(m_closes.ewm(span=6, adjust=False).mean().iloc[-1])
+                m_price = float(monthly["Close"].iloc[-1])
+                if m_price > m_ema6 * 1.005:
+                    monthly_trend = "up"
+                elif m_price < m_ema6 * 0.995:
+                    monthly_trend = "down"
+                else:
+                    monthly_trend = "neutral"
+                result["monthly_ema6"] = round(m_ema6, 2)
+                result["monthly_price"] = round(m_price, 2)
+            else:
+                monthly_trend = "unknown"
+                result["monthly_note"] = "insufficient monthly bars"
+
+            # --- Daily trend: from 60-day bars ---
+            daily_bars = self.get_ohlcv_bars(ticker, days=60)
+            if len(daily_bars) >= 50:
+                d_closes = pd.Series([b["close"] for b in daily_bars])
+                d_ema50 = float(d_closes.ewm(span=50, adjust=False).mean().iloc[-1])
+                d_price = daily_bars[-1]["close"]
+                daily_trend = "up" if d_price > d_ema50 else "down"
+                result["daily_ema50"] = round(d_ema50, 2)
+            else:
+                daily_trend = "unknown"
+
+            # --- Alignment logic ---
+            known_trends = [t for t in [daily_trend, weekly_trend, monthly_trend] if t != "unknown"]
+
+            # tf_warning: daily is up but at least one of weekly/monthly is down
+            tf_warning = (
+                daily_trend == "up"
+                and (weekly_trend == "down" or monthly_trend == "down")
+            )
+
+            up_count = known_trends.count("up")
+            down_count = known_trends.count("down")
+            total = len(known_trends)
+
+            if up_count == total:
+                alignment = "ALIGNED_UP"
+            elif down_count == total:
+                alignment = "ALIGNED_DOWN"
+            elif up_count >= total - 1:
+                alignment = "PARTIAL_UP"
+            elif down_count >= total - 1:
+                alignment = "PARTIAL_DOWN"
+            else:
+                alignment = "MIXED"
+
+            # Summary
+            trend_str = f"daily={daily_trend} weekly={weekly_trend} monthly={monthly_trend}"
+            if tf_warning:
+                summary = f"⚠️ TF不整合: {trend_str} — 日足は上昇だが上位足が下降。確信度キャップとTechnical -1pt適用。"
+            else:
+                summary = f"✅ TF整合: {trend_str}"
+
+            result.update({
+                "daily_trend": daily_trend,
+                "weekly_trend": weekly_trend,
+                "monthly_trend": monthly_trend,
+                "alignment": alignment,
+                "tf_warning": tf_warning,
+                "summary": summary,
+            })
+
+        except Exception as e:
+            logger.warning(f"Timeframe alignment failed for {ticker}: {e}")
+            result["error"] = str(e)
+            result["tf_warning"] = False
+            result["alignment"] = "ERROR"
+
+        cache_store.set(cache_key, result)
+        return result
+
+    # ------------------------------------------------------------------
     # News
     # ------------------------------------------------------------------
 

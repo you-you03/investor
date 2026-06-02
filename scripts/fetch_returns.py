@@ -6,7 +6,7 @@ score_snapshots.json の week1〜week4 マイルストーンのうち、
 target_date <= today かつ fetched_at is None のものを一括更新する。
 
 実行: .venv/bin/python scripts/fetch_returns.py
-cron:  0 8 * * 1  cd "/Users/yutaobayashi/PERSONAL DEV/investor" && .venv/bin/python scripts/fetch_returns.py >> logs/cron.log 2>&1
+cron:  0 8 * * 1  cd "/Users/yutaobayashi/PERSONAL DEV/1_now/investor" && .venv/bin/python scripts/fetch_returns.py >> logs/cron.log 2>&1
 """
 
 import json
