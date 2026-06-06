@@ -44,11 +44,11 @@
       },
       "week4": {
         "target_date": "2026-05-17",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 225.06,
+        "return_pct": 11.5915,
+        "spy_return_pct": 4.0879,
+        "alpha_pct": 7.5036,
+        "fetched_at": "2026-06-06T09:16:44"
       }
     },
     {
@@ -95,11 +95,11 @@
       },
       "week4": {
         "target_date": "2026-05-17",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 370.94,
+        "return_pct": 20.6937,
+        "spy_return_pct": 4.0879,
+        "alpha_pct": 16.6058,
+        "fetched_at": "2026-06-06T09:16:45"
       }
     },
     {
@@ -146,11 +146,11 @@
       },
       "week4": {
         "target_date": "2026-05-17",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 425.19,
+        "return_pct": 4.5875,
+        "spy_return_pct": 4.0879,
+        "alpha_pct": 0.4996,
+        "fetched_at": "2026-06-06T09:16:45"
       }
     },
     {
@@ -197,11 +197,11 @@
       },
       "week4": {
         "target_date": "2026-05-17",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 724.66,
+        "return_pct": 59.2414,
+        "spy_return_pct": 4.0879,
+        "alpha_pct": 55.1535,
+        "fetched_at": "2026-06-06T09:16:45"
       }
     },
     {
@@ -248,11 +248,11 @@
       },
       "week4": {
         "target_date": "2026-05-17",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 284.72,
+        "return_pct": 6.3976,
+        "spy_return_pct": 4.0879,
+        "alpha_pct": 2.3097,
+        "fetched_at": "2026-06-06T09:16:45"
       }
     },
     {
@@ -299,11 +299,11 @@
       },
       "week4": {
         "target_date": "2026-05-17",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 36.94,
+        "return_pct": -18.6344,
+        "spy_return_pct": 4.0879,
+        "alpha_pct": -22.7223,
+        "fetched_at": "2026-06-06T09:16:45"
       }
     },
     {
@@ -350,11 +350,11 @@
       },
       "week4": {
         "target_date": "2026-05-17",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 177.42,
+        "return_pct": 6.5458,
+        "spy_return_pct": 4.0879,
+        "alpha_pct": 2.4579,
+        "fetched_at": "2026-06-06T09:16:45"
       }
     },
     {
@@ -401,11 +401,11 @@
       },
       "week4": {
         "target_date": "2026-05-17",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 176.89,
+        "return_pct": 26.6304,
+        "spy_return_pct": 4.0879,
+        "alpha_pct": 22.5425,
+        "fetched_at": "2026-06-06T09:16:45"
       }
     },
     {
@@ -452,11 +452,11 @@
       },
       "week4": {
         "target_date": "2026-05-17",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 118.05,
+        "return_pct": -6.0411,
+        "spy_return_pct": 4.0879,
+        "alpha_pct": -10.129,
+        "fetched_at": "2026-06-06T09:16:45"
       }
     },
     {
@@ -503,11 +503,11 @@
       },
       "week4": {
         "target_date": "2026-05-17",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 139.68,
+        "return_pct": -14.5479,
+        "spy_return_pct": 4.0879,
+        "alpha_pct": -18.6358,
+        "fetched_at": "2026-06-06T09:16:46"
       }
     },
     {
@@ -554,11 +554,11 @@
       },
       "week4": {
         "target_date": "2026-05-17",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 133.99,
+        "return_pct": -8.4705,
+        "spy_return_pct": 4.0879,
+        "alpha_pct": -12.5584,
+        "fetched_at": "2026-06-06T09:16:46"
       }
     },
     {
@@ -605,11 +605,11 @@
       },
       "week4": {
         "target_date": "2026-05-17",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 25.05,
+        "return_pct": -13.0812,
+        "spy_return_pct": 4.0879,
+        "alpha_pct": -17.1691,
+        "fetched_at": "2026-06-06T09:16:46"
       }
     },
     {
@@ -656,11 +656,11 @@
       },
       "week4": {
         "target_date": "2026-05-17",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 7.88,
+        "return_pct": -3.1941,
+        "spy_return_pct": 4.0879,
+        "alpha_pct": -7.282,
+        "fetched_at": "2026-06-06T09:16:46"
       }
     },
     {
@@ -707,11 +707,11 @@
       },
       "week4": {
         "target_date": "2026-05-17",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 37.02,
+        "return_pct": -17.5501,
+        "spy_return_pct": 4.0879,
+        "alpha_pct": -21.638,
+        "fetched_at": "2026-06-06T09:16:46"
       }
     },
     {
@@ -758,11 +758,11 @@
       },
       "week4": {
         "target_date": "2026-05-17",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 92.34,
+        "return_pct": 251.5036,
+        "spy_return_pct": 4.0879,
+        "alpha_pct": 247.4157,
+        "fetched_at": "2026-06-06T09:16:46"
       }
     },
     {
@@ -809,11 +809,11 @@
       },
       "week4": {
         "target_date": "2026-05-17",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 12.44,
+        "return_pct": -28.5878,
+        "spy_return_pct": 4.0879,
+        "alpha_pct": -32.6757,
+        "fetched_at": "2026-06-06T09:16:46"
       }
     },
     {
@@ -860,11 +860,11 @@
       },
       "week4": {
         "target_date": "2026-05-17",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 12.64,
+        "return_pct": 1.5261,
+        "spy_return_pct": 4.0879,
+        "alpha_pct": -2.5618,
+        "fetched_at": "2026-06-06T09:16:46"
       }
     },
     {
@@ -911,11 +911,11 @@
       },
       "week4": {
         "target_date": "2026-05-17",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 11.23,
+        "return_pct": -11.2253,
+        "spy_return_pct": 4.0879,
+        "alpha_pct": -15.3132,
+        "fetched_at": "2026-06-06T09:16:47"
       }
     },
     {
@@ -962,11 +962,11 @@
       },
       "week4": {
         "target_date": "2026-05-21",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 762.1,
+        "return_pct": 56.3346,
+        "spy_return_pct": 4.8373,
+        "alpha_pct": 51.4973,
+        "fetched_at": "2026-06-06T09:16:47"
       }
     },
     {
@@ -1013,11 +1013,11 @@
       },
       "week4": {
         "target_date": "2026-05-21",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 219.25,
+        "return_pct": 8.2738,
+        "spy_return_pct": 4.8373,
+        "alpha_pct": 3.4365,
+        "fetched_at": "2026-06-06T09:16:47"
       }
     },
     {
@@ -1064,11 +1064,11 @@
       },
       "week4": {
         "target_date": "2026-05-21",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 414.57,
+        "return_pct": -1.9117,
+        "spy_return_pct": 4.8373,
+        "alpha_pct": -6.749,
+        "fetched_at": "2026-06-06T09:16:47"
       }
     },
     {
@@ -1115,11 +1115,11 @@
       },
       "week4": {
         "target_date": "2026-05-21",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 449.59,
+        "return_pct": 48.1546,
+        "spy_return_pct": 4.8373,
+        "alpha_pct": 43.3173,
+        "fetched_at": "2026-06-06T09:16:47"
       }
     },
     {
@@ -1166,11 +1166,11 @@
       },
       "week4": {
         "target_date": "2026-05-21",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 190.69,
+        "return_pct": 21.2115,
+        "spy_return_pct": 4.8373,
+        "alpha_pct": 16.3742,
+        "fetched_at": "2026-06-06T09:16:48"
       }
     },
     {
@@ -1217,11 +1217,11 @@
       },
       "week4": {
         "target_date": "2026-05-21",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 302.24,
+        "return_pct": 13.8166,
+        "spy_return_pct": 4.8373,
+        "alpha_pct": 8.9793,
+        "fetched_at": "2026-06-06T09:16:48"
       }
     },
     {
@@ -1268,11 +1268,11 @@
       },
       "week4": {
         "target_date": "2026-05-21",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 378.0,
+        "return_pct": 7.8552,
+        "spy_return_pct": 4.8373,
+        "alpha_pct": 3.0179,
+        "fetched_at": "2026-06-06T09:16:48"
       }
     },
     {
@@ -1319,11 +1319,11 @@
       },
       "week4": {
         "target_date": "2026-05-21",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 137.41,
+        "return_pct": -9.9627,
+        "spy_return_pct": 4.8373,
+        "alpha_pct": -14.8,
+        "fetched_at": "2026-06-06T09:16:48"
       }
     },
     {
@@ -1370,11 +1370,11 @@
       },
       "week4": {
         "target_date": "2026-05-21",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 323.4,
+        "return_pct": 5.9841,
+        "spy_return_pct": 4.8373,
+        "alpha_pct": 1.1468,
+        "fetched_at": "2026-06-06T09:16:48"
       }
     },
     {
@@ -1421,11 +1421,11 @@
       },
       "week4": {
         "target_date": "2026-05-21",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 15.35,
+        "return_pct": 28.6672,
+        "spy_return_pct": 4.8373,
+        "alpha_pct": 23.8299,
+        "fetched_at": "2026-06-06T09:16:48"
       }
     },
     {
@@ -1472,11 +1472,11 @@
       },
       "week4": {
         "target_date": "2026-05-21",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 65.09,
+        "return_pct": -10.1091,
+        "spy_return_pct": 4.8373,
+        "alpha_pct": -14.9464,
+        "fetched_at": "2026-06-06T09:16:48"
       }
     },
     {
@@ -1523,11 +1523,11 @@
       },
       "week4": {
         "target_date": "2026-05-21",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 177.15,
+        "return_pct": -18.3941,
+        "spy_return_pct": 4.8373,
+        "alpha_pct": -23.2314,
+        "fetched_at": "2026-06-06T09:16:49"
       }
     },
     {
@@ -1574,11 +1574,11 @@
       },
       "week4": {
         "target_date": "2026-05-21",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 121.02,
+        "return_pct": 39.1994,
+        "spy_return_pct": 4.8373,
+        "alpha_pct": 34.3621,
+        "fetched_at": "2026-06-06T09:16:49"
       }
     },
     {
@@ -1625,11 +1625,11 @@
       },
       "week4": {
         "target_date": "2026-05-21",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 11.33,
+        "return_pct": -16.507,
+        "spy_return_pct": 4.8373,
+        "alpha_pct": -21.3443,
+        "fetched_at": "2026-06-06T09:16:49"
       }
     },
     {
@@ -1676,11 +1676,11 @@
       },
       "week4": {
         "target_date": "2026-05-21",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 24.38,
+        "return_pct": 31.9978,
+        "spy_return_pct": 4.8373,
+        "alpha_pct": 27.1605,
+        "fetched_at": "2026-06-06T09:16:49"
       }
     },
     {
@@ -1702,27 +1702,27 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-05-23",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 215.08,
+        "return_pct": -4.5449,
+        "spy_return_pct": 0.8753,
+        "alpha_pct": -5.4202,
+        "fetched_at": "2026-06-06T09:16:49"
       },
       "week2": {
         "target_date": "2026-05-30",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 210.89,
+        "return_pct": -6.4024,
+        "spy_return_pct": 2.3418,
+        "alpha_pct": -8.7442,
+        "fetched_at": "2026-06-06T09:16:49"
       },
       "week3": {
         "target_date": "2026-06-06",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 205.1,
+        "return_pct": -8.9739,
+        "spy_return_pct": -0.2192,
+        "alpha_pct": -8.7547,
+        "fetched_at": "2026-06-06T09:16:50"
       },
       "week4": {
         "target_date": "2026-06-13",
@@ -1752,27 +1752,27 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-05-23",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 215.08,
+        "return_pct": -4.5449,
+        "spy_return_pct": 0.8753,
+        "alpha_pct": -5.4202,
+        "fetched_at": "2026-06-06T09:16:50"
       },
       "week2": {
         "target_date": "2026-05-30",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 210.89,
+        "return_pct": -6.4024,
+        "spy_return_pct": 2.3418,
+        "alpha_pct": -8.7442,
+        "fetched_at": "2026-06-06T09:16:50"
       },
       "week3": {
         "target_date": "2026-06-06",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 205.1,
+        "return_pct": -8.9739,
+        "spy_return_pct": -0.2192,
+        "alpha_pct": -8.7547,
+        "fetched_at": "2026-06-06T09:16:50"
       },
       "week4": {
         "target_date": "2026-06-13",
@@ -1802,27 +1802,27 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-05-23",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 467.51,
+        "return_pct": 10.2358,
+        "spy_return_pct": 0.8753,
+        "alpha_pct": 9.3605,
+        "fetched_at": "2026-06-06T09:16:50"
       },
       "week2": {
         "target_date": "2026-05-30",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 516.1,
+        "return_pct": 21.693,
+        "spy_return_pct": 2.3418,
+        "alpha_pct": 19.3512,
+        "fetched_at": "2026-06-06T09:16:50"
       },
       "week3": {
         "target_date": "2026-06-06",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 466.38,
+        "return_pct": 9.9693,
+        "spy_return_pct": -0.2192,
+        "alpha_pct": 10.1885,
+        "fetched_at": "2026-06-06T09:16:50"
       },
       "week4": {
         "target_date": "2026-06-13",
@@ -1852,27 +1852,27 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-05-23",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 467.51,
+        "return_pct": 10.2358,
+        "spy_return_pct": 0.8753,
+        "alpha_pct": 9.3605,
+        "fetched_at": "2026-06-06T09:16:50"
       },
       "week2": {
         "target_date": "2026-05-30",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 516.1,
+        "return_pct": 21.693,
+        "spy_return_pct": 2.3418,
+        "alpha_pct": 19.3512,
+        "fetched_at": "2026-06-06T09:16:50"
       },
       "week3": {
         "target_date": "2026-06-06",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 466.38,
+        "return_pct": 9.9693,
+        "spy_return_pct": -0.2192,
+        "alpha_pct": 10.1885,
+        "fetched_at": "2026-06-06T09:16:50"
       },
       "week4": {
         "target_date": "2026-06-13",
@@ -1902,27 +1902,27 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-05-23",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 13.83,
+        "return_pct": -2.811,
+        "spy_return_pct": 0.8753,
+        "alpha_pct": -3.6863,
+        "fetched_at": "2026-06-06T09:16:50"
       },
       "week2": {
         "target_date": "2026-05-30",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 12.04,
+        "return_pct": -15.39,
+        "spy_return_pct": 2.3418,
+        "alpha_pct": -17.7318,
+        "fetched_at": "2026-06-06T09:16:51"
       },
       "week3": {
         "target_date": "2026-06-06",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 12.8,
+        "return_pct": -10.0492,
+        "spy_return_pct": -0.2192,
+        "alpha_pct": -9.83,
+        "fetched_at": "2026-06-06T09:16:51"
       },
       "week4": {
         "target_date": "2026-06-13",
@@ -1952,27 +1952,27 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-05-23",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 13.83,
+        "return_pct": -2.811,
+        "spy_return_pct": 0.8753,
+        "alpha_pct": -3.6863,
+        "fetched_at": "2026-06-06T09:16:51"
       },
       "week2": {
         "target_date": "2026-05-30",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 12.04,
+        "return_pct": -15.39,
+        "spy_return_pct": 2.3418,
+        "alpha_pct": -17.7318,
+        "fetched_at": "2026-06-06T09:16:51"
       },
       "week3": {
         "target_date": "2026-06-06",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 12.8,
+        "return_pct": -10.0492,
+        "spy_return_pct": -0.2192,
+        "alpha_pct": -9.83,
+        "fetched_at": "2026-06-06T09:16:51"
       },
       "week4": {
         "target_date": "2026-06-13",
@@ -2002,27 +2002,27 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-05-23",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 196.33,
+        "return_pct": 10.9899,
+        "spy_return_pct": 0.8753,
+        "alpha_pct": 10.1146,
+        "fetched_at": "2026-06-06T09:16:51"
       },
       "week2": {
         "target_date": "2026-05-30",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 205.0,
+        "return_pct": 15.8912,
+        "spy_return_pct": 2.3418,
+        "alpha_pct": 13.5494,
+        "fetched_at": "2026-06-06T09:16:51"
       },
       "week3": {
         "target_date": "2026-06-06",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 263.47,
+        "return_pct": 48.9457,
+        "spy_return_pct": -0.2192,
+        "alpha_pct": 49.1649,
+        "fetched_at": "2026-06-06T09:16:51"
       },
       "week4": {
         "target_date": "2026-06-13",
@@ -2052,27 +2052,27 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-05-23",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 196.33,
+        "return_pct": 10.9899,
+        "spy_return_pct": 0.8753,
+        "alpha_pct": 10.1146,
+        "fetched_at": "2026-06-06T09:16:51"
       },
       "week2": {
         "target_date": "2026-05-30",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 205.0,
+        "return_pct": 15.8912,
+        "spy_return_pct": 2.3418,
+        "alpha_pct": 13.5494,
+        "fetched_at": "2026-06-06T09:16:51"
       },
       "week3": {
         "target_date": "2026-06-06",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 263.47,
+        "return_pct": 48.9457,
+        "spy_return_pct": -0.2192,
+        "alpha_pct": 49.1649,
+        "fetched_at": "2026-06-06T09:16:51"
       },
       "week4": {
         "target_date": "2026-06-13",
@@ -2102,27 +2102,27 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-05-23",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 95.48,
+        "return_pct": -0.6452,
+        "spy_return_pct": 0.8753,
+        "alpha_pct": -1.5205,
+        "fetched_at": "2026-06-06T09:16:51"
       },
       "week2": {
         "target_date": "2026-05-30",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 104.98,
+        "return_pct": 9.2404,
+        "spy_return_pct": 2.3418,
+        "alpha_pct": 6.8986,
+        "fetched_at": "2026-06-06T09:16:52"
       },
       "week3": {
         "target_date": "2026-06-06",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 101.97,
+        "return_pct": 6.1082,
+        "spy_return_pct": -0.2192,
+        "alpha_pct": 6.3274,
+        "fetched_at": "2026-06-06T09:16:52"
       },
       "week4": {
         "target_date": "2026-06-13",
@@ -2152,27 +2152,27 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-05-23",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 95.48,
+        "return_pct": -0.6452,
+        "spy_return_pct": 0.8753,
+        "alpha_pct": -1.5205,
+        "fetched_at": "2026-06-06T09:16:52"
       },
       "week2": {
         "target_date": "2026-05-30",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 104.98,
+        "return_pct": 9.2404,
+        "spy_return_pct": 2.3418,
+        "alpha_pct": 6.8986,
+        "fetched_at": "2026-06-06T09:16:52"
       },
       "week3": {
         "target_date": "2026-06-06",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 101.97,
+        "return_pct": 6.1082,
+        "spy_return_pct": -0.2192,
+        "alpha_pct": 6.3274,
+        "fetched_at": "2026-06-06T09:16:52"
       },
       "week4": {
         "target_date": "2026-06-13",
@@ -2202,27 +2202,27 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-05-23",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 305.35,
+        "return_pct": 7.2457,
+        "spy_return_pct": 0.8753,
+        "alpha_pct": 6.3704,
+        "fetched_at": "2026-06-06T09:16:52"
       },
       "week2": {
         "target_date": "2026-05-30",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 318.18,
+        "return_pct": 11.7519,
+        "spy_return_pct": 2.3418,
+        "alpha_pct": 9.4101,
+        "fetched_at": "2026-06-06T09:16:52"
       },
       "week3": {
         "target_date": "2026-06-06",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 303.28,
+        "return_pct": 6.5187,
+        "spy_return_pct": -0.2192,
+        "alpha_pct": 6.7379,
+        "fetched_at": "2026-06-06T09:16:52"
       },
       "week4": {
         "target_date": "2026-06-13",
@@ -2252,27 +2252,27 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-05-23",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 135.76,
+        "return_pct": 8.8082,
+        "spy_return_pct": 0.8753,
+        "alpha_pct": 7.9329,
+        "fetched_at": "2026-06-06T09:16:52"
       },
       "week2": {
         "target_date": "2026-05-30",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 143.48,
+        "return_pct": 14.9956,
+        "spy_return_pct": 2.3418,
+        "alpha_pct": 12.6538,
+        "fetched_at": "2026-06-06T09:16:52"
       },
       "week3": {
         "target_date": "2026-06-06",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 110.08,
+        "return_pct": -11.7737,
+        "spy_return_pct": -0.2192,
+        "alpha_pct": -11.5545,
+        "fetched_at": "2026-06-06T09:16:53"
       },
       "week4": {
         "target_date": "2026-06-13",
@@ -2302,27 +2302,27 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-05-23",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 61.95,
+        "return_pct": 0.3076,
+        "spy_return_pct": 0.8753,
+        "alpha_pct": -0.5677,
+        "fetched_at": "2026-06-06T09:16:53"
       },
       "week2": {
         "target_date": "2026-05-30",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 76.35,
+        "return_pct": 23.6237,
+        "spy_return_pct": 2.3418,
+        "alpha_pct": 21.2819,
+        "fetched_at": "2026-06-06T09:16:53"
       },
       "week3": {
         "target_date": "2026-06-06",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 63.17,
+        "return_pct": 2.283,
+        "spy_return_pct": -0.2192,
+        "alpha_pct": 2.5022,
+        "fetched_at": "2026-06-06T09:16:53"
       },
       "week4": {
         "target_date": "2026-06-13",
@@ -2352,27 +2352,27 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-05-23",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 72.1,
+        "return_pct": 16.9885,
+        "spy_return_pct": 0.8753,
+        "alpha_pct": 16.1132,
+        "fetched_at": "2026-06-06T09:16:53"
       },
       "week2": {
         "target_date": "2026-05-30",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 73.74,
+        "return_pct": 19.6495,
+        "spy_return_pct": 2.3418,
+        "alpha_pct": 17.3077,
+        "fetched_at": "2026-06-06T09:16:53"
       },
       "week3": {
         "target_date": "2026-06-06",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 72.86,
+        "return_pct": 18.2216,
+        "spy_return_pct": -0.2192,
+        "alpha_pct": 18.4408,
+        "fetched_at": "2026-06-06T09:16:53"
       },
       "week4": {
         "target_date": "2026-06-13",
@@ -2402,27 +2402,27 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-05-23",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 10.93,
+        "return_pct": 6.4265,
+        "spy_return_pct": 0.8753,
+        "alpha_pct": 5.5512,
+        "fetched_at": "2026-06-06T09:16:53"
       },
       "week2": {
         "target_date": "2026-05-30",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 11.72,
+        "return_pct": 14.1188,
+        "spy_return_pct": 2.3418,
+        "alpha_pct": 11.777,
+        "fetched_at": "2026-06-06T09:16:54"
       },
       "week3": {
         "target_date": "2026-06-06",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 11.24,
+        "return_pct": 9.445,
+        "spy_return_pct": -0.2192,
+        "alpha_pct": 9.6642,
+        "fetched_at": "2026-06-06T09:16:54"
       },
       "week4": {
         "target_date": "2026-06-13",
@@ -2452,27 +2452,27 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-05-23",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 64.03,
+        "return_pct": 21.0626,
+        "spy_return_pct": 0.8753,
+        "alpha_pct": 20.1873,
+        "fetched_at": "2026-06-06T09:16:54"
       },
       "week2": {
         "target_date": "2026-05-30",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 68.36,
+        "return_pct": 29.2494,
+        "spy_return_pct": 2.3418,
+        "alpha_pct": 26.9076,
+        "fetched_at": "2026-06-06T09:16:54"
       },
       "week3": {
         "target_date": "2026-06-06",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 56.07,
+        "return_pct": 6.0125,
+        "spy_return_pct": -0.2192,
+        "alpha_pct": 6.2317,
+        "fetched_at": "2026-06-06T09:16:54"
       },
       "week4": {
         "target_date": "2026-06-13",
@@ -2502,27 +2502,27 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-05-23",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 201.97,
+        "return_pct": 1.8097,
+        "spy_return_pct": 0.8753,
+        "alpha_pct": 0.9344,
+        "fetched_at": "2026-06-06T09:16:54"
       },
       "week2": {
         "target_date": "2026-05-30",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 220.63,
+        "return_pct": 11.2159,
+        "spy_return_pct": 2.3418,
+        "alpha_pct": 8.8741,
+        "fetched_at": "2026-06-06T09:16:54"
       },
       "week3": {
         "target_date": "2026-06-06",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 212.64,
+        "return_pct": 7.1882,
+        "spy_return_pct": -0.2192,
+        "alpha_pct": 7.4074,
+        "fetched_at": "2026-06-06T09:16:54"
       },
       "week4": {
         "target_date": "2026-06-13",
@@ -2552,27 +2552,27 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-05-23",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 22.71,
+        "return_pct": -0.9162,
+        "spy_return_pct": 0.8753,
+        "alpha_pct": -1.7915,
+        "fetched_at": "2026-06-06T09:16:55"
       },
       "week2": {
         "target_date": "2026-05-30",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 25.5,
+        "return_pct": 11.2565,
+        "spy_return_pct": 2.3418,
+        "alpha_pct": 8.9147,
+        "fetched_at": "2026-06-06T09:16:55"
       },
       "week3": {
         "target_date": "2026-06-06",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 21.75,
+        "return_pct": -5.1047,
+        "spy_return_pct": -0.2192,
+        "alpha_pct": -4.8855,
+        "fetched_at": "2026-06-06T09:16:55"
       },
       "week4": {
         "target_date": "2026-06-13",
@@ -2602,27 +2602,27 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-05-23",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 140.41,
+        "return_pct": 8.6681,
+        "spy_return_pct": 0.8753,
+        "alpha_pct": 7.7928,
+        "fetched_at": "2026-06-06T09:16:55"
       },
       "week2": {
         "target_date": "2026-05-30",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 156.96,
+        "return_pct": 21.4767,
+        "spy_return_pct": 2.3418,
+        "alpha_pct": 19.1349,
+        "fetched_at": "2026-06-06T09:16:55"
       },
       "week3": {
         "target_date": "2026-06-06",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 142.23,
+        "return_pct": 10.0766,
+        "spy_return_pct": -0.2192,
+        "alpha_pct": 10.2958,
+        "fetched_at": "2026-06-06T09:16:56"
       },
       "week4": {
         "target_date": "2026-06-13",
@@ -2652,27 +2652,27 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-05-23",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 140.83,
+        "return_pct": 13.7744,
+        "spy_return_pct": 0.8753,
+        "alpha_pct": 12.8991,
+        "fetched_at": "2026-06-06T09:16:56"
       },
       "week2": {
         "target_date": "2026-05-30",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 103.16,
+        "return_pct": -16.6586,
+        "spy_return_pct": 2.3418,
+        "alpha_pct": -19.0004,
+        "fetched_at": "2026-06-06T09:16:56"
       },
       "week3": {
         "target_date": "2026-06-06",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 89.04,
+        "return_pct": -28.0659,
+        "spy_return_pct": -0.2192,
+        "alpha_pct": -27.8467,
+        "fetched_at": "2026-06-06T09:16:56"
       },
       "week4": {
         "target_date": "2026-06-13",
@@ -2702,19 +2702,19 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-05-30",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 205.0,
+        "return_pct": 4.416,
+        "spy_return_pct": 1.4538,
+        "alpha_pct": 2.9622,
+        "fetched_at": "2026-06-06T09:16:56"
       },
       "week2": {
         "target_date": "2026-06-06",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 263.47,
+        "return_pct": 34.1975,
+        "spy_return_pct": -1.085,
+        "alpha_pct": 35.2825,
+        "fetched_at": "2026-06-06T09:16:56"
       },
       "week3": {
         "target_date": "2026-06-13",
@@ -2752,19 +2752,19 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-05-30",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 971.0,
+        "return_pct": 29.2943,
+        "spy_return_pct": 1.4538,
+        "alpha_pct": 27.8405,
+        "fetched_at": "2026-06-06T09:16:56"
       },
       "week2": {
         "target_date": "2026-06-06",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 864.01,
+        "return_pct": 15.0479,
+        "spy_return_pct": -1.085,
+        "alpha_pct": 16.1329,
+        "fetched_at": "2026-06-06T09:16:57"
       },
       "week3": {
         "target_date": "2026-06-13",
@@ -2802,19 +2802,19 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-05-30",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 418.45,
+        "return_pct": 3.4436,
+        "spy_return_pct": 1.4538,
+        "alpha_pct": 1.9898,
+        "fetched_at": "2026-06-06T09:16:57"
       },
       "week2": {
         "target_date": "2026-06-06",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 415.17,
+        "return_pct": 2.6328,
+        "spy_return_pct": -1.085,
+        "alpha_pct": 3.7178,
+        "fetched_at": "2026-06-06T09:16:57"
       },
       "week3": {
         "target_date": "2026-06-13",
@@ -2852,19 +2852,19 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-05-30",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 450.06,
+        "return_pct": 4.142,
+        "spy_return_pct": 1.4538,
+        "alpha_pct": 2.6882,
+        "fetched_at": "2026-06-06T09:16:57"
       },
       "week2": {
         "target_date": "2026-06-06",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 453.01,
+        "return_pct": 4.8246,
+        "spy_return_pct": -1.085,
+        "alpha_pct": 5.9096,
+        "fetched_at": "2026-06-06T09:16:57"
       },
       "week3": {
         "target_date": "2026-06-13",
@@ -2902,19 +2902,19 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-05-30",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 103.16,
+        "return_pct": -26.7486,
+        "spy_return_pct": 1.4538,
+        "alpha_pct": -28.2024,
+        "fetched_at": "2026-06-06T09:16:57"
       },
       "week2": {
         "target_date": "2026-06-06",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 89.04,
+        "return_pct": -36.7748,
+        "spy_return_pct": -1.085,
+        "alpha_pct": -35.6898,
+        "fetched_at": "2026-06-06T09:16:57"
       },
       "week3": {
         "target_date": "2026-06-13",
@@ -2952,19 +2952,19 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-05-30",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 210.89,
+        "return_pct": -2.06,
+        "spy_return_pct": 1.4538,
+        "alpha_pct": -3.5138,
+        "fetched_at": "2026-06-06T09:16:57"
       },
       "week2": {
         "target_date": "2026-06-06",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 205.1,
+        "return_pct": -4.7508,
+        "spy_return_pct": -1.085,
+        "alpha_pct": -3.6658,
+        "fetched_at": "2026-06-06T09:16:57"
       },
       "week3": {
         "target_date": "2026-06-13",
@@ -3002,19 +3002,19 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-05-30",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 516.1,
+        "return_pct": 10.3934,
+        "spy_return_pct": 1.4538,
+        "alpha_pct": 8.9396,
+        "fetched_at": "2026-06-06T09:16:57"
       },
       "week2": {
         "target_date": "2026-06-06",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 466.38,
+        "return_pct": -0.2417,
+        "spy_return_pct": -1.085,
+        "alpha_pct": 0.8433,
+        "fetched_at": "2026-06-06T09:16:57"
       },
       "week3": {
         "target_date": "2026-06-13",
@@ -3052,19 +3052,19 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-05-30",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 46.49,
+        "return_pct": -6.0808,
+        "spy_return_pct": 1.4538,
+        "alpha_pct": -7.5346,
+        "fetched_at": "2026-06-06T09:16:57"
       },
       "week2": {
         "target_date": "2026-06-06",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 36.1,
+        "return_pct": -27.0707,
+        "spy_return_pct": -1.085,
+        "alpha_pct": -25.9857,
+        "fetched_at": "2026-06-06T09:16:58"
       },
       "week3": {
         "target_date": "2026-06-13",
@@ -3102,19 +3102,19 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-05-30",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 143.48,
+        "return_pct": 5.6865,
+        "spy_return_pct": 1.4538,
+        "alpha_pct": 4.2327,
+        "fetched_at": "2026-06-06T09:16:58"
       },
       "week2": {
         "target_date": "2026-06-06",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 110.08,
+        "return_pct": -18.9157,
+        "spy_return_pct": -1.085,
+        "alpha_pct": -17.8307,
+        "fetched_at": "2026-06-06T09:16:58"
       },
       "week3": {
         "target_date": "2026-06-13",
@@ -3152,19 +3152,19 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-05-30",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 43.83,
+        "return_pct": 14.5583,
+        "spy_return_pct": 1.4538,
+        "alpha_pct": 13.1045,
+        "fetched_at": "2026-06-06T09:16:58"
       },
       "week2": {
         "target_date": "2026-06-06",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 29.36,
+        "return_pct": -23.2619,
+        "spy_return_pct": -1.085,
+        "alpha_pct": -22.1769,
+        "fetched_at": "2026-06-06T09:16:58"
       },
       "week3": {
         "target_date": "2026-06-13",
@@ -3202,19 +3202,19 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-05-30",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 315.71,
+        "return_pct": -3.5882,
+        "spy_return_pct": 1.4538,
+        "alpha_pct": -5.042,
+        "fetched_at": "2026-06-06T09:16:58"
       },
       "week2": {
         "target_date": "2026-06-06",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 300.51,
+        "return_pct": -8.23,
+        "spy_return_pct": -1.085,
+        "alpha_pct": -7.145,
+        "fetched_at": "2026-06-06T09:16:58"
       },
       "week3": {
         "target_date": "2026-06-13",
@@ -3252,19 +3252,19 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-05-30",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 9.0,
+        "return_pct": 13.78,
+        "spy_return_pct": 1.4538,
+        "alpha_pct": 12.3262,
+        "fetched_at": "2026-06-06T09:16:58"
       },
       "week2": {
         "target_date": "2026-06-06",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 9.41,
+        "return_pct": 18.9633,
+        "spy_return_pct": -1.085,
+        "alpha_pct": 20.0483,
+        "fetched_at": "2026-06-06T09:16:58"
       },
       "week3": {
         "target_date": "2026-06-13",
@@ -3302,19 +3302,19 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-05-30",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 361.47,
+        "return_pct": -4.2641,
+        "spy_return_pct": 1.4538,
+        "alpha_pct": -5.7179,
+        "fetched_at": "2026-06-06T09:16:59"
       },
       "week2": {
         "target_date": "2026-06-06",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 376.99,
+        "return_pct": -0.1536,
+        "spy_return_pct": -1.085,
+        "alpha_pct": 0.9314,
+        "fetched_at": "2026-06-06T09:16:59"
       },
       "week3": {
         "target_date": "2026-06-13",
@@ -3352,19 +3352,19 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-05-30",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 24.57,
+        "return_pct": 40.4803,
+        "spy_return_pct": 1.4538,
+        "alpha_pct": 39.0265,
+        "fetched_at": "2026-06-06T09:16:59"
       },
       "week2": {
         "target_date": "2026-06-06",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 18.45,
+        "return_pct": 5.4889,
+        "spy_return_pct": -1.085,
+        "alpha_pct": 6.5739,
+        "fetched_at": "2026-06-06T09:17:00"
       },
       "week3": {
         "target_date": "2026-06-13",
@@ -3402,19 +3402,19 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-05-30",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 77.85,
+        "return_pct": -5.5448,
+        "spy_return_pct": 1.4538,
+        "alpha_pct": -6.9986,
+        "fetched_at": "2026-06-06T09:17:00"
       },
       "week2": {
         "target_date": "2026-06-06",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 73.57,
+        "return_pct": -10.7377,
+        "spy_return_pct": -1.085,
+        "alpha_pct": -9.6527,
+        "fetched_at": "2026-06-06T09:17:00"
       },
       "week3": {
         "target_date": "2026-06-13",
@@ -3452,19 +3452,19 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-05-30",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 30.14,
+        "return_pct": 2.517,
+        "spy_return_pct": 1.4538,
+        "alpha_pct": 1.0632,
+        "fetched_at": "2026-06-06T09:17:01"
       },
       "week2": {
         "target_date": "2026-06-06",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 23.85,
+        "return_pct": -18.8775,
+        "spy_return_pct": -1.085,
+        "alpha_pct": -17.7925,
+        "fetched_at": "2026-06-06T09:17:01"
       },
       "week3": {
         "target_date": "2026-06-13",
@@ -3502,19 +3502,19 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-05-30",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 26.6,
+        "return_pct": -9.0598,
+        "spy_return_pct": 1.4538,
+        "alpha_pct": -10.5136,
+        "fetched_at": "2026-06-06T09:17:01"
       },
       "week2": {
         "target_date": "2026-06-06",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 25.08,
+        "return_pct": -14.2564,
+        "spy_return_pct": -1.085,
+        "alpha_pct": -13.1714,
+        "fetched_at": "2026-06-06T09:17:01"
       },
       "week3": {
         "target_date": "2026-06-13",
@@ -3552,19 +3552,19 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-05-30",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 174.29,
+        "return_pct": 25.0646,
+        "spy_return_pct": 1.4538,
+        "alpha_pct": 23.6108,
+        "fetched_at": "2026-06-06T09:17:01"
       },
       "week2": {
         "target_date": "2026-06-06",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 167.04,
+        "return_pct": 19.8622,
+        "spy_return_pct": -1.085,
+        "alpha_pct": 20.9472,
+        "fetched_at": "2026-06-06T09:17:01"
       },
       "week3": {
         "target_date": "2026-06-13",
@@ -3602,11 +3602,11 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-05-31",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 143.48,
+        "return_pct": 5.6865,
+        "spy_return_pct": 1.4538,
+        "alpha_pct": 4.2327,
+        "fetched_at": "2026-06-06T09:17:01"
       },
       "week2": {
         "target_date": "2026-06-07",
@@ -3652,11 +3652,11 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-05-31",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 516.1,
+        "return_pct": 10.3934,
+        "spy_return_pct": 1.4538,
+        "alpha_pct": 8.9396,
+        "fetched_at": "2026-06-06T09:17:02"
       },
       "week2": {
         "target_date": "2026-06-07",
@@ -3702,11 +3702,11 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-05-31",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 43.83,
+        "return_pct": 14.5583,
+        "spy_return_pct": 1.4538,
+        "alpha_pct": 13.1045,
+        "fetched_at": "2026-06-06T09:17:02"
       },
       "week2": {
         "target_date": "2026-06-07",
@@ -3752,11 +3752,11 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-05-31",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 30.14,
+        "return_pct": 2.517,
+        "spy_return_pct": 1.4538,
+        "alpha_pct": 1.0632,
+        "fetched_at": "2026-06-06T09:17:02"
       },
       "week2": {
         "target_date": "2026-06-07",
@@ -3802,11 +3802,11 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-05-31",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 46.49,
+        "return_pct": -6.0808,
+        "spy_return_pct": 1.4538,
+        "alpha_pct": -7.5346,
+        "fetched_at": "2026-06-06T09:17:02"
       },
       "week2": {
         "target_date": "2026-06-07",
@@ -3852,11 +3852,11 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-05-31",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 16.22,
+        "return_pct": -0.7951,
+        "spy_return_pct": 1.4538,
+        "alpha_pct": -2.2489,
+        "fetched_at": "2026-06-06T09:17:02"
       },
       "week2": {
         "target_date": "2026-06-07",
@@ -3902,11 +3902,11 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-05-31",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 25.54,
+        "return_pct": -3.3308,
+        "spy_return_pct": 1.4538,
+        "alpha_pct": -4.7846,
+        "fetched_at": "2026-06-06T09:17:02"
       },
       "week2": {
         "target_date": "2026-06-07",
@@ -3952,11 +3952,11 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-05-31",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 14.84,
+        "return_pct": -4.0724,
+        "spy_return_pct": 1.4538,
+        "alpha_pct": -5.5262,
+        "fetched_at": "2026-06-06T09:17:02"
       },
       "week2": {
         "target_date": "2026-06-07",
@@ -4002,11 +4002,11 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-05-31",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 9.0,
+        "return_pct": 13.78,
+        "spy_return_pct": 1.4538,
+        "alpha_pct": 12.3262,
+        "fetched_at": "2026-06-06T09:17:02"
       },
       "week2": {
         "target_date": "2026-06-07",
@@ -4052,11 +4052,11 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-05-31",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 24.57,
+        "return_pct": 40.4803,
+        "spy_return_pct": 1.4538,
+        "alpha_pct": 39.0265,
+        "fetched_at": "2026-06-06T09:17:03"
       },
       "week2": {
         "target_date": "2026-06-07",
@@ -4102,11 +4102,11 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-05-31",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 103.16,
+        "return_pct": -26.7486,
+        "spy_return_pct": 1.4538,
+        "alpha_pct": -28.2024,
+        "fetched_at": "2026-06-06T09:17:03"
       },
       "week2": {
         "target_date": "2026-06-07",
@@ -4152,11 +4152,11 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-05-31",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 14.35,
+        "return_pct": -4.0134,
+        "spy_return_pct": 1.4538,
+        "alpha_pct": -5.4672,
+        "fetched_at": "2026-06-06T09:17:03"
       },
       "week2": {
         "target_date": "2026-06-07",
@@ -4202,11 +4202,11 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-05-31",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 77.85,
+        "return_pct": -5.5448,
+        "spy_return_pct": 1.4538,
+        "alpha_pct": -6.9986,
+        "fetched_at": "2026-06-06T09:17:03"
       },
       "week2": {
         "target_date": "2026-06-07",
@@ -4252,11 +4252,11 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-05-31",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 52.05,
+        "return_pct": 10.1587,
+        "spy_return_pct": 1.4538,
+        "alpha_pct": 8.7049,
+        "fetched_at": "2026-06-06T09:17:04"
       },
       "week2": {
         "target_date": "2026-06-07",
@@ -4302,11 +4302,11 @@
       "macro_regime": "NORMAL",
       "week1": {
         "target_date": "2026-05-31",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 26.6,
+        "return_pct": -9.0598,
+        "spy_return_pct": 1.4538,
+        "alpha_pct": -10.5136,
+        "fetched_at": "2026-06-06T09:17:04"
       },
       "week2": {
         "target_date": "2026-06-07",

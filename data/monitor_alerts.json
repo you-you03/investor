@@ -214,5 +214,89 @@
     "unrealized_pnl_pct": 10.99,
     "stop_loss": 389.25,
     "target_price": 428.87
+  },
+  {
+    "date": "2026-06-06",
+    "ticker": "LRCX",
+    "alert_type": "STOP_LOSS",
+    "severity": "HIGH",
+    "message": "Price $303.28 hit stop loss $305.00",
+    "current_price": 303.2799987792969,
+    "entry_price": 284.72,
+    "unrealized_pnl_pct": 6.52,
+    "stop_loss": 305.0,
+    "target_price": 335.0
+  },
+  {
+    "date": "2026-06-06",
+    "ticker": "LRCX",
+    "alert_type": "SHARP_DROP",
+    "severity": "HIGH",
+    "message": "Intraday drop -8.5%",
+    "current_price": 303.2799987792969,
+    "entry_price": 284.72,
+    "unrealized_pnl_pct": 6.52,
+    "stop_loss": 305.0,
+    "target_price": 335.0
+  },
+  {
+    "date": "2026-06-06",
+    "ticker": "NVDA",
+    "alert_type": "SHARP_DROP",
+    "severity": "HIGH",
+    "message": "Intraday drop -5.2%",
+    "current_price": 205.10000610351562,
+    "entry_price": 215.33,
+    "unrealized_pnl_pct": -4.75,
+    "stop_loss": 205.0,
+    "target_price": 255.0
+  },
+  {
+    "date": "2026-06-06",
+    "ticker": "VRT",
+    "alert_type": "SHARP_DROP",
+    "severity": "HIGH",
+    "message": "Intraday drop -5.8%",
+    "current_price": 300.510009765625,
+    "entry_price": 315.71,
+    "unrealized_pnl_pct": -4.81,
+    "stop_loss": 296.0,
+    "target_price": 355.0
+  },
+  {
+    "date": "2026-06-06",
+    "ticker": "AMAT",
+    "alert_type": "STOP_LOSS",
+    "severity": "HIGH",
+    "message": "Price $453.01 hit stop loss $469.74",
+    "current_price": 453.010009765625,
+    "entry_price": 490.05,
+    "unrealized_pnl_pct": -7.56,
+    "stop_loss": 469.74,
+    "target_price": 530.67
+  },
+  {
+    "date": "2026-06-06",
+    "ticker": "AMAT",
+    "alert_type": "SHARP_DROP",
+    "severity": "HIGH",
+    "message": "Intraday drop -8.2%",
+    "current_price": 453.010009765625,
+    "entry_price": 490.05,
+    "unrealized_pnl_pct": -7.56,
+    "stop_loss": 469.74,
+    "target_price": 530.67
+  },
+  {
+    "date": "2026-06-06",
+    "ticker": "AMAT",
+    "alert_type": "SIGNIFICANT_DRAWDOWN",
+    "severity": "MEDIUM",
+    "message": "Unrealized loss -7.6%",
+    "current_price": 453.010009765625,
+    "entry_price": 490.05,
+    "unrealized_pnl_pct": -7.56,
+    "stop_loss": 469.74,
+    "target_price": 530.67
   }
 ]

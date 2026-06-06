@@ -669,6 +669,96 @@
           "flag": "MAINTAIN_WATCH"
         }
       ]
+    },
+    {
+      "run_id": "1be92f5f-3f47-453f-ae14-e1f56e125463",
+      "date": "2026-06-06",
+      "results": [
+        {
+          "ticker": "MRVL",
+          "action": "MAINTAIN",
+          "new_score": 6.8,
+          "note": "\u6c7a\u7b97\u5f8c\u306e\u5f37\u3044\u4e0a\u6607\u304b\u3089-13.6%\u6025\u843d\u3002RSI65\u307e\u3067\u51b7\u5374\u3057\u305f\u304c\u3001\u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19$233\u304c\u73fe\u5024$263\u3092\u4e0b\u56de\u308a\u3001EPS\u6210\u9577\u3082\u76f4\u8fd1\u306f\u5f31\u3044\u3002\u62bc\u3057\u76ee\u78ba\u8a8d\u307e\u3067MAINTAIN\u3002",
+          "flag": "MAINTAIN_WATCH"
+        },
+        {
+          "ticker": "MU",
+          "action": "MAINTAIN",
+          "new_score": 7.0,
+          "note": "\u58f2\u4e0a+196%\u30fbEPS+756%\u30fbforward PE 8.2\u306f\u6700\u5f37\u30af\u30e9\u30b9\u3002\u305f\u3060\u3057\u5f53\u65e5-11.1%\u3001\u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19$739\u304c\u73fe\u5024$864\u3092\u4e0b\u56de\u308b\u3002ELEVATED_RISK\u4e0b\u3067\u306f\u65b0\u898f\u6607\u683c\u305b\u305a\u3001\u53cd\u767a\u78ba\u8a8d\u5f85\u3061\u3002",
+          "flag": "MAINTAIN_WATCH"
+        },
+        {
+          "ticker": "AMAT",
+          "action": "ADD_NOTE",
+          "new_score": 6.8,
+          "note": "\u65e2\u5b58\u30dd\u30b8\u30b7\u30e7\u30f3\u3067STOP_LOSS\u5230\u9054\u3002\u30d5\u30a1\u30f3\u30c0\u306f\u60aa\u304f\u306a\u3044\u304c\u3001\u5f53\u65e5-8.3%\u3067\u30ea\u30b9\u30af\u7ba1\u7406\u512a\u5148\u3002\u65b0\u898fdecision\u6607\u683c\u3067\u306f\u306a\u304f\u51fa\u53e3\u5224\u65ad\u3092\u512a\u5148\u3002",
+          "flag": "EXIT_REVIEW_STOP_LOSS"
+        },
+        {
+          "ticker": "COHR",
+          "action": "MAINTAIN",
+          "new_score": 6.4,
+          "note": "\u58f2\u4e0a+20.5%\u3067\u30c6\u30fc\u30bc\u306f\u90e8\u5206\u7d99\u7d9a\u3002\u305f\u3060\u3057\u5f53\u65e5-8.7%\u3001MACD\u307b\u307c\u30bc\u30ed\u3001\u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19\u3068\u306e\u5dee\u304c\u5c0f\u3055\u3044\u3002\u65b0\u898f\u6607\u683c\u306f\u898b\u9001\u308a\u3002",
+          "flag": "MAINTAIN_WATCH"
+        },
+        {
+          "ticker": "RKLB",
+          "action": "MAINTAIN",
+          "new_score": 6.3,
+          "note": "\u5b87\u5b99\u30c6\u30fc\u30de\u3068\u58f2\u4e0a+63.5%\u306f\u7d99\u7d9a\u3002\u305f\u3060\u3057\u5f53\u65e5-6.6%\u3001\u8d64\u5b57\u30fb\u9ad8P/S\u30fb\u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19\u304c\u73fe\u5024\u3092\u4e0b\u56de\u308b\u3002\u62bc\u3057\u76ee\u5f62\u6210\u5f85\u3061\u3002",
+          "flag": "MAINTAIN_WATCH"
+        },
+        {
+          "ticker": "AMD",
+          "action": "MAINTAIN",
+          "new_score": 6.9,
+          "note": "\u58f2\u4e0a+37.8%\u3001EPS+91.2%\u3001strong_buy 48\u540d\u306f\u5f37\u3044\u3002\u305f\u3060\u3057\u5f53\u65e5-9.3%\u3001MACD\u60aa\u5316\u3001\u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19\u3068\u306e\u5dee\u304c\u5c0f\u3055\u3044\u3002\u534a\u5c0e\u4f53\u96c6\u4e2d\u30ea\u30b9\u30af\u3082\u3042\u308aMAINTAIN\u3002",
+          "flag": "MAINTAIN_WATCH"
+        },
+        {
+          "ticker": "FLY",
+          "action": "MAINTAIN",
+          "new_score": 5.8,
+          "note": "SpaceX\u9023\u60f3\u306f\u6b8b\u308b\u304c\u5f53\u65e5-13.1%\u3001MACD\u60aa\u5316\u3001\u8d64\u5b57\u7d99\u7d9a\u3002\u30c6\u30fc\u30de\u76e3\u8996\u306f\u7dad\u6301\u3059\u308b\u304c\u3001\u53cd\u767a\u78ba\u8a8d\u306a\u3057\u3067\u306f\u6607\u683c\u4e0d\u53ef\u3002",
+          "flag": "MAINTAIN_WATCH"
+        },
+        {
+          "ticker": "LUNR",
+          "action": "MAINTAIN",
+          "new_score": 6.2,
+          "note": "\u58f2\u4e0a+198.7%\u3068\u53d7\u6ce8\u6b8b\u30c6\u30fc\u30bc\u306f\u7d99\u7d9a\u3002\u305f\u3060\u3057\u5f53\u65e5-12.0%\u3001\u8d64\u5b57\u3001\u30dc\u30e9\u30c6\u30a3\u30ea\u30c6\u30a3\u304c\u9ad8\u3044\u3002\u30a8\u30f3\u30c8\u30ea\u30fc\u306f\u5024\u56fa\u3081\u78ba\u8a8d\u5f8c\u3002",
+          "flag": "MAINTAIN_WATCH"
+        },
+        {
+          "ticker": "QBTS",
+          "action": "ADD_NOTE",
+          "new_score": 5.7,
+          "note": "\u91cf\u5b50\u653f\u7b56\u30c6\u30fc\u30de\u306f\u6b8b\u308b\u304c\u3001\u58f2\u4e0a-80.9%\u3068\u30d5\u30a1\u30f3\u30c0\u60aa\u5316\u304c\u91cd\u3044\u3002\u5f53\u65e5-12.4%\u3067\u6295\u6a5f\u8272\u304c\u5f37\u304f\u3001\u76e3\u8996\u306e\u307f\u3002",
+          "flag": "SPECULATIVE_WATCH"
+        },
+        {
+          "ticker": "INFQ",
+          "action": "ADD_NOTE",
+          "new_score": 5.8,
+          "note": "CHIPS/\u91cf\u5b50\u30c6\u30fc\u30de\u306f\u6b8b\u308b\u304c\u3001\u5f53\u65e5-13.8%\u3001\u55b6\u696d\u8d64\u5b57\u3001\u9ad8P/S\u3001\u30a2\u30ca\u30ea\u30b9\u30c8\u65702\u540d\u3067\u78ba\u5ea6\u4e0d\u8db3\u3002\u76e3\u8996\u306e\u307f\u3002",
+          "flag": "SPECULATIVE_WATCH"
+        },
+        {
+          "ticker": "RGTI",
+          "action": "MAINTAIN",
+          "new_score": 6.1,
+          "note": "\u58f2\u4e0a+198.9%\u3068\u653f\u7b56\u6750\u6599\u306f\u3042\u308b\u304c\u3001\u5f53\u65e5-12.7%\u3001\u8d64\u5b57\u30fb\u9ad8P/S\u3067\u30ea\u30b9\u30af\u304c\u9ad8\u3044\u3002\u91cf\u5b50\u30c6\u30fc\u30de\u76e3\u8996\u306b\u9650\u5b9a\u3002",
+          "flag": "SPECULATIVE_WATCH"
+        },
+        {
+          "ticker": "NOK",
+          "action": "MAINTAIN",
+          "new_score": 5.9,
+          "note": "AI\u30cd\u30c3\u30c8\u30ef\u30fc\u30af\u6750\u6599\u306f\u7d99\u7d9a\u3059\u308b\u304c\u3001\u58f2\u4e0a\u6210\u9577+2.4%\u3067\u5f31\u304f\u3001\u5f53\u65e5-11.1%\u3001\u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19\u3082\u73fe\u5024\u3092\u4e0b\u56de\u308b\u3002\u6607\u683c\u306a\u3057\u3002",
+          "flag": "MAINTAIN_WATCH"
+        }
+      ]
     }
   ]
 }

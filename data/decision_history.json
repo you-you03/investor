@@ -170,5 +170,79 @@
       "hold_cash_count": 0
     },
     "no_trade_week": false
+  },
+  {
+    "date": "2026-06-06",
+    "run_id": "901745d3-090e-4ada-b5df-e3f4d59b145d",
+    "candidates_evaluated": [
+      "ARGX",
+      "PLMR",
+      "TXRH",
+      "COO",
+      "COKE"
+    ],
+    "buy_decisions": [],
+    "pass_decisions": [
+      "ARGX",
+      "PLMR",
+      "TXRH",
+      "COO",
+      "COKE"
+    ],
+    "hold_cash_decisions": [
+      "CASH"
+    ],
+    "proposal_records": [
+      {
+        "ticker": "CASH",
+        "action": "NO_TRADE",
+        "conviction": "LOW",
+        "position_size_usd": 670.0,
+        "signal_type": null
+      }
+    ],
+    "pass_records": [
+      {
+        "ticker": "ARGX",
+        "score": 8.1,
+        "conviction": "HIGH",
+        "entry_price_range": null,
+        "signal_type": null
+      },
+      {
+        "ticker": "PLMR",
+        "score": 7.7,
+        "conviction": "HIGH",
+        "entry_price_range": null,
+        "signal_type": null
+      },
+      {
+        "ticker": "TXRH",
+        "score": 7.4,
+        "conviction": "MEDIUM",
+        "entry_price_range": null,
+        "signal_type": null
+      },
+      {
+        "ticker": "COO",
+        "score": 7.2,
+        "conviction": "MEDIUM",
+        "entry_price_range": null,
+        "signal_type": null
+      },
+      {
+        "ticker": "COKE",
+        "score": 7.0,
+        "conviction": "MEDIUM",
+        "entry_price_range": null,
+        "signal_type": null
+      }
+    ],
+    "proposal_summary": {
+      "buy_count": 0,
+      "pass_count": 5,
+      "hold_cash_count": 1
+    },
+    "no_trade_week": true
   }
 ]

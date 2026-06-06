@@ -990,5 +990,188 @@
         "target_price": 428.87
       }
     ]
+  },
+  {
+    "date": "2026-06-03",
+    "position_count": 5,
+    "alert_count": 0,
+    "high_alert_count": 0,
+    "positions": [
+      {
+        "ticker": "TEAM",
+        "shares": 5.0,
+        "entry_price": 88.88,
+        "current_price": 109.0999984741211,
+        "target_price": "120.0",
+        "stop_loss": "99.0"
+      },
+      {
+        "ticker": "LRCX",
+        "shares": 2.0,
+        "entry_price": 284.72,
+        "current_price": 334.4100036621094,
+        "target_price": "335.0",
+        "stop_loss": "305.0"
+      },
+      {
+        "ticker": "NVDA",
+        "shares": 5.0,
+        "entry_price": 215.33,
+        "current_price": 222.82000732421875,
+        "target_price": "255.0",
+        "stop_loss": "205.0"
+      },
+      {
+        "ticker": "VRT",
+        "shares": 4.0,
+        "entry_price": 315.71,
+        "current_price": 334.489990234375,
+        "target_price": "355.0",
+        "stop_loss": "296.0"
+      },
+      {
+        "ticker": "AMAT",
+        "shares": 2.0,
+        "entry_price": 490.05,
+        "current_price": 490.04998779296875,
+        "target_price": "530.67",
+        "stop_loss": "469.74"
+      }
+    ],
+    "alerts": []
+  },
+  {
+    "date": "2026-06-06",
+    "position_count": 5,
+    "alert_count": 7,
+    "high_alert_count": 6,
+    "positions": [
+      {
+        "ticker": "TEAM",
+        "shares": 5.0,
+        "entry_price": 88.88,
+        "current_price": 99.47000122070312,
+        "target_price": "120.0",
+        "stop_loss": "99.0"
+      },
+      {
+        "ticker": "LRCX",
+        "shares": 2.0,
+        "entry_price": 284.72,
+        "current_price": 303.2799987792969,
+        "target_price": "335.0",
+        "stop_loss": "305.0"
+      },
+      {
+        "ticker": "NVDA",
+        "shares": 5.0,
+        "entry_price": 215.33,
+        "current_price": 205.10000610351562,
+        "target_price": "255.0",
+        "stop_loss": "205.0"
+      },
+      {
+        "ticker": "VRT",
+        "shares": 4.0,
+        "entry_price": 315.71,
+        "current_price": 300.510009765625,
+        "target_price": "355.0",
+        "stop_loss": "296.0"
+      },
+      {
+        "ticker": "AMAT",
+        "shares": 2.0,
+        "entry_price": 490.05,
+        "current_price": 453.010009765625,
+        "target_price": "530.67",
+        "stop_loss": "469.74"
+      }
+    ],
+    "alerts": [
+      {
+        "date": "2026-06-06",
+        "ticker": "LRCX",
+        "alert_type": "STOP_LOSS",
+        "severity": "HIGH",
+        "message": "Price $303.28 hit stop loss $305.00",
+        "current_price": 303.2799987792969,
+        "entry_price": 284.72,
+        "unrealized_pnl_pct": 6.52,
+        "stop_loss": 305.0,
+        "target_price": 335.0
+      },
+      {
+        "date": "2026-06-06",
+        "ticker": "LRCX",
+        "alert_type": "SHARP_DROP",
+        "severity": "HIGH",
+        "message": "Intraday drop -8.5%",
+        "current_price": 303.2799987792969,
+        "entry_price": 284.72,
+        "unrealized_pnl_pct": 6.52,
+        "stop_loss": 305.0,
+        "target_price": 335.0
+      },
+      {
+        "date": "2026-06-06",
+        "ticker": "NVDA",
+        "alert_type": "SHARP_DROP",
+        "severity": "HIGH",
+        "message": "Intraday drop -5.2%",
+        "current_price": 205.10000610351562,
+        "entry_price": 215.33,
+        "unrealized_pnl_pct": -4.75,
+        "stop_loss": 205.0,
+        "target_price": 255.0
+      },
+      {
+        "date": "2026-06-06",
+        "ticker": "VRT",
+        "alert_type": "SHARP_DROP",
+        "severity": "HIGH",
+        "message": "Intraday drop -5.8%",
+        "current_price": 300.510009765625,
+        "entry_price": 315.71,
+        "unrealized_pnl_pct": -4.81,
+        "stop_loss": 296.0,
+        "target_price": 355.0
+      },
+      {
+        "date": "2026-06-06",
+        "ticker": "AMAT",
+        "alert_type": "STOP_LOSS",
+        "severity": "HIGH",
+        "message": "Price $453.01 hit stop loss $469.74",
+        "current_price": 453.010009765625,
+        "entry_price": 490.05,
+        "unrealized_pnl_pct": -7.56,
+        "stop_loss": 469.74,
+        "target_price": 530.67
+      },
+      {
+        "date": "2026-06-06",
+        "ticker": "AMAT",
+        "alert_type": "SHARP_DROP",
+        "severity": "HIGH",
+        "message": "Intraday drop -8.2%",
+        "current_price": 453.010009765625,
+        "entry_price": 490.05,
+        "unrealized_pnl_pct": -7.56,
+        "stop_loss": 469.74,
+        "target_price": 530.67
+      },
+      {
+        "date": "2026-06-06",
+        "ticker": "AMAT",
+        "alert_type": "SIGNIFICANT_DRAWDOWN",
+        "severity": "MEDIUM",
+        "message": "Unrealized loss -7.6%",
+        "current_price": 453.010009765625,
+        "entry_price": 490.05,
+        "unrealized_pnl_pct": -7.56,
+        "stop_loss": 469.74,
+        "target_price": 530.67
+      }
+    ]
   }
 ]
