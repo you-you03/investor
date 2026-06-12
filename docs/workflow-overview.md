@@ -93,7 +93,8 @@ investor は「毎日の米国株投資判断をAIで自動化する」システ
 | ② 最新株価・テクニカル取得 | RSI / MACD / EMA / ボリンジャーバンドなど |
 | ③ 損益計算 | 含み益・含み損、目標株価まで何%残っているか |
 | ④ アラート判定 | 6種類のルールで自動判定（下記参照） |
-| ⑤ Slack送信 | `scripts/run_monitor.py`経由でSlack通知 |
+| ⑤ 関連テーマニュース収集 | portfolio / active watchlist から関連テーマを作り、参考ニュースを少数だけ保存 |
+| ⑥ Slack送信 | `scripts/run_monitor.py`経由でSlack通知 |
 
 **アラート条件（ルールベース、AIなし）**:
 
@@ -111,8 +112,13 @@ investor は「毎日の米国株投資判断をAIで自動化する」システ
 | ファイル / 送信先 | 内容 |
 |---|---|
 | `data/monitor_history.json` | 毎回の監視結果を時系列で蓄積（損益・アラート履歴） |
+| `data/market_news.sqlite` | 関連テーマニュースの軽量DB。portfolio / watchlist 由来のテーマを優先する |
 | `reports/monitor/monitor_YYYY-MM-DD.md` | ポジション詳細・アラート一覧・ウォッチリスト値動き・推奨アクションを記載 |
 | Slack通知 | HIGH/MEDIUMアラートがある場合にメッセージ送信 |
+
+ニュースは売買判断のファクトにはしない。research / decision で文脈を見るための参考材料にとどめる。
+`PERPLEXITY_API_KEY` が有効ならテーマごとに日本語要約を作る。使えない場合は関連銘柄ニュースにフォールバックする。
+収集上限はテーマ3件、レポート掲載4件。
 
 ---
 
@@ -122,11 +128,14 @@ investor は「毎日の米国株投資判断をAIで自動化する」システ
 
 ### 何をやっているか
 
-`data/research_history.json`に蓄積された過去データを使って：
+`data/research_history.json` と `data/score_snapshots.json` に蓄積された過去データを使って：
 
 - **確信度別の平均Alpha**: HIGH / MEDIUM / LOW が SPY を本当に上回っているか？
+- **市場環境別のリターン**: 同期間のSPY変動率と確信度のマトリクスで、地合い別の期待値を見る
+- **QQQ / セクターETF補正**: SPYだけでなく、QQQと銘柄ごとのセクターETFに対するalphaを見る
 - **signal_type別の平均Alpha**: どの入口ルールが効いているか？
 - **保有日数別の傾向**: 何日持つと期待値が落ちるか？
+- **3週後KPI**: 1週後はノイズ扱い。3週後alphaを主指標、4週後を補助指標にする
 - **直近EV劣化**: 最近5件の期待値が崩れていないか？
 - **提案数と実約定数の分離**: 提案の質と執行結果を混ぜない
 
@@ -134,6 +143,8 @@ investor は「毎日の米国株投資判断をAIで自動化する」システ
 
 | ファイル | 内容 |
 |---|---|
+| `scripts/fetch_returns.py` | score_snapshots の1〜4週後リターン、SPY/QQQ/セクター/VIX/10年金利を更新 |
+| `scripts/validate_scores.py` | 3週後KPI、確信度×SPY変動率マトリクス、セクター補正レポート |
 | `scripts/show_calibration_stats.py` | 判断前に読む校正レポート |
 | `reports/review/review_YYYY-MM-DD.md` | 提案サマリー / 実約定サマリー / B枠比較を保存 |
 

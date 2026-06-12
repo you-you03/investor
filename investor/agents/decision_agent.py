@@ -114,6 +114,12 @@ def enrich_proposals(raw_proposals: list[dict], candidates: list[dict]) -> list[
             "key_catalysts": p.get("key_catalysts", []),
             "risk_factors": p.get("risk_factors", []),
             "time_horizon": p.get("time_horizon"),
+            "expected_hold_weeks": p.get("expected_hold_weeks", 3),
+            "review_week": p.get("review_week", 3),
+            "early_exit_conditions": p.get(
+                "early_exit_conditions",
+                ["stop breach", "thesis broken", "sector reversal"],
+            ),
             "signal_type": p.get("signal_type") or research.get("signal_type"),
         })
     return proposals

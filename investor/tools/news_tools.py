@@ -6,6 +6,7 @@ Perplexity and Grok are optional — silently skipped when keys are absent.
 
 import json
 
+from investor.core.market_news import load_recent_market_news
 from investor.data.yfinance_client import YFinanceClient
 from investor.utils.logger import get_logger
 
@@ -87,6 +88,11 @@ def get_analyst_ratings(ticker: str) -> str:
     return json.dumps({"ticker": ticker, "analyst_summary": result})
 
 
+def get_market_news_references(limit: int = 8) -> str:
+    """Return recent monitor-collected market/sector headlines as weak context."""
+    return json.dumps(load_recent_market_news(limit=limit), ensure_ascii=False)
+
+
 # --------------------------------------------------------------------------- #
 #  Claude tool definitions
 # --------------------------------------------------------------------------- #
@@ -157,6 +163,23 @@ NEWS_TOOL_DEFINITIONS: list[dict] = [
                 "ticker": {"type": "string", "description": "Stock ticker symbol"},
             },
             "required": ["ticker"],
+        },
+    },
+    {
+        "name": "get_market_news_references",
+        "description": (
+            "Read recent market/sector headlines collected by Monitor. "
+            "These are weak, unverified references only and must not be treated as facts."
+        ),
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "limit": {
+                    "type": "integer",
+                    "description": "Maximum number of headlines to return (default 8)",
+                    "default": 8,
+                },
+            },
         },
     },
 ]

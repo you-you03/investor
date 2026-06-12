@@ -62,6 +62,7 @@ def main() -> None:
     )
     from investor.tools.news_tools import (
         get_analyst_ratings,
+        get_market_news_references,
         get_news,
         get_web_search,
         get_x_search,
@@ -83,6 +84,7 @@ def main() -> None:
         "get_web_search": get_web_search,
         "get_x_search": get_x_search,
         "get_analyst_ratings": get_analyst_ratings,
+        "get_market_news_references": get_market_news_references,
     }
 
     fn = tools.get(tool_name)

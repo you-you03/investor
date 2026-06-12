@@ -16,6 +16,10 @@ from pathlib import Path
 
 import yfinance as yf
 
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
+from investor.core.score_snapshots import classify_market_regime, sector_etf_for_ticker
+
 SNAPSHOTS_PATH = Path(__file__).parent.parent / "data" / "score_snapshots.json"
 WEEK_KEYS = ["week1", "week2", "week3", "week4"]
 
@@ -36,12 +40,12 @@ def fetch_close_on_or_before(ticker: str, target: date) -> float | None:
     return float(hist["Close"].iloc[-1])
 
 
-def fetch_spy_return(scored_at: date, target: date) -> float | None:
-    """scored_at → target 間の SPY 累積リターン（%）を返す。"""
-    spy = yf.Ticker("SPY")
+def fetch_symbol_return(symbol: str, scored_at: date, target: date) -> float | None:
+    """scored_at → target 間の symbol 累積リターン（%）を返す。"""
+    ticker = yf.Ticker(symbol)
     start = scored_at - timedelta(days=7)
     end = target + timedelta(days=1)
-    hist = spy.history(start=start.isoformat(), end=end.isoformat())
+    hist = ticker.history(start=start.isoformat(), end=end.isoformat())
     if hist.empty:
         return None
 
@@ -58,6 +62,42 @@ def fetch_spy_return(scored_at: date, target: date) -> float | None:
     return round((price_end - price_start) / price_start * 100, 4)
 
 
+def fetch_tnx_change_bps(scored_at: date, target: date) -> float | None:
+    """
+    ^TNX is quoted as 10x the 10-year yield.
+    A 1.0 move in ^TNX is roughly 10 bps.
+    """
+    tnx = yf.Ticker("^TNX")
+    start = scored_at - timedelta(days=7)
+    end = target + timedelta(days=1)
+    hist = tnx.history(start=start.isoformat(), end=end.isoformat())
+    if hist.empty:
+        return None
+    before = hist[hist.index.date <= scored_at]
+    after = hist[hist.index.date <= target]
+    if before.empty or after.empty:
+        return None
+    start_value = float(before["Close"].iloc[-1])
+    end_value = float(after["Close"].iloc[-1])
+    return round((end_value - start_value) * 10, 2)
+
+
+def _needs_backfill(wk: dict) -> bool:
+    return any(
+        wk.get(key) is None
+        for key in (
+            "qqq_return_pct",
+            "sector_return_pct",
+            "alpha_vs_spy",
+            "alpha_vs_qqq",
+            "alpha_vs_sector",
+            "vix_change_pct",
+            "ten_year_yield_change_bps",
+            "market_regime",
+        )
+    )
+
+
 def process_snapshots() -> None:
     if not SNAPSHOTS_PATH.exists():
         print(f"ERROR: {SNAPSHOTS_PATH} not found.", file=sys.stderr)
@@ -70,8 +110,9 @@ def process_snapshots() -> None:
     today = date.today()
     updated = 0
 
-    # SPY キャッシュ（scored_at ごとに1回だけ取得）
-    spy_cache: dict[tuple[str, str], float | None] = {}
+    # Benchmark caches. Keyed by symbol + scored_at + target.
+    return_cache: dict[tuple[str, str, str], float | None] = {}
+    tnx_cache: dict[tuple[str, str], float | None] = {}
 
     print(f"Checking score_snapshots for matured milestones... (today={today})")
 
@@ -88,9 +129,6 @@ def process_snapshots() -> None:
             wk = snap.get(wk_key)
             if wk is None:
                 continue
-            if wk.get("fetched_at") is not None:
-                continue  # 取得済み
-
             target_str = wk.get("target_date")
             if not target_str:
                 continue
@@ -100,36 +138,83 @@ def process_snapshots() -> None:
                 print(f"  {ticker:6s} {wk_key} ({target}) → future, skip")
                 continue
 
-            # 株価取得
-            price = fetch_close_on_or_before(ticker, target)
-            if price is None:
-                print(f"  {ticker:6s} {wk_key} ({target}) → price fetch failed, skip")
+            if wk.get("fetched_at") is not None and not _needs_backfill(wk):
                 continue
 
-            # リターン計算
-            ret_pct = round((price - price_at_score) / price_at_score * 100, 4)
+            if wk.get("return_pct") is None or wk.get("price") is None:
+                price = fetch_close_on_or_before(ticker, target)
+                if price is None:
+                    print(f"  {ticker:6s} {wk_key} ({target}) → price fetch failed, skip")
+                    continue
+                ret_pct = round((price - price_at_score) / price_at_score * 100, 4)
+                wk["price"] = round(price, 2)
+                wk["return_pct"] = ret_pct
+            else:
+                price = wk.get("price")
+                ret_pct = wk.get("return_pct")
 
-            # SPY リターン（キャッシュ利用）
-            spy_key = (scored_at_str, target_str)
-            if spy_key not in spy_cache:
-                spy_cache[spy_key] = fetch_spy_return(scored_at, target)
-            spy_ret = spy_cache[spy_key]
+            sector_etf = wk.get("sector_etf") or snap.get("sector_etf") or sector_etf_for_ticker(ticker)
+            wk["sector_etf"] = sector_etf
+            snap["sector_etf"] = snap.get("sector_etf") or sector_etf
 
-            alpha = None
-            if spy_ret is not None:
-                alpha = round(ret_pct - spy_ret, 4)
+            def cached_return(symbol: str) -> float | None:
+                key = (symbol, scored_at_str, target_str)
+                if key not in return_cache:
+                    return_cache[key] = fetch_symbol_return(symbol, scored_at, target)
+                return return_cache[key]
 
-            wk["price"] = round(price, 2)
-            wk["return_pct"] = ret_pct
+            spy_ret = wk.get("spy_return_pct")
+            if spy_ret is None:
+                spy_ret = cached_return("SPY")
+                wk["spy_return_pct"] = spy_ret
+
+            qqq_ret = wk.get("qqq_return_pct")
+            if qqq_ret is None:
+                qqq_ret = cached_return("QQQ")
+                wk["qqq_return_pct"] = qqq_ret
+
+            sector_ret = wk.get("sector_return_pct")
+            if sector_ret is None:
+                sector_ret = cached_return(sector_etf)
+                wk["sector_return_pct"] = sector_ret
+
+            vix_change = wk.get("vix_change_pct")
+            if vix_change is None:
+                vix_change = cached_return("^VIX")
+                wk["vix_change_pct"] = vix_change
+
+            tnx_key = (scored_at_str, target_str)
+            yield_change = wk.get("ten_year_yield_change_bps")
+            if yield_change is None:
+                if tnx_key not in tnx_cache:
+                    tnx_cache[tnx_key] = fetch_tnx_change_bps(scored_at, target)
+                yield_change = tnx_cache[tnx_key]
+                wk["ten_year_yield_change_bps"] = yield_change
+
+            alpha_spy = round(ret_pct - spy_ret, 4) if spy_ret is not None else None
+            alpha_qqq = round(ret_pct - qqq_ret, 4) if qqq_ret is not None else None
+            alpha_sector = round(ret_pct - sector_ret, 4) if sector_ret is not None else None
+            wk["alpha_pct"] = alpha_spy
+            wk["alpha_vs_spy"] = alpha_spy
+            wk["alpha_vs_qqq"] = alpha_qqq
+            wk["alpha_vs_sector"] = alpha_sector
+            wk["market_regime"] = classify_market_regime(
+                spy_return_pct=spy_ret,
+                qqq_return_pct=qqq_ret,
+                sector_return_pct=sector_ret,
+                vix_change_pct=vix_change,
+                ten_year_yield_change_bps=yield_change,
+            )
             wk["spy_return_pct"] = spy_ret
-            wk["alpha_pct"] = alpha
             wk["fetched_at"] = datetime.now().isoformat(timespec="seconds")
             updated += 1
 
             spy_str = f"SPY: {spy_ret:+.1f}%" if spy_ret is not None else "SPY: N/A"
-            alpha_str = f"alpha: {alpha:+.1f}%" if alpha is not None else "alpha: N/A"
+            sector_str = f"{sector_etf}: {sector_ret:+.1f}%" if sector_ret is not None else f"{sector_etf}: N/A"
+            alpha_str = f"sector alpha: {alpha_sector:+.1f}%" if alpha_sector is not None else "sector alpha: N/A"
             print(
-                f"  {ticker:6s} {wk_key} ({target}) → ${price:.2f} | {ret_pct:+.1f}% | {spy_str} | {alpha_str}  ✅"
+                f"  {ticker:6s} {wk_key} ({target}) → ${float(price):.2f} | {ret_pct:+.1f}% | "
+                f"{spy_str} | {sector_str} | {alpha_str}  ✅"
             )
 
     with open(SNAPSHOTS_PATH, "w") as f:

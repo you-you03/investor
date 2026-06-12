@@ -22,6 +22,7 @@ from datetime import date, datetime
 from pathlib import Path
 
 from investor.agents.research_agent import collect_ticker_data
+from investor.core.score_snapshots import add_score_snapshots
 from investor.tools.market_tools import get_market_context, get_sector_rs
 from investor.utils.logger import get_logger
 
@@ -194,6 +195,7 @@ def save_watchlist_research(run_id: str, results: list[dict]) -> None:
     })
     WR_HISTORY_PATH.write_text(json.dumps(history, indent=2))
     logger.info(f"Saved watchlist research run | run_id={run_id}")
+    add_score_snapshots(run_id=run_id, source="watchlist_research", results=results, scored_at=date.fromisoformat(today))
     _save_watchlist_research_markdown(run_id, today, results)
 
 

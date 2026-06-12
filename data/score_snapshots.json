@@ -24,7 +24,16 @@
         "return_pct": 3.2676,
         "spy_return_pct": 0.5351,
         "alpha_pct": 2.7325,
-        "fetched_at": "2026-05-16T10:29:49"
+        "fetched_at": "2026-06-12T21:45:06",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 2.3164,
+        "sector_return_pct": 9.1089,
+        "vix_change_pct": 7.0366,
+        "ten_year_yield_change_bps": 0.64,
+        "alpha_vs_spy": 2.7325,
+        "alpha_vs_qqq": 0.9512,
+        "alpha_vs_sector": -5.8413,
+        "market_regime": "sector_tailwind"
       },
       "week2": {
         "target_date": "2026-05-03",
@@ -32,7 +41,16 @@
         "return_pct": -1.6015,
         "spy_return_pct": 1.48,
         "alpha_pct": -3.0815,
-        "fetched_at": "2026-05-16T10:29:49"
+        "fetched_at": "2026-06-12T21:45:07",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 3.8992,
+        "sector_return_pct": 9.8371,
+        "vix_change_pct": -2.8032,
+        "ten_year_yield_change_bps": 1.32,
+        "alpha_vs_spy": -3.0815,
+        "alpha_vs_qqq": -5.5007,
+        "alpha_vs_sector": -11.4386,
+        "market_regime": "sector_tailwind"
       },
       "week3": {
         "target_date": "2026-05-10",
@@ -40,7 +58,16 @@
         "return_pct": 6.7037,
         "spy_return_pct": 3.8697,
         "alpha_pct": 2.834,
-        "fetched_at": "2026-05-16T10:29:49"
+        "fetched_at": "2026-06-12T21:45:08",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 9.6139,
+        "sector_return_pct": 22.057,
+        "vix_change_pct": -1.659,
+        "ten_year_yield_change_bps": 1.18,
+        "alpha_vs_spy": 2.834,
+        "alpha_vs_qqq": -2.9102,
+        "alpha_vs_sector": -15.3533,
+        "market_regime": "sector_tailwind"
       },
       "week4": {
         "target_date": "2026-05-17",
@@ -48,8 +75,18 @@
         "return_pct": 11.5915,
         "spy_return_pct": 4.0879,
         "alpha_pct": 7.5036,
-        "fetched_at": "2026-06-06T09:16:44"
-      }
+        "fetched_at": "2026-06-12T21:45:08",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 9.2595,
+        "sector_return_pct": 19.8595,
+        "vix_change_pct": 5.4348,
+        "ten_year_yield_change_bps": 3.49,
+        "alpha_vs_spy": 7.5036,
+        "alpha_vs_qqq": 2.332,
+        "alpha_vs_sector": -8.268,
+        "market_regime": "sector_tailwind"
+      },
+      "sector_etf": "SMH"
     },
     {
       "run_id": "8cfe6f43-f9af-4691-9d1f-569b86a8160d",
@@ -75,7 +112,16 @@
         "return_pct": 5.245,
         "spy_return_pct": 0.5351,
         "alpha_pct": 4.7099,
-        "fetched_at": "2026-05-16T10:29:49"
+        "fetched_at": "2026-06-12T21:45:09",
+        "sector_etf": "XLI",
+        "qqq_return_pct": 2.3164,
+        "sector_return_pct": -0.5994,
+        "vix_change_pct": 7.0366,
+        "ten_year_yield_change_bps": 0.64,
+        "alpha_vs_spy": 4.7099,
+        "alpha_vs_qqq": 2.9286,
+        "alpha_vs_sector": 5.8444,
+        "market_regime": "neutral"
       },
       "week2": {
         "target_date": "2026-05-03",
@@ -83,7 +129,16 @@
         "return_pct": 6.8231,
         "spy_return_pct": 1.48,
         "alpha_pct": 5.3431,
-        "fetched_at": "2026-05-16T10:29:50"
+        "fetched_at": "2026-06-12T21:45:09",
+        "sector_etf": "XLI",
+        "qqq_return_pct": 3.8992,
+        "sector_return_pct": -0.317,
+        "vix_change_pct": -2.8032,
+        "ten_year_yield_change_bps": 1.32,
+        "alpha_vs_spy": 5.3431,
+        "alpha_vs_qqq": 2.9239,
+        "alpha_vs_sector": 7.1401,
+        "market_regime": "neutral"
       },
       "week3": {
         "target_date": "2026-05-10",
@@ -91,7 +146,16 @@
         "return_pct": 10.6169,
         "spy_return_pct": 3.8697,
         "alpha_pct": 6.7472,
-        "fetched_at": "2026-05-16T10:29:50"
+        "fetched_at": "2026-06-12T21:45:09",
+        "sector_etf": "XLI",
+        "qqq_return_pct": 9.6139,
+        "sector_return_pct": -0.1787,
+        "vix_change_pct": -1.659,
+        "ten_year_yield_change_bps": 1.18,
+        "alpha_vs_spy": 6.7472,
+        "alpha_vs_qqq": 1.003,
+        "alpha_vs_sector": 10.7956,
+        "market_regime": "risk_on_growth"
       },
       "week4": {
         "target_date": "2026-05-17",
@@ -99,8 +163,18 @@
         "return_pct": 20.6937,
         "spy_return_pct": 4.0879,
         "alpha_pct": 16.6058,
-        "fetched_at": "2026-06-06T09:16:45"
-      }
+        "fetched_at": "2026-06-12T21:45:09",
+        "sector_etf": "XLI",
+        "qqq_return_pct": 9.2595,
+        "sector_return_pct": -1.2161,
+        "vix_change_pct": 5.4348,
+        "ten_year_yield_change_bps": 3.49,
+        "alpha_vs_spy": 16.6058,
+        "alpha_vs_qqq": 11.4342,
+        "alpha_vs_sector": 21.9098,
+        "market_regime": "risk_on"
+      },
+      "sector_etf": "XLI"
     },
     {
       "run_id": "8cfe6f43-f9af-4691-9d1f-569b86a8160d",
@@ -126,7 +200,16 @@
         "return_pct": 3.9898,
         "spy_return_pct": 0.5351,
         "alpha_pct": 3.4547,
-        "fetched_at": "2026-05-16T10:29:50"
+        "fetched_at": "2026-06-12T21:45:09",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 2.3164,
+        "sector_return_pct": 9.1089,
+        "vix_change_pct": 7.0366,
+        "ten_year_yield_change_bps": 0.64,
+        "alpha_vs_spy": 3.4547,
+        "alpha_vs_qqq": 1.6734,
+        "alpha_vs_sector": -5.1191,
+        "market_regime": "sector_tailwind"
       },
       "week2": {
         "target_date": "2026-05-03",
@@ -134,7 +217,16 @@
         "return_pct": 3.6257,
         "spy_return_pct": 1.48,
         "alpha_pct": 2.1457,
-        "fetched_at": "2026-05-16T10:29:50"
+        "fetched_at": "2026-06-12T21:45:09",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 3.8992,
+        "sector_return_pct": 9.8371,
+        "vix_change_pct": -2.8032,
+        "ten_year_yield_change_bps": 1.32,
+        "alpha_vs_spy": 2.1457,
+        "alpha_vs_qqq": -0.2735,
+        "alpha_vs_sector": -6.2114,
+        "market_regime": "sector_tailwind"
       },
       "week3": {
         "target_date": "2026-05-10",
@@ -142,7 +234,16 @@
         "return_pct": 5.7706,
         "spy_return_pct": 3.8697,
         "alpha_pct": 1.9009,
-        "fetched_at": "2026-05-16T10:29:50"
+        "fetched_at": "2026-06-12T21:45:09",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 9.6139,
+        "sector_return_pct": 22.057,
+        "vix_change_pct": -1.659,
+        "ten_year_yield_change_bps": 1.18,
+        "alpha_vs_spy": 1.9009,
+        "alpha_vs_qqq": -3.8433,
+        "alpha_vs_sector": -16.2864,
+        "market_regime": "sector_tailwind"
       },
       "week4": {
         "target_date": "2026-05-17",
@@ -150,8 +251,18 @@
         "return_pct": 4.5875,
         "spy_return_pct": 4.0879,
         "alpha_pct": 0.4996,
-        "fetched_at": "2026-06-06T09:16:45"
-      }
+        "fetched_at": "2026-06-12T21:45:09",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 9.2595,
+        "sector_return_pct": 19.8595,
+        "vix_change_pct": 5.4348,
+        "ten_year_yield_change_bps": 3.49,
+        "alpha_vs_spy": 0.4996,
+        "alpha_vs_qqq": -4.672,
+        "alpha_vs_sector": -15.272,
+        "market_regime": "sector_tailwind"
+      },
+      "sector_etf": "SMH"
     },
     {
       "run_id": "8cfe6f43-f9af-4691-9d1f-569b86a8160d",
@@ -177,7 +288,16 @@
         "return_pct": 9.1524,
         "spy_return_pct": 0.5351,
         "alpha_pct": 8.6173,
-        "fetched_at": "2026-05-16T10:29:51"
+        "fetched_at": "2026-06-12T21:45:09",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 2.3164,
+        "sector_return_pct": 9.1089,
+        "vix_change_pct": 7.0366,
+        "ten_year_yield_change_bps": 0.64,
+        "alpha_vs_spy": 8.6173,
+        "alpha_vs_qqq": 6.836,
+        "alpha_vs_sector": 0.0435,
+        "market_regime": "sector_tailwind"
       },
       "week2": {
         "target_date": "2026-05-03",
@@ -185,7 +305,16 @@
         "return_pct": 19.1487,
         "spy_return_pct": 1.48,
         "alpha_pct": 17.6687,
-        "fetched_at": "2026-05-16T10:29:51"
+        "fetched_at": "2026-06-12T21:45:09",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 3.8992,
+        "sector_return_pct": 9.8371,
+        "vix_change_pct": -2.8032,
+        "ten_year_yield_change_bps": 1.32,
+        "alpha_vs_spy": 17.6687,
+        "alpha_vs_qqq": 15.2495,
+        "alpha_vs_sector": 9.3116,
+        "market_regime": "sector_tailwind"
       },
       "week3": {
         "target_date": "2026-05-10",
@@ -193,7 +322,16 @@
         "return_pct": 64.1088,
         "spy_return_pct": 3.8697,
         "alpha_pct": 60.2391,
-        "fetched_at": "2026-05-16T10:29:51"
+        "fetched_at": "2026-06-12T21:45:09",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 9.6139,
+        "sector_return_pct": 22.057,
+        "vix_change_pct": -1.659,
+        "ten_year_yield_change_bps": 1.18,
+        "alpha_vs_spy": 60.2391,
+        "alpha_vs_qqq": 54.4949,
+        "alpha_vs_sector": 42.0518,
+        "market_regime": "sector_tailwind"
       },
       "week4": {
         "target_date": "2026-05-17",
@@ -201,8 +339,18 @@
         "return_pct": 59.2414,
         "spy_return_pct": 4.0879,
         "alpha_pct": 55.1535,
-        "fetched_at": "2026-06-06T09:16:45"
-      }
+        "fetched_at": "2026-06-12T21:45:09",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 9.2595,
+        "sector_return_pct": 19.8595,
+        "vix_change_pct": 5.4348,
+        "ten_year_yield_change_bps": 3.49,
+        "alpha_vs_spy": 55.1535,
+        "alpha_vs_qqq": 49.9819,
+        "alpha_vs_sector": 39.3819,
+        "market_regime": "sector_tailwind"
+      },
+      "sector_etf": "SMH"
     },
     {
       "run_id": "8cfe6f43-f9af-4691-9d1f-569b86a8160d",
@@ -228,7 +376,16 @@
         "return_pct": 0.0673,
         "spy_return_pct": 0.5351,
         "alpha_pct": -0.4678,
-        "fetched_at": "2026-05-16T10:29:51"
+        "fetched_at": "2026-06-12T21:45:09",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 2.3164,
+        "sector_return_pct": 9.1089,
+        "vix_change_pct": 7.0366,
+        "ten_year_yield_change_bps": 0.64,
+        "alpha_vs_spy": -0.4678,
+        "alpha_vs_qqq": -2.2491,
+        "alpha_vs_sector": -9.0416,
+        "market_regime": "sector_tailwind"
       },
       "week2": {
         "target_date": "2026-05-03",
@@ -236,7 +393,16 @@
         "return_pct": -4.0658,
         "spy_return_pct": 1.48,
         "alpha_pct": -5.5458,
-        "fetched_at": "2026-05-16T10:29:51"
+        "fetched_at": "2026-06-12T21:45:09",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 3.8992,
+        "sector_return_pct": 9.8371,
+        "vix_change_pct": -2.8032,
+        "ten_year_yield_change_bps": 1.32,
+        "alpha_vs_spy": -5.5458,
+        "alpha_vs_qqq": -7.965,
+        "alpha_vs_sector": -13.9029,
+        "market_regime": "sector_tailwind"
       },
       "week3": {
         "target_date": "2026-05-10",
@@ -244,7 +410,16 @@
         "return_pct": 9.8842,
         "spy_return_pct": 3.8697,
         "alpha_pct": 6.0145,
-        "fetched_at": "2026-05-16T10:29:52"
+        "fetched_at": "2026-06-12T21:45:09",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 9.6139,
+        "sector_return_pct": 22.057,
+        "vix_change_pct": -1.659,
+        "ten_year_yield_change_bps": 1.18,
+        "alpha_vs_spy": 6.0145,
+        "alpha_vs_qqq": 0.2703,
+        "alpha_vs_sector": -12.1728,
+        "market_regime": "sector_tailwind"
       },
       "week4": {
         "target_date": "2026-05-17",
@@ -252,8 +427,18 @@
         "return_pct": 6.3976,
         "spy_return_pct": 4.0879,
         "alpha_pct": 2.3097,
-        "fetched_at": "2026-06-06T09:16:45"
-      }
+        "fetched_at": "2026-06-12T21:45:09",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 9.2595,
+        "sector_return_pct": 19.8595,
+        "vix_change_pct": 5.4348,
+        "ten_year_yield_change_bps": 3.49,
+        "alpha_vs_spy": 2.3097,
+        "alpha_vs_qqq": -2.8619,
+        "alpha_vs_sector": -13.4619,
+        "market_regime": "sector_tailwind"
+      },
+      "sector_etf": "SMH"
     },
     {
       "run_id": "8cfe6f43-f9af-4691-9d1f-569b86a8160d",
@@ -279,7 +464,16 @@
         "return_pct": -8.3921,
         "spy_return_pct": 0.5351,
         "alpha_pct": -8.9272,
-        "fetched_at": "2026-05-16T10:29:52"
+        "fetched_at": "2026-06-12T21:45:09",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 2.3164,
+        "sector_return_pct": 2.3164,
+        "vix_change_pct": 7.0366,
+        "ten_year_yield_change_bps": 0.64,
+        "alpha_vs_spy": -8.9272,
+        "alpha_vs_qqq": -10.7085,
+        "alpha_vs_sector": -10.7085,
+        "market_regime": "neutral"
       },
       "week2": {
         "target_date": "2026-05-03",
@@ -287,7 +481,16 @@
         "return_pct": -15.0881,
         "spy_return_pct": 1.48,
         "alpha_pct": -16.5681,
-        "fetched_at": "2026-05-16T10:29:52"
+        "fetched_at": "2026-06-12T21:45:09",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 3.8992,
+        "sector_return_pct": 3.8992,
+        "vix_change_pct": -2.8032,
+        "ten_year_yield_change_bps": 1.32,
+        "alpha_vs_spy": -16.5681,
+        "alpha_vs_qqq": -18.9873,
+        "alpha_vs_sector": -18.9873,
+        "market_regime": "sector_tailwind"
       },
       "week3": {
         "target_date": "2026-05-10",
@@ -295,7 +498,16 @@
         "return_pct": -10.0441,
         "spy_return_pct": 3.8697,
         "alpha_pct": -13.9138,
-        "fetched_at": "2026-05-16T10:29:52"
+        "fetched_at": "2026-06-12T21:45:09",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 9.6139,
+        "sector_return_pct": 9.6139,
+        "vix_change_pct": -1.659,
+        "ten_year_yield_change_bps": 1.18,
+        "alpha_vs_spy": -13.9138,
+        "alpha_vs_qqq": -19.658,
+        "alpha_vs_sector": -19.658,
+        "market_regime": "sector_tailwind"
       },
       "week4": {
         "target_date": "2026-05-17",
@@ -303,8 +515,18 @@
         "return_pct": -18.6344,
         "spy_return_pct": 4.0879,
         "alpha_pct": -22.7223,
-        "fetched_at": "2026-06-06T09:16:45"
-      }
+        "fetched_at": "2026-06-12T21:45:09",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 9.2595,
+        "sector_return_pct": 9.2595,
+        "vix_change_pct": 5.4348,
+        "ten_year_yield_change_bps": 3.49,
+        "alpha_vs_spy": -22.7223,
+        "alpha_vs_qqq": -27.8939,
+        "alpha_vs_sector": -27.8939,
+        "market_regime": "sector_tailwind"
+      },
+      "sector_etf": "QQQ"
     },
     {
       "run_id": "8cfe6f43-f9af-4691-9d1f-569b86a8160d",
@@ -330,7 +552,16 @@
         "return_pct": 2.7024,
         "spy_return_pct": 0.5351,
         "alpha_pct": 2.1673,
-        "fetched_at": "2026-05-16T10:29:52"
+        "fetched_at": "2026-06-12T21:45:09",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 2.3164,
+        "sector_return_pct": 2.3164,
+        "vix_change_pct": 7.0366,
+        "ten_year_yield_change_bps": 0.64,
+        "alpha_vs_spy": 2.1673,
+        "alpha_vs_qqq": 0.386,
+        "alpha_vs_sector": 0.386,
+        "market_regime": "neutral"
       },
       "week2": {
         "target_date": "2026-05-03",
@@ -338,7 +569,16 @@
         "return_pct": 6.3956,
         "spy_return_pct": 1.48,
         "alpha_pct": 4.9156,
-        "fetched_at": "2026-05-16T10:29:52"
+        "fetched_at": "2026-06-12T21:45:09",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 3.8992,
+        "sector_return_pct": 3.8992,
+        "vix_change_pct": -2.8032,
+        "ten_year_yield_change_bps": 1.32,
+        "alpha_vs_spy": 4.9156,
+        "alpha_vs_qqq": 2.4964,
+        "alpha_vs_sector": 2.4964,
+        "market_regime": "sector_tailwind"
       },
       "week3": {
         "target_date": "2026-05-10",
@@ -346,7 +586,16 @@
         "return_pct": 12.6531,
         "spy_return_pct": 3.8697,
         "alpha_pct": 8.7834,
-        "fetched_at": "2026-05-16T10:29:52"
+        "fetched_at": "2026-06-12T21:45:09",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 9.6139,
+        "sector_return_pct": 9.6139,
+        "vix_change_pct": -1.659,
+        "ten_year_yield_change_bps": 1.18,
+        "alpha_vs_spy": 8.7834,
+        "alpha_vs_qqq": 3.0392,
+        "alpha_vs_sector": 3.0392,
+        "market_regime": "sector_tailwind"
       },
       "week4": {
         "target_date": "2026-05-17",
@@ -354,8 +603,18 @@
         "return_pct": 6.5458,
         "spy_return_pct": 4.0879,
         "alpha_pct": 2.4579,
-        "fetched_at": "2026-06-06T09:16:45"
-      }
+        "fetched_at": "2026-06-12T21:45:09",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 9.2595,
+        "sector_return_pct": 9.2595,
+        "vix_change_pct": 5.4348,
+        "ten_year_yield_change_bps": 3.49,
+        "alpha_vs_spy": 2.4579,
+        "alpha_vs_qqq": -2.7137,
+        "alpha_vs_sector": -2.7137,
+        "market_regime": "sector_tailwind"
+      },
+      "sector_etf": "QQQ"
     },
     {
       "run_id": "8cfe6f43-f9af-4691-9d1f-569b86a8160d",
@@ -381,7 +640,16 @@
         "return_pct": 17.6247,
         "spy_return_pct": 0.5351,
         "alpha_pct": 17.0896,
-        "fetched_at": "2026-05-16T10:29:53"
+        "fetched_at": "2026-06-12T21:45:09",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 2.3164,
+        "sector_return_pct": 9.1089,
+        "vix_change_pct": 7.0366,
+        "ten_year_yield_change_bps": 0.64,
+        "alpha_vs_spy": 17.0896,
+        "alpha_vs_qqq": 15.3083,
+        "alpha_vs_sector": 8.5158,
+        "market_regime": "sector_tailwind"
       },
       "week2": {
         "target_date": "2026-05-03",
@@ -389,7 +657,16 @@
         "return_pct": 18.0829,
         "spy_return_pct": 1.48,
         "alpha_pct": 16.6029,
-        "fetched_at": "2026-05-16T10:29:53"
+        "fetched_at": "2026-06-12T21:45:09",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 3.8992,
+        "sector_return_pct": 9.8371,
+        "vix_change_pct": -2.8032,
+        "ten_year_yield_change_bps": 1.32,
+        "alpha_vs_spy": 16.6029,
+        "alpha_vs_qqq": 14.1837,
+        "alpha_vs_sector": 8.2458,
+        "market_regime": "sector_tailwind"
       },
       "week3": {
         "target_date": "2026-05-10",
@@ -397,7 +674,16 @@
         "return_pct": 21.7911,
         "spy_return_pct": 3.8697,
         "alpha_pct": 17.9214,
-        "fetched_at": "2026-05-16T10:29:53"
+        "fetched_at": "2026-06-12T21:45:09",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 9.6139,
+        "sector_return_pct": 22.057,
+        "vix_change_pct": -1.659,
+        "ten_year_yield_change_bps": 1.18,
+        "alpha_vs_spy": 17.9214,
+        "alpha_vs_qqq": 12.1772,
+        "alpha_vs_sector": -0.2659,
+        "market_regime": "sector_tailwind"
       },
       "week4": {
         "target_date": "2026-05-17",
@@ -405,8 +691,18 @@
         "return_pct": 26.6304,
         "spy_return_pct": 4.0879,
         "alpha_pct": 22.5425,
-        "fetched_at": "2026-06-06T09:16:45"
-      }
+        "fetched_at": "2026-06-12T21:45:09",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 9.2595,
+        "sector_return_pct": 19.8595,
+        "vix_change_pct": 5.4348,
+        "ten_year_yield_change_bps": 3.49,
+        "alpha_vs_spy": 22.5425,
+        "alpha_vs_qqq": 17.3709,
+        "alpha_vs_sector": 6.7709,
+        "market_regime": "sector_tailwind"
+      },
+      "sector_etf": "SMH"
     },
     {
       "run_id": "8cfe6f43-f9af-4691-9d1f-569b86a8160d",
@@ -432,7 +728,16 @@
         "return_pct": -4.3537,
         "spy_return_pct": 0.5351,
         "alpha_pct": -4.8888,
-        "fetched_at": "2026-05-16T10:29:53"
+        "fetched_at": "2026-06-12T21:45:09",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 2.3164,
+        "sector_return_pct": 2.3164,
+        "vix_change_pct": 7.0366,
+        "ten_year_yield_change_bps": 0.64,
+        "alpha_vs_spy": -4.8888,
+        "alpha_vs_qqq": -6.6701,
+        "alpha_vs_sector": -6.6701,
+        "market_regime": "neutral"
       },
       "week2": {
         "target_date": "2026-05-03",
@@ -440,7 +745,16 @@
         "return_pct": 0.7084,
         "spy_return_pct": 1.48,
         "alpha_pct": -0.7716,
-        "fetched_at": "2026-05-16T10:29:53"
+        "fetched_at": "2026-06-12T21:45:09",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 3.8992,
+        "sector_return_pct": 3.8992,
+        "vix_change_pct": -2.8032,
+        "ten_year_yield_change_bps": 1.32,
+        "alpha_vs_spy": -0.7716,
+        "alpha_vs_qqq": -3.1908,
+        "alpha_vs_sector": -3.1908,
+        "market_regime": "sector_tailwind"
       },
       "week3": {
         "target_date": "2026-05-10",
@@ -448,7 +762,16 @@
         "return_pct": 11.8115,
         "spy_return_pct": 3.8697,
         "alpha_pct": 7.9418,
-        "fetched_at": "2026-05-16T10:29:53"
+        "fetched_at": "2026-06-12T21:45:09",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 9.6139,
+        "sector_return_pct": 9.6139,
+        "vix_change_pct": -1.659,
+        "ten_year_yield_change_bps": 1.18,
+        "alpha_vs_spy": 7.9418,
+        "alpha_vs_qqq": 2.1976,
+        "alpha_vs_sector": 2.1976,
+        "market_regime": "sector_tailwind"
       },
       "week4": {
         "target_date": "2026-05-17",
@@ -456,8 +779,18 @@
         "return_pct": -6.0411,
         "spy_return_pct": 4.0879,
         "alpha_pct": -10.129,
-        "fetched_at": "2026-06-06T09:16:45"
-      }
+        "fetched_at": "2026-06-12T21:45:09",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 9.2595,
+        "sector_return_pct": 9.2595,
+        "vix_change_pct": 5.4348,
+        "ten_year_yield_change_bps": 3.49,
+        "alpha_vs_spy": -10.129,
+        "alpha_vs_qqq": -15.3006,
+        "alpha_vs_sector": -15.3006,
+        "market_regime": "sector_tailwind"
+      },
+      "sector_etf": "QQQ"
     },
     {
       "run_id": "8cfe6f43-f9af-4691-9d1f-569b86a8160d",
@@ -483,7 +816,16 @@
         "return_pct": 0.5445,
         "spy_return_pct": 0.5351,
         "alpha_pct": 0.0094,
-        "fetched_at": "2026-05-16T10:29:54"
+        "fetched_at": "2026-06-12T21:45:09",
+        "sector_etf": "XLU",
+        "qqq_return_pct": 2.3164,
+        "sector_return_pct": 0.0433,
+        "vix_change_pct": 7.0366,
+        "ten_year_yield_change_bps": 0.64,
+        "alpha_vs_spy": 0.0094,
+        "alpha_vs_qqq": -1.7719,
+        "alpha_vs_sector": 0.5012,
+        "market_regime": "neutral"
       },
       "week2": {
         "target_date": "2026-05-03",
@@ -491,7 +833,16 @@
         "return_pct": -5.0043,
         "spy_return_pct": 1.48,
         "alpha_pct": -6.4843,
-        "fetched_at": "2026-05-16T10:29:54"
+        "fetched_at": "2026-06-12T21:45:10",
+        "sector_etf": "XLU",
+        "qqq_return_pct": 3.8992,
+        "sector_return_pct": 0.8449,
+        "vix_change_pct": -2.8032,
+        "ten_year_yield_change_bps": 1.32,
+        "alpha_vs_spy": -6.4843,
+        "alpha_vs_qqq": -8.9035,
+        "alpha_vs_sector": -5.8492,
+        "market_regime": "neutral"
       },
       "week3": {
         "target_date": "2026-05-10",
@@ -499,7 +850,16 @@
         "return_pct": -9.6293,
         "spy_return_pct": 3.8697,
         "alpha_pct": -13.499,
-        "fetched_at": "2026-05-16T10:29:54"
+        "fetched_at": "2026-06-12T21:45:10",
+        "sector_etf": "XLU",
+        "qqq_return_pct": 9.6139,
+        "sector_return_pct": -3.1196,
+        "vix_change_pct": -1.659,
+        "ten_year_yield_change_bps": 1.18,
+        "alpha_vs_spy": -13.499,
+        "alpha_vs_qqq": -19.2432,
+        "alpha_vs_sector": -6.5097,
+        "market_regime": "risk_on_growth"
       },
       "week4": {
         "target_date": "2026-05-17",
@@ -507,8 +867,18 @@
         "return_pct": -14.5479,
         "spy_return_pct": 4.0879,
         "alpha_pct": -18.6358,
-        "fetched_at": "2026-06-06T09:16:46"
-      }
+        "fetched_at": "2026-06-12T21:45:10",
+        "sector_etf": "XLU",
+        "qqq_return_pct": 9.2595,
+        "sector_return_pct": -4.961,
+        "vix_change_pct": 5.4348,
+        "ten_year_yield_change_bps": 3.49,
+        "alpha_vs_spy": -18.6358,
+        "alpha_vs_qqq": -23.8074,
+        "alpha_vs_sector": -9.5869,
+        "market_regime": "risk_on"
+      },
+      "sector_etf": "XLU"
     },
     {
       "run_id": "8cfe6f43-f9af-4691-9d1f-569b86a8160d",
@@ -534,7 +904,16 @@
         "return_pct": -2.2543,
         "spy_return_pct": 0.5351,
         "alpha_pct": -2.7894,
-        "fetched_at": "2026-05-16T10:29:54"
+        "fetched_at": "2026-06-12T21:45:10",
+        "sector_etf": "IGV",
+        "qqq_return_pct": 2.3164,
+        "sector_return_pct": 0.141,
+        "vix_change_pct": 7.0366,
+        "ten_year_yield_change_bps": 0.64,
+        "alpha_vs_spy": -2.7894,
+        "alpha_vs_qqq": -4.5707,
+        "alpha_vs_sector": -2.3953,
+        "market_regime": "neutral"
       },
       "week2": {
         "target_date": "2026-05-03",
@@ -542,7 +921,16 @@
         "return_pct": -1.5848,
         "spy_return_pct": 1.48,
         "alpha_pct": -3.0648,
-        "fetched_at": "2026-05-16T10:29:54"
+        "fetched_at": "2026-06-12T21:45:10",
+        "sector_etf": "IGV",
+        "qqq_return_pct": 3.8992,
+        "sector_return_pct": 1.8218,
+        "vix_change_pct": -2.8032,
+        "ten_year_yield_change_bps": 1.32,
+        "alpha_vs_spy": -3.0648,
+        "alpha_vs_qqq": -5.484,
+        "alpha_vs_sector": -3.4066,
+        "market_regime": "neutral"
       },
       "week3": {
         "target_date": "2026-05-10",
@@ -550,7 +938,16 @@
         "return_pct": -5.8679,
         "spy_return_pct": 3.8697,
         "alpha_pct": -9.7376,
-        "fetched_at": "2026-05-16T10:29:54"
+        "fetched_at": "2026-06-12T21:45:11",
+        "sector_etf": "IGV",
+        "qqq_return_pct": 9.6139,
+        "sector_return_pct": 7.1345,
+        "vix_change_pct": -1.659,
+        "ten_year_yield_change_bps": 1.18,
+        "alpha_vs_spy": -9.7376,
+        "alpha_vs_qqq": -15.4818,
+        "alpha_vs_sector": -13.0024,
+        "market_regime": "sector_tailwind"
       },
       "week4": {
         "target_date": "2026-05-17",
@@ -558,8 +955,18 @@
         "return_pct": -8.4705,
         "spy_return_pct": 4.0879,
         "alpha_pct": -12.5584,
-        "fetched_at": "2026-06-06T09:16:46"
-      }
+        "fetched_at": "2026-06-12T21:45:11",
+        "sector_etf": "IGV",
+        "qqq_return_pct": 9.2595,
+        "sector_return_pct": 7.8749,
+        "vix_change_pct": 5.4348,
+        "ten_year_yield_change_bps": 3.49,
+        "alpha_vs_spy": -12.5584,
+        "alpha_vs_qqq": -17.73,
+        "alpha_vs_sector": -16.3454,
+        "market_regime": "sector_tailwind"
+      },
+      "sector_etf": "IGV"
     },
     {
       "run_id": "8cfe6f43-f9af-4691-9d1f-569b86a8160d",
@@ -585,7 +992,16 @@
         "return_pct": 6.0375,
         "spy_return_pct": 0.5351,
         "alpha_pct": 5.5024,
-        "fetched_at": "2026-05-16T10:29:54"
+        "fetched_at": "2026-06-12T21:45:11",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 2.3164,
+        "sector_return_pct": 2.3164,
+        "vix_change_pct": 7.0366,
+        "ten_year_yield_change_bps": 0.64,
+        "alpha_vs_spy": 5.5024,
+        "alpha_vs_qqq": 3.7211,
+        "alpha_vs_sector": 3.7211,
+        "market_regime": "neutral"
       },
       "week2": {
         "target_date": "2026-05-03",
@@ -593,7 +1009,16 @@
         "return_pct": -4.8924,
         "spy_return_pct": 1.48,
         "alpha_pct": -6.3724,
-        "fetched_at": "2026-05-16T10:29:55"
+        "fetched_at": "2026-06-12T21:45:11",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 3.8992,
+        "sector_return_pct": 3.8992,
+        "vix_change_pct": -2.8032,
+        "ten_year_yield_change_bps": 1.32,
+        "alpha_vs_spy": -6.3724,
+        "alpha_vs_qqq": -8.7916,
+        "alpha_vs_sector": -8.7916,
+        "market_regime": "sector_tailwind"
       },
       "week3": {
         "target_date": "2026-05-10",
@@ -601,7 +1026,16 @@
         "return_pct": -1.9084,
         "spy_return_pct": 3.8697,
         "alpha_pct": -5.7781,
-        "fetched_at": "2026-05-16T10:29:55"
+        "fetched_at": "2026-06-12T21:45:11",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 9.6139,
+        "sector_return_pct": 9.6139,
+        "vix_change_pct": -1.659,
+        "ten_year_yield_change_bps": 1.18,
+        "alpha_vs_spy": -5.7781,
+        "alpha_vs_qqq": -11.5223,
+        "alpha_vs_sector": -11.5223,
+        "market_regime": "sector_tailwind"
       },
       "week4": {
         "target_date": "2026-05-17",
@@ -609,8 +1043,18 @@
         "return_pct": -13.0812,
         "spy_return_pct": 4.0879,
         "alpha_pct": -17.1691,
-        "fetched_at": "2026-06-06T09:16:46"
-      }
+        "fetched_at": "2026-06-12T21:45:11",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 9.2595,
+        "sector_return_pct": 9.2595,
+        "vix_change_pct": 5.4348,
+        "ten_year_yield_change_bps": 3.49,
+        "alpha_vs_spy": -17.1691,
+        "alpha_vs_qqq": -22.3407,
+        "alpha_vs_sector": -22.3407,
+        "market_regime": "sector_tailwind"
+      },
+      "sector_etf": "QQQ"
     },
     {
       "run_id": "8cfe6f43-f9af-4691-9d1f-569b86a8160d",
@@ -636,7 +1080,16 @@
         "return_pct": -3.5627,
         "spy_return_pct": 0.5351,
         "alpha_pct": -4.0978,
-        "fetched_at": "2026-05-16T10:29:55"
+        "fetched_at": "2026-06-12T21:45:11",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 2.3164,
+        "sector_return_pct": 2.3164,
+        "vix_change_pct": 7.0366,
+        "ten_year_yield_change_bps": 0.64,
+        "alpha_vs_spy": -4.0978,
+        "alpha_vs_qqq": -5.8791,
+        "alpha_vs_sector": -5.8791,
+        "market_regime": "neutral"
       },
       "week2": {
         "target_date": "2026-05-03",
@@ -644,7 +1097,16 @@
         "return_pct": -9.2138,
         "spy_return_pct": 1.48,
         "alpha_pct": -10.6938,
-        "fetched_at": "2026-05-16T10:29:55"
+        "fetched_at": "2026-06-12T21:45:11",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 3.8992,
+        "sector_return_pct": 3.8992,
+        "vix_change_pct": -2.8032,
+        "ten_year_yield_change_bps": 1.32,
+        "alpha_vs_spy": -10.6938,
+        "alpha_vs_qqq": -13.113,
+        "alpha_vs_sector": -13.113,
+        "market_regime": "sector_tailwind"
       },
       "week3": {
         "target_date": "2026-05-10",
@@ -652,7 +1114,16 @@
         "return_pct": 7.1253,
         "spy_return_pct": 3.8697,
         "alpha_pct": 3.2556,
-        "fetched_at": "2026-05-16T10:29:55"
+        "fetched_at": "2026-06-12T21:45:11",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 9.6139,
+        "sector_return_pct": 9.6139,
+        "vix_change_pct": -1.659,
+        "ten_year_yield_change_bps": 1.18,
+        "alpha_vs_spy": 3.2556,
+        "alpha_vs_qqq": -2.4886,
+        "alpha_vs_sector": -2.4886,
+        "market_regime": "sector_tailwind"
       },
       "week4": {
         "target_date": "2026-05-17",
@@ -660,8 +1131,18 @@
         "return_pct": -3.1941,
         "spy_return_pct": 4.0879,
         "alpha_pct": -7.282,
-        "fetched_at": "2026-06-06T09:16:46"
-      }
+        "fetched_at": "2026-06-12T21:45:11",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 9.2595,
+        "sector_return_pct": 9.2595,
+        "vix_change_pct": 5.4348,
+        "ten_year_yield_change_bps": 3.49,
+        "alpha_vs_spy": -7.282,
+        "alpha_vs_qqq": -12.4536,
+        "alpha_vs_sector": -12.4536,
+        "market_regime": "sector_tailwind"
+      },
+      "sector_etf": "QQQ"
     },
     {
       "run_id": "8cfe6f43-f9af-4691-9d1f-569b86a8160d",
@@ -687,7 +1168,16 @@
         "return_pct": -0.1336,
         "spy_return_pct": 0.5351,
         "alpha_pct": -0.6687,
-        "fetched_at": "2026-05-16T10:29:56"
+        "fetched_at": "2026-06-12T21:45:11",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 2.3164,
+        "sector_return_pct": 2.3164,
+        "vix_change_pct": 7.0366,
+        "ten_year_yield_change_bps": 0.64,
+        "alpha_vs_spy": -0.6687,
+        "alpha_vs_qqq": -2.45,
+        "alpha_vs_sector": -2.45,
+        "market_regime": "neutral"
       },
       "week2": {
         "target_date": "2026-05-03",
@@ -695,7 +1185,16 @@
         "return_pct": -2.0935,
         "spy_return_pct": 1.48,
         "alpha_pct": -3.5735,
-        "fetched_at": "2026-05-16T10:29:56"
+        "fetched_at": "2026-06-12T21:45:11",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 3.8992,
+        "sector_return_pct": 3.8992,
+        "vix_change_pct": -2.8032,
+        "ten_year_yield_change_bps": 1.32,
+        "alpha_vs_spy": -3.5735,
+        "alpha_vs_qqq": -5.9927,
+        "alpha_vs_sector": -5.9927,
+        "market_regime": "sector_tailwind"
       },
       "week3": {
         "target_date": "2026-05-10",
@@ -703,7 +1202,16 @@
         "return_pct": -8.6637,
         "spy_return_pct": 3.8697,
         "alpha_pct": -12.5334,
-        "fetched_at": "2026-05-16T10:29:56"
+        "fetched_at": "2026-06-12T21:45:11",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 9.6139,
+        "sector_return_pct": 9.6139,
+        "vix_change_pct": -1.659,
+        "ten_year_yield_change_bps": 1.18,
+        "alpha_vs_spy": -12.5334,
+        "alpha_vs_qqq": -18.2776,
+        "alpha_vs_sector": -18.2776,
+        "market_regime": "sector_tailwind"
       },
       "week4": {
         "target_date": "2026-05-17",
@@ -711,8 +1219,18 @@
         "return_pct": -17.5501,
         "spy_return_pct": 4.0879,
         "alpha_pct": -21.638,
-        "fetched_at": "2026-06-06T09:16:46"
-      }
+        "fetched_at": "2026-06-12T21:45:11",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 9.2595,
+        "sector_return_pct": 9.2595,
+        "vix_change_pct": 5.4348,
+        "ten_year_yield_change_bps": 3.49,
+        "alpha_vs_spy": -21.638,
+        "alpha_vs_qqq": -26.8096,
+        "alpha_vs_sector": -26.8096,
+        "market_regime": "sector_tailwind"
+      },
+      "sector_etf": "QQQ"
     },
     {
       "run_id": "8cfe6f43-f9af-4691-9d1f-569b86a8160d",
@@ -738,7 +1256,16 @@
         "return_pct": 129.6155,
         "spy_return_pct": 0.5351,
         "alpha_pct": 129.0804,
-        "fetched_at": "2026-05-16T10:29:56"
+        "fetched_at": "2026-06-12T21:45:11",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 2.3164,
+        "sector_return_pct": 2.3164,
+        "vix_change_pct": 7.0366,
+        "ten_year_yield_change_bps": 0.64,
+        "alpha_vs_spy": 129.0804,
+        "alpha_vs_qqq": 127.2991,
+        "alpha_vs_sector": 127.2991,
+        "market_regime": "neutral"
       },
       "week2": {
         "target_date": "2026-05-03",
@@ -746,7 +1273,16 @@
         "return_pct": 193.7952,
         "spy_return_pct": 1.48,
         "alpha_pct": 192.3152,
-        "fetched_at": "2026-05-16T10:29:56"
+        "fetched_at": "2026-06-12T21:45:11",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 3.8992,
+        "sector_return_pct": 3.8992,
+        "vix_change_pct": -2.8032,
+        "ten_year_yield_change_bps": 1.32,
+        "alpha_vs_spy": 192.3152,
+        "alpha_vs_qqq": 189.896,
+        "alpha_vs_sector": 189.896,
+        "market_regime": "sector_tailwind"
       },
       "week3": {
         "target_date": "2026-05-10",
@@ -754,7 +1290,16 @@
         "return_pct": 280.0152,
         "spy_return_pct": 3.8697,
         "alpha_pct": 276.1455,
-        "fetched_at": "2026-05-16T10:29:56"
+        "fetched_at": "2026-06-12T21:45:11",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 9.6139,
+        "sector_return_pct": 9.6139,
+        "vix_change_pct": -1.659,
+        "ten_year_yield_change_bps": 1.18,
+        "alpha_vs_spy": 276.1455,
+        "alpha_vs_qqq": 270.4013,
+        "alpha_vs_sector": 270.4013,
+        "market_regime": "sector_tailwind"
       },
       "week4": {
         "target_date": "2026-05-17",
@@ -762,8 +1307,18 @@
         "return_pct": 251.5036,
         "spy_return_pct": 4.0879,
         "alpha_pct": 247.4157,
-        "fetched_at": "2026-06-06T09:16:46"
-      }
+        "fetched_at": "2026-06-12T21:45:11",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 9.2595,
+        "sector_return_pct": 9.2595,
+        "vix_change_pct": 5.4348,
+        "ten_year_yield_change_bps": 3.49,
+        "alpha_vs_spy": 247.4157,
+        "alpha_vs_qqq": 242.2441,
+        "alpha_vs_sector": 242.2441,
+        "market_regime": "sector_tailwind"
+      },
+      "sector_etf": "QQQ"
     },
     {
       "run_id": "8cfe6f43-f9af-4691-9d1f-569b86a8160d",
@@ -789,7 +1344,16 @@
         "return_pct": -23.8232,
         "spy_return_pct": 0.5351,
         "alpha_pct": -24.3583,
-        "fetched_at": "2026-05-16T10:29:56"
+        "fetched_at": "2026-06-12T21:45:11",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 2.3164,
+        "sector_return_pct": 2.3164,
+        "vix_change_pct": 7.0366,
+        "ten_year_yield_change_bps": 0.64,
+        "alpha_vs_spy": -24.3583,
+        "alpha_vs_qqq": -26.1396,
+        "alpha_vs_sector": -26.1396,
+        "market_regime": "neutral"
       },
       "week2": {
         "target_date": "2026-05-03",
@@ -797,7 +1361,16 @@
         "return_pct": -28.76,
         "spy_return_pct": 1.48,
         "alpha_pct": -30.24,
-        "fetched_at": "2026-05-16T10:29:57"
+        "fetched_at": "2026-06-12T21:45:11",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 3.8992,
+        "sector_return_pct": 3.8992,
+        "vix_change_pct": -2.8032,
+        "ten_year_yield_change_bps": 1.32,
+        "alpha_vs_spy": -30.24,
+        "alpha_vs_qqq": -32.6592,
+        "alpha_vs_sector": -32.6592,
+        "market_regime": "sector_tailwind"
       },
       "week3": {
         "target_date": "2026-05-10",
@@ -805,7 +1378,16 @@
         "return_pct": -30.4248,
         "spy_return_pct": 3.8697,
         "alpha_pct": -34.2945,
-        "fetched_at": "2026-05-16T10:29:57"
+        "fetched_at": "2026-06-12T21:45:11",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 9.6139,
+        "sector_return_pct": 9.6139,
+        "vix_change_pct": -1.659,
+        "ten_year_yield_change_bps": 1.18,
+        "alpha_vs_spy": -34.2945,
+        "alpha_vs_qqq": -40.0387,
+        "alpha_vs_sector": -40.0387,
+        "market_regime": "sector_tailwind"
       },
       "week4": {
         "target_date": "2026-05-17",
@@ -813,8 +1395,18 @@
         "return_pct": -28.5878,
         "spy_return_pct": 4.0879,
         "alpha_pct": -32.6757,
-        "fetched_at": "2026-06-06T09:16:46"
-      }
+        "fetched_at": "2026-06-12T21:45:11",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 9.2595,
+        "sector_return_pct": 9.2595,
+        "vix_change_pct": 5.4348,
+        "ten_year_yield_change_bps": 3.49,
+        "alpha_vs_spy": -32.6757,
+        "alpha_vs_qqq": -37.8473,
+        "alpha_vs_sector": -37.8473,
+        "market_regime": "sector_tailwind"
+      },
+      "sector_etf": "QQQ"
     },
     {
       "run_id": "8cfe6f43-f9af-4691-9d1f-569b86a8160d",
@@ -840,7 +1432,16 @@
         "return_pct": -8.1928,
         "spy_return_pct": 0.5351,
         "alpha_pct": -8.7279,
-        "fetched_at": "2026-05-16T10:29:57"
+        "fetched_at": "2026-06-12T21:45:11",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 2.3164,
+        "sector_return_pct": 2.3164,
+        "vix_change_pct": 7.0366,
+        "ten_year_yield_change_bps": 0.64,
+        "alpha_vs_spy": -8.7279,
+        "alpha_vs_qqq": -10.5092,
+        "alpha_vs_sector": -10.5092,
+        "market_regime": "neutral"
       },
       "week2": {
         "target_date": "2026-05-03",
@@ -848,7 +1449,16 @@
         "return_pct": 1.6064,
         "spy_return_pct": 1.48,
         "alpha_pct": 0.1264,
-        "fetched_at": "2026-05-16T10:29:57"
+        "fetched_at": "2026-06-12T21:45:11",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 3.8992,
+        "sector_return_pct": 3.8992,
+        "vix_change_pct": -2.8032,
+        "ten_year_yield_change_bps": 1.32,
+        "alpha_vs_spy": 0.1264,
+        "alpha_vs_qqq": -2.2928,
+        "alpha_vs_sector": -2.2928,
+        "market_regime": "sector_tailwind"
       },
       "week3": {
         "target_date": "2026-05-10",
@@ -856,7 +1466,16 @@
         "return_pct": -1.6867,
         "spy_return_pct": 3.8697,
         "alpha_pct": -5.5564,
-        "fetched_at": "2026-05-16T10:29:57"
+        "fetched_at": "2026-06-12T21:45:11",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 9.6139,
+        "sector_return_pct": 9.6139,
+        "vix_change_pct": -1.659,
+        "ten_year_yield_change_bps": 1.18,
+        "alpha_vs_spy": -5.5564,
+        "alpha_vs_qqq": -11.3006,
+        "alpha_vs_sector": -11.3006,
+        "market_regime": "sector_tailwind"
       },
       "week4": {
         "target_date": "2026-05-17",
@@ -864,8 +1483,18 @@
         "return_pct": 1.5261,
         "spy_return_pct": 4.0879,
         "alpha_pct": -2.5618,
-        "fetched_at": "2026-06-06T09:16:46"
-      }
+        "fetched_at": "2026-06-12T21:45:11",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 9.2595,
+        "sector_return_pct": 9.2595,
+        "vix_change_pct": 5.4348,
+        "ten_year_yield_change_bps": 3.49,
+        "alpha_vs_spy": -2.5618,
+        "alpha_vs_qqq": -7.7334,
+        "alpha_vs_sector": -7.7334,
+        "market_regime": "sector_tailwind"
+      },
+      "sector_etf": "QQQ"
     },
     {
       "run_id": "8cfe6f43-f9af-4691-9d1f-569b86a8160d",
@@ -891,7 +1520,16 @@
         "return_pct": -5.4545,
         "spy_return_pct": 0.5351,
         "alpha_pct": -5.9896,
-        "fetched_at": "2026-05-16T10:29:57"
+        "fetched_at": "2026-06-12T21:45:11",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 2.3164,
+        "sector_return_pct": 2.3164,
+        "vix_change_pct": 7.0366,
+        "ten_year_yield_change_bps": 0.64,
+        "alpha_vs_spy": -5.9896,
+        "alpha_vs_qqq": -7.7709,
+        "alpha_vs_sector": -7.7709,
+        "market_regime": "neutral"
       },
       "week2": {
         "target_date": "2026-05-03",
@@ -899,7 +1537,16 @@
         "return_pct": -4.0316,
         "spy_return_pct": 1.48,
         "alpha_pct": -5.5116,
-        "fetched_at": "2026-05-16T10:29:58"
+        "fetched_at": "2026-06-12T21:45:11",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 3.8992,
+        "sector_return_pct": 3.8992,
+        "vix_change_pct": -2.8032,
+        "ten_year_yield_change_bps": 1.32,
+        "alpha_vs_spy": -5.5116,
+        "alpha_vs_qqq": -7.9308,
+        "alpha_vs_sector": -7.9308,
+        "market_regime": "sector_tailwind"
       },
       "week3": {
         "target_date": "2026-05-10",
@@ -907,7 +1554,16 @@
         "return_pct": -0.7905,
         "spy_return_pct": 3.8697,
         "alpha_pct": -4.6602,
-        "fetched_at": "2026-05-16T10:29:58"
+        "fetched_at": "2026-06-12T21:45:11",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 9.6139,
+        "sector_return_pct": 9.6139,
+        "vix_change_pct": -1.659,
+        "ten_year_yield_change_bps": 1.18,
+        "alpha_vs_spy": -4.6602,
+        "alpha_vs_qqq": -10.4044,
+        "alpha_vs_sector": -10.4044,
+        "market_regime": "sector_tailwind"
       },
       "week4": {
         "target_date": "2026-05-17",
@@ -915,8 +1571,18 @@
         "return_pct": -11.2253,
         "spy_return_pct": 4.0879,
         "alpha_pct": -15.3132,
-        "fetched_at": "2026-06-06T09:16:47"
-      }
+        "fetched_at": "2026-06-12T21:45:11",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 9.2595,
+        "sector_return_pct": 9.2595,
+        "vix_change_pct": 5.4348,
+        "ten_year_yield_change_bps": 3.49,
+        "alpha_vs_spy": -15.3132,
+        "alpha_vs_qqq": -20.4848,
+        "alpha_vs_sector": -20.4848,
+        "market_regime": "sector_tailwind"
+      },
+      "sector_etf": "QQQ"
     },
     {
       "run_id": "de6f7af6-3031-44f5-b734-9ce4f9de0825",
@@ -942,7 +1608,16 @@
         "return_pct": 6.0884,
         "spy_return_pct": 1.4412,
         "alpha_pct": 4.6472,
-        "fetched_at": "2026-05-16T10:29:58"
+        "fetched_at": "2026-06-12T21:45:12",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 2.5053,
+        "sector_return_pct": 5.1614,
+        "vix_change_pct": -12.5324,
+        "ten_year_yield_change_bps": 0.67,
+        "alpha_vs_spy": 4.6472,
+        "alpha_vs_qqq": 3.5831,
+        "alpha_vs_sector": 0.927,
+        "market_regime": "sector_tailwind"
       },
       "week2": {
         "target_date": "2026-05-07",
@@ -950,7 +1625,16 @@
         "return_pct": 32.6475,
         "spy_return_pct": 3.2649,
         "alpha_pct": 29.3826,
-        "fetched_at": "2026-05-16T10:29:58"
+        "fetched_at": "2026-06-12T21:45:13",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 6.6808,
+        "sector_return_pct": 12.0888,
+        "vix_change_pct": -11.5484,
+        "ten_year_yield_change_bps": 0.69,
+        "alpha_vs_spy": 29.3826,
+        "alpha_vs_qqq": 25.9667,
+        "alpha_vs_sector": 20.5587,
+        "market_regime": "sector_tailwind"
       },
       "week3": {
         "target_date": "2026-05-14",
@@ -958,7 +1642,16 @@
         "return_pct": 59.1881,
         "spy_return_pct": 5.6066,
         "alpha_pct": 53.5815,
-        "fetched_at": "2026-05-16T10:29:59"
+        "fetched_at": "2026-06-12T21:45:13",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 10.4955,
+        "sector_return_pct": 20.0249,
+        "vix_change_pct": -10.6163,
+        "ten_year_yield_change_bps": 1.38,
+        "alpha_vs_spy": 53.5815,
+        "alpha_vs_qqq": 48.6926,
+        "alpha_vs_sector": 39.1632,
+        "market_regime": "sector_tailwind"
       },
       "week4": {
         "target_date": "2026-05-21",
@@ -966,8 +1659,18 @@
         "return_pct": 56.3346,
         "spy_return_pct": 4.8373,
         "alpha_pct": 51.4973,
-        "fetched_at": "2026-06-06T09:16:47"
-      }
+        "fetched_at": "2026-06-12T21:45:14",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 9.685,
+        "sector_return_pct": 17.8541,
+        "vix_change_pct": -13.2056,
+        "ten_year_yield_change_bps": 2.63,
+        "alpha_vs_spy": 51.4973,
+        "alpha_vs_qqq": 46.6496,
+        "alpha_vs_sector": 38.4805,
+        "market_regime": "sector_tailwind"
+      },
+      "sector_etf": "SMH"
     },
     {
       "run_id": "de6f7af6-3031-44f5-b734-9ce4f9de0825",
@@ -993,7 +1696,16 @@
         "return_pct": -1.4469,
         "spy_return_pct": 1.4412,
         "alpha_pct": -2.8881,
-        "fetched_at": "2026-05-16T10:29:59"
+        "fetched_at": "2026-06-12T21:45:14",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 2.5053,
+        "sector_return_pct": 5.1614,
+        "vix_change_pct": -12.5324,
+        "ten_year_yield_change_bps": 0.67,
+        "alpha_vs_spy": -2.8881,
+        "alpha_vs_qqq": -3.9522,
+        "alpha_vs_sector": -6.6083,
+        "market_regime": "sector_tailwind"
       },
       "week2": {
         "target_date": "2026-05-07",
@@ -1001,7 +1713,16 @@
         "return_pct": 4.4444,
         "spy_return_pct": 3.2649,
         "alpha_pct": 1.1795,
-        "fetched_at": "2026-05-16T10:29:59"
+        "fetched_at": "2026-06-12T21:45:14",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 6.6808,
+        "sector_return_pct": 12.0888,
+        "vix_change_pct": -11.5484,
+        "ten_year_yield_change_bps": 0.69,
+        "alpha_vs_spy": 1.1795,
+        "alpha_vs_qqq": -2.2364,
+        "alpha_vs_sector": -7.6444,
+        "market_regime": "sector_tailwind"
       },
       "week3": {
         "target_date": "2026-05-14",
@@ -1009,7 +1730,16 @@
         "return_pct": 16.4148,
         "spy_return_pct": 5.6066,
         "alpha_pct": 10.8082,
-        "fetched_at": "2026-05-16T10:29:59"
+        "fetched_at": "2026-06-12T21:45:14",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 10.4955,
+        "sector_return_pct": 20.0249,
+        "vix_change_pct": -10.6163,
+        "ten_year_yield_change_bps": 1.38,
+        "alpha_vs_spy": 10.8082,
+        "alpha_vs_qqq": 5.9193,
+        "alpha_vs_sector": -3.6101,
+        "market_regime": "sector_tailwind"
       },
       "week4": {
         "target_date": "2026-05-21",
@@ -1017,8 +1747,18 @@
         "return_pct": 8.2738,
         "spy_return_pct": 4.8373,
         "alpha_pct": 3.4365,
-        "fetched_at": "2026-06-06T09:16:47"
-      }
+        "fetched_at": "2026-06-12T21:45:14",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 9.685,
+        "sector_return_pct": 17.8541,
+        "vix_change_pct": -13.2056,
+        "ten_year_yield_change_bps": 2.63,
+        "alpha_vs_spy": 3.4365,
+        "alpha_vs_qqq": -1.4112,
+        "alpha_vs_sector": -9.5803,
+        "market_regime": "sector_tailwind"
+      },
+      "sector_etf": "SMH"
     },
     {
       "run_id": "de6f7af6-3031-44f5-b734-9ce4f9de0825",
@@ -1044,7 +1784,16 @@
         "return_pct": -1.2351,
         "spy_return_pct": 1.4412,
         "alpha_pct": -2.6763,
-        "fetched_at": "2026-05-16T10:29:59"
+        "fetched_at": "2026-06-12T21:45:14",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 2.5053,
+        "sector_return_pct": 5.1614,
+        "vix_change_pct": -12.5324,
+        "ten_year_yield_change_bps": 0.67,
+        "alpha_vs_spy": -2.6763,
+        "alpha_vs_qqq": -3.7404,
+        "alpha_vs_sector": -6.3965,
+        "market_regime": "sector_tailwind"
       },
       "week2": {
         "target_date": "2026-05-07",
@@ -1052,7 +1801,16 @@
         "return_pct": -2.3873,
         "spy_return_pct": 3.2649,
         "alpha_pct": -5.6522,
-        "fetched_at": "2026-05-16T10:30:00"
+        "fetched_at": "2026-06-12T21:45:14",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 6.6808,
+        "sector_return_pct": 12.0888,
+        "vix_change_pct": -11.5484,
+        "ten_year_yield_change_bps": 0.69,
+        "alpha_vs_spy": -5.6522,
+        "alpha_vs_qqq": -9.0681,
+        "alpha_vs_sector": -14.4761,
+        "market_regime": "sector_tailwind"
       },
       "week3": {
         "target_date": "2026-05-14",
@@ -1060,7 +1818,16 @@
         "return_pct": 4.0554,
         "spy_return_pct": 5.6066,
         "alpha_pct": -1.5512,
-        "fetched_at": "2026-05-16T10:30:00"
+        "fetched_at": "2026-06-12T21:45:14",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 10.4955,
+        "sector_return_pct": 20.0249,
+        "vix_change_pct": -10.6163,
+        "ten_year_yield_change_bps": 1.38,
+        "alpha_vs_spy": -1.5512,
+        "alpha_vs_qqq": -6.4401,
+        "alpha_vs_sector": -15.9695,
+        "market_regime": "sector_tailwind"
       },
       "week4": {
         "target_date": "2026-05-21",
@@ -1068,8 +1835,18 @@
         "return_pct": -1.9117,
         "spy_return_pct": 4.8373,
         "alpha_pct": -6.749,
-        "fetched_at": "2026-06-06T09:16:47"
-      }
+        "fetched_at": "2026-06-12T21:45:14",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 9.685,
+        "sector_return_pct": 17.8541,
+        "vix_change_pct": -13.2056,
+        "ten_year_yield_change_bps": 2.63,
+        "alpha_vs_spy": -6.749,
+        "alpha_vs_qqq": -11.5967,
+        "alpha_vs_sector": -19.7658,
+        "market_regime": "sector_tailwind"
+      },
+      "sector_etf": "SMH"
     },
     {
       "run_id": "de6f7af6-3031-44f5-b734-9ce4f9de0825",
@@ -1095,7 +1872,16 @@
         "return_pct": 16.8161,
         "spy_return_pct": 1.4412,
         "alpha_pct": 15.3749,
-        "fetched_at": "2026-05-16T10:30:00"
+        "fetched_at": "2026-06-12T21:45:14",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 2.5053,
+        "sector_return_pct": 5.1614,
+        "vix_change_pct": -12.5324,
+        "ten_year_yield_change_bps": 0.67,
+        "alpha_vs_spy": 15.3749,
+        "alpha_vs_qqq": 14.3108,
+        "alpha_vs_sector": 11.6547,
+        "market_regime": "sector_tailwind"
       },
       "week2": {
         "target_date": "2026-05-07",
@@ -1103,7 +1889,16 @@
         "return_pct": 34.6009,
         "spy_return_pct": 3.2649,
         "alpha_pct": 31.336,
-        "fetched_at": "2026-05-16T10:30:00"
+        "fetched_at": "2026-06-12T21:45:14",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 6.6808,
+        "sector_return_pct": 12.0888,
+        "vix_change_pct": -11.5484,
+        "ten_year_yield_change_bps": 0.69,
+        "alpha_vs_spy": 31.336,
+        "alpha_vs_qqq": 27.9201,
+        "alpha_vs_sector": 22.5121,
+        "market_regime": "sector_tailwind"
       },
       "week3": {
         "target_date": "2026-05-14",
@@ -1111,7 +1906,16 @@
         "return_pct": 48.1909,
         "spy_return_pct": 5.6066,
         "alpha_pct": 42.5843,
-        "fetched_at": "2026-05-16T10:30:00"
+        "fetched_at": "2026-06-12T21:45:14",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 10.4955,
+        "sector_return_pct": 20.0249,
+        "vix_change_pct": -10.6163,
+        "ten_year_yield_change_bps": 1.38,
+        "alpha_vs_spy": 42.5843,
+        "alpha_vs_qqq": 37.6954,
+        "alpha_vs_sector": 28.166,
+        "market_regime": "sector_tailwind"
       },
       "week4": {
         "target_date": "2026-05-21",
@@ -1119,8 +1923,18 @@
         "return_pct": 48.1546,
         "spy_return_pct": 4.8373,
         "alpha_pct": 43.3173,
-        "fetched_at": "2026-06-06T09:16:47"
-      }
+        "fetched_at": "2026-06-12T21:45:14",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 9.685,
+        "sector_return_pct": 17.8541,
+        "vix_change_pct": -13.2056,
+        "ten_year_yield_change_bps": 2.63,
+        "alpha_vs_spy": 43.3173,
+        "alpha_vs_qqq": 38.4696,
+        "alpha_vs_sector": 30.3005,
+        "market_regime": "sector_tailwind"
+      },
+      "sector_etf": "SMH"
     },
     {
       "run_id": "de6f7af6-3031-44f5-b734-9ce4f9de0825",
@@ -1146,7 +1960,16 @@
         "return_pct": 4.9771,
         "spy_return_pct": 1.4412,
         "alpha_pct": 3.5359,
-        "fetched_at": "2026-05-16T10:30:00"
+        "fetched_at": "2026-06-12T21:45:14",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 2.5053,
+        "sector_return_pct": 5.1614,
+        "vix_change_pct": -12.5324,
+        "ten_year_yield_change_bps": 0.67,
+        "alpha_vs_spy": 3.5359,
+        "alpha_vs_qqq": 2.4718,
+        "alpha_vs_sector": -0.1843,
+        "market_regime": "sector_tailwind"
       },
       "week2": {
         "target_date": "2026-05-07",
@@ -1154,7 +1977,16 @@
         "return_pct": 1.7099,
         "spy_return_pct": 3.2649,
         "alpha_pct": -1.555,
-        "fetched_at": "2026-05-16T10:30:00"
+        "fetched_at": "2026-06-12T21:45:14",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 6.6808,
+        "sector_return_pct": 12.0888,
+        "vix_change_pct": -11.5484,
+        "ten_year_yield_change_bps": 0.69,
+        "alpha_vs_spy": -1.555,
+        "alpha_vs_qqq": -4.9709,
+        "alpha_vs_sector": -10.3789,
+        "market_regime": "sector_tailwind"
       },
       "week3": {
         "target_date": "2026-05-14",
@@ -1162,7 +1994,16 @@
         "return_pct": 16.0564,
         "spy_return_pct": 5.6066,
         "alpha_pct": 10.4498,
-        "fetched_at": "2026-05-16T10:30:01"
+        "fetched_at": "2026-06-12T21:45:14",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 10.4955,
+        "sector_return_pct": 20.0249,
+        "vix_change_pct": -10.6163,
+        "ten_year_yield_change_bps": 1.38,
+        "alpha_vs_spy": 10.4498,
+        "alpha_vs_qqq": 5.5609,
+        "alpha_vs_sector": -3.9685,
+        "market_regime": "sector_tailwind"
       },
       "week4": {
         "target_date": "2026-05-21",
@@ -1170,8 +2011,18 @@
         "return_pct": 21.2115,
         "spy_return_pct": 4.8373,
         "alpha_pct": 16.3742,
-        "fetched_at": "2026-06-06T09:16:48"
-      }
+        "fetched_at": "2026-06-12T21:45:14",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 9.685,
+        "sector_return_pct": 17.8541,
+        "vix_change_pct": -13.2056,
+        "ten_year_yield_change_bps": 2.63,
+        "alpha_vs_spy": 16.3742,
+        "alpha_vs_qqq": 11.5265,
+        "alpha_vs_sector": 3.3574,
+        "market_regime": "sector_tailwind"
+      },
+      "sector_etf": "SMH"
     },
     {
       "run_id": "de6f7af6-3031-44f5-b734-9ce4f9de0825",
@@ -1197,7 +2048,16 @@
         "return_pct": -2.8959,
         "spy_return_pct": 1.4412,
         "alpha_pct": -4.3371,
-        "fetched_at": "2026-05-16T10:30:01"
+        "fetched_at": "2026-06-12T21:45:14",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 2.5053,
+        "sector_return_pct": 5.1614,
+        "vix_change_pct": -12.5324,
+        "ten_year_yield_change_bps": 0.67,
+        "alpha_vs_spy": -4.3371,
+        "alpha_vs_qqq": -5.4012,
+        "alpha_vs_sector": -8.0573,
+        "market_regime": "sector_tailwind"
       },
       "week2": {
         "target_date": "2026-05-07",
@@ -1205,7 +2065,16 @@
         "return_pct": 7.8968,
         "spy_return_pct": 3.2649,
         "alpha_pct": 4.6319,
-        "fetched_at": "2026-05-16T10:30:01"
+        "fetched_at": "2026-06-12T21:45:14",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 6.6808,
+        "sector_return_pct": 12.0888,
+        "vix_change_pct": -11.5484,
+        "ten_year_yield_change_bps": 0.69,
+        "alpha_vs_spy": 4.6319,
+        "alpha_vs_qqq": 1.216,
+        "alpha_vs_sector": -4.192,
+        "market_regime": "sector_tailwind"
       },
       "week3": {
         "target_date": "2026-05-14",
@@ -1213,7 +2082,16 @@
         "return_pct": 12.653,
         "spy_return_pct": 5.6066,
         "alpha_pct": 7.0464,
-        "fetched_at": "2026-05-16T10:30:01"
+        "fetched_at": "2026-06-12T21:45:14",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 10.4955,
+        "sector_return_pct": 20.0249,
+        "vix_change_pct": -10.6163,
+        "ten_year_yield_change_bps": 1.38,
+        "alpha_vs_spy": 7.0464,
+        "alpha_vs_qqq": 2.1575,
+        "alpha_vs_sector": -7.3719,
+        "market_regime": "sector_tailwind"
       },
       "week4": {
         "target_date": "2026-05-21",
@@ -1221,8 +2099,18 @@
         "return_pct": 13.8166,
         "spy_return_pct": 4.8373,
         "alpha_pct": 8.9793,
-        "fetched_at": "2026-06-06T09:16:48"
-      }
+        "fetched_at": "2026-06-12T21:45:14",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 9.685,
+        "sector_return_pct": 17.8541,
+        "vix_change_pct": -13.2056,
+        "ten_year_yield_change_bps": 2.63,
+        "alpha_vs_spy": 8.9793,
+        "alpha_vs_qqq": 4.1316,
+        "alpha_vs_sector": -4.0375,
+        "market_regime": "sector_tailwind"
+      },
+      "sector_etf": "SMH"
     },
     {
       "run_id": "de6f7af6-3031-44f5-b734-9ce4f9de0825",
@@ -1248,7 +2136,16 @@
         "return_pct": -8.7768,
         "spy_return_pct": 1.4412,
         "alpha_pct": -10.218,
-        "fetched_at": "2026-05-16T10:30:01"
+        "fetched_at": "2026-06-12T21:45:14",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 2.5053,
+        "sector_return_pct": 5.1614,
+        "vix_change_pct": -12.5324,
+        "ten_year_yield_change_bps": 0.67,
+        "alpha_vs_spy": -10.218,
+        "alpha_vs_qqq": -11.2821,
+        "alpha_vs_sector": -13.9382,
+        "market_regime": "sector_tailwind"
       },
       "week2": {
         "target_date": "2026-05-07",
@@ -1256,7 +2153,16 @@
         "return_pct": -8.9252,
         "spy_return_pct": 3.2649,
         "alpha_pct": -12.1901,
-        "fetched_at": "2026-05-16T10:30:02"
+        "fetched_at": "2026-06-12T21:45:14",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 6.6808,
+        "sector_return_pct": 12.0888,
+        "vix_change_pct": -11.5484,
+        "ten_year_yield_change_bps": 0.69,
+        "alpha_vs_spy": -12.1901,
+        "alpha_vs_qqq": -15.606,
+        "alpha_vs_sector": -21.014,
+        "market_regime": "sector_tailwind"
       },
       "week3": {
         "target_date": "2026-05-14",
@@ -1264,7 +2170,16 @@
         "return_pct": 15.542,
         "spy_return_pct": 5.6066,
         "alpha_pct": 9.9354,
-        "fetched_at": "2026-05-16T10:30:02"
+        "fetched_at": "2026-06-12T21:45:14",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 10.4955,
+        "sector_return_pct": 20.0249,
+        "vix_change_pct": -10.6163,
+        "ten_year_yield_change_bps": 1.38,
+        "alpha_vs_spy": 9.9354,
+        "alpha_vs_qqq": 5.0465,
+        "alpha_vs_sector": -4.4829,
+        "market_regime": "sector_tailwind"
       },
       "week4": {
         "target_date": "2026-05-21",
@@ -1272,8 +2187,18 @@
         "return_pct": 7.8552,
         "spy_return_pct": 4.8373,
         "alpha_pct": 3.0179,
-        "fetched_at": "2026-06-06T09:16:48"
-      }
+        "fetched_at": "2026-06-12T21:45:14",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 9.685,
+        "sector_return_pct": 17.8541,
+        "vix_change_pct": -13.2056,
+        "ten_year_yield_change_bps": 2.63,
+        "alpha_vs_spy": 3.0179,
+        "alpha_vs_qqq": -1.8298,
+        "alpha_vs_sector": -9.9989,
+        "market_regime": "sector_tailwind"
+      },
+      "sector_etf": "SMH"
     },
     {
       "run_id": "de6f7af6-3031-44f5-b734-9ce4f9de0825",
@@ -1299,7 +2224,16 @@
         "return_pct": -8.8521,
         "spy_return_pct": 1.4412,
         "alpha_pct": -10.2933,
-        "fetched_at": "2026-05-16T10:30:02"
+        "fetched_at": "2026-06-12T21:45:14",
+        "sector_etf": "IGV",
+        "qqq_return_pct": 2.5053,
+        "sector_return_pct": 0.4068,
+        "vix_change_pct": -12.5324,
+        "ten_year_yield_change_bps": 0.67,
+        "alpha_vs_spy": -10.2933,
+        "alpha_vs_qqq": -11.3574,
+        "alpha_vs_sector": -9.2589,
+        "market_regime": "neutral"
       },
       "week2": {
         "target_date": "2026-05-07",
@@ -1307,7 +2241,16 @@
         "return_pct": -10.2018,
         "spy_return_pct": 3.2649,
         "alpha_pct": -13.4667,
-        "fetched_at": "2026-05-16T10:30:02"
+        "fetched_at": "2026-06-12T21:45:15",
+        "sector_etf": "IGV",
+        "qqq_return_pct": 6.6808,
+        "sector_return_pct": 8.7113,
+        "vix_change_pct": -11.5484,
+        "ten_year_yield_change_bps": 0.69,
+        "alpha_vs_spy": -13.4667,
+        "alpha_vs_qqq": -16.8826,
+        "alpha_vs_sector": -18.9131,
+        "market_regime": "sector_tailwind"
       },
       "week3": {
         "target_date": "2026-05-14",
@@ -1315,7 +2258,16 @@
         "return_pct": -12.3771,
         "spy_return_pct": 5.6066,
         "alpha_pct": -17.9837,
-        "fetched_at": "2026-05-16T10:30:02"
+        "fetched_at": "2026-06-12T21:45:15",
+        "sector_etf": "IGV",
+        "qqq_return_pct": 10.4955,
+        "sector_return_pct": 8.46,
+        "vix_change_pct": -10.6163,
+        "ten_year_yield_change_bps": 1.38,
+        "alpha_vs_spy": -17.9837,
+        "alpha_vs_qqq": -22.8726,
+        "alpha_vs_sector": -20.8371,
+        "market_regime": "sector_tailwind"
       },
       "week4": {
         "target_date": "2026-05-21",
@@ -1323,8 +2275,18 @@
         "return_pct": -9.9627,
         "spy_return_pct": 4.8373,
         "alpha_pct": -14.8,
-        "fetched_at": "2026-06-06T09:16:48"
-      }
+        "fetched_at": "2026-06-12T21:45:15",
+        "sector_etf": "IGV",
+        "qqq_return_pct": 9.685,
+        "sector_return_pct": 10.6617,
+        "vix_change_pct": -13.2056,
+        "ten_year_yield_change_bps": 2.63,
+        "alpha_vs_spy": -14.8,
+        "alpha_vs_qqq": -19.6477,
+        "alpha_vs_sector": -20.6244,
+        "market_regime": "sector_tailwind"
+      },
+      "sector_etf": "IGV"
     },
     {
       "run_id": "de6f7af6-3031-44f5-b734-9ce4f9de0825",
@@ -1350,7 +2312,16 @@
         "return_pct": 7.6522,
         "spy_return_pct": 1.4412,
         "alpha_pct": 6.211,
-        "fetched_at": "2026-05-16T10:30:02"
+        "fetched_at": "2026-06-12T21:45:15",
+        "sector_etf": "XLI",
+        "qqq_return_pct": 2.5053,
+        "sector_return_pct": 0.293,
+        "vix_change_pct": -12.5324,
+        "ten_year_yield_change_bps": 0.67,
+        "alpha_vs_spy": 6.211,
+        "alpha_vs_qqq": 5.1469,
+        "alpha_vs_sector": 7.3592,
+        "market_regime": "neutral"
       },
       "week2": {
         "target_date": "2026-05-07",
@@ -1358,7 +2329,16 @@
         "return_pct": 11.4275,
         "spy_return_pct": 3.2649,
         "alpha_pct": 8.1626,
-        "fetched_at": "2026-05-16T10:30:02"
+        "fetched_at": "2026-06-12T21:45:15",
+        "sector_etf": "XLI",
+        "qqq_return_pct": 6.6808,
+        "sector_return_pct": -0.0402,
+        "vix_change_pct": -11.5484,
+        "ten_year_yield_change_bps": 0.69,
+        "alpha_vs_spy": 8.1626,
+        "alpha_vs_qqq": 4.7467,
+        "alpha_vs_sector": 11.4677,
+        "market_regime": "risk_on_growth"
       },
       "week3": {
         "target_date": "2026-05-14",
@@ -1366,7 +2346,16 @@
         "return_pct": 23.2975,
         "spy_return_pct": 5.6066,
         "alpha_pct": 17.6909,
-        "fetched_at": "2026-05-16T10:30:03"
+        "fetched_at": "2026-06-12T21:45:16",
+        "sector_etf": "XLI",
+        "qqq_return_pct": 10.4955,
+        "sector_return_pct": 0.2528,
+        "vix_change_pct": -10.6163,
+        "ten_year_yield_change_bps": 1.38,
+        "alpha_vs_spy": 17.6909,
+        "alpha_vs_qqq": 12.802,
+        "alpha_vs_sector": 23.0447,
+        "market_regime": "risk_on_growth"
       },
       "week4": {
         "target_date": "2026-05-21",
@@ -1374,8 +2363,18 @@
         "return_pct": 5.9841,
         "spy_return_pct": 4.8373,
         "alpha_pct": 1.1468,
-        "fetched_at": "2026-06-06T09:16:48"
-      }
+        "fetched_at": "2026-06-12T21:45:16",
+        "sector_etf": "XLI",
+        "qqq_return_pct": 9.685,
+        "sector_return_pct": -2.0337,
+        "vix_change_pct": -13.2056,
+        "ten_year_yield_change_bps": 2.63,
+        "alpha_vs_spy": 1.1468,
+        "alpha_vs_qqq": -3.7009,
+        "alpha_vs_sector": 8.0178,
+        "market_regime": "risk_on_growth"
+      },
+      "sector_etf": "XLI"
     },
     {
       "run_id": "de6f7af6-3031-44f5-b734-9ce4f9de0825",
@@ -1401,7 +2400,16 @@
         "return_pct": -22.9673,
         "spy_return_pct": 1.4412,
         "alpha_pct": -24.4085,
-        "fetched_at": "2026-05-16T10:30:03"
+        "fetched_at": "2026-06-12T21:45:16",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 2.5053,
+        "sector_return_pct": 2.5053,
+        "vix_change_pct": -12.5324,
+        "ten_year_yield_change_bps": 0.67,
+        "alpha_vs_spy": -24.4085,
+        "alpha_vs_qqq": -25.4726,
+        "alpha_vs_sector": -25.4726,
+        "market_regime": "neutral"
       },
       "week2": {
         "target_date": "2026-05-07",
@@ -1409,7 +2417,16 @@
         "return_pct": -22.8835,
         "spy_return_pct": 3.2649,
         "alpha_pct": -26.1484,
-        "fetched_at": "2026-05-16T10:30:03"
+        "fetched_at": "2026-06-12T21:45:16",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 6.6808,
+        "sector_return_pct": 6.6808,
+        "vix_change_pct": -11.5484,
+        "ten_year_yield_change_bps": 0.69,
+        "alpha_vs_spy": -26.1484,
+        "alpha_vs_qqq": -29.5643,
+        "alpha_vs_sector": -29.5643,
+        "market_regime": "sector_tailwind"
       },
       "week3": {
         "target_date": "2026-05-14",
@@ -1417,7 +2434,16 @@
         "return_pct": 17.2674,
         "spy_return_pct": 5.6066,
         "alpha_pct": 11.6608,
-        "fetched_at": "2026-05-16T10:30:03"
+        "fetched_at": "2026-06-12T21:45:16",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 10.4955,
+        "sector_return_pct": 10.4955,
+        "vix_change_pct": -10.6163,
+        "ten_year_yield_change_bps": 1.38,
+        "alpha_vs_spy": 11.6608,
+        "alpha_vs_qqq": 6.7719,
+        "alpha_vs_sector": 6.7719,
+        "market_regime": "sector_tailwind"
       },
       "week4": {
         "target_date": "2026-05-21",
@@ -1425,8 +2451,18 @@
         "return_pct": 28.6672,
         "spy_return_pct": 4.8373,
         "alpha_pct": 23.8299,
-        "fetched_at": "2026-06-06T09:16:48"
-      }
+        "fetched_at": "2026-06-12T21:45:16",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 9.685,
+        "sector_return_pct": 9.685,
+        "vix_change_pct": -13.2056,
+        "ten_year_yield_change_bps": 2.63,
+        "alpha_vs_spy": 23.8299,
+        "alpha_vs_qqq": 18.9822,
+        "alpha_vs_sector": 18.9822,
+        "market_regime": "sector_tailwind"
+      },
+      "sector_etf": "QQQ"
     },
     {
       "run_id": "de6f7af6-3031-44f5-b734-9ce4f9de0825",
@@ -1452,7 +2488,16 @@
         "return_pct": 0.1243,
         "spy_return_pct": 1.4412,
         "alpha_pct": -1.3169,
-        "fetched_at": "2026-05-16T10:30:03"
+        "fetched_at": "2026-06-12T21:45:16",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 2.5053,
+        "sector_return_pct": 2.5053,
+        "vix_change_pct": -12.5324,
+        "ten_year_yield_change_bps": 0.67,
+        "alpha_vs_spy": -1.3169,
+        "alpha_vs_qqq": -2.381,
+        "alpha_vs_sector": -2.381,
+        "market_regime": "neutral"
       },
       "week2": {
         "target_date": "2026-05-07",
@@ -1460,7 +2505,16 @@
         "return_pct": -0.801,
         "spy_return_pct": 3.2649,
         "alpha_pct": -4.0659,
-        "fetched_at": "2026-05-16T10:30:03"
+        "fetched_at": "2026-06-12T21:45:16",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 6.6808,
+        "sector_return_pct": 6.6808,
+        "vix_change_pct": -11.5484,
+        "ten_year_yield_change_bps": 0.69,
+        "alpha_vs_spy": -4.0659,
+        "alpha_vs_qqq": -7.4818,
+        "alpha_vs_sector": -7.4818,
+        "market_regime": "sector_tailwind"
       },
       "week3": {
         "target_date": "2026-05-14",
@@ -1468,7 +2522,16 @@
         "return_pct": -7.1813,
         "spy_return_pct": 5.6066,
         "alpha_pct": -12.7879,
-        "fetched_at": "2026-05-16T10:30:03"
+        "fetched_at": "2026-06-12T21:45:16",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 10.4955,
+        "sector_return_pct": 10.4955,
+        "vix_change_pct": -10.6163,
+        "ten_year_yield_change_bps": 1.38,
+        "alpha_vs_spy": -12.7879,
+        "alpha_vs_qqq": -17.6768,
+        "alpha_vs_sector": -17.6768,
+        "market_regime": "sector_tailwind"
       },
       "week4": {
         "target_date": "2026-05-21",
@@ -1476,8 +2539,18 @@
         "return_pct": -10.1091,
         "spy_return_pct": 4.8373,
         "alpha_pct": -14.9464,
-        "fetched_at": "2026-06-06T09:16:48"
-      }
+        "fetched_at": "2026-06-12T21:45:16",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 9.685,
+        "sector_return_pct": 9.685,
+        "vix_change_pct": -13.2056,
+        "ten_year_yield_change_bps": 2.63,
+        "alpha_vs_spy": -14.9464,
+        "alpha_vs_qqq": -19.7941,
+        "alpha_vs_sector": -19.7941,
+        "market_regime": "sector_tailwind"
+      },
+      "sector_etf": "QQQ"
     },
     {
       "run_id": "de6f7af6-3031-44f5-b734-9ce4f9de0825",
@@ -1503,7 +2576,16 @@
         "return_pct": -2.8192,
         "spy_return_pct": 1.4412,
         "alpha_pct": -4.2604,
-        "fetched_at": "2026-05-16T10:30:04"
+        "fetched_at": "2026-06-12T21:45:16",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 2.5053,
+        "sector_return_pct": 2.5053,
+        "vix_change_pct": -12.5324,
+        "ten_year_yield_change_bps": 0.67,
+        "alpha_vs_spy": -4.2604,
+        "alpha_vs_qqq": -5.3245,
+        "alpha_vs_sector": -5.3245,
+        "market_regime": "neutral"
       },
       "week2": {
         "target_date": "2026-05-07",
@@ -1511,7 +2593,16 @@
         "return_pct": -4.9659,
         "spy_return_pct": 3.2649,
         "alpha_pct": -8.2308,
-        "fetched_at": "2026-05-16T10:30:04"
+        "fetched_at": "2026-06-12T21:45:16",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 6.6808,
+        "sector_return_pct": 6.6808,
+        "vix_change_pct": -11.5484,
+        "ten_year_yield_change_bps": 0.69,
+        "alpha_vs_spy": -8.2308,
+        "alpha_vs_qqq": -11.6467,
+        "alpha_vs_sector": -11.6467,
+        "market_regime": "sector_tailwind"
       },
       "week3": {
         "target_date": "2026-05-14",
@@ -1519,7 +2610,16 @@
         "return_pct": -11.4059,
         "spy_return_pct": 5.6066,
         "alpha_pct": -17.0125,
-        "fetched_at": "2026-05-16T10:30:04"
+        "fetched_at": "2026-06-12T21:45:16",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 10.4955,
+        "sector_return_pct": 10.4955,
+        "vix_change_pct": -10.6163,
+        "ten_year_yield_change_bps": 1.38,
+        "alpha_vs_spy": -17.0125,
+        "alpha_vs_qqq": -21.9014,
+        "alpha_vs_sector": -21.9014,
+        "market_regime": "sector_tailwind"
       },
       "week4": {
         "target_date": "2026-05-21",
@@ -1527,8 +2627,18 @@
         "return_pct": -18.3941,
         "spy_return_pct": 4.8373,
         "alpha_pct": -23.2314,
-        "fetched_at": "2026-06-06T09:16:49"
-      }
+        "fetched_at": "2026-06-12T21:45:16",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 9.685,
+        "sector_return_pct": 9.685,
+        "vix_change_pct": -13.2056,
+        "ten_year_yield_change_bps": 2.63,
+        "alpha_vs_spy": -23.2314,
+        "alpha_vs_qqq": -28.0791,
+        "alpha_vs_sector": -28.0791,
+        "market_regime": "sector_tailwind"
+      },
+      "sector_etf": "QQQ"
     },
     {
       "run_id": "de6f7af6-3031-44f5-b734-9ce4f9de0825",
@@ -1554,7 +2664,16 @@
         "return_pct": -8.8797,
         "spy_return_pct": 1.4412,
         "alpha_pct": -10.3209,
-        "fetched_at": "2026-05-16T10:30:04"
+        "fetched_at": "2026-06-12T21:45:16",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 2.5053,
+        "sector_return_pct": 2.5053,
+        "vix_change_pct": -12.5324,
+        "ten_year_yield_change_bps": 0.67,
+        "alpha_vs_spy": -10.3209,
+        "alpha_vs_qqq": -11.385,
+        "alpha_vs_sector": -11.385,
+        "market_regime": "neutral"
       },
       "week2": {
         "target_date": "2026-05-07",
@@ -1562,7 +2681,16 @@
         "return_pct": 24.7067,
         "spy_return_pct": 3.2649,
         "alpha_pct": 21.4418,
-        "fetched_at": "2026-05-16T10:30:04"
+        "fetched_at": "2026-06-12T21:45:16",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 6.6808,
+        "sector_return_pct": 6.6808,
+        "vix_change_pct": -11.5484,
+        "ten_year_yield_change_bps": 0.69,
+        "alpha_vs_spy": 21.4418,
+        "alpha_vs_qqq": 18.0259,
+        "alpha_vs_sector": 18.0259,
+        "market_regime": "sector_tailwind"
       },
       "week3": {
         "target_date": "2026-05-14",
@@ -1570,7 +2698,16 @@
         "return_pct": 32.2521,
         "spy_return_pct": 5.6066,
         "alpha_pct": 26.6455,
-        "fetched_at": "2026-05-16T10:30:04"
+        "fetched_at": "2026-06-12T21:45:16",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 10.4955,
+        "sector_return_pct": 10.4955,
+        "vix_change_pct": -10.6163,
+        "ten_year_yield_change_bps": 1.38,
+        "alpha_vs_spy": 26.6455,
+        "alpha_vs_qqq": 21.7566,
+        "alpha_vs_sector": 21.7566,
+        "market_regime": "sector_tailwind"
       },
       "week4": {
         "target_date": "2026-05-21",
@@ -1578,8 +2715,18 @@
         "return_pct": 39.1994,
         "spy_return_pct": 4.8373,
         "alpha_pct": 34.3621,
-        "fetched_at": "2026-06-06T09:16:49"
-      }
+        "fetched_at": "2026-06-12T21:45:16",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 9.685,
+        "sector_return_pct": 9.685,
+        "vix_change_pct": -13.2056,
+        "ten_year_yield_change_bps": 2.63,
+        "alpha_vs_spy": 34.3621,
+        "alpha_vs_qqq": 29.5144,
+        "alpha_vs_sector": 29.5144,
+        "market_regime": "sector_tailwind"
+      },
+      "sector_etf": "QQQ"
     },
     {
       "run_id": "de6f7af6-3031-44f5-b734-9ce4f9de0825",
@@ -1605,7 +2752,16 @@
         "return_pct": -8.1798,
         "spy_return_pct": 1.4412,
         "alpha_pct": -9.621,
-        "fetched_at": "2026-05-16T10:30:04"
+        "fetched_at": "2026-06-12T21:45:16",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 2.5053,
+        "sector_return_pct": 2.5053,
+        "vix_change_pct": -12.5324,
+        "ten_year_yield_change_bps": 0.67,
+        "alpha_vs_spy": -9.621,
+        "alpha_vs_qqq": -10.6851,
+        "alpha_vs_sector": -10.6851,
+        "market_regime": "neutral"
       },
       "week2": {
         "target_date": "2026-05-07",
@@ -1613,7 +2769,16 @@
         "return_pct": -7.2955,
         "spy_return_pct": 3.2649,
         "alpha_pct": -10.5604,
-        "fetched_at": "2026-05-16T10:30:05"
+        "fetched_at": "2026-06-12T21:45:16",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 6.6808,
+        "sector_return_pct": 6.6808,
+        "vix_change_pct": -11.5484,
+        "ten_year_yield_change_bps": 0.69,
+        "alpha_vs_spy": -10.5604,
+        "alpha_vs_qqq": -13.9763,
+        "alpha_vs_sector": -13.9763,
+        "market_regime": "sector_tailwind"
       },
       "week3": {
         "target_date": "2026-05-14",
@@ -1621,7 +2786,16 @@
         "return_pct": -11.1275,
         "spy_return_pct": 5.6066,
         "alpha_pct": -16.7341,
-        "fetched_at": "2026-05-16T10:30:05"
+        "fetched_at": "2026-06-12T21:45:16",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 10.4955,
+        "sector_return_pct": 10.4955,
+        "vix_change_pct": -10.6163,
+        "ten_year_yield_change_bps": 1.38,
+        "alpha_vs_spy": -16.7341,
+        "alpha_vs_qqq": -21.623,
+        "alpha_vs_sector": -21.623,
+        "market_regime": "sector_tailwind"
       },
       "week4": {
         "target_date": "2026-05-21",
@@ -1629,8 +2803,18 @@
         "return_pct": -16.507,
         "spy_return_pct": 4.8373,
         "alpha_pct": -21.3443,
-        "fetched_at": "2026-06-06T09:16:49"
-      }
+        "fetched_at": "2026-06-12T21:45:16",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 9.685,
+        "sector_return_pct": 9.685,
+        "vix_change_pct": -13.2056,
+        "ten_year_yield_change_bps": 2.63,
+        "alpha_vs_spy": -21.3443,
+        "alpha_vs_qqq": -26.192,
+        "alpha_vs_sector": -26.192,
+        "market_regime": "sector_tailwind"
+      },
+      "sector_etf": "QQQ"
     },
     {
       "run_id": "de6f7af6-3031-44f5-b734-9ce4f9de0825",
@@ -1656,7 +2840,16 @@
         "return_pct": -10.6659,
         "spy_return_pct": 1.4412,
         "alpha_pct": -12.1071,
-        "fetched_at": "2026-05-16T10:30:05"
+        "fetched_at": "2026-06-12T21:45:16",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 2.5053,
+        "sector_return_pct": 2.5053,
+        "vix_change_pct": -12.5324,
+        "ten_year_yield_change_bps": 0.67,
+        "alpha_vs_spy": -12.1071,
+        "alpha_vs_qqq": -13.1712,
+        "alpha_vs_sector": -13.1712,
+        "market_regime": "neutral"
       },
       "week2": {
         "target_date": "2026-05-07",
@@ -1664,7 +2857,16 @@
         "return_pct": -14.51,
         "spy_return_pct": 3.2649,
         "alpha_pct": -17.7749,
-        "fetched_at": "2026-05-16T10:30:05"
+        "fetched_at": "2026-06-12T21:45:16",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 6.6808,
+        "sector_return_pct": 6.6808,
+        "vix_change_pct": -11.5484,
+        "ten_year_yield_change_bps": 0.69,
+        "alpha_vs_spy": -17.7749,
+        "alpha_vs_qqq": -21.1908,
+        "alpha_vs_sector": -21.1908,
+        "market_regime": "sector_tailwind"
       },
       "week3": {
         "target_date": "2026-05-14",
@@ -1672,7 +2874,16 @@
         "return_pct": 20.8446,
         "spy_return_pct": 5.6066,
         "alpha_pct": 15.238,
-        "fetched_at": "2026-05-16T10:30:05"
+        "fetched_at": "2026-06-12T21:45:16",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 10.4955,
+        "sector_return_pct": 10.4955,
+        "vix_change_pct": -10.6163,
+        "ten_year_yield_change_bps": 1.38,
+        "alpha_vs_spy": 15.238,
+        "alpha_vs_qqq": 10.3491,
+        "alpha_vs_sector": 10.3491,
+        "market_regime": "sector_tailwind"
       },
       "week4": {
         "target_date": "2026-05-21",
@@ -1680,8 +2891,18 @@
         "return_pct": 31.9978,
         "spy_return_pct": 4.8373,
         "alpha_pct": 27.1605,
-        "fetched_at": "2026-06-06T09:16:49"
-      }
+        "fetched_at": "2026-06-12T21:45:16",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 9.685,
+        "sector_return_pct": 9.685,
+        "vix_change_pct": -13.2056,
+        "ten_year_yield_change_bps": 2.63,
+        "alpha_vs_spy": 27.1605,
+        "alpha_vs_qqq": 22.3128,
+        "alpha_vs_sector": 22.3128,
+        "market_regime": "sector_tailwind"
+      },
+      "sector_etf": "QQQ"
     },
     {
       "run_id": "4105f34b-119f-478d-bebb-cc9a64525e1e",
@@ -1706,7 +2927,16 @@
         "return_pct": -4.5449,
         "spy_return_pct": 0.8753,
         "alpha_pct": -5.4202,
-        "fetched_at": "2026-06-06T09:16:49"
+        "fetched_at": "2026-06-12T21:45:17",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 1.2145,
+        "sector_return_pct": 3.5913,
+        "vix_change_pct": -9.3869,
+        "ten_year_yield_change_bps": -0.37,
+        "alpha_vs_spy": -5.4202,
+        "alpha_vs_qqq": -5.7594,
+        "alpha_vs_sector": -8.1362,
+        "market_regime": "sector_tailwind"
       },
       "week2": {
         "target_date": "2026-05-30",
@@ -1714,7 +2944,16 @@
         "return_pct": -6.4024,
         "spy_return_pct": 2.3418,
         "alpha_pct": -8.7442,
-        "fetched_at": "2026-06-06T09:16:49"
+        "fetched_at": "2026-06-12T21:45:17",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 4.1443,
+        "sector_return_pct": 7.6554,
+        "vix_change_pct": -16.8747,
+        "ten_year_yield_change_bps": -1.42,
+        "alpha_vs_spy": -8.7442,
+        "alpha_vs_qqq": -10.5467,
+        "alpha_vs_sector": -14.0578,
+        "market_regime": "sector_tailwind"
       },
       "week3": {
         "target_date": "2026-06-06",
@@ -1722,7 +2961,16 @@
         "return_pct": -8.9739,
         "spy_return_pct": -0.2192,
         "alpha_pct": -8.7547,
-        "fetched_at": "2026-06-06T09:16:50"
+        "fetched_at": "2026-06-12T21:45:18",
+        "sector_etf": "SMH",
+        "qqq_return_pct": -0.5459,
+        "sector_return_pct": 2.3996,
+        "vix_change_pct": 16.7119,
+        "ten_year_yield_change_bps": -0.59,
+        "alpha_vs_spy": -8.7547,
+        "alpha_vs_qqq": -8.428,
+        "alpha_vs_sector": -11.3735,
+        "market_regime": "risk_off"
       },
       "week4": {
         "target_date": "2026-06-13",
@@ -1731,7 +2979,8 @@
         "spy_return_pct": null,
         "alpha_pct": null,
         "fetched_at": null
-      }
+      },
+      "sector_etf": "SMH"
     },
     {
       "run_id": "4105f34b-119f-478d-bebb-cc9a64525e1e",
@@ -1756,7 +3005,16 @@
         "return_pct": -4.5449,
         "spy_return_pct": 0.8753,
         "alpha_pct": -5.4202,
-        "fetched_at": "2026-06-06T09:16:50"
+        "fetched_at": "2026-06-12T21:45:18",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 1.2145,
+        "sector_return_pct": 3.5913,
+        "vix_change_pct": -9.3869,
+        "ten_year_yield_change_bps": -0.37,
+        "alpha_vs_spy": -5.4202,
+        "alpha_vs_qqq": -5.7594,
+        "alpha_vs_sector": -8.1362,
+        "market_regime": "sector_tailwind"
       },
       "week2": {
         "target_date": "2026-05-30",
@@ -1764,7 +3022,16 @@
         "return_pct": -6.4024,
         "spy_return_pct": 2.3418,
         "alpha_pct": -8.7442,
-        "fetched_at": "2026-06-06T09:16:50"
+        "fetched_at": "2026-06-12T21:45:18",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 4.1443,
+        "sector_return_pct": 7.6554,
+        "vix_change_pct": -16.8747,
+        "ten_year_yield_change_bps": -1.42,
+        "alpha_vs_spy": -8.7442,
+        "alpha_vs_qqq": -10.5467,
+        "alpha_vs_sector": -14.0578,
+        "market_regime": "sector_tailwind"
       },
       "week3": {
         "target_date": "2026-06-06",
@@ -1772,7 +3039,16 @@
         "return_pct": -8.9739,
         "spy_return_pct": -0.2192,
         "alpha_pct": -8.7547,
-        "fetched_at": "2026-06-06T09:16:50"
+        "fetched_at": "2026-06-12T21:45:18",
+        "sector_etf": "SMH",
+        "qqq_return_pct": -0.5459,
+        "sector_return_pct": 2.3996,
+        "vix_change_pct": 16.7119,
+        "ten_year_yield_change_bps": -0.59,
+        "alpha_vs_spy": -8.7547,
+        "alpha_vs_qqq": -8.428,
+        "alpha_vs_sector": -11.3735,
+        "market_regime": "risk_off"
       },
       "week4": {
         "target_date": "2026-06-13",
@@ -1781,7 +3057,8 @@
         "spy_return_pct": null,
         "alpha_pct": null,
         "fetched_at": null
-      }
+      },
+      "sector_etf": "SMH"
     },
     {
       "run_id": "4105f34b-119f-478d-bebb-cc9a64525e1e",
@@ -1806,7 +3083,16 @@
         "return_pct": 10.2358,
         "spy_return_pct": 0.8753,
         "alpha_pct": 9.3605,
-        "fetched_at": "2026-06-06T09:16:50"
+        "fetched_at": "2026-06-12T21:45:18",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 1.2145,
+        "sector_return_pct": 3.5913,
+        "vix_change_pct": -9.3869,
+        "ten_year_yield_change_bps": -0.37,
+        "alpha_vs_spy": 9.3605,
+        "alpha_vs_qqq": 9.0213,
+        "alpha_vs_sector": 6.6445,
+        "market_regime": "sector_tailwind"
       },
       "week2": {
         "target_date": "2026-05-30",
@@ -1814,7 +3100,16 @@
         "return_pct": 21.693,
         "spy_return_pct": 2.3418,
         "alpha_pct": 19.3512,
-        "fetched_at": "2026-06-06T09:16:50"
+        "fetched_at": "2026-06-12T21:45:18",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 4.1443,
+        "sector_return_pct": 7.6554,
+        "vix_change_pct": -16.8747,
+        "ten_year_yield_change_bps": -1.42,
+        "alpha_vs_spy": 19.3512,
+        "alpha_vs_qqq": 17.5487,
+        "alpha_vs_sector": 14.0376,
+        "market_regime": "sector_tailwind"
       },
       "week3": {
         "target_date": "2026-06-06",
@@ -1822,7 +3117,16 @@
         "return_pct": 9.9693,
         "spy_return_pct": -0.2192,
         "alpha_pct": 10.1885,
-        "fetched_at": "2026-06-06T09:16:50"
+        "fetched_at": "2026-06-12T21:45:18",
+        "sector_etf": "SMH",
+        "qqq_return_pct": -0.5459,
+        "sector_return_pct": 2.3996,
+        "vix_change_pct": 16.7119,
+        "ten_year_yield_change_bps": -0.59,
+        "alpha_vs_spy": 10.1885,
+        "alpha_vs_qqq": 10.5152,
+        "alpha_vs_sector": 7.5697,
+        "market_regime": "risk_off"
       },
       "week4": {
         "target_date": "2026-06-13",
@@ -1831,7 +3135,8 @@
         "spy_return_pct": null,
         "alpha_pct": null,
         "fetched_at": null
-      }
+      },
+      "sector_etf": "SMH"
     },
     {
       "run_id": "4105f34b-119f-478d-bebb-cc9a64525e1e",
@@ -1856,7 +3161,16 @@
         "return_pct": 10.2358,
         "spy_return_pct": 0.8753,
         "alpha_pct": 9.3605,
-        "fetched_at": "2026-06-06T09:16:50"
+        "fetched_at": "2026-06-12T21:45:18",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 1.2145,
+        "sector_return_pct": 3.5913,
+        "vix_change_pct": -9.3869,
+        "ten_year_yield_change_bps": -0.37,
+        "alpha_vs_spy": 9.3605,
+        "alpha_vs_qqq": 9.0213,
+        "alpha_vs_sector": 6.6445,
+        "market_regime": "sector_tailwind"
       },
       "week2": {
         "target_date": "2026-05-30",
@@ -1864,7 +3178,16 @@
         "return_pct": 21.693,
         "spy_return_pct": 2.3418,
         "alpha_pct": 19.3512,
-        "fetched_at": "2026-06-06T09:16:50"
+        "fetched_at": "2026-06-12T21:45:18",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 4.1443,
+        "sector_return_pct": 7.6554,
+        "vix_change_pct": -16.8747,
+        "ten_year_yield_change_bps": -1.42,
+        "alpha_vs_spy": 19.3512,
+        "alpha_vs_qqq": 17.5487,
+        "alpha_vs_sector": 14.0376,
+        "market_regime": "sector_tailwind"
       },
       "week3": {
         "target_date": "2026-06-06",
@@ -1872,7 +3195,16 @@
         "return_pct": 9.9693,
         "spy_return_pct": -0.2192,
         "alpha_pct": 10.1885,
-        "fetched_at": "2026-06-06T09:16:50"
+        "fetched_at": "2026-06-12T21:45:18",
+        "sector_etf": "SMH",
+        "qqq_return_pct": -0.5459,
+        "sector_return_pct": 2.3996,
+        "vix_change_pct": 16.7119,
+        "ten_year_yield_change_bps": -0.59,
+        "alpha_vs_spy": 10.1885,
+        "alpha_vs_qqq": 10.5152,
+        "alpha_vs_sector": 7.5697,
+        "market_regime": "risk_off"
       },
       "week4": {
         "target_date": "2026-06-13",
@@ -1881,7 +3213,8 @@
         "spy_return_pct": null,
         "alpha_pct": null,
         "fetched_at": null
-      }
+      },
+      "sector_etf": "SMH"
     },
     {
       "run_id": "4105f34b-119f-478d-bebb-cc9a64525e1e",
@@ -1906,7 +3239,16 @@
         "return_pct": -2.811,
         "spy_return_pct": 0.8753,
         "alpha_pct": -3.6863,
-        "fetched_at": "2026-06-06T09:16:50"
+        "fetched_at": "2026-06-12T21:45:18",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 1.2145,
+        "sector_return_pct": 1.2145,
+        "vix_change_pct": -9.3869,
+        "ten_year_yield_change_bps": -0.37,
+        "alpha_vs_spy": -3.6863,
+        "alpha_vs_qqq": -4.0255,
+        "alpha_vs_sector": -4.0255,
+        "market_regime": "neutral"
       },
       "week2": {
         "target_date": "2026-05-30",
@@ -1914,7 +3256,16 @@
         "return_pct": -15.39,
         "spy_return_pct": 2.3418,
         "alpha_pct": -17.7318,
-        "fetched_at": "2026-06-06T09:16:51"
+        "fetched_at": "2026-06-12T21:45:18",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 4.1443,
+        "sector_return_pct": 4.1443,
+        "vix_change_pct": -16.8747,
+        "ten_year_yield_change_bps": -1.42,
+        "alpha_vs_spy": -17.7318,
+        "alpha_vs_qqq": -19.5343,
+        "alpha_vs_sector": -19.5343,
+        "market_regime": "risk_on_growth"
       },
       "week3": {
         "target_date": "2026-06-06",
@@ -1922,7 +3273,16 @@
         "return_pct": -10.0492,
         "spy_return_pct": -0.2192,
         "alpha_pct": -9.83,
-        "fetched_at": "2026-06-06T09:16:51"
+        "fetched_at": "2026-06-12T21:45:18",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": -0.5459,
+        "sector_return_pct": -0.5459,
+        "vix_change_pct": 16.7119,
+        "ten_year_yield_change_bps": -0.59,
+        "alpha_vs_spy": -9.83,
+        "alpha_vs_qqq": -9.5033,
+        "alpha_vs_sector": -9.5033,
+        "market_regime": "risk_off"
       },
       "week4": {
         "target_date": "2026-06-13",
@@ -1931,7 +3291,8 @@
         "spy_return_pct": null,
         "alpha_pct": null,
         "fetched_at": null
-      }
+      },
+      "sector_etf": "QQQ"
     },
     {
       "run_id": "4105f34b-119f-478d-bebb-cc9a64525e1e",
@@ -1956,7 +3317,16 @@
         "return_pct": -2.811,
         "spy_return_pct": 0.8753,
         "alpha_pct": -3.6863,
-        "fetched_at": "2026-06-06T09:16:51"
+        "fetched_at": "2026-06-12T21:45:18",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 1.2145,
+        "sector_return_pct": 1.2145,
+        "vix_change_pct": -9.3869,
+        "ten_year_yield_change_bps": -0.37,
+        "alpha_vs_spy": -3.6863,
+        "alpha_vs_qqq": -4.0255,
+        "alpha_vs_sector": -4.0255,
+        "market_regime": "neutral"
       },
       "week2": {
         "target_date": "2026-05-30",
@@ -1964,7 +3334,16 @@
         "return_pct": -15.39,
         "spy_return_pct": 2.3418,
         "alpha_pct": -17.7318,
-        "fetched_at": "2026-06-06T09:16:51"
+        "fetched_at": "2026-06-12T21:45:18",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 4.1443,
+        "sector_return_pct": 4.1443,
+        "vix_change_pct": -16.8747,
+        "ten_year_yield_change_bps": -1.42,
+        "alpha_vs_spy": -17.7318,
+        "alpha_vs_qqq": -19.5343,
+        "alpha_vs_sector": -19.5343,
+        "market_regime": "risk_on_growth"
       },
       "week3": {
         "target_date": "2026-06-06",
@@ -1972,7 +3351,16 @@
         "return_pct": -10.0492,
         "spy_return_pct": -0.2192,
         "alpha_pct": -9.83,
-        "fetched_at": "2026-06-06T09:16:51"
+        "fetched_at": "2026-06-12T21:45:18",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": -0.5459,
+        "sector_return_pct": -0.5459,
+        "vix_change_pct": 16.7119,
+        "ten_year_yield_change_bps": -0.59,
+        "alpha_vs_spy": -9.83,
+        "alpha_vs_qqq": -9.5033,
+        "alpha_vs_sector": -9.5033,
+        "market_regime": "risk_off"
       },
       "week4": {
         "target_date": "2026-06-13",
@@ -1981,7 +3369,8 @@
         "spy_return_pct": null,
         "alpha_pct": null,
         "fetched_at": null
-      }
+      },
+      "sector_etf": "QQQ"
     },
     {
       "run_id": "4105f34b-119f-478d-bebb-cc9a64525e1e",
@@ -2006,7 +3395,16 @@
         "return_pct": 10.9899,
         "spy_return_pct": 0.8753,
         "alpha_pct": 10.1146,
-        "fetched_at": "2026-06-06T09:16:51"
+        "fetched_at": "2026-06-12T21:45:18",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 1.2145,
+        "sector_return_pct": 3.5913,
+        "vix_change_pct": -9.3869,
+        "ten_year_yield_change_bps": -0.37,
+        "alpha_vs_spy": 10.1146,
+        "alpha_vs_qqq": 9.7754,
+        "alpha_vs_sector": 7.3986,
+        "market_regime": "sector_tailwind"
       },
       "week2": {
         "target_date": "2026-05-30",
@@ -2014,7 +3412,16 @@
         "return_pct": 15.8912,
         "spy_return_pct": 2.3418,
         "alpha_pct": 13.5494,
-        "fetched_at": "2026-06-06T09:16:51"
+        "fetched_at": "2026-06-12T21:45:18",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 4.1443,
+        "sector_return_pct": 7.6554,
+        "vix_change_pct": -16.8747,
+        "ten_year_yield_change_bps": -1.42,
+        "alpha_vs_spy": 13.5494,
+        "alpha_vs_qqq": 11.7469,
+        "alpha_vs_sector": 8.2358,
+        "market_regime": "sector_tailwind"
       },
       "week3": {
         "target_date": "2026-06-06",
@@ -2022,7 +3429,16 @@
         "return_pct": 48.9457,
         "spy_return_pct": -0.2192,
         "alpha_pct": 49.1649,
-        "fetched_at": "2026-06-06T09:16:51"
+        "fetched_at": "2026-06-12T21:45:18",
+        "sector_etf": "SMH",
+        "qqq_return_pct": -0.5459,
+        "sector_return_pct": 2.3996,
+        "vix_change_pct": 16.7119,
+        "ten_year_yield_change_bps": -0.59,
+        "alpha_vs_spy": 49.1649,
+        "alpha_vs_qqq": 49.4916,
+        "alpha_vs_sector": 46.5461,
+        "market_regime": "risk_off"
       },
       "week4": {
         "target_date": "2026-06-13",
@@ -2031,7 +3447,8 @@
         "spy_return_pct": null,
         "alpha_pct": null,
         "fetched_at": null
-      }
+      },
+      "sector_etf": "SMH"
     },
     {
       "run_id": "4105f34b-119f-478d-bebb-cc9a64525e1e",
@@ -2056,7 +3473,16 @@
         "return_pct": 10.9899,
         "spy_return_pct": 0.8753,
         "alpha_pct": 10.1146,
-        "fetched_at": "2026-06-06T09:16:51"
+        "fetched_at": "2026-06-12T21:45:18",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 1.2145,
+        "sector_return_pct": 3.5913,
+        "vix_change_pct": -9.3869,
+        "ten_year_yield_change_bps": -0.37,
+        "alpha_vs_spy": 10.1146,
+        "alpha_vs_qqq": 9.7754,
+        "alpha_vs_sector": 7.3986,
+        "market_regime": "sector_tailwind"
       },
       "week2": {
         "target_date": "2026-05-30",
@@ -2064,7 +3490,16 @@
         "return_pct": 15.8912,
         "spy_return_pct": 2.3418,
         "alpha_pct": 13.5494,
-        "fetched_at": "2026-06-06T09:16:51"
+        "fetched_at": "2026-06-12T21:45:18",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 4.1443,
+        "sector_return_pct": 7.6554,
+        "vix_change_pct": -16.8747,
+        "ten_year_yield_change_bps": -1.42,
+        "alpha_vs_spy": 13.5494,
+        "alpha_vs_qqq": 11.7469,
+        "alpha_vs_sector": 8.2358,
+        "market_regime": "sector_tailwind"
       },
       "week3": {
         "target_date": "2026-06-06",
@@ -2072,7 +3507,16 @@
         "return_pct": 48.9457,
         "spy_return_pct": -0.2192,
         "alpha_pct": 49.1649,
-        "fetched_at": "2026-06-06T09:16:51"
+        "fetched_at": "2026-06-12T21:45:18",
+        "sector_etf": "SMH",
+        "qqq_return_pct": -0.5459,
+        "sector_return_pct": 2.3996,
+        "vix_change_pct": 16.7119,
+        "ten_year_yield_change_bps": -0.59,
+        "alpha_vs_spy": 49.1649,
+        "alpha_vs_qqq": 49.4916,
+        "alpha_vs_sector": 46.5461,
+        "market_regime": "risk_off"
       },
       "week4": {
         "target_date": "2026-06-13",
@@ -2081,7 +3525,8 @@
         "spy_return_pct": null,
         "alpha_pct": null,
         "fetched_at": null
-      }
+      },
+      "sector_etf": "SMH"
     },
     {
       "run_id": "4105f34b-119f-478d-bebb-cc9a64525e1e",
@@ -2106,7 +3551,16 @@
         "return_pct": -0.6452,
         "spy_return_pct": 0.8753,
         "alpha_pct": -1.5205,
-        "fetched_at": "2026-06-06T09:16:51"
+        "fetched_at": "2026-06-12T21:45:18",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 1.2145,
+        "sector_return_pct": 1.2145,
+        "vix_change_pct": -9.3869,
+        "ten_year_yield_change_bps": -0.37,
+        "alpha_vs_spy": -1.5205,
+        "alpha_vs_qqq": -1.8597,
+        "alpha_vs_sector": -1.8597,
+        "market_regime": "neutral"
       },
       "week2": {
         "target_date": "2026-05-30",
@@ -2114,7 +3568,16 @@
         "return_pct": 9.2404,
         "spy_return_pct": 2.3418,
         "alpha_pct": 6.8986,
-        "fetched_at": "2026-06-06T09:16:52"
+        "fetched_at": "2026-06-12T21:45:18",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 4.1443,
+        "sector_return_pct": 4.1443,
+        "vix_change_pct": -16.8747,
+        "ten_year_yield_change_bps": -1.42,
+        "alpha_vs_spy": 6.8986,
+        "alpha_vs_qqq": 5.0961,
+        "alpha_vs_sector": 5.0961,
+        "market_regime": "risk_on_growth"
       },
       "week3": {
         "target_date": "2026-06-06",
@@ -2122,7 +3585,16 @@
         "return_pct": 6.1082,
         "spy_return_pct": -0.2192,
         "alpha_pct": 6.3274,
-        "fetched_at": "2026-06-06T09:16:52"
+        "fetched_at": "2026-06-12T21:45:18",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": -0.5459,
+        "sector_return_pct": -0.5459,
+        "vix_change_pct": 16.7119,
+        "ten_year_yield_change_bps": -0.59,
+        "alpha_vs_spy": 6.3274,
+        "alpha_vs_qqq": 6.6541,
+        "alpha_vs_sector": 6.6541,
+        "market_regime": "risk_off"
       },
       "week4": {
         "target_date": "2026-06-13",
@@ -2131,7 +3603,8 @@
         "spy_return_pct": null,
         "alpha_pct": null,
         "fetched_at": null
-      }
+      },
+      "sector_etf": "QQQ"
     },
     {
       "run_id": "4105f34b-119f-478d-bebb-cc9a64525e1e",
@@ -2156,7 +3629,16 @@
         "return_pct": -0.6452,
         "spy_return_pct": 0.8753,
         "alpha_pct": -1.5205,
-        "fetched_at": "2026-06-06T09:16:52"
+        "fetched_at": "2026-06-12T21:45:18",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 1.2145,
+        "sector_return_pct": 1.2145,
+        "vix_change_pct": -9.3869,
+        "ten_year_yield_change_bps": -0.37,
+        "alpha_vs_spy": -1.5205,
+        "alpha_vs_qqq": -1.8597,
+        "alpha_vs_sector": -1.8597,
+        "market_regime": "neutral"
       },
       "week2": {
         "target_date": "2026-05-30",
@@ -2164,7 +3646,16 @@
         "return_pct": 9.2404,
         "spy_return_pct": 2.3418,
         "alpha_pct": 6.8986,
-        "fetched_at": "2026-06-06T09:16:52"
+        "fetched_at": "2026-06-12T21:45:18",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 4.1443,
+        "sector_return_pct": 4.1443,
+        "vix_change_pct": -16.8747,
+        "ten_year_yield_change_bps": -1.42,
+        "alpha_vs_spy": 6.8986,
+        "alpha_vs_qqq": 5.0961,
+        "alpha_vs_sector": 5.0961,
+        "market_regime": "risk_on_growth"
       },
       "week3": {
         "target_date": "2026-06-06",
@@ -2172,7 +3663,16 @@
         "return_pct": 6.1082,
         "spy_return_pct": -0.2192,
         "alpha_pct": 6.3274,
-        "fetched_at": "2026-06-06T09:16:52"
+        "fetched_at": "2026-06-12T21:45:18",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": -0.5459,
+        "sector_return_pct": -0.5459,
+        "vix_change_pct": 16.7119,
+        "ten_year_yield_change_bps": -0.59,
+        "alpha_vs_spy": 6.3274,
+        "alpha_vs_qqq": 6.6541,
+        "alpha_vs_sector": 6.6541,
+        "market_regime": "risk_off"
       },
       "week4": {
         "target_date": "2026-06-13",
@@ -2181,7 +3681,8 @@
         "spy_return_pct": null,
         "alpha_pct": null,
         "fetched_at": null
-      }
+      },
+      "sector_etf": "QQQ"
     },
     {
       "run_id": "4105f34b-119f-478d-bebb-cc9a64525e1e",
@@ -2206,7 +3707,16 @@
         "return_pct": 7.2457,
         "spy_return_pct": 0.8753,
         "alpha_pct": 6.3704,
-        "fetched_at": "2026-06-06T09:16:52"
+        "fetched_at": "2026-06-12T21:45:18",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 1.2145,
+        "sector_return_pct": 3.5913,
+        "vix_change_pct": -9.3869,
+        "ten_year_yield_change_bps": -0.37,
+        "alpha_vs_spy": 6.3704,
+        "alpha_vs_qqq": 6.0312,
+        "alpha_vs_sector": 3.6544,
+        "market_regime": "sector_tailwind"
       },
       "week2": {
         "target_date": "2026-05-30",
@@ -2214,7 +3724,16 @@
         "return_pct": 11.7519,
         "spy_return_pct": 2.3418,
         "alpha_pct": 9.4101,
-        "fetched_at": "2026-06-06T09:16:52"
+        "fetched_at": "2026-06-12T21:45:18",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 4.1443,
+        "sector_return_pct": 7.6554,
+        "vix_change_pct": -16.8747,
+        "ten_year_yield_change_bps": -1.42,
+        "alpha_vs_spy": 9.4101,
+        "alpha_vs_qqq": 7.6076,
+        "alpha_vs_sector": 4.0965,
+        "market_regime": "sector_tailwind"
       },
       "week3": {
         "target_date": "2026-06-06",
@@ -2222,7 +3741,16 @@
         "return_pct": 6.5187,
         "spy_return_pct": -0.2192,
         "alpha_pct": 6.7379,
-        "fetched_at": "2026-06-06T09:16:52"
+        "fetched_at": "2026-06-12T21:45:18",
+        "sector_etf": "SMH",
+        "qqq_return_pct": -0.5459,
+        "sector_return_pct": 2.3996,
+        "vix_change_pct": 16.7119,
+        "ten_year_yield_change_bps": -0.59,
+        "alpha_vs_spy": 6.7379,
+        "alpha_vs_qqq": 7.0646,
+        "alpha_vs_sector": 4.1191,
+        "market_regime": "risk_off"
       },
       "week4": {
         "target_date": "2026-06-13",
@@ -2231,7 +3759,8 @@
         "spy_return_pct": null,
         "alpha_pct": null,
         "fetched_at": null
-      }
+      },
+      "sector_etf": "SMH"
     },
     {
       "run_id": "4105f34b-119f-478d-bebb-cc9a64525e1e",
@@ -2256,7 +3785,16 @@
         "return_pct": 8.8082,
         "spy_return_pct": 0.8753,
         "alpha_pct": 7.9329,
-        "fetched_at": "2026-06-06T09:16:52"
+        "fetched_at": "2026-06-12T21:45:19",
+        "sector_etf": "ARKK",
+        "qqq_return_pct": 1.2145,
+        "sector_return_pct": 2.0027,
+        "vix_change_pct": -9.3869,
+        "ten_year_yield_change_bps": -0.37,
+        "alpha_vs_spy": 7.9329,
+        "alpha_vs_qqq": 7.5937,
+        "alpha_vs_sector": 6.8055,
+        "market_regime": "neutral"
       },
       "week2": {
         "target_date": "2026-05-30",
@@ -2264,7 +3802,16 @@
         "return_pct": 14.9956,
         "spy_return_pct": 2.3418,
         "alpha_pct": 12.6538,
-        "fetched_at": "2026-06-06T09:16:52"
+        "fetched_at": "2026-06-12T21:45:19",
+        "sector_etf": "ARKK",
+        "qqq_return_pct": 4.1443,
+        "sector_return_pct": 9.4125,
+        "vix_change_pct": -16.8747,
+        "ten_year_yield_change_bps": -1.42,
+        "alpha_vs_spy": 12.6538,
+        "alpha_vs_qqq": 10.8513,
+        "alpha_vs_sector": 5.5831,
+        "market_regime": "sector_tailwind"
       },
       "week3": {
         "target_date": "2026-06-06",
@@ -2272,7 +3819,16 @@
         "return_pct": -11.7737,
         "spy_return_pct": -0.2192,
         "alpha_pct": -11.5545,
-        "fetched_at": "2026-06-06T09:16:53"
+        "fetched_at": "2026-06-12T21:45:19",
+        "sector_etf": "ARKK",
+        "qqq_return_pct": -0.5459,
+        "sector_return_pct": -0.5474,
+        "vix_change_pct": 16.7119,
+        "ten_year_yield_change_bps": -0.59,
+        "alpha_vs_spy": -11.5545,
+        "alpha_vs_qqq": -11.2278,
+        "alpha_vs_sector": -11.2263,
+        "market_regime": "risk_off"
       },
       "week4": {
         "target_date": "2026-06-13",
@@ -2281,7 +3837,8 @@
         "spy_return_pct": null,
         "alpha_pct": null,
         "fetched_at": null
-      }
+      },
+      "sector_etf": "ARKK"
     },
     {
       "run_id": "4105f34b-119f-478d-bebb-cc9a64525e1e",
@@ -2306,7 +3863,16 @@
         "return_pct": 0.3076,
         "spy_return_pct": 0.8753,
         "alpha_pct": -0.5677,
-        "fetched_at": "2026-06-06T09:16:53"
+        "fetched_at": "2026-06-12T21:45:19",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 1.2145,
+        "sector_return_pct": 1.2145,
+        "vix_change_pct": -9.3869,
+        "ten_year_yield_change_bps": -0.37,
+        "alpha_vs_spy": -0.5677,
+        "alpha_vs_qqq": -0.9069,
+        "alpha_vs_sector": -0.9069,
+        "market_regime": "neutral"
       },
       "week2": {
         "target_date": "2026-05-30",
@@ -2314,7 +3880,16 @@
         "return_pct": 23.6237,
         "spy_return_pct": 2.3418,
         "alpha_pct": 21.2819,
-        "fetched_at": "2026-06-06T09:16:53"
+        "fetched_at": "2026-06-12T21:45:19",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 4.1443,
+        "sector_return_pct": 4.1443,
+        "vix_change_pct": -16.8747,
+        "ten_year_yield_change_bps": -1.42,
+        "alpha_vs_spy": 21.2819,
+        "alpha_vs_qqq": 19.4794,
+        "alpha_vs_sector": 19.4794,
+        "market_regime": "risk_on_growth"
       },
       "week3": {
         "target_date": "2026-06-06",
@@ -2322,7 +3897,16 @@
         "return_pct": 2.283,
         "spy_return_pct": -0.2192,
         "alpha_pct": 2.5022,
-        "fetched_at": "2026-06-06T09:16:53"
+        "fetched_at": "2026-06-12T21:45:19",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": -0.5459,
+        "sector_return_pct": -0.5459,
+        "vix_change_pct": 16.7119,
+        "ten_year_yield_change_bps": -0.59,
+        "alpha_vs_spy": 2.5022,
+        "alpha_vs_qqq": 2.8289,
+        "alpha_vs_sector": 2.8289,
+        "market_regime": "risk_off"
       },
       "week4": {
         "target_date": "2026-06-13",
@@ -2331,7 +3915,8 @@
         "spy_return_pct": null,
         "alpha_pct": null,
         "fetched_at": null
-      }
+      },
+      "sector_etf": "QQQ"
     },
     {
       "run_id": "4105f34b-119f-478d-bebb-cc9a64525e1e",
@@ -2356,7 +3941,16 @@
         "return_pct": 16.9885,
         "spy_return_pct": 0.8753,
         "alpha_pct": 16.1132,
-        "fetched_at": "2026-06-06T09:16:53"
+        "fetched_at": "2026-06-12T21:45:19",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 1.2145,
+        "sector_return_pct": 1.2145,
+        "vix_change_pct": -9.3869,
+        "ten_year_yield_change_bps": -0.37,
+        "alpha_vs_spy": 16.1132,
+        "alpha_vs_qqq": 15.774,
+        "alpha_vs_sector": 15.774,
+        "market_regime": "neutral"
       },
       "week2": {
         "target_date": "2026-05-30",
@@ -2364,7 +3958,16 @@
         "return_pct": 19.6495,
         "spy_return_pct": 2.3418,
         "alpha_pct": 17.3077,
-        "fetched_at": "2026-06-06T09:16:53"
+        "fetched_at": "2026-06-12T21:45:19",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 4.1443,
+        "sector_return_pct": 4.1443,
+        "vix_change_pct": -16.8747,
+        "ten_year_yield_change_bps": -1.42,
+        "alpha_vs_spy": 17.3077,
+        "alpha_vs_qqq": 15.5052,
+        "alpha_vs_sector": 15.5052,
+        "market_regime": "risk_on_growth"
       },
       "week3": {
         "target_date": "2026-06-06",
@@ -2372,7 +3975,16 @@
         "return_pct": 18.2216,
         "spy_return_pct": -0.2192,
         "alpha_pct": 18.4408,
-        "fetched_at": "2026-06-06T09:16:53"
+        "fetched_at": "2026-06-12T21:45:19",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": -0.5459,
+        "sector_return_pct": -0.5459,
+        "vix_change_pct": 16.7119,
+        "ten_year_yield_change_bps": -0.59,
+        "alpha_vs_spy": 18.4408,
+        "alpha_vs_qqq": 18.7675,
+        "alpha_vs_sector": 18.7675,
+        "market_regime": "risk_off"
       },
       "week4": {
         "target_date": "2026-06-13",
@@ -2381,7 +3993,8 @@
         "spy_return_pct": null,
         "alpha_pct": null,
         "fetched_at": null
-      }
+      },
+      "sector_etf": "QQQ"
     },
     {
       "run_id": "4105f34b-119f-478d-bebb-cc9a64525e1e",
@@ -2406,7 +4019,16 @@
         "return_pct": 6.4265,
         "spy_return_pct": 0.8753,
         "alpha_pct": 5.5512,
-        "fetched_at": "2026-06-06T09:16:53"
+        "fetched_at": "2026-06-12T21:45:19",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 1.2145,
+        "sector_return_pct": 1.2145,
+        "vix_change_pct": -9.3869,
+        "ten_year_yield_change_bps": -0.37,
+        "alpha_vs_spy": 5.5512,
+        "alpha_vs_qqq": 5.212,
+        "alpha_vs_sector": 5.212,
+        "market_regime": "neutral"
       },
       "week2": {
         "target_date": "2026-05-30",
@@ -2414,7 +4036,16 @@
         "return_pct": 14.1188,
         "spy_return_pct": 2.3418,
         "alpha_pct": 11.777,
-        "fetched_at": "2026-06-06T09:16:54"
+        "fetched_at": "2026-06-12T21:45:19",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 4.1443,
+        "sector_return_pct": 4.1443,
+        "vix_change_pct": -16.8747,
+        "ten_year_yield_change_bps": -1.42,
+        "alpha_vs_spy": 11.777,
+        "alpha_vs_qqq": 9.9745,
+        "alpha_vs_sector": 9.9745,
+        "market_regime": "risk_on_growth"
       },
       "week3": {
         "target_date": "2026-06-06",
@@ -2422,7 +4053,16 @@
         "return_pct": 9.445,
         "spy_return_pct": -0.2192,
         "alpha_pct": 9.6642,
-        "fetched_at": "2026-06-06T09:16:54"
+        "fetched_at": "2026-06-12T21:45:19",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": -0.5459,
+        "sector_return_pct": -0.5459,
+        "vix_change_pct": 16.7119,
+        "ten_year_yield_change_bps": -0.59,
+        "alpha_vs_spy": 9.6642,
+        "alpha_vs_qqq": 9.9909,
+        "alpha_vs_sector": 9.9909,
+        "market_regime": "risk_off"
       },
       "week4": {
         "target_date": "2026-06-13",
@@ -2431,7 +4071,8 @@
         "spy_return_pct": null,
         "alpha_pct": null,
         "fetched_at": null
-      }
+      },
+      "sector_etf": "QQQ"
     },
     {
       "run_id": "4105f34b-119f-478d-bebb-cc9a64525e1e",
@@ -2456,7 +4097,16 @@
         "return_pct": 21.0626,
         "spy_return_pct": 0.8753,
         "alpha_pct": 20.1873,
-        "fetched_at": "2026-06-06T09:16:54"
+        "fetched_at": "2026-06-12T21:45:19",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 1.2145,
+        "sector_return_pct": 1.2145,
+        "vix_change_pct": -9.3869,
+        "ten_year_yield_change_bps": -0.37,
+        "alpha_vs_spy": 20.1873,
+        "alpha_vs_qqq": 19.8481,
+        "alpha_vs_sector": 19.8481,
+        "market_regime": "neutral"
       },
       "week2": {
         "target_date": "2026-05-30",
@@ -2464,7 +4114,16 @@
         "return_pct": 29.2494,
         "spy_return_pct": 2.3418,
         "alpha_pct": 26.9076,
-        "fetched_at": "2026-06-06T09:16:54"
+        "fetched_at": "2026-06-12T21:45:19",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 4.1443,
+        "sector_return_pct": 4.1443,
+        "vix_change_pct": -16.8747,
+        "ten_year_yield_change_bps": -1.42,
+        "alpha_vs_spy": 26.9076,
+        "alpha_vs_qqq": 25.1051,
+        "alpha_vs_sector": 25.1051,
+        "market_regime": "risk_on_growth"
       },
       "week3": {
         "target_date": "2026-06-06",
@@ -2472,7 +4131,16 @@
         "return_pct": 6.0125,
         "spy_return_pct": -0.2192,
         "alpha_pct": 6.2317,
-        "fetched_at": "2026-06-06T09:16:54"
+        "fetched_at": "2026-06-12T21:45:19",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": -0.5459,
+        "sector_return_pct": -0.5459,
+        "vix_change_pct": 16.7119,
+        "ten_year_yield_change_bps": -0.59,
+        "alpha_vs_spy": 6.2317,
+        "alpha_vs_qqq": 6.5584,
+        "alpha_vs_sector": 6.5584,
+        "market_regime": "risk_off"
       },
       "week4": {
         "target_date": "2026-06-13",
@@ -2481,7 +4149,8 @@
         "spy_return_pct": null,
         "alpha_pct": null,
         "fetched_at": null
-      }
+      },
+      "sector_etf": "QQQ"
     },
     {
       "run_id": "4105f34b-119f-478d-bebb-cc9a64525e1e",
@@ -2506,7 +4175,16 @@
         "return_pct": 1.8097,
         "spy_return_pct": 0.8753,
         "alpha_pct": 0.9344,
-        "fetched_at": "2026-06-06T09:16:54"
+        "fetched_at": "2026-06-12T21:45:19",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 1.2145,
+        "sector_return_pct": 1.2145,
+        "vix_change_pct": -9.3869,
+        "ten_year_yield_change_bps": -0.37,
+        "alpha_vs_spy": 0.9344,
+        "alpha_vs_qqq": 0.5952,
+        "alpha_vs_sector": 0.5952,
+        "market_regime": "neutral"
       },
       "week2": {
         "target_date": "2026-05-30",
@@ -2514,7 +4192,16 @@
         "return_pct": 11.2159,
         "spy_return_pct": 2.3418,
         "alpha_pct": 8.8741,
-        "fetched_at": "2026-06-06T09:16:54"
+        "fetched_at": "2026-06-12T21:45:19",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 4.1443,
+        "sector_return_pct": 4.1443,
+        "vix_change_pct": -16.8747,
+        "ten_year_yield_change_bps": -1.42,
+        "alpha_vs_spy": 8.8741,
+        "alpha_vs_qqq": 7.0716,
+        "alpha_vs_sector": 7.0716,
+        "market_regime": "risk_on_growth"
       },
       "week3": {
         "target_date": "2026-06-06",
@@ -2522,7 +4209,16 @@
         "return_pct": 7.1882,
         "spy_return_pct": -0.2192,
         "alpha_pct": 7.4074,
-        "fetched_at": "2026-06-06T09:16:54"
+        "fetched_at": "2026-06-12T21:45:19",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": -0.5459,
+        "sector_return_pct": -0.5459,
+        "vix_change_pct": 16.7119,
+        "ten_year_yield_change_bps": -0.59,
+        "alpha_vs_spy": 7.4074,
+        "alpha_vs_qqq": 7.7341,
+        "alpha_vs_sector": 7.7341,
+        "market_regime": "risk_off"
       },
       "week4": {
         "target_date": "2026-06-13",
@@ -2531,7 +4227,8 @@
         "spy_return_pct": null,
         "alpha_pct": null,
         "fetched_at": null
-      }
+      },
+      "sector_etf": "QQQ"
     },
     {
       "run_id": "4105f34b-119f-478d-bebb-cc9a64525e1e",
@@ -2556,7 +4253,16 @@
         "return_pct": -0.9162,
         "spy_return_pct": 0.8753,
         "alpha_pct": -1.7915,
-        "fetched_at": "2026-06-06T09:16:55"
+        "fetched_at": "2026-06-12T21:45:19",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 1.2145,
+        "sector_return_pct": 1.2145,
+        "vix_change_pct": -9.3869,
+        "ten_year_yield_change_bps": -0.37,
+        "alpha_vs_spy": -1.7915,
+        "alpha_vs_qqq": -2.1307,
+        "alpha_vs_sector": -2.1307,
+        "market_regime": "neutral"
       },
       "week2": {
         "target_date": "2026-05-30",
@@ -2564,7 +4270,16 @@
         "return_pct": 11.2565,
         "spy_return_pct": 2.3418,
         "alpha_pct": 8.9147,
-        "fetched_at": "2026-06-06T09:16:55"
+        "fetched_at": "2026-06-12T21:45:19",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 4.1443,
+        "sector_return_pct": 4.1443,
+        "vix_change_pct": -16.8747,
+        "ten_year_yield_change_bps": -1.42,
+        "alpha_vs_spy": 8.9147,
+        "alpha_vs_qqq": 7.1122,
+        "alpha_vs_sector": 7.1122,
+        "market_regime": "risk_on_growth"
       },
       "week3": {
         "target_date": "2026-06-06",
@@ -2572,7 +4287,16 @@
         "return_pct": -5.1047,
         "spy_return_pct": -0.2192,
         "alpha_pct": -4.8855,
-        "fetched_at": "2026-06-06T09:16:55"
+        "fetched_at": "2026-06-12T21:45:19",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": -0.5459,
+        "sector_return_pct": -0.5459,
+        "vix_change_pct": 16.7119,
+        "ten_year_yield_change_bps": -0.59,
+        "alpha_vs_spy": -4.8855,
+        "alpha_vs_qqq": -4.5588,
+        "alpha_vs_sector": -4.5588,
+        "market_regime": "risk_off"
       },
       "week4": {
         "target_date": "2026-06-13",
@@ -2581,7 +4305,8 @@
         "spy_return_pct": null,
         "alpha_pct": null,
         "fetched_at": null
-      }
+      },
+      "sector_etf": "QQQ"
     },
     {
       "run_id": "4105f34b-119f-478d-bebb-cc9a64525e1e",
@@ -2606,7 +4331,16 @@
         "return_pct": 8.6681,
         "spy_return_pct": 0.8753,
         "alpha_pct": 7.7928,
-        "fetched_at": "2026-06-06T09:16:55"
+        "fetched_at": "2026-06-12T21:45:19",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 1.2145,
+        "sector_return_pct": 1.2145,
+        "vix_change_pct": -9.3869,
+        "ten_year_yield_change_bps": -0.37,
+        "alpha_vs_spy": 7.7928,
+        "alpha_vs_qqq": 7.4536,
+        "alpha_vs_sector": 7.4536,
+        "market_regime": "neutral"
       },
       "week2": {
         "target_date": "2026-05-30",
@@ -2614,7 +4348,16 @@
         "return_pct": 21.4767,
         "spy_return_pct": 2.3418,
         "alpha_pct": 19.1349,
-        "fetched_at": "2026-06-06T09:16:55"
+        "fetched_at": "2026-06-12T21:45:19",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 4.1443,
+        "sector_return_pct": 4.1443,
+        "vix_change_pct": -16.8747,
+        "ten_year_yield_change_bps": -1.42,
+        "alpha_vs_spy": 19.1349,
+        "alpha_vs_qqq": 17.3324,
+        "alpha_vs_sector": 17.3324,
+        "market_regime": "risk_on_growth"
       },
       "week3": {
         "target_date": "2026-06-06",
@@ -2622,7 +4365,16 @@
         "return_pct": 10.0766,
         "spy_return_pct": -0.2192,
         "alpha_pct": 10.2958,
-        "fetched_at": "2026-06-06T09:16:56"
+        "fetched_at": "2026-06-12T21:45:19",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": -0.5459,
+        "sector_return_pct": -0.5459,
+        "vix_change_pct": 16.7119,
+        "ten_year_yield_change_bps": -0.59,
+        "alpha_vs_spy": 10.2958,
+        "alpha_vs_qqq": 10.6225,
+        "alpha_vs_sector": 10.6225,
+        "market_regime": "risk_off"
       },
       "week4": {
         "target_date": "2026-06-13",
@@ -2631,7 +4383,8 @@
         "spy_return_pct": null,
         "alpha_pct": null,
         "fetched_at": null
-      }
+      },
+      "sector_etf": "QQQ"
     },
     {
       "run_id": "4105f34b-119f-478d-bebb-cc9a64525e1e",
@@ -2656,7 +4409,16 @@
         "return_pct": 13.7744,
         "spy_return_pct": 0.8753,
         "alpha_pct": 12.8991,
-        "fetched_at": "2026-06-06T09:16:56"
+        "fetched_at": "2026-06-12T21:45:19",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 1.2145,
+        "sector_return_pct": 1.2145,
+        "vix_change_pct": -9.3869,
+        "ten_year_yield_change_bps": -0.37,
+        "alpha_vs_spy": 12.8991,
+        "alpha_vs_qqq": 12.5599,
+        "alpha_vs_sector": 12.5599,
+        "market_regime": "neutral"
       },
       "week2": {
         "target_date": "2026-05-30",
@@ -2664,7 +4426,16 @@
         "return_pct": -16.6586,
         "spy_return_pct": 2.3418,
         "alpha_pct": -19.0004,
-        "fetched_at": "2026-06-06T09:16:56"
+        "fetched_at": "2026-06-12T21:45:19",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 4.1443,
+        "sector_return_pct": 4.1443,
+        "vix_change_pct": -16.8747,
+        "ten_year_yield_change_bps": -1.42,
+        "alpha_vs_spy": -19.0004,
+        "alpha_vs_qqq": -20.8029,
+        "alpha_vs_sector": -20.8029,
+        "market_regime": "risk_on_growth"
       },
       "week3": {
         "target_date": "2026-06-06",
@@ -2672,7 +4443,16 @@
         "return_pct": -28.0659,
         "spy_return_pct": -0.2192,
         "alpha_pct": -27.8467,
-        "fetched_at": "2026-06-06T09:16:56"
+        "fetched_at": "2026-06-12T21:45:19",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": -0.5459,
+        "sector_return_pct": -0.5459,
+        "vix_change_pct": 16.7119,
+        "ten_year_yield_change_bps": -0.59,
+        "alpha_vs_spy": -27.8467,
+        "alpha_vs_qqq": -27.52,
+        "alpha_vs_sector": -27.52,
+        "market_regime": "risk_off"
       },
       "week4": {
         "target_date": "2026-06-13",
@@ -2681,7 +4461,8 @@
         "spy_return_pct": null,
         "alpha_pct": null,
         "fetched_at": null
-      }
+      },
+      "sector_etf": "QQQ"
     },
     {
       "run_id": "1c812073-444d-48f0-b667-37946f9e9a45",
@@ -2706,7 +4487,16 @@
         "return_pct": 4.416,
         "spy_return_pct": 1.4538,
         "alpha_pct": 2.9622,
-        "fetched_at": "2026-06-06T09:16:56"
+        "fetched_at": "2026-06-12T21:45:20",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 2.8946,
+        "sector_return_pct": 3.9232,
+        "vix_change_pct": -8.2635,
+        "ten_year_yield_change_bps": -1.05,
+        "alpha_vs_spy": 2.9622,
+        "alpha_vs_qqq": 1.5214,
+        "alpha_vs_sector": 0.4928,
+        "market_regime": "sector_tailwind"
       },
       "week2": {
         "target_date": "2026-06-06",
@@ -2714,7 +4504,16 @@
         "return_pct": 34.1975,
         "spy_return_pct": -1.085,
         "alpha_pct": 35.2825,
-        "fetched_at": "2026-06-06T09:16:56"
+        "fetched_at": "2026-06-12T21:45:20",
+        "sector_etf": "SMH",
+        "qqq_return_pct": -1.7393,
+        "sector_return_pct": -1.1504,
+        "vix_change_pct": 28.8024,
+        "ten_year_yield_change_bps": -0.22,
+        "alpha_vs_spy": 35.2825,
+        "alpha_vs_qqq": 35.9368,
+        "alpha_vs_sector": 35.3479,
+        "market_regime": "risk_off"
       },
       "week3": {
         "target_date": "2026-06-13",
@@ -2731,7 +4530,8 @@
         "spy_return_pct": null,
         "alpha_pct": null,
         "fetched_at": null
-      }
+      },
+      "sector_etf": "SMH"
     },
     {
       "run_id": "1c812073-444d-48f0-b667-37946f9e9a45",
@@ -2756,7 +4556,16 @@
         "return_pct": 29.2943,
         "spy_return_pct": 1.4538,
         "alpha_pct": 27.8405,
-        "fetched_at": "2026-06-06T09:16:56"
+        "fetched_at": "2026-06-12T21:45:20",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 2.8946,
+        "sector_return_pct": 3.9232,
+        "vix_change_pct": -8.2635,
+        "ten_year_yield_change_bps": -1.05,
+        "alpha_vs_spy": 27.8405,
+        "alpha_vs_qqq": 26.3997,
+        "alpha_vs_sector": 25.3711,
+        "market_regime": "sector_tailwind"
       },
       "week2": {
         "target_date": "2026-06-06",
@@ -2764,7 +4573,16 @@
         "return_pct": 15.0479,
         "spy_return_pct": -1.085,
         "alpha_pct": 16.1329,
-        "fetched_at": "2026-06-06T09:16:57"
+        "fetched_at": "2026-06-12T21:45:20",
+        "sector_etf": "SMH",
+        "qqq_return_pct": -1.7393,
+        "sector_return_pct": -1.1504,
+        "vix_change_pct": 28.8024,
+        "ten_year_yield_change_bps": -0.22,
+        "alpha_vs_spy": 16.1329,
+        "alpha_vs_qqq": 16.7872,
+        "alpha_vs_sector": 16.1983,
+        "market_regime": "risk_off"
       },
       "week3": {
         "target_date": "2026-06-13",
@@ -2781,7 +4599,8 @@
         "spy_return_pct": null,
         "alpha_pct": null,
         "fetched_at": null
-      }
+      },
+      "sector_etf": "SMH"
     },
     {
       "run_id": "1c812073-444d-48f0-b667-37946f9e9a45",
@@ -2806,7 +4625,16 @@
         "return_pct": 3.4436,
         "spy_return_pct": 1.4538,
         "alpha_pct": 1.9898,
-        "fetched_at": "2026-06-06T09:16:57"
+        "fetched_at": "2026-06-12T21:45:20",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 2.8946,
+        "sector_return_pct": 3.9232,
+        "vix_change_pct": -8.2635,
+        "ten_year_yield_change_bps": -1.05,
+        "alpha_vs_spy": 1.9898,
+        "alpha_vs_qqq": 0.549,
+        "alpha_vs_sector": -0.4796,
+        "market_regime": "sector_tailwind"
       },
       "week2": {
         "target_date": "2026-06-06",
@@ -2814,7 +4642,16 @@
         "return_pct": 2.6328,
         "spy_return_pct": -1.085,
         "alpha_pct": 3.7178,
-        "fetched_at": "2026-06-06T09:16:57"
+        "fetched_at": "2026-06-12T21:45:20",
+        "sector_etf": "SMH",
+        "qqq_return_pct": -1.7393,
+        "sector_return_pct": -1.1504,
+        "vix_change_pct": 28.8024,
+        "ten_year_yield_change_bps": -0.22,
+        "alpha_vs_spy": 3.7178,
+        "alpha_vs_qqq": 4.3721,
+        "alpha_vs_sector": 3.7832,
+        "market_regime": "risk_off"
       },
       "week3": {
         "target_date": "2026-06-13",
@@ -2831,7 +4668,8 @@
         "spy_return_pct": null,
         "alpha_pct": null,
         "fetched_at": null
-      }
+      },
+      "sector_etf": "SMH"
     },
     {
       "run_id": "1c812073-444d-48f0-b667-37946f9e9a45",
@@ -2856,7 +4694,16 @@
         "return_pct": 4.142,
         "spy_return_pct": 1.4538,
         "alpha_pct": 2.6882,
-        "fetched_at": "2026-06-06T09:16:57"
+        "fetched_at": "2026-06-12T21:45:20",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 2.8946,
+        "sector_return_pct": 3.9232,
+        "vix_change_pct": -8.2635,
+        "ten_year_yield_change_bps": -1.05,
+        "alpha_vs_spy": 2.6882,
+        "alpha_vs_qqq": 1.2474,
+        "alpha_vs_sector": 0.2188,
+        "market_regime": "sector_tailwind"
       },
       "week2": {
         "target_date": "2026-06-06",
@@ -2864,7 +4711,16 @@
         "return_pct": 4.8246,
         "spy_return_pct": -1.085,
         "alpha_pct": 5.9096,
-        "fetched_at": "2026-06-06T09:16:57"
+        "fetched_at": "2026-06-12T21:45:20",
+        "sector_etf": "SMH",
+        "qqq_return_pct": -1.7393,
+        "sector_return_pct": -1.1504,
+        "vix_change_pct": 28.8024,
+        "ten_year_yield_change_bps": -0.22,
+        "alpha_vs_spy": 5.9096,
+        "alpha_vs_qqq": 6.5639,
+        "alpha_vs_sector": 5.975,
+        "market_regime": "risk_off"
       },
       "week3": {
         "target_date": "2026-06-13",
@@ -2881,7 +4737,8 @@
         "spy_return_pct": null,
         "alpha_pct": null,
         "fetched_at": null
-      }
+      },
+      "sector_etf": "SMH"
     },
     {
       "run_id": "1c812073-444d-48f0-b667-37946f9e9a45",
@@ -2906,7 +4763,16 @@
         "return_pct": -26.7486,
         "spy_return_pct": 1.4538,
         "alpha_pct": -28.2024,
-        "fetched_at": "2026-06-06T09:16:57"
+        "fetched_at": "2026-06-12T21:45:20",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 2.8946,
+        "sector_return_pct": 2.8946,
+        "vix_change_pct": -8.2635,
+        "ten_year_yield_change_bps": -1.05,
+        "alpha_vs_spy": -28.2024,
+        "alpha_vs_qqq": -29.6432,
+        "alpha_vs_sector": -29.6432,
+        "market_regime": "neutral"
       },
       "week2": {
         "target_date": "2026-06-06",
@@ -2914,7 +4780,16 @@
         "return_pct": -36.7748,
         "spy_return_pct": -1.085,
         "alpha_pct": -35.6898,
-        "fetched_at": "2026-06-06T09:16:57"
+        "fetched_at": "2026-06-12T21:45:20",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": -1.7393,
+        "sector_return_pct": -1.7393,
+        "vix_change_pct": 28.8024,
+        "ten_year_yield_change_bps": -0.22,
+        "alpha_vs_spy": -35.6898,
+        "alpha_vs_qqq": -35.0355,
+        "alpha_vs_sector": -35.0355,
+        "market_regime": "risk_off"
       },
       "week3": {
         "target_date": "2026-06-13",
@@ -2931,7 +4806,8 @@
         "spy_return_pct": null,
         "alpha_pct": null,
         "fetched_at": null
-      }
+      },
+      "sector_etf": "QQQ"
     },
     {
       "run_id": "1c812073-444d-48f0-b667-37946f9e9a45",
@@ -2956,7 +4832,16 @@
         "return_pct": -2.06,
         "spy_return_pct": 1.4538,
         "alpha_pct": -3.5138,
-        "fetched_at": "2026-06-06T09:16:57"
+        "fetched_at": "2026-06-12T21:45:20",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 2.8946,
+        "sector_return_pct": 3.9232,
+        "vix_change_pct": -8.2635,
+        "ten_year_yield_change_bps": -1.05,
+        "alpha_vs_spy": -3.5138,
+        "alpha_vs_qqq": -4.9546,
+        "alpha_vs_sector": -5.9832,
+        "market_regime": "sector_tailwind"
       },
       "week2": {
         "target_date": "2026-06-06",
@@ -2964,7 +4849,16 @@
         "return_pct": -4.7508,
         "spy_return_pct": -1.085,
         "alpha_pct": -3.6658,
-        "fetched_at": "2026-06-06T09:16:57"
+        "fetched_at": "2026-06-12T21:45:20",
+        "sector_etf": "SMH",
+        "qqq_return_pct": -1.7393,
+        "sector_return_pct": -1.1504,
+        "vix_change_pct": 28.8024,
+        "ten_year_yield_change_bps": -0.22,
+        "alpha_vs_spy": -3.6658,
+        "alpha_vs_qqq": -3.0115,
+        "alpha_vs_sector": -3.6004,
+        "market_regime": "risk_off"
       },
       "week3": {
         "target_date": "2026-06-13",
@@ -2981,7 +4875,8 @@
         "spy_return_pct": null,
         "alpha_pct": null,
         "fetched_at": null
-      }
+      },
+      "sector_etf": "SMH"
     },
     {
       "run_id": "1c812073-444d-48f0-b667-37946f9e9a45",
@@ -3006,7 +4901,16 @@
         "return_pct": 10.3934,
         "spy_return_pct": 1.4538,
         "alpha_pct": 8.9396,
-        "fetched_at": "2026-06-06T09:16:57"
+        "fetched_at": "2026-06-12T21:45:20",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 2.8946,
+        "sector_return_pct": 3.9232,
+        "vix_change_pct": -8.2635,
+        "ten_year_yield_change_bps": -1.05,
+        "alpha_vs_spy": 8.9396,
+        "alpha_vs_qqq": 7.4988,
+        "alpha_vs_sector": 6.4702,
+        "market_regime": "sector_tailwind"
       },
       "week2": {
         "target_date": "2026-06-06",
@@ -3014,7 +4918,16 @@
         "return_pct": -0.2417,
         "spy_return_pct": -1.085,
         "alpha_pct": 0.8433,
-        "fetched_at": "2026-06-06T09:16:57"
+        "fetched_at": "2026-06-12T21:45:20",
+        "sector_etf": "SMH",
+        "qqq_return_pct": -1.7393,
+        "sector_return_pct": -1.1504,
+        "vix_change_pct": 28.8024,
+        "ten_year_yield_change_bps": -0.22,
+        "alpha_vs_spy": 0.8433,
+        "alpha_vs_qqq": 1.4976,
+        "alpha_vs_sector": 0.9087,
+        "market_regime": "risk_off"
       },
       "week3": {
         "target_date": "2026-06-13",
@@ -3031,7 +4944,8 @@
         "spy_return_pct": null,
         "alpha_pct": null,
         "fetched_at": null
-      }
+      },
+      "sector_etf": "SMH"
     },
     {
       "run_id": "1c812073-444d-48f0-b667-37946f9e9a45",
@@ -3056,7 +4970,16 @@
         "return_pct": -6.0808,
         "spy_return_pct": 1.4538,
         "alpha_pct": -7.5346,
-        "fetched_at": "2026-06-06T09:16:57"
+        "fetched_at": "2026-06-12T21:45:20",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 2.8946,
+        "sector_return_pct": 2.8946,
+        "vix_change_pct": -8.2635,
+        "ten_year_yield_change_bps": -1.05,
+        "alpha_vs_spy": -7.5346,
+        "alpha_vs_qqq": -8.9754,
+        "alpha_vs_sector": -8.9754,
+        "market_regime": "neutral"
       },
       "week2": {
         "target_date": "2026-06-06",
@@ -3064,7 +4987,16 @@
         "return_pct": -27.0707,
         "spy_return_pct": -1.085,
         "alpha_pct": -25.9857,
-        "fetched_at": "2026-06-06T09:16:58"
+        "fetched_at": "2026-06-12T21:45:20",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": -1.7393,
+        "sector_return_pct": -1.7393,
+        "vix_change_pct": 28.8024,
+        "ten_year_yield_change_bps": -0.22,
+        "alpha_vs_spy": -25.9857,
+        "alpha_vs_qqq": -25.3314,
+        "alpha_vs_sector": -25.3314,
+        "market_regime": "risk_off"
       },
       "week3": {
         "target_date": "2026-06-13",
@@ -3081,7 +5013,8 @@
         "spy_return_pct": null,
         "alpha_pct": null,
         "fetched_at": null
-      }
+      },
+      "sector_etf": "QQQ"
     },
     {
       "run_id": "1c812073-444d-48f0-b667-37946f9e9a45",
@@ -3106,7 +5039,16 @@
         "return_pct": 5.6865,
         "spy_return_pct": 1.4538,
         "alpha_pct": 4.2327,
-        "fetched_at": "2026-06-06T09:16:58"
+        "fetched_at": "2026-06-12T21:45:20",
+        "sector_etf": "ARKK",
+        "qqq_return_pct": 2.8946,
+        "sector_return_pct": 7.2644,
+        "vix_change_pct": -8.2635,
+        "ten_year_yield_change_bps": -1.05,
+        "alpha_vs_spy": 4.2327,
+        "alpha_vs_qqq": 2.7919,
+        "alpha_vs_sector": -1.5779,
+        "market_regime": "sector_tailwind"
       },
       "week2": {
         "target_date": "2026-06-06",
@@ -3114,7 +5056,16 @@
         "return_pct": -18.9157,
         "spy_return_pct": -1.085,
         "alpha_pct": -17.8307,
-        "fetched_at": "2026-06-06T09:16:58"
+        "fetched_at": "2026-06-12T21:45:21",
+        "sector_etf": "ARKK",
+        "qqq_return_pct": -1.7393,
+        "sector_return_pct": -2.5,
+        "vix_change_pct": 28.8024,
+        "ten_year_yield_change_bps": -0.22,
+        "alpha_vs_spy": -17.8307,
+        "alpha_vs_qqq": -17.1764,
+        "alpha_vs_sector": -16.4157,
+        "market_regime": "risk_off"
       },
       "week3": {
         "target_date": "2026-06-13",
@@ -3131,7 +5082,8 @@
         "spy_return_pct": null,
         "alpha_pct": null,
         "fetched_at": null
-      }
+      },
+      "sector_etf": "ARKK"
     },
     {
       "run_id": "1c812073-444d-48f0-b667-37946f9e9a45",
@@ -3156,7 +5108,16 @@
         "return_pct": 14.5583,
         "spy_return_pct": 1.4538,
         "alpha_pct": 13.1045,
-        "fetched_at": "2026-06-06T09:16:58"
+        "fetched_at": "2026-06-12T21:45:21",
+        "sector_etf": "ARKK",
+        "qqq_return_pct": 2.8946,
+        "sector_return_pct": 7.2644,
+        "vix_change_pct": -8.2635,
+        "ten_year_yield_change_bps": -1.05,
+        "alpha_vs_spy": 13.1045,
+        "alpha_vs_qqq": 11.6637,
+        "alpha_vs_sector": 7.2939,
+        "market_regime": "sector_tailwind"
       },
       "week2": {
         "target_date": "2026-06-06",
@@ -3164,7 +5125,16 @@
         "return_pct": -23.2619,
         "spy_return_pct": -1.085,
         "alpha_pct": -22.1769,
-        "fetched_at": "2026-06-06T09:16:58"
+        "fetched_at": "2026-06-12T21:45:21",
+        "sector_etf": "ARKK",
+        "qqq_return_pct": -1.7393,
+        "sector_return_pct": -2.5,
+        "vix_change_pct": 28.8024,
+        "ten_year_yield_change_bps": -0.22,
+        "alpha_vs_spy": -22.1769,
+        "alpha_vs_qqq": -21.5226,
+        "alpha_vs_sector": -20.7619,
+        "market_regime": "risk_off"
       },
       "week3": {
         "target_date": "2026-06-13",
@@ -3181,7 +5151,8 @@
         "spy_return_pct": null,
         "alpha_pct": null,
         "fetched_at": null
-      }
+      },
+      "sector_etf": "ARKK"
     },
     {
       "run_id": "1c812073-444d-48f0-b667-37946f9e9a45",
@@ -3206,7 +5177,16 @@
         "return_pct": -3.5882,
         "spy_return_pct": 1.4538,
         "alpha_pct": -5.042,
-        "fetched_at": "2026-06-06T09:16:58"
+        "fetched_at": "2026-06-12T21:45:21",
+        "sector_etf": "XLI",
+        "qqq_return_pct": 2.8946,
+        "sector_return_pct": 0.7918,
+        "vix_change_pct": -8.2635,
+        "ten_year_yield_change_bps": -1.05,
+        "alpha_vs_spy": -5.042,
+        "alpha_vs_qqq": -6.4828,
+        "alpha_vs_sector": -4.38,
+        "market_regime": "neutral"
       },
       "week2": {
         "target_date": "2026-06-06",
@@ -3214,7 +5194,16 @@
         "return_pct": -8.23,
         "spy_return_pct": -1.085,
         "alpha_pct": -7.145,
-        "fetched_at": "2026-06-06T09:16:58"
+        "fetched_at": "2026-06-12T21:45:21",
+        "sector_etf": "XLI",
+        "qqq_return_pct": -1.7393,
+        "sector_return_pct": 1.403,
+        "vix_change_pct": 28.8024,
+        "ten_year_yield_change_bps": -0.22,
+        "alpha_vs_spy": -7.145,
+        "alpha_vs_qqq": -6.4907,
+        "alpha_vs_sector": -9.633,
+        "market_regime": "risk_off"
       },
       "week3": {
         "target_date": "2026-06-13",
@@ -3231,7 +5220,8 @@
         "spy_return_pct": null,
         "alpha_pct": null,
         "fetched_at": null
-      }
+      },
+      "sector_etf": "XLI"
     },
     {
       "run_id": "1c812073-444d-48f0-b667-37946f9e9a45",
@@ -3256,7 +5246,16 @@
         "return_pct": 13.78,
         "spy_return_pct": 1.4538,
         "alpha_pct": 12.3262,
-        "fetched_at": "2026-06-06T09:16:58"
+        "fetched_at": "2026-06-12T21:45:21",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 2.8946,
+        "sector_return_pct": 2.8946,
+        "vix_change_pct": -8.2635,
+        "ten_year_yield_change_bps": -1.05,
+        "alpha_vs_spy": 12.3262,
+        "alpha_vs_qqq": 10.8854,
+        "alpha_vs_sector": 10.8854,
+        "market_regime": "neutral"
       },
       "week2": {
         "target_date": "2026-06-06",
@@ -3264,7 +5263,16 @@
         "return_pct": 18.9633,
         "spy_return_pct": -1.085,
         "alpha_pct": 20.0483,
-        "fetched_at": "2026-06-06T09:16:58"
+        "fetched_at": "2026-06-12T21:45:21",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": -1.7393,
+        "sector_return_pct": -1.7393,
+        "vix_change_pct": 28.8024,
+        "ten_year_yield_change_bps": -0.22,
+        "alpha_vs_spy": 20.0483,
+        "alpha_vs_qqq": 20.7026,
+        "alpha_vs_sector": 20.7026,
+        "market_regime": "risk_off"
       },
       "week3": {
         "target_date": "2026-06-13",
@@ -3281,7 +5289,8 @@
         "spy_return_pct": null,
         "alpha_pct": null,
         "fetched_at": null
-      }
+      },
+      "sector_etf": "QQQ"
     },
     {
       "run_id": "1c812073-444d-48f0-b667-37946f9e9a45",
@@ -3306,7 +5315,16 @@
         "return_pct": -4.2641,
         "spy_return_pct": 1.4538,
         "alpha_pct": -5.7179,
-        "fetched_at": "2026-06-06T09:16:59"
+        "fetched_at": "2026-06-12T21:45:21",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 2.8946,
+        "sector_return_pct": 3.9232,
+        "vix_change_pct": -8.2635,
+        "ten_year_yield_change_bps": -1.05,
+        "alpha_vs_spy": -5.7179,
+        "alpha_vs_qqq": -7.1587,
+        "alpha_vs_sector": -8.1873,
+        "market_regime": "sector_tailwind"
       },
       "week2": {
         "target_date": "2026-06-06",
@@ -3314,7 +5332,16 @@
         "return_pct": -0.1536,
         "spy_return_pct": -1.085,
         "alpha_pct": 0.9314,
-        "fetched_at": "2026-06-06T09:16:59"
+        "fetched_at": "2026-06-12T21:45:21",
+        "sector_etf": "SMH",
+        "qqq_return_pct": -1.7393,
+        "sector_return_pct": -1.1504,
+        "vix_change_pct": 28.8024,
+        "ten_year_yield_change_bps": -0.22,
+        "alpha_vs_spy": 0.9314,
+        "alpha_vs_qqq": 1.5857,
+        "alpha_vs_sector": 0.9968,
+        "market_regime": "risk_off"
       },
       "week3": {
         "target_date": "2026-06-13",
@@ -3331,7 +5358,8 @@
         "spy_return_pct": null,
         "alpha_pct": null,
         "fetched_at": null
-      }
+      },
+      "sector_etf": "SMH"
     },
     {
       "run_id": "1c812073-444d-48f0-b667-37946f9e9a45",
@@ -3356,7 +5384,16 @@
         "return_pct": 40.4803,
         "spy_return_pct": 1.4538,
         "alpha_pct": 39.0265,
-        "fetched_at": "2026-06-06T09:16:59"
+        "fetched_at": "2026-06-12T21:45:21",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 2.8946,
+        "sector_return_pct": 2.8946,
+        "vix_change_pct": -8.2635,
+        "ten_year_yield_change_bps": -1.05,
+        "alpha_vs_spy": 39.0265,
+        "alpha_vs_qqq": 37.5857,
+        "alpha_vs_sector": 37.5857,
+        "market_regime": "neutral"
       },
       "week2": {
         "target_date": "2026-06-06",
@@ -3364,7 +5401,16 @@
         "return_pct": 5.4889,
         "spy_return_pct": -1.085,
         "alpha_pct": 6.5739,
-        "fetched_at": "2026-06-06T09:17:00"
+        "fetched_at": "2026-06-12T21:45:21",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": -1.7393,
+        "sector_return_pct": -1.7393,
+        "vix_change_pct": 28.8024,
+        "ten_year_yield_change_bps": -0.22,
+        "alpha_vs_spy": 6.5739,
+        "alpha_vs_qqq": 7.2282,
+        "alpha_vs_sector": 7.2282,
+        "market_regime": "risk_off"
       },
       "week3": {
         "target_date": "2026-06-13",
@@ -3381,7 +5427,8 @@
         "spy_return_pct": null,
         "alpha_pct": null,
         "fetched_at": null
-      }
+      },
+      "sector_etf": "QQQ"
     },
     {
       "run_id": "1c812073-444d-48f0-b667-37946f9e9a45",
@@ -3406,7 +5453,16 @@
         "return_pct": -5.5448,
         "spy_return_pct": 1.4538,
         "alpha_pct": -6.9986,
-        "fetched_at": "2026-06-06T09:17:00"
+        "fetched_at": "2026-06-12T21:45:21",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 2.8946,
+        "sector_return_pct": 2.8946,
+        "vix_change_pct": -8.2635,
+        "ten_year_yield_change_bps": -1.05,
+        "alpha_vs_spy": -6.9986,
+        "alpha_vs_qqq": -8.4394,
+        "alpha_vs_sector": -8.4394,
+        "market_regime": "neutral"
       },
       "week2": {
         "target_date": "2026-06-06",
@@ -3414,7 +5470,16 @@
         "return_pct": -10.7377,
         "spy_return_pct": -1.085,
         "alpha_pct": -9.6527,
-        "fetched_at": "2026-06-06T09:17:00"
+        "fetched_at": "2026-06-12T21:45:21",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": -1.7393,
+        "sector_return_pct": -1.7393,
+        "vix_change_pct": 28.8024,
+        "ten_year_yield_change_bps": -0.22,
+        "alpha_vs_spy": -9.6527,
+        "alpha_vs_qqq": -8.9984,
+        "alpha_vs_sector": -8.9984,
+        "market_regime": "risk_off"
       },
       "week3": {
         "target_date": "2026-06-13",
@@ -3431,7 +5496,8 @@
         "spy_return_pct": null,
         "alpha_pct": null,
         "fetched_at": null
-      }
+      },
+      "sector_etf": "QQQ"
     },
     {
       "run_id": "1c812073-444d-48f0-b667-37946f9e9a45",
@@ -3456,7 +5522,16 @@
         "return_pct": 2.517,
         "spy_return_pct": 1.4538,
         "alpha_pct": 1.0632,
-        "fetched_at": "2026-06-06T09:17:01"
+        "fetched_at": "2026-06-12T21:45:21",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 2.8946,
+        "sector_return_pct": 2.8946,
+        "vix_change_pct": -8.2635,
+        "ten_year_yield_change_bps": -1.05,
+        "alpha_vs_spy": 1.0632,
+        "alpha_vs_qqq": -0.3776,
+        "alpha_vs_sector": -0.3776,
+        "market_regime": "neutral"
       },
       "week2": {
         "target_date": "2026-06-06",
@@ -3464,7 +5539,16 @@
         "return_pct": -18.8775,
         "spy_return_pct": -1.085,
         "alpha_pct": -17.7925,
-        "fetched_at": "2026-06-06T09:17:01"
+        "fetched_at": "2026-06-12T21:45:21",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": -1.7393,
+        "sector_return_pct": -1.7393,
+        "vix_change_pct": 28.8024,
+        "ten_year_yield_change_bps": -0.22,
+        "alpha_vs_spy": -17.7925,
+        "alpha_vs_qqq": -17.1382,
+        "alpha_vs_sector": -17.1382,
+        "market_regime": "risk_off"
       },
       "week3": {
         "target_date": "2026-06-13",
@@ -3481,7 +5565,8 @@
         "spy_return_pct": null,
         "alpha_pct": null,
         "fetched_at": null
-      }
+      },
+      "sector_etf": "QQQ"
     },
     {
       "run_id": "1c812073-444d-48f0-b667-37946f9e9a45",
@@ -3506,7 +5591,16 @@
         "return_pct": -9.0598,
         "spy_return_pct": 1.4538,
         "alpha_pct": -10.5136,
-        "fetched_at": "2026-06-06T09:17:01"
+        "fetched_at": "2026-06-12T21:45:21",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 2.8946,
+        "sector_return_pct": 2.8946,
+        "vix_change_pct": -8.2635,
+        "ten_year_yield_change_bps": -1.05,
+        "alpha_vs_spy": -10.5136,
+        "alpha_vs_qqq": -11.9544,
+        "alpha_vs_sector": -11.9544,
+        "market_regime": "neutral"
       },
       "week2": {
         "target_date": "2026-06-06",
@@ -3514,7 +5608,16 @@
         "return_pct": -14.2564,
         "spy_return_pct": -1.085,
         "alpha_pct": -13.1714,
-        "fetched_at": "2026-06-06T09:17:01"
+        "fetched_at": "2026-06-12T21:45:21",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": -1.7393,
+        "sector_return_pct": -1.7393,
+        "vix_change_pct": 28.8024,
+        "ten_year_yield_change_bps": -0.22,
+        "alpha_vs_spy": -13.1714,
+        "alpha_vs_qqq": -12.5171,
+        "alpha_vs_sector": -12.5171,
+        "market_regime": "risk_off"
       },
       "week3": {
         "target_date": "2026-06-13",
@@ -3531,7 +5634,8 @@
         "spy_return_pct": null,
         "alpha_pct": null,
         "fetched_at": null
-      }
+      },
+      "sector_etf": "QQQ"
     },
     {
       "run_id": "1c812073-444d-48f0-b667-37946f9e9a45",
@@ -3556,7 +5660,16 @@
         "return_pct": 25.0646,
         "spy_return_pct": 1.4538,
         "alpha_pct": 23.6108,
-        "fetched_at": "2026-06-06T09:17:01"
+        "fetched_at": "2026-06-12T21:45:21",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 2.8946,
+        "sector_return_pct": 2.8946,
+        "vix_change_pct": -8.2635,
+        "ten_year_yield_change_bps": -1.05,
+        "alpha_vs_spy": 23.6108,
+        "alpha_vs_qqq": 22.17,
+        "alpha_vs_sector": 22.17,
+        "market_regime": "neutral"
       },
       "week2": {
         "target_date": "2026-06-06",
@@ -3564,7 +5677,16 @@
         "return_pct": 19.8622,
         "spy_return_pct": -1.085,
         "alpha_pct": 20.9472,
-        "fetched_at": "2026-06-06T09:17:01"
+        "fetched_at": "2026-06-12T21:45:21",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": -1.7393,
+        "sector_return_pct": -1.7393,
+        "vix_change_pct": 28.8024,
+        "ten_year_yield_change_bps": -0.22,
+        "alpha_vs_spy": 20.9472,
+        "alpha_vs_qqq": 21.6015,
+        "alpha_vs_sector": 21.6015,
+        "market_regime": "risk_off"
       },
       "week3": {
         "target_date": "2026-06-13",
@@ -3581,7 +5703,8 @@
         "spy_return_pct": null,
         "alpha_pct": null,
         "fetched_at": null
-      }
+      },
+      "sector_etf": "QQQ"
     },
     {
       "run_id": "a84445db-5cb2-4e9e-af53-29bae6f5e8e5",
@@ -3606,15 +5729,33 @@
         "return_pct": 5.6865,
         "spy_return_pct": 1.4538,
         "alpha_pct": 4.2327,
-        "fetched_at": "2026-06-06T09:17:01"
+        "fetched_at": "2026-06-12T21:45:22",
+        "sector_etf": "ARKK",
+        "qqq_return_pct": 2.8946,
+        "sector_return_pct": 7.2644,
+        "vix_change_pct": -8.2635,
+        "ten_year_yield_change_bps": -1.05,
+        "alpha_vs_spy": 4.2327,
+        "alpha_vs_qqq": 2.7919,
+        "alpha_vs_sector": -1.5779,
+        "market_regime": "sector_tailwind"
       },
       "week2": {
         "target_date": "2026-06-07",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 110.08,
+        "return_pct": -18.9157,
+        "spy_return_pct": -1.085,
+        "alpha_pct": -17.8307,
+        "fetched_at": "2026-06-12T21:45:23",
+        "sector_etf": "ARKK",
+        "qqq_return_pct": -1.7393,
+        "sector_return_pct": -2.5,
+        "vix_change_pct": 28.8024,
+        "ten_year_yield_change_bps": -0.22,
+        "alpha_vs_spy": -17.8307,
+        "alpha_vs_qqq": -17.1764,
+        "alpha_vs_sector": -16.4157,
+        "market_regime": "risk_off"
       },
       "week3": {
         "target_date": "2026-06-14",
@@ -3631,7 +5772,8 @@
         "spy_return_pct": null,
         "alpha_pct": null,
         "fetched_at": null
-      }
+      },
+      "sector_etf": "ARKK"
     },
     {
       "run_id": "a84445db-5cb2-4e9e-af53-29bae6f5e8e5",
@@ -3656,15 +5798,33 @@
         "return_pct": 10.3934,
         "spy_return_pct": 1.4538,
         "alpha_pct": 8.9396,
-        "fetched_at": "2026-06-06T09:17:02"
+        "fetched_at": "2026-06-12T21:45:23",
+        "sector_etf": "SMH",
+        "qqq_return_pct": 2.8946,
+        "sector_return_pct": 3.9232,
+        "vix_change_pct": -8.2635,
+        "ten_year_yield_change_bps": -1.05,
+        "alpha_vs_spy": 8.9396,
+        "alpha_vs_qqq": 7.4988,
+        "alpha_vs_sector": 6.4702,
+        "market_regime": "sector_tailwind"
       },
       "week2": {
         "target_date": "2026-06-07",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 466.38,
+        "return_pct": -0.2417,
+        "spy_return_pct": -1.085,
+        "alpha_pct": 0.8433,
+        "fetched_at": "2026-06-12T21:45:24",
+        "sector_etf": "SMH",
+        "qqq_return_pct": -1.7393,
+        "sector_return_pct": -1.1504,
+        "vix_change_pct": 28.8024,
+        "ten_year_yield_change_bps": -0.22,
+        "alpha_vs_spy": 0.8433,
+        "alpha_vs_qqq": 1.4976,
+        "alpha_vs_sector": 0.9087,
+        "market_regime": "risk_off"
       },
       "week3": {
         "target_date": "2026-06-14",
@@ -3681,7 +5841,8 @@
         "spy_return_pct": null,
         "alpha_pct": null,
         "fetched_at": null
-      }
+      },
+      "sector_etf": "SMH"
     },
     {
       "run_id": "a84445db-5cb2-4e9e-af53-29bae6f5e8e5",
@@ -3706,15 +5867,33 @@
         "return_pct": 14.5583,
         "spy_return_pct": 1.4538,
         "alpha_pct": 13.1045,
-        "fetched_at": "2026-06-06T09:17:02"
+        "fetched_at": "2026-06-12T21:45:24",
+        "sector_etf": "ARKK",
+        "qqq_return_pct": 2.8946,
+        "sector_return_pct": 7.2644,
+        "vix_change_pct": -8.2635,
+        "ten_year_yield_change_bps": -1.05,
+        "alpha_vs_spy": 13.1045,
+        "alpha_vs_qqq": 11.6637,
+        "alpha_vs_sector": 7.2939,
+        "market_regime": "sector_tailwind"
       },
       "week2": {
         "target_date": "2026-06-07",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 29.36,
+        "return_pct": -23.2619,
+        "spy_return_pct": -1.085,
+        "alpha_pct": -22.1769,
+        "fetched_at": "2026-06-12T21:45:24",
+        "sector_etf": "ARKK",
+        "qqq_return_pct": -1.7393,
+        "sector_return_pct": -2.5,
+        "vix_change_pct": 28.8024,
+        "ten_year_yield_change_bps": -0.22,
+        "alpha_vs_spy": -22.1769,
+        "alpha_vs_qqq": -21.5226,
+        "alpha_vs_sector": -20.7619,
+        "market_regime": "risk_off"
       },
       "week3": {
         "target_date": "2026-06-14",
@@ -3731,7 +5910,8 @@
         "spy_return_pct": null,
         "alpha_pct": null,
         "fetched_at": null
-      }
+      },
+      "sector_etf": "ARKK"
     },
     {
       "run_id": "a84445db-5cb2-4e9e-af53-29bae6f5e8e5",
@@ -3756,15 +5936,33 @@
         "return_pct": 2.517,
         "spy_return_pct": 1.4538,
         "alpha_pct": 1.0632,
-        "fetched_at": "2026-06-06T09:17:02"
+        "fetched_at": "2026-06-12T21:45:24",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 2.8946,
+        "sector_return_pct": 2.8946,
+        "vix_change_pct": -8.2635,
+        "ten_year_yield_change_bps": -1.05,
+        "alpha_vs_spy": 1.0632,
+        "alpha_vs_qqq": -0.3776,
+        "alpha_vs_sector": -0.3776,
+        "market_regime": "neutral"
       },
       "week2": {
         "target_date": "2026-06-07",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 23.85,
+        "return_pct": -18.8775,
+        "spy_return_pct": -1.085,
+        "alpha_pct": -17.7925,
+        "fetched_at": "2026-06-12T21:45:24",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": -1.7393,
+        "sector_return_pct": -1.7393,
+        "vix_change_pct": 28.8024,
+        "ten_year_yield_change_bps": -0.22,
+        "alpha_vs_spy": -17.7925,
+        "alpha_vs_qqq": -17.1382,
+        "alpha_vs_sector": -17.1382,
+        "market_regime": "risk_off"
       },
       "week3": {
         "target_date": "2026-06-14",
@@ -3781,7 +5979,8 @@
         "spy_return_pct": null,
         "alpha_pct": null,
         "fetched_at": null
-      }
+      },
+      "sector_etf": "QQQ"
     },
     {
       "run_id": "a84445db-5cb2-4e9e-af53-29bae6f5e8e5",
@@ -3806,15 +6005,33 @@
         "return_pct": -6.0808,
         "spy_return_pct": 1.4538,
         "alpha_pct": -7.5346,
-        "fetched_at": "2026-06-06T09:17:02"
+        "fetched_at": "2026-06-12T21:45:24",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 2.8946,
+        "sector_return_pct": 2.8946,
+        "vix_change_pct": -8.2635,
+        "ten_year_yield_change_bps": -1.05,
+        "alpha_vs_spy": -7.5346,
+        "alpha_vs_qqq": -8.9754,
+        "alpha_vs_sector": -8.9754,
+        "market_regime": "neutral"
       },
       "week2": {
         "target_date": "2026-06-07",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 36.1,
+        "return_pct": -27.0707,
+        "spy_return_pct": -1.085,
+        "alpha_pct": -25.9857,
+        "fetched_at": "2026-06-12T21:45:24",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": -1.7393,
+        "sector_return_pct": -1.7393,
+        "vix_change_pct": 28.8024,
+        "ten_year_yield_change_bps": -0.22,
+        "alpha_vs_spy": -25.9857,
+        "alpha_vs_qqq": -25.3314,
+        "alpha_vs_sector": -25.3314,
+        "market_regime": "risk_off"
       },
       "week3": {
         "target_date": "2026-06-14",
@@ -3831,7 +6048,8 @@
         "spy_return_pct": null,
         "alpha_pct": null,
         "fetched_at": null
-      }
+      },
+      "sector_etf": "QQQ"
     },
     {
       "run_id": "a84445db-5cb2-4e9e-af53-29bae6f5e8e5",
@@ -3856,15 +6074,33 @@
         "return_pct": -0.7951,
         "spy_return_pct": 1.4538,
         "alpha_pct": -2.2489,
-        "fetched_at": "2026-06-06T09:17:02"
+        "fetched_at": "2026-06-12T21:45:24",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 2.8946,
+        "sector_return_pct": 2.8946,
+        "vix_change_pct": -8.2635,
+        "ten_year_yield_change_bps": -1.05,
+        "alpha_vs_spy": -2.2489,
+        "alpha_vs_qqq": -3.6897,
+        "alpha_vs_sector": -3.6897,
+        "market_regime": "neutral"
       },
       "week2": {
         "target_date": "2026-06-07",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 14.56,
+        "return_pct": -10.948,
+        "spy_return_pct": -1.085,
+        "alpha_pct": -9.863,
+        "fetched_at": "2026-06-12T21:45:25",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": -1.7393,
+        "sector_return_pct": -1.7393,
+        "vix_change_pct": 28.8024,
+        "ten_year_yield_change_bps": -0.22,
+        "alpha_vs_spy": -9.863,
+        "alpha_vs_qqq": -9.2087,
+        "alpha_vs_sector": -9.2087,
+        "market_regime": "risk_off"
       },
       "week3": {
         "target_date": "2026-06-14",
@@ -3881,7 +6117,8 @@
         "spy_return_pct": null,
         "alpha_pct": null,
         "fetched_at": null
-      }
+      },
+      "sector_etf": "QQQ"
     },
     {
       "run_id": "a84445db-5cb2-4e9e-af53-29bae6f5e8e5",
@@ -3906,15 +6143,33 @@
         "return_pct": -3.3308,
         "spy_return_pct": 1.4538,
         "alpha_pct": -4.7846,
-        "fetched_at": "2026-06-06T09:17:02"
+        "fetched_at": "2026-06-12T21:45:25",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 2.8946,
+        "sector_return_pct": 2.8946,
+        "vix_change_pct": -8.2635,
+        "ten_year_yield_change_bps": -1.05,
+        "alpha_vs_spy": -4.7846,
+        "alpha_vs_qqq": -6.2254,
+        "alpha_vs_sector": -6.2254,
+        "market_regime": "neutral"
       },
       "week2": {
         "target_date": "2026-06-07",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 20.68,
+        "return_pct": -21.726,
+        "spy_return_pct": -1.085,
+        "alpha_pct": -20.641,
+        "fetched_at": "2026-06-12T21:45:25",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": -1.7393,
+        "sector_return_pct": -1.7393,
+        "vix_change_pct": 28.8024,
+        "ten_year_yield_change_bps": -0.22,
+        "alpha_vs_spy": -20.641,
+        "alpha_vs_qqq": -19.9867,
+        "alpha_vs_sector": -19.9867,
+        "market_regime": "risk_off"
       },
       "week3": {
         "target_date": "2026-06-14",
@@ -3931,7 +6186,8 @@
         "spy_return_pct": null,
         "alpha_pct": null,
         "fetched_at": null
-      }
+      },
+      "sector_etf": "QQQ"
     },
     {
       "run_id": "a84445db-5cb2-4e9e-af53-29bae6f5e8e5",
@@ -3956,15 +6212,33 @@
         "return_pct": -4.0724,
         "spy_return_pct": 1.4538,
         "alpha_pct": -5.5262,
-        "fetched_at": "2026-06-06T09:17:02"
+        "fetched_at": "2026-06-12T21:45:25",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 2.8946,
+        "sector_return_pct": 2.8946,
+        "vix_change_pct": -8.2635,
+        "ten_year_yield_change_bps": -1.05,
+        "alpha_vs_spy": -5.5262,
+        "alpha_vs_qqq": -6.967,
+        "alpha_vs_sector": -6.967,
+        "market_regime": "neutral"
       },
       "week2": {
         "target_date": "2026-06-07",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 14.38,
+        "return_pct": -7.0459,
+        "spy_return_pct": -1.085,
+        "alpha_pct": -5.9609,
+        "fetched_at": "2026-06-12T21:45:25",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": -1.7393,
+        "sector_return_pct": -1.7393,
+        "vix_change_pct": 28.8024,
+        "ten_year_yield_change_bps": -0.22,
+        "alpha_vs_spy": -5.9609,
+        "alpha_vs_qqq": -5.3066,
+        "alpha_vs_sector": -5.3066,
+        "market_regime": "risk_off"
       },
       "week3": {
         "target_date": "2026-06-14",
@@ -3981,7 +6255,8 @@
         "spy_return_pct": null,
         "alpha_pct": null,
         "fetched_at": null
-      }
+      },
+      "sector_etf": "QQQ"
     },
     {
       "run_id": "a84445db-5cb2-4e9e-af53-29bae6f5e8e5",
@@ -4006,15 +6281,33 @@
         "return_pct": 13.78,
         "spy_return_pct": 1.4538,
         "alpha_pct": 12.3262,
-        "fetched_at": "2026-06-06T09:17:02"
+        "fetched_at": "2026-06-12T21:45:25",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 2.8946,
+        "sector_return_pct": 2.8946,
+        "vix_change_pct": -8.2635,
+        "ten_year_yield_change_bps": -1.05,
+        "alpha_vs_spy": 12.3262,
+        "alpha_vs_qqq": 10.8854,
+        "alpha_vs_sector": 10.8854,
+        "market_regime": "neutral"
       },
       "week2": {
         "target_date": "2026-06-07",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 9.41,
+        "return_pct": 18.9633,
+        "spy_return_pct": -1.085,
+        "alpha_pct": 20.0483,
+        "fetched_at": "2026-06-12T21:45:25",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": -1.7393,
+        "sector_return_pct": -1.7393,
+        "vix_change_pct": 28.8024,
+        "ten_year_yield_change_bps": -0.22,
+        "alpha_vs_spy": 20.0483,
+        "alpha_vs_qqq": 20.7026,
+        "alpha_vs_sector": 20.7026,
+        "market_regime": "risk_off"
       },
       "week3": {
         "target_date": "2026-06-14",
@@ -4031,7 +6324,8 @@
         "spy_return_pct": null,
         "alpha_pct": null,
         "fetched_at": null
-      }
+      },
+      "sector_etf": "QQQ"
     },
     {
       "run_id": "a84445db-5cb2-4e9e-af53-29bae6f5e8e5",
@@ -4056,15 +6350,33 @@
         "return_pct": 40.4803,
         "spy_return_pct": 1.4538,
         "alpha_pct": 39.0265,
-        "fetched_at": "2026-06-06T09:17:03"
+        "fetched_at": "2026-06-12T21:45:25",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 2.8946,
+        "sector_return_pct": 2.8946,
+        "vix_change_pct": -8.2635,
+        "ten_year_yield_change_bps": -1.05,
+        "alpha_vs_spy": 39.0265,
+        "alpha_vs_qqq": 37.5857,
+        "alpha_vs_sector": 37.5857,
+        "market_regime": "neutral"
       },
       "week2": {
         "target_date": "2026-06-07",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 18.45,
+        "return_pct": 5.4889,
+        "spy_return_pct": -1.085,
+        "alpha_pct": 6.5739,
+        "fetched_at": "2026-06-12T21:45:26",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": -1.7393,
+        "sector_return_pct": -1.7393,
+        "vix_change_pct": 28.8024,
+        "ten_year_yield_change_bps": -0.22,
+        "alpha_vs_spy": 6.5739,
+        "alpha_vs_qqq": 7.2282,
+        "alpha_vs_sector": 7.2282,
+        "market_regime": "risk_off"
       },
       "week3": {
         "target_date": "2026-06-14",
@@ -4081,7 +6393,8 @@
         "spy_return_pct": null,
         "alpha_pct": null,
         "fetched_at": null
-      }
+      },
+      "sector_etf": "QQQ"
     },
     {
       "run_id": "a84445db-5cb2-4e9e-af53-29bae6f5e8e5",
@@ -4106,15 +6419,33 @@
         "return_pct": -26.7486,
         "spy_return_pct": 1.4538,
         "alpha_pct": -28.2024,
-        "fetched_at": "2026-06-06T09:17:03"
+        "fetched_at": "2026-06-12T21:45:26",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 2.8946,
+        "sector_return_pct": 2.8946,
+        "vix_change_pct": -8.2635,
+        "ten_year_yield_change_bps": -1.05,
+        "alpha_vs_spy": -28.2024,
+        "alpha_vs_qqq": -29.6432,
+        "alpha_vs_sector": -29.6432,
+        "market_regime": "neutral"
       },
       "week2": {
         "target_date": "2026-06-07",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 89.04,
+        "return_pct": -36.7748,
+        "spy_return_pct": -1.085,
+        "alpha_pct": -35.6898,
+        "fetched_at": "2026-06-12T21:45:26",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": -1.7393,
+        "sector_return_pct": -1.7393,
+        "vix_change_pct": 28.8024,
+        "ten_year_yield_change_bps": -0.22,
+        "alpha_vs_spy": -35.6898,
+        "alpha_vs_qqq": -35.0355,
+        "alpha_vs_sector": -35.0355,
+        "market_regime": "risk_off"
       },
       "week3": {
         "target_date": "2026-06-14",
@@ -4131,7 +6462,8 @@
         "spy_return_pct": null,
         "alpha_pct": null,
         "fetched_at": null
-      }
+      },
+      "sector_etf": "QQQ"
     },
     {
       "run_id": "a84445db-5cb2-4e9e-af53-29bae6f5e8e5",
@@ -4156,15 +6488,33 @@
         "return_pct": -4.0134,
         "spy_return_pct": 1.4538,
         "alpha_pct": -5.4672,
-        "fetched_at": "2026-06-06T09:17:03"
+        "fetched_at": "2026-06-12T21:45:26",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 2.8946,
+        "sector_return_pct": 2.8946,
+        "vix_change_pct": -8.2635,
+        "ten_year_yield_change_bps": -1.05,
+        "alpha_vs_spy": -5.4672,
+        "alpha_vs_qqq": -6.908,
+        "alpha_vs_sector": -6.908,
+        "market_regime": "neutral"
       },
       "week2": {
         "target_date": "2026-06-07",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 13.4,
+        "return_pct": -10.3679,
+        "spy_return_pct": -1.085,
+        "alpha_pct": -9.2829,
+        "fetched_at": "2026-06-12T21:45:26",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": -1.7393,
+        "sector_return_pct": -1.7393,
+        "vix_change_pct": 28.8024,
+        "ten_year_yield_change_bps": -0.22,
+        "alpha_vs_spy": -9.2829,
+        "alpha_vs_qqq": -8.6286,
+        "alpha_vs_sector": -8.6286,
+        "market_regime": "risk_off"
       },
       "week3": {
         "target_date": "2026-06-14",
@@ -4181,7 +6531,8 @@
         "spy_return_pct": null,
         "alpha_pct": null,
         "fetched_at": null
-      }
+      },
+      "sector_etf": "QQQ"
     },
     {
       "run_id": "a84445db-5cb2-4e9e-af53-29bae6f5e8e5",
@@ -4206,15 +6557,33 @@
         "return_pct": -5.5448,
         "spy_return_pct": 1.4538,
         "alpha_pct": -6.9986,
-        "fetched_at": "2026-06-06T09:17:03"
+        "fetched_at": "2026-06-12T21:45:26",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 2.8946,
+        "sector_return_pct": 2.8946,
+        "vix_change_pct": -8.2635,
+        "ten_year_yield_change_bps": -1.05,
+        "alpha_vs_spy": -6.9986,
+        "alpha_vs_qqq": -8.4394,
+        "alpha_vs_sector": -8.4394,
+        "market_regime": "neutral"
       },
       "week2": {
         "target_date": "2026-06-07",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 73.57,
+        "return_pct": -10.7377,
+        "spy_return_pct": -1.085,
+        "alpha_pct": -9.6527,
+        "fetched_at": "2026-06-12T21:45:26",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": -1.7393,
+        "sector_return_pct": -1.7393,
+        "vix_change_pct": 28.8024,
+        "ten_year_yield_change_bps": -0.22,
+        "alpha_vs_spy": -9.6527,
+        "alpha_vs_qqq": -8.9984,
+        "alpha_vs_sector": -8.9984,
+        "market_regime": "risk_off"
       },
       "week3": {
         "target_date": "2026-06-14",
@@ -4231,7 +6600,8 @@
         "spy_return_pct": null,
         "alpha_pct": null,
         "fetched_at": null
-      }
+      },
+      "sector_etf": "QQQ"
     },
     {
       "run_id": "a84445db-5cb2-4e9e-af53-29bae6f5e8e5",
@@ -4256,15 +6626,33 @@
         "return_pct": 10.1587,
         "spy_return_pct": 1.4538,
         "alpha_pct": 8.7049,
-        "fetched_at": "2026-06-06T09:17:04"
+        "fetched_at": "2026-06-12T21:45:26",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 2.8946,
+        "sector_return_pct": 2.8946,
+        "vix_change_pct": -8.2635,
+        "ten_year_yield_change_bps": -1.05,
+        "alpha_vs_spy": 8.7049,
+        "alpha_vs_qqq": 7.2641,
+        "alpha_vs_sector": 7.2641,
+        "market_regime": "neutral"
       },
       "week2": {
         "target_date": "2026-06-07",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 57.2,
+        "return_pct": 21.0582,
+        "spy_return_pct": -1.085,
+        "alpha_pct": 22.1432,
+        "fetched_at": "2026-06-12T21:45:26",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": -1.7393,
+        "sector_return_pct": -1.7393,
+        "vix_change_pct": 28.8024,
+        "ten_year_yield_change_bps": -0.22,
+        "alpha_vs_spy": 22.1432,
+        "alpha_vs_qqq": 22.7975,
+        "alpha_vs_sector": 22.7975,
+        "market_regime": "risk_off"
       },
       "week3": {
         "target_date": "2026-06-14",
@@ -4281,7 +6669,8 @@
         "spy_return_pct": null,
         "alpha_pct": null,
         "fetched_at": null
-      }
+      },
+      "sector_etf": "QQQ"
     },
     {
       "run_id": "a84445db-5cb2-4e9e-af53-29bae6f5e8e5",
@@ -4306,15 +6695,33 @@
         "return_pct": -9.0598,
         "spy_return_pct": 1.4538,
         "alpha_pct": -10.5136,
-        "fetched_at": "2026-06-06T09:17:04"
+        "fetched_at": "2026-06-12T21:45:26",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": 2.8946,
+        "sector_return_pct": 2.8946,
+        "vix_change_pct": -8.2635,
+        "ten_year_yield_change_bps": -1.05,
+        "alpha_vs_spy": -10.5136,
+        "alpha_vs_qqq": -11.9544,
+        "alpha_vs_sector": -11.9544,
+        "market_regime": "neutral"
       },
       "week2": {
         "target_date": "2026-06-07",
-        "price": null,
-        "return_pct": null,
-        "spy_return_pct": null,
-        "alpha_pct": null,
-        "fetched_at": null
+        "price": 25.08,
+        "return_pct": -14.2564,
+        "spy_return_pct": -1.085,
+        "alpha_pct": -13.1714,
+        "fetched_at": "2026-06-12T21:45:27",
+        "sector_etf": "QQQ",
+        "qqq_return_pct": -1.7393,
+        "sector_return_pct": -1.7393,
+        "vix_change_pct": 28.8024,
+        "ten_year_yield_change_bps": -0.22,
+        "alpha_vs_spy": -13.1714,
+        "alpha_vs_qqq": -12.5171,
+        "alpha_vs_sector": -12.5171,
+        "market_regime": "risk_off"
       },
       "week3": {
         "target_date": "2026-06-14",
@@ -4326,6 +6733,772 @@
       },
       "week4": {
         "target_date": "2026-06-21",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "sector_etf": "QQQ"
+    },
+    {
+      "run_id": "91278354-9178-4dbb-b21d-6c398d0c0683",
+      "scored_at": "2026-06-12",
+      "ticker": "MU",
+      "score": 8.4,
+      "score_breakdown": {
+        "momentum": 9,
+        "fundamentals": 9,
+        "catalyst": 8,
+        "technical": 8,
+        "sentiment": 8
+      },
+      "rank_in_run": 1,
+      "total_scored_in_run": 15,
+      "price_at_score": 995.87,
+      "passed_threshold": true,
+      "macro_regime": "NORMAL",
+      "note": "DRAM/HBM earnings catalyst",
+      "week1": {
+        "target_date": "2026-06-19",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-06-26",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-07-03",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-07-10",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "91278354-9178-4dbb-b21d-6c398d0c0683",
+      "scored_at": "2026-06-12",
+      "ticker": "AMAT",
+      "score": 7.6,
+      "score_breakdown": {
+        "momentum": 8,
+        "fundamentals": 7,
+        "catalyst": 6,
+        "technical": 8,
+        "sentiment": 8
+      },
+      "rank_in_run": 2,
+      "total_scored_in_run": 15,
+      "price_at_score": 552.64,
+      "passed_threshold": true,
+      "macro_regime": "NORMAL",
+      "note": "Already open; target reached",
+      "week1": {
+        "target_date": "2026-06-19",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-06-26",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-07-03",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-07-10",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "91278354-9178-4dbb-b21d-6c398d0c0683",
+      "scored_at": "2026-06-12",
+      "ticker": "MRVL",
+      "score": 7.4,
+      "score_breakdown": {
+        "momentum": 10,
+        "fundamentals": 5,
+        "catalyst": 6,
+        "technical": 9,
+        "sentiment": 8
+      },
+      "rank_in_run": 3,
+      "total_scored_in_run": 15,
+      "price_at_score": 280.71,
+      "passed_threshold": true,
+      "macro_regime": "NORMAL",
+      "note": "Strongest momentum; fundamentals mixed",
+      "week1": {
+        "target_date": "2026-06-19",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-06-26",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-07-03",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-07-10",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "91278354-9178-4dbb-b21d-6c398d0c0683",
+      "scored_at": "2026-06-12",
+      "ticker": "ACMR",
+      "score": 7.1,
+      "score_breakdown": {
+        "momentum": 9,
+        "fundamentals": 6,
+        "catalyst": 6,
+        "technical": 8,
+        "sentiment": 7
+      },
+      "rank_in_run": 4,
+      "total_scored_in_run": 15,
+      "price_at_score": 91.7,
+      "passed_threshold": true,
+      "macro_regime": "NORMAL",
+      "note": "Small-cap semi equipment momentum",
+      "week1": {
+        "target_date": "2026-06-19",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-06-26",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-07-03",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-07-10",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "91278354-9178-4dbb-b21d-6c398d0c0683",
+      "scored_at": "2026-06-12",
+      "ticker": "ATRO",
+      "score": 7.0,
+      "score_breakdown": {
+        "momentum": 8,
+        "fundamentals": 7,
+        "catalyst": 6,
+        "technical": 8,
+        "sentiment": 6
+      },
+      "rank_in_run": 5,
+      "total_scored_in_run": 15,
+      "price_at_score": 94.8,
+      "passed_threshold": true,
+      "macro_regime": "NORMAL",
+      "note": "Aerospace RS and EPS growth",
+      "week1": {
+        "target_date": "2026-06-19",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-06-26",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-07-03",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-07-10",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "91278354-9178-4dbb-b21d-6c398d0c0683",
+      "scored_at": "2026-06-12",
+      "ticker": "ICHR",
+      "score": 6.9,
+      "score_breakdown": {
+        "momentum": 8,
+        "fundamentals": 5,
+        "catalyst": 5,
+        "technical": 8,
+        "sentiment": 7
+      },
+      "rank_in_run": 6,
+      "total_scored_in_run": 15,
+      "price_at_score": 84.04,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "note": "Strong RS but weak revenue growth",
+      "week1": {
+        "target_date": "2026-06-19",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-06-26",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-07-03",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-07-10",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "91278354-9178-4dbb-b21d-6c398d0c0683",
+      "scored_at": "2026-06-12",
+      "ticker": "LUNR",
+      "score": 6.8,
+      "score_breakdown": {
+        "momentum": 6,
+        "fundamentals": 6,
+        "catalyst": 7,
+        "technical": 7,
+        "sentiment": 7
+      },
+      "rank_in_run": 7,
+      "total_scored_in_run": 15,
+      "price_at_score": 30.64,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "note": "High revenue growth; unprofitable and weak 1m RS",
+      "week1": {
+        "target_date": "2026-06-19",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-06-26",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-07-03",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-07-10",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "91278354-9178-4dbb-b21d-6c398d0c0683",
+      "scored_at": "2026-06-12",
+      "ticker": "FLY",
+      "score": 6.6,
+      "score_breakdown": {
+        "momentum": 6,
+        "fundamentals": 6,
+        "catalyst": 6,
+        "technical": 7,
+        "sentiment": 7
+      },
+      "rank_in_run": 8,
+      "total_scored_in_run": 15,
+      "price_at_score": 39.37,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "note": "Space theme; down sharply today",
+      "week1": {
+        "target_date": "2026-06-19",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-06-26",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-07-03",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-07-10",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "91278354-9178-4dbb-b21d-6c398d0c0683",
+      "scored_at": "2026-06-12",
+      "ticker": "RKLB",
+      "score": 6.5,
+      "score_breakdown": {
+        "momentum": 6,
+        "fundamentals": 5,
+        "catalyst": 6,
+        "technical": 7,
+        "sentiment": 7
+      },
+      "rank_in_run": 9,
+      "total_scored_in_run": 15,
+      "price_at_score": 114.78,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "note": "Space momentum but valuation/profitability risk",
+      "week1": {
+        "target_date": "2026-06-19",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-06-26",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-07-03",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-07-10",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "91278354-9178-4dbb-b21d-6c398d0c0683",
+      "scored_at": "2026-06-12",
+      "ticker": "VSAT",
+      "score": 6.4,
+      "score_breakdown": {
+        "momentum": 7,
+        "fundamentals": 4,
+        "catalyst": 6,
+        "technical": 7,
+        "sentiment": 7
+      },
+      "rank_in_run": 10,
+      "total_scored_in_run": 15,
+      "price_at_score": 72.71,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "note": "Analyst upside but high forward PE",
+      "week1": {
+        "target_date": "2026-06-19",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-06-26",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-07-03",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-07-10",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "91278354-9178-4dbb-b21d-6c398d0c0683",
+      "scored_at": "2026-06-12",
+      "ticker": "COHR",
+      "score": 6.3,
+      "score_breakdown": {
+        "momentum": 5,
+        "fundamentals": 6,
+        "catalyst": 5,
+        "technical": 7,
+        "sentiment": 6
+      },
+      "rank_in_run": 11,
+      "total_scored_in_run": 15,
+      "price_at_score": 363.58,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "note": "AI optics theme but 1m underperformance",
+      "week1": {
+        "target_date": "2026-06-19",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-06-26",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-07-03",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-07-10",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "91278354-9178-4dbb-b21d-6c398d0c0683",
+      "scored_at": "2026-06-12",
+      "ticker": "UCTT",
+      "score": 6.2,
+      "score_breakdown": {
+        "momentum": 7,
+        "fundamentals": 5,
+        "catalyst": 5,
+        "technical": 7,
+        "sentiment": 5
+      },
+      "rank_in_run": 12,
+      "total_scored_in_run": 15,
+      "price_at_score": 104.83,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "note": "Semi equipment RS with bearish options",
+      "week1": {
+        "target_date": "2026-06-19",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-06-26",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-07-03",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-07-10",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "91278354-9178-4dbb-b21d-6c398d0c0683",
+      "scored_at": "2026-06-12",
+      "ticker": "VOYG",
+      "score": 5.8,
+      "score_breakdown": {
+        "momentum": 6,
+        "fundamentals": 4,
+        "catalyst": 5,
+        "technical": 6,
+        "sentiment": 6
+      },
+      "rank_in_run": 13,
+      "total_scored_in_run": 15,
+      "price_at_score": 47.87,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "note": "Space theme but profitability weak",
+      "week1": {
+        "target_date": "2026-06-19",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-06-26",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-07-03",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-07-10",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "91278354-9178-4dbb-b21d-6c398d0c0683",
+      "scored_at": "2026-06-12",
+      "ticker": "YSS",
+      "score": 5.7,
+      "score_breakdown": {
+        "momentum": 6,
+        "fundamentals": 4,
+        "catalyst": 5,
+        "technical": 6,
+        "sentiment": 6
+      },
+      "rank_in_run": 14,
+      "total_scored_in_run": 15,
+      "price_at_score": 33.72,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "note": "Space theme; expensive and limited data",
+      "week1": {
+        "target_date": "2026-06-19",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-06-26",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-07-03",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-07-10",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "91278354-9178-4dbb-b21d-6c398d0c0683",
+      "scored_at": "2026-06-12",
+      "ticker": "RDW",
+      "score": 5.6,
+      "score_breakdown": {
+        "momentum": 4,
+        "fundamentals": 5,
+        "catalyst": 5,
+        "technical": 5,
+        "sentiment": 6
+      },
+      "rank_in_run": 15,
+      "total_scored_in_run": 15,
+      "price_at_score": 17.09,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "note": "High growth but severe daily drop",
+      "week1": {
+        "target_date": "2026-06-19",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-06-26",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-07-03",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-07-10",
         "price": null,
         "return_pct": null,
         "spy_return_pct": null,

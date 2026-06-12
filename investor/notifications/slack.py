@@ -48,8 +48,8 @@ class SlackNotifier:
         blocks, fallback = _format_proposals(proposals)
         return self.send_message(blocks, text=fallback)
 
-    def send_portfolio_summary(self, positions: list[dict], alerts: list[dict]) -> bool:
-        blocks, fallback = _format_portfolio_summary(positions, alerts)
+    def send_portfolio_summary(self, positions: list[dict], alerts: list[dict], market_news: dict | None = None) -> bool:
+        blocks, fallback = _format_portfolio_summary(positions, alerts, market_news=market_news)
         return self.send_message(blocks, text=fallback)
 
     def send_sell_alert(self, alert: dict, position: dict) -> bool:
@@ -129,7 +129,11 @@ def _format_proposals(proposals: list[dict]) -> tuple[list[dict], str]:
     return blocks, fallback
 
 
-def _format_portfolio_summary(positions: list[dict], alerts: list[dict]) -> tuple[list[dict], str]:
+def _format_portfolio_summary(
+    positions: list[dict],
+    alerts: list[dict],
+    market_news: dict | None = None,
+) -> tuple[list[dict], str]:
     today = date.today().strftime("%Y-%m-%d")
     blocks: list[dict] = [
         {
@@ -217,6 +221,38 @@ def _format_portfolio_summary(positions: list[dict], alerts: list[dict]) -> tupl
                 " イントラデイに大きく動いた場合、現在値はストップ価格と乖離している可能性があります。"
                 " 証券口座で現在の約定可能価格を確認してください。"
             )}],
+        })
+
+    news_items = (market_news or {}).get("items") or []
+    if news_items:
+        lines = []
+        for item in news_items[:3]:
+            title = str(item.get("title") or "").strip()
+            if len(title) > 120:
+                title = title[:117] + "..."
+            key_point = str(item.get("key_point") or item.get("summary") or "").strip()
+            key_lines = [line for line in key_point.splitlines() if line.strip()][:2]
+            key_point = "\n".join(key_lines)
+            if len(key_point) > 360:
+                key_point = key_point[:357] + "..."
+            publisher = item.get("publisher") or item.get("domain") or "-"
+            source = item.get("source_label") or item.get("source") or "market"
+            url = item.get("url")
+            if str(url).startswith(("http://", "https://")):
+                line = f"*{source}* | <{url}|{title}> ({publisher})"
+            else:
+                line = f"*{source}* | {title} ({publisher})"
+            if key_point:
+                line += f"\n> {key_point}"
+            lines.append(line)
+        blocks.append({"type": "divider"})
+        blocks.append({
+            "type": "section",
+            "text": {"type": "mrkdwn", "text": "*関連テーマニュース（参考）*\n" + "\n\n".join(lines)},
+        })
+        blocks.append({
+            "type": "context",
+            "elements": [{"type": "mrkdwn", "text": "_未検証の参考情報。research / decision の補助材料として扱う。_"}],
         })
 
     fallback = f"Daily monitor: {len(positions)} position(s) | Total P&L: {'+' if total_pnl >= 0 else ''}${total_pnl:,.0f}"

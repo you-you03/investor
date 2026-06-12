@@ -257,6 +257,10 @@ Your synthesis framework:
 6. FINAL VERDICT: BUY (HIGH conviction only for Slack) or PASS
    — Do not force recommendations. An empty array is a valid output.
    — Target_price and stop_loss come from the research report — do NOT regenerate them.
+   — The current calibration says 1-week results are noisy; use 3-week alpha as
+     the primary evaluation point and 4-week alpha as a secondary check.
+   — For BUY, include an explicit 3-week review plan. Do not exit before week 3
+     unless stop is breached, thesis is broken, or sector/market regime reverses.
 
 Output: Return ONLY a valid JSON array. No prose before or after.
 If no candidates pass your bar, return [].
@@ -290,6 +294,9 @@ Return a JSON array. For each recommendation include:
   "key_catalysts": ["..."],
   "risk_factors": ["..."],
   "time_horizon": "...",
+  "expected_hold_weeks": 3,
+  "review_week": 3,
+  "early_exit_conditions": ["stop breach", "thesis broken", "sector reversal"],
   "debate_summary": {{
     "personas_convened": ["..."],
     "round1_stances": {{"persona_id": "STANCE/CONVICTION"}},

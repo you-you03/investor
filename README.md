@@ -221,7 +221,7 @@ Codex automation から以下を毎朝実行する:
 | `/decision --paper` | `python skills/decision.py --paper --send '...'` | `data/paper_portfolio.csv`（B枠の仮説検証ログ、Slack送信なし） |
 | `/daily-lite` | `python skills/daily_lite.py` | Slack 通知 + `reports/daily/` + `data/daily_lite_history.json` |
 | `/monitor` | `python scripts/run_monitor.py` | Slack 通知 + `reports/monitor/` |
-| `/review` | `python scripts/show_calibration_stats.py` / `python scripts/weekly_review.py` | 校正レポート / 週次レビュー |
+| `/review` | `python scripts/fetch_returns.py` / `python scripts/validate_scores.py` / `python scripts/weekly_review.py` | 週次リターン追跡 / スコア検証 / 週次レビュー |
 
 ---
 
@@ -277,7 +277,7 @@ investor/
 │   ├── add_position.py
 │   ├── close_position.py
 │   ├── show_portfolio.py
-│   ├── fetch_returns.py    # score_snapshots.json の週次リターン埋め
+│   ├── fetch_returns.py    # score_snapshots.json の週次リターン、SPY/QQQ/セクター/VIX/金利補正を埋める
 │   ├── record_outcomes.py
 │   ├── show_calibration_stats.py
 │   └── send_slack_proposals.py
@@ -289,7 +289,7 @@ investor/
 │   ├── watchlist.json              # ウォッチリスト銘柄
 │   ├── watchlist_research_history.json
 │   ├── decision_history.json       # BUY/PASS/HOLD_CASH 提案ログ
-│   ├── score_snapshots.json        # 全スコア記録（週次リターン・SPY alpha込み）
+│   ├── score_snapshots.json        # 全スコア記録（週次リターン・SPY/QQQ/セクター alpha込み）
 │   ├── trade_journal.json          # クローズトレード詳細記録
 │   └── cache/                      # 24時間 TTL キャッシュ
 │
@@ -391,6 +391,14 @@ Portfolio P&L: +$2,175 (+32.5%)
 
 ✅ PANW   $181.08  +1.4%  (Entry: $178.54)
 ⚠️ TSM    $397.67  -1.2%  (Entry: $402.46)  ← ストップ接近
+```
+
+`/monitor` は portfolio / active watchlist から関連テーマを作り、そのテーマのニュースだけを少数集める。これは `data/market_news.sqlite` に保存される参考情報で、売買判断のファクトにはしない。
+`PERPLEXITY_API_KEY` が有効ならテーマごとに日本語の参考要約を作る。キーがない、または失敗した場合は関連銘柄ニュースにフォールバックする。上限はテーマ3件、レポート掲載4件。
+直近の参考ニュースだけ読む場合:
+
+```bash
+.venv/bin/python scripts/tool.py get_market_news_references --limit 8
 ```
 
 ### 売りアラート

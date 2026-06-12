@@ -244,5 +244,194 @@
       "hold_cash_count": 1
     },
     "no_trade_week": true
+  },
+  {
+    "date": "2026-06-12",
+    "run_id": "91278354-9178-4dbb-b21d-6c398d0c0683",
+    "candidates_evaluated": [
+      "MU",
+      "MRVL",
+      "ACMR",
+      "ATRO"
+    ],
+    "buy_decisions": [],
+    "pass_decisions": [
+      "MU",
+      "MRVL",
+      "ACMR",
+      "ATRO"
+    ],
+    "hold_cash_decisions": [
+      "MU",
+      "MRVL",
+      "ACMR",
+      "ATRO"
+    ],
+    "proposal_records": [
+      {
+        "ticker": "MU",
+        "action": "NO_TRADE",
+        "conviction": "HIGH",
+        "position_size_usd": 1508.0,
+        "signal_type": "watchlist_escalate"
+      },
+      {
+        "ticker": "MRVL",
+        "action": "NO_TRADE",
+        "conviction": "MEDIUM",
+        "position_size_usd": 1005.0,
+        "signal_type": "watchlist_maintain"
+      },
+      {
+        "ticker": "ACMR",
+        "action": "NO_TRADE",
+        "conviction": "MEDIUM",
+        "position_size_usd": 1005.0,
+        "signal_type": "research_candidate"
+      },
+      {
+        "ticker": "ATRO",
+        "action": "NO_TRADE",
+        "conviction": "MEDIUM",
+        "position_size_usd": 1005.0,
+        "signal_type": "research_candidate"
+      }
+    ],
+    "pass_records": [
+      {
+        "ticker": "MU",
+        "score": 8.4,
+        "conviction": "HIGH",
+        "entry_price_range": null,
+        "signal_type": null
+      },
+      {
+        "ticker": "MRVL",
+        "score": 7.4,
+        "conviction": "MEDIUM",
+        "entry_price_range": null,
+        "signal_type": null
+      },
+      {
+        "ticker": "ACMR",
+        "score": 7.1,
+        "conviction": "MEDIUM",
+        "entry_price_range": null,
+        "signal_type": null
+      },
+      {
+        "ticker": "ATRO",
+        "score": 7.0,
+        "conviction": "MEDIUM",
+        "entry_price_range": null,
+        "signal_type": null
+      }
+    ],
+    "proposal_summary": {
+      "buy_count": 0,
+      "pass_count": 4,
+      "hold_cash_count": 4
+    },
+    "no_trade_week": true
+  },
+  {
+    "date": "2026-06-12",
+    "run_id": "91278354-9178-4dbb-b21d-6c398d0c0683",
+    "candidates_evaluated": [
+      "MU",
+      "MRVL",
+      "ACMR",
+      "ATRO"
+    ],
+    "buy_decisions": [],
+    "pass_decisions": [
+      "MU",
+      "MRVL",
+      "ACMR",
+      "ATRO"
+    ],
+    "hold_cash_decisions": [
+      "MU"
+    ],
+    "proposal_records": [
+      {
+        "ticker": "TEAM",
+        "action": "SELL",
+        "conviction": "HIGH",
+        "position_size_usd": 1508.0,
+        "signal_type": "monitor_stop_loss"
+      },
+      {
+        "ticker": "LRCX",
+        "action": "SELL",
+        "conviction": "HIGH",
+        "position_size_usd": 1508.0,
+        "signal_type": "monitor_target_reached"
+      },
+      {
+        "ticker": "NVDA",
+        "action": "SELL",
+        "conviction": "HIGH",
+        "position_size_usd": 1508.0,
+        "signal_type": "monitor_stop_loss"
+      },
+      {
+        "ticker": "AMAT",
+        "action": "SELL",
+        "conviction": "HIGH",
+        "position_size_usd": 1508.0,
+        "signal_type": "monitor_target_reached"
+      },
+      {
+        "ticker": "VRT",
+        "action": "HOLD",
+        "conviction": "MEDIUM",
+        "position_size_usd": 1005.0,
+        "signal_type": "monitor_drawdown"
+      },
+      {
+        "ticker": "MU",
+        "action": "NO_TRADE",
+        "conviction": "HIGH",
+        "position_size_usd": 1508.0,
+        "signal_type": "watchlist_escalate"
+      }
+    ],
+    "pass_records": [
+      {
+        "ticker": "MU",
+        "score": 8.4,
+        "conviction": "HIGH",
+        "entry_price_range": null,
+        "signal_type": null
+      },
+      {
+        "ticker": "MRVL",
+        "score": 7.4,
+        "conviction": "MEDIUM",
+        "entry_price_range": null,
+        "signal_type": null
+      },
+      {
+        "ticker": "ACMR",
+        "score": 7.1,
+        "conviction": "MEDIUM",
+        "entry_price_range": null,
+        "signal_type": null
+      },
+      {
+        "ticker": "ATRO",
+        "score": 7.0,
+        "conviction": "MEDIUM",
+        "entry_price_range": null,
+        "signal_type": null
+      }
+    ],
+    "proposal_summary": {
+      "buy_count": 0,
+      "pass_count": 4,
+      "hold_cash_count": 1
+    },
+    "no_trade_week": true
   }
 ]

@@ -33,6 +33,7 @@ from investor.tools.market_tools import (
     get_ticker_details,
 )
 from investor.tools.news_tools import get_news
+from investor.core.score_snapshots import add_score_snapshots
 from investor.utils.logger import get_logger
 
 logger = get_logger(__name__)
@@ -79,6 +80,7 @@ def save_run(run_id: str, candidates: list[dict]) -> None:
     })
     HISTORY_PATH.write_text(json.dumps(history, indent=2))
     logger.info(f"Saved {len(candidates)} candidates | run_id={run_id}")
+    add_score_snapshots(run_id=run_id, source="research", results=candidates, scored_at=date.fromisoformat(today))
     _save_research_markdown(run_id, today, candidates)
 
 

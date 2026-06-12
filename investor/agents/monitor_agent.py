@@ -19,6 +19,7 @@ import json
 from datetime import date, datetime
 from pathlib import Path
 from investor.core.monitor import Alert, check_all_positions
+from investor.core.market_news import collect_market_news
 from investor.data.yfinance_client import YFinanceClient
 from investor.notifications.slack import SlackNotifier
 from investor.utils.logger import get_logger
@@ -55,7 +56,7 @@ def _save_alerts(alerts: list[dict]) -> None:
     ALERTS_PATH.write_text(json.dumps(history, indent=2))
 
 
-def _save_daily_summary(positions: list[dict], alerts: list[dict]) -> None:
+def _save_daily_summary(positions: list[dict], alerts: list[dict], market_news: dict | None = None) -> None:
     """Always save daily run record including price snapshots and alert count."""
     HISTORY_PATH.parent.mkdir(parents=True, exist_ok=True)
     history: list[dict] = []
@@ -71,13 +72,14 @@ def _save_daily_summary(positions: list[dict], alerts: list[dict]) -> None:
         "high_alert_count": sum(1 for a in alerts if a.get("severity") == "HIGH"),
         "positions": positions,
         "alerts": alerts,
+        "market_news": market_news or {},
     }
     history.append(record)
     HISTORY_PATH.write_text(json.dumps(history, indent=2))
-    _save_markdown_report(positions, alerts)
+    _save_markdown_report(positions, alerts, market_news=market_news)
 
 
-def _save_markdown_report(positions: list[dict], alerts: list[dict]) -> None:
+def _save_markdown_report(positions: list[dict], alerts: list[dict], market_news: dict | None = None) -> None:
     """Generate and save a markdown report to reports/monitor/monitor_{date}.md."""
     today = date.today().isoformat()
     REPORTS_DIR.mkdir(parents=True, exist_ok=True)
@@ -158,6 +160,53 @@ def _save_markdown_report(positions: list[dict], alerts: list[dict]) -> None:
     else:
         lines.append("アラートなし — 全ポジション正常範囲内。")
 
+    news_items = (market_news or {}).get("items") or []
+    lines += [
+        "",
+        "---",
+        "",
+        "## 関連テーマニュース（参考）",
+        "",
+        "> 未検証の参考情報。research / decision の補助材料として扱い、売買判断のファクトにはしない。",
+        "",
+    ]
+    if news_items:
+        for item in news_items:
+            source = item.get("source_label") or item.get("theme") or item.get("source") or "関連テーマ"
+            title = str(item.get("title") or "")
+            key_point = str(item.get("key_point") or item.get("summary") or "").strip()
+            url = item.get("url")
+            title_line = f"### {source}"
+            if str(url).startswith(("http://", "https://")):
+                title_line += f" — [{title}]({url})"
+            else:
+                title_line += f" — {title}"
+            lines += ["", title_line, ""]
+            if key_point:
+                lines.extend(key_point.splitlines())
+            articles = item.get("source_articles") or []
+            if articles:
+                lines += ["", "参照記事:"]
+                for article in articles[:3]:
+                    article_title = str(article.get("title") or "")
+                    article_url = article.get("url")
+                    article_source = article.get("source") or "-"
+                    if str(article_url).startswith(("http://", "https://")):
+                        lines.append(f"- [{article_title}]({article_url}) ({article_source})")
+                    else:
+                        lines.append(f"- {article_title} ({article_source})")
+    else:
+        lines.append("参考ニュースなし。")
+
+    if market_news:
+        limits = market_news.get("collection_limits") or {}
+        lines += [
+            "",
+            f"_DB: {market_news.get('db_path')} | "
+            f"active={limits.get('active_sources')} / candidate_probe={limits.get('candidate_probe_sources')} / "
+            f"items_per_source={limits.get('items_per_source')} / report_items={limits.get('report_items')}_",
+        ]
+
     lines += [
         "",
         "---",
@@ -182,10 +231,9 @@ class MonitorAgent:
         if not positions:
             logger.info("No open positions to monitor")
             if not dry_run:
-                self.slack.send_text(
-                    f":chart_with_upwards_trend: Daily Summary — {date.today().isoformat()}\n"
-                    "_No open positions._"
-                )
+                market_news = collect_market_news(yf_client=self.yf)
+                _save_daily_summary([], [], market_news=market_news)
+                self.slack.send_portfolio_summary([], [], market_news=market_news)
             return []
 
         logger.info(f"Monitoring {len(positions)} open position(s)")
@@ -239,12 +287,20 @@ class MonitorAgent:
                 "stop_loss": p.get("stop_loss") or None,
             })
 
+        # Step 5: Lightweight market/sector news context. This is never used as
+        # alert evidence; it is saved as weak reference material for later review.
+        market_news = collect_market_news(yf_client=self.yf)
+        logger.info(
+            "Collected %d market/sector news reference(s)",
+            len(market_news.get("items") or []),
+        )
+
         # Always save daily summary (even with 0 alerts)
-        _save_daily_summary(enriched_positions, alert_records)
+        _save_daily_summary(enriched_positions, alert_records, market_news=market_news)
         logger.info(f"Saved daily summary to {HISTORY_PATH}")
 
         # Daily summary (always sent)
-        self.slack.send_portfolio_summary(enriched_positions, alert_records)
+        self.slack.send_portfolio_summary(enriched_positions, alert_records, market_news=market_news)
 
         # Separate Slack message for each HIGH alert
         position_map = {p["ticker"]: p for p in enriched_positions}
@@ -255,4 +311,3 @@ class MonitorAgent:
                     self.slack.send_sell_alert(record, position)
 
         return alert_records
-
