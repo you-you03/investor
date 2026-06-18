@@ -26,6 +26,8 @@ from investor.supabase_store import (  # noqa: E402
 
 ROOT = Path(__file__).parent.parent
 DATA_DIR = ROOT / "data"
+REPORTS_DIR = ROOT / "reports"
+DOCS_DIR = ROOT / "docs"
 
 
 def _read_json(path: Path, default: Any) -> Any:
@@ -315,6 +317,137 @@ def backfill_market_news(store) -> tuple[int, int]:
     )
 
 
+def backfill_daily_lite(store) -> tuple[int, int]:
+    data = _read_json(DATA_DIR / "daily_lite_history.json", {"runs": []})
+    run_rows = []
+    action_rows = []
+    for run in data.get("runs", []):
+        run_id = run.get("run_id")
+        run_date = _clean_date(run.get("date"))
+        if not run_id or not run_date:
+            continue
+        pending_actions = run.get("pending_actions") or []
+        run_rows.append({
+            "run_id": run_id,
+            "run_date": run_date,
+            "position_count": len(run.get("positions") or []),
+            "position_alert_count": len(run.get("position_alerts") or []),
+            "watchlist_count": len(run.get("watchlist_results") or []),
+            "research_candidate_count": len(run.get("research_candidates") or []),
+            "pending_action_count": len(pending_actions),
+            "report_path": run.get("report_path"),
+            "macro_context": run.get("macro_context") or {},
+            "raw_payload": run,
+        })
+        for index, action in enumerate(pending_actions, 1):
+            ticker = str(action.get("ticker") or "").upper() or None
+            action_rows.append({
+                "action_id": _stable_id("daily-action", run_id, index, ticker, action.get("type")),
+                "run_id": run_id,
+                "run_date": run_date,
+                "ticker": ticker,
+                "action_type": action.get("type"),
+                "command": action.get("command"),
+                "detail": action.get("detail") or action.get("reason"),
+                "raw_payload": action,
+            })
+    return (
+        _upsert_many(store, "daily_lite_runs", run_rows, "run_id"),
+        _upsert_many(store, "daily_lite_actions", action_rows, "action_id"),
+    )
+
+
+def backfill_watchlist_research(store) -> tuple[int, int]:
+    data = _read_json(DATA_DIR / "watchlist_research_history.json", {"runs": []})
+    run_rows = []
+    result_rows = []
+    for run in data.get("runs", []):
+        run_id = run.get("run_id")
+        run_date = _clean_date(run.get("date"))
+        if not run_id or not run_date:
+            continue
+        results = run.get("results") or []
+        run_rows.append({
+            "run_id": run_id,
+            "run_date": run_date,
+            "result_count": len(results),
+            "escalate_count": sum(1 for r in results if str(r.get("action", "")).upper() == "ESCALATE"),
+            "remove_count": sum(1 for r in results if str(r.get("action", "")).upper() == "REMOVE"),
+            "raw_payload": run,
+        })
+        for result in results:
+            ticker = str(result.get("ticker") or "").upper()
+            if not ticker:
+                continue
+            result_rows.append({
+                "result_id": _stable_id("watchlist-research", run_id, ticker),
+                "run_id": run_id,
+                "run_date": run_date,
+                "ticker": ticker,
+                "action": result.get("action"),
+                "new_score": _clean_number(result.get("new_score")),
+                "flag": result.get("flag"),
+                "note": result.get("note"),
+                "raw_payload": result,
+            })
+    return (
+        _upsert_many(store, "watchlist_research_runs", run_rows, "run_id"),
+        _upsert_many(store, "watchlist_research_results", result_rows, "result_id"),
+    )
+
+
+def _report_type_for_path(path: Path) -> str:
+    parts = path.parts
+    if "reports" in parts:
+        try:
+            index = parts.index("reports")
+            return parts[index + 1]
+        except Exception:
+            return "report"
+    if "docs" in parts:
+        return "docs"
+    return "artifact"
+
+
+def _date_from_name(path: Path) -> str | None:
+    import re
+
+    match = re.search(r"(20\d{2}-\d{2}-\d{2})", path.name)
+    return match.group(1) if match else None
+
+
+def backfill_report_artifacts(store) -> int:
+    paths = []
+    for root in (REPORTS_DIR, DOCS_DIR):
+        if root.exists():
+            paths.extend(sorted(root.rglob("*.md")))
+    rows = []
+    for path in paths:
+        rel_path = path.relative_to(ROOT).as_posix()
+        try:
+            content = path.read_text()
+        except Exception:
+            continue
+        title = ""
+        for line in content.splitlines():
+            if line.startswith("#"):
+                title = line.lstrip("#").strip()
+                break
+        rows.append({
+            "artifact_id": _stable_id("artifact", rel_path),
+            "report_type": _report_type_for_path(path),
+            "report_date": _date_from_name(path),
+            "title": title or path.stem,
+            "path": rel_path,
+            "content_markdown": content,
+            "raw_payload": {
+                "size_bytes": path.stat().st_size,
+                "source": "backfill",
+            },
+        })
+    return _upsert_many(store, "report_artifacts", rows, "artifact_id")
+
+
 def main() -> None:
     store = get_store()
     if not store:
@@ -339,6 +472,13 @@ def main() -> None:
     news_sources, news_items = backfill_market_news(store)
     print(f"market_news_sources: {news_sources}")
     print(f"market_news_items: {news_items}")
+    daily_runs, daily_actions = backfill_daily_lite(store)
+    print(f"daily_lite_runs: {daily_runs}")
+    print(f"daily_lite_actions: {daily_actions}")
+    wr_runs, wr_results = backfill_watchlist_research(store)
+    print(f"watchlist_research_runs: {wr_runs}")
+    print(f"watchlist_research_results: {wr_results}")
+    print(f"report_artifacts: {backfill_report_artifacts(store)}")
     print("Done.")
 
 

@@ -253,6 +253,27 @@ select * from report_watchlist_simple;
 select * from report_latest_monitor;
 ```
 
+振り返り用データも Supabase に集約する。
+
+```sql
+select * from report_decision_performance;
+select * from report_reflection_inputs;
+select * from report_latest_reflections;
+```
+
+Codex が振り返る時は、必要な入力を Supabase から取り出し、考察結果を Supabase に戻す。
+
+```bash
+# 振り返り入力をJSONで取得
+.venv/bin/python scripts/reflection_memory.py dump-inputs --output /tmp/reflection_inputs.json
+
+# Codexの振り返り結果を書き戻す
+.venv/bin/python scripts/reflection_memory.py write \
+  --scope weekly \
+  --summary "今週は半導体の利確は良いが、stop到達の反応が遅れた" \
+  --conclusion "HIGHでも決算前は1株、stop接近時はexit decisionを優先"
+```
+
 ### 出口判断を出す
 
 ```
