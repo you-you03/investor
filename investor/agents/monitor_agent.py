@@ -267,6 +267,8 @@ class MonitorAgent:
     def __init__(self) -> None:
         self.yf = YFinanceClient()
         self.slack = SlackNotifier()
+        self.last_portfolio_record: dict | None = None
+        self.last_watchlist_record: dict | None = None
 
     def run(self, dry_run: bool = False) -> list[dict]:
         """Execute daily monitoring for all open positions."""
@@ -278,6 +280,7 @@ class MonitorAgent:
             if not dry_run:
                 market_news = collect_market_news(yf_client=self.yf)
                 record = _save_daily_summary([], [], market_news=market_news)
+                self.last_portfolio_record = record
                 sync_monitor_run(record)
                 if not supabase_is_enabled():
                     self.slack.send_portfolio_summary([], [], market_news=market_news)
@@ -312,27 +315,45 @@ class MonitorAgent:
             }
             alert_records.append(record)
 
+        # Step 4: Build enriched positions for Slack and GitHub summary.
+        enriched_positions = []
+        for p in positions:
+            ticker = p["ticker"].upper()
+            snap = snapshots.get(ticker, {})
+            entry_price = float(p.get("entry_price") or 0)
+            shares = float(p.get("shares") or 0)
+            current_price = snap.get("price")
+            pnl_pct = None
+            if current_price and entry_price:
+                pnl_pct = round((float(current_price) - entry_price) / entry_price * 100, 2)
+            enriched_positions.append({
+                "ticker": ticker,
+                "shares": shares,
+                "entry_price": entry_price,
+                "current_price": current_price,
+                "target_price": p.get("target_price") or None,
+                "stop_loss": p.get("stop_loss") or None,
+                "pnl_pct": pnl_pct,
+                "change_pct": snap.get("change_pct"),
+                "note": p.get("note") or "",
+            })
+
         if dry_run:
+            self.last_portfolio_record = {
+                "date": today,
+                "position_count": len(enriched_positions),
+                "alert_count": len(alert_records),
+                "high_alert_count": sum(1 for a in alert_records if a.get("severity") == "HIGH"),
+                "positions": enriched_positions,
+                "alerts": alert_records,
+                "market_news": {},
+            }
             logger.info("[DRY RUN] Alerts:\n" + json.dumps(alert_records, indent=2))
             return alert_records
 
         if alert_records:
             _save_alerts(alert_records)
             logger.info(f"Saved {len(alert_records)} alert(s)")
-
-        # Step 4: Build enriched positions for Slack
-        enriched_positions = []
-        for p in positions:
-            ticker = p["ticker"].upper()
-            snap = snapshots.get(ticker, {})
-            enriched_positions.append({
-                "ticker": ticker,
-                "shares": float(p.get("shares") or 0),
-                "entry_price": float(p.get("entry_price") or 0),
-                "current_price": snap.get("price"),
-                "target_price": p.get("target_price") or None,
-                "stop_loss": p.get("stop_loss") or None,
-            })
 
         # Step 5: Lightweight market/sector news context. This is never used as
         # alert evidence; it is saved as weak reference material for later review.
@@ -344,6 +365,7 @@ class MonitorAgent:
 
         # Always save daily summary (even with 0 alerts)
         record = _save_daily_summary(enriched_positions, alert_records, market_news=market_news)
+        self.last_portfolio_record = record
         sync_monitor_run(record)
         logger.info(f"Saved daily summary to {HISTORY_PATH}")
 
@@ -462,7 +484,18 @@ class MonitorAgent:
                 })
 
         if dry_run:
+            self.last_watchlist_record = {
+                "run_id": str(uuid.uuid4()),
+                "date": today,
+                "item_count": len(results),
+                "alert_count": len(alerts),
+                "decision_needed_count": sum(1 for item in results if item.get("action") == "decision_needed"),
+                "research_needed_count": sum(1 for item in results if item.get("action") == "research_needed"),
+                "items": results,
+                "alerts": alerts,
+            }
             logger.info("[DRY RUN] Watchlist monitor:\n" + json.dumps({"items": results, "alerts": alerts}, indent=2))
-            return {"items": results, "alerts": alerts}
+            return self.last_watchlist_record
 
-        return _save_watchlist_summary(results, alerts)
+        self.last_watchlist_record = _save_watchlist_summary(results, alerts)
+        return self.last_watchlist_record
