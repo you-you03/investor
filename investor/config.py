@@ -12,6 +12,10 @@ class Settings(BaseSettings):
     perplexity_api_key: Optional[str] = None
     xai_api_key: Optional[str] = None
 
+    # Supabase persistence. Optional until migration is applied.
+    supabase_url: Optional[str] = None
+    supabase_service_role_key: Optional[str] = None
+
     # Portfolio sizing
     available_capital_usd: float = 6700.0  # ~1,000,000 JPY
     weekly_return_target_pct: float = 0.025  # +2.5%/週（年換算+130%）目標

@@ -199,6 +199,60 @@ Codex automation から以下を毎朝実行する:
 
 イントラデイのポジション監視は従来どおり `scripts/run_monitor.py` を別スケジュールで残す。
 
+### Supabase へデータを蓄積する
+
+Supabase 接続情報がある場合、monitor 結果は既存の `data/monitor_history.json` に加えて Supabase にも保存される。未設定なら従来どおりファイル保存だけで動く。
+
+1. Supabase プロジェクトを作成する
+2. SQL Editor で `supabase/migrations/001_initial_investor_schema.sql` を実行する
+3. `.env` に以下を追加する
+
+```bash
+SUPABASE_URL=https://your-project-ref.supabase.co
+SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
+```
+
+4. 過去データを移行する
+
+```bash
+.venv/bin/python scripts/backfill_supabase.py
+```
+
+5. GitHub Actions Secrets に以下を入れる
+
+```text
+SUPABASE_URL
+SUPABASE_SERVICE_ROLE_KEY
+SLACK_WEBHOOK_URL
+```
+
+`.github/workflows/monitor.yml` は平日 08:00 JST に monitor を実行し、Supabase の `notifications` に入った pending 通知を Slack に送る。Supabase 設定時は monitor 本体からの Slack 直送を止め、通知履歴を `notifications` に残す。
+
+monitor は2系統を機械的に監視する。
+
+- portfolio: `status=open` の保有銘柄。stop / target / drawdown を判定する
+- watchlist: `status=active` の監視銘柄。価格、RSI、MACD、EMA、決算日、参照価格からの変化を見て `decision_needed` / `research_needed` を判定する
+
+watchlist監視結果は以下で確認できる。
+
+```sql
+select * from dashboard_watchlist_monitor_latest;
+select * from dashboard_watchlist_alerts;
+```
+
+レポート用の一覧は以下で確認できる。Supabase Table Editor で view を開くか、SQL Editor の Saved Query に保存して使う。
+
+```sql
+select * from report_summary_cards;
+select * from report_action_list;
+select * from report_assets_by_day;
+select * from report_profit_by_month;
+select * from report_trades_simple;
+select * from report_open_positions_simple;
+select * from report_watchlist_simple;
+select * from report_latest_monitor;
+```
+
 ### 出口判断を出す
 
 ```

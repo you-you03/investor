@@ -31,8 +31,14 @@ def main(
     console.rule("[bold blue]Monitor Agent[/bold blue]")
     monitor = MonitorAgent()
     alerts = monitor.run(dry_run=dry_run)
+    watchlist_result = monitor.run_watchlist_monitor(dry_run=dry_run)
     high = [a for a in alerts if a.get("severity") == "HIGH"]
-    console.print(f"[green]Monitoring complete[/green] | {len(alerts)} alert(s), {len(high)} HIGH severity")
+    watchlist_alerts = watchlist_result.get("alerts", [])
+    console.print(
+        f"[green]Monitoring complete[/green] | "
+        f"portfolio={len(alerts)} alert(s), {len(high)} HIGH | "
+        f"watchlist={len(watchlist_alerts)} alert(s)"
+    )
 
 
 if __name__ == "__main__":
