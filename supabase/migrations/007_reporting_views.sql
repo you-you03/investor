@@ -53,50 +53,62 @@ select 130, '監視リスト', 'WL MEDIUM', medium_watch_alerts::text, 'watchlis
 order by sort_order;
 
 create or replace view report_action_list as
+with actions as (
+  select
+    10 as sort_order,
+    'portfolio' as source,
+    alert_date as date,
+    ticker,
+    severity,
+    alert_type as type,
+    message,
+    case
+      when alert_type in ('STOP_LOSS', 'TARGET_REACHED', 'SHARP_DROP') then '/decision --mode exit --ticker ' || ticker
+      else 'check position'
+    end as next_step,
+    status
+  from monitor_alerts
+  where status = 'open'
+  union all
+  select
+    20,
+    'watchlist',
+    alert_date,
+    ticker,
+    severity,
+    alert_type,
+    message,
+    next_step,
+    status
+  from watchlist_alerts
+  where status = 'open'
+  union all
+  select
+    30,
+    'decision_request',
+    requested_at::date,
+    ticker,
+    'HIGH',
+    request_type,
+    reason,
+    case
+      when request_type like 'exit%' then '/decision --mode exit --ticker ' || ticker
+      else '/decision'
+    end,
+    status
+  from decision_requests
+  where status = 'pending'
+)
 select
-  10 as sort_order,
-  'portfolio' as source,
-  alert_date as date,
+  source,
+  date,
   ticker,
   severity,
-  alert_type as type,
-  message,
-  case
-    when alert_type in ('STOP_LOSS', 'TARGET_REACHED', 'SHARP_DROP') then '/decision --mode exit --ticker ' || ticker
-    else 'check position'
-  end as next_step,
-  status
-from monitor_alerts
-where status = 'open'
-union all
-select
-  20,
-  'watchlist',
-  alert_date,
-  ticker,
-  severity,
-  alert_type,
+  type,
   message,
   next_step,
   status
-from watchlist_alerts
-where status = 'open'
-union all
-select
-  30,
-  'decision_request',
-  requested_at::date,
-  ticker,
-  'HIGH',
-  request_type,
-  reason,
-  case
-    when request_type like 'exit%' then '/decision --mode exit --ticker ' || ticker
-    else '/decision'
-  end,
-  status
-from decision_requests
-where status = 'pending'
+from actions
 order by
   case severity when 'HIGH' then 1 when 'MEDIUM' then 2 else 3 end,
   date desc,
