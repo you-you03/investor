@@ -25,15 +25,17 @@ from pathlib import Path
 from typing import Any
 
 from investor.agents.research_agent import collect_screen_data
+from investor.config import settings
 from investor.core.monitor import check_all_positions
 from investor.data.yfinance_client import YFinanceClient
 from investor.notifications.slack import SlackNotifier
+from investor.supabase_sync import sync_local_to_supabase
 from investor.tools.market_tools import get_earnings_calendar, get_technical_indicators
 from investor.utils.logger import get_logger
 
 logger = get_logger(__name__)
 
-PORTFOLIO_PATH = Path("data/portfolio.csv")
+PORTFOLIO_PATH = Path(settings.default_portfolio_path)
 WATCHLIST_PATH = Path("data/watchlist.json")
 HISTORY_PATH = Path("data/daily_lite_history.json")
 REPORTS_DIR = Path("reports/daily")
@@ -77,6 +79,10 @@ def _read_json(path: Path, default: dict[str, Any]) -> dict[str, Any]:
 def _write_json(path: Path, data: dict[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(data, indent=2, ensure_ascii=False))
+    if path == WATCHLIST_PATH:
+        sync_local_to_supabase("watchlist")
+    elif path == HISTORY_PATH:
+        sync_local_to_supabase("daily_lite", "workflow_tasks")
 
 
 def _load_open_positions() -> list[dict[str, Any]]:
@@ -792,6 +798,7 @@ class DailyLiteAgent:
         ])
 
         report_path.write_text("\n".join(lines))
+        sync_local_to_supabase("report_artifacts")
         return report_path
 
     def _build_slack_text(

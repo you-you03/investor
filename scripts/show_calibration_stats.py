@@ -15,10 +15,11 @@ from datetime import datetime
 from pathlib import Path
 from statistics import mean, median
 
+from investor.config import settings
 from investor.utils.portfolio_contract import closed_row_issues
 
 RESEARCH_HISTORY_PATH = Path("data/research_history.json")
-PORTFOLIO_PATH = Path("data/portfolio.csv")
+PORTFOLIO_PATH = Path(settings.default_portfolio_path)
 
 
 def _infer_conviction(candidate: dict) -> str:

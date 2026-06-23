@@ -2,11 +2,15 @@
 Rule-based threshold checks for portfolio monitoring.
 No Claude calls — pure Python business logic.
 
-Threshold rules:
-  current_price <= stop_loss          → HIGH  (STOP_LOSS)
-  intraday change < -5%               → HIGH  (SHARP_DROP)
-  current_price >= target_price       → HIGH  (TARGET_REACHED)
-  cumulative P&L < -5%                → MEDIUM (SIGNIFICANT_DRAWDOWN)
+Threshold rules mirror AGENTS.md:
+  current_price <= stop_loss          → HIGH   (STOP_BREACH)
+  pnl_pct >= +5%, exit_stage 0        → HIGH   (STAGE1_HIT)
+  pnl_pct >= +15%, exit_stage 1       → HIGH   (STAGE2_HIT)
+  current_price <= trailing_stop      → HIGH   (TRAILING_STOP_HIT)
+  current_price <= stop_loss * 1.03   → MEDIUM (NEAR_STOP)
+  pnl_pct >= +12%, exit_stage 1       → MEDIUM (NEAR_STAGE2)
+  pnl_pct <= -5%                      → MEDIUM (DOWN_5PCT)
+  pnl_pct >= +25%, exit_stage 2       → INFO   (UP_25PCT_TRAILING)
 """
 
 from __future__ import annotations
@@ -14,7 +18,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Literal
 
-AlertLevel = Literal["HIGH", "MEDIUM", "LOW"]
+AlertLevel = Literal["HIGH", "MEDIUM", "LOW", "INFO"]
 
 
 @dataclass
@@ -28,6 +32,7 @@ class Alert:
     unrealized_pnl_pct: float
     stop_loss: float | None = None
     target_price: float | None = None
+    trailing_stop_price: float | None = None
 
     def to_dict(self) -> dict:
         return {
@@ -40,6 +45,7 @@ class Alert:
             "unrealized_pnl_pct": self.unrealized_pnl_pct,
             "stop_loss": self.stop_loss,
             "target_price": self.target_price,
+            "trailing_stop_price": self.trailing_stop_price,
         }
 
 
@@ -48,6 +54,18 @@ def _safe_float(value, default: float = 0.0) -> float:
         return float(value or 0) or default
     except (ValueError, TypeError):
         return default
+
+
+def _exit_stage(position: dict) -> int:
+    raw = position.get("exit_stage")
+    if raw in (None, ""):
+        raw = position.get("partial_exit_pct")
+        if str(raw) == "50":
+            return 2
+    try:
+        return int(float(raw or 0))
+    except (TypeError, ValueError):
+        return 0
 
 
 def check_position(position: dict, snapshot: dict) -> list[Alert]:
@@ -75,6 +93,8 @@ def check_position(position: dict, snapshot: dict) -> list[Alert]:
 
     stop_loss = _safe_float(position.get("stop_loss")) or None
     target_price = _safe_float(position.get("target_price")) or None
+    trailing_stop_price = _safe_float(position.get("trailing_stop_price")) or None
+    exit_stage = _exit_stage(position)
 
     unrealized_pnl_pct = round((current_price - entry_price) / entry_price * 100, 2)
 
@@ -85,42 +105,70 @@ def check_position(position: dict, snapshot: dict) -> list[Alert]:
         unrealized_pnl_pct=unrealized_pnl_pct,
         stop_loss=stop_loss,
         target_price=target_price,
+        trailing_stop_price=trailing_stop_price,
     )
 
-    # HIGH: stop loss triggered
+    # HIGH: hard stop triggered.
     if stop_loss and current_price <= stop_loss:
         alerts.append(Alert(
-            alert_type="STOP_LOSS",
+            alert_type="STOP_BREACH",
             severity="HIGH",
             message=f"Price ${current_price:.2f} hit stop loss ${stop_loss:.2f}",
             **base,
         ))
 
-    # HIGH: sharp intraday drop > 5%
-    change_pct = snapshot.get("change_pct")
-    if change_pct is not None and float(change_pct) < -5.0:
+    # HIGH: trailing stop triggered after partial exit.
+    if trailing_stop_price and current_price <= trailing_stop_price:
         alerts.append(Alert(
-            alert_type="SHARP_DROP",
+            alert_type="TRAILING_STOP_HIT",
             severity="HIGH",
-            message=f"Intraday drop {float(change_pct):.1f}%",
+            message=f"Price ${current_price:.2f} hit trailing stop ${trailing_stop_price:.2f}",
             **base,
         ))
 
-    # HIGH: target price reached — triggers Slack sell alert
-    if target_price and current_price >= target_price:
+    # HIGH: staged profit-taking rules.
+    if unrealized_pnl_pct >= 5.0 and exit_stage == 0:
         alerts.append(Alert(
-            alert_type="TARGET_REACHED",
+            alert_type="STAGE1_HIT",
             severity="HIGH",
-            message=f"Price ${current_price:.2f} reached target ${target_price:.2f}",
+            message=f"P&L {unrealized_pnl_pct:.1f}% reached Stage 1 profit-taking threshold",
+            **base,
+        ))
+    if unrealized_pnl_pct >= 15.0 and exit_stage == 1:
+        alerts.append(Alert(
+            alert_type="STAGE2_HIT",
+            severity="HIGH",
+            message=f"P&L {unrealized_pnl_pct:.1f}% reached Stage 2 profit-taking threshold",
             **base,
         ))
 
-    # MEDIUM: cumulative drawdown exceeds 5% (early warning before stop-loss)
-    if unrealized_pnl_pct < -5.0:
+    # MEDIUM: early warnings.
+    if stop_loss and current_price <= stop_loss * 1.03 and current_price > stop_loss:
         alerts.append(Alert(
-            alert_type="SIGNIFICANT_DRAWDOWN",
+            alert_type="NEAR_STOP",
+            severity="MEDIUM",
+            message=f"Price ${current_price:.2f} is within 3% of stop ${stop_loss:.2f}",
+            **base,
+        ))
+    if unrealized_pnl_pct >= 12.0 and exit_stage == 1:
+        alerts.append(Alert(
+            alert_type="NEAR_STAGE2",
+            severity="MEDIUM",
+            message=f"P&L {unrealized_pnl_pct:.1f}% is nearing Stage 2 threshold",
+            **base,
+        ))
+    if unrealized_pnl_pct <= -5.0:
+        alerts.append(Alert(
+            alert_type="DOWN_5PCT",
             severity="MEDIUM",
             message=f"Unrealized loss {unrealized_pnl_pct:.1f}%",
+            **base,
+        ))
+    if unrealized_pnl_pct >= 25.0 and exit_stage == 2:
+        alerts.append(Alert(
+            alert_type="UP_25PCT_TRAILING",
+            severity="INFO",
+            message=f"P&L {unrealized_pnl_pct:.1f}% while trailing stop is active",
             **base,
         ))
 

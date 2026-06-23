@@ -16,6 +16,11 @@ from collections import defaultdict
 from datetime import date
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
+from investor.supabase_store import sync_validation_stats
+from investor.supabase_sync import sync_local_to_supabase
+
 SNAPSHOTS_PATH = Path(__file__).parent.parent / "data" / "score_snapshots.json"
 REPORTS_DIR = Path(__file__).parent.parent / "reports" / "validation"
 MIN_SAMPLES = 30
@@ -577,6 +582,17 @@ def main() -> None:
     REPORTS_DIR.mkdir(parents=True, exist_ok=True)
     out_path = REPORTS_DIR / f"validation_{date.today().isoformat()}.md"
     out_path.write_text(report, encoding="utf-8")
+    sync_local_to_supabase("report_artifacts")
+
+    try:
+        sync_validation_stats(
+            stats=stats,
+            report_markdown=report,
+            report_path=str(out_path),
+            validation_date=date.today().isoformat(),
+        )
+    except Exception as exc:
+        print(f"WARNING: Supabase validation sync skipped: {exc}", file=sys.stderr)
 
     print(report)
     print(f"\n→ レポート保存先: {out_path}")

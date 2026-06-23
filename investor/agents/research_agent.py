@@ -34,6 +34,7 @@ from investor.tools.market_tools import (
 )
 from investor.tools.news_tools import get_news
 from investor.core.score_snapshots import add_score_snapshots
+from investor.supabase_sync import sync_local_to_supabase
 from investor.utils.logger import get_logger
 
 logger = get_logger(__name__)
@@ -82,6 +83,7 @@ def save_run(run_id: str, candidates: list[dict]) -> None:
     logger.info(f"Saved {len(candidates)} candidates | run_id={run_id}")
     add_score_snapshots(run_id=run_id, source="research", results=candidates, scored_at=date.fromisoformat(today))
     _save_research_markdown(run_id, today, candidates)
+    sync_local_to_supabase("research", "report_artifacts")
 
 
 def _save_research_markdown(run_id: str, today: str, candidates: list[dict]) -> None:

@@ -2,7 +2,7 @@
 Monitor Agent — runs daily to check open positions and send alerts.
 
 Flow:
-  1. Load all open positions from data/portfolio.csv
+  1. Load all open positions from the configured default portfolio
   2. Fetch current price/snapshot via yfinance for each position
   3. Rule-based threshold checks (investor/core/monitor.py) — Python only, no Claude
   4. Save alert records to data/monitor_alerts.json
@@ -19,6 +19,7 @@ import json
 import uuid
 from datetime import date, datetime
 from pathlib import Path
+from investor.config import settings
 from investor.core.monitor import Alert, check_all_positions
 from investor.core.market_news import collect_market_news
 from investor.data.yfinance_client import YFinanceClient
@@ -26,12 +27,13 @@ from investor.notifications.slack import SlackNotifier
 from investor.supabase_store import is_enabled as supabase_is_enabled
 from investor.supabase_store import sync_monitor_run
 from investor.supabase_store import sync_watchlist_monitor_run
+from investor.supabase_sync import sync_local_to_supabase
 from investor.tools.market_tools import get_earnings_calendar, get_technical_indicators
 from investor.utils.logger import get_logger
 
 logger = get_logger(__name__)
 
-PORTFOLIO_PATH = Path("data/portfolio.csv")
+PORTFOLIO_PATH = Path(settings.default_portfolio_path)
 WATCHLIST_PATH = Path("data/watchlist.json")
 ALERTS_PATH = Path("data/monitor_alerts.json")
 HISTORY_PATH = Path("data/monitor_history.json")
@@ -261,6 +263,7 @@ def _save_markdown_report(positions: list[dict], alerts: list[dict], market_news
 
     report_path.write_text("\n".join(lines))
     logger.info(f"Saved markdown report to {report_path}")
+    sync_local_to_supabase("report_artifacts")
 
 
 class MonitorAgent:
@@ -369,22 +372,19 @@ class MonitorAgent:
         sync_monitor_run(record)
         logger.info(f"Saved daily summary to {HISTORY_PATH}")
 
-        # When Supabase is configured, monitor_alerts enqueue Slack notifications
-        # through the notifications table. Without Supabase, keep the legacy Slack
-        # behavior.
-        if supabase_is_enabled():
-            return alert_records
-
-        # Daily summary (legacy path)
+        # Daily summary. Alerts may also be enqueued through Supabase, but this
+        # position table is the only Slack message that shows the full book.
         self.slack.send_portfolio_summary(enriched_positions, alert_records, market_news=market_news)
 
-        # Separate Slack message for each HIGH alert
-        position_map = {p["ticker"]: p for p in enriched_positions}
-        for record in alert_records:
-            if record.get("severity") == "HIGH":
-                position = position_map.get(record["ticker"])
-                if position:
-                    self.slack.send_sell_alert(record, position)
+        # Separate HIGH alerts only on the legacy path. With Supabase enabled,
+        # scripts/send_pending_notifications.py sends the queued alert rows.
+        if not supabase_is_enabled():
+            position_map = {p["ticker"]: p for p in enriched_positions}
+            for record in alert_records:
+                if record.get("severity") == "HIGH":
+                    position = position_map.get(record["ticker"])
+                    if position:
+                        self.slack.send_sell_alert(record, position)
 
         return alert_records
 

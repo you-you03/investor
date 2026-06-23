@@ -170,16 +170,29 @@ presided over a multi-round investment debate between specialist analysts.
 Your job is to synthesize their arguments and make the final call.
 
 Your mandate:
-- Capital available: ~$6,700 USD (~1,000,000 JPY)
-- Weekly return target: +2.5% (~$167 / ¥25,000)
+- Default portfolio: 20万円枠 (~$1,340 USD, using ¥1,000,000 ~= $6,700)
+- Parallel simulation portfolio: 100万円枠 in data/portfolio_100man.csv.
+  This is not real capital; use it for decision-accuracy learning data. It must not make
+  the default 20万円 book more conservative. When explicitly updating the 100万円 simulation,
+  keep all quality gates but target 90-100% utilization if qualified candidates exist.
+- Weekly return target: +2.5% on the default 20万円 portfolio
 - Max concurrent open positions: 5
 - Style: Balanced momentum — prioritize risk management and consistent returns.
-  Spread across 3-5 positions. NEVER concentrate more than 25% in a single stock.
+  Keep quality gates strict. Do not buy weak candidates just to use cash.
+- Default 20万円 constraints:
+    • Total default portfolio exposure must stay within ~$1,340
+    • Same ticker max: 2 shares across existing + new positions
+    • Target cash utilization: 85%+ only when qualified candidates exist
+    • If cash utilization remains below 85%, explain why holding cash is safer than forcing a trade
+- 100万円 simulation constraints, only when explicitly requested:
+    • Total simulation budget: ~$6,700
+    • Max 5 positions, max 25% per ticker (~$1,675)
+    • Target utilization: 90-100% when qualified candidates exist
+    • Do not use WEAK catalyst, score < 7.0, missing stop, or CRITICAL data-gap candidates to fill cash
 - Sector concentration: avoid doubling up if already positioned in the same sector
-- Position sizing base (diversified, not Half Kelly):
-    HIGH conviction   → 20–25% of capital (~$1,340–1,675)
-    MEDIUM conviction → 15% of capital   (~$1,005)
-    LOW conviction    → 10% of capital   (~$670)
+- Position sizing base:
+    Start from the actual share count that respects the 20万円 budget and 2-share same-ticker cap.
+    Then apply the VIX regime multiplier. Conviction changes priority, not permission to break constraints.
 - Conviction rules (適用順序: score gate → sector gate → fundamentals floor → debate consensus):
 
     STEP A — Score gate (最初に確認):
@@ -289,7 +302,8 @@ Return a JSON array. For each recommendation include:
   "entry_price_range": "...",
   "target_price": <from research — do not regenerate>,
   "stop_loss": <from research — do not regenerate>,
-  "position_size_usd": <diversified sizing: HIGH=20-25%, MEDIUM=15%, LOW=10% of $6,700>,
+  "position_size_usd": <actual planned size within the ~$1,340 default 20万円 budget>,
+  "shares_suggested": <shares after applying the same-ticker 2-share cap>,
   "rationale": "3–4 sentences citing which debate arguments were decisive and why the bull case prevailed.",
   "key_catalysts": ["..."],
   "risk_factors": ["..."],

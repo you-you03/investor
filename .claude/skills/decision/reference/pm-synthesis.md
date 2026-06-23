@@ -104,33 +104,84 @@ Read the `tf_alignment` field from the research candidate JSON:
 
 ---
 
-## Position Sizing — Kelly with 2% Risk
+## Position Sizing — Default 20万円 Portfolio
 
-**Step 1 — Kelly:**
+Default account balance:
 ```
-risk_per_share = entry_price - stop_loss
-kelly_shares   = floor((account_balance × 0.02) / risk_per_share)
-kelly_usd      = kelly_shares × entry_price
+account_balance = 1340 USD   # 200,000 JPY, using the mandate's ¥1,000,000 ~= $6,700 assumption
 ```
 
-**Step 2 — 25% cap:**
+The 20万円 portfolio is the default operating book and the only book used for
+real execution recommendations.
+
+The parallel 100万円 portfolio in `data/portfolio_100man.csv` is simulation-only.
+It exists to collect decision-quality data, so it should not make the 20万円
+book more conservative. When the user explicitly asks to operate or update the
+100万円 simulation, apply the same quality gates but target higher capital usage.
+
+**Step 1 — Quality gate first:**
+- Do not buy just to fill cash.
+- `catalyst_quality == WEAK`, score < 7.0, missing stop_loss, or CRITICAL data gap → PASS.
+- If no qualified candidates exist, HOLD_CASH is correct even if utilization is low.
+
+**Step 2 — Share and budget constraints:**
 ```
-max_usd           = account_balance × 0.25   # ~$1,675
-position_size_usd = min(kelly_usd, max_usd)
-shares            = floor(position_size_usd / entry_price)
+same_ticker_after_trade <= 2 shares
+total_default_portfolio_exposure <= 1340 USD
 ```
 
-**Step 3 — VIX regime multiplier (from Step 0.5):**
+**Step 3 — Cash utilization target:**
+```
+target_cash_utilization = 85%
+```
+Apply this only after the quality gate. If qualified candidates exist, choose integer/fractional
+share quantities that use cash efficiently while respecting the 2-share same-ticker cap.
+If utilization remains <85%, the rationale must state why cash is left idle.
+
+**Step 4 — VIX regime multiplier (from Step 0.5):**
 ```
 VIX < 18  → × 1.0 (risk-on)
 18–24     → × 0.7 (neutral)
 VIX ≥ 25  → × 0.5 (risk-off)
-final_shares = floor(shares × multiplier)
+final_position_size_usd = planned_size_usd × multiplier
 ```
 
-Required rationale note: `「Kelly: $X → キャップ後: $Y → レジーム(×M): $Z / N株」`
+Required rationale note: `「20万円枠: planned $X → レジーム(×M): $Y / N株。稼働率Z%。同一ticker保有N/2株」`
 
-Conviction labels (HIGH/MEDIUM/LOW) are for debate logging only — size is fully Kelly-driven.
+Conviction labels (HIGH/MEDIUM/LOW) are for debate logging. Sizing is constrained by
+the 20万円 budget, same-ticker 2-share cap, cash utilization target, and VIX multiplier.
+
+---
+
+## Position Sizing — 100万円 Simulation Portfolio
+
+Use this section only when explicitly producing or recording `data/portfolio_100man.csv`
+simulation trades.
+
+Simulation account balance:
+```
+account_balance = 6700 USD   # 1,000,000 JPY, same FX assumption as the mandate
+max_position_usd = 1675 USD  # 25% cap
+max_positions = 5
+target_cash_utilization = 90% to 100%
+```
+
+**Purpose:** This is not real capital. The objective is to improve decision accuracy
+by collecting richer BUY/WAIT/PASS and sizing outcome data.
+
+**Rules:**
+- Keep all quality gates from the 20万円 book. Do not buy `catalyst_quality == WEAK`,
+  score < 7.0, missing stop_loss, or CRITICAL data-gap candidates.
+- If qualified candidates exist, fill the 100万円 simulation book more aggressively:
+  prefer reaching 90%+ utilization across 3-5 names instead of holding cash.
+- Use the full 25% per-position cap for HIGH conviction unless VIX risk-off or
+  a specific stock risk argues for a smaller size.
+- MEDIUM conviction can be sized 15-20% when score/catalyst quality is solid.
+- LOW conviction remains tracking-size only; do not use LOW merely to fill cash.
+- If utilization remains below 90%, rationale must state whether the blocker was
+  candidate quality, event timing, sector concentration, or missing data.
+
+Required rationale note: `「100万円sim: $X / N株。稼働率Z%。高稼働対象だが品質ゲート維持」`
 
 ---
 
@@ -146,7 +197,8 @@ Conviction labels (HIGH/MEDIUM/LOW) are for debate logging only — size is full
     "entry_price_range": "860–880",
     "target_price": 1000,
     "stop_loss": 820,
-    "position_size_usd": 1675,
+    "position_size_usd": 1000,
+    "shares_suggested": 2,
     "rationale": "3–4 sentences citing decisive debate arguments.",
     "key_catalysts": ["GTC conference in 2 weeks", "H200 ramp"],
     "risk_factors": ["Valuation at 35x forward P/E", "China export risk"],

@@ -221,6 +221,22 @@ def process_snapshots() -> None:
         json.dump(data, f, indent=2, ensure_ascii=False)
 
     print(f"\nUpdated {updated} milestone(s) across score_snapshots.json")
+    sync_score_snapshots_to_supabase()
+
+
+def sync_score_snapshots_to_supabase() -> None:
+    """Keep Supabase row data aligned after local milestone updates."""
+    try:
+        from investor.supabase_store import get_store
+        from scripts.backfill_supabase import backfill_score_snapshots
+
+        store = get_store()
+        if not store:
+            return
+        synced = backfill_score_snapshots(store)
+        print(f"Synced {synced} score snapshot row(s) to Supabase")
+    except Exception as exc:
+        print(f"WARNING: Supabase score_snapshots sync skipped: {exc}", file=sys.stderr)
 
 
 if __name__ == "__main__":

@@ -40,6 +40,79 @@ app = typer.Typer(add_completion=False)
 console = Console(stderr=True)
 
 PAPER_PATH = Path("data/paper_portfolio.csv")
+H3_BUDGET_USD = 1340.0
+H3_MAX_SHARES_PER_TICKER = 2.0
+
+
+def _proposal_hypothesis_id(proposal: dict) -> str:
+    explicit = str(proposal.get("hypothesis_id") or "").strip().upper()
+    if explicit:
+        return explicit
+    note = str(proposal.get("note") or "")
+    if "[H-" in note:
+        return note.split("[", 1)[1].split("]", 1)[0].upper()
+    return ""
+
+
+def _validate_h3_small_portfolio(proposals: list[dict]) -> list[str]:
+    """Validate H-3 small-capital paper portfolio constraints."""
+    existing = read_portfolio_rows(PAPER_PATH)
+    h3_open = [
+        row for row in existing
+        if row.get("status") == "open" and row.get("hypothesis_id", "").upper() == "H-3"
+    ]
+
+    exposure_by_ticker: dict[str, float] = {}
+    shares_by_ticker: dict[str, float] = {}
+    total_exposure = 0.0
+    for row in h3_open:
+        ticker = row.get("ticker", "").upper()
+        try:
+            shares = float(row.get("shares") or 0)
+            price = float(row.get("entry_price") or 0)
+        except (TypeError, ValueError):
+            continue
+        shares_by_ticker[ticker] = shares_by_ticker.get(ticker, 0.0) + shares
+        exposure = shares * price
+        exposure_by_ticker[ticker] = exposure_by_ticker.get(ticker, 0.0) + exposure
+        total_exposure += exposure
+
+    violations: list[str] = []
+    proposed_exposure = 0.0
+    for p in proposals:
+        if p.get("action", "").upper() != "BUY" or _proposal_hypothesis_id(p) != "H-3":
+            continue
+        ticker = str(p.get("ticker", "")).upper()
+        try:
+            shares = float(p.get("shares_suggested") or 0)
+        except (TypeError, ValueError):
+            shares = 0.0
+        try:
+            size_usd = float(p.get("position_size_usd") or 0)
+        except (TypeError, ValueError):
+            size_usd = 0.0
+
+        if shares <= 0:
+            violations.append(f"{ticker}: H-3 requires integer shares_suggested > 0")
+            continue
+        if abs(shares - round(shares)) > 0.0001:
+            violations.append(f"{ticker}: H-3 shares_suggested must be an integer, got {shares:g}")
+
+        next_shares = shares_by_ticker.get(ticker, 0.0) + shares
+        if next_shares > H3_MAX_SHARES_PER_TICKER:
+            violations.append(
+                f"{ticker}: H-3同一銘柄2株上限超過: existing={shares_by_ticker.get(ticker, 0.0):g} "
+                f"+ new={shares:g} > {H3_MAX_SHARES_PER_TICKER:g}"
+            )
+        shares_by_ticker[ticker] = next_shares
+        proposed_exposure += size_usd
+
+    if total_exposure + proposed_exposure > H3_BUDGET_USD:
+        violations.append(
+            f"H-3予算超過: existing=${total_exposure:,.0f} + new=${proposed_exposure:,.0f} "
+            f"> ${H3_BUDGET_USD:,.0f}"
+        )
+    return violations
 
 
 def _log_paper_proposals(proposals: list[dict]) -> None:
@@ -52,11 +125,11 @@ def _log_paper_proposals(proposals: list[dict]) -> None:
             continue
         mid = parse_entry_price(p.get("entry_price_range"))
         size_usd = p.get("position_size_usd", 0) or 0
-        shares = round(size_usd / mid, 1) if mid else 0
+        shares = p.get("shares_suggested")
+        if shares in (None, ""):
+            shares = round(size_usd / mid, 1) if mid else 0
         note = p.get("note") or f"[B枠] {p.get('conviction', '?')}確信。{p.get('rationale', '')[:80]}"
-        hypothesis_id = ""
-        if "[H-" in note:
-            hypothesis_id = note.split("[", 1)[1].split("]", 1)[0]
+        hypothesis_id = _proposal_hypothesis_id({**p, "note": note})
         existing.append({
             "position_id": build_position_id(existing),
             "ticker": p["ticker"],
@@ -127,6 +200,8 @@ def main(
         proposals = enrich_proposals(raw_proposals, candidates)
 
         violations = validate_proposals(proposals, is_paper=paper)
+        if paper:
+            violations.extend(_validate_h3_small_portfolio(proposals))
         if violations:
             console.print("[red]MANDATE 違反 — 送信ブロック:[/red]")
             for v in violations:

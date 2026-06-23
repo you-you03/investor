@@ -56,7 +56,7 @@ def _position_change(position: dict) -> tuple[str, str]:
 def _portfolio_decision_label(position: dict, alerts: list[dict]) -> str:
     ticker = str(position.get("ticker", "")).upper()
     ticker_alerts = [a for a in alerts if str(a.get("ticker", "")).upper() == ticker]
-    if any(a.get("alert_type") in {"STOP_LOSS", "TARGET_REACHED", "SHARP_DROP"} for a in ticker_alerts):
+    if any(a.get("severity") == "HIGH" for a in ticker_alerts):
         return "decision_needed"
     if any(a.get("severity") == "MEDIUM" for a in ticker_alerts):
         return "review"

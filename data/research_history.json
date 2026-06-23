@@ -1212,16 +1212,16 @@
           "rationale": "Vertiv Holdings、AIデータセンター電力インフラ($117B)。+4.18%、MACD_hist=3.12(大型株中最強)。AI需要継続でファンダメンタルズ堅調。ATR-R/R≈2:1。",
           "outcome": {
             "status": "open",
-            "outcome_type": "AT_STOP",
+            "outcome_type": "OPEN",
             "entry_price": 315.71,
             "entry_date": "2026-05-30",
-            "current_price": 297.8800048828125,
-            "days_held": 13,
-            "unrealized_return_pct": -5.65,
-            "pnl_usd": -71.32,
-            "spy_return_pct": -2.47,
-            "alpha_pct": -3.18,
-            "recorded_at": "2026-06-12"
+            "current_price": 333.04998779296875,
+            "days_held": 21,
+            "unrealized_return_pct": 5.49,
+            "pnl_usd": 69.36,
+            "spy_return_pct": -1.03,
+            "alpha_pct": 6.52,
+            "recorded_at": "2026-06-20"
           }
         },
         {
@@ -1365,16 +1365,16 @@
           "rank_in_run": 2,
           "outcome": {
             "status": "open",
-            "outcome_type": "AT_STOP",
+            "outcome_type": "OPEN",
             "entry_price": 315.71,
             "entry_date": "2026-05-30",
-            "current_price": 297.8800048828125,
-            "days_held": 13,
-            "unrealized_return_pct": -5.65,
-            "pnl_usd": -71.32,
-            "spy_return_pct": -2.47,
-            "alpha_pct": -3.18,
-            "recorded_at": "2026-06-12"
+            "current_price": 333.04998779296875,
+            "days_held": 21,
+            "unrealized_return_pct": 5.49,
+            "pnl_usd": 69.36,
+            "spy_return_pct": -1.03,
+            "alpha_pct": 6.52,
+            "recorded_at": "2026-06-20"
           }
         },
         {
@@ -1485,16 +1485,16 @@
           "rank_in_run": 4,
           "outcome": {
             "status": "open",
-            "outcome_type": "OPEN",
+            "outcome_type": "AT_TARGET",
             "entry_price": 995.87,
             "entry_date": "2026-06-12",
-            "current_price": 995.8699951171875,
-            "days_held": 0,
-            "unrealized_return_pct": -0.0,
-            "pnl_usd": -0.0,
-            "spy_return_pct": 0.0,
-            "alpha_pct": -0.0,
-            "recorded_at": "2026-06-12"
+            "current_price": 1133.989990234375,
+            "days_held": 8,
+            "unrealized_return_pct": 13.87,
+            "pnl_usd": 138.12,
+            "spy_return_pct": 0.93,
+            "alpha_pct": 12.94,
+            "recorded_at": "2026-06-20"
           }
         },
         {
@@ -1612,16 +1612,16 @@
           "data_notes": "52週高値更新日（$491.98）のデータ。市場時間中に$487台まで緩む場面あり。",
           "outcome": {
             "status": "open",
-            "outcome_type": "OPEN",
+            "outcome_type": "AT_TARGET",
             "entry_price": 995.87,
             "entry_date": "2026-06-12",
-            "current_price": 995.8699951171875,
-            "days_held": 0,
-            "unrealized_return_pct": -0.0,
-            "pnl_usd": -0.0,
-            "spy_return_pct": 0.0,
-            "alpha_pct": -0.0,
-            "recorded_at": "2026-06-12"
+            "current_price": 1133.989990234375,
+            "days_held": 8,
+            "unrealized_return_pct": 13.87,
+            "pnl_usd": 138.12,
+            "spy_return_pct": 0.93,
+            "alpha_pct": 12.94,
+            "recorded_at": "2026-06-20"
           }
         },
         {
@@ -1889,16 +1889,16 @@
           "risks": "Options NEUTRAL_BEARISH。インサイダー大量売り$42.7M。目標まで+7.5%と少ない。",
           "outcome": {
             "status": "open",
-            "outcome_type": "OPEN",
+            "outcome_type": "AT_TARGET",
             "entry_price": 995.87,
             "entry_date": "2026-06-12",
-            "current_price": 995.8699951171875,
-            "days_held": 0,
-            "unrealized_return_pct": -0.0,
-            "pnl_usd": -0.0,
-            "spy_return_pct": 0.0,
-            "alpha_pct": -0.0,
-            "recorded_at": "2026-06-12"
+            "current_price": 1133.989990234375,
+            "days_held": 8,
+            "unrealized_return_pct": 13.87,
+            "pnl_usd": 138.12,
+            "spy_return_pct": 0.93,
+            "alpha_pct": 12.94,
+            "recorded_at": "2026-06-20"
           }
         }
       ]
@@ -1919,16 +1919,16 @@
           "risks": "インサイダー売り$37M。HBMサイクル依存。52w高値$531近傍。",
           "outcome": {
             "status": "open",
-            "outcome_type": "OPEN",
+            "outcome_type": "AT_TARGET",
             "entry_price": 995.87,
             "entry_date": "2026-06-12",
-            "current_price": 995.8699951171875,
-            "days_held": 0,
-            "unrealized_return_pct": -0.0,
-            "pnl_usd": -0.0,
-            "spy_return_pct": 0.0,
-            "alpha_pct": -0.0,
-            "recorded_at": "2026-06-12"
+            "current_price": 1133.989990234375,
+            "days_held": 8,
+            "unrealized_return_pct": 13.87,
+            "pnl_usd": 138.12,
+            "spy_return_pct": 0.93,
+            "alpha_pct": 12.94,
+            "recorded_at": "2026-06-20"
           }
         },
         {
@@ -1971,16 +1971,16 @@
           "risks": "RSI=72(高め)。52w高値付近のためプルバック可能性。サイクル銘柄のため景気鈍化リスク。",
           "outcome": {
             "status": "open",
-            "outcome_type": "OPEN",
+            "outcome_type": "AT_TARGET",
             "entry_price": 995.87,
             "entry_date": "2026-06-12",
-            "current_price": 995.8699951171875,
-            "days_held": 0,
-            "unrealized_return_pct": -0.0,
-            "pnl_usd": -0.0,
-            "spy_return_pct": 0.0,
-            "alpha_pct": -0.0,
-            "recorded_at": "2026-06-12"
+            "current_price": 1133.989990234375,
+            "days_held": 8,
+            "unrealized_return_pct": 13.87,
+            "pnl_usd": 138.12,
+            "spy_return_pct": 0.93,
+            "alpha_pct": 12.94,
+            "recorded_at": "2026-06-20"
           }
         },
         {
@@ -2537,16 +2537,16 @@
           "data_notes": "",
           "outcome": {
             "status": "open",
-            "outcome_type": "OPEN",
+            "outcome_type": "AT_TARGET",
             "entry_price": 995.87,
             "entry_date": "2026-06-12",
-            "current_price": 995.8699951171875,
-            "days_held": 0,
-            "unrealized_return_pct": -0.0,
-            "pnl_usd": -0.0,
-            "spy_return_pct": 0.0,
-            "alpha_pct": -0.0,
-            "recorded_at": "2026-06-12"
+            "current_price": 1133.989990234375,
+            "days_held": 8,
+            "unrealized_return_pct": 13.87,
+            "pnl_usd": 138.12,
+            "spy_return_pct": 0.93,
+            "alpha_pct": 12.94,
+            "recorded_at": "2026-06-20"
           }
         },
         {
@@ -3132,16 +3132,16 @@
           "data_notes": "ニュース取得はyfinance側のlimit引数エラーで欠落。",
           "outcome": {
             "status": "open",
-            "outcome_type": "OPEN",
+            "outcome_type": "AT_TARGET",
             "entry_price": 995.87,
             "entry_date": "2026-06-12",
-            "current_price": 995.8699951171875,
-            "days_held": 0,
-            "unrealized_return_pct": -0.0,
-            "pnl_usd": -0.0,
-            "spy_return_pct": 0.0,
-            "alpha_pct": -0.0,
-            "recorded_at": "2026-06-12"
+            "current_price": 1133.989990234375,
+            "days_held": 8,
+            "unrealized_return_pct": 13.87,
+            "pnl_usd": 138.12,
+            "spy_return_pct": 0.93,
+            "alpha_pct": 12.94,
+            "recorded_at": "2026-06-20"
           }
         }
       ]
@@ -3242,16 +3242,16 @@
           "risks": "株価は短期で大きく上昇済み。MACD histogramはマイナスで、決算ギャップリスクとインサイダー売りに注意。高単価のため1株でも配分が大きい。",
           "outcome": {
             "status": "open",
-            "outcome_type": "OPEN",
+            "outcome_type": "AT_TARGET",
             "entry_price": 995.87,
             "entry_date": "2026-06-12",
-            "current_price": 995.8699951171875,
-            "days_held": 0,
-            "unrealized_return_pct": -0.0,
-            "pnl_usd": -0.0,
-            "spy_return_pct": 0.0,
-            "alpha_pct": -0.0,
-            "recorded_at": "2026-06-12"
+            "current_price": 1133.989990234375,
+            "days_held": 8,
+            "unrealized_return_pct": 13.87,
+            "pnl_usd": 138.12,
+            "spy_return_pct": 0.93,
+            "alpha_pct": 12.94,
+            "recorded_at": "2026-06-20"
           }
         },
         {
@@ -3315,6 +3315,407 @@
           "risks": "アナリスト評価が薄く、目標株価データは現値を下回る。RSI 67でやや高く、明確な短期カタリストは弱い。"
         }
       ]
+    },
+    {
+      "run_id": "9a546d35-e5db-407d-a605-341e02f771d8",
+      "date": "2026-06-20",
+      "candidates": [
+        {
+          "ticker": "MU",
+          "company_name": "Micron Technology, Inc.",
+          "score": 8.4,
+          "current_price": 1133.99,
+          "price_at_score": 1133.99,
+          "entry_price": 1133.99,
+          "score_breakdown": {
+            "momentum": 8,
+            "fundamentals": 10,
+            "catalyst": 8,
+            "technical": 8,
+            "sentiment": 8
+          },
+          "score_evidence": {
+            "momentum": "当日+5.2%、RSI=66.47、EMA20/50上回り=YES。",
+            "fundamentals": "売上YoY=1.963、EPS YoY=7.56、forward PE=9.896083、PEG=0.36。",
+            "catalyst": "52週高値/テーマ物色とアナリスト評価。options=BEARISH。",
+            "technical": "RSI=66.47、EMA20=952.22、EMA50=784.57、MACD hist=0.6009。",
+            "sentiment": "アナリスト=strong_buy (40件)、目標株価=945.6。",
+            "conviction_floor_reason": "スコアから確信度を推定。"
+          },
+          "thesis": "HBM/DRAM需給の強さと売上+196%/EPS+756%が突出。RSIは許容範囲だが現値は急伸後で、既存ポジションの増し玉より利益管理を優先する局面。",
+          "key_catalysts": [
+            "HBM/DRAM需給逼迫",
+            "強い決算モメンタム",
+            "強気アナリスト多数"
+          ],
+          "key_risks": [
+            "既存保有中",
+            "急騰後の反落",
+            "アナリスト目標が現値を下回る"
+          ],
+          "entry_zone": "1111.31-1145.33",
+          "target_price": 1317.32,
+          "stop_loss": 1042.32,
+          "time_horizon": "4-6 weeks",
+          "rs_signal": "OUTPERFORM",
+          "rs_1m": 0.0,
+          "rs_3m": 0.0,
+          "days_until_earnings": 0,
+          "atr_multiplier_used": 2.0,
+          "atr_multiplier_reason": "デフォルト2×ATR採用",
+          "analyst_upside_pct": -16.6,
+          "conviction_floor": "HIGH",
+          "conviction": "HIGH",
+          "tf_alignment": "PARTIAL_UP",
+          "contrarian_tag": false,
+          "macro_regime": "NORMAL",
+          "data_notes": "Collected via yfinance-backed tools on 2026-06-20.",
+          "rationale": "HBM/DRAM需給の強さと売上+196%/EPS+756%が突出。RSIは許容範囲だが現値は急伸後で、既存ポジションの増し玉より利益管理を優先する局面。",
+          "risks": "既存保有中; 急騰後の反落; アナリスト目標が現値を下回る"
+        },
+        {
+          "ticker": "MRVL",
+          "company_name": "Marvell Technology, Inc.",
+          "score": 7.3,
+          "current_price": 310.58,
+          "price_at_score": 310.58,
+          "entry_price": 310.58,
+          "score_breakdown": {
+            "momentum": 8,
+            "fundamentals": 6,
+            "catalyst": 7,
+            "technical": 8,
+            "sentiment": 8
+          },
+          "score_evidence": {
+            "momentum": "当日+4.3%、RSI=64.55、EMA20/50上回り=YES。",
+            "fundamentals": "売上YoY=0.276、EPS YoY=-0.804、forward PE=50.315666、PEG=1.76。",
+            "catalyst": "52週高値/テーマ物色とアナリスト評価。options=NEUTRAL_BULLISH。",
+            "technical": "RSI=64.55、EMA20=259.92、EMA50=210.82、MACD hist=0.6899。",
+            "sentiment": "アナリスト=strong_buy (41件)、目標株価=238.74557。",
+            "conviction_floor_reason": "スコアから確信度を推定。"
+          },
+          "thesis": "AIネットワーク半導体の物色で出来高と価格モメンタムが強い。forward PE 50超とEPS YoY悪化、目標株価下回りが上値追いの制約。",
+          "key_catalysts": [
+            "AIネットワーク需要",
+            "Strong Buy 41件",
+            "高出来高"
+          ],
+          "key_risks": [
+            "forward PE 50超",
+            "EPS YoY悪化",
+            "アナリスト目標が現値未満"
+          ],
+          "entry_zone": "304.37-313.69",
+          "target_price": 388.58,
+          "stop_loss": 271.58,
+          "time_horizon": "4-6 weeks",
+          "rs_signal": "OUTPERFORM",
+          "rs_1m": 0.0,
+          "rs_3m": 0.0,
+          "days_until_earnings": 0,
+          "atr_multiplier_used": 2.0,
+          "atr_multiplier_reason": "デフォルト2×ATR採用",
+          "analyst_upside_pct": -23.1,
+          "conviction_floor": "MEDIUM",
+          "conviction": "MEDIUM",
+          "tf_alignment": "PARTIAL_UP",
+          "contrarian_tag": false,
+          "macro_regime": "NORMAL",
+          "data_notes": "Collected via yfinance-backed tools on 2026-06-20.",
+          "rationale": "AIネットワーク半導体の物色で出来高と価格モメンタムが強い。forward PE 50超とEPS YoY悪化、目標株価下回りが上値追いの制約。",
+          "risks": "forward PE 50超; EPS YoY悪化; アナリスト目標が現値未満"
+        },
+        {
+          "ticker": "AMAT",
+          "company_name": "Applied Materials, Inc.",
+          "score": 7.1,
+          "current_price": 617.11,
+          "price_at_score": 617.11,
+          "entry_price": 617.11,
+          "score_breakdown": {
+            "momentum": 8,
+            "fundamentals": 7,
+            "catalyst": 7,
+            "technical": 7,
+            "sentiment": 6
+          },
+          "score_evidence": {
+            "momentum": "当日+1.2%、RSI=76.12、EMA20/50上回り=YES。",
+            "fundamentals": "売上YoY=0.114、EPS YoY=0.335、forward PE=37.95211、PEG=2.05。",
+            "catalyst": "52週高値/テーマ物色とアナリスト評価。options=BEARISH。",
+            "technical": "RSI=76.12、EMA20=516.57、EMA50=461.74、MACD hist=11.048。",
+            "sentiment": "アナリスト=strong_buy (35件)、目標株価=527.2。",
+            "conviction_floor_reason": "スコアから確信度を推定。"
+          },
+          "thesis": "半導体装置の大型株として売上・EPSは堅いが、RSI 76とアナリスト目標下回りが重い。押し目待ちなら候補、即時エントリーは慎重。",
+          "key_catalysts": [
+            "半導体設備投資",
+            "Strong Buy 35件",
+            "52週高値更新"
+          ],
+          "key_risks": [
+            "RSI過熱",
+            "options bearish",
+            "現値が目標株価超過"
+          ],
+          "entry_zone": "604.77-623.28",
+          "target_price": 696.58,
+          "stop_loss": 577.38,
+          "time_horizon": "4-6 weeks",
+          "rs_signal": "OUTPERFORM",
+          "rs_1m": 0.0,
+          "rs_3m": 0.0,
+          "days_until_earnings": 0,
+          "atr_multiplier_used": 2.0,
+          "atr_multiplier_reason": "デフォルト2×ATR採用",
+          "analyst_upside_pct": -14.6,
+          "conviction_floor": "MEDIUM",
+          "conviction": "MEDIUM",
+          "tf_alignment": "PARTIAL_UP",
+          "contrarian_tag": false,
+          "macro_regime": "NORMAL",
+          "data_notes": "Collected via yfinance-backed tools on 2026-06-20.",
+          "rationale": "半導体装置の大型株として売上・EPSは堅いが、RSI 76とアナリスト目標下回りが重い。押し目待ちなら候補、即時エントリーは慎重。",
+          "risks": "RSI過熱; options bearish; 現値が目標株価超過"
+        },
+        {
+          "ticker": "COHR",
+          "company_name": "Coherent Corp.",
+          "score": 7.0,
+          "current_price": 389.57,
+          "price_at_score": 389.57,
+          "entry_price": 389.57,
+          "score_breakdown": {
+            "momentum": 6,
+            "fundamentals": 7,
+            "catalyst": 7,
+            "technical": 7,
+            "sentiment": 8
+          },
+          "score_evidence": {
+            "momentum": "当日+1.3%、RSI=53.31、EMA20/50上回り=YES。",
+            "fundamentals": "売上YoY=0.205、EPS YoY=None、forward PE=47.64339、PEG=0.92。",
+            "catalyst": "52週高値/テーマ物色とアナリスト評価。options=NEUTRAL_BULLISH。",
+            "technical": "RSI=53.31、EMA20=380.18、EMA50=356.42、MACD hist=-2.2522。",
+            "sentiment": "アナリスト=buy (22件)、目標株価=384.45267。",
+            "conviction_floor_reason": "スコアから確信度を推定。"
+          },
+          "thesis": "AI光通信テーマで成長とPEGのバランスが良く、RSI 53で過熱は限定的。現値がアナリスト目標に近いため、ブレイク確認か押し目で優先度が上がる。",
+          "key_catalysts": [
+            "AI光通信需要",
+            "PEG 0.92",
+            "Neutral bullish options"
+          ],
+          "key_risks": [
+            "成長率は最上位ではない",
+            "目標株価に接近",
+            "大型半導体への資金集中"
+          ],
+          "entry_zone": "381.78-393.47",
+          "target_price": 468.06,
+          "stop_loss": 350.33,
+          "time_horizon": "4-6 weeks",
+          "rs_signal": "OUTPERFORM",
+          "rs_1m": 0.0,
+          "rs_3m": 0.0,
+          "days_until_earnings": 0,
+          "atr_multiplier_used": 2.0,
+          "atr_multiplier_reason": "デフォルト2×ATR採用",
+          "analyst_upside_pct": -1.3,
+          "conviction_floor": "MEDIUM",
+          "conviction": "MEDIUM",
+          "tf_alignment": "PARTIAL_UP",
+          "contrarian_tag": false,
+          "macro_regime": "NORMAL",
+          "data_notes": "Collected via yfinance-backed tools on 2026-06-20.",
+          "rationale": "AI光通信テーマで成長とPEGのバランスが良く、RSI 53で過熱は限定的。現値がアナリスト目標に近いため、ブレイク確認か押し目で優先度が上がる。",
+          "risks": "成長率は最上位ではない; 目標株価に接近; 大型半導体への資金集中"
+        }
+      ],
+      "macro_regime": "NORMAL"
+    },
+    {
+      "run_id": "86a59de5-188d-4b0e-9f5f-35187a2597e0",
+      "date": "2026-06-23",
+      "candidates": [
+        {
+          "ticker": "MU",
+          "company_name": "Micron Technology, Inc.",
+          "score": 8.6,
+          "current_price": 1211.38,
+          "price_at_score": 1211.38,
+          "entry_price": 1211.38,
+          "score_breakdown": {
+            "momentum": 9,
+            "fundamentals": 10,
+            "catalyst": 9,
+            "technical": 8,
+            "sentiment": 7
+          },
+          "score_evidence": {
+            "momentum": "RS=STRONG_OUTPERFORM (1m +58.5%, 3m +185.8%), RSI=69.88, 当日-1.55%。",
+            "fundamentals": "Revenue YoY=1.963, EPS YoY=7.56, forward PE=10.0334215, PEG=0.36。",
+            "catalyst": "6/25決算カタリスト; HBM/DRAM需給逼迫; 売上+196%/EPS+756%",
+            "technical": "EMA20=976.84 / EMA50=798.89, MACD hist=7.9807, TF=ALIGNED_UP。",
+            "sentiment": "Analyst=strong_buy (40件), target upside=-21.9%, options=NEUTRAL_BEARISH, insider=NET_SELLER。",
+            "conviction_floor_reason": "過去実績ではMEDIUMのEVが最も高いため、過熱・目標乖離がある銘柄はHIGHへ過度に引き上げない。"
+          },
+          "thesis": "HBM/DRAMサイクルの本命で、売上+196%・EPS+756%・forward PE約10という質が突出している。2日後の決算は強いカタリストだが、すでに保有中かつ目標株価を上回るため、新規買いより既存ポジションの利益管理を優先したい。",
+          "key_catalysts": [
+            "6/25決算カタリスト",
+            "HBM/DRAM需給逼迫",
+            "売上+196%/EPS+756%"
+          ],
+          "key_risks": [
+            "既存保有中で新規追加は集中リスク",
+            "決算ギャップリスク",
+            "アナリスト目標が現値を下回る"
+          ],
+          "entry_zone": "1187.15-1223.49",
+          "target_price": 1487.15,
+          "stop_loss": 1119.46,
+          "time_horizon": "4-6 weeks",
+          "rs_signal": "STRONG_OUTPERFORM",
+          "rs_1m": 58.47,
+          "rs_3m": 185.84,
+          "days_until_earnings": 2,
+          "atr_multiplier_used": 3.0,
+          "atr_multiplier_reason": "決算2日前かつファンダメンタルズ強いため3×ATR。ただし新規追加は慎重。",
+          "analyst_upside_pct": -21.9,
+          "conviction_floor": "HIGH",
+          "conviction": "HIGH",
+          "tf_alignment": "ALIGNED_UP",
+          "contrarian_tag": false,
+          "macro_regime": "NORMAL",
+          "data_notes": "Collected via yfinance-backed tools on 2026-06-23. get_news returned a tool error in the collector, so news tone was not used.",
+          "rationale": "HBM/DRAMサイクルの本命で、売上+196%・EPS+756%・forward PE約10という質が突出している。2日後の決算は強いカタリストだが、すでに保有中かつ目標株価を上回るため、新規買いより既存ポジションの利益管理を優先したい。",
+          "risks": "既存保有中で新規追加は集中リスク; 決算ギャップリスク; アナリスト目標が現値を下回る",
+          "rank_in_run": 1
+        },
+        {
+          "ticker": "AMAT",
+          "company_name": "Applied Materials, Inc.",
+          "score": 7.2,
+          "current_price": 640.18,
+          "price_at_score": 640.18,
+          "entry_price": 640.18,
+          "score_breakdown": {
+            "momentum": 9,
+            "fundamentals": 7,
+            "catalyst": 6,
+            "technical": 7,
+            "sentiment": 6
+          },
+          "score_evidence": {
+            "momentum": "RS=STRONG_OUTPERFORM (1m +49.3%, 3m +63.3%), RSI=78.45, 当日0.53%。",
+            "fundamentals": "Revenue YoY=0.114, EPS YoY=0.335, forward PE=39.283306, PEG=2.05。",
+            "catalyst": "52週高値圏; 半導体装置セクター主導; 売上+11%/EPS+33%",
+            "technical": "EMA20=528.27 / EMA50=465.94, MACD hist=12.1217, TF=ALIGNED_UP。",
+            "sentiment": "Analyst=strong_buy (35件), target upside=-17.6%, options=NEUTRAL_BEARISH, insider=NET_SELLER。",
+            "conviction_floor_reason": "過去実績ではMEDIUMのEVが最も高いため、過熱・目標乖離がある銘柄はHIGHへ過度に引き上げない。"
+          },
+          "thesis": "半導体装置の流れに乗って上位足まで整合した強いトレンドが続く。いまの価格は過熱と目標株価乖離が大きいため、BUY候補というより押し目待ちのdecision候補。",
+          "key_catalysts": [
+            "52週高値圏",
+            "半導体装置セクター主導",
+            "売上+11%/EPS+33%"
+          ],
+          "key_risks": [
+            "RSI 78で過熱",
+            "アナリスト目標が現値を下回る",
+            "options/insiderが弱い"
+          ],
+          "entry_zone": "627.38-646.58",
+          "target_price": 719.42,
+          "stop_loss": 600.56,
+          "time_horizon": "4-6 weeks",
+          "rs_signal": "STRONG_OUTPERFORM",
+          "rs_1m": 49.32,
+          "rs_3m": 63.3,
+          "days_until_earnings": 52,
+          "atr_multiplier_used": 2.0,
+          "atr_multiplier_reason": "通常の2×ATR。決算は52日後で直近カタリストは弱い。",
+          "analyst_upside_pct": -17.6,
+          "conviction_floor": "MEDIUM",
+          "conviction": "MEDIUM",
+          "tf_alignment": "ALIGNED_UP",
+          "contrarian_tag": false,
+          "macro_regime": "NORMAL",
+          "data_notes": "Collected via yfinance-backed tools on 2026-06-23. get_news returned a tool error in the collector, so news tone was not used.",
+          "rationale": "半導体装置の流れに乗って上位足まで整合した強いトレンドが続く。いまの価格は過熱と目標株価乖離が大きいため、BUY候補というより押し目待ちのdecision候補。",
+          "risks": "RSI 78で過熱; アナリスト目標が現値を下回る; options/insiderが弱い",
+          "rank_in_run": 2
+        },
+        {
+          "ticker": "SMTC",
+          "company_name": "Semtech Corporation",
+          "score": 7.15,
+          "current_price": 174.73,
+          "price_at_score": 174.73,
+          "entry_price": 174.73,
+          "score_breakdown": {
+            "momentum": 8,
+            "fundamentals": 7,
+            "catalyst": 6,
+            "technical": 6,
+            "sentiment": 7
+          },
+          "score_evidence": {
+            "momentum": "RS=STRONG_OUTPERFORM (1m +18.8%, 3m +114.5%), RSI=60.91, 当日0.43%。",
+            "fundamentals": "Revenue YoY=0.159, EPS YoY=0.227, forward PE=44.968483, PEG=1.21。",
+            "catalyst": "1m+19%/3m+128%の相対強度; アナリスト目標+17%; options BULLISH",
+            "technical": "EMA20=156.89 / EMA50=136.8, MACD hist=-1.3792, TF=ALIGNED_UP。",
+            "sentiment": "Analyst=none (12件), target upside=+17.2%, options=BULLISH, insider=NET_SELLER。",
+            "conviction_floor_reason": "過去実績ではMEDIUMのEVが最も高いため、過熱・目標乖離がある銘柄はHIGHへ過度に引き上げない。"
+          },
+          "thesis": "Semtechは半導体主導相場の中で相対強度が高く、アナリスト目標までの余地も残る。MACDの短期鈍化があるため、現値追随よりエントリー帯での確認が必要。",
+          "key_catalysts": [
+            "1m+19%/3m+128%の相対強度",
+            "アナリスト目標+17%",
+            "options BULLISH"
+          ],
+          "key_risks": [
+            "MACD histogramがマイナス",
+            "insider NET_SELLER",
+            "forward PE約45で高め"
+          ],
+          "entry_zone": "171.24-176.48",
+          "target_price": 203.3,
+          "stop_loss": 160.44,
+          "time_horizon": "4-6 weeks",
+          "rs_signal": "STRONG_OUTPERFORM",
+          "rs_1m": 18.77,
+          "rs_3m": 114.48,
+          "days_until_earnings": 63,
+          "atr_multiplier_used": 2.0,
+          "atr_multiplier_reason": "直近決算まで63日で通常2×ATR。",
+          "analyst_upside_pct": 17.2,
+          "conviction_floor": "MEDIUM",
+          "conviction": "MEDIUM",
+          "tf_alignment": "ALIGNED_UP",
+          "contrarian_tag": false,
+          "macro_regime": "NORMAL",
+          "data_notes": "Collected via yfinance-backed tools on 2026-06-23. get_news returned a tool error in the collector, so news tone was not used.",
+          "rationale": "Semtechは半導体主導相場の中で相対強度が高く、アナリスト目標までの余地も残る。MACDの短期鈍化があるため、現値追随よりエントリー帯での確認が必要。",
+          "risks": "MACD histogramがマイナス; insider NET_SELLER; forward PE約45で高め",
+          "rank_in_run": 3,
+          "outcome": {
+            "status": "open",
+            "outcome_type": "OPEN",
+            "entry_price": 175.0,
+            "entry_date": "2026-06-23",
+            "current_price": 174.72999572753906,
+            "days_held": 0,
+            "unrealized_return_pct": -0.15,
+            "pnl_usd": -0.27,
+            "spy_return_pct": 0.0,
+            "alpha_pct": -0.15,
+            "recorded_at": "2026-06-23"
+          }
+        }
+      ],
+      "macro_regime": "NORMAL"
     }
   ]
 }

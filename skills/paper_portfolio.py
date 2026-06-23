@@ -24,6 +24,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 import typer
 from rich.console import Console
 from rich.table import Table
+from investor.config import settings
 from investor.utils.portfolio_contract import (
     build_position_id,
     read_portfolio_rows,
@@ -34,7 +35,7 @@ app = typer.Typer(add_completion=False)
 console = Console()
 
 PAPER_PATH = Path("data/paper_portfolio.csv")
-REAL_PATH = Path("data/portfolio.csv")
+REAL_PATH = Path(settings.default_portfolio_path)
 DECISION_HISTORY_PATH = Path("data/decision_history.json")
 
 

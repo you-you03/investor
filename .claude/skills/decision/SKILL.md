@@ -47,7 +47,8 @@ VIX → regime multiplier (used in Step 6 sizing):
 
 ```bash
 cat data/research_history.json   # extract run_id, macro_regime, candidates
-cat data/portfolio.csv           # count open positions and sector concentration
+cat data/portfolio_20man.csv     # default 20万円 portfolio: count open positions and sector concentration
+cat data/portfolio_100man.csv    # parallel 100万円 simulation: learning/data collection, not real execution
 cat data/watchlist.json          # check priority_8plus candidates
 ```
 
@@ -96,8 +97,12 @@ PM role. Full checklist, RSI gate, sizing formula, JSON output format: [referenc
 **Key rules (non-negotiable):**
 - `catalyst_quality == WEAK` → instant PASS
 - RSI ≥ 85 → WAIT, no exceptions
-- Max position: 25% of capital (~$1,675)
+- Default portfolio: 20万円枠 (~$1,340)
+- Same ticker max: 2 shares across open + new positions
+- Total default portfolio exposure must stay within ~$1,340
+- Target cash utilization: 85%+ only when qualified candidates exist
 - Max open positions: 5
+- Parallel 100万円 simulation is not real capital. When explicitly updating it, keep the same quality gates but target high budget utilization for better decision-learning data.
 
 ---
 
@@ -207,4 +212,23 @@ print(format_active_hypotheses_for_claude())
 | 仮説 | 説明 | B枠BUY | A枠との差分 |
 |---|---|---|---|
 | H-2 | RSI WAIT strict | MRVL（WAIT） | A枠: 縮小エントリー / B枠: WAIT |
+```
+
+---
+
+## Step 10: 100万円 Simulation Portfolio — learning-data update
+
+`data/portfolio_100man.csv` は実弾ではなく、decision 精度を上げるためのシミュレーション枠。
+20万円デフォルト枠のBUY/PASSを歪めないが、同じdebate結果を使って「100万円ならどう張るか」を記録する。
+
+**100万円シミュレーションルール:**
+- 総予算: ¥1,000,000 ≒ $6,700
+- 最大5銘柄、1銘柄上限25%（約 $1,675）
+- 品質ゲートは20万円枠と同じ: `catalyst_quality == WEAK`、score < 7.0、stop未設定、CRITICAL data gap はBUY禁止
+- 有資格候補がある場合は、学習データ収集のためキャッシュ稼働率90〜100%を目指す
+- 無理に弱い銘柄で現金を埋めない。候補不足で稼働率未達なら理由を明記する
+
+記録する場合:
+```bash
+.venv/bin/python skills/portfolio.py add --portfolio 100man --ticker {TICKER} --shares {SHARES} --price {ENTRY} --target {TARGET} --stop {STOP} --signal {SIGNAL} --conviction {CONVICTION} --note "[100man-sim] ..."
 ```

@@ -17,11 +17,13 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from investor.data.yfinance_client import YFinanceClient
+from investor.config import settings
+from investor.supabase_sync import sync_local_to_supabase
 
-PORTFOLIO_PATH = Path("data/portfolio.csv")
+PORTFOLIO_PATH = Path(settings.default_portfolio_path)
 WATCHLIST_PATH = Path("data/watchlist.json")
 OUTPUT_PATH = Path("reports/dashboard.html")
-BUDGET = 6700.0
+BUDGET = settings.available_capital_usd
 
 
 # ─── Data readers ─────────────────────────────────────────────────────────────
@@ -1645,6 +1647,7 @@ def main() -> None:
 
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT_PATH.write_text(html, encoding="utf-8")
+    sync_local_to_supabase("report_artifacts")
     print(f"✓ Dashboard saved → {OUTPUT_PATH.resolve()}")
 
 

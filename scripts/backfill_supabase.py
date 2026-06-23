@@ -7,6 +7,7 @@ import csv
 import json
 import sqlite3
 import sys
+from datetime import date
 from pathlib import Path
 from typing import Any
 
@@ -223,12 +224,21 @@ def backfill_decisions(store) -> tuple[int, int]:
 def backfill_score_snapshots(store) -> int:
     data = _read_json(DATA_DIR / "score_snapshots.json", {"snapshots": []})
     rows = []
+    seen_keys: dict[tuple, int] = {}
     for snapshot in data.get("snapshots", []):
         ticker = str(snapshot.get("ticker") or "").upper()
         if not ticker:
             continue
+        natural_key = (snapshot.get("run_id"), snapshot.get("scored_at"), ticker)
+        seen_keys[natural_key] = seen_keys.get(natural_key, 0) + 1
+        occurrence = seen_keys[natural_key]
+        snapshot_id = (
+            _stable_id("score", snapshot.get("run_id"), snapshot.get("scored_at"), ticker)
+            if occurrence == 1
+            else _stable_id("score", snapshot.get("run_id"), snapshot.get("scored_at"), ticker, occurrence)
+        )
         rows.append({
-            "snapshot_id": _stable_id("score", snapshot.get("run_id"), snapshot.get("scored_at"), ticker),
+            "snapshot_id": snapshot_id,
             "run_id": snapshot.get("run_id"),
             "scored_at": _clean_date(snapshot.get("scored_at")),
             "ticker": ticker,
@@ -421,6 +431,7 @@ def backfill_report_artifacts(store) -> int:
     for root in (REPORTS_DIR, DOCS_DIR):
         if root.exists():
             paths.extend(sorted(root.rglob("*.md")))
+            paths.extend(sorted(root.rglob("*.html")))
     rows = []
     for path in paths:
         rel_path = path.relative_to(ROOT).as_posix()
@@ -446,6 +457,250 @@ def backfill_report_artifacts(store) -> int:
             },
         })
     return _upsert_many(store, "report_artifacts", rows, "artifact_id")
+
+
+def _priority_from_severity(severity: str | None) -> str:
+    return {
+        "HIGH": "urgent",
+        "MEDIUM": "high",
+        "LOW": "low",
+    }.get(str(severity or "").upper(), "normal")
+
+
+def _task_type_from_monitor_alert(alert_type: str | None) -> str:
+    return {
+        "STOP_LOSS": "exit_review",
+        "STOP_BREACH": "exit_review",
+        "TARGET_REACHED": "exit_review",
+        "STAGE1_HIT": "position_update",
+        "STAGE2_HIT": "position_update",
+        "SHARP_DROP": "risk_review",
+        "SIGNIFICANT_DRAWDOWN": "risk_review",
+    }.get(str(alert_type or "").upper(), "manual_review")
+
+
+def _task_type_from_watchlist_alert(alert_type: str | None) -> str:
+    return {
+        "WATCHLIST_DECISION_NEEDED": "decision",
+        "WATCHLIST_RESEARCH_NEEDED": "research",
+    }.get(str(alert_type or "").upper(), "manual_review")
+
+
+def _command_for_monitor_task(task_type: str, ticker: str) -> str | None:
+    if task_type == "exit_review":
+        return f"/decision --mode exit --ticker {ticker}"
+    if task_type in {"risk_review", "position_update"}:
+        return "/monitor"
+    return None
+
+
+def backfill_workflow_tasks(store) -> int:
+    rows: list[dict] = []
+
+    monitor_alerts = store.select("monitor_alerts", {"select": "*", "limit": "10000"})
+    for alert in monitor_alerts:
+        if (alert.get("raw_payload") or {}).get("suppress_automation") == "true":
+            continue
+        ticker = str(alert.get("ticker") or "").upper()
+        task_type = _task_type_from_monitor_alert(alert.get("alert_type"))
+        rows.append({
+            "task_id": f"task:monitor_alert:{alert.get('alert_id')}",
+            "ticker": ticker or None,
+            "task_type": task_type,
+            "priority": _priority_from_severity(alert.get("severity")),
+            "status": "open",
+            "command": _command_for_monitor_task(task_type, ticker),
+            "title": f"{alert.get('alert_type')} for {ticker}",
+            "detail": alert.get("message"),
+            "source_table": "monitor_alerts",
+            "source_id": alert.get("alert_id"),
+            "source_run_id": alert.get("run_id"),
+            "due_date": _clean_date(alert.get("alert_date")),
+            "raw_payload": alert.get("raw_payload") or alert,
+        })
+
+    watchlist_alerts = store.select("watchlist_alerts", {"select": "*", "limit": "10000"})
+    for alert in watchlist_alerts:
+        if (alert.get("raw_payload") or {}).get("suppress_automation") == "true":
+            continue
+        ticker = str(alert.get("ticker") or "").upper()
+        task_type = _task_type_from_watchlist_alert(alert.get("alert_type"))
+        rows.append({
+            "task_id": f"task:watchlist_alert:{alert.get('alert_id')}",
+            "ticker": ticker or None,
+            "task_type": task_type,
+            "priority": _priority_from_severity(alert.get("severity")),
+            "status": "open",
+            "command": alert.get("next_step"),
+            "title": f"{alert.get('alert_type')} for {ticker}",
+            "detail": alert.get("message"),
+            "source_table": "watchlist_alerts",
+            "source_id": alert.get("alert_id"),
+            "source_run_id": alert.get("run_id"),
+            "due_date": _clean_date(alert.get("alert_date")),
+            "raw_payload": alert.get("raw_payload") or alert,
+        })
+
+    daily_actions = store.select("daily_lite_actions", {"select": "*", "limit": "10000"})
+    for action in daily_actions:
+        command = action.get("command")
+        action_type = str(action.get("action_type") or "").lower()
+        if command and "decision" in command:
+            task_type = "decision"
+        elif command and "research" in command:
+            task_type = "research"
+        elif "review" in action_type:
+            task_type = "manual_review"
+        else:
+            task_type = "manual_review"
+        rows.append({
+            "task_id": f"task:daily_lite_action:{action.get('action_id')}",
+            "ticker": action.get("ticker"),
+            "task_type": task_type,
+            "priority": "normal",
+            "status": "open",
+            "command": command,
+            "title": action.get("action_type") or "daily_lite_action",
+            "detail": action.get("detail"),
+            "source_table": "daily_lite_actions",
+            "source_id": action.get("action_id"),
+            "source_run_id": action.get("run_id"),
+            "due_date": _clean_date(action.get("run_date")),
+            "raw_payload": action.get("raw_payload") or action,
+        })
+
+    decision_requests = store.select("decision_requests", {"select": "*", "limit": "10000"})
+    for request in decision_requests:
+        ticker = str(request.get("ticker") or "").upper()
+        request_type = str(request.get("request_type") or "")
+        task_type = "exit_review" if "exit" in request_type else "decision"
+        rows.append({
+            "task_id": f"task:decision_request:{request.get('request_id')}",
+            "ticker": ticker or None,
+            "task_type": task_type,
+            "priority": "high",
+            "status": "open" if request.get("status") == "pending" else "done",
+            "command": f"/decision --mode exit --ticker {ticker}" if task_type == "exit_review" else "/decision",
+            "title": request_type or "decision_request",
+            "detail": request.get("reason"),
+            "source_table": "decision_requests",
+            "source_id": request.get("request_id"),
+            "source_run_id": None,
+            "due_date": _clean_date(request.get("requested_at")),
+            "resolved_at": request.get("resolved_at"),
+            "raw_payload": request.get("raw_payload") or request,
+        })
+
+    return _upsert_many(store, "workflow_tasks", rows, "source_table,source_id,task_type")
+
+
+def backfill_position_events(store) -> int:
+    positions = store.select("positions", {"select": "*", "limit": "10000"})
+    rows: list[dict] = []
+    for position in positions:
+        position_id = position.get("position_id")
+        ticker = str(position.get("ticker") or "").upper()
+        if not position_id or not ticker:
+            continue
+        rows.append({
+            "event_id": f"position_event:{position_id}:entry",
+            "position_id": position_id,
+            "ticker": ticker,
+            "portfolio_type": position.get("portfolio_type") or "real",
+            "event_type": "entry",
+            "event_date": _clean_date(position.get("entry_date")) or date.today().isoformat(),
+            "shares_delta": _clean_number(position.get("shares")),
+            "price": _clean_number(position.get("entry_price")),
+            "stop_loss": _clean_number(position.get("stop_loss")),
+            "target_price": _clean_number(position.get("target_price")),
+            "reason": position.get("signal_type"),
+            "source_table": "positions",
+            "source_id": position_id,
+            "raw_payload": position.get("raw_payload") or position,
+        })
+        if position.get("status") == "closed":
+            rows.append({
+                "event_id": f"position_event:{position_id}:exit",
+                "position_id": position_id,
+                "ticker": ticker,
+                "portfolio_type": position.get("portfolio_type") or "real",
+                "event_type": "exit",
+                "event_date": (
+                    _clean_date(position.get("exit_date"))
+                    or _clean_date(position.get("entry_date"))
+                    or date.today().isoformat()
+                ),
+                "shares_delta": -1 * (_clean_number(position.get("shares")) or 0),
+                "price": _clean_number(position.get("exit_price")),
+                "stop_loss": _clean_number(position.get("stop_loss")),
+                "target_price": _clean_number(position.get("target_price")),
+                "reason": position.get("note"),
+                "source_table": "positions",
+                "source_id": position_id,
+                "raw_payload": position.get("raw_payload") or position,
+            })
+    return _upsert_many(store, "position_events", rows, "event_id")
+
+
+def backfill_lineage(store) -> tuple[int, int]:
+    proposal_rows = store.select(
+        "investment_proposals",
+        {"select": "proposal_id,run_id,ticker,research_candidate_id,created_at", "limit": "10000"},
+    )
+    candidate_rows = store.select(
+        "research_candidates",
+        {"select": "candidate_id,run_id,ticker,run_date", "limit": "10000"},
+    )
+    candidates_by_run_ticker = {
+        (row.get("run_id"), str(row.get("ticker") or "").upper()): row.get("candidate_id")
+        for row in candidate_rows
+        if row.get("candidate_id")
+    }
+
+    proposal_updates = 0
+    for proposal in proposal_rows:
+        if proposal.get("research_candidate_id"):
+            continue
+        candidate_id = candidates_by_run_ticker.get((proposal.get("run_id"), str(proposal.get("ticker") or "").upper()))
+        if not candidate_id:
+            continue
+        store.patch(
+            "investment_proposals",
+            {"proposal_id": f"eq.{proposal['proposal_id']}"},
+            {"research_candidate_id": candidate_id},
+        )
+        proposal_updates += 1
+
+    positions = store.select(
+        "positions",
+        {"select": "position_id,ticker,proposal_date,entry_date,proposal_id", "limit": "10000"},
+    )
+    proposals_by_ticker: dict[str, list[dict]] = {}
+    for proposal in proposal_rows:
+        proposals_by_ticker.setdefault(str(proposal.get("ticker") or "").upper(), []).append(proposal)
+
+    position_updates = 0
+    for position in positions:
+        if position.get("proposal_id"):
+            continue
+        ticker = str(position.get("ticker") or "").upper()
+        candidates = proposals_by_ticker.get(ticker) or []
+        if not candidates:
+            continue
+        proposal_date = _clean_date(position.get("proposal_date")) or _clean_date(position.get("entry_date"))
+        matching = [
+            proposal for proposal in candidates
+            if not proposal_date or _clean_date(proposal.get("created_at")) <= proposal_date
+        ]
+        selected = (matching or candidates)[-1]
+        store.patch(
+            "positions",
+            {"position_id": f"eq.{position['position_id']}"},
+            {"proposal_id": selected.get("proposal_id")},
+        )
+        position_updates += 1
+
+    return proposal_updates, position_updates
 
 
 def main() -> None:
@@ -479,6 +734,11 @@ def main() -> None:
     print(f"watchlist_research_runs: {wr_runs}")
     print(f"watchlist_research_results: {wr_results}")
     print(f"report_artifacts: {backfill_report_artifacts(store)}")
+    print(f"workflow_tasks: {backfill_workflow_tasks(store)}")
+    print(f"position_events: {backfill_position_events(store)}")
+    proposal_updates, position_updates = backfill_lineage(store)
+    print(f"lineage investment_proposals updated: {proposal_updates}")
+    print(f"lineage positions updated: {position_updates}")
     print("Done.")
 
 

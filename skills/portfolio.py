@@ -19,6 +19,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 import typer
 from rich.console import Console
 from rich.table import Table
+from investor.config import settings
 from investor.utils.portfolio_contract import (
     build_position_id,
     read_portfolio_rows,
@@ -28,20 +29,31 @@ from investor.utils.portfolio_contract import (
 app = typer.Typer(add_completion=False)
 console = Console()
 
-PORTFOLIO_PATH = Path("data/portfolio.csv")
+PORTFOLIO_PATH = Path(settings.default_portfolio_path)
+PORTFOLIO_100MAN_PATH = Path(settings.legacy_portfolio_path)
+
+
+def _resolve_portfolio_path(portfolio: str) -> Path:
+    key = portfolio.lower().strip()
+    if key in {"default", "20man", "20", "small"}:
+        return PORTFOLIO_PATH
+    if key in {"100man", "100", "legacy", "main"}:
+        return PORTFOLIO_100MAN_PATH
+    return Path(portfolio)
 
 
 @app.command()
-def list() -> None:
+def list(portfolio: str = typer.Option("default", "--portfolio", help="default/20man or 100man")) -> None:
     """Show all open positions."""
-    rows = read_portfolio_rows(PORTFOLIO_PATH)
+    path = _resolve_portfolio_path(portfolio)
+    rows = read_portfolio_rows(path)
     open_rows = [r for r in rows if r.get("status") == "open"]
 
     if not open_rows:
-        console.print("[yellow]No open positions.[/yellow]")
+        console.print(f"[yellow]No open positions in {path}.[/yellow]")
         return
 
-    table = Table(title="Open Positions")
+    table = Table(title=f"Open Positions — {path}")
     for col in ["position_id", "ticker", "shares", "entry_price", "entry_date", "target_price", "stop_loss", "signal_type", "note"]:
         table.add_column(col)
     for r in open_rows:
@@ -60,9 +72,11 @@ def add(
     signal: str = typer.Option("", "--signal"),
     conviction: str = typer.Option("", "--conviction"),
     proposal_date: Optional[str] = typer.Option(None, "--proposal-date"),
+    portfolio: str = typer.Option("default", "--portfolio", help="default/20man or 100man"),
 ) -> None:
     """Add a new position to portfolio.csv."""
-    rows = read_portfolio_rows(PORTFOLIO_PATH)
+    path = _resolve_portfolio_path(portfolio)
+    rows = read_portfolio_rows(path)
     rows.append({
         "position_id": build_position_id(rows),
         "ticker": ticker.upper(),
@@ -79,17 +93,19 @@ def add(
         "signal_type": signal,
         "conviction": conviction.upper(),
     })
-    write_portfolio_rows(PORTFOLIO_PATH, rows)
-    console.print(f"[green]Added {shares} shares of {ticker.upper()} @ ${price}[/green]")
+    write_portfolio_rows(path, rows)
+    console.print(f"[green]Added {shares} shares of {ticker.upper()} @ ${price} to {path}[/green]")
 
 
 @app.command()
 def close(
     ticker: str = typer.Option(..., "--ticker"),
     price: float = typer.Option(..., "--price"),
+    portfolio: str = typer.Option("default", "--portfolio", help="default/20man or 100man"),
 ) -> None:
     """Close an open position."""
-    rows = read_portfolio_rows(PORTFOLIO_PATH)
+    path = _resolve_portfolio_path(portfolio)
+    rows = read_portfolio_rows(path)
     closed = False
     for row in rows:
         if row["ticker"].upper() == ticker.upper() and row["status"] == "open":
@@ -106,22 +122,23 @@ def close(
     if not closed:
         console.print(f"[red]No open position found for {ticker.upper()}[/red]")
         return
-    write_portfolio_rows(PORTFOLIO_PATH, rows)
+    write_portfolio_rows(path, rows)
 
 
 @app.command()
-def snapshot() -> None:
+def snapshot(portfolio: str = typer.Option("default", "--portfolio", help="default/20man or 100man")) -> None:
     """Show portfolio P&L snapshot using current yfinance prices."""
-    rows = read_portfolio_rows(PORTFOLIO_PATH)
+    path = _resolve_portfolio_path(portfolio)
+    rows = read_portfolio_rows(path)
     open_rows = [r for r in rows if r.get("status") == "open"]
     if not open_rows:
-        console.print("[yellow]No open positions.[/yellow]")
+        console.print(f"[yellow]No open positions in {path}.[/yellow]")
         return
 
     from investor.data.yfinance_client import YFinanceClient
     yf_client = YFinanceClient()
 
-    table = Table(title=f"Portfolio Snapshot — {date.today().isoformat()}")
+    table = Table(title=f"Portfolio Snapshot — {path} — {date.today().isoformat()}")
     for col in ["Ticker", "Shares", "Entry", "Current", "Change%", "P&L", "Target", "Stop"]:
         table.add_column(col)
 

@@ -1,0 +1,2 @@
+position_id,ticker,shares,entry_price,entry_date,proposal_date,exit_price,exit_date,status,target_price,stop_loss,note,signal_type,conviction,hypothesis_id,exit_stage,mae_pct,mfe_pct,mfe_capture_pct,rule_adherence_score
+pos-001,SMTC,1.0,175.0,2026-06-23,2026-06-23,,,open,203.3,160.44,"20万円枠。取得日: 2026-06-23。Decision 2026-06-23採用。SMTC score 7.15 / 確信度LOW-MEDIUM。指値$175、譲渡金額29,743円、1株。RS強いがMACD histマイナス・Debt/Equity高めのため試し玉。",technical_breakout,MEDIUM,,,,,,

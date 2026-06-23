@@ -153,6 +153,68 @@ class TestLogPaperProposals:
         assert rows[0]["entry_price"] == "810.0"  # (800+820)/2
         assert float(rows[0]["shares"]) > 0
 
+    def test_h3_paper_proposal_uses_integer_shares_suggested(self, tmp_path):
+        """H-3 paper entries must preserve explicit small-portfolio share counts."""
+        import importlib.util
+        import unittest.mock
+
+        spec = importlib.util.spec_from_file_location(
+            "decision_skill",
+            Path(__file__).parent.parent / "skills" / "decision.py",
+        )
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+
+        paper_path = tmp_path / "paper_portfolio.csv"
+        proposal = {
+            "ticker": "NVDA",
+            "action": "BUY",
+            "conviction": "MEDIUM",
+            "entry_price_range": "500-520",
+            "target_price": 590,
+            "stop_loss": 480,
+            "position_size_usd": 1020,
+            "shares_suggested": 2,
+            "note": "[H-3] 20万円枠。2株上限内。",
+        }
+
+        with unittest.mock.patch.object(mod, "PAPER_PATH", paper_path):
+            mod._log_paper_proposals([proposal])
+
+        with open(paper_path) as f:
+            rows = list(csv.DictReader(f))
+
+        assert rows[0]["shares"] == "2"
+        assert rows[0]["hypothesis_id"] == "H-3"
+
+    def test_h3_validation_blocks_more_than_two_same_ticker_shares(self, tmp_path):
+        """H-3 small portfolio may not hold more than two shares of one ticker."""
+        import importlib.util
+        import unittest.mock
+
+        spec = importlib.util.spec_from_file_location(
+            "decision_skill",
+            Path(__file__).parent.parent / "skills" / "decision.py",
+        )
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+
+        paper_path = tmp_path / "paper_portfolio.csv"
+        proposal = {
+            "ticker": "NVDA",
+            "action": "BUY",
+            "position_size_usd": 1500,
+            "shares_suggested": 3,
+            "hypothesis_id": "H-3",
+            "note": "[H-3] too many shares",
+        }
+
+        with unittest.mock.patch.object(mod, "PAPER_PATH", paper_path):
+            violations = mod._validate_h3_small_portfolio([proposal])
+
+        assert any("2株上限" in v for v in violations)
+        assert any("予算超過" in v for v in violations)
+
 
 # ---------------------------------------------------------------------------
 # portfolio.csv round-trip (data integrity)
@@ -242,7 +304,7 @@ class TestValidateProposals:
             "entry_price_range": "800-820",
             "target_price": 900,
             "stop_loss": 760,
-            "position_size_usd": 1500,
+            "position_size_usd": 1000,
             "shares_suggested": 1.9,
             "rationale": "test",
             "key_catalysts": [],
@@ -288,7 +350,25 @@ class TestValidateProposals:
         proposals = [self._make_proposal(position_size_usd=600)]
         with patch("investor.agents.decision_agent.load_open_positions", return_value=open_positions):
             violations = validate_proposals(proposals)
-        assert any("既存保有" in v and "25%" in v for v in violations)
+        assert any("既存保有" in v and "上限" in v for v in violations)
+
+    def test_default_portfolio_same_ticker_two_share_cap_is_blocked(self):
+        from investor.agents.decision_agent import validate_proposals
+
+        open_positions = [{"ticker": "NVDA", "shares": "1.5", "entry_price": "200", "status": "open"}]
+        proposals = [self._make_proposal(position_size_usd=200, shares_suggested=1)]
+        with patch("investor.agents.decision_agent.load_open_positions", return_value=open_positions):
+            violations = validate_proposals(proposals)
+        assert any("同一銘柄2株上限" in v for v in violations)
+
+    def test_default_portfolio_total_budget_cap_is_blocked(self):
+        from investor.agents.decision_agent import validate_proposals
+
+        open_positions = [{"ticker": "AAPL", "shares": "1", "entry_price": "1000", "status": "open"}]
+        proposals = [self._make_proposal(ticker="MSFT", position_size_usd=500, shares_suggested=1)]
+        with patch("investor.agents.decision_agent.load_open_positions", return_value=open_positions):
+            violations = validate_proposals(proposals)
+        assert any("20万円枠の総予算超過" in v for v in violations)
 
     def test_unicode_dash_entry_price_parses_in_agent(self):
         from investor.agents.decision_agent import enrich_proposals
@@ -298,3 +378,24 @@ class TestValidateProposals:
             [],
         )
         assert enriched[0]["shares_suggested"] is not None
+
+    def test_enrich_preserves_explicit_small_portfolio_size(self):
+        from investor.agents.decision_agent import enrich_proposals
+
+        enriched = enrich_proposals(
+            [{
+                "ticker": "NVDA",
+                "action": "BUY",
+                "conviction": "HIGH",
+                "entry_price_range": "500-520",
+                "position_size_usd": 1020,
+                "shares_suggested": 2,
+                "note": "[H-3] 20万円枠",
+                "hypothesis_id": "H-3",
+            }],
+            [],
+        )
+        assert enriched[0]["position_size_usd"] == 1020
+        assert enriched[0]["shares_suggested"] == 2
+        assert enriched[0]["note"] == "[H-3] 20万円枠"
+        assert enriched[0]["hypothesis_id"] == "H-3"

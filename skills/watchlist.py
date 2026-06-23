@@ -19,6 +19,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 import typer
 from rich.console import Console
 from rich.table import Table
+from investor.supabase_sync import sync_local_to_supabase
 
 app = typer.Typer(add_completion=False)
 console = Console()
@@ -38,6 +39,7 @@ def _read_watchlist() -> dict:
 def _write_watchlist(data: dict) -> None:
     WATCHLIST_PATH.parent.mkdir(parents=True, exist_ok=True)
     WATCHLIST_PATH.write_text(json.dumps(data, indent=2))
+    sync_local_to_supabase("watchlist")
 
 
 @app.command()

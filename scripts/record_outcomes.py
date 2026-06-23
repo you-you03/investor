@@ -22,9 +22,11 @@ from typing import Optional
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
+from investor.config import settings
 from investor.utils.portfolio_contract import closed_row_issues
+from investor.supabase_sync import sync_local_to_supabase
 
-PORTFOLIO_PATH = Path("data/portfolio.csv")
+PORTFOLIO_PATH = Path(settings.default_portfolio_path)
 RESEARCH_HISTORY_PATH = Path("data/research_history.json")
 
 
@@ -43,6 +45,7 @@ def _load_history() -> dict:
 
 def _save_history(history: dict) -> None:
     RESEARCH_HISTORY_PATH.write_text(json.dumps(history, indent=2, ensure_ascii=False))
+    sync_local_to_supabase("research")
 
 
 def _days_between(d1_str: str, d2_str: str) -> Optional[int]:

@@ -8,6 +8,7 @@ from pathlib import Path
 from typing import Any
 
 from investor.tools.market_tools import get_stock_snapshot
+from investor.supabase_sync import sync_local_to_supabase
 from investor.utils.logger import get_logger
 
 logger = get_logger(__name__)
@@ -245,4 +246,5 @@ def add_score_snapshots(
     if added:
         _save_snapshots(data)
         logger.info("Added %d score snapshot(s) from %s | run_id=%s", added, source, run_id)
+        sync_local_to_supabase("score_snapshots")
     return added

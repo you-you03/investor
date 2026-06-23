@@ -433,5 +433,70 @@
       "hold_cash_count": 1
     },
     "no_trade_week": true
+  },
+  {
+    "date": "2026-06-20",
+    "run_id": "9a546d35-e5db-407d-a605-341e02f771d8",
+    "candidates_evaluated": [
+      "MU",
+      "MRVL",
+      "AMAT",
+      "COHR"
+    ],
+    "buy_decisions": [
+      "AMD"
+    ],
+    "pass_decisions": [
+      "MU",
+      "MRVL",
+      "AMAT",
+      "COHR"
+    ],
+    "hold_cash_decisions": [],
+    "proposal_records": [
+      {
+        "ticker": "AMD",
+        "action": "BUY",
+        "conviction": "MEDIUM",
+        "position_size_usd": 537.0,
+        "signal_type": "watchlist_escalate"
+      }
+    ],
+    "pass_records": [
+      {
+        "ticker": "MU",
+        "score": 8.4,
+        "conviction": "HIGH",
+        "entry_price_range": null,
+        "signal_type": null
+      },
+      {
+        "ticker": "MRVL",
+        "score": 7.3,
+        "conviction": "MEDIUM",
+        "entry_price_range": null,
+        "signal_type": null
+      },
+      {
+        "ticker": "AMAT",
+        "score": 7.1,
+        "conviction": "MEDIUM",
+        "entry_price_range": null,
+        "signal_type": null
+      },
+      {
+        "ticker": "COHR",
+        "score": 7.0,
+        "conviction": "MEDIUM",
+        "entry_price_range": null,
+        "signal_type": null
+      }
+    ],
+    "proposal_summary": {
+      "buy_count": 1,
+      "pass_count": 4,
+      "hold_cash_count": 0
+    },
+    "no_trade_week": false
   }
 ]

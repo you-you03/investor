@@ -12,9 +12,11 @@ from datetime import date, datetime, timedelta
 from pathlib import Path
 from statistics import mean
 
+from investor.config import settings
+from investor.supabase_sync import sync_local_to_supabase
 from investor.utils.portfolio_contract import closed_row_issues, read_portfolio_rows
 
-PORTFOLIO_PATH = Path("data/portfolio.csv")
+PORTFOLIO_PATH = Path(settings.default_portfolio_path)
 PAPER_PATH = Path("data/paper_portfolio.csv")
 RESEARCH_HISTORY_PATH = Path("data/research_history.json")
 DECISION_HISTORY_PATH = Path("data/decision_history.json")
@@ -296,6 +298,7 @@ def main() -> None:
     REPORTS_DIR.mkdir(parents=True, exist_ok=True)
     report_path = REPORTS_DIR / f"review_{week_start}.md"
     report_path.write_text(report)
+    sync_local_to_supabase("report_artifacts")
 
     print(report)
     print(f"\nReport saved: {report_path}")

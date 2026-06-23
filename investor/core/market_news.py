@@ -21,13 +21,14 @@ from urllib.parse import quote_plus, urlparse
 
 import httpx
 
+from investor.config import settings
 from investor.data.yfinance_client import YFinanceClient
 from investor.utils.logger import get_logger
 
 logger = get_logger(__name__)
 
 DB_PATH = Path("data/market_news.sqlite")
-PORTFOLIO_PATH = Path("data/portfolio.csv")
+PORTFOLIO_PATH = Path(settings.default_portfolio_path)
 WATCHLIST_PATH = Path("data/watchlist.json")
 
 ACTIVE_SOURCE_LIMIT = 3

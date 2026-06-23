@@ -51,6 +51,10 @@ def write_portfolio_rows(path: Path, rows: list[dict]) -> None:
         writer.writerows(normalized_rows)
         tmp_name = tf.name
     os.replace(tmp_name, path)
+    if path.name in {"portfolio.csv", "portfolio_20man.csv", "portfolio_100man.csv", "paper_portfolio.csv"}:
+        from investor.supabase_sync import sync_local_to_supabase
+
+        sync_local_to_supabase("positions", "position_events", "lineage")
 
 
 def normalize_portfolio_row(row: dict | None) -> dict:

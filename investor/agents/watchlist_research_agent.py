@@ -23,6 +23,7 @@ from pathlib import Path
 
 from investor.agents.research_agent import collect_ticker_data
 from investor.core.score_snapshots import add_score_snapshots
+from investor.supabase_sync import sync_local_to_supabase
 from investor.tools.market_tools import get_market_context, get_sector_rs
 from investor.utils.logger import get_logger
 
@@ -48,6 +49,7 @@ def load_watchlist() -> dict:
 
 def _save_watchlist(data: dict) -> None:
     WATCHLIST_PATH.write_text(json.dumps(data, indent=2))
+    sync_local_to_supabase("watchlist")
 
 
 def _load_wr_history() -> dict:
@@ -197,6 +199,7 @@ def save_watchlist_research(run_id: str, results: list[dict]) -> None:
     logger.info(f"Saved watchlist research run | run_id={run_id}")
     add_score_snapshots(run_id=run_id, source="watchlist_research", results=results, scored_at=date.fromisoformat(today))
     _save_watchlist_research_markdown(run_id, today, results)
+    sync_local_to_supabase("watchlist_research", "report_artifacts")
 
 
 def _save_watchlist_research_markdown(run_id: str, today: str, results: list[dict]) -> None:
