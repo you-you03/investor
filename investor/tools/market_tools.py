@@ -41,7 +41,7 @@ def get_financials(ticker: str) -> str:
 
 
 def get_technical_indicators(ticker: str) -> str:
-    """Compute RSI, MACD, EMA, Bollinger Bands from OHLCV via yfinance + ta library."""
+    """Compute RSI, MACD, EMA, Bollinger Bands, and setup metrics from OHLCV."""
     bars = _yf.get_ohlcv_bars(ticker, days=60)
     if not bars:
         return json.dumps({"error": f"No OHLCV data for {ticker}"})
@@ -59,6 +59,7 @@ def get_technical_indicators(ticker: str) -> str:
         "ema_20": ema_20,
         "ema_50": ema_50,
         "bollinger_bands": bb,
+        "setup_metrics": _compute_setup_metrics(bars, ema_20, ema_50, bb),
     }
     return json.dumps(result)
 
@@ -273,6 +274,96 @@ def _compute_ema(bars: list[dict], window: int) -> float | None:
         return None
 
 
+def _pct_change(current: float | None, previous: float | None) -> float | None:
+    if current is None or previous in (None, 0):
+        return None
+    try:
+        return round((float(current) - float(previous)) / float(previous) * 100, 2)
+    except (TypeError, ValueError, ZeroDivisionError):
+        return None
+
+
+def _return_pct(bars: list[dict], window: int) -> float | None:
+    if len(bars) <= window:
+        return None
+    current = bars[-1].get("close")
+    previous = bars[-window - 1].get("close")
+    return _pct_change(current, previous)
+
+
+def _avg(values: list[float]) -> float | None:
+    filtered = [float(v) for v in values if v not in (None, 0)]
+    if not filtered:
+        return None
+    return sum(filtered) / len(filtered)
+
+
+def _compute_setup_metrics(
+    bars: list[dict],
+    ema_20: float | None,
+    ema_50: float | None,
+    bollinger_bands: dict[str, Any],
+) -> dict[str, Any]:
+    """
+    Derive early-vs-chase setup metrics from the same OHLCV data.
+
+    These fields are intentionally descriptive inputs for the research prompt;
+    final classification stays with the agent so catalyst/fundamentals can
+    override a purely mechanical reading.
+    """
+    try:
+        if not bars:
+            return {}
+
+        latest = bars[-1]
+        close = latest.get("close")
+        if close in (None, 0):
+            return {}
+
+        recent_20 = bars[-20:] if len(bars) >= 20 else bars
+        highs_20 = [bar.get("high") for bar in recent_20 if bar.get("high") is not None]
+        lows_20 = [bar.get("low") for bar in recent_20 if bar.get("low") is not None]
+        volumes = [bar.get("volume") for bar in bars[-21:-1] if bar.get("volume") is not None]
+        avg_volume_20 = _avg(volumes)
+
+        high_20 = max(highs_20) if highs_20 else None
+        low_20 = min(lows_20) if lows_20 else None
+        volume_ratio_20d = None
+        if avg_volume_20 and latest.get("volume") is not None:
+            volume_ratio_20d = round(float(latest["volume"]) / avg_volume_20, 2)
+
+        bb_upper = bollinger_bands.get("upper") if bollinger_bands else None
+        bb_middle = bollinger_bands.get("middle") if bollinger_bands else None
+        bb_lower = bollinger_bands.get("lower") if bollinger_bands else None
+        bb_width_pct = None
+        bb_position = None
+        if bb_upper is not None and bb_lower is not None and bb_middle not in (None, 0):
+            bb_width_pct = round((float(bb_upper) - float(bb_lower)) / float(bb_middle) * 100, 2)
+        if bb_upper is not None and bb_lower is not None and float(bb_upper) != float(bb_lower):
+            bb_position = round((float(close) - float(bb_lower)) / (float(bb_upper) - float(bb_lower)), 2)
+
+        range_20d_pct = None
+        if high_20 is not None and low_20 is not None:
+            range_20d_pct = round((float(high_20) - float(low_20)) / float(close) * 100, 2)
+
+        metrics: dict[str, Any] = {
+            "return_5d_pct": _return_pct(bars, 5),
+            "return_20d_pct": _return_pct(bars, 20),
+            "return_60d_pct": _return_pct(bars, 59),
+            "pct_above_ema20": _pct_change(close, ema_20),
+            "pct_above_ema50": _pct_change(close, ema_50),
+            "volume_ratio_20d": volume_ratio_20d,
+            "bb_width_pct": bb_width_pct,
+            "bb_position": bb_position,
+            "range_20d_pct": range_20d_pct,
+            "pullback_from_20d_high_pct": _pct_change(close, high_20),
+        }
+        return {k: v for k, v in metrics.items() if v is not None}
+    except Exception as e:
+        logger.warning(f"Setup metric computation failed: {e}")
+        return {}
+
+
 # --------------------------------------------------------------------------- #
 #  Claude tool definitions (JSON Schema)
 # --------------------------------------------------------------------------- #
@@ -401,7 +492,9 @@ MARKET_TOOL_DEFINITIONS: list[dict] = [
         "name": "get_technical_indicators",
         "description": (
             "Get technical indicators for a ticker: RSI(14), MACD, EMA(20), EMA(50), "
-            "and Bollinger Bands. Use this to assess momentum and overbought/oversold conditions."
+            "Bollinger Bands, and setup_metrics (5d/20d/60d returns, EMA distance, "
+            "volume ratio, Bollinger width/position, and pullback from 20d high). "
+            "Use this to assess both early momentum and chase momentum conditions."
         ),
         "input_schema": {
             "type": "object",

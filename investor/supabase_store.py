@@ -20,6 +20,7 @@ from investor.notifications.slack import SlackNotifier
 from investor.utils.logger import get_logger
 
 logger = get_logger(__name__)
+VALIDATION_HORIZONS = ("week1", "week2", "week3", "week4", "week5", "week6", "week7", "week8")
 
 
 def _is_blank(value: str | None) -> bool:
@@ -363,7 +364,7 @@ def _best_horizon_rows(validation_id: str, stats: dict) -> list[dict]:
     for conviction in ("HIGH", "MEDIUM", "LOW"):
         candidates = [
             (horizon, (horizon_summary.get(horizon) or {}).get(conviction) or {})
-            for horizon in ("week1", "week2", "week3", "week4")
+            for horizon in VALIDATION_HORIZONS
         ]
         candidates = [item for item in candidates if _clean_int(item[1].get("n"))]
         if not candidates:

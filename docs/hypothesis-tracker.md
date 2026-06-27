@@ -153,6 +153,76 @@ python skills/paper_portfolio.py compare
 
 ---
 
+### H-5: 初動モメンタムと追いかけモメンタムを分離するとエントリー品質が上がるか
+
+**状態**: 2026-06-25 に research 仕様へ実装済み。今後の `/research` でデータ蓄積する。
+
+**背景**: SMTC は「すでに大きく上がった後」に買ったため、銘柄の質は悪くなくてもエントリーが遅く、伸び悩んだ可能性がある。従来の `/research` は market movers / 52週高値 / 出来高急増を重視しやすく、追いかけモメンタムに寄る構造だった。今後は「これから上がるかも」という初動モメンタムと、「すでに動いているがまだ乗れる」という追いかけモメンタムを分けて評価する。
+
+**変更内容**:
+- `get_technical_indicators` に `setup_metrics` を追加
+  - `return_5d_pct`, `return_20d_pct`, `return_60d_pct`
+  - `pct_above_ema20`, `pct_above_ema50`
+  - `volume_ratio_20d`
+  - `bb_width_pct`, `bb_position`
+  - `range_20d_pct`, `pullback_from_20d_high_pct`
+- `/research` の出力に `momentum_profile` と `conviction_rationale` を追加
+  - `primary_mode`: `EARLY_MOMENTUM` / `CHASE_MOMENTUM` / `BALANCED` / `NONE`
+  - `early_momentum_score`
+  - `chase_momentum_score`
+  - `extension_risk`: `LOW` / `MEDIUM` / `HIGH`
+  - `early_view`, `chase_view`, `score_implication`
+- `score_snapshots.json` に `momentum_profile`, `momentum_primary_mode`, `early_momentum_score`, `chase_momentum_score`, `extension_risk`, `conviction_rationale` を保存するよう変更
+- `/research --seed` の前回比較にも Momentum mode / Early / Chase / Extension risk を表示するよう変更
+
+**運用ルール**:
+- 初動モメンタムが強い場合、追いかけモメンタムが未発生でも高スコア・高確信度を許容する
+- 追いかけモメンタムが強い場合、初動ではなくても高スコア・高確信度を許容する
+- ただし `extension_risk=HIGH` の追いかけ候補は、強いカタリストがない限り chase 側スコアを最大7にキャップし、WAIT/PASSを検討する
+- 弱い値動きを「初動」と誤認しない。初動モメンタムにはファンダメンタルズまたはカタリストの裏付けが必要
+
+**検証方法**:
+- `/review` または `score_snapshots.json` から `momentum_primary_mode` 別に集計する
+- 比較対象:
+  - `EARLY_MOMENTUM`
+  - `CHASE_MOMENTUM`
+  - `BALANCED`
+  - `extension_risk=HIGH` のCHASE候補
+- 測定指標:
+  - 1週 / 2週 / 3週 / 4週 / 5週 / 6週 / 7週 / 8週リターン
+  - SPY alpha / QQQ alpha / sector alpha
+  - BUY採用後の勝率、平均リターン、MFE捕捉率
+  - WAIT/PASSにした候補の機会損失
+
+**判定基準**:
+- `EARLY_MOMENTUM` の4週alphaが `CHASE_MOMENTUM` を上回り、勝率50%以上 → 初動分離は有効
+- `extension_risk=HIGH` のCHASE候補が低alphaまたは低勝率 → 過熱ペナルティを維持/強化
+- `EARLY_MOMENTUM` が低勝率かつ低alpha → 初動条件が緩すぎるため、カタリスト/ファンダ条件を強化
+- `CHASE_MOMENTUM` が引き続き高alpha → 追いかけを排除せず、extension riskで選別する方針を維持
+
+**検証開始日**: 2026-06-25
+
+**次回レビュー時の確認コマンド例**:
+```bash
+python scripts/validate_scores.py
+python - <<'PY'
+import json
+from collections import defaultdict
+
+data = json.load(open("data/score_snapshots.json"))
+groups = defaultdict(list)
+for s in data.get("snapshots", []):
+    mode = s.get("momentum_primary_mode") or "UNKNOWN"
+    wk4 = (s.get("week4") or {}).get("alpha_pct")
+    if wk4 is not None:
+        groups[mode].append(float(wk4))
+
+for mode, vals in sorted(groups.items()):
+    wins = sum(1 for v in vals if v > 0)
+    print(f"{mode}: n={len(vals)} win={wins/len(vals):.0%} avg_alpha={sum(vals)/len(vals):+.2f}%")
+PY
+```
+
 ## 完了済み仮説
 
 （判定が出たものをここに移動する）

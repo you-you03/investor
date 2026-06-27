@@ -18,16 +18,17 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
+from investor.core.score_snapshots import WEEK_KEYS
 from investor.supabase_store import sync_validation_stats
 from investor.supabase_sync import sync_local_to_supabase
 
 SNAPSHOTS_PATH = Path(__file__).parent.parent / "data" / "score_snapshots.json"
 REPORTS_DIR = Path(__file__).parent.parent / "reports" / "validation"
 MIN_SAMPLES = 30
-WEEK_KEYS = ["week1", "week2", "week3", "week4"]
-WEEK_LABELS = {"week1": "1週後", "week2": "2週後", "week3": "3週後", "week4": "4週後"}
+WEEK_LABELS = {wk: f"{wk.removeprefix('week')}週後" for wk in WEEK_KEYS}
 PRIMARY_WEEK = "week3"
 FACTORS = ["momentum", "fundamentals", "catalyst", "technical", "sentiment"]
+MOMENTUM_MODES = ["EARLY_MOMENTUM", "CHASE_MOMENTUM", "BALANCED", "NONE"]
 SCORE_BUCKETS = [
     ("≥ 8.5（exceptional）", lambda s: s >= 8.5),
     ("8.0–8.4（high）", lambda s: 8.0 <= s < 8.5),
@@ -110,6 +111,19 @@ def _infer_conviction(score: float | int | None) -> str:
     if value >= 7.0:
         return "MEDIUM"
     return "LOW"
+
+
+def _extract_mode(snapshot: dict) -> str:
+    direct = str(snapshot.get("momentum_primary_mode") or "").strip().upper()
+    if direct in MOMENTUM_MODES:
+        return direct
+    nested = str((snapshot.get("momentum_profile") or {}).get("primary_mode") or "").strip().upper()
+    if nested in MOMENTUM_MODES:
+        return nested
+    breakdown = str((snapshot.get("score_breakdown") or {}).get("primary_mode") or "").strip().upper()
+    if breakdown in MOMENTUM_MODES:
+        return breakdown
+    return ""
 
 
 def _spy_bucket(value: float, width: int = SPY_BUCKET_WIDTH) -> tuple[int, int, str]:
@@ -249,6 +263,8 @@ def analyze(snapshots: list[dict]) -> dict:
     result["regime_summary"] = build_regime_summary(snapshots)
 
     # ── キャリブレーション提案 ──
+    result["mode_summary"] = build_mode_summary(snapshots)
+    result["mode_factor_reliability"] = build_mode_factor_reliability(snapshots)
     result["calibration"] = build_calibration(ic, factor_ic)
     return result
 
@@ -350,10 +366,106 @@ def build_regime_summary(snapshots: list[dict]) -> dict:
     }
 
 
+def build_mode_summary(snapshots: list[dict]) -> dict:
+    summary: dict[str, dict] = {}
+    for wk in WEEK_KEYS:
+        summary[wk] = {}
+        for mode in MOMENTUM_MODES:
+            returns = []
+            alpha_spy = []
+            alpha_sector = []
+            wins = 0
+            for snap in snapshots:
+                if _extract_mode(snap) != mode:
+                    continue
+                week = snap.get(wk, {})
+                if week.get("fetched_at") is None or week.get("return_pct") is None:
+                    continue
+                ret = float(week["return_pct"])
+                returns.append(ret)
+                if ret > 0:
+                    wins += 1
+                spy_alpha = week.get("alpha_vs_spy", week.get("alpha_pct"))
+                if spy_alpha is not None:
+                    alpha_spy.append(float(spy_alpha))
+                sector_alpha = week.get("alpha_vs_sector")
+                if sector_alpha is not None:
+                    alpha_sector.append(float(sector_alpha))
+
+            n = len(returns)
+            summary[wk][mode] = {
+                "n": n,
+                "avg_return": _mean(returns),
+                "win_rate": round(wins / n * 100, 1) if n else None,
+                "avg_alpha_spy": _mean(alpha_spy),
+                "avg_alpha_sector": _mean(alpha_sector),
+            }
+    return summary
+
+
+def build_mode_factor_reliability(snapshots: list[dict]) -> dict:
+    reliability: dict[str, dict] = {}
+    for mode in MOMENTUM_MODES:
+        reliability[mode] = {}
+        for factor in FACTORS:
+            reliability[mode][factor] = {}
+            for wk in WEEK_KEYS:
+                pairs = []
+                high_returns = []
+                low_returns = []
+                high_alpha = []
+                low_alpha = []
+                for snap in snapshots:
+                    if _extract_mode(snap) != mode:
+                        continue
+                    factor_score = (snap.get("score_breakdown") or {}).get(factor)
+                    week = snap.get(wk, {})
+                    if factor_score is None or week.get("fetched_at") is None or week.get("return_pct") is None:
+                        continue
+                    try:
+                        score = float(factor_score)
+                        ret = float(week["return_pct"])
+                    except (TypeError, ValueError):
+                        continue
+                    pairs.append((score, ret))
+                    spy_alpha = week.get("alpha_vs_spy", week.get("alpha_pct"))
+                    alpha_value = float(spy_alpha) if spy_alpha is not None else None
+                    if score >= 8.0:
+                        high_returns.append(ret)
+                        if alpha_value is not None:
+                            high_alpha.append(alpha_value)
+                    elif score <= 6.0:
+                        low_returns.append(ret)
+                        if alpha_value is not None:
+                            low_alpha.append(alpha_value)
+
+                n = len(pairs)
+                if n < MIN_SAMPLES:
+                    rho = float("nan")
+                    p = float("nan")
+                    label = f"データ不足（N={n} < {MIN_SAMPLES}）"
+                else:
+                    scores, returns = zip(*pairs)
+                    rho, p = spearman(list(scores), list(returns))
+                    label = _significance_label(rho, p)
+
+                reliability[mode][factor][wk] = {
+                    "n": n,
+                    "rho": rho,
+                    "p": p,
+                    "label": label,
+                    "high_score_avg_return": _mean(high_returns),
+                    "low_score_avg_return": _mean(low_returns),
+                    "high_score_avg_alpha": _mean(high_alpha),
+                    "low_score_avg_alpha": _mean(low_alpha),
+                }
+    return reliability
+
+
 def build_calibration(ic: dict, factor_ic: dict) -> list[str]:
     suggestions = []
 
-    # IC に基づく総評。運用上は3週を主指標、4週を補助指標として見る。
+    # IC に基づく総評。運用上は3週を主指標、4-8週を補助指標として見る。
     primary = ic.get(PRIMARY_WEEK, {})
     primary_rho = primary.get("rho", float("nan"))
     if not math.isnan(primary_rho):
@@ -424,13 +536,13 @@ def generate_report(stats: dict) -> str:
     lines.append("")
     lines.append("## スコアバケット別 × 週別 平均リターン")
     lines.append("")
-    lines.append("| スコアバケット | 件数 | 1w avg | 2w avg | 3w avg | 4w avg |")
-    lines.append("|---|---|---|---|---|---|")
+    horizon_headers = " | ".join(f"{wk.removeprefix('week')}w avg" for wk in WEEK_KEYS)
+    lines.append(f"| スコアバケット | 件数 | {horizon_headers} |")
+    lines.append("|---|---|" + "---|" * len(WEEK_KEYS))
     for label, data in stats["buckets"].items():
         avgs = data["avgs"]
-        lines.append(
-            f"| {label} | {data['n']} | {avgs['week1']} | {avgs['week2']} | {avgs['week3']} | {avgs['week4']} |"
-        )
+        avg_cells = " | ".join(avgs[wk] for wk in WEEK_KEYS)
+        lines.append(f"| {label} | {data['n']} | {avg_cells} |")
 
     lines.append("")
     lines.append("---")
@@ -467,7 +579,7 @@ def generate_report(stats: dict) -> str:
     lines.append("")
     lines.append("## ホライゾン別 確信度サマリー")
     lines.append("")
-    lines.append("3週後を主指標、4週後を補助指標として見る。QQQ/セクターalphaはデータがある場合のみ表示。")
+    lines.append("3週後を主指標、4〜8週後を補助指標として見る。QQQ/セクターalphaはデータがある場合のみ表示。")
     lines.append("")
     lines.append("| ホライゾン | 確信度 | n | 平均リターン | 中央値 | SPY alpha | QQQ alpha | Sector alpha |")
     lines.append("|---|---|---:|---:|---:|---:|---:|---:|")
@@ -518,7 +630,7 @@ def generate_report(stats: dict) -> str:
 
     if stats["regime_summary"]:
         lines.append("")
-        lines.append("### 3週後 市場レジーム別リターン")
+        lines.append(f"### {WEEK_LABELS[PRIMARY_WEEK]} 市場レジーム別リターン")
         lines.append("")
         lines.append("| Regime | n | 平均リターン |")
         lines.append("|---|---:|---:|")
@@ -528,10 +640,73 @@ def generate_report(stats: dict) -> str:
     lines.append("")
     lines.append("---")
     lines.append("")
+    lines.append("## モメンタムモード別 ホライゾンサマリー")
+    lines.append("")
+    lines.append("| ホライゾン | モード | n | 平均リターン | 勝率 | SPY alpha | Sector alpha |")
+    lines.append("|---|---|---:|---:|---:|---:|---:|")
+    mode_rows_written = 0
+    for wk in WEEK_KEYS:
+        for mode in MOMENTUM_MODES:
+            row = stats["mode_summary"][wk][mode]
+            if row["n"] == 0:
+                continue
+            mode_rows_written += 1
+            lines.append(
+                f"| {WEEK_LABELS[wk]} | {mode} | {row['n']} | {_fmt_pct(row['avg_return'])} | "
+                f"{row['win_rate']:.1f}% | {_fmt_pct(row['avg_alpha_spy'])} | {_fmt_pct(row['avg_alpha_sector'])} |"
+            )
+    if mode_rows_written == 0:
+        lines.append("| — | — | 0 | N/A | N/A | N/A | N/A |")
+        lines.append("")
+        lines.append("注: momentum mode を保存し始めた後の観測がまだ成熟していない場合、この表は空になる。")
+
+    lines.append("")
+    lines.append("## モード×ファクター 信頼性")
+    lines.append("")
+    lines.append("各セルは、同じモメンタムモード内での `factor score` と累積リターンの Spearman ρ。")
+    lines.append("右端の alpha は `factor score ≥ 8` と `≤ 6` の平均SPY alpha を比較し、その観点の効き方をざっくり見る。")
+    lines.append("")
+    reliability_headers = " | ".join(f"{wk.removeprefix('week')}w ρ" for wk in WEEK_KEYS)
+    lines.append(
+        f"| モード | ファクター | Best | {reliability_headers} | High alpha | Low alpha |"
+    )
+    lines.append("|---|---|---|" + "---|" * len(WEEK_KEYS) + "---:|---:|")
+    mode_factor_rows_with_signal = 0
+    for mode in MOMENTUM_MODES:
+        for factor in FACTORS:
+            rows = stats["mode_factor_reliability"][mode][factor]
+            valid = [
+                (wk, row) for wk, row in rows.items()
+                if not math.isnan(row["rho"])
+            ]
+            if valid:
+                mode_factor_rows_with_signal += 1
+                best_wk, best_row = max(valid, key=lambda item: item[1]["rho"])
+                best_text = f"{WEEK_LABELS[best_wk]} {format_rho(best_row['rho'])}"
+                high_alpha = _fmt_pct(best_row["high_score_avg_alpha"])
+                low_alpha = _fmt_pct(best_row["low_score_avg_alpha"])
+            else:
+                best_text = "N/A"
+                high_alpha = "N/A"
+                low_alpha = "N/A"
+            rho_cells = [format_rho(rows[wk]["rho"]) for wk in WEEK_KEYS]
+            lines.append(
+                f"| {mode} | {factor} | {best_text} | "
+                + " | ".join(rho_cells)
+                + f" | {high_alpha} | {low_alpha} |"
+            )
+    if mode_factor_rows_with_signal == 0:
+        lines.append("")
+        lines.append("注: mode別の因子信頼性は、mode付きスナップショットが十分に満期化すると出始める。")
+
+    lines.append("")
+    lines.append("---")
+    lines.append("")
     lines.append("## ファクター別 Spearman ρ（各週リターンとの相関）")
     lines.append("")
-    lines.append("| ファクター | 1w ρ | 2w ρ | 3w ρ | 4w ρ |")
-    lines.append("|---|---|---|---|---|")
+    factor_headers = " | ".join(f"{wk.removeprefix('week')}w ρ" for wk in WEEK_KEYS)
+    lines.append(f"| ファクター | {factor_headers} |")
+    lines.append("|---|" + "---|" * len(WEEK_KEYS))
     for factor in FACTORS:
         row = [factor]
         for wk in WEEK_KEYS:

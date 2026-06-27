@@ -498,5 +498,82 @@
       "hold_cash_count": 0
     },
     "no_trade_week": false
+  },
+  {
+    "date": "2026-06-25",
+    "run_id": "5ab4978e-0f6e-4479-a635-b76825097f52",
+    "candidates_evaluated": [
+      "FOUR",
+      "RUN",
+      "VICR"
+    ],
+    "buy_decisions": [
+      "FOUR"
+    ],
+    "pass_decisions": [
+      "RUN",
+      "VICR"
+    ],
+    "hold_cash_decisions": [],
+    "proposal_records": [
+      {
+        "ticker": "FOUR",
+        "action": "BUY",
+        "conviction": "MEDIUM",
+        "position_size_usd": 88.0,
+        "signal_type": "technical_breakout"
+      }
+    ],
+    "pass_records": [
+      {
+        "ticker": "RUN",
+        "score": 7.3,
+        "conviction": "MEDIUM",
+        "entry_price_range": null,
+        "signal_type": "analyst_upgrade"
+      },
+      {
+        "ticker": "VICR",
+        "score": 7.29,
+        "conviction": "MEDIUM",
+        "entry_price_range": null,
+        "signal_type": "technical_breakout"
+      }
+    ],
+    "proposal_summary": {
+      "buy_count": 1,
+      "pass_count": 2,
+      "hold_cash_count": 0
+    },
+    "no_trade_week": false
+  },
+  {
+    "date": "2026-06-25",
+    "run_id": "da69af89-30e9-4556-8d2a-9c76e8d2dc12",
+    "candidates_evaluated": [
+      "TSM"
+    ],
+    "buy_decisions": [
+      "TSM"
+    ],
+    "pass_decisions": [],
+    "hold_cash_decisions": [],
+    "proposal_records": [
+      {
+        "ticker": "TSM",
+        "action": "BUY",
+        "conviction": "HIGH",
+        "position_size_usd": 882.0,
+        "signal_type": "watchlist_escalate"
+      }
+    ],
+    "pass_records": [],
+    "proposal_summary": {
+      "buy_count": 1,
+      "pass_count": 0,
+      "hold_cash_count": 0
+    },
+    "no_trade_week": false,
+    "scope": "single_ticker:TSM"
   }
 ]

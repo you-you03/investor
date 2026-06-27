@@ -1962,5 +1962,656 @@
         }
       ]
     }
+  },
+  {
+    "date": "2026-06-23",
+    "position_count": 1,
+    "alert_count": 0,
+    "high_alert_count": 0,
+    "positions": [
+      {
+        "ticker": "SMTC",
+        "shares": 1.0,
+        "entry_price": 175.0,
+        "current_price": 174.72999572753906,
+        "target_price": "203.3",
+        "stop_loss": "160.44",
+        "pnl_pct": -0.15,
+        "change_pct": 0.43,
+        "note": "20\u4e07\u5186\u67a0\u3002\u53d6\u5f97\u65e5: 2026-06-23\u3002Decision 2026-06-23\u63a1\u7528\u3002SMTC score 7.15 / \u78ba\u4fe1\u5ea6LOW-MEDIUM\u3002\u6307\u5024$175\u3001\u8b72\u6e21\u91d1\u984d29,743\u5186\u30011\u682a\u3002RS\u5f37\u3044\u304cMACD hist\u30de\u30a4\u30ca\u30b9\u30fbDebt/Equity\u9ad8\u3081\u306e\u305f\u3081\u8a66\u3057\u7389\u3002"
+      }
+    ],
+    "alerts": [],
+    "market_news": {
+      "date": "2026-06-23",
+      "db_path": "data/market_news.sqlite",
+      "disclaimer": "\u53c2\u8003\u30cb\u30e5\u30fc\u30b9\u3002\u672a\u691c\u8a3c\u306e\u305f\u3081\u30d5\u30a1\u30af\u30c8\u6271\u3044\u3057\u306a\u3044\u3002",
+      "collection_limits": {
+        "theme_limit": 3,
+        "active_sources": 3,
+        "candidate_probe_sources": 1,
+        "items_per_source": 2,
+        "report_items": 4
+      },
+      "themes": [
+        {
+          "key": "ai_semiconductors",
+          "label": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e",
+          "query": "AI semiconductors, HBM memory, wafer fab equipment, Nvidia, Micron, Applied Materials, Lam Research market news",
+          "tickers": [
+            "AMAT",
+            "COHR",
+            "INFQ",
+            "MU",
+            "QBTS",
+            "RGTI"
+          ],
+          "fallback_etf": "SMH",
+          "priority": 106
+        }
+      ],
+      "items": [
+        {
+          "source": "SMH",
+          "source_label": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e",
+          "title": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e\u306e\u95a2\u9023\u30cb\u30e5\u30fc\u30b9\u30e1\u30e2",
+          "publisher": "Google News RSS",
+          "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNWW5rMUh3U3lIQURnek9tRW9fVWxYTEZ2MHBHemlzSHA0bnYzTWFwcWVwd0hvV19aczcwbEk1ckxXREhzbmlJZVktczA1dGE0aUpFVnhnQUdCWWZOcmlpdFZITVMzM1hQeV8zZkw5ZFdLNldrd3dkaXpmejdZWU5rRUx5LVJmSGpmTzRiblNKWm9fRmRNQVRYTjUydjVMVmZySFRuWXN6SWJtenJTcXBqSnhPdXFNTXNDbFE?oc=5",
+          "domain": "news.google.com",
+          "published_at": "Wed, 17 Jun 2026 19:35:40 GMT",
+          "summary": "- \u8981\u7d04: AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e\u3067\u306f\u3001\u5e02\u5834\u5168\u4f53\u306e\u5024\u52d5\u304d\u3001\u534a\u5c0e\u4f53\u30fbAI\u3001ETF\u8cc7\u91d1\u30d5\u30ed\u30fc\u304c\u4e3b\u306a\u8ad6\u70b9\u3002\u53c2\u7167\u898b\u51fa\u3057\u306f \u300cWhy Semiconductor Equipment Suppliers Are Crushing Their Customers in 2026\u300d / \u300c7 Best Semiconductor Stocks for 2026 | Investing - U.S. News\u300d / \u300cWhy Citi is still backing Applied Materials after the rally\u300d\u3002\n- \u95a2\u4fc2: \u95a2\u9023\u9298\u67c4\u306f AMAT, COHR, INFQ, MU, QBTS, RGTI\u3002\u4fdd\u6709\u30fb\u76e3\u8996\u9298\u67c4\u306e\u500b\u5225\u6750\u6599\u3068\u3044\u3046\u3088\u308a\u3001\u540c\u3058\u30c6\u30fc\u30de\u5185\u306e\u5730\u5408\u3044\u3068\u8cc7\u91d1\u306e\u5411\u304d\u3092\u898b\u308b\u53c2\u8003\u6750\u6599\u3002\n- \u6ce8\u610f\u70b9: RSS\u898b\u51fa\u3057\u3068\u77ed\u3044\u8aac\u660e\u304b\u3089\u4f5c\u3063\u305f\u672a\u691c\u8a3c\u30e1\u30e2\u3002\u58f2\u8cb7\u5224\u65ad\u3067\u306f\u3001\u500b\u5225\u9298\u67c4\u306e\u6c7a\u7b97\u3001\u30ac\u30a4\u30c0\u30f3\u30b9\u3001\u4fa1\u683c\u3001\u51fa\u6765\u9ad8\u3067\u518d\u78ba\u8a8d\u3059\u308b\u3002",
+          "key_point": "- \u8981\u7d04: AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e\u3067\u306f\u3001\u5e02\u5834\u5168\u4f53\u306e\u5024\u52d5\u304d\u3001\u534a\u5c0e\u4f53\u30fbAI\u3001ETF\u8cc7\u91d1\u30d5\u30ed\u30fc\u304c\u4e3b\u306a\u8ad6\u70b9\u3002\u53c2\u7167\u898b\u51fa\u3057\u306f \u300cWhy Semiconductor Equipment Suppliers Are Crushing Their Customers in 2026\u300d / \u300c7 Best Semiconductor Stocks for 2026 | Investing - U.S. News\u300d / \u300cWhy Citi is still backing Applied Materials after the rally\u300d\u3002\n- \u95a2\u4fc2: \u95a2\u9023\u9298\u67c4\u306f AMAT, COHR, INFQ, MU, QBTS, RGTI\u3002\u4fdd\u6709\u30fb\u76e3\u8996\u9298\u67c4\u306e\u500b\u5225\u6750\u6599\u3068\u3044\u3046\u3088\u308a\u3001\u540c\u3058\u30c6\u30fc\u30de\u5185\u306e\u5730\u5408\u3044\u3068\u8cc7\u91d1\u306e\u5411\u304d\u3092\u898b\u308b\u53c2\u8003\u6750\u6599\u3002\n- \u6ce8\u610f\u70b9: RSS\u898b\u51fa\u3057\u3068\u77ed\u3044\u8aac\u660e\u304b\u3089\u4f5c\u3063\u305f\u672a\u691c\u8a3c\u30e1\u30e2\u3002\u58f2\u8cb7\u5224\u65ad\u3067\u306f\u3001\u500b\u5225\u9298\u67c4\u306e\u6c7a\u7b97\u3001\u30ac\u30a4\u30c0\u30f3\u30b9\u3001\u4fa1\u683c\u3001\u51fa\u6765\u9ad8\u3067\u518d\u78ba\u8a8d\u3059\u308b\u3002",
+          "source_articles": [
+            {
+              "title": "Why Semiconductor Equipment Suppliers Are Crushing Their Customers in 2026 - 24/7 Wall St.",
+              "source": "24/7 Wall St.",
+              "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNWW5rMUh3U3lIQURnek9tRW9fVWxYTEZ2MHBHemlzSHA0bnYzTWFwcWVwd0hvV19aczcwbEk1ckxXREhzbmlJZVktczA1dGE0aUpFVnhnQUdCWWZOcmlpdFZITVMzM1hQeV8zZkw5ZFdLNldrd3dkaXpmejdZWU5rRUx5LVJmSGpmTzRiblNKWm9fRmRNQVRYTjUydjVMVmZySFRuWXN6SWJtenJTcXBqSnhPdXFNTXNDbFE?oc=5",
+              "published_at": "Wed, 17 Jun 2026 19:35:40 GMT",
+              "summary": "Why Semiconductor Equipment Suppliers Are Crushing Their Customers in 2026 24/7 Wall St."
+            },
+            {
+              "title": "7 Best Semiconductor Stocks for 2026 | Investing - U.S. News - Money",
+              "source": "U.S. News - Money",
+              "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPdVlocTJ6U2RLbGpQUnpwLWxwSjQ4ZlI3cjR5U204TDlkakhISEo5d3ItaGFVQ1VSdk1UdXBFc1JGYnVqT1ZoN2RKQUREM3dxeDRYbzF5Rl9XeHl6WXZzWWNkY1NRS0pvd0RDYVVLbFRTNHdzR2xyZXpaam1naEc3Y3dR?oc=5",
+              "published_at": "Tue, 16 Jun 2026 19:57:00 GMT",
+              "summary": "7 Best Semiconductor Stocks for 2026 | Investing U.S. News - Money"
+            },
+            {
+              "title": "Why Citi is still backing Applied Materials after the rally - thestreet.com",
+              "source": "thestreet.com",
+              "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQQ000RlR1anZNMG5oVnFBX0llOExUa19raEczd2dWZGoxSXhtNmhNbzRPekctSjczNUJrMU1WZ2ZMOWp0dFpGMGlhQUZDd2l0ZVlqbWFucXdJMTFGaG84UWpXMGw0Q214allQUTF0U1dVVjFCbHptUmlDYks1VVRlTE9vdkNmNlRTdDU3S0JPbmU0LXNIZndoV09NbTE?oc=5",
+              "published_at": "Wed, 17 Jun 2026 21:37:00 GMT",
+              "summary": "Why Citi is still backing Applied Materials after the rally thestreet.com"
+            },
+            {
+              "title": "If the market was speculating on AI concepts from 2023 to 2025, then starting in the second half of 2026, it is now betting on the profit realization of AI infrastructure. - Moomoo",
+              "source": "Moomoo",
+              "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPS3ZIVTUzV09sZElmRGg0WUx0WWRoM1YzQ2pQZjZOb0E0YjhtdHdodFJwWGtjU0FJRWE2eGVZZTZ4Tk9abGpCT0ZnbndxdnpESWIwenR0Z1AyTXEyM2N3c2RDR2E0REJyVUdxTEpuLVc3SGwyNjZZalo5UzVZVDFZT3N6ZTZ0OHZHY0V1dTlya0RhUXJXTXBKeXA3VTdrVHM?oc=5",
+              "published_at": "Mon, 22 Jun 2026 09:15:47 GMT",
+              "summary": "If the market was speculating on AI concepts from 2023 to 2025, then starting in the second half of 2026, it is now betting on the profit realization of AI infrastructure. Moomoo"
+            },
+            {
+              "title": "SMH vs. SOXX: Which Semiconductor ETF Is the Smarter Chip Bet? - AOL.com",
+              "source": "AOL.com",
+              "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1hOU9TblpnOUp1RHUzYXoxSGpQZ1dEYmtjNzZDeWJwczJpN21FWmNURmc3emJ1bEJ2RVdJSTZWR3VoNnd2ZlNjX2ZIUjV5V0pLb01qc2QyaHNBOUxIczFnX2lFVWtKSmd2a2M1V1JwOExZbXh2VkdFVng2WnU2dw?oc=5",
+              "published_at": "Thu, 18 Jun 2026 07:00:00 GMT",
+              "summary": "SMH vs. SOXX: Which Semiconductor ETF Is the Smarter Chip Bet? AOL.com"
+            }
+          ],
+          "relevance_score": 3.0,
+          "theme": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e",
+          "tickers": [
+            "AMAT",
+            "COHR",
+            "INFQ",
+            "MU",
+            "QBTS",
+            "RGTI"
+          ]
+        }
+      ],
+      "source_stats": [
+        {
+          "value": "SMH",
+          "label": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e",
+          "status": "active",
+          "priority": 106,
+          "hit_count": 8,
+          "selected_count": 10,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-23T13:00:04.136590"
+        },
+        {
+          "value": "XLI",
+          "label": "AI\u30c7\u30fc\u30bf\u30bb\u30f3\u30bf\u30fc\u96fb\u529b\u30fb\u51b7\u5374\u30a4\u30f3\u30d5\u30e9",
+          "status": "active",
+          "priority": 93,
+          "hit_count": 6,
+          "selected_count": 6,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-12T11:42:44.411880"
+        },
+        {
+          "value": "IGV",
+          "label": "\u30af\u30e9\u30a6\u30c9\u30fb\u30a8\u30f3\u30bf\u30fc\u30d7\u30e9\u30a4\u30ba\u30bd\u30d5\u30c8\u30a6\u30a7\u30a2",
+          "status": "active",
+          "priority": 83,
+          "hit_count": 7,
+          "selected_count": 7,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-12T11:42:44.864098"
+        },
+        {
+          "value": "SPY",
+          "label": "US broad market",
+          "status": "candidate",
+          "priority": 100,
+          "hit_count": 1,
+          "selected_count": 2,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-06T09:22:33.544666"
+        },
+        {
+          "value": "QQQ",
+          "label": "Nasdaq / growth",
+          "status": "candidate",
+          "priority": 95,
+          "hit_count": 1,
+          "selected_count": 2,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-06T09:22:33.740347"
+        },
+        {
+          "value": "XLK",
+          "label": "technology",
+          "status": "candidate",
+          "priority": 80,
+          "hit_count": 1,
+          "selected_count": 1,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-06T09:22:34.164153"
+        },
+        {
+          "value": "XLF",
+          "label": "financials",
+          "status": "candidate",
+          "priority": 65,
+          "hit_count": 1,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-06T09:22:34.550934"
+        },
+        {
+          "value": "IBB",
+          "label": "biotech / healthcare",
+          "status": "candidate",
+          "priority": 60,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        },
+        {
+          "value": "XLE",
+          "label": "energy",
+          "status": "candidate",
+          "priority": 60,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        },
+        {
+          "value": "XLY",
+          "label": "consumer discretionary",
+          "status": "candidate",
+          "priority": 55,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        },
+        {
+          "value": "ITA",
+          "label": "defense / aerospace",
+          "status": "candidate",
+          "priority": 50,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        },
+        {
+          "value": "ARKK",
+          "label": "disruptive growth",
+          "status": "candidate",
+          "priority": 45,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        }
+      ]
+    }
+  },
+  {
+    "date": "2026-06-25",
+    "position_count": 1,
+    "alert_count": 1,
+    "high_alert_count": 1,
+    "positions": [
+      {
+        "ticker": "SMTC",
+        "shares": 1.0,
+        "entry_price": 162.5,
+        "current_price": 158.47999572753906,
+        "target_price": "203.3",
+        "stop_loss": "160.44",
+        "pnl_pct": -2.47,
+        "change_pct": -4.14,
+        "note": "20\u4e07\u5186\u67a0\u3002\u53d6\u5f97\u65e5: 2026-06-23\u3002Decision 2026-06-23\u63a1\u7528\u3002SMTC score 7.15 / \u78ba\u4fe1\u5ea6LOW-MEDIUM\u3002\u6307\u5024$175\u3001\u8b72\u6e21\u91d1\u984d29,743\u5186\u30011\u682a\u3002RS\u5f37\u3044\u304cMACD hist\u30de\u30a4\u30ca\u30b9\u30fbDebt/Equity\u9ad8\u3081\u306e\u305f\u3081\u8a66\u3057\u7389\u3002 | \u30102026-06-25 \u4fee\u6b63\u3011\u8cb7\u5024\u3092$162.50\u306b\u8a02\u6b63\uff08\u30e6\u30fc\u30b6\u30fc\u7533\u544a\uff09"
+      }
+    ],
+    "alerts": [
+      {
+        "date": "2026-06-25",
+        "ticker": "SMTC",
+        "alert_type": "STOP_BREACH",
+        "severity": "HIGH",
+        "message": "Price $158.48 hit stop loss $160.44",
+        "current_price": 158.47999572753906,
+        "entry_price": 162.5,
+        "unrealized_pnl_pct": -2.47,
+        "stop_loss": 160.44,
+        "target_price": 203.3,
+        "trailing_stop_price": null
+      }
+    ],
+    "market_news": {
+      "date": "2026-06-25",
+      "db_path": "data/market_news.sqlite",
+      "disclaimer": "\u53c2\u8003\u30cb\u30e5\u30fc\u30b9\u3002\u672a\u691c\u8a3c\u306e\u305f\u3081\u30d5\u30a1\u30af\u30c8\u6271\u3044\u3057\u306a\u3044\u3002",
+      "collection_limits": {
+        "theme_limit": 3,
+        "active_sources": 3,
+        "candidate_probe_sources": 1,
+        "items_per_source": 2,
+        "report_items": 4
+      },
+      "themes": [
+        {
+          "key": "ai_semiconductors",
+          "label": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e",
+          "query": "AI semiconductors, HBM memory, wafer fab equipment, Nvidia, Micron, Applied Materials, Lam Research market news",
+          "tickers": [
+            "AMAT",
+            "COHR",
+            "INFQ",
+            "MU",
+            "QBTS",
+            "RGTI"
+          ],
+          "fallback_etf": "SMH",
+          "priority": 106
+        }
+      ],
+      "items": [
+        {
+          "source": "SMH",
+          "source_label": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e",
+          "title": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e\u306e\u95a2\u9023\u30cb\u30e5\u30fc\u30b9\u30e1\u30e2",
+          "publisher": "Google News RSS",
+          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQX1dqT1BncDJLRXdpd19xUk9kQURjRDVXck5IdTItcHpINHgxVFVNU01hd3Q0czFLZlVwaXNUSzBQSW5jbjBIZWdYeUc3bHl6WXZlVGRIUXdsNExrUFYtYlhhM2dJT21yYUNxMURkMG9Bb014d0E1a21QNmVYMHhWQ0FmdVIzQ2JOUFpQaDJlcGNJVi1NeFdKSDZWWm50Wko2MXVsMFk2bl9FcENmX2ZmWHZB?oc=5",
+          "domain": "news.google.com",
+          "published_at": "Wed, 24 Jun 2026 04:07:56 GMT",
+          "summary": "- \u8981\u7d04: AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e\u3067\u306f\u3001\u534a\u5c0e\u4f53\u30fbAI\u304c\u4e3b\u306a\u8ad6\u70b9\u3002\u53c2\u7167\u898b\u51fa\u3057\u306f \u300cForget Nvidia: Philippe Laffont reveals his preferred way to gain AI exposure\u300d\u3002\n- \u95a2\u4fc2: \u95a2\u9023\u9298\u67c4\u306f AMAT, COHR, INFQ, MU, QBTS, RGTI\u3002\u4fdd\u6709\u30fb\u76e3\u8996\u9298\u67c4\u306e\u500b\u5225\u6750\u6599\u3068\u3044\u3046\u3088\u308a\u3001\u540c\u3058\u30c6\u30fc\u30de\u5185\u306e\u5730\u5408\u3044\u3068\u8cc7\u91d1\u306e\u5411\u304d\u3092\u898b\u308b\u53c2\u8003\u6750\u6599\u3002\n- \u6ce8\u610f\u70b9: RSS\u898b\u51fa\u3057\u3068\u77ed\u3044\u8aac\u660e\u304b\u3089\u4f5c\u3063\u305f\u672a\u691c\u8a3c\u30e1\u30e2\u3002\u58f2\u8cb7\u5224\u65ad\u3067\u306f\u3001\u500b\u5225\u9298\u67c4\u306e\u6c7a\u7b97\u3001\u30ac\u30a4\u30c0\u30f3\u30b9\u3001\u4fa1\u683c\u3001\u51fa\u6765\u9ad8\u3067\u518d\u78ba\u8a8d\u3059\u308b\u3002",
+          "key_point": "- \u8981\u7d04: AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e\u3067\u306f\u3001\u534a\u5c0e\u4f53\u30fbAI\u304c\u4e3b\u306a\u8ad6\u70b9\u3002\u53c2\u7167\u898b\u51fa\u3057\u306f \u300cForget Nvidia: Philippe Laffont reveals his preferred way to gain AI exposure\u300d\u3002\n- \u95a2\u4fc2: \u95a2\u9023\u9298\u67c4\u306f AMAT, COHR, INFQ, MU, QBTS, RGTI\u3002\u4fdd\u6709\u30fb\u76e3\u8996\u9298\u67c4\u306e\u500b\u5225\u6750\u6599\u3068\u3044\u3046\u3088\u308a\u3001\u540c\u3058\u30c6\u30fc\u30de\u5185\u306e\u5730\u5408\u3044\u3068\u8cc7\u91d1\u306e\u5411\u304d\u3092\u898b\u308b\u53c2\u8003\u6750\u6599\u3002\n- \u6ce8\u610f\u70b9: RSS\u898b\u51fa\u3057\u3068\u77ed\u3044\u8aac\u660e\u304b\u3089\u4f5c\u3063\u305f\u672a\u691c\u8a3c\u30e1\u30e2\u3002\u58f2\u8cb7\u5224\u65ad\u3067\u306f\u3001\u500b\u5225\u9298\u67c4\u306e\u6c7a\u7b97\u3001\u30ac\u30a4\u30c0\u30f3\u30b9\u3001\u4fa1\u683c\u3001\u51fa\u6765\u9ad8\u3067\u518d\u78ba\u8a8d\u3059\u308b\u3002",
+          "source_articles": [
+            {
+              "title": "Forget Nvidia: Philippe Laffont reveals his preferred way to gain AI exposure - Invezz",
+              "source": "Invezz",
+              "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQX1dqT1BncDJLRXdpd19xUk9kQURjRDVXck5IdTItcHpINHgxVFVNU01hd3Q0czFLZlVwaXNUSzBQSW5jbjBIZWdYeUc3bHl6WXZlVGRIUXdsNExrUFYtYlhhM2dJT21yYUNxMURkMG9Bb014d0E1a21QNmVYMHhWQ0FmdVIzQ2JOUFpQaDJlcGNJVi1NeFdKSDZWWm50Wko2MXVsMFk2bl9FcENmX2ZmWHZB?oc=5",
+              "published_at": "Wed, 24 Jun 2026 04:07:56 GMT",
+              "summary": "Forget Nvidia: Philippe Laffont reveals his preferred way to gain AI exposure Invezz"
+            }
+          ],
+          "relevance_score": 2.0,
+          "theme": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e",
+          "tickers": [
+            "AMAT",
+            "COHR",
+            "INFQ",
+            "MU",
+            "QBTS",
+            "RGTI"
+          ]
+        }
+      ],
+      "source_stats": [
+        {
+          "value": "SMH",
+          "label": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e",
+          "status": "active",
+          "priority": 106,
+          "hit_count": 9,
+          "selected_count": 11,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-25T12:04:30.411388"
+        },
+        {
+          "value": "XLI",
+          "label": "AI\u30c7\u30fc\u30bf\u30bb\u30f3\u30bf\u30fc\u96fb\u529b\u30fb\u51b7\u5374\u30a4\u30f3\u30d5\u30e9",
+          "status": "active",
+          "priority": 93,
+          "hit_count": 6,
+          "selected_count": 6,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-12T11:42:44.411880"
+        },
+        {
+          "value": "IGV",
+          "label": "\u30af\u30e9\u30a6\u30c9\u30fb\u30a8\u30f3\u30bf\u30fc\u30d7\u30e9\u30a4\u30ba\u30bd\u30d5\u30c8\u30a6\u30a7\u30a2",
+          "status": "active",
+          "priority": 83,
+          "hit_count": 7,
+          "selected_count": 7,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-12T11:42:44.864098"
+        },
+        {
+          "value": "SPY",
+          "label": "US broad market",
+          "status": "candidate",
+          "priority": 100,
+          "hit_count": 1,
+          "selected_count": 2,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-06T09:22:33.544666"
+        },
+        {
+          "value": "QQQ",
+          "label": "Nasdaq / growth",
+          "status": "candidate",
+          "priority": 95,
+          "hit_count": 1,
+          "selected_count": 2,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-06T09:22:33.740347"
+        },
+        {
+          "value": "XLK",
+          "label": "technology",
+          "status": "candidate",
+          "priority": 80,
+          "hit_count": 1,
+          "selected_count": 1,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-06T09:22:34.164153"
+        },
+        {
+          "value": "XLF",
+          "label": "financials",
+          "status": "candidate",
+          "priority": 65,
+          "hit_count": 1,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-06T09:22:34.550934"
+        },
+        {
+          "value": "IBB",
+          "label": "biotech / healthcare",
+          "status": "candidate",
+          "priority": 60,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        },
+        {
+          "value": "XLE",
+          "label": "energy",
+          "status": "candidate",
+          "priority": 60,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        },
+        {
+          "value": "XLY",
+          "label": "consumer discretionary",
+          "status": "candidate",
+          "priority": 55,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        },
+        {
+          "value": "ITA",
+          "label": "defense / aerospace",
+          "status": "candidate",
+          "priority": 50,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        },
+        {
+          "value": "ARKK",
+          "label": "disruptive growth",
+          "status": "candidate",
+          "priority": 45,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        }
+      ]
+    }
+  },
+  {
+    "date": "2026-06-25",
+    "position_count": 1,
+    "alert_count": 0,
+    "high_alert_count": 0,
+    "positions": [
+      {
+        "ticker": "SMTC",
+        "shares": 1.0,
+        "entry_price": 162.5,
+        "current_price": 158.47999572753906,
+        "target_price": "191.26",
+        "stop_loss": "148.12",
+        "pnl_pct": -2.47,
+        "change_pct": -4.14,
+        "note": "20\u4e07\u5186\u67a0\u3002\u53d6\u5f97\u65e5: 2026-06-23\u3002Decision 2026-06-23\u63a1\u7528\u3002SMTC score 7.15 / \u78ba\u4fe1\u5ea6LOW-MEDIUM\u3002\u6307\u5024$175\u3001\u8b72\u6e21\u91d1\u984d29,743\u5186\u30011\u682a\u3002RS\u5f37\u3044\u304cMACD hist\u30de\u30a4\u30ca\u30b9\u30fbDebt/Equity\u9ad8\u3081\u306e\u305f\u3081\u8a66\u3057\u7389\u3002 | \u30102026-06-25 \u4fee\u6b63\u3011\u8cb7\u5024\u3092$162.50\u306b\u8a02\u6b63\uff08\u30e6\u30fc\u30b6\u30fc\u7533\u544a\uff09 | \u30102026-06-25 STOP\u518d\u8a2d\u5b9a\u3011\u8cb7\u5024\u4fee\u6b63\u306b\u4f34\u3044ATR1x\u57fa\u6e96\u3078\u518d\u8a2d\u5b9a: stop $148.12 / target $191.26"
+      }
+    ],
+    "alerts": [],
+    "market_news": {
+      "date": "2026-06-25",
+      "db_path": "data/market_news.sqlite",
+      "disclaimer": "\u53c2\u8003\u30cb\u30e5\u30fc\u30b9\u3002\u672a\u691c\u8a3c\u306e\u305f\u3081\u30d5\u30a1\u30af\u30c8\u6271\u3044\u3057\u306a\u3044\u3002",
+      "collection_limits": {
+        "theme_limit": 3,
+        "active_sources": 3,
+        "candidate_probe_sources": 1,
+        "items_per_source": 2,
+        "report_items": 4
+      },
+      "themes": [
+        {
+          "key": "ai_semiconductors",
+          "label": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e",
+          "query": "AI semiconductors, HBM memory, wafer fab equipment, Nvidia, Micron, Applied Materials, Lam Research market news",
+          "tickers": [
+            "AMAT",
+            "COHR",
+            "INFQ",
+            "MU",
+            "QBTS",
+            "RGTI"
+          ],
+          "fallback_etf": "SMH",
+          "priority": 106
+        }
+      ],
+      "items": [
+        {
+          "source": "SMH",
+          "source_label": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e",
+          "title": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e\u306e\u95a2\u9023\u30cb\u30e5\u30fc\u30b9\u30e1\u30e2",
+          "publisher": "Google News RSS",
+          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQX1dqT1BncDJLRXdpd19xUk9kQURjRDVXck5IdTItcHpINHgxVFVNU01hd3Q0czFLZlVwaXNUSzBQSW5jbjBIZWdYeUc3bHl6WXZlVGRIUXdsNExrUFYtYlhhM2dJT21yYUNxMURkMG9Bb014d0E1a21QNmVYMHhWQ0FmdVIzQ2JOUFpQaDJlcGNJVi1NeFdKSDZWWm50Wko2MXVsMFk2bl9FcENmX2ZmWHZB?oc=5",
+          "domain": "news.google.com",
+          "published_at": "Wed, 24 Jun 2026 04:07:56 GMT",
+          "summary": "- \u8981\u7d04: AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e\u3067\u306f\u3001\u534a\u5c0e\u4f53\u30fbAI\u304c\u4e3b\u306a\u8ad6\u70b9\u3002\u53c2\u7167\u898b\u51fa\u3057\u306f \u300cForget Nvidia: Philippe Laffont reveals his preferred way to gain AI exposure\u300d\u3002\n- \u95a2\u4fc2: \u95a2\u9023\u9298\u67c4\u306f AMAT, COHR, INFQ, MU, QBTS, RGTI\u3002\u4fdd\u6709\u30fb\u76e3\u8996\u9298\u67c4\u306e\u500b\u5225\u6750\u6599\u3068\u3044\u3046\u3088\u308a\u3001\u540c\u3058\u30c6\u30fc\u30de\u5185\u306e\u5730\u5408\u3044\u3068\u8cc7\u91d1\u306e\u5411\u304d\u3092\u898b\u308b\u53c2\u8003\u6750\u6599\u3002\n- \u6ce8\u610f\u70b9: RSS\u898b\u51fa\u3057\u3068\u77ed\u3044\u8aac\u660e\u304b\u3089\u4f5c\u3063\u305f\u672a\u691c\u8a3c\u30e1\u30e2\u3002\u58f2\u8cb7\u5224\u65ad\u3067\u306f\u3001\u500b\u5225\u9298\u67c4\u306e\u6c7a\u7b97\u3001\u30ac\u30a4\u30c0\u30f3\u30b9\u3001\u4fa1\u683c\u3001\u51fa\u6765\u9ad8\u3067\u518d\u78ba\u8a8d\u3059\u308b\u3002",
+          "key_point": "- \u8981\u7d04: AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e\u3067\u306f\u3001\u534a\u5c0e\u4f53\u30fbAI\u304c\u4e3b\u306a\u8ad6\u70b9\u3002\u53c2\u7167\u898b\u51fa\u3057\u306f \u300cForget Nvidia: Philippe Laffont reveals his preferred way to gain AI exposure\u300d\u3002\n- \u95a2\u4fc2: \u95a2\u9023\u9298\u67c4\u306f AMAT, COHR, INFQ, MU, QBTS, RGTI\u3002\u4fdd\u6709\u30fb\u76e3\u8996\u9298\u67c4\u306e\u500b\u5225\u6750\u6599\u3068\u3044\u3046\u3088\u308a\u3001\u540c\u3058\u30c6\u30fc\u30de\u5185\u306e\u5730\u5408\u3044\u3068\u8cc7\u91d1\u306e\u5411\u304d\u3092\u898b\u308b\u53c2\u8003\u6750\u6599\u3002\n- \u6ce8\u610f\u70b9: RSS\u898b\u51fa\u3057\u3068\u77ed\u3044\u8aac\u660e\u304b\u3089\u4f5c\u3063\u305f\u672a\u691c\u8a3c\u30e1\u30e2\u3002\u58f2\u8cb7\u5224\u65ad\u3067\u306f\u3001\u500b\u5225\u9298\u67c4\u306e\u6c7a\u7b97\u3001\u30ac\u30a4\u30c0\u30f3\u30b9\u3001\u4fa1\u683c\u3001\u51fa\u6765\u9ad8\u3067\u518d\u78ba\u8a8d\u3059\u308b\u3002",
+          "source_articles": [
+            {
+              "title": "Forget Nvidia: Philippe Laffont reveals his preferred way to gain AI exposure - Invezz",
+              "source": "Invezz",
+              "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQX1dqT1BncDJLRXdpd19xUk9kQURjRDVXck5IdTItcHpINHgxVFVNU01hd3Q0czFLZlVwaXNUSzBQSW5jbjBIZWdYeUc3bHl6WXZlVGRIUXdsNExrUFYtYlhhM2dJT21yYUNxMURkMG9Bb014d0E1a21QNmVYMHhWQ0FmdVIzQ2JOUFpQaDJlcGNJVi1NeFdKSDZWWm50Wko2MXVsMFk2bl9FcENmX2ZmWHZB?oc=5",
+              "published_at": "Wed, 24 Jun 2026 04:07:56 GMT",
+              "summary": "Forget Nvidia: Philippe Laffont reveals his preferred way to gain AI exposure Invezz"
+            }
+          ],
+          "relevance_score": 2.0,
+          "theme": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e",
+          "tickers": [
+            "AMAT",
+            "COHR",
+            "INFQ",
+            "MU",
+            "QBTS",
+            "RGTI"
+          ]
+        }
+      ],
+      "source_stats": [
+        {
+          "value": "SMH",
+          "label": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e",
+          "status": "active",
+          "priority": 106,
+          "hit_count": 10,
+          "selected_count": 12,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-25T13:00:26.224504"
+        },
+        {
+          "value": "XLI",
+          "label": "AI\u30c7\u30fc\u30bf\u30bb\u30f3\u30bf\u30fc\u96fb\u529b\u30fb\u51b7\u5374\u30a4\u30f3\u30d5\u30e9",
+          "status": "active",
+          "priority": 93,
+          "hit_count": 6,
+          "selected_count": 6,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-12T11:42:44.411880"
+        },
+        {
+          "value": "IGV",
+          "label": "\u30af\u30e9\u30a6\u30c9\u30fb\u30a8\u30f3\u30bf\u30fc\u30d7\u30e9\u30a4\u30ba\u30bd\u30d5\u30c8\u30a6\u30a7\u30a2",
+          "status": "active",
+          "priority": 83,
+          "hit_count": 7,
+          "selected_count": 7,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-12T11:42:44.864098"
+        },
+        {
+          "value": "SPY",
+          "label": "US broad market",
+          "status": "candidate",
+          "priority": 100,
+          "hit_count": 1,
+          "selected_count": 2,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-06T09:22:33.544666"
+        },
+        {
+          "value": "QQQ",
+          "label": "Nasdaq / growth",
+          "status": "candidate",
+          "priority": 95,
+          "hit_count": 1,
+          "selected_count": 2,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-06T09:22:33.740347"
+        },
+        {
+          "value": "XLK",
+          "label": "technology",
+          "status": "candidate",
+          "priority": 80,
+          "hit_count": 1,
+          "selected_count": 1,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-06T09:22:34.164153"
+        },
+        {
+          "value": "XLF",
+          "label": "financials",
+          "status": "candidate",
+          "priority": 65,
+          "hit_count": 1,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-06T09:22:34.550934"
+        },
+        {
+          "value": "IBB",
+          "label": "biotech / healthcare",
+          "status": "candidate",
+          "priority": 60,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        },
+        {
+          "value": "XLE",
+          "label": "energy",
+          "status": "candidate",
+          "priority": 60,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        },
+        {
+          "value": "XLY",
+          "label": "consumer discretionary",
+          "status": "candidate",
+          "priority": 55,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        },
+        {
+          "value": "ITA",
+          "label": "defense / aerospace",
+          "status": "candidate",
+          "priority": 50,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        },
+        {
+          "value": "ARKK",
+          "label": "disruptive growth",
+          "status": "candidate",
+          "priority": 45,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        }
+      ]
+    }
   }
 ]

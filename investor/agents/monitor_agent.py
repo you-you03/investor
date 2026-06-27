@@ -376,8 +376,9 @@ class MonitorAgent:
         # position table is the only Slack message that shows the full book.
         self.slack.send_portfolio_summary(enriched_positions, alert_records, market_news=market_news)
 
-        # Separate HIGH alerts only on the legacy path. With Supabase enabled,
-        # scripts/send_pending_notifications.py sends the queued alert rows.
+        # Separate HIGH alerts only on the legacy local path. With Supabase
+        # enabled, alert rows are persisted for dashboard/task processing while
+        # Slack keeps the same compact portfolio summary format.
         if not supabase_is_enabled():
             position_map = {p["ticker"]: p for p in enriched_positions}
             for record in alert_records:

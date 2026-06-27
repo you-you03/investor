@@ -111,10 +111,12 @@ Print the full analysis as a readable Markdown report. End with a section titled
 ## Step 6: Spearman 相関検証（score_snapshots から）
 
 ```bash
+.venv/bin/python scripts/fetch_returns.py
 .venv/bin/python scripts/validate_scores.py
 ```
 
-スクリプトが `reports/validation/validation_{date}.md` を出力し、同時に stdout にも内容を表示する。
+先に `fetch_returns.py` が `score_snapshots.json` の満期済み `week1`〜`week8` を取得・更新する。
+その後、`validate_scores.py` が `reports/validation/validation_{date}.md` を出力し、同時に stdout にも内容を表示する。
 
 出力を読み込み、以下をキャリブレーション提案に統合する:
 
@@ -135,6 +137,10 @@ Step 5 の **## Calibration Recommendations** に以下を追加:
 | 2週後 | ... | ... |
 | 3週後 | ... | ... |
 | 4週後 | ... | ... |
+| 5週後 | ... | ... |
+| 6週後 | ... | ... |
+| 7週後 | ... | ... |
+| 8週後 | ... | ... |
 
 **ファクター調整提案**（week4 ρ 基準）:
 - {最強ファクター}: ρ={value} → ウェイト引き上げ検討

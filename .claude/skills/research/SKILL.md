@@ -78,6 +78,7 @@ State the regime before moving on.
 .venv/bin/python scripts/tool.py get_52w_breakouts
 .venv/bin/python scripts/tool.py get_earnings_surprises
 .venv/bin/python scripts/tool.py get_contrarian_screener
+.venv/bin/python skills/screen.py
 ```
 
 Also load `data/watchlist.json` and treat active watchlist tickers as priority candidates.
@@ -92,18 +93,28 @@ Also load `data/watchlist.json` and treat active watchlist tickers as priority c
 
 ## Step 3: Select 15–20 candidates
 
-From movers + screeners + watchlist, select promising tickers using this priority order:
+From movers + screeners + watchlist + the wide screen output, select promising tickers using
+two momentum lanes:
+
+- **EARLY_MOMENTUM**: "これから上がるかも" — catalyst/fundamentals are attractive, but price has not yet extended.
+- **CHASE_MOMENTUM**: "すでに動いているがまだ乗れる" — momentum is confirmed, but extension risk is still acceptable.
+
+Use this priority order:
 
 1. **ウォッチリスト（最大10件を優先スロット）** — 既に調査済みで追跡中の銘柄を必ず含める
-2. **52週高値ブレイクアウト銘柄** — `get_52w_breakouts` の出力から有望株を追加
-3. **決算サプライズ銘柄** — `get_earnings_surprises` の出力から追加
-4. **gainers + actives** — 残りスロットをモメンタム銘柄で埋める
+2. **初動モメンタム候補** — `skills/screen.py` の wide screen から、RSI 45–65 / return_5d -2〜+6% / return_20d -5〜+12% / EMA20近辺 / MACD改善 / BB収縮・初期拡大の銘柄
+3. **52週高値ブレイクアウト銘柄** — `get_52w_breakouts` の出力から、追いかけ可能な有望株を追加
+4. **決算サプライズ銘柄** — `get_earnings_surprises` の出力から、株価反応が浅いものと継続モメンタム銘柄を両方追加
+5. **gainers + actives** — 残りスロットを追いかけモメンタム銘柄で埋める
 
 各候補の選別基準（以下を満たすものを優先）:
-- Price up >3% intraday with volume spike >1.5x average
+- EARLY_MOMENTUM: RSI 45–65、5日騰落 -2〜+6%、20日騰落 -5〜+12%、EMA20から±6%以内、出来高が静かに増加またはBB収縮
+- CHASE_MOMENTUM: Price up >3% intraday with volume spike >1.5x average, RS強、ただしRSI≥70 / 5日+10%以上 / EMA20乖離+8%以上は過熱として減点
 - Small/mid-cap ($500M–$20B market cap)
 - Clear momentum or catalyst story
 - Exclude ETFs, inverse funds, and tickers with <$1M daily volume
+
+**重要**: 初動モメンタムが完璧なら、追いかけモメンタムが未発生でも候補に残す。逆に、追いかけモメンタムが完璧なら、初動でなくても候補に残す。ただし、過熱した追いかけは `extension_risk=HIGH` として後段でWAIT/PASSを検討する。
 
 **上限: 20銘柄。全銘柄をStep 4で深研究する。**
 
@@ -147,7 +158,7 @@ Check `.env` for `PERPLEXITY_API_KEY` / `XAI_API_KEY`. If present, also run:
 
 | Axis | Weight | Signals |
 |---|---|---|
-| Momentum | 25% | RSI, MACD, % change, volume vs avg. `STRONG_OUTPERFORM` rs_signal → +1pt; `STRONG_UNDERPERFORM` → −2pt |
+| Momentum | 25% | **EARLY_MOMENTUM と CHASE_MOMENTUM を両方評価**。`STRONG_OUTPERFORM` rs_signal → chase +1pt; `STRONG_UNDERPERFORM` → −2pt |
 | Fundamentals | 20% | revenue_growth_yoy, earnings_growth_yoy, forward_pe. forward_pe > 50 → add "高バリュエーションリスク"; peg_ratio > 3 → add "成長織り込み済みリスク" |
 | Catalyst | 25% | Upcoming events, analyst upside %. days_until_earnings ≤ 14 → +1pt + "決算前カタリスト" + "決算ギャップリスク". No catalyst → cap at 6. DOWNTREND/HIGH_FEAR → −1~2pts |
 | Technical | 15% | RSI positioning, MACD crossovers, BB squeeze, EMA20/50 alignment. **`tf_warning=true` → −1pt** (上位足逆向きペナルティ) |
@@ -161,15 +172,42 @@ Check `.env` for `PERPLEXITY_API_KEY` / `XAI_API_KEY`. If present, also run:
 
 Weighted total: `momentum×0.25 + fundamentals×0.20 + catalyst×0.25 + technical×0.15 + sentiment×0.15`
 
+### Dual momentum mode evaluation
+
+`get_technical_indicators` の `setup_metrics` を使い、以下を必ず評価する:
+
+| Mode | 高評価条件 | 減点条件 |
+|---|---|---|
+| `EARLY_MOMENTUM` | RSI 45–65、return_5d -2〜+6%、return_20d -5〜+12%、pct_above_ema20 -3〜+6%、MACD改善、BB収縮/初期拡大、カタリストが未織り込み | カタリスト不在、ファンダ劣化、RSが明確に弱い |
+| `CHASE_MOMENTUM` | RS強、出来高>1.5x、EMA20/50上、RSI 55–75、材料確認済み | RSI≥70、return_5d≥10%、return_20d≥20%、EMA20乖離≥8%、52週高値3%以内で材料弱い |
+
+判定ルール:
+- `early_momentum_score` と `chase_momentum_score` をそれぞれ1–10で出す
+- `score_breakdown.momentum` は原則 `max(early, chase)`。ただし `extension_risk=HIGH` かつ catalyst がSTRONGでない場合は chase 側を最大7にキャップ
+- `primary_mode`: `EARLY_MOMENTUM` / `CHASE_MOMENTUM` / `BALANCED` / `NONE`
+- 初動が完璧なら、追いかけが未発生でもGO候補にできる。追いかけが完璧なら、初動でなくてもGO候補にできる
+- `conviction` は `HIGH` / `MEDIUM` / `LOW` で明示する
+- `conviction_rationale` では、二つのモードのどちらが確信度を上げ/下げしたかを明示する
+
 ATR target: use `get_atr_targets` as base. Imminent earnings ≤14d + strong fundamentals → 3.0×ATR. No catalyst → 1.5×ATR. Default → 2.0×ATR, stop = entry−1.0×ATR. Clear support closer than 1×ATR → use that as stop_loss.
 
 ### Return ONLY this JSON (no prose, no markdown wrapping):
 
 ```json
 {
-  "ticker": "...", "company_name": "...", "score": 0.0, "current_price": 0.00,
+  "ticker": "...", "company_name": "...", "score": 0.0, "conviction": "MEDIUM", "current_price": 0.00,
   "score_breakdown": {"momentum": 0, "fundamentals": 0, "catalyst": 0, "technical": 0, "sentiment": 0},
   "score_evidence": {"momentum": "...", "fundamentals": "...", "catalyst": "...", "technical": "...", "sentiment": "..."},
+  "momentum_profile": {
+    "primary_mode": "EARLY_MOMENTUM",
+    "early_momentum_score": 0,
+    "chase_momentum_score": 0,
+    "extension_risk": "LOW",
+    "early_view": "...",
+    "chase_view": "...",
+    "score_implication": "..."
+  },
+  "conviction_rationale": "...",
   "thesis": "2–3 sentence thesis.",
   "key_catalysts": [], "key_risks": [],
   "entry_zone": "XXX–YYY", "target_price": 0.00, "stop_loss": 0.00,
@@ -202,6 +240,7 @@ Output format for each candidate:
   "ticker": "NVDA",
   "company_name": "NVIDIA Corporation",
   "score": 8.2,
+  "conviction": "HIGH",
   "current_price": 875.00,
   "score_breakdown": {"momentum": 9, "fundamentals": 8, "catalyst": 9, "technical": 7, "sentiment": 8},
   "score_evidence": {
@@ -212,6 +251,16 @@ Output format for each candidate:
     "sentiment": "Analyst consensus strong_buy (56 analysts), X posts 80% bullish",
     "conviction_floor_reason": "Revenue +122% YoY → MEDIUM floor applied"
   },
+  "momentum_profile": {
+    "primary_mode": "EARLY_MOMENTUM",
+    "early_momentum_score": 9,
+    "chase_momentum_score": 5,
+    "extension_risk": "LOW",
+    "early_view": "RSI 58、5日+2%、EMA20近辺、MACD改善。材料に対して価格反応が浅い。",
+    "chase_view": "RSは改善中だが出来高急増や大幅上昇は未発生。",
+    "score_implication": "初動モメンタム主導でMomentum 9。追いかけ未発生は減点ではなく、早期エントリー余地として評価。"
+  },
+  "conviction_rationale": "HIGH: 初動モメンタムが強く、ファンダ/カタリストも高評価。追いかけモメンタム未発生でもGO候補。",
   "thesis": "2–3 sentence thesis explaining why this is compelling right now.",
   "key_catalysts": ["GTC conference", "H200 ramp"],
   "key_risks": ["Stretched valuation", "China export risk"],
@@ -305,9 +354,9 @@ Score snapshot saved:
 
 ## 候補銘柄一覧
 
-| Ticker | スコア | Momentum | Fundmntl | Catalyst | Technical | Sentiment | 推奨 |
-|---|---|---|---|---|---|---|---|
-| NVDA | **8.2** | 9 | 8 | 9 | 7 | 8 | ✅ BUY候補 |
+| Ticker | スコア | 確信度 | Mode | Early | Chase | Ext Risk | Fundmntl | Catalyst | 推奨 |
+|---|---|---|---|---|---|---|---|---|---|
+| NVDA | **8.2** | HIGH | EARLY | 9 | 5 | LOW | 8 | 9 | ✅ BUY候補 |
 
 （スコア降順）
 
@@ -330,6 +379,7 @@ Score snapshot saved:
 | 項目 | 値 |
 |---|---|
 | 現在値 | ${current_price:,.2f} |
+| 確信度 | {conviction} |
 | エントリーゾーン | ${entry_zone} |
 | 目標値 | ${target_price:,.2f} |
 | ストップ | ${stop_loss:,.2f} |
@@ -338,6 +388,9 @@ Score snapshot saved:
 | 決算まで | {days_until_earnings} 日 |
 | アナリスト上値余地 | {analyst_upside_pct:.1f}% |
 | RS シグナル | {rs_signal} (1m: {rs_1m:+.1f}%, 3m: {rs_3m:+.1f}%) |
+| モメンタムモード | {momentum_profile.primary_mode} |
+| 初動 / 追いかけ | {momentum_profile.early_momentum_score} / {momentum_profile.chase_momentum_score} |
+| 過熱リスク | {momentum_profile.extension_risk} |
 
 **スコア根拠**:
 - Momentum ({score_breakdown.momentum}/10): {score_evidence.momentum}
@@ -345,6 +398,13 @@ Score snapshot saved:
 - Catalyst ({score_breakdown.catalyst}/10): {score_evidence.catalyst}
 - Technical ({score_breakdown.technical}/10): {score_evidence.technical}
 - Sentiment ({score_breakdown.sentiment}/10): {score_evidence.sentiment}
+
+**モメンタム見解**:
+- 初動: {momentum_profile.early_view}
+- 追いかけ: {momentum_profile.chase_view}
+- スコア/確信度への影響: {momentum_profile.score_implication}
+
+**確信度理由**: {conviction_rationale}
 
 **カタリスト**: {key_catalysts をカンマ区切り}
 **リスク**: {key_risks をカンマ区切り}

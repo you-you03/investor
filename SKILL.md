@@ -1,6 +1,6 @@
 # investor Skills
 
-This project exposes 4 Claude Code skills, invocable via natural language.
+This project exposes 5 Claude Code skills, invocable via natural language.
 
 ## /research — Market Research Scan
 
@@ -18,6 +18,19 @@ python skills/research.py [--parallel/--sequential] [--tickers NVDA,TSLA] [--dry
 ```
 
 **Output**: `run_id` (UUID) saved to research_history.json
+
+---
+
+## /score-reliability — Score Reliability Review
+
+**Triggers**: 「スコアの信頼性を確認して」「EARLY_MOMENTUMとCHASE_MOMENTUMで何が効くか見て」「factorごとの予測力を振り返って」
+
+**What it does**:
+1. Refreshes outcomes and follow-up returns
+2. Reads `score_snapshots.json` / latest validation report
+3. Evaluates 1〜8週リターンでの予測力を確認
+4. Breaks reliability down by momentum mode and score factor
+5. Proposes calibration changes for `research_prompts.py`
 
 ---
 

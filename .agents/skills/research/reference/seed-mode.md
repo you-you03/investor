@@ -51,7 +51,10 @@ Run all 9 tools for `{TICKER}`:
 
 ## Seed Step 4: Score (same rubric as standard Step 5)
 
-Use the same 5-axis scoring. Compute weighted total. Note: seed mode always proceeds regardless of score (user already flagged this ticker).
+Use the same 5-axis scoring and the same dual momentum mode evaluation as standard research.
+Compute `early_momentum_score`, `chase_momentum_score`, `extension_risk`, `primary_mode`,
+`momentum_profile`, and `conviction_rationale`. Note: seed mode always proceeds regardless of
+score (user already flagged this ticker).
 
 ---
 
@@ -69,6 +72,9 @@ If previous research exists for this ticker:
   スコア: {new_score} ({score_delta:+.1f}) / 現在値: ${current_price}
   変化点:
   - RSI: {prev_rsi} → {new_rsi}
+  - Momentum mode: {prev_primary_mode} → {new_primary_mode}
+  - Early / Chase: {prev_early_score}/{prev_chase_score} → {new_early_score}/{new_chase_score}
+  - Extension risk: {prev_extension_risk} → {new_extension_risk}
   - MACD: {prev_macd_signal} → {new_macd_signal}
   - Revenue YoY: {prev_revenue_growth} → {new_revenue_growth}
   → エントリーゾーン: {new_entry_zone} / 目標値: ${new_target}（ATR {multiplier}×）

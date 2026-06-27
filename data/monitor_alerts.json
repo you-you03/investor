@@ -442,5 +442,18 @@
     "unrealized_pnl_pct": 12.77,
     "stop_loss": 469.74,
     "target_price": 530.67
+  },
+  {
+    "date": "2026-06-25",
+    "ticker": "SMTC",
+    "alert_type": "STOP_BREACH",
+    "severity": "HIGH",
+    "message": "Price $158.48 hit stop loss $160.44",
+    "current_price": 158.47999572753906,
+    "entry_price": 162.5,
+    "unrealized_pnl_pct": -2.47,
+    "stop_loss": 160.44,
+    "target_price": 203.3,
+    "trailing_stop_price": null
   }
 ]

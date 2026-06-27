@@ -135,7 +135,7 @@ investor は「毎日の米国株投資判断をAIで自動化する」システ
 - **QQQ / セクターETF補正**: SPYだけでなく、QQQと銘柄ごとのセクターETFに対するalphaを見る
 - **signal_type別の平均Alpha**: どの入口ルールが効いているか？
 - **保有日数別の傾向**: 何日持つと期待値が落ちるか？
-- **3週後KPI**: 1週後はノイズ扱い。3週後alphaを主指標、4週後を補助指標にする
+- **3週後KPI**: 1週後はノイズ扱い。3週後alphaを主指標、4週後と8週後を補助指標にする
 - **直近EV劣化**: 最近5件の期待値が崩れていないか？
 - **提案数と実約定数の分離**: 提案の質と執行結果を混ぜない
 
@@ -143,8 +143,8 @@ investor は「毎日の米国株投資判断をAIで自動化する」システ
 
 | ファイル | 内容 |
 |---|---|
-| `scripts/fetch_returns.py` | score_snapshots の1〜4週後リターン、SPY/QQQ/セクター/VIX/10年金利を更新 |
-| `scripts/validate_scores.py` | 3週後KPI、確信度×SPY変動率マトリクス、セクター補正レポート |
+| `scripts/fetch_returns.py` | score_snapshots の1〜8週後リターン、SPY/QQQ/セクター/VIX/10年金利を更新 |
+| `scripts/validate_scores.py` | 3週後KPI、確信度×SPY変動率、モメンタムモード別、セクター補正レポート |
 | `scripts/show_calibration_stats.py` | 判断前に読む校正レポート |
 | `reports/review/review_YYYY-MM-DD.md` | 提案サマリー / 実約定サマリー / B枠比較を保存 |
 

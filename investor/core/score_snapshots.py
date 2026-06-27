@@ -14,7 +14,8 @@ from investor.utils.logger import get_logger
 logger = get_logger(__name__)
 
 SNAPSHOTS_PATH = Path("data/score_snapshots.json")
-WEEK_KEYS = ("week1", "week2", "week3", "week4")
+TRACKING_HORIZON_WEEKS = (1, 2, 3, 4, 5, 6, 7, 8)
+WEEK_KEYS = tuple(f"week{week}" for week in TRACKING_HORIZON_WEEKS)
 
 CONVICTION_SCORE = {
     "HIGH": 8.0,
@@ -126,7 +127,10 @@ def _load_snapshots(path: Path | None = None) -> dict[str, Any]:
     target = path or SNAPSHOTS_PATH
     if target.exists():
         try:
-            return json.loads(target.read_text())
+            data = json.loads(target.read_text())
+            for snapshot in data.get("snapshots", []):
+                ensure_tracking_horizons(snapshot)
+            return data
         except Exception:
             pass
     return {"snapshots": []}
@@ -154,8 +158,8 @@ def _fetch_price(ticker: str) -> tuple[float | None, str]:
 
 def _empty_weeks(scored_at: date) -> dict[str, dict[str, Any]]:
     return {
-        f"week{i}": {
-            "target_date": (scored_at + timedelta(days=7 * i)).isoformat(),
+        f"week{week}": {
+            "target_date": (scored_at + timedelta(days=7 * week)).isoformat(),
             "price": None,
             "return_pct": None,
             "spy_return_pct": None,
@@ -171,8 +175,30 @@ def _empty_weeks(scored_at: date) -> dict[str, dict[str, Any]]:
             "market_regime": None,
             "fetched_at": None,
         }
-        for i in range(1, 5)
+        for week in TRACKING_HORIZON_WEEKS
     }
+
+
+def ensure_tracking_horizons(snapshot: dict[str, Any]) -> bool:
+    """Backfill missing horizon checkpoints on older snapshot records."""
+    scored_at_raw = snapshot.get("scored_at")
+    if not scored_at_raw:
+        return False
+
+    try:
+        scored_at = date.fromisoformat(str(scored_at_raw))
+    except ValueError:
+        return False
+
+    changed = False
+    for week_key, payload in _empty_weeks(scored_at).items():
+        if week_key not in snapshot:
+            snapshot[week_key] = payload
+            changed = True
+        elif snapshot[week_key].get("sector_etf") is None:
+            snapshot[week_key]["sector_etf"] = snapshot.get("sector_etf")
+            changed = True
+    return changed
 
 
 def add_score_snapshots(
@@ -182,7 +208,7 @@ def add_score_snapshots(
     results: list[dict[str, Any]],
     scored_at: date | None = None,
 ) -> int:
-    """Append scored tickers to score_snapshots.json for 1-4 week tracking."""
+    """Append scored tickers to score_snapshots.json for multi-week tracking."""
     scored_date = scored_at or date.today()
     data = _load_snapshots()
     snapshots = data.setdefault("snapshots", [])
@@ -220,6 +246,7 @@ def add_score_snapshots(
             continue
 
         conviction = infer_conviction(score=score, conviction=result.get("conviction"))
+        momentum_profile = result.get("momentum_profile") or {}
         snapshot = {
             "run_id": run_id,
             "source": source,
@@ -229,6 +256,12 @@ def add_score_snapshots(
             "score": round(score, 2),
             "conviction": conviction,
             "score_breakdown": result.get("score_breakdown") or {},
+            "momentum_profile": momentum_profile,
+            "momentum_primary_mode": momentum_profile.get("primary_mode") or "",
+            "early_momentum_score": momentum_profile.get("early_momentum_score"),
+            "chase_momentum_score": momentum_profile.get("chase_momentum_score"),
+            "extension_risk": momentum_profile.get("extension_risk") or "",
+            "conviction_rationale": result.get("conviction_rationale") or "",
             "rank_in_run": rank,
             "total_scored_in_run": total,
             "price_at_score": round(price_at_score, 4),

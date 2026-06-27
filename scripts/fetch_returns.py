@@ -2,7 +2,7 @@
 """
 fetch_returns.py — 週次リターン取得スクリプト
 
-score_snapshots.json の week1〜week4 マイルストーンのうち、
+score_snapshots.json の各マイルストーンのうち、
 target_date <= today かつ fetched_at is None のものを一括更新する。
 
 実行: .venv/bin/python scripts/fetch_returns.py
@@ -18,10 +18,14 @@ import yfinance as yf
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from investor.core.score_snapshots import classify_market_regime, sector_etf_for_ticker
+from investor.core.score_snapshots import (
+    WEEK_KEYS,
+    classify_market_regime,
+    ensure_tracking_horizons,
+    sector_etf_for_ticker,
+)
 
 SNAPSHOTS_PATH = Path(__file__).parent.parent / "data" / "score_snapshots.json"
-WEEK_KEYS = ["week1", "week2", "week3", "week4"]
 
 
 def fetch_close_on_or_before(ticker: str, target: date) -> float | None:
@@ -109,6 +113,7 @@ def process_snapshots() -> None:
     snapshots = data.get("snapshots", [])
     today = date.today()
     updated = 0
+    normalized = 0
 
     # Benchmark caches. Keyed by symbol + scored_at + target.
     return_cache: dict[tuple[str, str, str], float | None] = {}
@@ -117,6 +122,8 @@ def process_snapshots() -> None:
     print(f"Checking score_snapshots for matured milestones... (today={today})")
 
     for snap in snapshots:
+        if ensure_tracking_horizons(snap):
+            normalized += 1
         ticker = snap.get("ticker", "?")
         scored_at_str = snap.get("scored_at", "")
         price_at_score = snap.get("price_at_score")
@@ -221,6 +228,8 @@ def process_snapshots() -> None:
         json.dump(data, f, indent=2, ensure_ascii=False)
 
     print(f"\nUpdated {updated} milestone(s) across score_snapshots.json")
+    if normalized:
+        print(f"Normalized {normalized} existing snapshot(s) with new horizon checkpoints")
     sync_score_snapshots_to_supabase()
 
 

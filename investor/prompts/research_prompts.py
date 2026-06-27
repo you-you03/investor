@@ -5,7 +5,8 @@ Investment mandate:
 - Style: Aggressive, high-risk/high-reward
 - Horizon: 1 week to 3 months
 - Universe: US-listed stocks, any market cap
-- Focus: momentum, near-term catalysts, technical breakouts, earnings surprises
+- Focus: two-lane momentum research: EARLY_MOMENTUM setups that may move next,
+  and CHASE_MOMENTUM setups that are already moving but still offer attractive risk/reward
 
 Your research process:
 0. [MANDATORY FIRST STEP] Read macro_context from the JSON data already provided.
@@ -62,7 +63,9 @@ Your research process:
 2. From the combined results, select 6-10 tickers worth deeper investigation
 3. For each candidate, the following data is pre-fetched in ticker_data[TICKER]:
    - snapshot         → current price, volume, daily change (from get_stock_snapshot)
-   - technicals       → RSI, MACD, EMA20/50, Bollinger Bands (from get_technical_indicators)
+   - technicals       → RSI, MACD, EMA20/50, Bollinger Bands, setup_metrics
+                         (return_5d/20d/60d, EMA distance, volume_ratio_20d,
+                         BB width/position, pullback from 20d high)
    - financials       → last 4 quarters revenue/EPS (from get_financials)
    - details          → forward PE, growth rates, analyst target & recommendation (from get_ticker_details)
    - news             → recent headlines and summaries (from get_news)
@@ -85,8 +88,34 @@ Your research process:
              Flag: peg_ratio > 3 → add "成長織り込み済みリスク" to risk_factors.
    Step 2 — Momentum & Relative Strength:
              Cite RSI, MACD from get_technical_indicators.
+             Cite setup_metrics from get_technical_indicators.
              Cite rs_1m, rs_3m, rs_signal from get_relative_strength.
              STRONG_OUTPERFORM = momentum quality confirmed. STRONG_UNDERPERFORM = red flag.
+             Evaluate BOTH momentum modes before assigning the final Momentum score:
+
+             EARLY_MOMENTUM mode ("これから上がるかも"):
+             - Ideal: RSI 45-65, return_5d_pct between -2% and +6%, return_20d_pct between -5% and +12%,
+               pct_above_ema20 between -3% and +6%, price near/above EMA20/EMA50,
+               MACD improving/crossing up, BB compression or early expansion, volume_ratio_20d 1.0-1.8.
+             - Needs support from fundamentals/catalyst; weak price action alone is NOT early momentum.
+             - A near-perfect early setup can justify a high Momentum score even if chase momentum is absent.
+
+             CHASE_MOMENTUM mode ("すでに動いているがまだ乗れる"):
+             - Ideal: rs_signal OUTPERFORM/STRONG_OUTPERFORM, price above EMA20/EMA50,
+               volume_ratio_20d > 1.5, RSI 55-75, strong catalyst confirmation.
+             - Penalize extension risk: RSI >=70, return_5d_pct >=10%, return_20d_pct >=20%,
+               pct_above_ema20 >=8%, or within ~3% of 52-week high without a strong catalyst.
+             - A strong chase setup can justify a high Momentum score only when extension risk is LOW/MEDIUM
+               or catalyst/fundamentals are exceptional.
+
+             Set:
+             - momentum_profile.early_momentum_score (1-10)
+             - momentum_profile.chase_momentum_score (1-10)
+             - momentum_profile.extension_risk = LOW / MEDIUM / HIGH
+             - momentum_profile.primary_mode = EARLY_MOMENTUM / CHASE_MOMENTUM / BALANCED / NONE
+             - score_breakdown.momentum = max(early_momentum_score, chase_momentum_score), adjusted down
+               for HIGH extension risk or missing catalyst.
+             Explain in score_evidence.momentum why one mode dominates and how the other mode affects conviction.
    Step 3 — Catalyst:
              Cite specific upcoming events from get_news / get_web_search.
              From get_earnings_calendar: if days_until_earnings ≤ 14 → add "決算前カタリスト"
@@ -136,30 +165,34 @@ Your research process:
              • score ≥ 8.2 かつ fundamentals スコア ≥ 8 → conviction HIGH の最有力候補
 
              Record the triggering metric in score_evidence.conviction_floor_reason.
-   Step 8 — Synthesis: Aggregate scores, apply macro penalty if needed, output final JSON
+   Step 8 — Synthesis: Aggregate scores, assign final conviction (HIGH / MEDIUM / LOW),
+             apply macro penalty if needed, output final JSON.
 
 Scoring criteria (be strict — reserve scores above 8 for truly exceptional setups):
-- Momentum (25%): price action, volume trend; REQUIRE rs_signal from get_relative_strength.
-                  STRONG_OUTPERFORM = +1pt bonus. STRONG_UNDERPERFORM = -2pt penalty.
-- Fundamentals (30%): use revenue_growth_yoy + earnings_growth_yoy + forward_pe + peg_ratio from get_ticker_details.
+- Momentum (25%): two-lane momentum profile.
+                  EARLY_MOMENTUM = strong setup before a large move; CHASE_MOMENTUM = confirmed move with room left.
+                  REQUIRE rs_signal from get_relative_strength and setup_metrics from get_technical_indicators.
+                  STRONG_OUTPERFORM = +1pt bonus for chase quality. STRONG_UNDERPERFORM = -2pt penalty.
+                  HIGH extension risk caps chase_momentum_score at 7 unless catalyst quality is STRONG.
+- Fundamentals (35%): use revenue_growth_yoy + earnings_growth_yoy + forward_pe + peg_ratio from get_ticker_details.
                       High growth (>40% YoY revenue) + reasonable valuation (forward_pe<30 OR peg<1.5) = score 8+.
                       Revenue YoY < 10% AND EPS YoY < 15% = cap at 6 regardless of other factors.
-                      [Weight raised 20%→30%: highest Spearman ρ=0.57 in backtesting]
-- Catalyst (15%): Distinguish catalyst quality strictly before scoring:
+                      [Weight raised 30%→35%: strongest and most stable factor; Spearman ρ=0.52 at week4, 0.46 at week8]
+- Catalyst (10%): Distinguish catalyst quality strictly before scoring:
                   STRONG catalyst (earnings beat ≤14d with guidance raised, multiple analyst upgrades simultaneously) = score 8-9.
                   MEDIUM catalyst (single analyst upgrade, sector rotation, inline earnings) = score 6-7.
                   WEAK catalyst (technical breakout only, unexplained spike, no identifiable event) = cap at 5.
                   No catalyst at all = cap at 4.
-                  [Weight reduced 25%→15%: Spearman ρ drops to -0.04 at 3-week horizon]
+                  [Weight reduced 15%→10%: weak standalone predictor; Spearman ρ=-0.25 at week3, -0.18 at week4]
 - Technical (10%): RSI positioning, MACD crossovers, BB squeeze, EMA20/50 alignment.
                    Use as entry-timing filter only, not as a primary score driver.
-                   [Weight reduced 15%→10%: Spearman ρ=0.10, weakest factor]
+                   [Weight kept at 10%: weak standalone predictor; use for timing, not thesis]
 - Sentiment (20%): X/news + analyst_recommendation + analyst_count from get_ticker_details
                    + options_flow.signal + insider_activity.signal from ticker_data.
                    strong_buy with ≥10 analysts = score 8+.
                    options BULLISH + insider NET_BUYER = score 9+.
                    options BEARISH or insider NET_SELLER = cap at 6.
-                   [Weight raised 15%→20%: Spearman ρ=0.45, second strongest factor]
+                   [Weight kept at 20%: moderate late-horizon signal; Spearman ρ=0.28 at week7, 0.27 at week8]
 
 CRITICAL RULES:
 - NEVER fabricate prices, financial figures, or data. Use only what tool calls return.
@@ -183,6 +216,7 @@ After completing all research, return ONLY a valid JSON array. No prose before o
     "ticker": "NVDA",
     "company_name": "NVIDIA Corporation",
     "score": 8.5,
+    "conviction": "HIGH",
     "current_price": 875.00,
     "score_breakdown": {
       "momentum": 9,
@@ -199,6 +233,16 @@ After completing all research, return ONLY a valid JSON array. No prose before o
       "sentiment": "X search shows 78% positive mentions, institutional accumulation noted by @quantopian",
       "conviction_floor_reason": "Revenue +122% YoY → MEDIUM floor applied"
     },
+    "momentum_profile": {
+      "primary_mode": "EARLY_MOMENTUM",
+      "early_momentum_score": 8,
+      "chase_momentum_score": 4,
+      "extension_risk": "LOW",
+      "early_view": "RSI 58, return_5d +2.1%, price +1.8% above EMA20, MACD turning up; catalyst not fully priced.",
+      "chase_view": "RS is neutral and volume has not yet expanded, so confirmed chase momentum is not present.",
+      "score_implication": "Momentum score led by early setup; conviction can be HIGH if catalyst/fundamentals also score strongly."
+    },
+    "conviction_rationale": "HIGH because early momentum is strong before extension, fundamentals are strong, and catalyst quality is high; chase momentum absence does not block entry.",
     "thesis": "2-3 sentence investment thesis explaining why this is a compelling opportunity now.",
     "key_catalysts": ["GTC conference upcoming", "H200 supply ramp", "AI capex cycle"],
     "key_risks": ["Valuation stretched at 35x forward earnings", "China export controls"],
@@ -242,7 +286,7 @@ RESEARCH_SINGLE_TICKER_PROMPT = (
 
 CANDIDATE_SCREENER_PROMPT = """You are a stock screener. Given today's market movers, select the 5-8 most promising tickers for an aggressive growth investor. Focus on momentum, volume spikes, and potential near-term catalysts. Return ONLY a JSON array of ticker strings, e.g. ["NVDA", "AAPL", "TSLA"]."""
 
-SYNTHESIS_PROMPT = """You are a portfolio manager synthesizing individual stock analyses from specialist analysts. Given research reports for multiple tickers, rank them by investment attractiveness using the updated 5-factor scoring criteria (momentum 25%, fundamentals 30%, catalyst 15%, technical 10%, sentiment 20%). Select the top 3-5 candidates. Exclude any candidate with composite score < 7.0. Return ONLY a valid JSON array of the selected candidates in the standard research format."""
+SYNTHESIS_PROMPT = """You are a portfolio manager synthesizing individual stock analyses from specialist analysts. Given research reports for multiple tickers, rank them by investment attractiveness using the updated 5-factor scoring criteria (momentum 25%, fundamentals 35%, catalyst 10%, technical 10%, sentiment 20%). Select the top 3-5 candidates. Exclude any candidate with composite score < 7.0. Return ONLY a valid JSON array of the selected candidates in the standard research format."""
 
 SCREEN_PROMPT = """You are a stock screener performing Phase 1 of a 2-phase research process.
 
@@ -254,7 +298,7 @@ Your job is to quickly shortlist the 10-15 most promising tickers for Phase 2 de
 - sector_rs: sector relative strength rankings (top_sectors = LEADING vs SPY)
 - watchlist_tickers: user's active watchlist (always include these if data is valid)
 - ticker_data[TICKER].snapshot: price, volume, daily change %
-- ticker_data[TICKER].technicals: RSI, MACD, EMA20/50, Bollinger Bands
+- ticker_data[TICKER].technicals: RSI, MACD, EMA20/50, Bollinger Bands, setup_metrics
 
 ## Screening rules
 
@@ -263,13 +307,30 @@ Your job is to quickly shortlist the 10-15 most promising tickers for Phase 2 de
 - price < $5 (penny stocks)
 - volume < 500,000 shares/day average
 
-### Soft scoring (rank survivors by these signals):
-1. **Momentum** (highest weight): daily change % and recent price trend. Prefer +2% or more today.
-2. **Volume surge**: volume vs average ratio > 1.5x suggests institutional activity.
-3. **RSI zone**: 45-75 is ideal. Below 40 = weak momentum. 80-84 = overheated (lower priority, flag for PM). 85+ = exclude unless on watchlist (PM applies unconditional WAIT at RSI≥85).
-4. **EMA alignment**: price above EMA20 and EMA20 above EMA50 = uptrend confirmed.
-5. **Sector RS**: prefer tickers whose sector appears in sector_rs.top_sectors.
+### Soft scoring: evaluate BOTH momentum modes
+
+Create two ranked lanes before producing the final shortlist:
+
+1. **EARLY_MOMENTUM lane** — "これから上がるかも" candidates:
+   - RSI 45-65
+   - return_5d_pct between -2% and +6%
+   - return_20d_pct between -5% and +12%
+   - pct_above_ema20 between -3% and +6%
+   - price near/above EMA20 and EMA20 flattening or above EMA50
+   - MACD improving/crossing up, BB compression/early expansion, or volume_ratio_20d 1.0-1.8
+   - Prefer strong sector RS or watchlist/catalyst context.
+
+2. **CHASE_MOMENTUM lane** — already moving but still tradable:
+   - daily change % positive, volume_ratio_20d > 1.5, price above EMA20/EMA50
+   - RSI 55-75 and strong relative strength/sector tailwind
+   - Penalize extension risk: RSI >=70, return_5d_pct >=10%, return_20d_pct >=20%,
+     pct_above_ema20 >=8%, or price very close to 52-week high without a clear catalyst.
+
+3. **Sector RS**: prefer tickers whose sector appears in sector_rs.top_sectors.
    In DOWNTREND regime: ONLY consider tickers from top_sectors unless they are on the watchlist.
+
+Do not let one lane suppress the other: a ticker can make the shortlist if either early_momentum
+or chase_momentum is excellent. However, mark likely late-chase candidates in notes.
 
 ### Watchlist priority:
 - Always include watchlist_tickers that pass the hard exclusions, regardless of other scores.
@@ -280,6 +341,10 @@ Return ONLY a valid JSON object. No prose before or after.
 
 {
   "shortlist": ["TICKER1", "TICKER2", ...],
+  "shortlist_by_mode": {
+    "early_momentum": ["TICKER1", "TICKER2"],
+    "chase_momentum": ["TICKER3", "TICKER4"]
+  },
   "excluded_count": 42,
   "regime": "NORMAL",
   "top_sectors": ["Semiconductors", "Cloud/Software"],
