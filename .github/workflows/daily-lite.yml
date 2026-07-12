@@ -1,29 +1,31 @@
-name: Investor monitor
+name: Investor daily lite
 
 on:
   workflow_dispatch:
     inputs:
       dry_run:
-        description: "Run without writing history or sending Slack"
+        description: "Run without writing history/watchlist or sending Slack"
         required: false
         default: false
         type: boolean
+      max_research_candidates:
+        description: "Max market seed candidates"
+        required: false
+        default: "5"
+        type: string
   schedule:
-    # US session early pass.
-    # 23:45 JST Mon-Fri == 14:45 UTC Mon-Fri.
-    - cron: "45 14 * * 1-5"
-    # US pre-close pass.
-    # 04:45 JST Tue-Sat == 19:45 UTC Mon-Fri.
-    - cron: "45 19 * * 1-5"
+    # Before the US session, after most Japan daytime work.
+    # 20:30 JST Mon-Fri == 11:30 UTC Mon-Fri.
+    - cron: "30 11 * * 1-5"
 
 concurrency:
-  group: investor-monitor
+  group: investor-daily-lite
   cancel-in-progress: false
 
 jobs:
-  monitor:
+  daily-lite:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     permissions:
       contents: read
     env:
@@ -54,26 +56,31 @@ jobs:
         if: ${{ github.event_name != 'workflow_dispatch' || !inputs.dry_run }}
         run: |
           if [ -z "${SLACK_WEBHOOK_URL}" ]; then
-            echo "::error::SLACK_WEBHOOK_URL secret is required for live monitor runs."
+            echo "::error::SLACK_WEBHOOK_URL secret is required for live daily-lite runs."
             exit 1
           fi
 
-      - name: Run monitor
+      - name: Run daily lite
         run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.dry_run }}" = "true" ]; then
-            python scripts/run_monitor.py --dry-run
-          else
-            python scripts/run_monitor.py
+          MAX_CANDIDATES="${{ inputs.max_research_candidates }}"
+          if [ -z "${MAX_CANDIDATES}" ]; then
+            MAX_CANDIDATES="5"
           fi
 
-      - name: Upload monitor artifacts
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.dry_run }}" = "true" ]; then
+            python skills/daily_lite.py --dry-run --max-research-candidates "${MAX_CANDIDATES}"
+          else
+            python skills/daily_lite.py --max-research-candidates "${MAX_CANDIDATES}"
+          fi
+
+      - name: Upload daily lite artifacts
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: investor-monitor-${{ github.run_id }}
+          name: investor-daily-lite-${{ github.run_id }}
           path: |
-            reports/monitor/
-            data/monitor_alerts.json
-            data/monitor_history.json
+            reports/daily/
+            data/daily_lite_history.json
+            data/watchlist.json
           if-no-files-found: ignore
           retention-days: 30
