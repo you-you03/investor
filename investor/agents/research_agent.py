@@ -165,7 +165,7 @@ def collect_ticker_data(ticker: str) -> dict:
     except Exception as e:
         result["details"] = {"error": str(e)}
     try:
-        result["news"] = json.loads(get_news(ticker, limit=5))
+        result["news"] = json.loads(get_news(ticker))
     except Exception as e:
         result["news"] = {"error": str(e)}
     try:

@@ -29,6 +29,7 @@ WEEK_LABELS = {wk: f"{wk.removeprefix('week')}週後" for wk in WEEK_KEYS}
 PRIMARY_WEEK = "week3"
 FACTORS = ["momentum", "fundamentals", "catalyst", "technical", "sentiment"]
 MOMENTUM_MODES = ["EARLY_MOMENTUM", "CHASE_MOMENTUM", "BALANCED", "NONE"]
+QUALITY_GRADES = ["A", "B", "C", "D"]
 SCORE_BUCKETS = [
     ("≥ 8.5（exceptional）", lambda s: s >= 8.5),
     ("8.0–8.4（high）", lambda s: 8.0 <= s < 8.5),
@@ -111,6 +112,31 @@ def _infer_conviction(score: float | int | None) -> str:
     if value >= 7.0:
         return "MEDIUM"
     return "LOW"
+
+
+def _snapshot_conviction(snapshot: dict) -> tuple[str, str]:
+    conviction = str(snapshot.get("conviction") or "").strip().upper()
+    source = str(snapshot.get("conviction_source") or "").strip().lower()
+    if conviction in CONVICTIONS:
+        return conviction, source or "stored"
+    inferred = _infer_conviction(snapshot.get("score"))
+    if inferred in CONVICTIONS:
+        return inferred, "inferred_from_score"
+    return "", "missing"
+
+
+def _percentile(vals: list[float], pct: float) -> float | None:
+    if not vals:
+        return None
+    ordered = sorted(vals)
+    if len(ordered) == 1:
+        return round(ordered[0], 2)
+    pos = (len(ordered) - 1) * pct
+    lo = math.floor(pos)
+    hi = math.ceil(pos)
+    if lo == hi:
+        return round(ordered[int(pos)], 2)
+    return round(ordered[lo] + (ordered[hi] - ordered[lo]) * (pos - lo), 2)
 
 
 def _extract_mode(snapshot: dict) -> str:
@@ -260,12 +286,68 @@ def analyze(snapshots: list[dict]) -> dict:
     # ── 確信度 × SPY変動率マトリクス ──
     result["conviction_spy_matrix"] = build_conviction_spy_matrix(snapshots)
     result["horizon_summary"] = build_horizon_summary(snapshots)
+    result["conviction_reliability"] = build_conviction_reliability(snapshots)
+    result["conviction_score_bucket"] = build_conviction_score_bucket(snapshots)
     result["regime_summary"] = build_regime_summary(snapshots)
 
     # ── キャリブレーション提案 ──
     result["mode_summary"] = build_mode_summary(snapshots)
     result["mode_factor_reliability"] = build_mode_factor_reliability(snapshots)
+    result["factor_grade_reliability"] = build_factor_grade_reliability(snapshots)
     result["calibration"] = build_calibration(ic, factor_ic)
+    return result
+
+
+def _snapshot_factor_grade(snapshot: dict, factor: str) -> str:
+    direct = str(snapshot.get(f"{factor}_grade") or "").strip().upper()
+    if direct in QUALITY_GRADES:
+        return direct
+    nested = str((snapshot.get("factor_grades") or {}).get(factor) or "").strip().upper()
+    if nested in QUALITY_GRADES:
+        return nested
+    evidence = snapshot.get("score_evidence") or {}
+    evidence_grade = str(evidence.get(f"{factor}_grade") or "").strip().upper()
+    if evidence_grade in QUALITY_GRADES:
+        return evidence_grade
+    factor_evidence = evidence.get(factor)
+    if isinstance(factor_evidence, dict):
+        nested_evidence_grade = str(
+            factor_evidence.get(f"{factor}_grade") or factor_evidence.get("grade") or ""
+        ).strip().upper()
+        if nested_evidence_grade in QUALITY_GRADES:
+            return nested_evidence_grade
+    return ""
+
+
+def build_factor_grade_reliability(snapshots: list[dict]) -> dict:
+    result: dict[str, dict[str, dict[str, dict]]] = {}
+    for factor in FACTORS:
+        factor_rows: dict[str, dict[str, dict]] = {}
+        for wk in WEEK_KEYS:
+            grade_rows: dict[str, dict] = {}
+            for grade in QUALITY_GRADES:
+                returns = []
+                alphas = []
+                for snap in snapshots:
+                    if _snapshot_factor_grade(snap, factor) != grade:
+                        continue
+                    week = snap.get(wk, {})
+                    if week.get("fetched_at") is None or week.get("return_pct") is None:
+                        continue
+                    ret = float(week["return_pct"])
+                    returns.append(ret)
+                    if week.get("alpha_vs_spy") is not None:
+                        alphas.append(float(week["alpha_vs_spy"]))
+                    elif week.get("alpha_pct") is not None:
+                        alphas.append(float(week["alpha_pct"]))
+                grade_rows[grade] = {
+                    "n": len(returns),
+                    "win_rate": round(sum(r > 0 for r in returns) / len(returns) * 100, 1) if returns else None,
+                    "avg_return": _mean(returns),
+                    "avg_alpha": _mean(alphas),
+                }
+            factor_rows[wk] = grade_rows
+        result[factor] = factor_rows
     return result
 
 
@@ -279,7 +361,7 @@ def build_conviction_spy_matrix(snapshots: list[dict]) -> dict:
                 continue
             if week.get("return_pct") is None or week.get("spy_return_pct") is None:
                 continue
-            conviction = _infer_conviction(snap.get("score"))
+            conviction, _source = _snapshot_conviction(snap)
             if conviction not in CONVICTIONS:
                 continue
             rows.append({
@@ -321,7 +403,8 @@ def build_horizon_summary(snapshots: list[dict]) -> dict:
         for conviction in CONVICTIONS:
             rows = []
             for snap in snapshots:
-                if _infer_conviction(snap.get("score")) != conviction:
+                snap_conviction, _source = _snapshot_conviction(snap)
+                if snap_conviction != conviction:
                     continue
                 week = snap.get(wk, {})
                 if week.get("fetched_at") is None or week.get("return_pct") is None:
@@ -349,6 +432,129 @@ def build_horizon_summary(snapshots: list[dict]) -> dict:
                 "avg_alpha_sector": _mean(alpha_sector),
             }
     return summary
+
+
+def _rows_for_week(snapshots: list[dict], wk: str) -> list[dict]:
+    rows = []
+    for snap in snapshots:
+        week = snap.get(wk, {})
+        if week.get("fetched_at") is None or week.get("return_pct") is None:
+            continue
+        conviction, source = _snapshot_conviction(snap)
+        if conviction not in CONVICTIONS:
+            continue
+        ret = float(week["return_pct"])
+        spy_alpha = week.get("alpha_vs_spy", week.get("alpha_pct"))
+        sector_alpha = week.get("alpha_vs_sector")
+        rows.append({
+            "ticker": snap.get("ticker"),
+            "score": snap.get("score"),
+            "conviction": conviction,
+            "conviction_source": source,
+            "return_pct": ret,
+            "alpha_spy": float(spy_alpha) if spy_alpha is not None else None,
+            "alpha_sector": float(sector_alpha) if sector_alpha is not None else None,
+        })
+    return rows
+
+
+def _conviction_stats(rows: list[dict]) -> dict:
+    returns = [row["return_pct"] for row in rows]
+    alpha_spy = [row["alpha_spy"] for row in rows if row["alpha_spy"] is not None]
+    alpha_sector = [row["alpha_sector"] for row in rows if row["alpha_sector"] is not None]
+    losses = [value for value in returns if value < 0]
+    return {
+        "n": len(returns),
+        "explicit_n": sum(1 for row in rows if row["conviction_source"] == "explicit"),
+        "stored_n": sum(1 for row in rows if row["conviction_source"] == "stored"),
+        "inferred_n": sum(1 for row in rows if row["conviction_source"] == "inferred_from_score"),
+        "win_rate": round(sum(1 for value in returns if value > 0) / len(returns) * 100, 1) if returns else None,
+        "alpha_win_rate": round(sum(1 for value in alpha_spy if value > 0) / len(alpha_spy) * 100, 1) if alpha_spy else None,
+        "avg_return": _mean(returns),
+        "median_return": _median(returns),
+        "avg_alpha_spy": _mean(alpha_spy),
+        "avg_alpha_sector": _mean(alpha_sector),
+        "loss_rate": round(len(losses) / len(returns) * 100, 1) if returns else None,
+        "avg_loss": _mean(losses),
+        "p10_return": _percentile(returns, 0.10),
+    }
+
+
+def _conviction_order_label(by_conviction: dict[str, dict]) -> str:
+    values = {
+        conviction: by_conviction.get(conviction, {}).get("avg_alpha_spy")
+        for conviction in CONVICTIONS
+    }
+    if any(values[c] is None for c in CONVICTIONS):
+        values = {
+            conviction: by_conviction.get(conviction, {}).get("avg_return")
+            for conviction in CONVICTIONS
+        }
+    if any(values[c] is None for c in CONVICTIONS):
+        return "データ不足"
+    high, medium, low = values["HIGH"], values["MEDIUM"], values["LOW"]
+    if high > medium > low:
+        return "✅ 順序性あり"
+    if high >= medium and medium >= low:
+        return "✅ 弱い順序性あり"
+    if high < medium:
+        return "⚠️ HIGH過信の疑い"
+    if medium < low:
+        return "⚠️ MEDIUM/LOW分類に歪み"
+    return "⚠️ 順序性なし"
+
+
+def build_conviction_reliability(snapshots: list[dict]) -> dict:
+    reliability: dict[str, dict] = {}
+    ordinal = {"LOW": 1.0, "MEDIUM": 2.0, "HIGH": 3.0}
+    for wk in WEEK_KEYS:
+        rows = _rows_for_week(snapshots, wk)
+        by_conviction = {
+            conviction: _conviction_stats([row for row in rows if row["conviction"] == conviction])
+            for conviction in CONVICTIONS
+        }
+        pairs = [(ordinal[row["conviction"]], row["return_pct"]) for row in rows]
+        if len(pairs) < MIN_SAMPLES:
+            rho = float("nan")
+            p = float("nan")
+            ic_label = f"データ不足（N={len(pairs)} < {MIN_SAMPLES}）"
+        else:
+            ranks, returns = zip(*pairs)
+            rho, p = spearman(list(ranks), list(returns))
+            ic_label = _significance_label(rho, p)
+        reliability[wk] = {
+            "n": len(rows),
+            "explicit_n": sum(1 for row in rows if row["conviction_source"] == "explicit"),
+            "stored_n": sum(1 for row in rows if row["conviction_source"] == "stored"),
+            "inferred_n": sum(1 for row in rows if row["conviction_source"] == "inferred_from_score"),
+            "rho": rho,
+            "p": p,
+            "ic_label": ic_label,
+            "order_label": _conviction_order_label(by_conviction),
+            "by_conviction": by_conviction,
+        }
+    return reliability
+
+
+def build_conviction_score_bucket(snapshots: list[dict]) -> dict:
+    rows = _rows_for_week(snapshots, PRIMARY_WEEK)
+    result: dict[str, dict] = {}
+    for label, cond in SCORE_BUCKETS:
+        bucket_rows = []
+        for row in rows:
+            score = row.get("score")
+            if score is None:
+                continue
+            try:
+                if cond(float(score)):
+                    bucket_rows.append(row)
+            except (TypeError, ValueError):
+                continue
+        result[label] = {
+            conviction: _conviction_stats([row for row in bucket_rows if row["conviction"] == conviction])
+            for conviction in CONVICTIONS
+        }
+    return result
 
 
 def build_regime_summary(snapshots: list[dict]) -> dict:
@@ -628,6 +834,57 @@ def generate_report(stats: dict) -> str:
             f"(n={best_spy[1]['n']}) | {sector_text} |"
         )
 
+    lines.append("")
+    lines.append("### Conviction Reliability — 確信度そのものの検証")
+    lines.append("")
+    lines.append("conviction は保存済みの明示/旧保存値を優先し、欠損した古い観測のみ score から推定する。")
+    lines.append("Conviction IC は LOW=1 / MEDIUM=2 / HIGH=3 と累積リターンの Spearman ρ。")
+    lines.append("")
+    lines.append("| ホライゾン | n | 明示/保存/推定 | Conviction IC | 判定 | 順序性 |")
+    lines.append("|---|---:|---:|---:|---|---|")
+    for wk in WEEK_KEYS:
+        row = stats["conviction_reliability"][wk]
+        source_counts = f"{row['explicit_n']}/{row['stored_n']}/{row['inferred_n']}"
+        lines.append(
+            f"| {WEEK_LABELS[wk]} | {row['n']} | {source_counts} | {format_rho(row['rho'])} | "
+            f"{row['ic_label']} | {row['order_label']} |"
+        )
+
+    lines.append("")
+    lines.append("| ホライゾン | 確信度 | n | 勝率 | Alpha勝率 | 平均リターン | SPY alpha | 損失率 | 平均損失 | P10 |")
+    lines.append("|---|---|---:|---:|---:|---:|---:|---:|---:|---:|")
+    for wk in WEEK_KEYS:
+        for conviction in CONVICTIONS:
+            row = stats["conviction_reliability"][wk]["by_conviction"][conviction]
+            if row["n"] == 0:
+                continue
+            win_rate = "N/A" if row["win_rate"] is None else f"{row['win_rate']:.1f}%"
+            alpha_win_rate = "N/A" if row["alpha_win_rate"] is None else f"{row['alpha_win_rate']:.1f}%"
+            loss_rate = "N/A" if row["loss_rate"] is None else f"{row['loss_rate']:.1f}%"
+            lines.append(
+                f"| {WEEK_LABELS[wk]} | {conviction} | {row['n']} | {win_rate} | {alpha_win_rate} | "
+                f"{_fmt_pct(row['avg_return'])} | {_fmt_pct(row['avg_alpha_spy'])} | {loss_rate} | "
+                f"{_fmt_pct(row['avg_loss'])} | {_fmt_pct(row['p10_return'])} |"
+            )
+
+    lines.append("")
+    lines.append(f"### Score Bucket内 Conviction差分（{WEEK_LABELS[PRIMARY_WEEK]}）")
+    lines.append("")
+    lines.append("同じ score bucket 内で conviction が追加の予測力を持っているかを見る。")
+    lines.append("")
+    lines.append("| Score bucket | 確信度 | n | 勝率 | 平均リターン | SPY alpha | P10 |")
+    lines.append("|---|---|---:|---:|---:|---:|---:|")
+    for bucket, by_conviction in stats["conviction_score_bucket"].items():
+        for conviction in CONVICTIONS:
+            row = by_conviction[conviction]
+            if row["n"] == 0:
+                continue
+            win_rate = "N/A" if row["win_rate"] is None else f"{row['win_rate']:.1f}%"
+            lines.append(
+                f"| {bucket} | {conviction} | {row['n']} | {win_rate} | "
+                f"{_fmt_pct(row['avg_return'])} | {_fmt_pct(row['avg_alpha_spy'])} | {_fmt_pct(row['p10_return'])} |"
+            )
+
     if stats["regime_summary"]:
         lines.append("")
         lines.append(f"### {WEEK_LABELS[PRIMARY_WEEK]} 市場レジーム別リターン")
@@ -713,6 +970,37 @@ def generate_report(stats: dict) -> str:
             rho = stats["factor_ic"].get(factor, {}).get(wk, {}).get("rho", float("nan"))
             row.append(format_rho(rho))
         lines.append("| " + " | ".join(row) + " |")
+
+    grade_stats = stats.get("factor_grade_reliability") or {}
+    has_grade_rows = any(
+        payload.get(PRIMARY_WEEK, {}).get(grade, {}).get("n", 0) > 0
+        for payload in grade_stats.values()
+        for grade in QUALITY_GRADES
+    )
+    lines.append("")
+    lines.append("### Factor Grade Reliability（3週後）")
+    lines.append("")
+    lines.append("新しい `factor_grades`（A/B/C/D）の検証。改善後のresearch結果が蓄積されるほど有効になる。")
+    lines.append("")
+    if has_grade_rows:
+        lines.append("| ファクター | Grade | n | 勝率 | 平均リターン | SPY alpha |")
+        lines.append("|---|---|---:|---:|---:|---:|")
+        for factor in FACTORS:
+            week_rows = grade_stats.get(factor, {}).get(PRIMARY_WEEK, {})
+            for grade in QUALITY_GRADES:
+                row = week_rows.get(grade, {})
+                n = row.get("n", 0)
+                if n == 0:
+                    continue
+                win = row.get("win_rate")
+                avg_ret = row.get("avg_return")
+                avg_alpha = row.get("avg_alpha")
+                lines.append(
+                    f"| {factor} | {grade} | {n} | "
+                    f"{win:.1f}% | {_fmt_pct(avg_ret)} | {_fmt_pct(avg_alpha)} |"
+                )
+    else:
+        lines.append("grade付きスナップショットはまだ満期化していない。次回以降の `/research` で蓄積する。")
 
     lines.append("")
     lines.append("---")

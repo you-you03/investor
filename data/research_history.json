@@ -3705,13 +3705,13 @@
             "outcome_type": "AT_STOP",
             "entry_price": 162.5,
             "entry_date": "2026-06-23",
-            "current_price": 149.75,
-            "days_held": 4,
-            "unrealized_return_pct": -7.85,
-            "pnl_usd": -12.75,
-            "spy_return_pct": -0.63,
-            "alpha_pct": -7.22,
-            "recorded_at": "2026-06-27"
+            "current_price": 124.95999908447266,
+            "days_held": 25,
+            "unrealized_return_pct": -23.1,
+            "pnl_usd": -37.54,
+            "spy_return_pct": 1.32,
+            "alpha_pct": -24.42,
+            "recorded_at": "2026-07-18"
           }
         }
       ],
@@ -3737,7 +3737,20 @@
           "signal_type": "technical_breakout",
           "score_breakdown": {},
           "macro_regime": "NORMAL",
-          "source": "research"
+          "source": "research",
+          "outcome": {
+            "status": "open",
+            "outcome_type": "AT_TARGET",
+            "entry_price": 43.51,
+            "entry_date": "2026-06-24",
+            "current_price": 50.310001373291016,
+            "days_held": 24,
+            "unrealized_return_pct": 15.63,
+            "pnl_usd": 13.6,
+            "spy_return_pct": 1.37,
+            "alpha_pct": 14.26,
+            "recorded_at": "2026-07-18"
+          }
         },
         {
           "ticker": "RUN",
@@ -3836,7 +3849,20 @@
           "tf_alignment": "ALIGNED_UP",
           "contrarian_tag": false,
           "macro_regime": "NORMAL",
-          "data_notes": "Prices may be delayed. get_news in collect_ticker_data returned a limit-argument error; web/X supplemental searches were attempted separately."
+          "data_notes": "Prices may be delayed. get_news in collect_ticker_data returned a limit-argument error; web/X supplemental searches were attempted separately.",
+          "outcome": {
+            "status": "open",
+            "outcome_type": "AT_STOP",
+            "entry_price": 441.0,
+            "entry_date": "2026-06-24",
+            "current_price": 398.3699951171875,
+            "days_held": 24,
+            "unrealized_return_pct": -9.67,
+            "pnl_usd": -42.63,
+            "spy_return_pct": 1.37,
+            "alpha_pct": -11.04,
+            "recorded_at": "2026-07-18"
+          }
         },
         {
           "ticker": "TOST",
@@ -4007,7 +4033,20 @@
           "tf_alignment": "WARNING",
           "contrarian_tag": false,
           "macro_regime": "NORMAL",
-          "data_notes": "Prices may be delayed. get_news in collect_ticker_data returned a limit-argument error; web/X supplemental searches were attempted separately."
+          "data_notes": "Prices may be delayed. get_news in collect_ticker_data returned a limit-argument error; web/X supplemental searches were attempted separately.",
+          "outcome": {
+            "status": "open",
+            "outcome_type": "AT_TARGET",
+            "entry_price": 43.51,
+            "entry_date": "2026-06-24",
+            "current_price": 50.310001373291016,
+            "days_held": 24,
+            "unrealized_return_pct": 15.63,
+            "pnl_usd": 13.6,
+            "spy_return_pct": 1.37,
+            "alpha_pct": 14.26,
+            "recorded_at": "2026-07-18"
+          }
         },
         {
           "ticker": "MU",
@@ -4411,6 +4450,1341 @@
           "contrarian_tag": false,
           "macro_regime": "NORMAL",
           "data_notes": "Prices may be delayed. get_news in collect_ticker_data returned a limit-argument error; web/X supplemental searches were attempted separately."
+        }
+      ]
+    },
+    {
+      "run_id": "d6cf9ade-25b7-4742-89f6-e3d410aab2bd",
+      "date": "2026-07-03",
+      "macro_regime": "NORMAL",
+      "candidates": [
+        {
+          "ticker": "FOUR",
+          "company_name": "Shift4 Payments, Inc.",
+          "score": 7.6,
+          "conviction": "MEDIUM",
+          "current_price": 51.35,
+          "price_at_score": 51.35,
+          "score_breakdown": {
+            "momentum": 8,
+            "fundamentals": 8,
+            "catalyst": 7,
+            "technical": 6,
+            "sentiment": 7
+          },
+          "score_evidence": {
+            "momentum": "RSI=70.42, 5d=17.29%, 20d=27.67%, EMA20乖離=16.31%, volume=0.56x",
+            "fundamentals": "Revenue YoY=0.322, EPS YoY=None, forward PE=7.612561, PEG=0.35, operating margin=0.04996",
+            "catalyst": "Analyst target $60.14286, upside 17.1%, recommendation=buy, analyst_count=21",
+            "technical": "RSI=70.42, MACD hist=1.3344, EMA20=44.15, EMA50=43.12, BB position=1.02",
+            "sentiment": "Analyst recommendation=buy, analyst_count=21. News/RS/timeframe fields unavailable in batch data."
+          },
+          "momentum_profile": {
+            "primary_mode": "CHASE_MOMENTUM",
+            "early_momentum_score": 4,
+            "chase_momentum_score": 8,
+            "extension_risk": "HIGH",
+            "early_view": "RSI 70.42、5日17.29%、20日27.67%、EMA20乖離16.31%。",
+            "chase_view": "当日4.8%、出来高0.56x、EMA50乖離19.09%。",
+            "score_implication": "初動と追いかけの高い方を採用。ただし過熱・アナリスト目標乖離・赤字は減点。"
+          },
+          "conviction_rationale": "MEDIUM: Shift4はRevenue +32.2%、forward PE 7.6、PEG 0.35で成長対比の割安感が強い。Early 4/10、Chase 8/10、extension risk HIGH。",
+          "thesis": "Shift4はRevenue +32.2%、forward PE 7.6、PEG 0.35で成長対比の割安感が強い。株価は+18%含み益圏で過熱しており、新規追随より既存ポジションのトレーリング管理が優先。",
+          "key_catalysts": [
+            "割安成長決済ソフトウェア",
+            "analyst upside positive",
+            "既存20万円枠でStage2移行"
+          ],
+          "key_risks": [
+            "RSI70超",
+            "5日+17%で短期過熱",
+            "Debt/Equity高い",
+            "既存保有中"
+          ],
+          "entry_zone": "49-51",
+          "target_price": 57.17,
+          "stop_loss": 48.44,
+          "time_horizon": "4-6 weeks",
+          "rs_signal": "DATA_UNAVAILABLE",
+          "rs_1m": null,
+          "rs_3m": null,
+          "days_until_earnings": null,
+          "atr_multiplier_used": 2.0,
+          "atr_multiplier_reason": "強い成長だが短期過熱のため標準2xATR",
+          "analyst_upside_pct": 17.1,
+          "conviction_floor": "MEDIUM",
+          "tf_alignment": "DATA_UNAVAILABLE",
+          "contrarian_tag": false,
+          "macro_regime": "NORMAL",
+          "data_notes": "Batch data lacked relative_strength, earnings_calendar, and timeframe_alignment; no penalty applied for missing fields.",
+          "outcome": {
+            "status": "open",
+            "outcome_type": "OPEN",
+            "entry_price": 43.51,
+            "entry_date": "2026-06-24",
+            "current_price": 50.310001373291016,
+            "days_held": 24,
+            "unrealized_return_pct": 15.63,
+            "pnl_usd": 13.6,
+            "spy_return_pct": 1.37,
+            "alpha_pct": 14.26,
+            "recorded_at": "2026-07-18"
+          }
+        },
+        {
+          "ticker": "TSM",
+          "company_name": "Taiwan Semiconductor Manufacturing Company Limited",
+          "score": 7.4,
+          "conviction": "MEDIUM",
+          "current_price": 434.16,
+          "price_at_score": 434.16,
+          "score_breakdown": {
+            "momentum": 6,
+            "fundamentals": 9,
+            "catalyst": 8,
+            "technical": 6,
+            "sentiment": 8
+          },
+          "score_evidence": {
+            "momentum": "RSI=50.12, 5d=-0.19%, 20d=-0.35%, EMA20乖離=-0.95%, volume=1.25x",
+            "fundamentals": "Revenue YoY=0.351, EPS YoY=0.584, forward PE=21.398586, PEG=1.4, operating margin=0.58105",
+            "catalyst": "Analyst target $487.5625, upside 12.3%, recommendation=strong_buy, analyst_count=18",
+            "technical": "RSI=50.12, MACD hist=-0.793, EMA20=438.31, EMA50=420.43, BB position=0.45",
+            "sentiment": "Analyst recommendation=strong_buy, analyst_count=18. News/RS/timeframe fields unavailable in batch data."
+          },
+          "momentum_profile": {
+            "primary_mode": "EARLY_MOMENTUM",
+            "early_momentum_score": 7,
+            "chase_momentum_score": 5,
+            "extension_risk": "LOW",
+            "early_view": "RSI 50.12、5日-0.19%、20日-0.35%、EMA20乖離-0.95%。",
+            "chase_view": "当日-3.18%、出来高1.25x、EMA50乖離3.27%。",
+            "score_implication": "初動と追いかけの高い方を採用。ただし過熱・アナリスト目標乖離・赤字は減点。"
+          },
+          "conviction_rationale": "MEDIUM: TSMはRevenue +35.1%、EPS +58.4%、forward PE 21.4でAI半導体供給網の高品質コア。Early 7/10、Chase 5/10、extension risk LOW。",
+          "thesis": "TSMはRevenue +35.1%、EPS +58.4%、forward PE 21.4でAI半導体供給網の高品質コア。RSI50・EMA20近辺で初動/押し目としては良いが、既存保有中で追加はサイズ管理が必要。",
+          "key_catalysts": [
+            "AI半導体需要",
+            "strong_buy 18 analysts",
+            "analyst upside +12%"
+          ],
+          "key_risks": [
+            "台湾地政学",
+            "半導体集中",
+            "既存保有中"
+          ],
+          "entry_zone": "425-440",
+          "target_price": 478.19,
+          "stop_loss": 412.14,
+          "time_horizon": "4-6 weeks",
+          "rs_signal": "DATA_UNAVAILABLE",
+          "rs_1m": null,
+          "rs_3m": null,
+          "days_until_earnings": null,
+          "atr_multiplier_used": 2.0,
+          "atr_multiplier_reason": "高品質大型株の押し目として標準2xATR",
+          "analyst_upside_pct": 12.3,
+          "conviction_floor": "MEDIUM",
+          "tf_alignment": "DATA_UNAVAILABLE",
+          "contrarian_tag": false,
+          "macro_regime": "NORMAL",
+          "data_notes": "Batch data lacked relative_strength, earnings_calendar, and timeframe_alignment; no penalty applied for missing fields.",
+          "outcome": {
+            "status": "open",
+            "outcome_type": "AT_STOP",
+            "entry_price": 441.0,
+            "entry_date": "2026-06-24",
+            "current_price": 398.3699951171875,
+            "days_held": 24,
+            "unrealized_return_pct": -9.67,
+            "pnl_usd": -42.63,
+            "spy_return_pct": 1.37,
+            "alpha_pct": -11.04,
+            "recorded_at": "2026-07-18"
+          }
+        },
+        {
+          "ticker": "WAY",
+          "company_name": "Waystar Holding Corp.",
+          "score": 7.3,
+          "conviction": "MEDIUM",
+          "current_price": 23.46,
+          "price_at_score": 23.46,
+          "score_breakdown": {
+            "momentum": 8,
+            "fundamentals": 8,
+            "catalyst": 8,
+            "technical": 6,
+            "sentiment": 8
+          },
+          "score_evidence": {
+            "momentum": "RSI=70.39, 5d=23.73%, 20d=20.15%, EMA20乖離=18.01%, volume=2.58x",
+            "fundamentals": "Revenue YoY=0.224, EPS YoY=0.375, forward PE=12.696247, PEG=None, operating margin=0.25636",
+            "catalyst": "Analyst target $33.68182, upside 43.6%, recommendation=strong_buy, analyst_count=22",
+            "technical": "RSI=70.39, MACD hist=0.5495, EMA20=19.88, EMA50=20.3, BB position=1.28",
+            "sentiment": "Analyst recommendation=strong_buy, analyst_count=22. News/RS/timeframe fields unavailable in batch data."
+          },
+          "momentum_profile": {
+            "primary_mode": "CHASE_MOMENTUM",
+            "early_momentum_score": 5,
+            "chase_momentum_score": 8,
+            "extension_risk": "HIGH",
+            "early_view": "RSI 70.39、5日23.73%、20日20.15%、EMA20乖離18.01%。",
+            "chase_view": "当日8.36%、出来高2.58x、EMA50乖離15.57%。",
+            "score_implication": "初動と追いかけの高い方を採用。ただし過熱・アナリスト目標乖離・赤字は減点。"
+          },
+          "conviction_rationale": "MEDIUM: Waystarは医療決済SaaSでRevenue +22.4%、EPS +37.5%、forward PE 12.7、strong_buy 22名と質が高い。Early 5/10、Chase 8/10、extension risk HIGH。",
+          "thesis": "Waystarは医療決済SaaSでRevenue +22.4%、EPS +37.5%、forward PE 12.7、strong_buy 22名と質が高い。出来高2.58xでブレイクしているが、5日+23.7%とRSI70で短期追随リスクが高い。",
+          "key_catalysts": [
+            "healthcare payments SaaS",
+            "strong_buy 22 analysts",
+            "analyst upside +43.6%"
+          ],
+          "key_risks": [
+            "RSI70付近",
+            "5日+23.7%",
+            "IPO/小型成長株のボラ"
+          ],
+          "entry_zone": "22.5-23.5",
+          "target_price": 25.49,
+          "stop_loss": 22.45,
+          "time_horizon": "4-6 weeks",
+          "rs_signal": "DATA_UNAVAILABLE",
+          "rs_1m": null,
+          "rs_3m": null,
+          "days_until_earnings": null,
+          "atr_multiplier_used": 2.0,
+          "atr_multiplier_reason": "ファンダとアナリスト上値は強いが過熱のため標準2xATR",
+          "analyst_upside_pct": 43.6,
+          "conviction_floor": "MEDIUM",
+          "tf_alignment": "DATA_UNAVAILABLE",
+          "contrarian_tag": false,
+          "macro_regime": "NORMAL",
+          "data_notes": "Batch data lacked relative_strength, earnings_calendar, and timeframe_alignment; no penalty applied for missing fields."
+        },
+        {
+          "ticker": "AVAV",
+          "company_name": "AeroVironment, Inc.",
+          "score": 7.2,
+          "conviction": "MEDIUM",
+          "current_price": 190.89,
+          "price_at_score": 190.89,
+          "score_breakdown": {
+            "momentum": 8,
+            "fundamentals": 7,
+            "catalyst": 8,
+            "technical": 6,
+            "sentiment": 7
+          },
+          "score_evidence": {
+            "momentum": "RSI=60.58, 5d=39.66%, 20d=-0.3%, EMA20乖離=15.1%, volume=2.16x",
+            "fundamentals": "Revenue YoY=1.333, EPS YoY=None, forward PE=41.292976, PEG=1.57, operating margin=0.02812",
+            "catalyst": "Analyst target $247.34766, upside 29.6%, recommendation=buy, analyst_count=17",
+            "technical": "RSI=60.58, MACD hist=2.5432, EMA20=165.84, EMA50=173.5, BB position=0.82",
+            "sentiment": "Analyst recommendation=buy, analyst_count=17. News/RS/timeframe fields unavailable in batch data."
+          },
+          "momentum_profile": {
+            "primary_mode": "CHASE_MOMENTUM",
+            "early_momentum_score": 4,
+            "chase_momentum_score": 8,
+            "extension_risk": "HIGH",
+            "early_view": "RSI 60.58、5日39.66%、20日-0.3%、EMA20乖離15.1%。",
+            "chase_view": "当日7.13%、出来高2.16x、EMA50乖離10.02%。",
+            "score_implication": "初動と追いかけの高い方を採用。ただし過熱・アナリスト目標乖離・赤字は減点。"
+          },
+          "conviction_rationale": "MEDIUM: AeroVironmentは防衛ドローン/無人機テーマでRevenue +133%、analyst upside +29.6%がある。Early 4/10、Chase 8/10、extension risk HIGH。",
+          "thesis": "AeroVironmentは防衛ドローン/無人機テーマでRevenue +133%、analyst upside +29.6%がある。出来高2.16xで反応している一方、5日+39.7%でエントリーは押し目待ちが妥当。",
+          "key_catalysts": [
+            "防衛ドローン需要",
+            "Revenue +133%",
+            "analyst upside +29.6%"
+          ],
+          "key_risks": [
+            "5日+39.7%の急騰",
+            "直近純損失",
+            "EMA20乖離+15%"
+          ],
+          "entry_zone": "180-191",
+          "target_price": 216.99,
+          "stop_loss": 177.84,
+          "time_horizon": "4-6 weeks",
+          "rs_signal": "DATA_UNAVAILABLE",
+          "rs_1m": null,
+          "rs_3m": null,
+          "days_until_earnings": null,
+          "atr_multiplier_used": 2.0,
+          "atr_multiplier_reason": "材料は強いが急騰後のため標準2xATR",
+          "analyst_upside_pct": 29.6,
+          "conviction_floor": "MEDIUM",
+          "tf_alignment": "DATA_UNAVAILABLE",
+          "contrarian_tag": false,
+          "macro_regime": "NORMAL",
+          "data_notes": "Batch data lacked relative_strength, earnings_calendar, and timeframe_alignment; no penalty applied for missing fields."
+        },
+        {
+          "ticker": "AMAT",
+          "company_name": "Applied Materials, Inc.",
+          "score": 7.1,
+          "conviction": "MEDIUM",
+          "current_price": 603.04,
+          "price_at_score": 603.04,
+          "score_breakdown": {
+            "momentum": 7,
+            "fundamentals": 8,
+            "catalyst": 6,
+            "technical": 7,
+            "sentiment": 7
+          },
+          "score_evidence": {
+            "momentum": "RSI=53.94, 5d=-9.72%, 20d=20.42%, EMA20乖離=1.65%, volume=1.18x",
+            "fundamentals": "Revenue YoY=0.114, EPS YoY=0.335, forward PE=36.761448, PEG=1.64, operating margin=0.31896",
+            "catalyst": "Analyst target $578.9143, upside -4.0%, recommendation=strong_buy, analyst_count=35",
+            "technical": "RSI=53.94, MACD hist=0.857, EMA20=593.23, EMA50=518.89, BB position=0.56",
+            "sentiment": "Analyst recommendation=strong_buy, analyst_count=35. News/RS/timeframe fields unavailable in batch data."
+          },
+          "momentum_profile": {
+            "primary_mode": "BALANCED",
+            "early_momentum_score": 7,
+            "chase_momentum_score": 6,
+            "extension_risk": "MEDIUM",
+            "early_view": "RSI 53.94、5日-9.72%、20日20.42%、EMA20乖離1.65%。",
+            "chase_view": "当日-8.3%、出来高1.18x、EMA50乖離16.22%。",
+            "score_implication": "初動と追いかけの高い方を採用。ただし過熱・アナリスト目標乖離・赤字は減点。"
+          },
+          "conviction_rationale": "MEDIUM: Applied Materialsは営業利益率31.9%、EPS +33.5%、strong_buy 35名で半導体装置の質は高い。Early 7/10、Chase 6/10、extension risk MEDIUM。",
+          "thesis": "Applied Materialsは営業利益率31.9%、EPS +33.5%、strong_buy 35名で半導体装置の質は高い。急落後もEMA20近辺を維持するが、アナリスト目標が現値をやや下回るため決定打は弱い。",
+          "key_catalysts": [
+            "半導体装置サイクル",
+            "EPS +33.5%",
+            "strong_buy 35 analysts"
+          ],
+          "key_risks": [
+            "大型株で20万円枠では高単価",
+            "analyst target below current",
+            "20日+20%でまだ伸び切り感"
+          ],
+          "entry_zone": "580-605",
+          "target_price": 705.98,
+          "stop_loss": 551.57,
+          "time_horizon": "4-6 weeks",
+          "rs_signal": "DATA_UNAVAILABLE",
+          "rs_1m": null,
+          "rs_3m": null,
+          "days_until_earnings": null,
+          "atr_multiplier_used": 2.0,
+          "atr_multiplier_reason": "高品質だが目標乖離が弱く標準2xATR",
+          "analyst_upside_pct": -4.0,
+          "conviction_floor": "MEDIUM",
+          "tf_alignment": "DATA_UNAVAILABLE",
+          "contrarian_tag": false,
+          "macro_regime": "NORMAL",
+          "data_notes": "Batch data lacked relative_strength, earnings_calendar, and timeframe_alignment; no penalty applied for missing fields."
+        },
+        {
+          "ticker": "ALAB",
+          "company_name": "Astera Labs, Inc.",
+          "score": 7.0,
+          "conviction": "LOW",
+          "current_price": 406.42,
+          "price_at_score": 406.42,
+          "score_breakdown": {
+            "momentum": 7,
+            "fundamentals": 8,
+            "catalyst": 5,
+            "technical": 7,
+            "sentiment": 6
+          },
+          "score_evidence": {
+            "momentum": "RSI=55.73, 5d=2.12%, 20d=11.8%, EMA20乖離=4.09%, volume=1.11x",
+            "fundamentals": "Revenue YoY=0.934, EPS YoY=1.444, forward PE=94.35522, PEG=None, operating margin=0.20052",
+            "catalyst": "Analyst target $272.46774, upside -33.0%, recommendation=buy, analyst_count=22",
+            "technical": "RSI=55.73, MACD hist=-1.3662, EMA20=390.46, EMA50=320.77, BB position=0.61",
+            "sentiment": "Analyst recommendation=buy, analyst_count=22. News/RS/timeframe fields unavailable in batch data."
+          },
+          "momentum_profile": {
+            "primary_mode": "EARLY_MOMENTUM",
+            "early_momentum_score": 7,
+            "chase_momentum_score": 5,
+            "extension_risk": "MEDIUM",
+            "early_view": "RSI 55.73、5日2.12%、20日11.8%、EMA20乖離4.09%。",
+            "chase_view": "当日-6.46%、出来高1.11x、EMA50乖離26.7%。",
+            "score_implication": "初動と追いかけの高い方を採用。ただし過熱・アナリスト目標乖離・赤字は減点。"
+          },
+          "conviction_rationale": "LOW: Astera LabsはAI接続半導体でRevenue +93.4%、EPS +144%と成長率は最上位。Early 7/10、Chase 5/10、extension risk MEDIUM。",
+          "thesis": "Astera LabsはAI接続半導体でRevenue +93.4%、EPS +144%と成長率は最上位。RSI55・5日+2%で初動条件は良いが、forward PE94・P/S70・アナリスト目標が現値を大きく下回るため確信度は低い。",
+          "key_catalysts": [
+            "AI connectivity",
+            "Revenue +93.4%",
+            "EPS +144%"
+          ],
+          "key_risks": [
+            "forward PE94",
+            "P/S約70",
+            "analyst target below current",
+            "半導体集中"
+          ],
+          "entry_zone": "390-410",
+          "target_price": 493.53,
+          "stop_loss": 362.86,
+          "time_horizon": "4-6 weeks",
+          "rs_signal": "DATA_UNAVAILABLE",
+          "rs_1m": null,
+          "rs_3m": null,
+          "days_until_earnings": null,
+          "atr_multiplier_used": 2.0,
+          "atr_multiplier_reason": "高成長だが高バリュエーションのため標準2xATR",
+          "analyst_upside_pct": -33.0,
+          "conviction_floor": "LOW",
+          "tf_alignment": "DATA_UNAVAILABLE",
+          "contrarian_tag": false,
+          "macro_regime": "NORMAL",
+          "data_notes": "Batch data lacked relative_strength, earnings_calendar, and timeframe_alignment; no penalty applied for missing fields."
+        }
+      ]
+    },
+    {
+      "run_id": "c0842ab5-ffd3-46da-9c55-5a9f1cce3654",
+      "date": "2026-07-05",
+      "macro_regime": "NORMAL",
+      "candidates": [
+        {
+          "ticker": "OUST",
+          "company_name": "Ouster, Inc.",
+          "score": 7.2,
+          "conviction": "MEDIUM",
+          "current_price": 49.84,
+          "price_at_score": 49.84,
+          "score_breakdown": {
+            "momentum": 8,
+            "fundamentals": 5,
+            "catalyst": 8,
+            "technical": 7,
+            "sentiment": 7
+          },
+          "score_evidence": {
+            "momentum": "RS=STRONG_OUTPERFORM, rs_1m=14.38%, rs_3m=141.86%, rsi=55.48, 5d=19.18%, 20d=13.38%.",
+            "fundamentals": "Revenue YoY 48.9%, EPS YoY N/A%, forward PE -1107.5555, PEG None.",
+            "catalyst": "Key catalysts: REV8 lidar Build America Buy America compliance (Jun 30), $200M follow-on raise to fund lidar expansion, ARGUS counter-drone partnership. Earnings in -60 days.",
+            "technical": "TF=ALIGNED_UP, EMA20 distance=7.32%, MACD hist=0.9178, volume ratio=1.78.",
+            "sentiment": "Options NEUTRAL_BULLISH (P/C vol 0.805), insider NET_SELLER; analyst data unavailable from tool."
+          },
+          "momentum_profile": {
+            "primary_mode": "CHASE_MOMENTUM",
+            "early_momentum_score": 5,
+            "chase_momentum_score": 8,
+            "extension_risk": "HIGH",
+            "early_view": "RSI 55.48、5日19.18%、EMA20乖離7.32%。",
+            "chase_view": "RS STRONG_OUTPERFORM、出来高倍率1.78、20日13.38%。",
+            "score_implication": "CHASE_MOMENTUM主導。過熱リスクHIGHを反映してスコア調整。"
+          },
+          "conviction_rationale": "MEDIUM: Ouster has one of the strongest RS profiles in the scan, backed by REV8 lidar catalysts and fresh financing. The setup is compelling but already extended, so entries should favor pullbacks rather than chasing.",
+          "thesis": "Ouster has one of the strongest RS profiles in the scan, backed by REV8 lidar catalysts and fresh financing. The setup is compelling but already extended, so entries should favor pullbacks rather than chasing.",
+          "key_catalysts": [
+            "REV8 lidar Build America Buy America compliance (Jun 30)",
+            "$200M follow-on raise to fund lidar expansion",
+            "ARGUS counter-drone partnership"
+          ],
+          "key_risks": [
+            "3カ月+155%で利確リスク",
+            "赤字/forward PEが実質不適",
+            "insider NET_SELLER"
+          ],
+          "entry_zone": "48.34–50.34",
+          "entry_price": 49.84,
+          "target_price": 63.89,
+          "stop_loss": 42.82,
+          "time_horizon": "4–6 weeks",
+          "rs_signal": "STRONG_OUTPERFORM",
+          "rs_1m": 14.38,
+          "rs_3m": 141.86,
+          "days_until_earnings": -60,
+          "atr_multiplier_used": 2.0,
+          "atr_multiplier_reason": "標準2×ATR。強材料でも過熱銘柄は追随リスクを考慮。",
+          "analyst_upside_pct": 0.0,
+          "conviction_floor": "MEDIUM",
+          "tf_alignment": "ALIGNED_UP",
+          "contrarian_tag": false,
+          "macro_regime": "NORMAL",
+          "data_notes": "Analyst ratings unavailable for most tickers via current tool output; sentiment scored conservatively.",
+          "recommendation": "BUY候補/押し目優先"
+        },
+        {
+          "ticker": "BWIN",
+          "company_name": "The Baldwin Insurance Group, Inc.",
+          "score": 7.05,
+          "conviction": "MEDIUM",
+          "current_price": 28.41,
+          "price_at_score": 28.41,
+          "score_breakdown": {
+            "momentum": 8,
+            "fundamentals": 5,
+            "catalyst": 7,
+            "technical": 7,
+            "sentiment": 7
+          },
+          "score_evidence": {
+            "momentum": "RS=STRONG_OUTPERFORM, rs_1m=52.36%, rs_3m=13.25%, rsi=75.7, 5d=18.33%, 20d=51.36%.",
+            "fundamentals": "Revenue YoY 28.7%, EPS YoY -90.0%, forward PE 11.357549, PEG None.",
+            "catalyst": "Key catalysts: STRONG_OUTPERFORM RS, bullish options flow, Jul 31 earnings setup. Earnings in 26 days.",
+            "technical": "TF=ALIGNED_UP, EMA20 distance=21.88%, MACD hist=0.8548, volume ratio=0.8.",
+            "sentiment": "Options BULLISH (P/C vol 0.199), insider NET_SELLER; analyst data unavailable from tool."
+          },
+          "momentum_profile": {
+            "primary_mode": "CHASE_MOMENTUM",
+            "early_momentum_score": 4,
+            "chase_momentum_score": 8,
+            "extension_risk": "HIGH",
+            "early_view": "RSI 75.7、5日18.33%、EMA20乖離21.88%。",
+            "chase_view": "RS STRONG_OUTPERFORM、出来高倍率0.8、20日51.36%。",
+            "score_implication": "CHASE_MOMENTUM主導。過熱リスクHIGHを反映してスコア調整。"
+          },
+          "conviction_rationale": "MEDIUM: Baldwin Insurance is a chase-momentum candidate with very strong RS and bullish options flow, but the move is already extended. Low forward PE helps, while EPS deterioration and insider selling keep sizing conservative.",
+          "thesis": "Baldwin Insurance is a chase-momentum candidate with very strong RS and bullish options flow, but the move is already extended. Low forward PE helps, while EPS deterioration and insider selling keep sizing conservative.",
+          "key_catalysts": [
+            "STRONG_OUTPERFORM RS",
+            "bullish options flow",
+            "Jul 31 earnings setup"
+          ],
+          "key_risks": [
+            "5日+18%/20日+51%で過熱",
+            "EPS YoY悪化",
+            "insider NET_SELLER"
+          ],
+          "entry_zone": "27.56–28.69",
+          "entry_price": 28.41,
+          "target_price": 32.06,
+          "stop_loss": 26.59,
+          "time_horizon": "4–6 weeks",
+          "rs_signal": "STRONG_OUTPERFORM",
+          "rs_1m": 52.36,
+          "rs_3m": 13.25,
+          "days_until_earnings": 26,
+          "atr_multiplier_used": 2.0,
+          "atr_multiplier_reason": "標準2×ATR。強材料でも過熱銘柄は追随リスクを考慮。",
+          "analyst_upside_pct": 0.0,
+          "conviction_floor": "MEDIUM",
+          "tf_alignment": "ALIGNED_UP",
+          "contrarian_tag": false,
+          "macro_regime": "NORMAL",
+          "data_notes": "Analyst ratings unavailable for most tickers via current tool output; sentiment scored conservatively.",
+          "recommendation": "BUY候補/小さめ"
+        },
+        {
+          "ticker": "AMAT",
+          "company_name": "Applied Materials, Inc.",
+          "score": 7.05,
+          "conviction": "MEDIUM",
+          "current_price": 603.04,
+          "price_at_score": 603.04,
+          "score_breakdown": {
+            "momentum": 8,
+            "fundamentals": 7,
+            "catalyst": 6,
+            "technical": 8,
+            "sentiment": 6
+          },
+          "score_evidence": {
+            "momentum": "RS=STRONG_OUTPERFORM, rs_1m=21.42%, rs_3m=59.41%, rsi=53.94, 5d=-9.72%, 20d=20.42%.",
+            "fundamentals": "Revenue YoY 11.4%, EPS YoY 33.5%, forward PE 36.761448, PEG 1.52.",
+            "catalyst": "Key catalysts: semiconductor equipment cycle, earnings growth +33.5%, ALIGNED_UP timeframe. Earnings in 40 days.",
+            "technical": "TF=ALIGNED_UP, EMA20 distance=1.65%, MACD hist=0.857, volume ratio=1.18.",
+            "sentiment": "Options BEARISH (P/C vol 1.912), insider NET_SELLER; analyst data unavailable from tool."
+          },
+          "momentum_profile": {
+            "primary_mode": "BALANCED",
+            "early_momentum_score": 7,
+            "chase_momentum_score": 8,
+            "extension_risk": "MEDIUM",
+            "early_view": "RSI 53.94、5日-9.72%、EMA20乖離1.65%。",
+            "chase_view": "RS STRONG_OUTPERFORM、出来高倍率1.18、20日20.42%。",
+            "score_implication": "BALANCED主導。過熱リスクMEDIUMを反映してスコア調整。"
+          },
+          "conviction_rationale": "MEDIUM: Applied Materials remains a high-quality semiconductor equipment momentum candidate with strong RS and positive earnings growth. Bearish options and insider selling prevent a HIGH conviction call.",
+          "thesis": "Applied Materials remains a high-quality semiconductor equipment momentum candidate with strong RS and positive earnings growth. Bearish options and insider selling prevent a HIGH conviction call.",
+          "key_catalysts": [
+            "semiconductor equipment cycle",
+            "earnings growth +33.5%",
+            "ALIGNED_UP timeframe"
+          ],
+          "key_risks": [
+            "options BEARISH",
+            "insider NET_SELLER",
+            "20日+20%後の調整中"
+          ],
+          "entry_zone": "597.01–615.1",
+          "entry_price": 603.04,
+          "target_price": 705.98,
+          "stop_loss": 551.57,
+          "time_horizon": "4–6 weeks",
+          "rs_signal": "STRONG_OUTPERFORM",
+          "rs_1m": 21.42,
+          "rs_3m": 59.41,
+          "days_until_earnings": 40,
+          "atr_multiplier_used": 2.0,
+          "atr_multiplier_reason": "標準2×ATR。強材料でも過熱銘柄は追随リスクを考慮。",
+          "analyst_upside_pct": 0.0,
+          "conviction_floor": "MEDIUM",
+          "tf_alignment": "ALIGNED_UP",
+          "contrarian_tag": false,
+          "macro_regime": "NORMAL",
+          "data_notes": "Analyst ratings unavailable for most tickers via current tool output; sentiment scored conservatively.",
+          "recommendation": "BUY候補/反発確認"
+        },
+        {
+          "ticker": "AVAV",
+          "company_name": "AeroVironment, Inc.",
+          "score": 7.0,
+          "conviction": "MEDIUM",
+          "current_price": 190.89,
+          "price_at_score": 190.89,
+          "score_breakdown": {
+            "momentum": 8,
+            "fundamentals": 7,
+            "catalyst": 7,
+            "technical": 6,
+            "sentiment": 7
+          },
+          "score_evidence": {
+            "momentum": "RS=NEUTRAL, rs_1m=0.7%, rs_3m=-10.32%, rsi=60.58, 5d=39.66%, 20d=-0.3%.",
+            "fundamentals": "Revenue YoY 133.3%, EPS YoY N/A%, forward PE 41.292976, PEG 1.57.",
+            "catalyst": "Key catalysts: defense/drone theme, Revenue +133% YoY, bullish options flow. Earnings in 60 days.",
+            "technical": "TF=WARNING, EMA20 distance=15.1%, MACD hist=2.5432, volume ratio=2.16.",
+            "sentiment": "Options BULLISH (P/C vol 0.653), insider NET_SELLER; analyst data unavailable from tool."
+          },
+          "momentum_profile": {
+            "primary_mode": "CHASE_MOMENTUM",
+            "early_momentum_score": 5,
+            "chase_momentum_score": 8,
+            "extension_risk": "HIGH",
+            "early_view": "RSI 60.58、5日39.66%、EMA20乖離15.1%。",
+            "chase_view": "RS NEUTRAL、出来高倍率2.16、20日-0.3%。",
+            "score_implication": "CHASE_MOMENTUM主導。過熱リスクHIGHを反映してスコア調整。"
+          },
+          "conviction_rationale": "MEDIUM: AeroVironment offers defense/drone exposure with exceptional revenue growth and a high-volume breakout. Monthly timeframe weakness and valuation keep the score just at threshold.",
+          "thesis": "AeroVironment offers defense/drone exposure with exceptional revenue growth and a high-volume breakout. Monthly timeframe weakness and valuation keep the score just at threshold.",
+          "key_catalysts": [
+            "defense/drone theme",
+            "Revenue +133% YoY",
+            "bullish options flow"
+          ],
+          "key_risks": [
+            "tf_warningあり",
+            "forward PE 41",
+            "insider NET_SELLER"
+          ],
+          "entry_zone": "185.16–192.8",
+          "entry_price": 190.89,
+          "target_price": 216.99,
+          "stop_loss": 177.84,
+          "time_horizon": "4–6 weeks",
+          "rs_signal": "NEUTRAL",
+          "rs_1m": 0.7,
+          "rs_3m": -10.32,
+          "days_until_earnings": 60,
+          "atr_multiplier_used": 2.0,
+          "atr_multiplier_reason": "標準2×ATR。強材料でも過熱銘柄は追随リスクを考慮。",
+          "analyst_upside_pct": 0.0,
+          "conviction_floor": "MEDIUM",
+          "tf_alignment": "WARNING",
+          "contrarian_tag": false,
+          "macro_regime": "NORMAL",
+          "data_notes": "Analyst ratings unavailable for most tickers via current tool output; sentiment scored conservatively.",
+          "recommendation": "BUY候補/要押し目"
+        },
+        {
+          "ticker": "GPC",
+          "company_name": "Genuine Parts Company",
+          "score": 7.0,
+          "conviction": "MEDIUM",
+          "current_price": 132.57,
+          "price_at_score": 132.57,
+          "score_breakdown": {
+            "momentum": 8,
+            "fundamentals": 6,
+            "catalyst": 7,
+            "technical": 8,
+            "sentiment": 6
+          },
+          "score_evidence": {
+            "momentum": "RS=STRONG_OUTPERFORM, rs_1m=37.36%, rs_3m=15.66%, rsi=83.89, 5d=17.33%, 20d=36.36%.",
+            "fundamentals": "Revenue YoY 6.8%, EPS YoY -2.1%, forward PE 15.785338, PEG 1.32.",
+            "catalyst": "Key catalysts: Q2 results scheduled Jul 21, Q1 sales +6.8% and FY2026 outlook reaffirmed. Earnings in 16 days.",
+            "technical": "TF=ALIGNED_UP, EMA20 distance=19.71%, MACD hist=2.2817, volume ratio=2.83.",
+            "sentiment": "Options BULLISH (P/C vol 0.188), insider NET_SELLER; analyst data unavailable from tool."
+          },
+          "momentum_profile": {
+            "primary_mode": "CHASE_MOMENTUM",
+            "early_momentum_score": 5,
+            "chase_momentum_score": 8,
+            "extension_risk": "HIGH",
+            "early_view": "RSI 83.89、5日17.33%、EMA20乖離19.71%。",
+            "chase_view": "RS STRONG_OUTPERFORM、出来高倍率2.83、20日36.36%。",
+            "score_implication": "CHASE_MOMENTUM主導。過熱リスクHIGHを反映してスコア調整。"
+          },
+          "conviction_rationale": "MEDIUM: Genuine Parts broke out with strong RS and aligned timeframes ahead of its July 21 earnings report. The business is stable, but EPS growth is weak and the recent surge raises chase risk.",
+          "thesis": "Genuine Parts broke out with strong RS and aligned timeframes ahead of its July 21 earnings report. The business is stable, but EPS growth is weak and the recent surge raises chase risk.",
+          "key_catalysts": [
+            "Q2 results scheduled Jul 21",
+            "Q1 sales +6.8% and FY2026 outlook reaffirmed"
+          ],
+          "key_risks": [
+            "当日+12.9%で追随リスク",
+            "EPS YoY微減",
+            "insider NET_SELLER"
+          ],
+          "entry_zone": "128.59–133.9",
+          "entry_price": 132.57,
+          "target_price": 141.57,
+          "stop_loss": 128.07,
+          "time_horizon": "4–6 weeks",
+          "rs_signal": "STRONG_OUTPERFORM",
+          "rs_1m": 37.36,
+          "rs_3m": 15.66,
+          "days_until_earnings": 16,
+          "atr_multiplier_used": 2.0,
+          "atr_multiplier_reason": "標準2×ATR。強材料でも過熱銘柄は追随リスクを考慮。",
+          "analyst_upside_pct": 0.0,
+          "conviction_floor": "MEDIUM",
+          "tf_alignment": "ALIGNED_UP",
+          "contrarian_tag": false,
+          "macro_regime": "NORMAL",
+          "data_notes": "Analyst ratings unavailable for most tickers via current tool output; sentiment scored conservatively.",
+          "recommendation": "BUY候補/決算前注意"
+        },
+        {
+          "ticker": "MRNA",
+          "company_name": "Moderna, Inc.",
+          "score": 7.0,
+          "conviction": "LOW",
+          "current_price": 79.76,
+          "price_at_score": 79.76,
+          "score_breakdown": {
+            "momentum": 9,
+            "fundamentals": 4,
+            "catalyst": 8,
+            "technical": 8,
+            "sentiment": 6
+          },
+          "score_evidence": {
+            "momentum": "RS=STRONG_OUTPERFORM, rs_1m=63.58%, rs_3m=48.25%, rsi=80.84, 5d=33.49%, 20d=62.58%.",
+            "fundamentals": "Revenue YoY 260.2%, EPS YoY N/A%, forward PE -19.278133, PEG None.",
+            "catalyst": "Key catalysts: June Science Day mRNA platform update, FDA flu-shot review path / Aug 5 target decision. Earnings in 26 days.",
+            "technical": "TF=ALIGNED_UP, EMA20 distance=29.5%, MACD hist=2.1224, volume ratio=1.59.",
+            "sentiment": "Options BULLISH (P/C vol 0.143), insider NET_SELLER; analyst data unavailable from tool."
+          },
+          "momentum_profile": {
+            "primary_mode": "CHASE_MOMENTUM",
+            "early_momentum_score": 4,
+            "chase_momentum_score": 9,
+            "extension_risk": "HIGH",
+            "early_view": "RSI 80.84、5日33.49%、EMA20乖離29.5%。",
+            "chase_view": "RS STRONG_OUTPERFORM、出来高倍率1.59、20日62.58%。",
+            "score_implication": "CHASE_MOMENTUM主導。過熱リスクHIGHを反映してスコア調整。"
+          },
+          "conviction_rationale": "LOW: Moderna is a high-beta biotech momentum setup with very strong RS and identifiable platform/FDA catalysts. Losses and clinical/regulatory risk make it a LOW conviction candidate despite the score.",
+          "thesis": "Moderna is a high-beta biotech momentum setup with very strong RS and identifiable platform/FDA catalysts. Losses and clinical/regulatory risk make it a LOW conviction candidate despite the score.",
+          "key_catalysts": [
+            "June Science Day mRNA platform update",
+            "FDA flu-shot review path / Aug 5 target decision"
+          ],
+          "key_risks": [
+            "赤字継続",
+            "バイオ規制リスク",
+            "急騰後のボラティリティ"
+          ],
+          "entry_zone": "77.37–80.56",
+          "entry_price": 79.76,
+          "target_price": 90.85,
+          "stop_loss": 74.22,
+          "time_horizon": "4–6 weeks",
+          "rs_signal": "STRONG_OUTPERFORM",
+          "rs_1m": 63.58,
+          "rs_3m": 48.25,
+          "days_until_earnings": 26,
+          "atr_multiplier_used": 2.0,
+          "atr_multiplier_reason": "標準2×ATR。強材料でも過熱銘柄は追随リスクを考慮。",
+          "analyst_upside_pct": 0.0,
+          "conviction_floor": "LOW",
+          "tf_alignment": "ALIGNED_UP",
+          "contrarian_tag": false,
+          "macro_regime": "NORMAL",
+          "data_notes": "Analyst ratings unavailable for most tickers via current tool output; sentiment scored conservatively.",
+          "recommendation": "投機的BUY候補"
+        }
+      ]
+    },
+    {
+      "run_id": "b4abfc61-ca98-435d-aa84-35bef6cb86ce",
+      "date": "2026-07-12",
+      "candidates": []
+    },
+    {
+      "run_id": "bc5863ae-b769-420d-8069-6dacc57a678f",
+      "date": "2026-07-12",
+      "candidates": [
+        {
+          "ticker": "WDFC",
+          "company_name": "WD-40 Company",
+          "score": 7.25,
+          "conviction": "MEDIUM",
+          "current_price": 264.91,
+          "entry_price": 264.91,
+          "allocation_pct": 12,
+          "shares": 1,
+          "score_breakdown": {
+            "momentum": 7.2,
+            "fundamentals": 6.9,
+            "catalyst": 10,
+            "technical": 6.3,
+            "sentiment": 7.0
+          },
+          "factor_grades": {
+            "momentum": "B",
+            "fundamentals": "B",
+            "catalyst": "A",
+            "technical": "C",
+            "sentiment": "B"
+          },
+          "score_evidence": {
+            "momentum": "grade B: rs_signal=STRONG_OUTPERFORM, rs_1m=14.73, rs_3m=13.01, RSI=73.51, 5d=7.76%, 20d=19.07%, volume_ratio=6.64, extension=HIGH",
+            "fundamentals": "grade B: revenue_growth=24.3%, earnings_growth=45.5%, forward_pe=40.077156, peg=3.76, fcf=73423504.0, cash=59137000.0, debt=110954000.0",
+            "catalyst": "grade A: analyst revisions positive (9 upgrades), news: raising guidance, raised its full-year, buyback, Revenue growth 24.3%, EPS growth 45.5%, options NEUTRAL_BULLISH",
+            "technical": "grade C: tf=ALIGNED_UP, price/EMA20=11.08%, EMA50=224.9, MACD hist=0.8514, RR=0.72",
+            "sentiment": "grade B: analyst_revision=POSITIVE_REVISION, upgrades=9, options=NEUTRAL_BULLISH, pc=0.972, insider=NEUTRAL, news_items=10"
+          },
+          "momentum_profile": {
+            "primary_mode": "CHASE_MOMENTUM",
+            "early_momentum_score": 7.2,
+            "chase_momentum_score": 7.2,
+            "extension_risk": "HIGH",
+            "early_view": "RSI 73.51, 5d 7.76%, EMA20乖離 11.08%。",
+            "chase_view": "RS STRONG_OUTPERFORM, 1m 14.73%, 3m 13.01%, volume_ratio 6.64。",
+            "score_implication": "RS/補完データ反映後 momentum 7.2点。"
+          },
+          "conviction_rationale": "補完後スコア7.25: RS=STRONG_OUTPERFORM、fundamentals grade B、catalyst grade A、technical ALIGNED_UP。",
+          "thesis": "WD-40 Companyは現在 $264.91。RS=STRONG_OUTPERFORM、成長率 revenue 24.3% / EPS 45.5%、補完ニュース/アナリスト改定を反映して再評価。",
+          "rationale": "補完後スコア7.25: WD-40 Company。analyst revisions positive (9 upgrades), news: raising guidance, raised its full-year, buyback。",
+          "key_catalysts": [
+            "analyst revisions positive (9 upgrades)",
+            "news: raising guidance, raised its full-year, buyback",
+            "Revenue growth 24.3%",
+            "EPS growth 45.5%",
+            "options NEUTRAL_BULLISH"
+          ],
+          "key_risks": [
+            "extension risk HIGH"
+          ],
+          "risks": "extension risk HIGH",
+          "entry_zone": "259.61-270.21",
+          "target_price": 286.13,
+          "stop_loss": 254.3,
+          "time_horizon": "4-6 weeks",
+          "rs_signal": "STRONG_OUTPERFORM",
+          "rs_1m": 14.73,
+          "rs_3m": 13.01,
+          "days_until_earnings": -2,
+          "atr_multiplier_used": 2.0,
+          "atr_multiplier_reason": "ATR tool target/stop",
+          "analyst_upside_pct": 0.0,
+          "conviction_floor": "MEDIUM",
+          "tf_alignment": "ALIGNED_UP",
+          "contrarian_tag": false,
+          "macro_regime": "NORMAL",
+          "data_notes": "補完済み: news, relative_strength, earnings_calendar, analyst_revision_history, timeframe_alignment。growth fields normalized from yfinance ratios."
+        },
+        {
+          "ticker": "MU",
+          "company_name": "Micron Technology, Inc.",
+          "score": 7.1,
+          "conviction": "MEDIUM",
+          "current_price": 979.3,
+          "entry_price": 979.3,
+          "allocation_pct": 12,
+          "shares": 1,
+          "score_breakdown": {
+            "momentum": 7.1,
+            "fundamentals": 8.7,
+            "catalyst": 5.9,
+            "technical": 7.5,
+            "sentiment": 4.7
+          },
+          "factor_grades": {
+            "momentum": "B",
+            "fundamentals": "A",
+            "catalyst": "C",
+            "technical": "B",
+            "sentiment": "D"
+          },
+          "score_evidence": {
+            "momentum": "grade B: rs_signal=STRONG_OUTPERFORM, rs_1m=5.48, rs_3m=121.48, RSI=49.08, 5d=0.4%, 20d=9.82%, volume_ratio=0.58, extension=LOW",
+            "fundamentals": "grade A: revenue_growth=345.7%, earnings_growth=13.685%, forward_pe=6.5444407, peg=0.14, fcf=7639499776.0, cash=26022000640.0, debt=6376000000.0",
+            "catalyst": "grade C: analyst revisions positive (6 upgrades), news: ai, Revenue growth 345.7%, options BEARISH",
+            "technical": "grade B: tf=ALIGNED_UP, price/EMA20=-3.15%, EMA50=903.2, MACD hist=-28.2038, RR=2.38",
+            "sentiment": "grade D: analyst_revision=POSITIVE_REVISION, upgrades=6, options=BEARISH, pc=1.561, insider=NET_SELLER, news_items=10"
+          },
+          "momentum_profile": {
+            "primary_mode": "CHASE_MOMENTUM",
+            "early_momentum_score": 7.1,
+            "chase_momentum_score": 7.1,
+            "extension_risk": "LOW",
+            "early_view": "RSI 49.08, 5d 0.4%, EMA20乖離 -3.15%。",
+            "chase_view": "RS STRONG_OUTPERFORM, 1m 5.48%, 3m 121.48%, volume_ratio 0.58。",
+            "score_implication": "RS/補完データ反映後 momentum 7.1点。"
+          },
+          "conviction_rationale": "補完後スコア7.1: RS=STRONG_OUTPERFORM、fundamentals grade A、catalyst grade C、technical ALIGNED_UP。",
+          "thesis": "Micron Technology, Inc.は現在 $979.30。RS=STRONG_OUTPERFORM、成長率 revenue 345.7% / EPS 13.685%、補完ニュース/アナリスト改定を反映して再評価。",
+          "rationale": "補完後スコア7.1: Micron Technology, Inc.。analyst revisions positive (6 upgrades), news: ai。",
+          "key_catalysts": [
+            "analyst revisions positive (6 upgrades)",
+            "news: ai",
+            "Revenue growth 345.7%",
+            "options BEARISH"
+          ],
+          "key_risks": [
+            "MACD negative",
+            "price below EMA20",
+            "insider NET_SELLER"
+          ],
+          "risks": "MACD negative, price below EMA20, insider NET_SELLER",
+          "entry_zone": "959.71-998.89",
+          "target_price": 1175.68,
+          "stop_loss": 881.11,
+          "time_horizon": "4-6 weeks",
+          "rs_signal": "STRONG_OUTPERFORM",
+          "rs_1m": 5.48,
+          "rs_3m": 121.48,
+          "days_until_earnings": 74,
+          "atr_multiplier_used": 2.0,
+          "atr_multiplier_reason": "ATR tool target/stop",
+          "analyst_upside_pct": 0.0,
+          "conviction_floor": "MEDIUM",
+          "tf_alignment": "ALIGNED_UP",
+          "contrarian_tag": false,
+          "macro_regime": "NORMAL",
+          "data_notes": "補完済み: news, relative_strength, earnings_calendar, analyst_revision_history, timeframe_alignment。growth fields normalized from yfinance ratios."
+        },
+        {
+          "ticker": "CCC",
+          "company_name": "CCC Intelligent Solutions Holdings Inc.",
+          "score": 7.07,
+          "conviction": "MEDIUM",
+          "current_price": 5.92,
+          "entry_price": 5.92,
+          "allocation_pct": 12,
+          "shares": 1,
+          "score_breakdown": {
+            "momentum": 7.2,
+            "fundamentals": 6.3,
+            "catalyst": 8.5,
+            "technical": 6.3,
+            "sentiment": 7.9
+          },
+          "factor_grades": {
+            "momentum": "B",
+            "fundamentals": "C",
+            "catalyst": "A",
+            "technical": "C",
+            "sentiment": "B"
+          },
+          "score_evidence": {
+            "momentum": "grade B: rs_signal=OUTPERFORM, rs_1m=21.62, rs_3m=7.24, RSI=69.87, 5d=6.09%, 20d=25.96%, volume_ratio=1.77, extension=HIGH",
+            "fundamentals": "grade C: revenue_growth=11.799999999999999%, earnings_growth=None%, forward_pe=11.683442, peg=None, fcf=228074880.0, cash=36900000.0, debt=1386114944.0",
+            "catalyst": "grade A: analyst revisions positive (6 upgrades), news: sale, acquisition, ai, earnings in 18 days, options BULLISH",
+            "technical": "grade C: tf=ALIGNED_UP, price/EMA20=14.95%, EMA50=5.0, MACD hist=0.107, RR=0.73",
+            "sentiment": "grade B: analyst_revision=POSITIVE_REVISION, upgrades=6, options=BULLISH, pc=0.017, insider=NEUTRAL, news_items=10"
+          },
+          "momentum_profile": {
+            "primary_mode": "CHASE_MOMENTUM",
+            "early_momentum_score": 7.2,
+            "chase_momentum_score": 7.2,
+            "extension_risk": "HIGH",
+            "early_view": "RSI 69.87, 5d 6.09%, EMA20乖離 14.95%。",
+            "chase_view": "RS OUTPERFORM, 1m 21.62%, 3m 7.24%, volume_ratio 1.77。",
+            "score_implication": "RS/補完データ反映後 momentum 7.2点。"
+          },
+          "conviction_rationale": "補完後スコア7.07: RS=OUTPERFORM、fundamentals grade C、catalyst grade A、technical ALIGNED_UP。",
+          "thesis": "CCC Intelligent Solutions Holdings Inc.は現在 $5.92。RS=OUTPERFORM、成長率 revenue 11.799999999999999% / EPS None%、補完ニュース/アナリスト改定を反映して再評価。",
+          "rationale": "補完後スコア7.07: CCC Intelligent Solutions Holdings Inc.。analyst revisions positive (6 upgrades), news: sale, acquisition, ai。",
+          "key_catalysts": [
+            "analyst revisions positive (6 upgrades)",
+            "news: sale, acquisition, ai",
+            "earnings in 18 days",
+            "options BULLISH"
+          ],
+          "key_risks": [
+            "extension risk HIGH"
+          ],
+          "risks": "extension risk HIGH",
+          "entry_zone": "5.80-6.04",
+          "target_price": 6.56,
+          "stop_loss": 5.6,
+          "time_horizon": "4-6 weeks",
+          "rs_signal": "OUTPERFORM",
+          "rs_1m": 21.62,
+          "rs_3m": 7.24,
+          "days_until_earnings": 18,
+          "atr_multiplier_used": 2.0,
+          "atr_multiplier_reason": "ATR tool target/stop",
+          "analyst_upside_pct": 0.0,
+          "conviction_floor": "LOW",
+          "tf_alignment": "ALIGNED_UP",
+          "contrarian_tag": false,
+          "macro_regime": "NORMAL",
+          "data_notes": "補完済み: news, relative_strength, earnings_calendar, analyst_revision_history, timeframe_alignment。growth fields normalized from yfinance ratios."
+        }
+      ]
+    },
+    {
+      "run_id": "70a23feb-adb1-46b4-bfa0-e99dd049be66",
+      "date": "2026-07-18",
+      "candidates": [
+        {
+          "ticker": "DECK",
+          "company_name": "Deckers Outdoor Corporation",
+          "score": 8.5,
+          "conviction": "HIGH",
+          "current_price": 106.49,
+          "score_breakdown": {
+            "momentum": 9,
+            "fundamentals": 8,
+            "catalyst": 9,
+            "technical": 8,
+            "sentiment": 8
+          },
+          "score_evidence": {
+            "momentum": "RSI51.01、5日+0.47%、20日+0.73%、EMA20比+0.50%、MACD改善で初動条件に合致。",
+            "fundamentals": "売上+9.6%、純利益率18.7%、ROE40.9%、FCF$858.7M、forward PE12.8。",
+            "catalyst": "6日後の決算、Jefferies Buy格上げ・目標$130、自社株買い。",
+            "technical": "EMA20/50直上、MACD強気、PARTIAL_UP。",
+            "sentiment": "buy 21名、平均目標$127.81（+20.0%）。"
+          },
+          "momentum_profile": {
+            "primary_mode": "EARLY_MOMENTUM",
+            "early_momentum_score": 9,
+            "chase_momentum_score": 6,
+            "extension_risk": "LOW",
+            "early_view": "EMA近辺の未伸長初動。",
+            "chase_view": "出来高0.75倍で追随確認は未完。",
+            "score_implication": "初動9を採用。"
+          },
+          "conviction_rationale": "割安・健全財務・決算材料が強くHIGH。",
+          "thesis": "HOKA/UGGのブランド力と強いキャッシュ創出を持ちながら割安。EMA近辺の初動形と決算・格上げが再評価を促す。",
+          "key_catalysts": [
+            "2026-07-24決算",
+            "Jefferies Buy格上げ",
+            "自社株買い"
+          ],
+          "key_risks": [
+            "決算ギャップ",
+            "HOKA成長鈍化",
+            "出来高不足"
+          ],
+          "entry_zone": "105.94–107.00",
+          "target_price": 117.58,
+          "stop_loss": 105.96,
+          "time_horizon": "4–6 weeks",
+          "rs_signal": "NEUTRAL",
+          "rs_1m": 0.16,
+          "rs_3m": -10.28,
+          "days_until_earnings": 6,
+          "atr_multiplier_used": 3.0,
+          "atr_multiplier_reason": "決算6日後かつ強いファンダ。",
+          "analyst_upside_pct": 20.02,
+          "conviction_floor": "MEDIUM",
+          "tf_alignment": "PARTIAL_UP",
+          "contrarian_tag": false,
+          "macro_regime": "NORMAL",
+          "data_notes": "Perplexity 401。ローカル/Xデータで補完。"
+        },
+        {
+          "ticker": "NEE",
+          "company_name": "NextEra Energy, Inc.",
+          "score": 8.2,
+          "conviction": "HIGH",
+          "current_price": 88.8,
+          "score_breakdown": {
+            "momentum": 9,
+            "fundamentals": 7,
+            "catalyst": 9,
+            "technical": 8,
+            "sentiment": 7
+          },
+          "score_evidence": {
+            "momentum": "RSI54.19、5日+0.95%、20日+3.58%、EMA20比+0.87%、BB収縮。",
+            "fundamentals": "売上+7.3%、利益+160%、純利益率29.4%、forward PE20.17。",
+            "catalyst": "6日後の決算、Dominion統合申請、AI電力需要。",
+            "technical": "EMA20/50上、MACD強気、BBスクイーズ。",
+            "sentiment": "buy 20名、平均目標$99.20。"
+          },
+          "momentum_profile": {
+            "primary_mode": "EARLY_MOMENTUM",
+            "early_momentum_score": 9,
+            "chase_momentum_score": 6,
+            "extension_risk": "LOW",
+            "early_view": "初動条件に高適合。",
+            "chase_view": "出来高不足で未完成。",
+            "score_implication": "初動9を採用。"
+          },
+          "conviction_rationale": "初動、利益成長、決算、AI電力需要からHIGH。",
+          "thesis": "収益成長とAIデータセンター電力需要、再エネ・蓄電、Dominion統合が材料。BBスクイーズの初動形。",
+          "key_catalysts": [
+            "2026-07-24決算",
+            "Dominion統合",
+            "AI電力需要"
+          ],
+          "key_risks": [
+            "決算ギャップ",
+            "規制審査",
+            "高債務"
+          ],
+          "entry_zone": "88.20–89.00",
+          "target_price": 93.49,
+          "stop_loss": 88.2,
+          "time_horizon": "4–6 weeks",
+          "rs_signal": "NEUTRAL",
+          "rs_1m": 3.01,
+          "rs_3m": -7.69,
+          "days_until_earnings": 6,
+          "atr_multiplier_used": 3.0,
+          "atr_multiplier_reason": "決算6日後かつ強い利益成長。",
+          "analyst_upside_pct": 11.71,
+          "conviction_floor": "MEDIUM",
+          "tf_alignment": "MIXED",
+          "contrarian_tag": false,
+          "macro_regime": "NORMAL",
+          "data_notes": "決算売上予想値にデータ差異あり。"
+        },
+        {
+          "ticker": "WAY",
+          "company_name": "Waystar Holding Corp.",
+          "score": 7.9,
+          "conviction": "MEDIUM",
+          "current_price": 22.27,
+          "score_breakdown": {
+            "momentum": 7,
+            "fundamentals": 9,
+            "catalyst": 9,
+            "technical": 6,
+            "sentiment": 8
+          },
+          "score_evidence": {
+            "momentum": "RSI54.79、EMA20比+2.34%、MACD改善。ただし20日+22%。",
+            "fundamentals": "売上+22.4%、利益+37.5%、forward PE12.04、FCF$328M。",
+            "catalyst": "12日後の決算、$200M自社株買い、AI RCM。",
+            "technical": "EMA上だが月足下降でWARNING。",
+            "sentiment": "strong_buy 23名、平均目標$33.57。"
+          },
+          "momentum_profile": {
+            "primary_mode": "EARLY_MOMENTUM",
+            "early_momentum_score": 7,
+            "chase_momentum_score": 6,
+            "extension_risk": "HIGH",
+            "early_view": "押し目型初動。",
+            "chase_view": "出来高不足と20日過熱。",
+            "score_implication": "初動7を採用。"
+          },
+          "conviction_rationale": "強いファンダと材料を評価、過熱と上位足不整合でMEDIUM。",
+          "thesis": "高成長・高FCF・低評価に決算、自社株買い、AI型RCMが重なる。20日上昇後のため押し目限定。",
+          "key_catalysts": [
+            "2026-07-30決算",
+            "自社株買い",
+            "AI型RCM"
+          ],
+          "key_risks": [
+            "決算ギャップ",
+            "短期過熱",
+            "月足下降"
+          ],
+          "entry_zone": "21.76–22.50",
+          "target_price": 25.7,
+          "stop_loss": 21.76,
+          "time_horizon": "4–6 weeks",
+          "rs_signal": "NEUTRAL",
+          "rs_1m": 21.46,
+          "rs_3m": -18.62,
+          "days_until_earnings": 12,
+          "atr_multiplier_used": 3.0,
+          "atr_multiplier_reason": "決算12日後かつ強いファンダ。",
+          "analyst_upside_pct": 50.72,
+          "conviction_floor": "MEDIUM",
+          "tf_alignment": "WARNING",
+          "contrarian_tag": false,
+          "macro_regime": "NORMAL",
+          "data_notes": "Perplexity 401。"
+        },
+        {
+          "ticker": "SAIC",
+          "company_name": "Science Applications International Corporation",
+          "score": 7.5,
+          "conviction": "MEDIUM",
+          "current_price": 115.51,
+          "score_breakdown": {
+            "momentum": 8,
+            "fundamentals": 7,
+            "catalyst": 7,
+            "technical": 9,
+            "sentiment": 5
+          },
+          "score_evidence": {
+            "momentum": "RSI60.41、5日+2.57%、20日+8.58%、EMA20比+3.30%、STRONG_OUTPERFORM。",
+            "fundamentals": "利益+83.8%、forward PE10.5、FCF$418M。",
+            "catalyst": "海軍契約、政府IT調達改革、自社株買い。",
+            "technical": "全時間軸上昇、EMA上、MACD強気。",
+            "sentiment": "hold 10名、平均目標$120。"
+          },
+          "momentum_profile": {
+            "primary_mode": "EARLY_MOMENTUM",
+            "early_momentum_score": 8,
+            "chase_momentum_score": 7,
+            "extension_risk": "LOW",
+            "early_view": "初動条件が揃う。",
+            "chase_view": "出来高0.70倍で未確認。",
+            "score_implication": "初動8を採用。"
+          },
+          "conviction_rationale": "強いRSと技術面、割安を評価。低売上成長と負債でMEDIUM。",
+          "thesis": "強い相対強度、低forward PE、利益成長と政府IT・防衛材料を持つ初動候補。出来高確認が必要。",
+          "key_catalysts": [
+            "米海軍契約",
+            "FIT Procurement Act",
+            "自社株買い"
+          ],
+          "key_risks": [
+            "低売上成長",
+            "高負債",
+            "出来高不足"
+          ],
+          "entry_zone": "111.82–116.00",
+          "target_price": 123.34,
+          "stop_loss": 111.82,
+          "time_horizon": "4–6 weeks",
+          "rs_signal": "STRONG_OUTPERFORM",
+          "rs_1m": 8.01,
+          "rs_3m": 16.56,
+          "days_until_earnings": -47,
+          "atr_multiplier_used": 2.0,
+          "atr_multiplier_reason": "次回決算不明、デフォルト。",
+          "analyst_upside_pct": 3.89,
+          "conviction_floor": "MEDIUM",
+          "tf_alignment": "ALIGNED_UP",
+          "contrarian_tag": false,
+          "macro_regime": "NORMAL",
+          "data_notes": "次回決算日取得不能。"
+        },
+        {
+          "ticker": "REZI",
+          "company_name": "Resideo Technologies, Inc.",
+          "score": 7.3,
+          "conviction": "MEDIUM",
+          "current_price": 35.83,
+          "score_breakdown": {
+            "momentum": 7,
+            "fundamentals": 5,
+            "catalyst": 9,
+            "technical": 8,
+            "sentiment": 7
+          },
+          "score_evidence": {
+            "momentum": "RSI59.57、5日+5.57%、出来高1.59倍。20日+17.82%。",
+            "fundamentals": "売上+8%、forward PE11.82。一方FCF赤字・高負債。",
+            "catalyst": "ADI Global Distributionスピンオフ承認。",
+            "technical": "全時間軸上昇、EMA上、MACD強気。",
+            "sentiment": "strong_buy、平均目標$49.33。"
+          },
+          "momentum_profile": {
+            "primary_mode": "CHASE_MOMENTUM",
+            "early_momentum_score": 6,
+            "chase_momentum_score": 7,
+            "extension_risk": "MEDIUM",
+            "early_view": "既に伸長。",
+            "chase_view": "出来高と全時間軸上昇を評価。",
+            "score_implication": "追随7。"
+          },
+          "conviction_rationale": "スピンオフと技術面を評価、負債と伸長でMEDIUM。",
+          "thesis": "ADI分離による価値顕在化とマージン改善が狙えるイベント候補。全時間軸上昇だが押し目で入りたい。",
+          "key_catalysts": [
+            "ADIスピンオフ",
+            "マージン拡大",
+            "指数採用"
+          ],
+          "key_risks": [
+            "高負債",
+            "FCF変動",
+            "短期伸長"
+          ],
+          "entry_zone": "34.50–36.00",
+          "target_price": 39.65,
+          "stop_loss": 33.92,
+          "time_horizon": "4–6 weeks",
+          "rs_signal": "NEUTRAL",
+          "rs_1m": 17.25,
+          "rs_3m": -15.99,
+          "days_until_earnings": 20,
+          "atr_multiplier_used": 2.0,
+          "atr_multiplier_reason": "明確な材料、決算20日後。",
+          "analyst_upside_pct": 37.69,
+          "conviction_floor": "MEDIUM",
+          "tf_alignment": "ALIGNED_UP",
+          "contrarian_tag": false,
+          "macro_regime": "NORMAL",
+          "data_notes": "Perplexity 401。"
+        },
+        {
+          "ticker": "SLS",
+          "company_name": "SELLAS Life Sciences Group, Inc.",
+          "score": 7.2,
+          "conviction": "MEDIUM",
+          "current_price": 13.19,
+          "score_breakdown": {
+            "momentum": 8,
+            "fundamentals": 3,
+            "catalyst": 10,
+            "technical": 7,
+            "sentiment": 7
+          },
+          "score_evidence": {
+            "momentum": "20日+69.97%、STRONG_OUTPERFORM。過熱リスク大。",
+            "fundamentals": "前収益・赤字・希薄化。ただし低負債。",
+            "catalyst": "Phase 3 REGALトップライン。",
+            "technical": "全時間軸上昇だがATR13.36%。",
+            "sentiment": "strong_buy 2名、平均目標$27.50。"
+          },
+          "momentum_profile": {
+            "primary_mode": "CHASE_MOMENTUM",
+            "early_momentum_score": 2,
+            "chase_momentum_score": 8,
+            "extension_risk": "HIGH",
+            "early_view": "初動ではない。",
+            "chase_view": "強いRSと臨床材料。",
+            "score_implication": "強い材料のため7キャップせず8。"
+          },
+          "conviction_rationale": "Phase 3材料とRSを評価、バイナリー・希薄化でMEDIUM。",
+          "thesis": "Phase 3 REGAL読出しと強いRSで上値余地がある。前収益バイオの二値リスクから小配分と厳格ストップが必要。",
+          "key_catalysts": [
+            "Phase 3 REGAL",
+            "SLS009",
+            "買収思惑"
+          ],
+          "key_risks": [
+            "臨床失敗",
+            "希薄化",
+            "短期過熱"
+          ],
+          "entry_zone": "12.13–13.20",
+          "target_price": 16.71,
+          "stop_loss": 12.13,
+          "time_horizon": "4–6 weeks",
+          "rs_signal": "STRONG_OUTPERFORM",
+          "rs_1m": 69.4,
+          "rs_3m": 147.74,
+          "days_until_earnings": 25,
+          "atr_multiplier_used": 2.0,
+          "atr_multiplier_reason": "臨床材料、決算25日後。",
+          "analyst_upside_pct": 108.49,
+          "conviction_floor": "MEDIUM",
+          "tf_alignment": "ALIGNED_UP",
+          "contrarian_tag": false,
+          "macro_regime": "NORMAL",
+          "data_notes": "臨床読出しの正確な日付不明。"
         }
       ]
     }

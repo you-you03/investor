@@ -21,6 +21,7 @@ def test_compute_setup_metrics_derives_early_chase_inputs():
         ema_20=120.0,
         ema_50=115.0,
         bollinger_bands={"upper": 130.0, "middle": 120.0, "lower": 110.0},
+        atr_14=2.0,
     )
 
     assert metrics["return_5d_pct"] == pytest.approx(4.17)
@@ -31,3 +32,8 @@ def test_compute_setup_metrics_derives_early_chase_inputs():
     assert metrics["bb_width_pct"] == pytest.approx(16.67)
     assert metrics["bb_position"] == pytest.approx(0.75)
     assert metrics["pullback_from_20d_high_pct"] == pytest.approx(-0.79)
+    assert metrics["support_reference_price"] == pytest.approx(120.0)
+    assert metrics["stop_distance_pct"] == pytest.approx(4.17)
+    assert metrics["rr_to_2atr_target"] == pytest.approx(0.77)
+    assert metrics["gap_up_fade"] is False
+    assert metrics["breakout_failure"] is False

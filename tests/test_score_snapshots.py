@@ -13,7 +13,13 @@ def test_add_score_snapshots_tracks_watchlist_results(tmp_path, monkeypatch):
         source="watchlist_research",
         scored_at=date(2026, 6, 12),
         results=[
-            {"ticker": "NVDA", "new_score": 8.4, "action": "ESCALATE"},
+            {
+                "ticker": "NVDA",
+                "new_score": 8.4,
+                "action": "ESCALATE",
+                "factor_grades": {"fundamentals": "A", "catalyst": "B"},
+                "score_evidence": {"fundamentals": "grade A: FCF positive"},
+            },
             {"ticker": "TEAM", "new_score": 7.4, "action": "MAINTAIN"},
         ],
     )
@@ -23,6 +29,10 @@ def test_add_score_snapshots_tracks_watchlist_results(tmp_path, monkeypatch):
     snapshots = data["snapshots"]
     assert snapshots[0]["ticker"] == "NVDA"
     assert snapshots[0]["conviction"] == "HIGH"
+    assert snapshots[0]["factor_grades"]["fundamentals"] == "A"
+    assert snapshots[0]["fundamentals_grade"] == "A"
+    assert snapshots[0]["catalyst_grade"] == "B"
+    assert snapshots[0]["score_evidence"]["fundamentals"] == "grade A: FCF positive"
     assert snapshots[0]["sector_etf"] == "SMH"
     assert snapshots[0]["week3"]["target_date"] == "2026-07-03"
     assert snapshots[0]["week5"]["target_date"] == "2026-07-17"

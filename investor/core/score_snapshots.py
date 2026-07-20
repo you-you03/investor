@@ -23,6 +23,8 @@ CONVICTION_SCORE = {
     "LOW": 6.0,
 }
 
+FACTOR_KEYS = ("momentum", "fundamentals", "catalyst", "technical", "sentiment")
+
 SEMICONDUCTOR_TICKERS = {
     "NVDA", "AMD", "AVGO", "TSM", "ASML", "AMAT", "LRCX", "KLAC", "MU",
     "MRVL", "ARM", "ALAB", "COHR", "AAOI", "CRDO", "ON", "QCOM", "INTC",
@@ -68,6 +70,38 @@ def score_from_result(result: dict[str, Any]) -> float | None:
                 return None
     conviction = infer_conviction(conviction=result.get("conviction"))
     return CONVICTION_SCORE.get(conviction)
+
+
+def conviction_source_from_result(result: dict[str, Any]) -> str:
+    """Track whether conviction was explicitly assigned or inferred from score."""
+    normalized = (result.get("conviction") or "").strip().upper()
+    if normalized in {"HIGH", "MEDIUM", "LOW"}:
+        return "explicit"
+    if result.get("score") is not None or result.get("new_score") is not None:
+        return "inferred_from_score"
+    return "missing"
+
+
+def _normalize_grade(value: Any) -> str:
+    grade = str(value or "").strip().upper()
+    return grade if grade in {"A", "B", "C", "D"} else ""
+
+
+def factor_grades_from_result(result: dict[str, Any]) -> dict[str, str]:
+    """Extract per-factor quality grades from explicit fields or score_evidence."""
+    explicit = result.get("factor_grades") or result.get("quality_grades") or {}
+    evidence = result.get("score_evidence") or {}
+    grades: dict[str, str] = {}
+    for factor in FACTOR_KEYS:
+        grade = (
+            explicit.get(factor)
+            or result.get(f"{factor}_grade")
+            or evidence.get(f"{factor}_grade")
+        )
+        if isinstance(evidence.get(factor), dict):
+            grade = grade or evidence[factor].get(f"{factor}_grade") or evidence[factor].get("grade")
+        grades[factor] = _normalize_grade(grade)
+    return grades
 
 
 def sector_etf_for_ticker(ticker: str) -> str:
@@ -246,7 +280,10 @@ def add_score_snapshots(
             continue
 
         conviction = infer_conviction(score=score, conviction=result.get("conviction"))
+        conviction_source = conviction_source_from_result(result)
         momentum_profile = result.get("momentum_profile") or {}
+        factor_grades = factor_grades_from_result(result)
+        score_evidence = result.get("score_evidence") or {}
         snapshot = {
             "run_id": run_id,
             "source": source,
@@ -255,7 +292,15 @@ def add_score_snapshots(
             "company_name": company_name,
             "score": round(score, 2),
             "conviction": conviction,
+            "conviction_source": conviction_source,
             "score_breakdown": result.get("score_breakdown") or {},
+            "score_evidence": score_evidence,
+            "factor_grades": factor_grades,
+            "fundamentals_grade": factor_grades.get("fundamentals") or "",
+            "catalyst_grade": factor_grades.get("catalyst") or "",
+            "technical_grade": factor_grades.get("technical") or "",
+            "momentum_grade": factor_grades.get("momentum") or "",
+            "sentiment_grade": factor_grades.get("sentiment") or "",
             "momentum_profile": momentum_profile,
             "momentum_primary_mode": momentum_profile.get("primary_mode") or "",
             "early_momentum_score": momentum_profile.get("early_momentum_score"),

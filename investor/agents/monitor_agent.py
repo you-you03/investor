@@ -61,6 +61,59 @@ def _safe_float(value) -> float | None:
         return None
 
 
+def _safe_bool(value) -> bool:
+    if isinstance(value, bool):
+        return value
+    if value is None:
+        return False
+    return str(value).strip().lower() in {"1", "true", "yes", "y"}
+
+
+def _decision_wait_trigger_flags(item: dict, price: float | None) -> tuple[list[str], str | None]:
+    """Evaluate structured WAIT triggers stored on watchlist rows.
+
+    These triggers are intentionally research prompts, not automatic BUY signals.
+    They convert "WAIT" decisions into concrete re-check conditions.
+    """
+    trigger = item.get("decision_wait_trigger") or {}
+    if not isinstance(trigger, dict) or price is None:
+        return [], None
+    expires_at = trigger.get("expires_at")
+    if expires_at:
+        try:
+            if datetime.strptime(str(expires_at), "%Y-%m-%d").date() < date.today():
+                return [], "WAIT trigger expired"
+        except ValueError:
+            pass
+
+    flags: list[str] = []
+    detail = None
+    lower = _safe_float(trigger.get("lower"))
+    upper = _safe_float(trigger.get("upper"))
+    reclaim_price = _safe_float(trigger.get("reclaim_price"))
+    breakout_above = _safe_float(trigger.get("breakout_above"))
+
+    if lower is not None and upper is not None:
+        if lower <= price <= upper:
+            flags.append("decision_wait_entry_zone")
+            detail = f"price ${price:.2f} inside WAIT zone ${lower:.2f}-${upper:.2f}"
+        elif price > upper:
+            distance_pct = (price - upper) / price * 100
+            if distance_pct <= 3.0:
+                flags.append("decision_wait_near_zone")
+                detail = f"price ${price:.2f} within {distance_pct:.1f}% of WAIT zone upper ${upper:.2f}"
+
+    if reclaim_price is not None and price >= reclaim_price:
+        flags.append("decision_wait_reclaim")
+        detail = f"price ${price:.2f} reclaimed trigger ${reclaim_price:.2f}"
+
+    if breakout_above is not None and price >= breakout_above:
+        flags.append("decision_wait_breakout")
+        detail = f"price ${price:.2f} broke above trigger ${breakout_above:.2f}"
+
+    return flags, detail
+
+
 def _load_active_watchlist_items() -> list[dict]:
     if not WATCHLIST_PATH.exists():
         return []
@@ -422,6 +475,7 @@ class MonitorAgent:
             days_until_earnings = earnings.get("days_until_earnings")
 
             flags: list[str] = []
+            trigger_detail = None
             if rsi is not None and macd_hist is not None and ema20 is not None and price is not None:
                 if change_pct >= 5.0 and price >= ema20 and macd_hist > 0:
                     flags.append("breakout")
@@ -435,16 +489,41 @@ class MonitorAgent:
                 flags.append("dropped")
             if last_score is not None and last_score >= 7.5 and rsi is not None and rsi <= 65.0:
                 flags.append("high_score_rsi_cooled")
+            trigger_flags, trigger_detail = _decision_wait_trigger_flags(item, price)
+            flags.extend(trigger_flags)
+            if _safe_bool(item.get("pre_qualified")) and last_score is not None and 6.5 <= last_score < 7.0:
+                if any(flag in flags for flag in ("breakout", "setup", "earnings_soon")):
+                    flags.append("prequalified_setup")
 
             action = "watch"
             next_step = None
             severity = None
             alert_type = None
-            if "high_score_rsi_cooled" in flags or ("breakout" in flags and (last_score or 0) >= 7.5):
+            if "decision_wait_reclaim" in flags or "decision_wait_breakout" in flags:
+                action = "research_needed"
+                next_step = f"/research --seed {ticker}"
+                severity = "HIGH"
+                alert_type = "DECISION_WAIT_TRIGGERED"
+            elif "decision_wait_entry_zone" in flags:
+                action = "research_needed"
+                next_step = f"/research --seed {ticker}"
+                severity = "HIGH"
+                alert_type = "DECISION_WAIT_ENTRY_ZONE"
+            elif "high_score_rsi_cooled" in flags or ("breakout" in flags and (last_score or 0) >= 7.5):
                 action = "decision_needed"
                 next_step = "/decision"
                 severity = "HIGH"
                 alert_type = "WATCHLIST_DECISION_NEEDED"
+            elif "prequalified_setup" in flags:
+                action = "research_needed"
+                next_step = f"/research --seed {ticker}"
+                severity = "MEDIUM"
+                alert_type = "PREQUALIFIED_RESEARCH_NEEDED"
+            elif "decision_wait_near_zone" in flags:
+                action = "watch"
+                next_step = f"watch trigger: {ticker}"
+                severity = "MEDIUM"
+                alert_type = "DECISION_WAIT_NEAR_ZONE"
             elif any(flag in flags for flag in ("breakout", "setup", "earnings_soon", "moved_up")):
                 action = "research_needed"
                 next_step = f"/research --seed {ticker}"
@@ -470,6 +549,7 @@ class MonitorAgent:
                 "flags": flags,
                 "action": action,
                 "next_step": next_step,
+                "trigger_detail": trigger_detail,
             }
             results.append(result)
 

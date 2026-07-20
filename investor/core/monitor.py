@@ -16,6 +16,7 @@ Threshold rules mirror AGENTS.md:
 from __future__ import annotations
 
 from dataclasses import dataclass
+from datetime import date, datetime
 from typing import Literal
 
 AlertLevel = Literal["HIGH", "MEDIUM", "LOW", "INFO"]
@@ -66,6 +67,17 @@ def _exit_stage(position: dict) -> int:
         return int(float(raw or 0))
     except (TypeError, ValueError):
         return 0
+
+
+def _position_age_days(position: dict) -> int | None:
+    raw = position.get("entry_date")
+    if not raw:
+        return None
+    try:
+        entry_date = datetime.strptime(str(raw), "%Y-%m-%d").date()
+    except ValueError:
+        return None
+    return (date.today() - entry_date).days
 
 
 def check_position(position: dict, snapshot: dict) -> list[Alert]:
@@ -169,6 +181,21 @@ def check_position(position: dict, snapshot: dict) -> list[Alert]:
             alert_type="UP_25PCT_TRAILING",
             severity="INFO",
             message=f"P&L {unrealized_pnl_pct:.1f}% while trailing stop is active",
+            **base,
+        ))
+
+    # INFO: local calibration shows the 4-7 day window has the strongest alpha.
+    # This is not a sell signal by itself; it prompts tighter review of profit
+    # capture, stop movement, and thesis confirmation while initial momentum is fresh.
+    age_days = _position_age_days(position)
+    if age_days is not None and 4 <= age_days <= 7:
+        alerts.append(Alert(
+            alert_type="PRIME_EXIT_WINDOW",
+            severity="INFO",
+            message=(
+                f"Entry age {age_days}d is inside the 4-7d high-alpha window; "
+                "review profit capture, stop movement, and thesis progress"
+            ),
             **base,
         ))
 

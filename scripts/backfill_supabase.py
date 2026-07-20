@@ -254,6 +254,10 @@ def backfill_score_snapshots(store) -> int:
             "week2": snapshot.get("week2"),
             "week3": snapshot.get("week3"),
             "week4": snapshot.get("week4"),
+            "week5": snapshot.get("week5"),
+            "week6": snapshot.get("week6"),
+            "week7": snapshot.get("week7"),
+            "week8": snapshot.get("week8"),
             "raw_payload": snapshot,
         })
     return _upsert_many(store, "score_snapshots", rows, "snapshot_id")

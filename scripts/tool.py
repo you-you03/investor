@@ -49,6 +49,7 @@ def main() -> None:
 
     from investor.tools.market_tools import (
         get_atr_targets,
+        get_analyst_revision_history,
         get_contrarian_screener,
         get_earnings_calendar,
         get_financials,
@@ -75,6 +76,7 @@ def main() -> None:
         "get_financials": get_financials,
         "get_technical_indicators": get_technical_indicators,
         "get_atr_targets": get_atr_targets,
+        "get_analyst_revision_history": get_analyst_revision_history,
         "get_ticker_details": get_ticker_details,
         "get_relative_strength": get_relative_strength,
         "get_earnings_calendar": get_earnings_calendar,

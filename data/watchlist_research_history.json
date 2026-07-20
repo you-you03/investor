@@ -1275,6 +1275,522 @@
           "rationale": "\u4fdd\u967a\u30d6\u30ed\u30fc\u30ab\u30fc\u306e\u5206\u6563\u4fa1\u5024\u306f\u3042\u308b\u304c\u3001\u6210\u9577\u920d\u5316\u3067\u512a\u5148\u5ea6\u306f\u4f4e\u3044\u3002"
         }
       ]
+    },
+    {
+      "run_id": "868df92c-ac28-4f98-91cd-f3978b86f593",
+      "date": "2026-07-12",
+      "results": [
+        {
+          "ticker": "GEHC",
+          "action": "ADD_NOTE",
+          "new_score": 6.84,
+          "note": "\u30b9\u30b3\u30a26.84\u3002RSI=51.76, 5d=-1.32%, 20d=1.47%, EMA20\u4e56\u96e2=0.47%, volume_ratio=0.54\u3002Revenue YoY=0.074%, EPS YoY=-0.309%, forward PE=12.06304, PEG=1.83\u3002\u5224\u65ad: ADD_NOTE\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "FIG",
+          "action": "MAINTAIN",
+          "new_score": 6.69,
+          "note": "\u30b9\u30b3\u30a26.69\u3002RSI=53.17, 5d=-1.08%, 20d=6.67%, EMA20\u4e56\u96e2=3.38%, volume_ratio=0.83\u3002Revenue YoY=0.461%, EPS YoY=None%, forward PE=64.58818, PEG=3.94\u3002\u5224\u65ad: MAINTAIN\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "UBER",
+          "action": "MAINTAIN",
+          "new_score": 6.68,
+          "note": "\u30b9\u30b3\u30a26.68\u3002RSI=53.98, 5d=0.15%, 20d=8.64%, EMA20\u4e56\u96e2=1.89%, volume_ratio=0.44\u3002Revenue YoY=0.145%, EPS YoY=-0.846%, forward PE=16.825426, PEG=6.05\u3002\u5224\u65ad: MAINTAIN\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "NEE",
+          "action": "MAINTAIN",
+          "new_score": 6.62,
+          "note": "\u30b9\u30b3\u30a26.62\u3002RSI=52.09, 5d=-0.43%, 20d=3.34%, EMA20\u4e56\u96e2=0.66%, volume_ratio=0.93\u3002Revenue YoY=0.073%, EPS YoY=1.6%, forward PE=19.98614, PEG=1.93\u3002\u5224\u65ad: MAINTAIN\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "RIVN",
+          "action": "MAINTAIN",
+          "new_score": 6.37,
+          "note": "\u30b9\u30b3\u30a26.37\u3002RSI=53.74, 5d=-6.17%, 20d=18.43%, EMA20\u4e56\u96e2=3.8%, volume_ratio=0.95\u3002Revenue YoY=0.114%, EPS YoY=None%, forward PE=-9.420895, PEG=None\u3002\u5224\u65ad: MAINTAIN\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "WAY",
+          "action": "MAINTAIN",
+          "new_score": 6.28,
+          "note": "\u30b9\u30b3\u30a26.28\u3002RSI=59.03, 5d=-4.39%, 20d=19.31%, EMA20\u4e56\u96e2=5.95%, volume_ratio=0.48\u3002Revenue YoY=0.224%, EPS YoY=0.375%, forward PE=12.124587, PEG=None\u3002\u5224\u65ad: MAINTAIN\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "VSAT",
+          "action": "MAINTAIN",
+          "new_score": 6.24,
+          "note": "\u30b9\u30b3\u30a26.24\u3002RSI=51.26, 5d=-11.44%, 20d=19.61%, EMA20\u4e56\u96e2=0.67%, volume_ratio=0.73\u3002Revenue YoY=0.021%, EPS YoY=None%, forward PE=182.38167, PEG=0.26\u3002\u5224\u65ad: MAINTAIN\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "BWIN",
+          "action": "ADD_NOTE",
+          "new_score": 6.13,
+          "note": "\u30b9\u30b3\u30a26.13\u3002RSI=63.33, 5d=-6.72%, 20d=36.81%, EMA20\u4e56\u96e2=7.37%, volume_ratio=0.41\u3002Revenue YoY=0.287%, EPS YoY=-0.9%, forward PE=10.572849, PEG=None\u3002\u5224\u65ad: ADD_NOTE\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "MRNA",
+          "action": "ADD_NOTE",
+          "new_score": 6.11,
+          "note": "\u30b9\u30b3\u30a26.11\u3002RSI=54.81, 5d=-14.41%, 20d=48.45%, EMA20\u4e56\u96e2=1.83%, volume_ratio=0.92\u3002Revenue YoY=2.602%, EPS YoY=None%, forward PE=-16.456867, PEG=None\u3002\u5224\u65ad: ADD_NOTE\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "AMAT",
+          "action": "ADD_NOTE",
+          "new_score": 6.03,
+          "note": "\u30b9\u30b3\u30a26.03\u3002RSI=53.89, 5d=-0.09%, 20d=21.22%, EMA20\u4e56\u96e2=2.26%, volume_ratio=0.47\u3002Revenue YoY=0.114%, EPS YoY=0.335%, forward PE=36.16898, PEG=1.44\u3002\u5224\u65ad: ADD_NOTE\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "HON",
+          "action": "MAINTAIN",
+          "new_score": 5.97,
+          "note": "\u30b9\u30b3\u30a25.97\u3002RSI=46.31, 5d=-1.5%, 20d=4.86%, EMA20\u4e56\u96e2=-1.46%, volume_ratio=0.43\u3002Revenue YoY=0.024%, EPS YoY=-0.419%, forward PE=21.434082, PEG=8.23\u3002\u5224\u65ad: MAINTAIN\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "CRSP",
+          "action": "MAINTAIN",
+          "new_score": 5.83,
+          "note": "\u30b9\u30b3\u30a25.83\u3002RSI=45.74, 5d=-11.2%, 20d=7.91%, EMA20\u4e56\u96e2=-4.2%, volume_ratio=1.22\u3002Revenue YoY=0.686%, EPS YoY=None%, forward PE=-13.789912, PEG=None\u3002\u5224\u65ad: MAINTAIN\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "UCTT",
+          "action": "ADD_NOTE",
+          "new_score": 5.76,
+          "note": "\u30b9\u30b3\u30a25.76\u3002RSI=50.04, 5d=-0.2%, 20d=16.91%, EMA20\u4e56\u96e2=-1.89%, volume_ratio=0.57\u3002Revenue YoY=0.029%, EPS YoY=None%, forward PE=26.989206, PEG=1.26\u3002\u5224\u65ad: ADD_NOTE\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "ACMR",
+          "action": "ADD_NOTE",
+          "new_score": 5.76,
+          "note": "\u30b9\u30b3\u30a25.76\u3002RSI=53.94, 5d=5.35%, 20d=28.81%, EMA20\u4e56\u96e2=2.76%, volume_ratio=0.48\u3002Revenue YoY=0.342%, EPS YoY=-0.187%, forward PE=45.71013, PEG=None\u3002\u5224\u65ad: ADD_NOTE\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "SMCI",
+          "action": "ADD_NOTE",
+          "new_score": 5.7,
+          "note": "\u30b9\u30b3\u30a25.70\u3002RSI=43.18, 5d=4.0%, 20d=-3.28%, EMA20\u4e56\u96e2=-6.57%, volume_ratio=0.34\u3002Revenue YoY=1.227%, EPS YoY=3.26%, forward PE=8.926065, PEG=0.91\u3002\u5224\u65ad: ADD_NOTE\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "ENTG",
+          "action": "ADD_NOTE",
+          "new_score": 5.69,
+          "note": "\u30b9\u30b3\u30a25.69\u3002RSI=46.73, 5d=-0.89%, 20d=12.78%, EMA20\u4e56\u96e2=-4.69%, volume_ratio=0.37\u3002Revenue YoY=0.05%, EPS YoY=0.463%, forward PE=31.252623, PEG=1.7\u3002\u5224\u65ad: ADD_NOTE\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "MU",
+          "action": "MAINTAIN",
+          "new_score": 5.59,
+          "note": "\u30b9\u30b3\u30a25.59\u3002RSI=49.08, 5d=0.4%, 20d=9.82%, EMA20\u4e56\u96e2=-3.15%, volume_ratio=0.58\u3002Revenue YoY=3.457%, EPS YoY=13.685%, forward PE=6.5444407, PEG=0.14\u3002\u5224\u65ad: MAINTAIN\u3002\u9ad8\u30b9\u30b3\u30a2\u5c65\u6b74\u306f\u7dad\u6301\u3059\u308b\u304c\u3001\u73fe\u6642\u70b9\u306fMACD/EMA\u60aa\u5316\u3067/decision\u512a\u5148\u5ea6\u3092\u4e0b\u3052\u308b\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "NOK",
+          "action": "ADD_NOTE",
+          "new_score": 5.43,
+          "note": "\u30b9\u30b3\u30a25.43\u3002RSI=43.57, 5d=3.07%, 20d=-7.16%, EMA20\u4e56\u96e2=-5.47%, volume_ratio=0.54\u3002Revenue YoY=0.024%, EPS YoY=None%, forward PE=25.286608, PEG=1.17\u3002\u5224\u65ad: ADD_NOTE\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "APGE",
+          "action": "ADD_NOTE",
+          "new_score": 5.42,
+          "note": "\u30b9\u30b3\u30a25.42\u3002RSI=81.3, 5d=0.56%, 20d=61.57%, EMA20\u4e56\u96e2=10.12%, volume_ratio=0.13\u3002Revenue YoY=None%, EPS YoY=None%, forward PE=-25.759039, PEG=None\u3002\u5224\u65ad: ADD_NOTE\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "GPC",
+          "action": "ADD_NOTE",
+          "new_score": 5.4,
+          "note": "\u30b9\u30b3\u30a25.40\u3002RSI=68.03, 5d=-5.24%, 20d=27.62%, EMA20\u4e56\u96e2=7.52%, volume_ratio=1.15\u3002Revenue YoY=0.068%, EPS YoY=-0.021%, forward PE=14.957789, PEG=1.32\u3002\u5224\u65ad: ADD_NOTE\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "ICHR",
+          "action": "ADD_NOTE",
+          "new_score": 5.33,
+          "note": "\u30b9\u30b3\u30a25.33\u3002RSI=57.77, 5d=2.12%, 20d=38.98%, EMA20\u4e56\u96e2=8.23%, volume_ratio=0.62\u3002Revenue YoY=0.047%, EPS YoY=None%, forward PE=37.167835, PEG=1.05\u3002\u5224\u65ad: ADD_NOTE\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "OUST",
+          "action": "ADD_NOTE",
+          "new_score": 5.33,
+          "note": "\u30b9\u30b3\u30a25.33\u3002RSI=48.34, 5d=-13.16%, 20d=12.74%, EMA20\u4e56\u96e2=-6.04%, volume_ratio=0.59\u3002Revenue YoY=0.489%, EPS YoY=None%, forward PE=-961.7777, PEG=None\u3002\u5224\u65ad: ADD_NOTE\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "VIAV",
+          "action": "ADD_NOTE",
+          "new_score": 5.11,
+          "note": "\u30b9\u30b3\u30a25.11\u3002RSI=42.33, 5d=3.41%, 20d=-7.99%, EMA20\u4e56\u96e2=-6.18%, volume_ratio=0.37\u3002Revenue YoY=0.428%, EPS YoY=-0.685%, forward PE=33.51799, PEG=1.34\u3002\u5224\u65ad: ADD_NOTE\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "BLDR",
+          "action": "ADD_NOTE",
+          "new_score": 4.95,
+          "note": "\u30b9\u30b3\u30a24.95\u3002RSI=42.83, 5d=-10.63%, 20d=1.43%, EMA20\u4e56\u96e2=-5.35%, volume_ratio=0.52\u3002Revenue YoY=-0.101%, EPS YoY=None%, forward PE=12.549471, PEG=2.02\u3002\u5224\u65ad: ADD_NOTE\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "RUN",
+          "action": "ADD_NOTE",
+          "new_score": 4.84,
+          "note": "\u30b9\u30b3\u30a24.84\u3002RSI=44.13, 5d=-2.12%, 20d=4.79%, EMA20\u4e56\u96e2=-4.08%, volume_ratio=0.58\u3002Revenue YoY=0.432%, EPS YoY=2.144%, forward PE=14.625851, PEG=3.07\u3002\u5224\u65ad: ADD_NOTE\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "ORCL",
+          "action": "ADD_NOTE",
+          "new_score": 4.82,
+          "note": "\u30b9\u30b3\u30a24.82\u3002RSI=30.66, 5d=0.61%, 20d=-29.88%, EMA20\u4e56\u96e2=-11.16%, volume_ratio=0.84\u3002Revenue YoY=0.206%, EPS YoY=0.219%, forward PE=12.8772335, PEG=0.79\u3002\u5224\u65ad: ADD_NOTE\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "COHR",
+          "action": "ADD_NOTE",
+          "new_score": 4.81,
+          "note": "\u30b9\u30b3\u30a24.81\u3002RSI=40.93, 5d=-2.66%, 20d=-8.53%, EMA20\u4e56\u96e2=-9.45%, volume_ratio=0.71\u3002Revenue YoY=0.205%, EPS YoY=None%, forward PE=39.457397, PEG=0.92\u3002\u5224\u65ad: ADD_NOTE\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "AVAV",
+          "action": "ADD_NOTE",
+          "new_score": 4.64,
+          "note": "\u30b9\u30b3\u30a24.64\u3002RSI=40.76, 5d=-24.26%, 20d=-16.39%, EMA20\u4e56\u96e2=-10.85%, volume_ratio=0.58\u3002Revenue YoY=1.333%, EPS YoY=None%, forward PE=31.904987, PEG=1.57\u3002\u5224\u65ad: ADD_NOTE\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "BE",
+          "action": "ADD_NOTE",
+          "new_score": 4.6,
+          "note": "\u30b9\u30b3\u30a24.60\u3002RSI=42.56, 5d=-9.7%, 20d=4.43%, EMA20\u4e56\u96e2=-11.83%, volume_ratio=0.98\u3002Revenue YoY=1.304%, EPS YoY=None%, forward PE=54.936565, PEG=1.19\u3002\u5224\u65ad: ADD_NOTE\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "RGTI",
+          "action": "ADD_NOTE",
+          "new_score": 4.59,
+          "note": "\u30b9\u30b3\u30a24.59\u3002RSI=37.1, 5d=-7.8%, 20d=-14.94%, EMA20\u4e56\u96e2=-12.3%, volume_ratio=0.57\u3002Revenue YoY=1.989%, EPS YoY=None%, forward PE=-82.24355, PEG=None\u3002\u5224\u65ad: ADD_NOTE\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "VICR",
+          "action": "REMOVE",
+          "new_score": 4.47,
+          "note": "\u30b9\u30b3\u30a24.47\u3002RSI=42.97, 5d=-3.85%, 20d=-1.26%, EMA20\u4e56\u96e2=-10.35%, volume_ratio=0.41\u3002Revenue YoY=0.202%, EPS YoY=7.014%, forward PE=48.235813, PEG=None\u3002\u5224\u65ad: REMOVE\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "SMR",
+          "action": "REMOVE",
+          "new_score": 4.31,
+          "note": "\u30b9\u30b3\u30a24.31\u3002RSI=38.81, 5d=-7.38%, 20d=-2.69%, EMA20\u4e56\u96e2=-9.15%, volume_ratio=0.79\u3002Revenue YoY=-0.958%, EPS YoY=None%, forward PE=-13.490323, PEG=None\u3002\u5224\u65ad: REMOVE\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "QBTS",
+          "action": "REMOVE",
+          "new_score": 4.29,
+          "note": "\u30b9\u30b3\u30a24.29\u3002RSI=39.01, 5d=-10.83%, 20d=-13.59%, EMA20\u4e56\u96e2=-11.73%, volume_ratio=0.55\u3002Revenue YoY=-0.809%, EPS YoY=None%, forward PE=-51.51282, PEG=None\u3002\u5224\u65ad: REMOVE\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "INFQ",
+          "action": "REMOVE",
+          "new_score": 4.28,
+          "note": "\u30b9\u30b3\u30a24.28\u3002RSI=38.72, 5d=-9.26%, 20d=-17.75%, EMA20\u4e56\u96e2=-14.01%, volume_ratio=0.41\u3002Revenue YoY=0.139%, EPS YoY=None%, forward PE=-39.861538, PEG=None\u3002\u5224\u65ad: REMOVE\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "RKLB",
+          "action": "REMOVE",
+          "new_score": 4.19,
+          "note": "\u30b9\u30b3\u30a24.19\u3002RSI=37.13, 5d=-19.33%, 20d=-22.86%, EMA20\u4e56\u96e2=-14.84%, volume_ratio=0.48\u3002Revenue YoY=0.635%, EPS YoY=None%, forward PE=2431.443, PEG=None\u3002\u5224\u65ad: REMOVE\u3002",
+          "flag": null
+        }
+      ]
+    },
+    {
+      "run_id": "568906f4-59f5-4584-8039-300c9cc4eb34",
+      "date": "2026-07-18",
+      "results": [
+        {
+          "ticker": "MU",
+          "action": "MAINTAIN",
+          "new_score": 6.4,
+          "note": "2026-07-18: HBM/DRAM\u30c6\u30fc\u30bc\u306f\u7d99\u7d9a\u3002\u77ed\u671f\u6025\u843d\u30fbEMA20\u4e0b\u30fbMACD\u60aa\u5316\u3001DECISION_WAIT\u306eEMA20\u56de\u5fa9\u6761\u4ef6\u672a\u9054\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "AMAT",
+          "action": "ADD_NOTE",
+          "new_score": 5.9,
+          "note": "2026-07-18: AI/HBM\u88c5\u7f6e\u9700\u8981\u306f\u7d99\u7d9a\u3059\u308b\u304c\u3001\u6025\u843d\u30fbMACD\u60aa\u5316\u30fb\u5f31\u6c17\u9700\u7d66\u3067\u53cd\u8ee2\u5f85\u3061\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "COHR",
+          "action": "MAINTAIN",
+          "new_score": 5.4,
+          "note": "2026-07-18: AI\u5149\u901a\u4fe1\u30c6\u30fc\u30bc\u306f\u7d99\u7d9a\u3002\u62bc\u3057\u76ee\u5e2f\u3060\u304c\u4e0b\u964d\u4e2d\u306e\u305f\u3081EMA20/MACD\u53cd\u8ee2\u5f85\u3061\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "RGTI",
+          "action": "REMOVE",
+          "new_score": 4.2,
+          "note": "2026-07-18: \u53c2\u7167\u6bd4\u7d04-47%\u3001\u8d64\u5b57\u30fb\u9ad8\u30ea\u30b9\u30af\u3001\u9023\u7d9a\u4e0b\u843d\u306b\u3088\u308a\u9664\u5916\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "NOK",
+          "action": "REMOVE",
+          "new_score": 4.4,
+          "note": "2026-07-18: \u4f4e\u6210\u9577\u304b\u3064\u5f53\u521d\u30a8\u30f3\u30c8\u30ea\u30fc\u5e2f\u3092\u5927\u5e45\u5272\u308c\u3001AI\u30cd\u30c3\u30c8\u30ef\u30fc\u30af\u30c6\u30fc\u30bc\u306e\u88cf\u4ed8\u3051\u4e0d\u8db3\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "ICHR",
+          "action": "MAINTAIN",
+          "new_score": 5.2,
+          "note": "2026-07-18: \u534a\u5c0e\u4f53\u88c5\u7f6e\u30c6\u30fc\u30bc\u306f\u90e8\u5206\u7d99\u7d9a\u3002\u4f4e\u6210\u9577\u30fb\u8d64\u5b57\u30fb\u77ed\u671f\u4e0b\u843d\u3067\u53cd\u8ee2\u5f85\u3061\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "VSAT",
+          "action": "MAINTAIN",
+          "new_score": 5.8,
+          "note": "2026-07-18: \u5019\u88dc\u4fa1\u683c\u8fd1\u8fba\u3060\u304c\u4f4e\u6210\u9577\u30fb\u9ad8PER\u30fb\u8d64\u5b57\u306e\u305f\u3081EMA20\u56de\u5fa9\u5f85\u3061\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "UCTT",
+          "action": "ADD_NOTE",
+          "new_score": 5.3,
+          "note": "2026-07-18: \u534a\u5c0e\u4f53\u88c5\u7f6e\u30c6\u30fc\u30de\u306f\u6b8b\u308b\u304c\u696d\u7e3e\u54c1\u8cea\u3068\u30c6\u30af\u30cb\u30ab\u30eb\u304c\u5f31\u3044\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "ACMR",
+          "action": "MAINTAIN",
+          "new_score": 5.8,
+          "note": "2026-07-18: \u58f2\u4e0a\u6210\u9577\u306f\u5f37\u3044\u304cEPS\u6e1b\u30fb\u77ed\u671f\u30e2\u30e1\u30f3\u30bf\u30e0\u5d29\u308c\u3067\u53cd\u8ee2\u5f85\u3061\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "ENTG",
+          "action": "ADD_NOTE",
+          "new_score": 5.2,
+          "note": "2026-07-18: EPS\u6210\u9577\u306f\u3042\u308b\u304c\u58f2\u4e0a\u30fb\u9700\u7d66\u304c\u5f31\u304f\u6c7a\u7b97\u307e\u305f\u306fEMA20\u56de\u5fa9\u5f85\u3061\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "BE",
+          "action": "ADD_NOTE",
+          "new_score": 5.1,
+          "note": "2026-07-18: \u9ad8\u6210\u9577\u30c6\u30fc\u30bc\u306f\u5b58\u7d9a\u3059\u308b\u304c\u4fa1\u683c\u30fb\u9700\u7d66\u30fb\u8a55\u4fa1\u9762\u304c\u65b0\u898f\u6295\u8cc7\u306b\u4e0d\u5411\u304d\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "OUST",
+          "action": "MAINTAIN",
+          "new_score": 5.4,
+          "note": "2026-07-18: LiDAR\u6210\u9577\u306f\u7d99\u7d9a\u3059\u308b\u304c\u8d64\u5b57\u30fb\u5f31\u6c17\u9700\u7d66\u3067\u53cd\u8ee2\u5f85\u3061\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "SMCI",
+          "action": "MAINTAIN",
+          "new_score": 6.1,
+          "note": "2026-07-18: AI\u30b5\u30fc\u30d0\u30fc\u9ad8\u6210\u9577\u3068\u5272\u5b89\u6027\u306f\u5f37\u3044\u304c\u6025\u843d\u30fbFCF\u60aa\u5316\u3067\u6c7a\u7b97\u78ba\u8a8d\u5f85\u3061\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "VIAV",
+          "action": "ADD_NOTE",
+          "new_score": 4.75,
+          "note": "2026-07-18: AI\u30cd\u30c3\u30c8\u30ef\u30fc\u30af\u6210\u9577\u306f\u6b8b\u308b\u304c\u5229\u76ca\u54c1\u8cea\u3068\u30c6\u30af\u30cb\u30ab\u30eb\u304c\u60aa\u5316\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "APGE",
+          "action": "ADD_NOTE",
+          "new_score": 5.35,
+          "note": "2026-07-18: \u81e8\u5e8a\u671f\u5f85\u306f\u7dad\u6301\u3059\u308b\u304cRSI80.76\u3067\u6975\u7aef\u904e\u71b1\u3001\u62bc\u3057\u76ee\u5f85\u3061\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "BWIN",
+          "action": "ADD_NOTE",
+          "new_score": 5.55,
+          "note": "2026-07-18: \u30e2\u30e1\u30f3\u30bf\u30e0\u306f\u5f37\u3044\u304cEPS\u60aa\u5316\u3068\u5f31\u3044\u9700\u7d66\u304c\u524d\u56dePASS\u7406\u7531\u3092\u89e3\u6d88\u305b\u305a\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "RUN",
+          "action": "REMOVE",
+          "new_score": 4.1,
+          "note": "2026-07-18: \u6301\u7d9a\u7684\u76f8\u5bfe\u5f31\u3055\u3001\u8d64\u5b57\u3001\u9ad8\u8ca0\u50b5\u3001\u5f31\u6c17\u9700\u7d66\u306b\u3088\u308a\u9664\u5916\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "BLDR",
+          "action": "REMOVE",
+          "new_score": 4.05,
+          "note": "2026-07-18: \u6e1b\u53ce\u3068\u4e2d\u671f\u4e0b\u964d\u3067\u30e2\u30e1\u30f3\u30bf\u30e0\u578b\u30bb\u30c3\u30c8\u30a2\u30c3\u30d7\u304c\u7834\u7dbb\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "FIG",
+          "action": "MAINTAIN",
+          "new_score": 6.95,
+          "note": "2026-07-18: \u9ad8\u6210\u9577\u30fb\u5f37\u3044\u30e2\u30e1\u30f3\u30bf\u30e0\u3060\u304c\u9ad8\u8a55\u4fa1\u304b\u3064\u30a8\u30f3\u30c8\u30ea\u30fc\u30be\u30fc\u30f3\u5916\u3001\u62bc\u3057\u76ee\u5f85\u3061\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "ORCL",
+          "action": "ADD_NOTE",
+          "new_score": 5.3,
+          "note": "2026-07-18: \u30af\u30e9\u30a6\u30c9AI\u6210\u9577\u3068\u5272\u5b89\u6027\u306f\u9b45\u529b\u3060\u304c\u6025\u843d\u4e2d\u3001EMA20\u56de\u5fa9\u5f85\u3061\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "CRSP",
+          "action": "MAINTAIN",
+          "new_score": 4.65,
+          "note": "2026-07-18: \u907a\u4f1d\u5b50\u7de8\u96c6\u30c6\u30fc\u30bc\u306f\u6b8b\u308b\u304c\u8d64\u5b57\u30fb\u4e0b\u843d\u30c8\u30ec\u30f3\u30c9\u3067\u81e8\u5e8a\u6750\u6599\u304b\u53cd\u8ee2\u5f85\u3061\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "RIVN",
+          "action": "MAINTAIN",
+          "new_score": 5.25,
+          "note": "2026-07-18: EV\u53cd\u767a\u30c6\u30fc\u30bc\u306f\u6b8b\u308b\u304c\u8ca1\u52d9\u3068\u30e2\u30e1\u30f3\u30bf\u30e0\u306e\u88cf\u4ed8\u3051\u4e0d\u8db3\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "UBER",
+          "action": "MAINTAIN",
+          "new_score": 6.25,
+          "note": "2026-07-18: \u8a55\u4fa1\u3068\u30d0\u30ea\u30e5\u30a8\u30fc\u30b7\u30e7\u30f3\u306f\u826f\u597d\u3060\u304cEMA20\u596a\u56de\u30fb\u51fa\u6765\u9ad8\u5897\u52a0\u5f85\u3061\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "NEE",
+          "action": "MAINTAIN",
+          "new_score": 7.15,
+          "note": "2026-07-18 DECISION_WAIT\u7d99\u7d9a: AI\u96fb\u529b\u9700\u8981\u3068\u696d\u7e3e\u306f\u5f37\u3044\u304c\u9700\u7d66\u6539\u5584\u6761\u4ef6\u5f85\u3061\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "HON",
+          "action": "MAINTAIN",
+          "new_score": 5.75,
+          "note": "2026-07-18: \u6c7a\u7b97\u30ab\u30bf\u30ea\u30b9\u30c8\u306f\u3042\u308b\u304c\u4f4e\u6210\u9577\u30fb\u5229\u76ca\u60aa\u5316\u3067\u7d50\u679c\u78ba\u8a8d\u5f85\u3061\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "GEHC",
+          "action": "MAINTAIN",
+          "new_score": 6.7,
+          "note": "2026-07-18: \u6226\u7565\u63d0\u643a\u306f\u597d\u6750\u6599\u3060\u304cEPS\u6e1b\u3068\u5f31\u3044\u30e2\u30e1\u30f3\u30bf\u30e0\u3067\u53cd\u8ee2\u5f85\u3061\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "AVAV",
+          "action": "MAINTAIN",
+          "new_score": 6.4,
+          "note": "2026-07-18: \u9632\u885b\u30c9\u30ed\u30fc\u30f3\u9700\u8981\u3068\u9ad8\u6210\u9577\u306f\u7dad\u6301\u3001\u4e0b\u964d\u30c8\u30ec\u30f3\u30c9\u306e\u5e95\u56fa\u3081\u5f85\u3061\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "GPC",
+          "action": "ADD_NOTE",
+          "new_score": 5.8,
+          "note": "2026-07-18: \u5229\u76ca\u6210\u9577\u3068\u51fa\u6765\u9ad8\u304c\u5f31\u304f\u6c7a\u7b97\u78ba\u8a8d\u5f85\u3061\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "MRNA",
+          "action": "MAINTAIN",
+          "new_score": 6.3,
+          "note": "2026-07-18: RSI\u306f\u51b7\u5374\u3057\u305f\u304c\u8d64\u5b57\u30fb\u4e0b\u964d\u30c8\u30ec\u30f3\u30c9\u3067\u81e8\u5e8a\u6750\u6599\u78ba\u8a8d\u5f85\u3061\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "REZI",
+          "action": "ESCALATE",
+          "new_score": 7.6,
+          "note": "2026-07-18: \u51fa\u6765\u9ad8\u3092\u4f34\u3046\u30d6\u30ec\u30a4\u30af\u30a2\u30a6\u30c8\u3001\u5272\u5b89\u8a55\u4fa1\u3001ADI\u5206\u96e2\u30ab\u30bf\u30ea\u30b9\u30c8\u304c\u63c3\u3063\u305f\u3002",
+          "flag": "ESCALATE_TO_DECISION"
+        },
+        {
+          "ticker": "CCC",
+          "action": "MAINTAIN",
+          "new_score": 7.2,
+          "note": "2026-07-18: \u8cb7\u53ce\u30c6\u30fc\u30bc\u306f\u7dad\u6301\u3059\u308b\u304c\u6307\u5b9a\u62bc\u3057\u76ee\u30be\u30fc\u30f3\u672a\u5230\u9054\u3001\u516c\u5f0f\u9032\u5c55\u5f85\u3061\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "VOD",
+          "action": "ADD_NOTE",
+          "new_score": 5.6,
+          "note": "2026-07-18: \u30d6\u30ec\u30a4\u30af\u30a2\u30a6\u30c8\u3057\u305f\u304c\u4e0a\u5024\u4f59\u5730\u3068\u30ea\u30b9\u30af\u30fb\u30ea\u30ef\u30fc\u30c9\u304c\u4e0d\u8db3\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "GGAL",
+          "action": "REMOVE",
+          "new_score": 4.8,
+          "note": "2026-07-18: \u53ce\u76ca\u60aa\u5316\u30fb\u4fa1\u683c\u4e0b\u843d\u30fb\u5f31\u6c17\u30aa\u30d7\u30b7\u30e7\u30f3\u3067\u5143\u30c6\u30fc\u30bc\u7834\u7dbb\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "WDFC",
+          "action": "ESCALATE",
+          "new_score": 8.0,
+          "note": "2026-07-18: DECISION_WAIT\u62bc\u3057\u76ee\u30be\u30fc\u30f3\u5230\u9054\u3001\u904e\u71b1\u89e3\u6d88\u3001\u696d\u7e3e\u30fb\u4e0a\u65b9\u4fee\u6b63\u30ab\u30bf\u30ea\u30b9\u30c8\u7d99\u7d9a\u3002",
+          "flag": "ESCALATE_TO_DECISION"
+        },
+        {
+          "ticker": "ORKA",
+          "action": "MAINTAIN",
+          "new_score": 7.0,
+          "note": "2026-07-18: \u6cbb\u9a13\u671f\u5f85\u3068RS\u306f\u5f37\u3044\u304c\u30a8\u30f3\u30c8\u30ea\u30fc\u30be\u30fc\u30f3\u4e0a\u3001\u81e8\u5e8a\u30ea\u30b9\u30af\u3082\u9ad8\u3044\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "SAIC",
+          "action": "MAINTAIN",
+          "new_score": 7.3,
+          "note": "2026-07-18: \u5272\u5b89\u30fb\u5229\u76ca\u6210\u9577\u30fb\u30c6\u30af\u30cb\u30ab\u30eb\u826f\u597d\u3060\u304c\u51fa\u6765\u9ad8\u78ba\u8a8d\u6761\u4ef6\u672a\u6210\u7acb\u3002",
+          "flag": null
+        },
+        {
+          "ticker": "SLS",
+          "action": "MAINTAIN",
+          "new_score": 7.3,
+          "note": "2026-07-18: \u81e8\u5e8a\u30ab\u30bf\u30ea\u30b9\u30c8\u306f\u5f37\u3044\u304c\u62e1\u5f35\u6c17\u5473\u304b\u3064\u30d0\u30a4\u30ca\u30ea\u30fc\u30ea\u30b9\u30af\u5927\u3002",
+          "flag": null
+        }
+      ]
     }
   ]
 }

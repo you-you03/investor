@@ -223,6 +223,52 @@ for mode, vals in sorted(groups.items()):
 PY
 ```
 
+## H-6: DECISION_WAIT Trigger Recapture
+
+**仮説**: WAIT銘柄をただ放置せず、具体的な再評価条件（押し目ゾーン、EMA20回復、ブレイク再開）に変換すると、取引数を無理に増やさずに良い執行機会を回収できる。
+
+**変更内容**:
+- `watchlist.json` に `decision_wait_trigger` を追加
+  - `lower` / `upper`: WAIT後の許容エントリー再評価ゾーン
+  - `reclaim_price`: EMA20などの回復確認価格
+  - `breakout_above`: 過熱後に再ブレイクした場合の再評価価格
+  - `next_step`: 原則 `/research --seed {TICKER}`
+- `/monitor` が `DECISION_WAIT_ENTRY_ZONE` / `DECISION_WAIT_TRIGGERED` / `DECISION_WAIT_NEAR_ZONE` を検出する
+- trigger成立は自動BUYではなく、seed researchまたはdecisionへの再投入条件とする
+
+**検証方法**:
+- WAIT後にtrigger成立した銘柄の 1週 / 2週 / 4週 alpha を追跡する
+- trigger未成立のまま上昇した銘柄を機会損失として記録する
+- trigger成立後にBUYした銘柄の勝率、平均リターン、MFE捕捉率を比較する
+
+**判定基準**:
+- trigger成立後BUYの平均alphaが通常BUY以上、かつドローダウンが同等以下 → 採用継続
+- trigger成立前の見逃しが多い → near zoneやbreakout条件を緩和
+- trigger成立後の負けが多い → WAIT銘柄の再投入にはニュース/出来高確認を必須化
+
+**検証開始日**: 2026-07-12
+
+## H-7: 4-7 Day Prime Exit Review
+
+**仮説**: クローズ済み実績では保有4-7日のalphaが最も強いため、買付後4-7日を集中監視するとMFE捕捉率と週次リターンが改善する。
+
+**変更内容**:
+- `/monitor` が保有4-7日のポジションに `PRIME_EXIT_WINDOW` INFO alert を出す
+- このalertは売却指示ではなく、以下の確認を強制する
+  - 利確段階に入るべきか
+  - ストップを建値またはATR基準に引き上げるべきか
+  - カタリストや相対強度が継続しているか
+
+**検証方法**:
+- alert発生後の stop移動有無、利確有無、MFE捕捉率を記録する
+- 4-7日でレビューした銘柄と、レビューなしの過去トレードを比較する
+
+**判定基準**:
+- MFE捕捉率が改善し、平均リターンが低下しない → 採用継続
+- 早売りで大相場を逃すケースが増える → 利確ではなくstop引き上げ中心に調整
+
+**検証開始日**: 2026-07-12
+
 ## 完了済み仮説
 
 （判定が出たものをここに移動する）

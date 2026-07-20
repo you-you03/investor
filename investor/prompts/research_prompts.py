@@ -63,11 +63,12 @@ Your research process:
 2. From the combined results, select 6-10 tickers worth deeper investigation
 3. For each candidate, the following data is pre-fetched in ticker_data[TICKER]:
    - snapshot         → current price, volume, daily change (from get_stock_snapshot)
-   - technicals       → RSI, MACD, EMA20/50, Bollinger Bands, setup_metrics
+   - technicals       → RSI, MACD, EMA20/50, ATR, Bollinger Bands, setup_metrics
                          (return_5d/20d/60d, EMA distance, volume_ratio_20d,
-                         BB width/position, pullback from 20d high)
-   - financials       → last 4 quarters revenue/EPS (from get_financials)
-   - details          → forward PE, growth rates, analyst target & recommendation (from get_ticker_details)
+                         BB width/position, pullback from 20d high, support distance,
+                         risk/reward, gap/failure flags)
+   - financials       → last 4 quarters revenue/EPS/OCF/FCF/cash/debt/share count (from get_financials)
+   - details          → forward PE, growth rates, FCF/cash/debt/share data, analyst target & recommendation (from get_ticker_details)
    - news             → recent headlines and summaries (from get_news)
    - options_flow     → put/call ratio, call/put volume, signal (BULLISH/BEARISH) (from get_options_flow)
    - insider_activity → buy/sell counts, total values, signal (NET_BUYER/NET_SELLER) (from get_insider_activity)
@@ -76,14 +77,24 @@ Your research process:
    Additionally, call the following tools for each candidate (not pre-fetched):
    - get_relative_strength     → rs_1m, rs_3m vs SPY, rs_signal
    - get_earnings_calendar     → next earnings date, days_until_earnings
+   - get_analyst_revision_history → recent upgrade/downgrade/recommendation revision history if available
    - get_web_search            → analyst sentiment, recent catalysts (if PERPLEXITY_API_KEY set)
    - get_x_search              → retail/institutional X sentiment (if XAI_API_KEY set)
 4. For the top candidates, also call get_analyst_ratings
 5. Narrow down to the 3-5 best candidates
 6. For each final candidate, follow this reasoning chain:
 
-   Step 1 — Fundamentals: Cite revenue/EPS from get_financials.
-             From get_ticker_details cite forward_pe, revenue_growth_yoy, earnings_growth_yoy.
+   Step 1 — Fundamentals quality: Cite revenue/EPS/OCF/FCF/cash/debt/share count from get_financials.
+             From get_ticker_details cite forward_pe, peg_ratio, revenue_growth_yoy, earnings_growth_yoy,
+             free_cashflow, total_cash, total_debt, current_ratio, shares_outstanding.
+             Assign fundamentals_grade:
+             A = high growth + EPS/FCF improving + clean balance sheet + no dilution concern.
+             B = high growth but one quality concern in FCF, margin, balance sheet, or dilution.
+             C = revenue growth only; weak/unknown EPS, FCF, dilution, or balance sheet quality.
+             D = growth deceleration, widening losses, major dilution, or balance sheet fragility.
+             Gates: FCF unknown → grade cannot be A and fundamentals score cannot exceed 7.
+             FCF negative + cash runway concern → HIGH conviction not allowed from fundamentals.
+             share count/dilution data missing for an unprofitable company → grade cannot be A.
              Flag: forward_pe > 50 → add "高バリュエーションリスク" to risk_factors.
              Flag: peg_ratio > 3 → add "成長織り込み済みリスク" to risk_factors.
    Step 2 — Momentum & Relative Strength:
@@ -113,17 +124,36 @@ Your research process:
              - momentum_profile.chase_momentum_score (1-10)
              - momentum_profile.extension_risk = LOW / MEDIUM / HIGH
              - momentum_profile.primary_mode = EARLY_MOMENTUM / CHASE_MOMENTUM / BALANCED / NONE
+             - momentum_grade = A / B / C / D:
+               A = persistent RS + volume confirmation + acceptable extension risk.
+               B = good direction but volume/RS/extension is imperfect.
+               C = rising but late, weak early evidence, or incomplete confirmation.
+               D = jump-chasing, weak RS, bad volume quality, or failure signal.
              - score_breakdown.momentum = max(early_momentum_score, chase_momentum_score), adjusted down
                for HIGH extension risk or missing catalyst.
-             Explain in score_evidence.momentum why one mode dominates and how the other mode affects conviction.
+             Gates: STRONG_UNDERPERFORM → momentum_grade D unless a clear reversal setup is documented.
+             No volume confirmation for CHASE_MOMENTUM → momentum score cap 7.
+             extension_risk HIGH → momentum_grade C or D.
+             breakout_failure or gap_up_fade → momentum_grade D.
+             Explain in score_evidence.momentum why one mode dominates, volume confirmation,
+             RS persistence, extension risk, and any failure signal.
    Step 3 — Catalyst:
              Cite specific upcoming events from get_news / get_web_search.
              From get_earnings_calendar: if days_until_earnings ≤ 14 → add "決算前カタリスト"
              to key_catalysts AND "決算ギャップリスク" to risk_factors.
              From get_ticker_details: compute analyst upside % = (analyst_target_price - current) / current * 100.
              If analyst upside > 20% with strong_buy recommendation → boost catalyst score.
+             Assign catalyst_grade:
+             A = clear business impact, 1-8 week timing, not priced in, official/multiple-source confirmation.
+             B = strong direction but business impact or timing is partly uncertain.
+             C = newsworthy but weak connection to revenue/margin/EPS/FCF.
+             D = technical breakout, SNS buzz, single article, unexplained spike, or already priced in.
+             Gates: earnings date proximity alone is not a catalyst; require beat, raise, or estimate revision.
+             Analyst target upside alone is not STRONG catalyst.
+             If business_impact cannot be explained, catalyst score cap 5.
+             If the stock is already up +15-20% after the event, treat as priced-in and cap grade at C.
    Step 4 — Sentiment:
-             Cite get_x_search findings and get_analyst_ratings.
+             Cite get_x_search findings, get_analyst_revision_history, and get_analyst_ratings.
              Also cite analyst_recommendation + analyst_count from get_ticker_details.
              Cite options_flow.signal and insider_activity.signal from pre-fetched ticker_data.
              Bonuses:
@@ -132,6 +162,16 @@ Your research process:
              - insider_activity.signal = NET_SELLER → -1pt penalty to sentiment
              - options_flow.signal = BEARISH → -1pt penalty to sentiment
              Always note the pc_vol_ratio and recent_purchases details in score_evidence.
+             Assign sentiment_grade:
+             A = multiple confirming sources: analyst revision/upgrade, options quality, insider quality, news/X.
+             B = bullish evidence, but source mix is incomplete or concentrated.
+             C = buzz without institutional/earnings connection.
+             D = stale/contradictory signals, bearish options, or meaningful insider selling.
+             Gates: analyst target upside alone cannot be sentiment A.
+             options BULLISH alone cannot be sentiment A.
+             X/news buzz alone caps sentiment score at 6.
+             Single-source bullish sentiment caps grade at B.
+             NET_SELLER or BEARISH options caps sentiment score at 6 unless clearly explained.
    Step 5 — Macro fit: Does this setup work in the current regime?
              DOWNTREND regime → prefer stocks with STRONG_OUTPERFORM rs_signal (showing resilience).
              HIGH_FEAR regime → cap catalyst score at 7, even for strong setups.
@@ -142,6 +182,17 @@ Your research process:
              - No near-term catalyst, pure technical setup: target = entry + 1.5×ATR
              - If a clear support level is closer than 1×ATR, use that as stop_loss instead
              Always state the multiplier used and the reason in data_notes.
+   Step 6b — Technical entry quality:
+             Assign technical_grade:
+             A = low overheating, clear support/stop, volume confirmation, risk/reward ≥ 2.0.
+             B = acceptable setup but mild overheating or stop distance concern.
+             C = direction is up but entry is late or risk/reward is insufficient.
+             D = extreme RSI, vertical move, far support, gap-up fade, or breakout failure.
+             Gates: RSI ≥ 85 → technical_grade D.
+             RSI ≥ 70 and within 3% of 52-week high → technical_grade C/D.
+             price > EMA20 by 8%+ → technical_grade C or lower unless support/RR is exceptional.
+             risk/reward < 2.0 → technical_grade C or lower.
+             breakout without volume confirmation → technical score cap 6.
    Step 7 — Conviction Floor (確信度フロア):
              Apply in order — first check score, then fundamentals:
 
@@ -174,23 +225,27 @@ Scoring criteria (be strict — reserve scores above 8 for truly exceptional set
                   REQUIRE rs_signal from get_relative_strength and setup_metrics from get_technical_indicators.
                   STRONG_OUTPERFORM = +1pt bonus for chase quality. STRONG_UNDERPERFORM = -2pt penalty.
                   HIGH extension risk caps chase_momentum_score at 7 unless catalyst quality is STRONG.
-- Fundamentals (35%): use revenue_growth_yoy + earnings_growth_yoy + forward_pe + peg_ratio from get_ticker_details.
-                      High growth (>40% YoY revenue) + reasonable valuation (forward_pe<30 OR peg<1.5) = score 8+.
+- Fundamentals (35%): use growth quality, profitability trend, FCF/cash-flow quality,
+                      balance sheet quality, valuation reasonableness, dilution/data-gap penalties.
+                      High growth (>40% YoY revenue) + FCF/margin support + reasonable valuation
+                      (forward_pe<30 OR peg<1.5) = score 8+.
                       Revenue YoY < 10% AND EPS YoY < 15% = cap at 6 regardless of other factors.
                       [Weight raised 30%→35%: strongest and most stable factor; Spearman ρ=0.52 at week4, 0.46 at week8]
 - Catalyst (10%): Distinguish catalyst quality strictly before scoring:
-                  STRONG catalyst (earnings beat ≤14d with guidance raised, multiple analyst upgrades simultaneously) = score 8-9.
+                  STRONG catalyst (business impact clear, 1-8 week timing, not priced in, official/multiple-source confirmation) = score 8-9.
                   MEDIUM catalyst (single analyst upgrade, sector rotation, inline earnings) = score 6-7.
                   WEAK catalyst (technical breakout only, unexplained spike, no identifiable event) = cap at 5.
                   No catalyst at all = cap at 4.
                   [Weight reduced 15%→10%: weak standalone predictor; Spearman ρ=-0.25 at week3, -0.18 at week4]
 - Technical (10%): RSI positioning, MACD crossovers, BB squeeze, EMA20/50 alignment.
                    Use as entry-timing filter only, not as a primary score driver.
+                   Score high only when entry quality, support/stop reference, volume confirmation,
+                   and risk/reward are all acceptable.
                    [Weight kept at 10%: weak standalone predictor; use for timing, not thesis]
 - Sentiment (20%): X/news + analyst_recommendation + analyst_count from get_ticker_details
                    + options_flow.signal + insider_activity.signal from ticker_data.
-                   strong_buy with ≥10 analysts = score 8+.
-                   options BULLISH + insider NET_BUYER = score 9+.
+                   strong_buy with ≥10 analysts plus estimate/target revision evidence = score 8+.
+                   options BULLISH + meaningful C-suite insider NET_BUYER + analyst/news confirmation = score 9+.
                    options BEARISH or insider NET_SELLER = cap at 6.
                    [Weight kept at 20%: moderate late-horizon signal; Spearman ρ=0.28 at week7, 0.27 at week8]
 
@@ -207,6 +262,10 @@ CRITICAL RULES:
   If both fail, set target_price and stop_loss to null — do not guess.
 - Every score value MUST be accompanied by the specific data point justifying it.
   Record this in score_evidence alongside the score_breakdown.
+- Every final candidate MUST include factor_grades with A/B/C/D values for:
+  momentum, fundamentals, catalyst, technical, sentiment.
+- Every factor grade MUST be supported by score_evidence. If evidence is missing,
+  use a lower grade rather than inferring quality from narrative.
 
 Final output format:
 After completing all research, return ONLY a valid JSON array. No prose before or after.
@@ -225,12 +284,19 @@ After completing all research, return ONLY a valid JSON array. No prose before o
       "technical": 7,
       "sentiment": 8
     },
+    "factor_grades": {
+      "momentum": "A",
+      "fundamentals": "A",
+      "catalyst": "B",
+      "technical": "B",
+      "sentiment": "A"
+    },
     "score_evidence": {
-      "momentum": "RSI=71, volume 2.3x 30-day avg, +18% last 5 days",
-      "fundamentals": "Revenue +122% YoY Q4 2024, EPS $5.16 vs $4.60 est",
-      "catalyst": "GTC conference Mar 18, H200 supply ramp Q2 confirmed",
-      "technical": "Above EMA20/EMA50, MACD bullish crossover, BB squeeze resolving up",
-      "sentiment": "X search shows 78% positive mentions, institutional accumulation noted by @quantopian",
+      "momentum": "grade A: STRONG_OUTPERFORM rs_1m=12.4/rs_3m=28.1, volume 2.3x, extension risk MEDIUM, no failure signal",
+      "fundamentals": "grade A: Revenue +122% YoY, EPS growth strong, FCF positive/improving, cash/debt acceptable, no dilution concern",
+      "catalyst": "grade B: GTC Mar 18 and H200 supply ramp; business impact plausible but partial priced-in risk",
+      "technical": "grade B: Above EMA20/EMA50, MACD bullish, RR=2.1, mild RSI overheat",
+      "sentiment": "grade A: analyst revision + options BULLISH + insider NET_BUYER; no contradictory signal",
       "conviction_floor_reason": "Revenue +122% YoY → MEDIUM floor applied"
     },
     "momentum_profile": {

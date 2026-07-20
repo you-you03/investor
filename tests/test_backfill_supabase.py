@@ -28,6 +28,7 @@ def test_backfill_score_snapshots_preserves_duplicate_natural_keys(tmp_path, mon
         "ticker": "NVDA",
         "score": 7.5,
         "week1": {"target_date": "2026-05-23", "return_pct": 1.2},
+        "week8": {"target_date": "2026-07-11", "return_pct": 8.4},
     }
     (data_dir / "score_snapshots.json").write_text(
         json.dumps({"snapshots": [snapshot, {**snapshot, "score": 7.8}]}),
@@ -45,6 +46,7 @@ def test_backfill_score_snapshots_preserves_duplicate_natural_keys(tmp_path, mon
     assert len(rows) == 2
     assert rows[0]["snapshot_id"] != rows[1]["snapshot_id"]
     assert {row["score"] for row in rows} == {7.5, 7.8}
+    assert rows[0]["week8"]["return_pct"] == 8.4
 
 
 def test_backfill_workflow_tasks_normalizes_agent_actions():

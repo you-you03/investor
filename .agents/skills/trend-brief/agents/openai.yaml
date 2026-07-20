@@ -1,0 +1,4 @@
+interface:
+  display_name: "Trend Brief"
+  short_description: "市場トレンドと重要語彙を短く日本語で要約して次の行動を示す"
+  default_prompt: "Use $trend-brief to summarize the market trends and key terms I should watch today."

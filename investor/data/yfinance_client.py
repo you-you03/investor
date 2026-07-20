@@ -200,6 +200,8 @@ class YFinanceClient:
             t = yf.Ticker(ticker)
             qf = t.quarterly_financials  # columns = quarters, rows = line items
             qi = t.quarterly_income_stmt
+            qcf = t.quarterly_cashflow
+            qbs = t.quarterly_balance_sheet
         except Exception as e:
             logger.warning(f"quarterly_financials failed for {ticker}: {e}")
             return []
@@ -207,9 +209,20 @@ class YFinanceClient:
         if qf is None or qf.empty:
             return []
 
+        def _growth_pct(current: Any, previous: Any) -> float | None:
+            if current is None or previous in (None, 0):
+                return None
+            try:
+                return round((float(current) - float(previous)) / abs(float(previous)) * 100, 2)
+            except (TypeError, ValueError, ZeroDivisionError):
+                return None
+
         quarters = []
         for col in qf.columns[:4]:  # last 4 quarters
-            label = col.strftime("%Y-Q%q") if hasattr(col, "strftime") else str(col)[:7]
+            if hasattr(col, "quarter") and hasattr(col, "year"):
+                label = f"{col.year}-Q{col.quarter}"
+            else:
+                label = str(col)[:7]
 
             def _get(df: Any, key: str) -> float | None:
                 if df is None or df.empty:
@@ -225,20 +238,60 @@ class YFinanceClient:
             net_income = _get(qf, "Net Income")
             eps = _get(qi, "Basic EPS") if qi is not None and not qi.empty else None
             operating_cf = None
-            try:
-                cf = t.quarterly_cashflow
-                if cf is not None and not cf.empty and col in cf.columns:
-                    operating_cf = _get(cf, "Operating Cash Flow") or _get(cf, "Cash Flow From Operations")
-            except Exception:
-                pass
+            capital_expenditure = None
+            free_cash_flow = None
+            cash = None
+            total_debt = None
+            shares = None
+            if qcf is not None and not qcf.empty and col in qcf.columns:
+                operating_cf = _get(qcf, "Operating Cash Flow") or _get(qcf, "Cash Flow From Operations")
+                capital_expenditure = _get(qcf, "Capital Expenditure") or _get(qcf, "Capital Expenditures")
+                free_cash_flow = _get(qcf, "Free Cash Flow")
+                if free_cash_flow is None and operating_cf is not None and capital_expenditure is not None:
+                    # yfinance capex is often negative; adding it gives OCF - capex spend.
+                    free_cash_flow = operating_cf + capital_expenditure
+            if qbs is not None and not qbs.empty and col in qbs.columns:
+                cash = (
+                    _get(qbs, "Cash And Cash Equivalents")
+                    or _get(qbs, "Cash Cash Equivalents And Short Term Investments")
+                    or _get(qbs, "Cash")
+                )
+                total_debt = _get(qbs, "Total Debt") or _get(qbs, "Long Term Debt")
+                shares = _get(qbs, "Ordinary Shares Number") or _get(qbs, "Share Issued")
+
+            fcf_margin = None
+            if free_cash_flow is not None and revenue not in (None, 0):
+                fcf_margin = free_cash_flow / revenue
 
             quarters.append({
                 "period": label,
                 "revenue": revenue,
                 "net_income": net_income,
                 "eps": eps,
-                "free_cash_flow": operating_cf,
+                "operating_cash_flow": operating_cf,
+                "capital_expenditure": capital_expenditure,
+                "free_cash_flow": free_cash_flow,
+                "fcf_margin": fcf_margin,
+                "cash": cash,
+                "total_debt": total_debt,
+                "shares_outstanding": shares,
             })
+
+        for idx, quarter in enumerate(quarters):
+            previous = quarters[idx + 1] if idx + 1 < len(quarters) else {}
+            quarter["revenue_qoq_growth_pct"] = _growth_pct(quarter.get("revenue"), previous.get("revenue"))
+            quarter["eps_qoq_growth_pct"] = _growth_pct(quarter.get("eps"), previous.get("eps"))
+            quarter["fcf_qoq_growth_pct"] = _growth_pct(quarter.get("free_cash_flow"), previous.get("free_cash_flow"))
+            quarter["share_count_qoq_change_pct"] = _growth_pct(
+                quarter.get("shares_outstanding"),
+                previous.get("shares_outstanding"),
+            )
+            fcf = quarter.get("free_cash_flow")
+            cash = quarter.get("cash")
+            if fcf is not None and fcf < 0 and cash not in (None, 0):
+                quarter["cash_runway_quarters"] = round(float(cash) / abs(float(fcf)), 2)
+            else:
+                quarter["cash_runway_quarters"] = None
 
         cache_store.set(cache_key, quarters)
         return quarters
@@ -278,16 +331,125 @@ class YFinanceClient:
             "trailing_pe": info.get("trailingPE"),
             "peg_ratio": info.get("pegRatio"),
             "price_to_sales": info.get("priceToSalesTrailing12Months"),
+            "enterprise_value": info.get("enterpriseValue"),
             "revenue_growth_yoy": info.get("revenueGrowth"),   # e.g. 0.42 = +42%
             "earnings_growth_yoy": info.get("earningsGrowth"),  # e.g. 0.81 = +81%
             "gross_margins": info.get("grossMargins"),
             "operating_margins": info.get("operatingMargins"),
+            "profit_margins": info.get("profitMargins"),
             "debt_to_equity": info.get("debtToEquity"),
+            "total_cash": info.get("totalCash"),
+            "total_debt": info.get("totalDebt"),
+            "current_ratio": info.get("currentRatio"),
+            "quick_ratio": info.get("quickRatio"),
+            "operating_cashflow": info.get("operatingCashflow"),
+            "free_cashflow": info.get("freeCashflow"),
+            "shares_outstanding": info.get("sharesOutstanding"),
+            "float_shares": info.get("floatShares"),
+            "held_percent_institutions": info.get("heldPercentInstitutions"),
+            "held_percent_insiders": info.get("heldPercentInsiders"),
             "return_on_equity": info.get("returnOnEquity"),
             "analyst_target_price": info.get("targetMeanPrice"),
+            "analyst_target_high": info.get("targetHighPrice"),
+            "analyst_target_low": info.get("targetLowPrice"),
+            "analyst_target_median": info.get("targetMedianPrice"),
             "analyst_recommendation": info.get("recommendationKey"),  # e.g. "buy", "strong_buy"
+            "recommendation_mean": info.get("recommendationMean"),
             "analyst_count": info.get("numberOfAnalystOpinions"),
+            "earnings_quarterly_growth": info.get("earningsQuarterlyGrowth"),
+            "revenue_per_share": info.get("revenuePerShare"),
         }
+
+        cache_store.set(cache_key, result)
+        return result
+
+    # ------------------------------------------------------------------
+    # Analyst rating / revision history
+    # ------------------------------------------------------------------
+
+    def get_analyst_revision_history(self, ticker: str, lookback_days: int = 90) -> dict:
+        cache_key = f"analyst_revision_history_{ticker.upper()}_{lookback_days}"
+        cached = cache_store.get(cache_key)
+        if cached is not None:
+            return cached
+
+        result: dict = {"ticker": ticker.upper(), "lookback_days": lookback_days}
+        try:
+            t = yf.Ticker(ticker)
+            frames = []
+            for attr in ("upgrades_downgrades", "recommendations"):
+                try:
+                    df = getattr(t, attr)
+                    if df is not None and not df.empty:
+                        tmp = df.copy()
+                        tmp["source_table"] = attr
+                        frames.append(tmp)
+                except Exception as exc:
+                    logger.debug("%s failed for %s: %s", attr, ticker, exc)
+
+            if not frames:
+                result["error"] = "No analyst revision data"
+                cache_store.set(cache_key, result)
+                return result
+
+            df = pd.concat(frames, ignore_index=False)
+            if not isinstance(df.index, pd.DatetimeIndex):
+                date_col = next((c for c in df.columns if "date" in str(c).lower()), None)
+                if date_col:
+                    df[date_col] = pd.to_datetime(df[date_col], errors="coerce")
+                    df = df.set_index(date_col)
+            if isinstance(df.index, pd.DatetimeIndex):
+                cutoff = pd.Timestamp.now(tz=df.index.tz) - pd.Timedelta(days=lookback_days)
+                df = df[df.index >= cutoff]
+
+            if df.empty:
+                result["error"] = f"No analyst revisions in last {lookback_days} days"
+                cache_store.set(cache_key, result)
+                return result
+
+            normalized_cols = {str(c).lower(): c for c in df.columns}
+            action_col = next(
+                (normalized_cols[c] for c in normalized_cols if "action" in c or "grade" in c or "firm" in c),
+                None,
+            )
+            to_col = next((normalized_cols[c] for c in normalized_cols if c in {"to grade", "tograde", "to"}), None)
+            from_col = next((normalized_cols[c] for c in normalized_cols if c in {"from grade", "fromgrade", "from"}), None)
+
+            recent = []
+            upgrade_count = 0
+            downgrade_count = 0
+            for idx, row in df.head(10).iterrows():
+                payload = {"date": str(idx)[:10]}
+                if action_col and action_col in row.index:
+                    payload["action"] = str(row[action_col])
+                if to_col and to_col in row.index:
+                    payload["to_grade"] = str(row[to_col])
+                if from_col and from_col in row.index:
+                    payload["from_grade"] = str(row[from_col])
+                text = " ".join(str(v).lower() for v in payload.values())
+                if "up" in text or "buy" in text or "outperform" in text:
+                    upgrade_count += 1
+                if "down" in text or "sell" in text or "underperform" in text:
+                    downgrade_count += 1
+                recent.append(payload)
+
+            if upgrade_count > downgrade_count:
+                signal = "POSITIVE_REVISION"
+            elif downgrade_count > upgrade_count:
+                signal = "NEGATIVE_REVISION"
+            else:
+                signal = "NEUTRAL_REVISION"
+
+            result.update({
+                "revision_count": len(df),
+                "upgrade_count": upgrade_count,
+                "downgrade_count": downgrade_count,
+                "signal": signal,
+                "recent_revisions": recent,
+            })
+        except Exception as e:
+            logger.warning("Analyst ratings failed for %s: %s", ticker, e)
+            result["error"] = str(e)
 
         cache_store.set(cache_key, result)
         return result
@@ -773,16 +935,30 @@ class YFinanceClient:
             total_put_vol = 0.0
             total_call_oi = 0.0
             total_put_oi = 0.0
+            expiration_summaries = []
 
             for exp in near_exps:
                 try:
                     chain = t.option_chain(exp)
                     calls = chain.calls
                     puts = chain.puts
-                    total_call_vol += float(calls["volume"].fillna(0).sum())
-                    total_put_vol += float(puts["volume"].fillna(0).sum())
-                    total_call_oi += float(calls["openInterest"].fillna(0).sum())
-                    total_put_oi += float(puts["openInterest"].fillna(0).sum())
+                    call_vol = float(calls["volume"].fillna(0).sum())
+                    put_vol = float(puts["volume"].fillna(0).sum())
+                    call_oi = float(calls["openInterest"].fillna(0).sum())
+                    put_oi = float(puts["openInterest"].fillna(0).sum())
+                    total_call_vol += call_vol
+                    total_put_vol += put_vol
+                    total_call_oi += call_oi
+                    total_put_oi += put_oi
+                    expiration_date = pd.to_datetime(exp).date()
+                    expiration_summaries.append({
+                        "expiration": exp,
+                        "days_to_expiration": (expiration_date - pd.Timestamp.now().date()).days,
+                        "call_volume": int(call_vol),
+                        "put_volume": int(put_vol),
+                        "call_oi": int(call_oi),
+                        "put_oi": int(put_oi),
+                    })
                 except Exception as e:
                     logger.debug(f"option_chain({exp}) failed for {ticker}: {e}")
                     continue
@@ -804,6 +980,7 @@ class YFinanceClient:
 
             result.update({
                 "expirations_used": near_exps,
+                "expiration_summaries": expiration_summaries,
                 "call_volume": int(total_call_vol),
                 "put_volume": int(total_put_vol),
                 "call_oi": int(total_call_oi),
@@ -811,6 +988,13 @@ class YFinanceClient:
                 "pc_vol_ratio": pc_vol,
                 "pc_oi_ratio": pc_oi,
                 "signal": signal,
+                "total_contract_volume": int(total_call_vol + total_put_vol),
+                "call_volume_share": round(total_call_vol / (total_call_vol + total_put_vol), 3)
+                if (total_call_vol + total_put_vol) > 0 else None,
+                "near_expiration_bias": any(
+                    item.get("days_to_expiration") is not None and item["days_to_expiration"] <= 7
+                    for item in expiration_summaries
+                ),
             })
 
         except Exception as e:
@@ -872,6 +1056,8 @@ class YFinanceClient:
             tx_col = next((c for c in df.columns if "transaction" in c.lower() or "text" in c.lower()), None)
             val_col = next((c for c in df.columns if "value" in c.lower()), None)
             shares_col = next((c for c in df.columns if "shares" in c.lower()), None)
+            insider_col = next((c for c in df.columns if "insider" in c.lower() or "name" in c.lower()), None)
+            pos_col = next((c for c in df.columns if "position" in c.lower() or "title" in c.lower()), None)
 
             buys = df[df[tx_col].str.contains("Purchase|Buy", case=False, na=False)] if tx_col else pd.DataFrame()
             sells = df[df[tx_col].str.contains("Sale|Sell", case=False, na=False)] if tx_col else pd.DataFrame()
@@ -906,10 +1092,8 @@ class YFinanceClient:
                     entry: dict = {}
                     if date_col in row.index:
                         entry["date"] = str(row[date_col])[:10]
-                    insider_col = next((c for c in df.columns if "insider" in c.lower() or "name" in c.lower()), None)
                     if insider_col and insider_col in row.index:
                         entry["insider"] = str(row[insider_col])
-                    pos_col = next((c for c in df.columns if "position" in c.lower() or "title" in c.lower()), None)
                     if pos_col and pos_col in row.index:
                         entry["position"] = str(row[pos_col])
                     if val_col and val_col in row.index:
@@ -917,6 +1101,29 @@ class YFinanceClient:
                     if shares_col and shares_col in row.index:
                         entry["shares"] = float(row[shares_col]) if pd.notna(row[shares_col]) else None
                     recent_buys.append(entry)
+
+            recent_sells = []
+            if not sells.empty and tx_col and date_col:
+                for _, row in sells.head(3).iterrows():
+                    entry: dict = {}
+                    if date_col in row.index:
+                        entry["date"] = str(row[date_col])[:10]
+                    if insider_col and insider_col in row.index:
+                        entry["insider"] = str(row[insider_col])
+                    if pos_col and pos_col in row.index:
+                        entry["position"] = str(row[pos_col])
+                    if val_col and val_col in row.index:
+                        entry["value"] = float(row[val_col]) if pd.notna(row[val_col]) else None
+                    if shares_col and shares_col in row.index:
+                        entry["shares"] = float(row[shares_col]) if pd.notna(row[shares_col]) else None
+                    recent_sells.append(entry)
+
+            def _has_c_suite(entries: list[dict]) -> bool:
+                for entry in entries:
+                    role = str(entry.get("position") or "").lower()
+                    if any(term in role for term in ("ceo", "chief executive", "cfo", "chief financial", "president", "founder")):
+                        return True
+                return False
 
             result.update({
                 "lookback_days": lookback_days,
@@ -928,6 +1135,10 @@ class YFinanceClient:
                 "sell_shares": round(sell_shares) if sell_shares else 0,
                 "signal": signal,
                 "recent_purchases": recent_buys,
+                "recent_sales": recent_sells,
+                "c_suite_buy": _has_c_suite(recent_buys),
+                "c_suite_sell": _has_c_suite(recent_sells),
+                "net_value_usd": round(buy_value - sell_value),
             })
 
         except Exception as e:

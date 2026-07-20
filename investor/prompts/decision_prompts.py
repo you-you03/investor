@@ -71,9 +71,15 @@ corresponding tool.py command ONCE per ticker (not once per persona):
 | return_on_equity            | .venv/bin/python scripts/tool.py get_financials --ticker {TICKER}   |
 | debt_to_equity              | .venv/bin/python scripts/tool.py get_financials --ticker {TICKER}   |
 | earnings_growth_yoy         | .venv/bin/python scripts/tool.py get_financials --ticker {TICKER}   |
+| operating_cash_flow         | .venv/bin/python scripts/tool.py get_financials --ticker {TICKER}   |
+| cash_runway                 | .venv/bin/python scripts/tool.py get_financials --ticker {TICKER}   |
+| shares_outstanding          | .venv/bin/python scripts/tool.py get_financials --ticker {TICKER}   |
 | forward_pe                  | .venv/bin/python scripts/tool.py get_ticker_details --ticker {TICKER} |
 | peg_ratio                   | .venv/bin/python scripts/tool.py get_ticker_details --ticker {TICKER} |
+| total_cash                  | .venv/bin/python scripts/tool.py get_ticker_details --ticker {TICKER} |
+| total_debt                  | .venv/bin/python scripts/tool.py get_ticker_details --ticker {TICKER} |
 | analyst_count               | .venv/bin/python scripts/tool.py get_ticker_details --ticker {TICKER} |
+| analyst_revision            | .venv/bin/python scripts/tool.py get_analyst_revision_history --ticker {TICKER} |
 | institutional_ownership_pct | .venv/bin/python scripts/tool.py get_ticker_details --ticker {TICKER} |
 | RSI                         | .venv/bin/python scripts/tool.py get_technical_indicators --ticker {TICKER} |
 | MACD                        | .venv/bin/python scripts/tool.py get_technical_indicators --ticker {TICKER} |
@@ -197,15 +203,15 @@ Your mandate:
 
     STEP A — Score gate (最初に確認):
     • score < 7.0  → PASS強制。採用不可。
-    • score 7.0–7.4 → catalyst_quality が STRONG でない限り WAIT に格下げ。MEDIUMでの採用禁止。
-    • score 7.5–8.1 → MEDIUM採用可。HIGH はfundamentals_score ≥ 8 かつ catalyst_quality ≥ MEDIUM の場合のみ。
-    • score ≥ 8.2  → HIGH採用可（fundamentals_score ≥ 8 が必須条件）。
+    • score 7.0–7.4 → catalyst_grade A でない限り WAIT に格下げ。MEDIUMでの採用禁止。
+    • score 7.5–8.1 → MEDIUM採用可。HIGH は fundamentals_grade A かつ catalyst_grade A/B の場合のみ。
+    • score ≥ 8.2  → HIGH採用可（fundamentals_grade A または fundamentals_score ≥ 8 が必須条件）。
     [根拠: MEDIUM確信度の勝率27%。score 7.0-7.4でMEDIUM採用したWAT(-7.3%)が典型的失敗]
 
     STEP B — Sector LAGGING gate (score gateを通過した場合のみ):
     • セクターが LAGGING（sector_rs.bottom_sectors）に入っている場合:
-      catalyst_quality = STRONG のみ継続（上限MEDIUM）。MEDIUM/WEAK → PASS強制。
-    • Document: "セクターLAGGING + catalyst {quality} → PASS強制" または "LAGGING特例: STRONG催剤のためMEDIUM上限で継続"
+      catalyst_grade A のみ継続（上限MEDIUM）。B/C/D → PASS強制。
+    • Document: "セクターLAGGING + catalyst_grade {grade} → PASS強制" または "LAGGING特例: catalyst_grade A のためMEDIUM上限で継続"
 
     STEP C — Fundamentals floor (A/Bを通過した後に適用):
     • conviction_floor == "HIGH"   → final conviction cannot be LOW. If debate consensus was LOW,
@@ -226,10 +232,16 @@ Your mandate:
     • Otherwise: no change
     Document override in rationale: "ファンダ副軸: Revenue +X% / EPS +Y% → サイズ{増額/縮小}"
 
-    NOTE — Updated scoring weights (research_prompts.py v2 準拠):
-    スコア計算の重みが変わっているため、同じスコアでも以前より fundamentals 比重が高くなっている。
-    Momentum 25% / Fundamentals 30% / Catalyst 15% / Technical 10% / Sentiment 20%
-    score_breakdown.fundamentals が低い（≤ 6）HIGH確信度候補は MEDIUM に格下げすること。
+    NOTE — Factor quality grades (research_prompts.py v3 準拠):
+    スコアだけでなく factor_grades を必ず確認する。
+    現行 score 構成は Momentum 25% / Fundamentals 35% / Catalyst 10% / Technical 10% / Sentiment 20%。
+    ただし採用判断ではウェイトより品質ゲートを優先する。
+    • fundamentals_grade C/D の候補は HIGH不可。D は原則PASS。
+    • catalyst_grade C/D は BUY の主根拠にしない。D は原則PASS/WAIT。
+    • technical_grade C は WAIT優先、D はBUY禁止。
+    • momentum_grade D はBUY禁止。failure_signal がある場合はWAIT/PASS。
+    • sentiment_grade C/D は確信度を上げる根拠にしない。single-source bullish sentiment はHIGH不可。
+    • factor_grades が欠損している候補は、score_evidence で同等の品質確認ができない限りHIGH不可。
 - Score 8.0+ priority slot rule (スコア8.0以上優先枠):
     If a candidate's score ≥ 8.0 and all 5 position slots are occupied:
     • Identify any open position with unrealized_pnl < -3% OR conviction == LOW

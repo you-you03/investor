@@ -575,5 +575,231 @@
     },
     "no_trade_week": false,
     "scope": "single_ticker:TSM"
+  },
+  {
+    "date": "2026-07-05",
+    "run_id": "c0842ab5-ffd3-46da-9c55-5a9f1cce3654",
+    "candidates_evaluated": [
+      "OUST",
+      "BWIN",
+      "AMAT",
+      "AVAV",
+      "GPC",
+      "MRNA"
+    ],
+    "buy_decisions": [],
+    "pass_decisions": [
+      "OUST",
+      "BWIN",
+      "AMAT",
+      "AVAV",
+      "GPC",
+      "MRNA"
+    ],
+    "hold_cash_decisions": [
+      "CASH"
+    ],
+    "proposal_records": [
+      {
+        "ticker": "CASH",
+        "action": "HOLD_CASH",
+        "conviction": "MEDIUM",
+        "position_size_usd": 0.0,
+        "signal_type": null
+      }
+    ],
+    "pass_records": [
+      {
+        "ticker": "OUST",
+        "score": 7.2,
+        "conviction": "MEDIUM",
+        "entry_price_range": null,
+        "signal_type": null
+      },
+      {
+        "ticker": "BWIN",
+        "score": 7.05,
+        "conviction": "MEDIUM",
+        "entry_price_range": null,
+        "signal_type": null
+      },
+      {
+        "ticker": "AMAT",
+        "score": 7.05,
+        "conviction": "MEDIUM",
+        "entry_price_range": null,
+        "signal_type": null
+      },
+      {
+        "ticker": "AVAV",
+        "score": 7.0,
+        "conviction": "MEDIUM",
+        "entry_price_range": null,
+        "signal_type": null
+      },
+      {
+        "ticker": "GPC",
+        "score": 7.0,
+        "conviction": "MEDIUM",
+        "entry_price_range": null,
+        "signal_type": null
+      },
+      {
+        "ticker": "MRNA",
+        "score": 7.0,
+        "conviction": "LOW",
+        "entry_price_range": null,
+        "signal_type": null
+      }
+    ],
+    "proposal_summary": {
+      "buy_count": 0,
+      "pass_count": 6,
+      "hold_cash_count": 1
+    },
+    "no_trade_week": true
+  },
+  {
+    "date": "2026-07-12",
+    "run_id": "bc5863ae-b769-420d-8069-6dacc57a678f",
+    "candidates_evaluated": [
+      "WDFC",
+      "MU",
+      "CCC"
+    ],
+    "buy_decisions": [],
+    "pass_decisions": [
+      "WDFC",
+      "MU",
+      "CCC"
+    ],
+    "hold_cash_decisions": [],
+    "proposal_records": [
+      {
+        "ticker": "WDFC",
+        "action": "WAIT",
+        "conviction": "MEDIUM",
+        "position_size_usd": 0.0,
+        "signal_type": "earnings_beat"
+      },
+      {
+        "ticker": "MU",
+        "action": "WAIT",
+        "conviction": "MEDIUM",
+        "position_size_usd": 0.0,
+        "signal_type": "watchlist_escalate"
+      },
+      {
+        "ticker": "CCC",
+        "action": "WAIT",
+        "conviction": "MEDIUM",
+        "position_size_usd": 0.0,
+        "signal_type": "analyst_upgrade"
+      }
+    ],
+    "pass_records": [
+      {
+        "ticker": "WDFC",
+        "score": 7.25,
+        "conviction": "MEDIUM",
+        "entry_price_range": null,
+        "signal_type": null
+      },
+      {
+        "ticker": "MU",
+        "score": 7.1,
+        "conviction": "MEDIUM",
+        "entry_price_range": null,
+        "signal_type": null
+      },
+      {
+        "ticker": "CCC",
+        "score": 7.07,
+        "conviction": "MEDIUM",
+        "entry_price_range": null,
+        "signal_type": null
+      }
+    ],
+    "proposal_summary": {
+      "buy_count": 0,
+      "pass_count": 3,
+      "hold_cash_count": 0
+    },
+    "no_trade_week": true
+  },
+  {
+    "date": "2026-07-18",
+    "run_id": "70a23feb-adb1-46b4-bfa0-e99dd049be66",
+    "candidates_evaluated": [
+      "DECK",
+      "NEE",
+      "WAY",
+      "SAIC",
+      "REZI",
+      "SLS"
+    ],
+    "buy_decisions": [
+      "DECK",
+      "WAY"
+    ],
+    "pass_decisions": [
+      "NEE",
+      "SAIC",
+      "REZI",
+      "SLS"
+    ],
+    "hold_cash_decisions": [],
+    "proposal_records": [
+      {
+        "ticker": "DECK",
+        "action": "BUY",
+        "conviction": "HIGH",
+        "position_size_usd": 213.0,
+        "signal_type": "analyst_upgrade"
+      },
+      {
+        "ticker": "WAY",
+        "action": "BUY",
+        "conviction": "MEDIUM",
+        "position_size_usd": 45.0,
+        "signal_type": "earnings_beat"
+      }
+    ],
+    "pass_records": [
+      {
+        "ticker": "NEE",
+        "score": 8.2,
+        "conviction": "HIGH",
+        "entry_price_range": null,
+        "signal_type": null
+      },
+      {
+        "ticker": "SAIC",
+        "score": 7.5,
+        "conviction": "MEDIUM",
+        "entry_price_range": null,
+        "signal_type": null
+      },
+      {
+        "ticker": "REZI",
+        "score": 7.3,
+        "conviction": "MEDIUM",
+        "entry_price_range": null,
+        "signal_type": null
+      },
+      {
+        "ticker": "SLS",
+        "score": 7.2,
+        "conviction": "MEDIUM",
+        "entry_price_range": null,
+        "signal_type": null
+      }
+    ],
+    "proposal_summary": {
+      "buy_count": 2,
+      "pass_count": 4,
+      "hold_cash_count": 0
+    },
+    "no_trade_week": false
   }
 ]

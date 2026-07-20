@@ -1595,6 +1595,809 @@
         }
       ],
       "report_path": "reports/daily/daily_lite_2026-05-31.md"
+    },
+    {
+      "run_id": "b120e39b-5c63-44c9-a0bd-e9070d4555a7",
+      "date": "2026-07-12",
+      "macro_context": {
+        "SPY": {
+          "label": "S&P 500 ETF",
+          "price": 754.9500122070312,
+          "change_pct": 0.47,
+          "ema_50": 736.97,
+          "above_ema50": true
+        },
+        "QQQ": {
+          "label": "NASDAQ 100 ETF",
+          "price": 725.510009765625,
+          "change_pct": 0.36
+        },
+        "^VIX": {
+          "label": "VIX Fear Index",
+          "price": 15.029999732971191,
+          "change_pct": -5.11
+        },
+        "TLT": {
+          "label": "20Y Treasury Bond ETF",
+          "price": 84.47000122070312,
+          "change_pct": 0.05
+        },
+        "regime": "NORMAL",
+        "regime_note": "通常リスク環境。通常の判断基準を適用。"
+      },
+      "positions": [
+        {
+          "ticker": "SMTC",
+          "shares": 1.0,
+          "entry_price": 162.5,
+          "current_price": 136.1300048828125,
+          "target_price": 191.26,
+          "stop_loss": 148.12,
+          "pnl_pct": -16.23,
+          "change_pct": -1.36,
+          "note": "20万円枠。取得日: 2026-06-23。Decision 2026-06-23採用。SMTC score 7.15 / 確信度LOW-MEDIUM。指値$175、譲渡金額29,743円、1株。RS強いがMACD histマイナス・Debt/Equity高めのため試し玉。 | 【2026-06-25 修正】買値を$162.50に訂正（ユーザー申告） | 【2026-06-25 STOP再設定】買値修正に伴いATR1x基準へ再設定: stop $148.12 / target $191.26"
+        },
+        {
+          "ticker": "FOUR",
+          "shares": 2.0,
+          "entry_price": 43.51,
+          "current_price": 50.810001373291016,
+          "target_price": null,
+          "stop_loss": 48.44,
+          "pnl_pct": 16.78,
+          "change_pct": 4.19,
+          "note": "20万円枠。ユーザー申告による手動反映。 | 【2026-07-03 STAGE1】$51.35で25%利確条件到達。ただし2株保有のため売却株数0。ストップ→買値$43.51 | 【2026-07-03 STAGE2】$51.35で追加25%利確条件到達。ただし2株保有のため売却株数0。ATR×1.0トレーリング相当: stop $48.44"
+        },
+        {
+          "ticker": "TSM",
+          "shares": 1.0,
+          "entry_price": 441.0,
+          "current_price": 434.1099853515625,
+          "target_price": null,
+          "stop_loss": null,
+          "pnl_pct": -1.56,
+          "change_pct": -1.2,
+          "note": "20万円枠。ユーザー申告による手動反映。"
+        }
+      ],
+      "position_alerts": [
+        {
+          "ticker": "SMTC",
+          "alert_type": "STOP_BREACH",
+          "severity": "HIGH",
+          "message": "Price $136.13 hit stop loss $148.12",
+          "current_price": 136.1300048828125,
+          "entry_price": 162.5,
+          "unrealized_pnl_pct": -16.23,
+          "stop_loss": 148.12,
+          "target_price": 191.26,
+          "trailing_stop_price": null
+        },
+        {
+          "ticker": "SMTC",
+          "alert_type": "DOWN_5PCT",
+          "severity": "MEDIUM",
+          "message": "Unrealized loss -16.2%",
+          "current_price": 136.1300048828125,
+          "entry_price": 162.5,
+          "unrealized_pnl_pct": -16.23,
+          "stop_loss": 148.12,
+          "target_price": 191.26,
+          "trailing_stop_price": null
+        }
+      ],
+      "watchlist_results": [
+        {
+          "ticker": "ACMR",
+          "price": 103.0,
+          "change_pct": -3.71,
+          "reference_price": 109.87,
+          "ref_change_pct": -6.25,
+          "rsi": 53.94,
+          "days_until_earnings": 24,
+          "flags": [],
+          "primary_flag": null,
+          "action": "MAINTAIN",
+          "pipeline_status": "watching",
+          "next_step": null,
+          "last_score": 6.22
+        },
+        {
+          "ticker": "AMAT",
+          "price": 602.5,
+          "change_pct": 0.79,
+          "reference_price": 603.04,
+          "ref_change_pct": -0.09,
+          "rsi": 53.89,
+          "days_until_earnings": 33,
+          "flags": [],
+          "primary_flag": null,
+          "action": "MAINTAIN",
+          "pipeline_status": "researched",
+          "next_step": null,
+          "last_score": 6.94
+        },
+        {
+          "ticker": "APGE",
+          "price": 133.64999389648438,
+          "change_pct": 0.26,
+          "reference_price": 132.55,
+          "ref_change_pct": 0.83,
+          "rsi": 81.3,
+          "days_until_earnings": 29,
+          "flags": [],
+          "primary_flag": null,
+          "action": "MAINTAIN",
+          "pipeline_status": "watching",
+          "next_step": null,
+          "last_score": 5.42
+        },
+        {
+          "ticker": "AVAV",
+          "price": 144.5800018310547,
+          "change_pct": -2.64,
+          "reference_price": 190.89,
+          "ref_change_pct": -24.26,
+          "rsi": 40.76,
+          "days_until_earnings": 53,
+          "flags": [
+            "WATCHLIST_DROPPED"
+          ],
+          "primary_flag": "WATCHLIST_DROPPED",
+          "action": "REVIEW",
+          "pipeline_status": "researched",
+          "next_step": "manual review: AVAV",
+          "last_score": 4.64
+        },
+        {
+          "ticker": "BE",
+          "price": 244.61000061035156,
+          "change_pct": -4.75,
+          "reference_price": 328.91,
+          "ref_change_pct": -25.63,
+          "rsi": 42.56,
+          "days_until_earnings": 17,
+          "flags": [
+            "WATCHLIST_DROPPED"
+          ],
+          "primary_flag": "WATCHLIST_DROPPED",
+          "action": "REVIEW",
+          "pipeline_status": "watching",
+          "next_step": "manual review: BE",
+          "last_score": 4.6
+        },
+        {
+          "ticker": "BLDR",
+          "price": 75.69000244140625,
+          "change_pct": 1.72,
+          "reference_price": 85.41,
+          "ref_change_pct": -11.38,
+          "rsi": 42.83,
+          "days_until_earnings": 18,
+          "flags": [
+            "WATCHLIST_DROPPED"
+          ],
+          "primary_flag": "WATCHLIST_DROPPED",
+          "action": "REVIEW",
+          "pipeline_status": "watching",
+          "next_step": "manual review: BLDR",
+          "last_score": 4.95
+        },
+        {
+          "ticker": "BWIN",
+          "price": 26.5,
+          "change_pct": -0.89,
+          "reference_price": 28.41,
+          "ref_change_pct": -6.72,
+          "rsi": 63.33,
+          "days_until_earnings": 19,
+          "flags": [],
+          "primary_flag": null,
+          "action": "MAINTAIN",
+          "pipeline_status": "watching",
+          "next_step": null,
+          "last_score": 6.91
+        },
+        {
+          "ticker": "CCC",
+          "price": 5.920000076293945,
+          "change_pct": -1.5,
+          "reference_price": 5.92,
+          "ref_change_pct": 0.0,
+          "rsi": 69.87,
+          "days_until_earnings": 18,
+          "flags": [],
+          "primary_flag": null,
+          "action": "MAINTAIN",
+          "pipeline_status": "researched",
+          "next_step": null,
+          "last_score": 7.07
+        },
+        {
+          "ticker": "COHR",
+          "price": 324.5,
+          "change_pct": -1.28,
+          "reference_price": 307.5,
+          "ref_change_pct": 5.53,
+          "rsi": 40.93,
+          "days_until_earnings": -66,
+          "flags": [],
+          "primary_flag": null,
+          "action": "MAINTAIN",
+          "pipeline_status": "researched",
+          "next_step": null,
+          "last_score": 5.35
+        },
+        {
+          "ticker": "CRSP",
+          "price": 53.349998474121094,
+          "change_pct": -5.43,
+          "reference_price": 60.08,
+          "ref_change_pct": -11.2,
+          "rsi": 45.74,
+          "days_until_earnings": -61,
+          "flags": [
+            "WATCHLIST_DROPPED"
+          ],
+          "primary_flag": "WATCHLIST_DROPPED",
+          "action": "REVIEW",
+          "pipeline_status": "watching",
+          "next_step": "manual review: CRSP",
+          "last_score": 6.11
+        },
+        {
+          "ticker": "ENTG",
+          "price": 145.35000610351562,
+          "change_pct": -1.79,
+          "reference_price": 178.77,
+          "ref_change_pct": -18.69,
+          "rsi": 46.73,
+          "days_until_earnings": 18,
+          "flags": [
+            "WATCHLIST_DROPPED"
+          ],
+          "primary_flag": "WATCHLIST_DROPPED",
+          "action": "REVIEW",
+          "pipeline_status": "watching",
+          "next_step": "manual review: ENTG",
+          "last_score": 5.79
+        },
+        {
+          "ticker": "FIG",
+          "price": 21.110000610351562,
+          "change_pct": -5.51,
+          "reference_price": 21.34,
+          "ref_change_pct": -1.08,
+          "rsi": 53.17,
+          "days_until_earnings": 34,
+          "flags": [
+            "WATCHLIST_SETUP"
+          ],
+          "primary_flag": "WATCHLIST_SETUP",
+          "action": "RESEARCH_SEED",
+          "pipeline_status": "research_queued",
+          "next_step": "/research --seed FIG",
+          "last_score": 6.72
+        },
+        {
+          "ticker": "GEHC",
+          "price": 64.69999694824219,
+          "change_pct": -0.02,
+          "reference_price": 65.57,
+          "ref_change_pct": -1.33,
+          "rsi": 51.76,
+          "days_until_earnings": 17,
+          "flags": [
+            "WATCHLIST_SETUP"
+          ],
+          "primary_flag": "WATCHLIST_SETUP",
+          "action": "RESEARCH_SEED",
+          "pipeline_status": "research_queued",
+          "next_step": "/research --seed GEHC",
+          "last_score": 6.27
+        },
+        {
+          "ticker": "GGAL",
+          "price": 53.72999954223633,
+          "change_pct": 7.14,
+          "reference_price": 53.73,
+          "ref_change_pct": -0.0,
+          "rsi": 58.1,
+          "days_until_earnings": -59,
+          "flags": [],
+          "primary_flag": null,
+          "action": "MAINTAIN",
+          "pipeline_status": "watching",
+          "next_step": null,
+          "last_score": 6.15
+        },
+        {
+          "ticker": "GPC",
+          "price": 125.62000274658203,
+          "change_pct": 1.09,
+          "reference_price": 132.57,
+          "ref_change_pct": -5.24,
+          "rsi": 68.03,
+          "days_until_earnings": 9,
+          "flags": [
+            "WATCHLIST_EARNINGS"
+          ],
+          "primary_flag": "WATCHLIST_EARNINGS",
+          "action": "RESEARCH_SEED",
+          "pipeline_status": "research_queued",
+          "next_step": "/research --seed GPC",
+          "last_score": 5.4
+        },
+        {
+          "ticker": "HON",
+          "price": 226.4199981689453,
+          "change_pct": 1.84,
+          "reference_price": 229.86,
+          "ref_change_pct": -1.5,
+          "rsi": 46.31,
+          "days_until_earnings": 11,
+          "flags": [
+            "WATCHLIST_EARNINGS"
+          ],
+          "primary_flag": "WATCHLIST_EARNINGS",
+          "action": "RESEARCH_SEED",
+          "pipeline_status": "research_queued",
+          "next_step": "/research --seed HON",
+          "last_score": 5.12
+        },
+        {
+          "ticker": "ICHR",
+          "price": 100.30000305175781,
+          "change_pct": 4.92,
+          "reference_price": 84.04,
+          "ref_change_pct": 19.35,
+          "rsi": 57.77,
+          "days_until_earnings": 24,
+          "flags": [
+            "WATCHLIST_MOVED"
+          ],
+          "primary_flag": "WATCHLIST_MOVED",
+          "action": "RESEARCH_SEED",
+          "pipeline_status": "research_queued",
+          "next_step": "/research --seed ICHR",
+          "last_score": 5.33
+        },
+        {
+          "ticker": "MRNA",
+          "price": 68.2699966430664,
+          "change_pct": -10.83,
+          "reference_price": 79.76,
+          "ref_change_pct": -14.41,
+          "rsi": 54.81,
+          "days_until_earnings": 19,
+          "flags": [
+            "WATCHLIST_SETUP",
+            "WATCHLIST_DROPPED"
+          ],
+          "primary_flag": "WATCHLIST_SETUP",
+          "action": "RESEARCH_SEED",
+          "pipeline_status": "research_queued",
+          "next_step": "/research --seed MRNA",
+          "last_score": 6.39
+        },
+        {
+          "ticker": "MU",
+          "price": 979.2999877929688,
+          "change_pct": -2.31,
+          "reference_price": 366.24,
+          "ref_change_pct": 167.39,
+          "rsi": 49.08,
+          "days_until_earnings": 74,
+          "flags": [
+            "WATCHLIST_MOVED"
+          ],
+          "primary_flag": "WATCHLIST_MOVED",
+          "action": "RESEARCH_SEED",
+          "pipeline_status": "promoted",
+          "next_step": "/research --seed MU",
+          "last_score": 7.1
+        },
+        {
+          "ticker": "NEE",
+          "price": 87.95999908447266,
+          "change_pct": 1.05,
+          "reference_price": 88.34,
+          "ref_change_pct": -0.43,
+          "rsi": 52.09,
+          "days_until_earnings": 12,
+          "flags": [
+            "WATCHLIST_SETUP",
+            "WATCHLIST_EARNINGS"
+          ],
+          "primary_flag": "WATCHLIST_SETUP",
+          "action": "RESEARCH_SEED",
+          "pipeline_status": "research_queued",
+          "next_step": "/research --seed NEE",
+          "last_score": 6.5
+        },
+        {
+          "ticker": "NOK",
+          "price": 12.4399995803833,
+          "change_pct": -4.08,
+          "reference_price": 15.47,
+          "ref_change_pct": -19.59,
+          "rsi": 43.57,
+          "days_until_earnings": 11,
+          "flags": [
+            "WATCHLIST_EARNINGS",
+            "WATCHLIST_DROPPED"
+          ],
+          "primary_flag": "WATCHLIST_EARNINGS",
+          "action": "RESEARCH_SEED",
+          "pipeline_status": "research_queued",
+          "next_step": "/research --seed NOK",
+          "last_score": 5.43
+        },
+        {
+          "ticker": "ORCL",
+          "price": 140.63999938964844,
+          "change_pct": -2.9,
+          "reference_price": 140.27,
+          "ref_change_pct": 0.26,
+          "rsi": 30.66,
+          "days_until_earnings": 60,
+          "flags": [],
+          "primary_flag": null,
+          "action": "MAINTAIN",
+          "pipeline_status": "watching",
+          "next_step": null,
+          "last_score": 4.82
+        },
+        {
+          "ticker": "OUST",
+          "price": 43.279998779296875,
+          "change_pct": -10.39,
+          "reference_price": 49.84,
+          "ref_change_pct": -13.16,
+          "rsi": 48.34,
+          "days_until_earnings": -67,
+          "flags": [
+            "WATCHLIST_DROPPED"
+          ],
+          "primary_flag": "WATCHLIST_DROPPED",
+          "action": "REVIEW",
+          "pipeline_status": "researched",
+          "next_step": "manual review: OUST",
+          "last_score": 5.33
+        },
+        {
+          "ticker": "REZI",
+          "price": 33.939998626708984,
+          "change_pct": 9.34,
+          "reference_price": 33.94,
+          "ref_change_pct": -0.0,
+          "rsi": 58.69,
+          "days_until_earnings": 26,
+          "flags": [
+            "WATCHLIST_BREAKOUT",
+            "WATCHLIST_SETUP"
+          ],
+          "primary_flag": "WATCHLIST_BREAKOUT",
+          "action": "RESEARCH_SEED",
+          "pipeline_status": "research_queued",
+          "next_step": "/research --seed REZI",
+          "last_score": 6.61
+        },
+        {
+          "ticker": "RGTI",
+          "price": 16.540000915527344,
+          "change_pct": -2.71,
+          "reference_price": 26.42,
+          "ref_change_pct": -37.4,
+          "rsi": 37.1,
+          "days_until_earnings": -61,
+          "flags": [
+            "WATCHLIST_DROPPED"
+          ],
+          "primary_flag": "WATCHLIST_DROPPED",
+          "action": "REVIEW",
+          "pipeline_status": "exited",
+          "next_step": "manual review: RGTI",
+          "last_score": 4.59
+        },
+        {
+          "ticker": "RIVN",
+          "price": 17.479999542236328,
+          "change_pct": -3.74,
+          "reference_price": 18.63,
+          "ref_change_pct": -6.17,
+          "rsi": 53.74,
+          "days_until_earnings": 19,
+          "flags": [
+            "WATCHLIST_SETUP"
+          ],
+          "primary_flag": "WATCHLIST_SETUP",
+          "action": "RESEARCH_SEED",
+          "pipeline_status": "research_queued",
+          "next_step": "/research --seed RIVN",
+          "last_score": 6.69
+        },
+        {
+          "ticker": "RUN",
+          "price": 12.470000267028809,
+          "change_pct": -0.32,
+          "reference_price": 14.42,
+          "ref_change_pct": -13.52,
+          "rsi": 44.13,
+          "days_until_earnings": 25,
+          "flags": [
+            "WATCHLIST_DROPPED"
+          ],
+          "primary_flag": "WATCHLIST_DROPPED",
+          "action": "REVIEW",
+          "pipeline_status": "researched",
+          "next_step": "manual review: RUN",
+          "last_score": 4.84
+        },
+        {
+          "ticker": "SMCI",
+          "price": 28.309999465942383,
+          "change_pct": -0.21,
+          "reference_price": 35.46,
+          "ref_change_pct": -20.16,
+          "rsi": 43.18,
+          "days_until_earnings": 24,
+          "flags": [
+            "WATCHLIST_DROPPED"
+          ],
+          "primary_flag": "WATCHLIST_DROPPED",
+          "action": "REVIEW",
+          "pipeline_status": "watching",
+          "next_step": "manual review: SMCI",
+          "last_score": 6.58
+        },
+        {
+          "ticker": "UBER",
+          "price": 74.54000091552734,
+          "change_pct": 0.3,
+          "reference_price": 74.43,
+          "ref_change_pct": 0.15,
+          "rsi": 53.98,
+          "days_until_earnings": 24,
+          "flags": [
+            "WATCHLIST_SETUP"
+          ],
+          "primary_flag": "WATCHLIST_SETUP",
+          "action": "RESEARCH_SEED",
+          "pipeline_status": "research_queued",
+          "next_step": "/research --seed UBER",
+          "last_score": 6.04
+        },
+        {
+          "ticker": "UCTT",
+          "price": 106.2699966430664,
+          "change_pct": -1.87,
+          "reference_price": 104.83,
+          "ref_change_pct": 1.37,
+          "rsi": 50.04,
+          "days_until_earnings": 23,
+          "flags": [],
+          "primary_flag": null,
+          "action": "MAINTAIN",
+          "pipeline_status": "watching",
+          "next_step": null,
+          "last_score": 6.01
+        },
+        {
+          "ticker": "VIAV",
+          "price": 43.08000183105469,
+          "change_pct": 0.95,
+          "reference_price": 52.94,
+          "ref_change_pct": -18.62,
+          "rsi": 42.33,
+          "days_until_earnings": 26,
+          "flags": [
+            "WATCHLIST_DROPPED"
+          ],
+          "primary_flag": "WATCHLIST_DROPPED",
+          "action": "REVIEW",
+          "pipeline_status": "researched",
+          "next_step": "manual review: VIAV",
+          "last_score": 5.11
+        },
+        {
+          "ticker": "VOD",
+          "price": 14.720000267028809,
+          "change_pct": 13.41,
+          "reference_price": 14.72,
+          "ref_change_pct": 0.0,
+          "rsi": 60.37,
+          "days_until_earnings": -61,
+          "flags": [
+            "WATCHLIST_BREAKOUT"
+          ],
+          "primary_flag": "WATCHLIST_BREAKOUT",
+          "action": "RESEARCH_SEED",
+          "pipeline_status": "research_queued",
+          "next_step": "/research --seed VOD",
+          "last_score": 6.44
+        },
+        {
+          "ticker": "VSAT",
+          "price": 73.55999755859375,
+          "change_pct": 4.44,
+          "reference_price": 72.71,
+          "ref_change_pct": 1.17,
+          "rsi": 51.26,
+          "days_until_earnings": 25,
+          "flags": [
+            "WATCHLIST_SETUP"
+          ],
+          "primary_flag": "WATCHLIST_SETUP",
+          "action": "RESEARCH_SEED",
+          "pipeline_status": "research_queued",
+          "next_step": "/research --seed VSAT",
+          "last_score": 6.65
+        },
+        {
+          "ticker": "WAY",
+          "price": 22.43000030517578,
+          "change_pct": -3.61,
+          "reference_price": 23.46,
+          "ref_change_pct": -4.39,
+          "rsi": 59.03,
+          "days_until_earnings": 18,
+          "flags": [
+            "WATCHLIST_SETUP"
+          ],
+          "primary_flag": "WATCHLIST_SETUP",
+          "action": "RESEARCH_SEED",
+          "pipeline_status": "research_queued",
+          "next_step": "/research --seed WAY",
+          "last_score": 6.79
+        },
+        {
+          "ticker": "WDFC",
+          "price": 264.9100036621094,
+          "change_pct": -4.6,
+          "reference_price": 264.91,
+          "ref_change_pct": 0.0,
+          "rsi": 73.51,
+          "days_until_earnings": -2,
+          "flags": [],
+          "primary_flag": null,
+          "action": "MAINTAIN",
+          "pipeline_status": "researched",
+          "next_step": null,
+          "last_score": 7.25
+        }
+      ],
+      "research_candidates": [
+        {
+          "ticker": "PYPL",
+          "score": 5.75,
+          "price": 46.31999969482422,
+          "change_pct": 2.48,
+          "rsi": 61.06,
+          "reason": "day change +2.5%; RSI 61.1 in trend zone; MACD positive",
+          "next_step": "/research --seed PYPL"
+        },
+        {
+          "ticker": "GPN",
+          "score": 5.75,
+          "price": 76.04000091552734,
+          "change_pct": 3.54,
+          "rsi": 60.44,
+          "reason": "day change +3.5%; RSI 60.4 in trend zone; MACD positive",
+          "next_step": "/research --seed GPN"
+        }
+      ],
+      "pending_actions": [
+        {
+          "ticker": "SMTC",
+          "type": "exit_decision",
+          "detail": "STOP_BREACH",
+          "command": "/decision --mode exit --ticker SMTC"
+        },
+        {
+          "ticker": "FIG",
+          "type": "watchlist_seed",
+          "detail": "WATCHLIST_SETUP",
+          "command": "/research --seed FIG"
+        },
+        {
+          "ticker": "GEHC",
+          "type": "watchlist_seed",
+          "detail": "WATCHLIST_SETUP",
+          "command": "/research --seed GEHC"
+        },
+        {
+          "ticker": "GPC",
+          "type": "watchlist_seed",
+          "detail": "WATCHLIST_EARNINGS",
+          "command": "/research --seed GPC"
+        },
+        {
+          "ticker": "HON",
+          "type": "watchlist_seed",
+          "detail": "WATCHLIST_EARNINGS",
+          "command": "/research --seed HON"
+        },
+        {
+          "ticker": "ICHR",
+          "type": "watchlist_seed",
+          "detail": "WATCHLIST_MOVED",
+          "command": "/research --seed ICHR"
+        },
+        {
+          "ticker": "MRNA",
+          "type": "watchlist_seed",
+          "detail": "WATCHLIST_SETUP",
+          "command": "/research --seed MRNA"
+        },
+        {
+          "ticker": "MU",
+          "type": "watchlist_seed",
+          "detail": "WATCHLIST_MOVED",
+          "command": "/research --seed MU"
+        },
+        {
+          "ticker": "NEE",
+          "type": "watchlist_seed",
+          "detail": "WATCHLIST_SETUP",
+          "command": "/research --seed NEE"
+        },
+        {
+          "ticker": "NOK",
+          "type": "watchlist_seed",
+          "detail": "WATCHLIST_EARNINGS",
+          "command": "/research --seed NOK"
+        },
+        {
+          "ticker": "REZI",
+          "type": "watchlist_seed",
+          "detail": "WATCHLIST_BREAKOUT",
+          "command": "/research --seed REZI"
+        },
+        {
+          "ticker": "RIVN",
+          "type": "watchlist_seed",
+          "detail": "WATCHLIST_SETUP",
+          "command": "/research --seed RIVN"
+        },
+        {
+          "ticker": "UBER",
+          "type": "watchlist_seed",
+          "detail": "WATCHLIST_SETUP",
+          "command": "/research --seed UBER"
+        },
+        {
+          "ticker": "VOD",
+          "type": "watchlist_seed",
+          "detail": "WATCHLIST_BREAKOUT",
+          "command": "/research --seed VOD"
+        },
+        {
+          "ticker": "VSAT",
+          "type": "watchlist_seed",
+          "detail": "WATCHLIST_SETUP",
+          "command": "/research --seed VSAT"
+        },
+        {
+          "ticker": "WAY",
+          "type": "watchlist_seed",
+          "detail": "WATCHLIST_SETUP",
+          "command": "/research --seed WAY"
+        },
+        {
+          "ticker": "PYPL",
+          "type": "market_seed",
+          "detail": "score=5.75",
+          "command": "/research --seed PYPL"
+        },
+        {
+          "ticker": "GPN",
+          "type": "market_seed",
+          "detail": "score=5.75",
+          "command": "/research --seed GPN"
+        }
+      ],
+      "report_path": "reports/daily/daily_lite_2026-07-12.md"
     }
   ]
 }

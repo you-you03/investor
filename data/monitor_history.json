@@ -2613,5 +2613,3173 @@
         }
       ]
     }
+  },
+  {
+    "date": "2026-06-28",
+    "position_count": 3,
+    "alert_count": 3,
+    "high_alert_count": 1,
+    "positions": [
+      {
+        "ticker": "SMTC",
+        "shares": 1.0,
+        "entry_price": 162.5,
+        "current_price": 149.75,
+        "target_price": "191.26",
+        "stop_loss": "148.12",
+        "pnl_pct": -7.85,
+        "change_pct": -6.7,
+        "note": "20\u4e07\u5186\u67a0\u3002\u53d6\u5f97\u65e5: 2026-06-23\u3002Decision 2026-06-23\u63a1\u7528\u3002SMTC score 7.15 / \u78ba\u4fe1\u5ea6LOW-MEDIUM\u3002\u6307\u5024$175\u3001\u8b72\u6e21\u91d1\u984d29,743\u5186\u30011\u682a\u3002RS\u5f37\u3044\u304cMACD hist\u30de\u30a4\u30ca\u30b9\u30fbDebt/Equity\u9ad8\u3081\u306e\u305f\u3081\u8a66\u3057\u7389\u3002 | \u30102026-06-25 \u4fee\u6b63\u3011\u8cb7\u5024\u3092$162.50\u306b\u8a02\u6b63\uff08\u30e6\u30fc\u30b6\u30fc\u7533\u544a\uff09 | \u30102026-06-25 STOP\u518d\u8a2d\u5b9a\u3011\u8cb7\u5024\u4fee\u6b63\u306b\u4f34\u3044ATR1x\u57fa\u6e96\u3078\u518d\u8a2d\u5b9a: stop $148.12 / target $191.26"
+      },
+      {
+        "ticker": "FOUR",
+        "shares": 2.0,
+        "entry_price": 43.51,
+        "current_price": 47.650001525878906,
+        "target_price": null,
+        "stop_loss": null,
+        "pnl_pct": 9.52,
+        "change_pct": 8.44,
+        "note": "20\u4e07\u5186\u67a0\u3002\u30e6\u30fc\u30b6\u30fc\u7533\u544a\u306b\u3088\u308b\u624b\u52d5\u53cd\u6620\u3002"
+      },
+      {
+        "ticker": "TSM",
+        "shares": 1.0,
+        "entry_price": 441.0,
+        "current_price": 432.3500061035156,
+        "target_price": null,
+        "stop_loss": null,
+        "pnl_pct": -1.96,
+        "change_pct": -0.79,
+        "note": "20\u4e07\u5186\u67a0\u3002\u30e6\u30fc\u30b6\u30fc\u7533\u544a\u306b\u3088\u308b\u624b\u52d5\u53cd\u6620\u3002"
+      }
+    ],
+    "alerts": [
+      {
+        "date": "2026-06-28",
+        "ticker": "SMTC",
+        "alert_type": "NEAR_STOP",
+        "severity": "MEDIUM",
+        "message": "Price $149.75 is within 3% of stop $148.12",
+        "current_price": 149.75,
+        "entry_price": 162.5,
+        "unrealized_pnl_pct": -7.85,
+        "stop_loss": 148.12,
+        "target_price": 191.26,
+        "trailing_stop_price": null
+      },
+      {
+        "date": "2026-06-28",
+        "ticker": "SMTC",
+        "alert_type": "DOWN_5PCT",
+        "severity": "MEDIUM",
+        "message": "Unrealized loss -7.8%",
+        "current_price": 149.75,
+        "entry_price": 162.5,
+        "unrealized_pnl_pct": -7.85,
+        "stop_loss": 148.12,
+        "target_price": 191.26,
+        "trailing_stop_price": null
+      },
+      {
+        "date": "2026-06-28",
+        "ticker": "FOUR",
+        "alert_type": "STAGE1_HIT",
+        "severity": "HIGH",
+        "message": "P&L 9.5% reached Stage 1 profit-taking threshold",
+        "current_price": 47.650001525878906,
+        "entry_price": 43.51,
+        "unrealized_pnl_pct": 9.52,
+        "stop_loss": null,
+        "target_price": null,
+        "trailing_stop_price": null
+      }
+    ],
+    "market_news": {
+      "date": "2026-06-28",
+      "db_path": "data/market_news.sqlite",
+      "disclaimer": "\u53c2\u8003\u30cb\u30e5\u30fc\u30b9\u3002\u672a\u691c\u8a3c\u306e\u305f\u3081\u30d5\u30a1\u30af\u30c8\u6271\u3044\u3057\u306a\u3044\u3002",
+      "collection_limits": {
+        "theme_limit": 3,
+        "active_sources": 3,
+        "candidate_probe_sources": 1,
+        "items_per_source": 2,
+        "report_items": 4
+      },
+      "themes": [
+        {
+          "key": "ai_semiconductors",
+          "label": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e",
+          "query": "AI semiconductors, HBM memory, wafer fab equipment, Nvidia, Micron, Applied Materials, Lam Research market news",
+          "tickers": [
+            "AMAT",
+            "COHR",
+            "INFQ",
+            "MU",
+            "QBTS",
+            "RGTI",
+            "TSM"
+          ],
+          "fallback_etf": "SMH",
+          "priority": 109
+        }
+      ],
+      "items": [
+        {
+          "source": "SMH",
+          "source_label": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e",
+          "title": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e\u306e\u95a2\u9023\u30cb\u30e5\u30fc\u30b9\u30e1\u30e2",
+          "publisher": "Google News RSS",
+          "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOTElVNUozOXRHYXdVd1hQVXFFWVNBa2pReElGVHo1NEJWaHlKaGJkNlJ2T05KNzRoVjI0RkhPdUtmQzhLYkxOYURqaWswWER5R3cwS1JTS29BSzBJNzIzQmh2ckI0M1M1STc2ZkJaQk5XSVdQSnFLSTIwRTVfbUx5eFluY09NTG51UzNQU3VENTVQaFpjNHp0TkhienNEcFR2R293LWxOdXYtU1ZnR0xzd3V1TWtqMlNXWS1FWWZDUktWR29ocXZnMlVsZmFPdw?oc=5",
+          "domain": "news.google.com",
+          "published_at": "Wed, 24 Jun 2026 04:06:00 GMT",
+          "summary": "- \u8981\u7d04: AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e\u3067\u306f\u3001\u534a\u5c0e\u4f53\u30fbAI\u304c\u4e3b\u306a\u8ad6\u70b9\u3002\u53c2\u7167\u898b\u51fa\u3057\u306f \u300cForget Nvidia: Philippe Laffont reveals his preferred way to gain AI exposure\u300d / \u300cForget Nvidia: Philippe Laffont reveals his preferred way to gain AI exposure\u300d\u3002\n- \u95a2\u4fc2: \u95a2\u9023\u9298\u67c4\u306f AMAT, COHR, INFQ, MU, QBTS, RGTI\u3002\u4fdd\u6709\u30fb\u76e3\u8996\u9298\u67c4\u306e\u500b\u5225\u6750\u6599\u3068\u3044\u3046\u3088\u308a\u3001\u540c\u3058\u30c6\u30fc\u30de\u5185\u306e\u5730\u5408\u3044\u3068\u8cc7\u91d1\u306e\u5411\u304d\u3092\u898b\u308b\u53c2\u8003\u6750\u6599\u3002\n- \u6ce8\u610f\u70b9: RSS\u898b\u51fa\u3057\u3068\u77ed\u3044\u8aac\u660e\u304b\u3089\u4f5c\u3063\u305f\u672a\u691c\u8a3c\u30e1\u30e2\u3002\u58f2\u8cb7\u5224\u65ad\u3067\u306f\u3001\u500b\u5225\u9298\u67c4\u306e\u6c7a\u7b97\u3001\u30ac\u30a4\u30c0\u30f3\u30b9\u3001\u4fa1\u683c\u3001\u51fa\u6765\u9ad8\u3067\u518d\u78ba\u8a8d\u3059\u308b\u3002",
+          "key_point": "- \u8981\u7d04: AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e\u3067\u306f\u3001\u534a\u5c0e\u4f53\u30fbAI\u304c\u4e3b\u306a\u8ad6\u70b9\u3002\u53c2\u7167\u898b\u51fa\u3057\u306f \u300cForget Nvidia: Philippe Laffont reveals his preferred way to gain AI exposure\u300d / \u300cForget Nvidia: Philippe Laffont reveals his preferred way to gain AI exposure\u300d\u3002\n- \u95a2\u4fc2: \u95a2\u9023\u9298\u67c4\u306f AMAT, COHR, INFQ, MU, QBTS, RGTI\u3002\u4fdd\u6709\u30fb\u76e3\u8996\u9298\u67c4\u306e\u500b\u5225\u6750\u6599\u3068\u3044\u3046\u3088\u308a\u3001\u540c\u3058\u30c6\u30fc\u30de\u5185\u306e\u5730\u5408\u3044\u3068\u8cc7\u91d1\u306e\u5411\u304d\u3092\u898b\u308b\u53c2\u8003\u6750\u6599\u3002\n- \u6ce8\u610f\u70b9: RSS\u898b\u51fa\u3057\u3068\u77ed\u3044\u8aac\u660e\u304b\u3089\u4f5c\u3063\u305f\u672a\u691c\u8a3c\u30e1\u30e2\u3002\u58f2\u8cb7\u5224\u65ad\u3067\u306f\u3001\u500b\u5225\u9298\u67c4\u306e\u6c7a\u7b97\u3001\u30ac\u30a4\u30c0\u30f3\u30b9\u3001\u4fa1\u683c\u3001\u51fa\u6765\u9ad8\u3067\u518d\u78ba\u8a8d\u3059\u308b\u3002",
+          "source_articles": [
+            {
+              "title": "Forget Nvidia: Philippe Laffont reveals his preferred way to gain AI exposure - TradingView",
+              "source": "TradingView",
+              "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOTElVNUozOXRHYXdVd1hQVXFFWVNBa2pReElGVHo1NEJWaHlKaGJkNlJ2T05KNzRoVjI0RkhPdUtmQzhLYkxOYURqaWswWER5R3cwS1JTS29BSzBJNzIzQmh2ckI0M1M1STc2ZkJaQk5XSVdQSnFLSTIwRTVfbUx5eFluY09NTG51UzNQU3VENTVQaFpjNHp0TkhienNEcFR2R293LWxOdXYtU1ZnR0xzd3V1TWtqMlNXWS1FWWZDUktWR29ocXZnMlVsZmFPdw?oc=5",
+              "published_at": "Wed, 24 Jun 2026 04:06:00 GMT",
+              "summary": "Forget Nvidia: Philippe Laffont reveals his preferred way to gain AI exposure TradingView"
+            },
+            {
+              "title": "Forget Nvidia: Philippe Laffont reveals his preferred way to gain AI exposure - Invezz",
+              "source": "Invezz",
+              "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQX1dqT1BncDJLRXdpd19xUk9kQURjRDVXck5IdTItcHpINHgxVFVNU01hd3Q0czFLZlVwaXNUSzBQSW5jbjBIZWdYeUc3bHl6WXZlVGRIUXdsNExrUFYtYlhhM2dJT21yYUNxMURkMG9Bb014d0E1a21QNmVYMHhWQ0FmdVIzQ2JOUFpQaDJlcGNJVi1NeFdKSDZWWm50Wko2MXVsMFk2bl9FcENmX2ZmWHZB?oc=5",
+              "published_at": "Wed, 24 Jun 2026 04:07:56 GMT",
+              "summary": "Forget Nvidia: Philippe Laffont reveals his preferred way to gain AI exposure Invezz"
+            }
+          ],
+          "relevance_score": 2.0,
+          "theme": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e",
+          "tickers": [
+            "AMAT",
+            "COHR",
+            "INFQ",
+            "MU",
+            "QBTS",
+            "RGTI",
+            "TSM"
+          ]
+        }
+      ],
+      "source_stats": [
+        {
+          "value": "SMH",
+          "label": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e",
+          "status": "active",
+          "priority": 109,
+          "hit_count": 11,
+          "selected_count": 13,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-28T01:30:46.017363"
+        },
+        {
+          "value": "XLI",
+          "label": "AI\u30c7\u30fc\u30bf\u30bb\u30f3\u30bf\u30fc\u96fb\u529b\u30fb\u51b7\u5374\u30a4\u30f3\u30d5\u30e9",
+          "status": "active",
+          "priority": 93,
+          "hit_count": 6,
+          "selected_count": 6,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-12T11:42:44.411880"
+        },
+        {
+          "value": "IGV",
+          "label": "\u30af\u30e9\u30a6\u30c9\u30fb\u30a8\u30f3\u30bf\u30fc\u30d7\u30e9\u30a4\u30ba\u30bd\u30d5\u30c8\u30a6\u30a7\u30a2",
+          "status": "active",
+          "priority": 83,
+          "hit_count": 7,
+          "selected_count": 7,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-12T11:42:44.864098"
+        },
+        {
+          "value": "SPY",
+          "label": "US broad market",
+          "status": "candidate",
+          "priority": 100,
+          "hit_count": 1,
+          "selected_count": 2,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-06T09:22:33.544666"
+        },
+        {
+          "value": "QQQ",
+          "label": "Nasdaq / growth",
+          "status": "candidate",
+          "priority": 95,
+          "hit_count": 1,
+          "selected_count": 2,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-06T09:22:33.740347"
+        },
+        {
+          "value": "XLK",
+          "label": "technology",
+          "status": "candidate",
+          "priority": 80,
+          "hit_count": 1,
+          "selected_count": 1,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-06T09:22:34.164153"
+        },
+        {
+          "value": "XLF",
+          "label": "financials",
+          "status": "candidate",
+          "priority": 65,
+          "hit_count": 1,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-06T09:22:34.550934"
+        },
+        {
+          "value": "IBB",
+          "label": "biotech / healthcare",
+          "status": "candidate",
+          "priority": 60,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        },
+        {
+          "value": "XLE",
+          "label": "energy",
+          "status": "candidate",
+          "priority": 60,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        },
+        {
+          "value": "XLY",
+          "label": "consumer discretionary",
+          "status": "candidate",
+          "priority": 55,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        },
+        {
+          "value": "ITA",
+          "label": "defense / aerospace",
+          "status": "candidate",
+          "priority": 50,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        },
+        {
+          "value": "ARKK",
+          "label": "disruptive growth",
+          "status": "candidate",
+          "priority": 45,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        }
+      ]
+    }
+  },
+  {
+    "date": "2026-07-02",
+    "position_count": 3,
+    "alert_count": 3,
+    "high_alert_count": 2,
+    "positions": [
+      {
+        "ticker": "SMTC",
+        "shares": 1.0,
+        "entry_price": 162.5,
+        "current_price": 147.02999877929688,
+        "target_price": "191.26",
+        "stop_loss": "148.12",
+        "pnl_pct": -9.52,
+        "change_pct": -0.49,
+        "note": "20\u4e07\u5186\u67a0\u3002\u53d6\u5f97\u65e5: 2026-06-23\u3002Decision 2026-06-23\u63a1\u7528\u3002SMTC score 7.15 / \u78ba\u4fe1\u5ea6LOW-MEDIUM\u3002\u6307\u5024$175\u3001\u8b72\u6e21\u91d1\u984d29,743\u5186\u30011\u682a\u3002RS\u5f37\u3044\u304cMACD hist\u30de\u30a4\u30ca\u30b9\u30fbDebt/Equity\u9ad8\u3081\u306e\u305f\u3081\u8a66\u3057\u7389\u3002 | \u30102026-06-25 \u4fee\u6b63\u3011\u8cb7\u5024\u3092$162.50\u306b\u8a02\u6b63\uff08\u30e6\u30fc\u30b6\u30fc\u7533\u544a\uff09 | \u30102026-06-25 STOP\u518d\u8a2d\u5b9a\u3011\u8cb7\u5024\u4fee\u6b63\u306b\u4f34\u3044ATR1x\u57fa\u6e96\u3078\u518d\u8a2d\u5b9a: stop $148.12 / target $191.26"
+      },
+      {
+        "ticker": "FOUR",
+        "shares": 2.0,
+        "entry_price": 43.51,
+        "current_price": 49.20000076293945,
+        "target_price": null,
+        "stop_loss": null,
+        "pnl_pct": 13.08,
+        "change_pct": 0.41,
+        "note": "20\u4e07\u5186\u67a0\u3002\u30e6\u30fc\u30b6\u30fc\u7533\u544a\u306b\u3088\u308b\u624b\u52d5\u53cd\u6620\u3002"
+      },
+      {
+        "ticker": "TSM",
+        "shares": 1.0,
+        "entry_price": 441.0,
+        "current_price": 444.2300109863281,
+        "target_price": null,
+        "stop_loss": null,
+        "pnl_pct": 0.73,
+        "change_pct": -0.93,
+        "note": "20\u4e07\u5186\u67a0\u3002\u30e6\u30fc\u30b6\u30fc\u7533\u544a\u306b\u3088\u308b\u624b\u52d5\u53cd\u6620\u3002"
+      }
+    ],
+    "alerts": [
+      {
+        "date": "2026-07-02",
+        "ticker": "SMTC",
+        "alert_type": "STOP_BREACH",
+        "severity": "HIGH",
+        "message": "Price $147.03 hit stop loss $148.12",
+        "current_price": 147.02999877929688,
+        "entry_price": 162.5,
+        "unrealized_pnl_pct": -9.52,
+        "stop_loss": 148.12,
+        "target_price": 191.26,
+        "trailing_stop_price": null
+      },
+      {
+        "date": "2026-07-02",
+        "ticker": "SMTC",
+        "alert_type": "DOWN_5PCT",
+        "severity": "MEDIUM",
+        "message": "Unrealized loss -9.5%",
+        "current_price": 147.02999877929688,
+        "entry_price": 162.5,
+        "unrealized_pnl_pct": -9.52,
+        "stop_loss": 148.12,
+        "target_price": 191.26,
+        "trailing_stop_price": null
+      },
+      {
+        "date": "2026-07-02",
+        "ticker": "FOUR",
+        "alert_type": "STAGE1_HIT",
+        "severity": "HIGH",
+        "message": "P&L 13.1% reached Stage 1 profit-taking threshold",
+        "current_price": 49.20000076293945,
+        "entry_price": 43.51,
+        "unrealized_pnl_pct": 13.08,
+        "stop_loss": null,
+        "target_price": null,
+        "trailing_stop_price": null
+      }
+    ],
+    "market_news": {
+      "date": "2026-07-02",
+      "db_path": "data/market_news.sqlite",
+      "disclaimer": "\u53c2\u8003\u30cb\u30e5\u30fc\u30b9\u3002\u672a\u691c\u8a3c\u306e\u305f\u3081\u30d5\u30a1\u30af\u30c8\u6271\u3044\u3057\u306a\u3044\u3002",
+      "collection_limits": {
+        "theme_limit": 3,
+        "active_sources": 3,
+        "candidate_probe_sources": 1,
+        "items_per_source": 2,
+        "report_items": 4
+      },
+      "themes": [
+        {
+          "key": "ai_semiconductors",
+          "label": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e",
+          "query": "AI semiconductors, HBM memory, wafer fab equipment, Nvidia, Micron, Applied Materials, Lam Research market news",
+          "tickers": [
+            "AMAT",
+            "COHR",
+            "INFQ",
+            "MU",
+            "QBTS",
+            "RGTI",
+            "TSM"
+          ],
+          "fallback_etf": "SMH",
+          "priority": 109
+        }
+      ],
+      "items": [
+        {
+          "source": "SMH",
+          "source_label": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e",
+          "title": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e\u306e\u95a2\u9023\u30cb\u30e5\u30fc\u30b9\u30e1\u30e2",
+          "publisher": "Google News RSS",
+          "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNSDYyX0t2eHNXMU5NdjZXV2dVbzlCOVg0SUJEVkZCRHFoTDVENUJLUnp2MFBMYWNwSGJ4YW15eFBnYlVMejFiaGpnUXctT0ZOLS1Nb0tpd3VOMGc5bWpOZ1FYTTFRVi1RaF9ITkVqYU5oTk5zUmdEWlVydm5lbVZjQ293UjVkN2luUUdOdkdIMWJ2MVJQUjV4S0FuRUcybmdoS1ZkNGtmaXl2WmlGMjctbHhRY0tsbzRrZUdUUlFXN2E?oc=5",
+          "domain": "news.google.com",
+          "published_at": "Tue, 30 Jun 2026 06:17:21 GMT",
+          "summary": "- \u8981\u7d04: AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e\u3067\u306f\u3001\u5e02\u5834\u5168\u4f53\u306e\u5024\u52d5\u304d\u3001\u534a\u5c0e\u4f53\u30fbAI\u3001ETF\u8cc7\u91d1\u30d5\u30ed\u30fc\u304c\u4e3b\u306a\u8ad6\u70b9\u3002\u53c2\u7167\u898b\u51fa\u3057\u306f \u300cUS semiconductor equipment stocks surge, memory stocks follow suit! What are the 'two major investment opportunities' emerging from South Korea's unprecedented massive AI investments, and which laggard stocks deserve attention?\u300d / \u300cThis Semiconductor ETF\u2019s 96% Gain Hinges on a Single $1 Trillion Question\u300d / \u300cApplied Materials: Equipment Market Surge Priced Into Stock Price\u300d\u3002\n- \u95a2\u4fc2: \u95a2\u9023\u9298\u67c4\u306f AMAT, COHR, INFQ, MU, QBTS, RGTI\u3002\u4fdd\u6709\u30fb\u76e3\u8996\u9298\u67c4\u306e\u500b\u5225\u6750\u6599\u3068\u3044\u3046\u3088\u308a\u3001\u540c\u3058\u30c6\u30fc\u30de\u5185\u306e\u5730\u5408\u3044\u3068\u8cc7\u91d1\u306e\u5411\u304d\u3092\u898b\u308b\u53c2\u8003\u6750\u6599\u3002\n- \u6ce8\u610f\u70b9: RSS\u898b\u51fa\u3057\u3068\u77ed\u3044\u8aac\u660e\u304b\u3089\u4f5c\u3063\u305f\u672a\u691c\u8a3c\u30e1\u30e2\u3002\u58f2\u8cb7\u5224\u65ad\u3067\u306f\u3001\u500b\u5225\u9298\u67c4\u306e\u6c7a\u7b97\u3001\u30ac\u30a4\u30c0\u30f3\u30b9\u3001\u4fa1\u683c\u3001\u51fa\u6765\u9ad8\u3067\u518d\u78ba\u8a8d\u3059\u308b\u3002",
+          "key_point": "- \u8981\u7d04: AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e\u3067\u306f\u3001\u5e02\u5834\u5168\u4f53\u306e\u5024\u52d5\u304d\u3001\u534a\u5c0e\u4f53\u30fbAI\u3001ETF\u8cc7\u91d1\u30d5\u30ed\u30fc\u304c\u4e3b\u306a\u8ad6\u70b9\u3002\u53c2\u7167\u898b\u51fa\u3057\u306f \u300cUS semiconductor equipment stocks surge, memory stocks follow suit! What are the 'two major investment opportunities' emerging from South Korea's unprecedented massive AI investments, and which laggard stocks deserve attention?\u300d / \u300cThis Semiconductor ETF\u2019s 96% Gain Hinges on a Single $1 Trillion Question\u300d / \u300cApplied Materials: Equipment Market Surge Priced Into Stock Price\u300d\u3002\n- \u95a2\u4fc2: \u95a2\u9023\u9298\u67c4\u306f AMAT, COHR, INFQ, MU, QBTS, RGTI\u3002\u4fdd\u6709\u30fb\u76e3\u8996\u9298\u67c4\u306e\u500b\u5225\u6750\u6599\u3068\u3044\u3046\u3088\u308a\u3001\u540c\u3058\u30c6\u30fc\u30de\u5185\u306e\u5730\u5408\u3044\u3068\u8cc7\u91d1\u306e\u5411\u304d\u3092\u898b\u308b\u53c2\u8003\u6750\u6599\u3002\n- \u6ce8\u610f\u70b9: RSS\u898b\u51fa\u3057\u3068\u77ed\u3044\u8aac\u660e\u304b\u3089\u4f5c\u3063\u305f\u672a\u691c\u8a3c\u30e1\u30e2\u3002\u58f2\u8cb7\u5224\u65ad\u3067\u306f\u3001\u500b\u5225\u9298\u67c4\u306e\u6c7a\u7b97\u3001\u30ac\u30a4\u30c0\u30f3\u30b9\u3001\u4fa1\u683c\u3001\u51fa\u6765\u9ad8\u3067\u518d\u78ba\u8a8d\u3059\u308b\u3002",
+          "source_articles": [
+            {
+              "title": "US semiconductor equipment stocks surge, memory stocks follow suit! What are the 'two major investment opportunities' emerging from South Korea's unprecedented massive AI investments, and which laggard stocks deserve attention? - Moomoo",
+              "source": "Moomoo",
+              "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNSDYyX0t2eHNXMU5NdjZXV2dVbzlCOVg0SUJEVkZCRHFoTDVENUJLUnp2MFBMYWNwSGJ4YW15eFBnYlVMejFiaGpnUXctT0ZOLS1Nb0tpd3VOMGc5bWpOZ1FYTTFRVi1RaF9ITkVqYU5oTk5zUmdEWlVydm5lbVZjQ293UjVkN2luUUdOdkdIMWJ2MVJQUjV4S0FuRUcybmdoS1ZkNGtmaXl2WmlGMjctbHhRY0tsbzRrZUdUUlFXN2E?oc=5",
+              "published_at": "Tue, 30 Jun 2026 06:17:21 GMT",
+              "summary": "US semiconductor equipment stocks surge, memory stocks follow suit! What are the 'two major investment opportunities' emerging from South Korea's unprecedented massive AI investments, and which laggard stocks deserve attention? Moomoo"
+            },
+            {
+              "title": "This Semiconductor ETF\u2019s 96% Gain Hinges on a Single $1 Trillion Question - 24/7 Wall St.",
+              "source": "24/7 Wall St.",
+              "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPTnRjMmdpdGdodkZ6c2wxbThlaS1TS1JLVHhzYXZncjFhTmZMYVlCX3ZzS0lKMUNOVzZ3YzFxTFdLVDNNTlNuTzExMEotbU9Wc1RXNkhEck42cEdrS0NYODFxWjFZWC1aRU1hTmhpMExsVkNSZlpRb1VwZ21YU1c5VmlQMHNvUWpxaHBlZFB1MFlBbHE3TnZXcjdXeC10dy1TN0dCRFFMSDJpd0pGQlV4ZURub2c?oc=5",
+              "published_at": "Wed, 01 Jul 2026 09:55:59 GMT",
+              "summary": "This Semiconductor ETF\u2019s 96% Gain Hinges on a Single $1 Trillion Question 24/7 Wall St."
+            },
+            {
+              "title": "Applied Materials: Equipment Market Surge Priced Into Stock Price - Seeking Alpha",
+              "source": "Seeking Alpha",
+              "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNZC1ZVWc4aExpOVEtYm5xVDlkYVZMNU9aRWdXeGhMRHZvQ21JTlhsWG1FbFEzTFZYcjRNY3p4cWc0dVFnS0FYZXBBWGZfTF9hWkVZR3UwYjNCdlM0WXctZ2ZSZC13cl9FM2U5cHd1eDZBVDdqWFgzdWU5TElJVEFqZGlPbXh1LUNyekJpaVJTWndxeDJpdUt2bU5tNFNCRm1HTVY0dk56WXA?oc=5",
+              "published_at": "Mon, 29 Jun 2026 15:01:51 GMT",
+              "summary": "Applied Materials: Equipment Market Surge Priced Into Stock Price Seeking Alpha"
+            },
+            {
+              "title": "Micron Surges 16% to $1.37 Trillion Market Cap After Revenue Quadruples to $41.5 Billion - MLQ.ai",
+              "source": "MLQ.ai",
+              "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNYW43Q3R0clFtZGFtWEU3aFF4LVJkUkpkc0dxQmJfUGM3YXNXMjdVOFFQanMyTDlvLXh2NElOR2wyMGtxaEJUSkNIMmVJQV9CRFl1WVFFNmU2dVZCZk1KZ3BqYmhQVlcxMkl3bFMtM2dzRlBod2FyZk9GNlAzcllGNHMyZF9vTXRGcEhoSGV2cl9EcWpqaE5BekZSZzhnSjhxbkFsTFNtRQ?oc=5",
+              "published_at": "Thu, 25 Jun 2026 19:32:23 GMT",
+              "summary": "Micron Surges 16% to $1.37 Trillion Market Cap After Revenue Quadruples to $41.5 Billion MLQ.ai"
+            },
+            {
+              "title": "Micron becomes one of the most profitable companies in the US - Crypto Briefing",
+              "source": "Crypto Briefing",
+              "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5DN1BSOU1fSDFqZjRxckpCWHdMSGFQNDJEcUFPMFBMUkVja19WdTdobG9QN2FKbUs0Vk5zbGl6R2E5UVl5ZTY5QVhDdXRXTEwzdTVBcUdnSzRsT08tM0FlUjVwUlM5d0ZTc3RzaElB?oc=5",
+              "published_at": "Sun, 28 Jun 2026 19:27:25 GMT",
+              "summary": "Micron becomes one of the most profitable companies in the US Crypto Briefing"
+            }
+          ],
+          "relevance_score": 3.0,
+          "theme": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e",
+          "tickers": [
+            "AMAT",
+            "COHR",
+            "INFQ",
+            "MU",
+            "QBTS",
+            "RGTI",
+            "TSM"
+          ]
+        }
+      ],
+      "source_stats": [
+        {
+          "value": "SMH",
+          "label": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e",
+          "status": "active",
+          "priority": 109,
+          "hit_count": 12,
+          "selected_count": 14,
+          "miss_streak": 0,
+          "last_seen_at": "2026-07-02T13:00:06.856909"
+        },
+        {
+          "value": "XLI",
+          "label": "AI\u30c7\u30fc\u30bf\u30bb\u30f3\u30bf\u30fc\u96fb\u529b\u30fb\u51b7\u5374\u30a4\u30f3\u30d5\u30e9",
+          "status": "active",
+          "priority": 93,
+          "hit_count": 6,
+          "selected_count": 6,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-12T11:42:44.411880"
+        },
+        {
+          "value": "IGV",
+          "label": "\u30af\u30e9\u30a6\u30c9\u30fb\u30a8\u30f3\u30bf\u30fc\u30d7\u30e9\u30a4\u30ba\u30bd\u30d5\u30c8\u30a6\u30a7\u30a2",
+          "status": "active",
+          "priority": 83,
+          "hit_count": 7,
+          "selected_count": 7,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-12T11:42:44.864098"
+        },
+        {
+          "value": "SPY",
+          "label": "US broad market",
+          "status": "candidate",
+          "priority": 100,
+          "hit_count": 1,
+          "selected_count": 2,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-06T09:22:33.544666"
+        },
+        {
+          "value": "QQQ",
+          "label": "Nasdaq / growth",
+          "status": "candidate",
+          "priority": 95,
+          "hit_count": 1,
+          "selected_count": 2,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-06T09:22:33.740347"
+        },
+        {
+          "value": "XLK",
+          "label": "technology",
+          "status": "candidate",
+          "priority": 80,
+          "hit_count": 1,
+          "selected_count": 1,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-06T09:22:34.164153"
+        },
+        {
+          "value": "XLF",
+          "label": "financials",
+          "status": "candidate",
+          "priority": 65,
+          "hit_count": 1,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-06T09:22:34.550934"
+        },
+        {
+          "value": "IBB",
+          "label": "biotech / healthcare",
+          "status": "candidate",
+          "priority": 60,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        },
+        {
+          "value": "XLE",
+          "label": "energy",
+          "status": "candidate",
+          "priority": 60,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        },
+        {
+          "value": "XLY",
+          "label": "consumer discretionary",
+          "status": "candidate",
+          "priority": 55,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        },
+        {
+          "value": "ITA",
+          "label": "defense / aerospace",
+          "status": "candidate",
+          "priority": 50,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        },
+        {
+          "value": "ARKK",
+          "label": "disruptive growth",
+          "status": "candidate",
+          "priority": 45,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        }
+      ]
+    }
+  },
+  {
+    "date": "2026-07-03",
+    "position_count": 3,
+    "alert_count": 4,
+    "high_alert_count": 2,
+    "positions": [
+      {
+        "ticker": "SMTC",
+        "shares": 1.0,
+        "entry_price": 162.5,
+        "current_price": 135.27000427246094,
+        "target_price": "191.26",
+        "stop_loss": "148.12",
+        "pnl_pct": -16.76,
+        "change_pct": -8.45,
+        "note": "20\u4e07\u5186\u67a0\u3002\u53d6\u5f97\u65e5: 2026-06-23\u3002Decision 2026-06-23\u63a1\u7528\u3002SMTC score 7.15 / \u78ba\u4fe1\u5ea6LOW-MEDIUM\u3002\u6307\u5024$175\u3001\u8b72\u6e21\u91d1\u984d29,743\u5186\u30011\u682a\u3002RS\u5f37\u3044\u304cMACD hist\u30de\u30a4\u30ca\u30b9\u30fbDebt/Equity\u9ad8\u3081\u306e\u305f\u3081\u8a66\u3057\u7389\u3002 | \u30102026-06-25 \u4fee\u6b63\u3011\u8cb7\u5024\u3092$162.50\u306b\u8a02\u6b63\uff08\u30e6\u30fc\u30b6\u30fc\u7533\u544a\uff09 | \u30102026-06-25 STOP\u518d\u8a2d\u5b9a\u3011\u8cb7\u5024\u4fee\u6b63\u306b\u4f34\u3044ATR1x\u57fa\u6e96\u3078\u518d\u8a2d\u5b9a: stop $148.12 / target $191.26"
+      },
+      {
+        "ticker": "FOUR",
+        "shares": 2.0,
+        "entry_price": 43.51,
+        "current_price": 51.349998474121094,
+        "target_price": null,
+        "stop_loss": "43.51",
+        "pnl_pct": 18.02,
+        "change_pct": 4.8,
+        "note": "20\u4e07\u5186\u67a0\u3002\u30e6\u30fc\u30b6\u30fc\u7533\u544a\u306b\u3088\u308b\u624b\u52d5\u53cd\u6620\u3002 | \u30102026-07-03 STAGE1\u3011$51.35\u306725%\u5229\u78ba\u6761\u4ef6\u5230\u9054\u3002\u305f\u3060\u30572\u682a\u4fdd\u6709\u306e\u305f\u3081\u58f2\u5374\u682a\u65700\u3002\u30b9\u30c8\u30c3\u30d7\u2192\u8cb7\u5024$43.51"
+      },
+      {
+        "ticker": "TSM",
+        "shares": 1.0,
+        "entry_price": 441.0,
+        "current_price": 434.1600036621094,
+        "target_price": null,
+        "stop_loss": null,
+        "pnl_pct": -1.55,
+        "change_pct": -3.18,
+        "note": "20\u4e07\u5186\u67a0\u3002\u30e6\u30fc\u30b6\u30fc\u7533\u544a\u306b\u3088\u308b\u624b\u52d5\u53cd\u6620\u3002"
+      }
+    ],
+    "alerts": [
+      {
+        "date": "2026-07-03",
+        "ticker": "SMTC",
+        "alert_type": "STOP_BREACH",
+        "severity": "HIGH",
+        "message": "Price $135.27 hit stop loss $148.12",
+        "current_price": 135.27000427246094,
+        "entry_price": 162.5,
+        "unrealized_pnl_pct": -16.76,
+        "stop_loss": 148.12,
+        "target_price": 191.26,
+        "trailing_stop_price": null
+      },
+      {
+        "date": "2026-07-03",
+        "ticker": "SMTC",
+        "alert_type": "DOWN_5PCT",
+        "severity": "MEDIUM",
+        "message": "Unrealized loss -16.8%",
+        "current_price": 135.27000427246094,
+        "entry_price": 162.5,
+        "unrealized_pnl_pct": -16.76,
+        "stop_loss": 148.12,
+        "target_price": 191.26,
+        "trailing_stop_price": null
+      },
+      {
+        "date": "2026-07-03",
+        "ticker": "FOUR",
+        "alert_type": "STAGE2_HIT",
+        "severity": "HIGH",
+        "message": "P&L 18.0% reached Stage 2 profit-taking threshold",
+        "current_price": 51.349998474121094,
+        "entry_price": 43.51,
+        "unrealized_pnl_pct": 18.02,
+        "stop_loss": 43.51,
+        "target_price": null,
+        "trailing_stop_price": null
+      },
+      {
+        "date": "2026-07-03",
+        "ticker": "FOUR",
+        "alert_type": "NEAR_STAGE2",
+        "severity": "MEDIUM",
+        "message": "P&L 18.0% is nearing Stage 2 threshold",
+        "current_price": 51.349998474121094,
+        "entry_price": 43.51,
+        "unrealized_pnl_pct": 18.02,
+        "stop_loss": 43.51,
+        "target_price": null,
+        "trailing_stop_price": null
+      }
+    ],
+    "market_news": {
+      "date": "2026-07-03",
+      "db_path": "data/market_news.sqlite",
+      "disclaimer": "\u53c2\u8003\u30cb\u30e5\u30fc\u30b9\u3002\u672a\u691c\u8a3c\u306e\u305f\u3081\u30d5\u30a1\u30af\u30c8\u6271\u3044\u3057\u306a\u3044\u3002",
+      "collection_limits": {
+        "theme_limit": 3,
+        "active_sources": 3,
+        "candidate_probe_sources": 1,
+        "items_per_source": 2,
+        "report_items": 4
+      },
+      "themes": [
+        {
+          "key": "ai_semiconductors",
+          "label": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e",
+          "query": "AI semiconductors, HBM memory, wafer fab equipment, Nvidia, Micron, Applied Materials, Lam Research market news",
+          "tickers": [
+            "AMAT",
+            "COHR",
+            "INFQ",
+            "MU",
+            "QBTS",
+            "RGTI",
+            "TSM"
+          ],
+          "fallback_etf": "SMH",
+          "priority": 109
+        }
+      ],
+      "items": [
+        {
+          "source": "SMH",
+          "source_label": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e",
+          "title": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e\u306e\u95a2\u9023\u30cb\u30e5\u30fc\u30b9\u30e1\u30e2",
+          "publisher": "Google News RSS",
+          "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNMzBPQW9FTWtLTWVSTHNvUWd4Vi1LMF82MDhNNEl4c29NUVhDSkpYeXhvQjV4b2VYTzBJUzZNUk5FRVlRa1Rva01oblJrZklUTmZJNGdCVEZRRUR5Y084UTJHWWh6ZWN1V08tOWNKazNXZ3F5M0QxUThZR3NaR3BaME55Q2lIc01PeUhYQXRORko5d2M5bjYxS0tmN3VEZkI1Nm5NaFBMMFpieE40bVFFQTJsMjNXc25DaTVhM1RiMA?oc=5",
+          "domain": "news.google.com",
+          "published_at": "Tue, 30 Jun 2026 06:17:21 GMT",
+          "summary": "- \u8981\u7d04: AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e\u3067\u306f\u3001\u5e02\u5834\u5168\u4f53\u306e\u5024\u52d5\u304d\u3001\u534a\u5c0e\u4f53\u30fbAI\u304c\u4e3b\u306a\u8ad6\u70b9\u3002\u53c2\u7167\u898b\u51fa\u3057\u306f \u300cUS semiconductor equipment stocks surge, memory stocks follow suit! What are the 'two major investment opportunities' emerging from South Korea's unprecedented massive AI investments, and which laggard stocks deserve attention?\u300d / \u300cApplied Materials: Equipment Market Surge Priced Into Stock Price\u300d / \u300cThe 2 Hidden Winners in the $9 Trillion Humanoid Robotics Opportunity\u300d\u3002\n- \u95a2\u4fc2: \u95a2\u9023\u9298\u67c4\u306f AMAT, COHR, INFQ, MU, QBTS, RGTI\u3002\u4fdd\u6709\u30fb\u76e3\u8996\u9298\u67c4\u306e\u500b\u5225\u6750\u6599\u3068\u3044\u3046\u3088\u308a\u3001\u540c\u3058\u30c6\u30fc\u30de\u5185\u306e\u5730\u5408\u3044\u3068\u8cc7\u91d1\u306e\u5411\u304d\u3092\u898b\u308b\u53c2\u8003\u6750\u6599\u3002\n- \u6ce8\u610f\u70b9: RSS\u898b\u51fa\u3057\u3068\u77ed\u3044\u8aac\u660e\u304b\u3089\u4f5c\u3063\u305f\u672a\u691c\u8a3c\u30e1\u30e2\u3002\u58f2\u8cb7\u5224\u65ad\u3067\u306f\u3001\u500b\u5225\u9298\u67c4\u306e\u6c7a\u7b97\u3001\u30ac\u30a4\u30c0\u30f3\u30b9\u3001\u4fa1\u683c\u3001\u51fa\u6765\u9ad8\u3067\u518d\u78ba\u8a8d\u3059\u308b\u3002",
+          "key_point": "- \u8981\u7d04: AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e\u3067\u306f\u3001\u5e02\u5834\u5168\u4f53\u306e\u5024\u52d5\u304d\u3001\u534a\u5c0e\u4f53\u30fbAI\u304c\u4e3b\u306a\u8ad6\u70b9\u3002\u53c2\u7167\u898b\u51fa\u3057\u306f \u300cUS semiconductor equipment stocks surge, memory stocks follow suit! What are the 'two major investment opportunities' emerging from South Korea's unprecedented massive AI investments, and which laggard stocks deserve attention?\u300d / \u300cApplied Materials: Equipment Market Surge Priced Into Stock Price\u300d / \u300cThe 2 Hidden Winners in the $9 Trillion Humanoid Robotics Opportunity\u300d\u3002\n- \u95a2\u4fc2: \u95a2\u9023\u9298\u67c4\u306f AMAT, COHR, INFQ, MU, QBTS, RGTI\u3002\u4fdd\u6709\u30fb\u76e3\u8996\u9298\u67c4\u306e\u500b\u5225\u6750\u6599\u3068\u3044\u3046\u3088\u308a\u3001\u540c\u3058\u30c6\u30fc\u30de\u5185\u306e\u5730\u5408\u3044\u3068\u8cc7\u91d1\u306e\u5411\u304d\u3092\u898b\u308b\u53c2\u8003\u6750\u6599\u3002\n- \u6ce8\u610f\u70b9: RSS\u898b\u51fa\u3057\u3068\u77ed\u3044\u8aac\u660e\u304b\u3089\u4f5c\u3063\u305f\u672a\u691c\u8a3c\u30e1\u30e2\u3002\u58f2\u8cb7\u5224\u65ad\u3067\u306f\u3001\u500b\u5225\u9298\u67c4\u306e\u6c7a\u7b97\u3001\u30ac\u30a4\u30c0\u30f3\u30b9\u3001\u4fa1\u683c\u3001\u51fa\u6765\u9ad8\u3067\u518d\u78ba\u8a8d\u3059\u308b\u3002",
+          "source_articles": [
+            {
+              "title": "US semiconductor equipment stocks surge, memory stocks follow suit! What are the 'two major investment opportunities' emerging from South Korea's unprecedented massive AI investments, and which laggard stocks deserve attention? - Moomoo",
+              "source": "Moomoo",
+              "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNMzBPQW9FTWtLTWVSTHNvUWd4Vi1LMF82MDhNNEl4c29NUVhDSkpYeXhvQjV4b2VYTzBJUzZNUk5FRVlRa1Rva01oblJrZklUTmZJNGdCVEZRRUR5Y084UTJHWWh6ZWN1V08tOWNKazNXZ3F5M0QxUThZR3NaR3BaME55Q2lIc01PeUhYQXRORko5d2M5bjYxS0tmN3VEZkI1Nm5NaFBMMFpieE40bVFFQTJsMjNXc25DaTVhM1RiMA?oc=5",
+              "published_at": "Tue, 30 Jun 2026 06:17:21 GMT",
+              "summary": "US semiconductor equipment stocks surge, memory stocks follow suit! What are the 'two major investment opportunities' emerging from South Korea's unprecedented massive AI investments, and which laggard stocks deserve attention? Moomoo"
+            },
+            {
+              "title": "Applied Materials: Equipment Market Surge Priced Into Stock Price - Seeking Alpha",
+              "source": "Seeking Alpha",
+              "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNZC1ZVWc4aExpOVEtYm5xVDlkYVZMNU9aRWdXeGhMRHZvQ21JTlhsWG1FbFEzTFZYcjRNY3p4cWc0dVFnS0FYZXBBWGZfTF9hWkVZR3UwYjNCdlM0WXctZ2ZSZC13cl9FM2U5cHd1eDZBVDdqWFgzdWU5TElJVEFqZGlPbXh1LUNyekJpaVJTWndxeDJpdUt2bU5tNFNCRm1HTVY0dk56WXA?oc=5",
+              "published_at": "Mon, 29 Jun 2026 15:01:51 GMT",
+              "summary": "Applied Materials: Equipment Market Surge Priced Into Stock Price Seeking Alpha"
+            },
+            {
+              "title": "The 2 Hidden Winners in the $9 Trillion Humanoid Robotics Opportunity - 24/7 Wall St.",
+              "source": "24/7 Wall St.",
+              "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPR1kxLXJIOElMeWZ1MGg1VHR2Tmh4aG1rUWdkSkROc3JwcldwYUtuVng1UXNMQWtURkpqRVV4d08wMHBCMFg2OGowNGwtV0N4dnRiOTBiNElnNjBwdUpxSWZ2Z3JrTWNiZmdnSVdYMGVQRC0xeEJIWWFzdUhHMzBrUXhPZzYzZzlUN2lGeXpKM2VjNjV4T0w2R0pEQmJtZ3lFdzh0R056dVMzdVg3QncwWmhn?oc=5",
+              "published_at": "Tue, 30 Jun 2026 12:30:18 GMT",
+              "summary": "The 2 Hidden Winners in the $9 Trillion Humanoid Robotics Opportunity 24/7 Wall St."
+            },
+            {
+              "title": "Micron becomes one of the most profitable companies in the US - Crypto Briefing",
+              "source": "Crypto Briefing",
+              "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5DN1BSOU1fSDFqZjRxckpCWHdMSGFQNDJEcUFPMFBMUkVja19WdTdobG9QN2FKbUs0Vk5zbGl6R2E5UVl5ZTY5QVhDdXRXTEwzdTVBcUdnSzRsT08tM0FlUjVwUlM5d0ZTc3RzaElB?oc=5",
+              "published_at": "Sun, 28 Jun 2026 19:27:25 GMT",
+              "summary": "Micron becomes one of the most profitable companies in the US Crypto Briefing"
+            },
+            {
+              "title": "Applied Materials and Lam Research lead chip equipment rebound on AI memory demand; Super Micro tumbles 8% on Taiwan raids, SOXX +4.1% - StartupHub.ai",
+              "source": "StartupHub.ai",
+              "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNanJlWUlPQ0t0eXRHTTF2eUUwa1FuRTRaNVBhc2d0V0I0bjVHMGQ4dzY1aUVMMGstNVFGVl9rWjVfMTl5UE1hOHI3U2x4Sl80V2V4VjM4VlItVlVlV2dnYzdkLTRHRHdWV1JRV1drZ2tsTkRKNi1CSVA2VHVKUl81UQ?oc=5",
+              "published_at": "Mon, 29 Jun 2026 22:47:18 GMT",
+              "summary": "Applied Materials and Lam Research lead chip equipment rebound on AI memory demand; Super Micro tumbles 8% on Taiwan raids, SOXX +4.1% StartupHub.ai"
+            }
+          ],
+          "relevance_score": 3.0,
+          "theme": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e",
+          "tickers": [
+            "AMAT",
+            "COHR",
+            "INFQ",
+            "MU",
+            "QBTS",
+            "RGTI",
+            "TSM"
+          ]
+        }
+      ],
+      "source_stats": [
+        {
+          "value": "SMH",
+          "label": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e",
+          "status": "active",
+          "priority": 109,
+          "hit_count": 13,
+          "selected_count": 15,
+          "miss_streak": 0,
+          "last_seen_at": "2026-07-03T12:58:20.004148"
+        },
+        {
+          "value": "XLI",
+          "label": "AI\u30c7\u30fc\u30bf\u30bb\u30f3\u30bf\u30fc\u96fb\u529b\u30fb\u51b7\u5374\u30a4\u30f3\u30d5\u30e9",
+          "status": "active",
+          "priority": 93,
+          "hit_count": 6,
+          "selected_count": 6,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-12T11:42:44.411880"
+        },
+        {
+          "value": "IGV",
+          "label": "\u30af\u30e9\u30a6\u30c9\u30fb\u30a8\u30f3\u30bf\u30fc\u30d7\u30e9\u30a4\u30ba\u30bd\u30d5\u30c8\u30a6\u30a7\u30a2",
+          "status": "active",
+          "priority": 83,
+          "hit_count": 7,
+          "selected_count": 7,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-12T11:42:44.864098"
+        },
+        {
+          "value": "SPY",
+          "label": "US broad market",
+          "status": "candidate",
+          "priority": 100,
+          "hit_count": 1,
+          "selected_count": 2,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-06T09:22:33.544666"
+        },
+        {
+          "value": "QQQ",
+          "label": "Nasdaq / growth",
+          "status": "candidate",
+          "priority": 95,
+          "hit_count": 1,
+          "selected_count": 2,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-06T09:22:33.740347"
+        },
+        {
+          "value": "XLK",
+          "label": "technology",
+          "status": "candidate",
+          "priority": 80,
+          "hit_count": 1,
+          "selected_count": 1,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-06T09:22:34.164153"
+        },
+        {
+          "value": "XLF",
+          "label": "financials",
+          "status": "candidate",
+          "priority": 65,
+          "hit_count": 1,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-06T09:22:34.550934"
+        },
+        {
+          "value": "IBB",
+          "label": "biotech / healthcare",
+          "status": "candidate",
+          "priority": 60,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        },
+        {
+          "value": "XLE",
+          "label": "energy",
+          "status": "candidate",
+          "priority": 60,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        },
+        {
+          "value": "XLY",
+          "label": "consumer discretionary",
+          "status": "candidate",
+          "priority": 55,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        },
+        {
+          "value": "ITA",
+          "label": "defense / aerospace",
+          "status": "candidate",
+          "priority": 50,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        },
+        {
+          "value": "ARKK",
+          "label": "disruptive growth",
+          "status": "candidate",
+          "priority": 45,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        }
+      ]
+    }
+  },
+  {
+    "date": "2026-07-03",
+    "position_count": 3,
+    "alert_count": 2,
+    "high_alert_count": 1,
+    "positions": [
+      {
+        "ticker": "SMTC",
+        "shares": 1.0,
+        "entry_price": 162.5,
+        "current_price": 135.27000427246094,
+        "target_price": "191.26",
+        "stop_loss": "148.12",
+        "pnl_pct": -16.76,
+        "change_pct": -8.45,
+        "note": "20\u4e07\u5186\u67a0\u3002\u53d6\u5f97\u65e5: 2026-06-23\u3002Decision 2026-06-23\u63a1\u7528\u3002SMTC score 7.15 / \u78ba\u4fe1\u5ea6LOW-MEDIUM\u3002\u6307\u5024$175\u3001\u8b72\u6e21\u91d1\u984d29,743\u5186\u30011\u682a\u3002RS\u5f37\u3044\u304cMACD hist\u30de\u30a4\u30ca\u30b9\u30fbDebt/Equity\u9ad8\u3081\u306e\u305f\u3081\u8a66\u3057\u7389\u3002 | \u30102026-06-25 \u4fee\u6b63\u3011\u8cb7\u5024\u3092$162.50\u306b\u8a02\u6b63\uff08\u30e6\u30fc\u30b6\u30fc\u7533\u544a\uff09 | \u30102026-06-25 STOP\u518d\u8a2d\u5b9a\u3011\u8cb7\u5024\u4fee\u6b63\u306b\u4f34\u3044ATR1x\u57fa\u6e96\u3078\u518d\u8a2d\u5b9a: stop $148.12 / target $191.26"
+      },
+      {
+        "ticker": "FOUR",
+        "shares": 2.0,
+        "entry_price": 43.51,
+        "current_price": 51.349998474121094,
+        "target_price": null,
+        "stop_loss": "48.44",
+        "pnl_pct": 18.02,
+        "change_pct": 4.8,
+        "note": "20\u4e07\u5186\u67a0\u3002\u30e6\u30fc\u30b6\u30fc\u7533\u544a\u306b\u3088\u308b\u624b\u52d5\u53cd\u6620\u3002 | \u30102026-07-03 STAGE1\u3011$51.35\u306725%\u5229\u78ba\u6761\u4ef6\u5230\u9054\u3002\u305f\u3060\u30572\u682a\u4fdd\u6709\u306e\u305f\u3081\u58f2\u5374\u682a\u65700\u3002\u30b9\u30c8\u30c3\u30d7\u2192\u8cb7\u5024$43.51 | \u30102026-07-03 STAGE2\u3011$51.35\u3067\u8ffd\u52a025%\u5229\u78ba\u6761\u4ef6\u5230\u9054\u3002\u305f\u3060\u30572\u682a\u4fdd\u6709\u306e\u305f\u3081\u58f2\u5374\u682a\u65700\u3002ATR\u00d71.0\u30c8\u30ec\u30fc\u30ea\u30f3\u30b0\u76f8\u5f53: stop $48.44"
+      },
+      {
+        "ticker": "TSM",
+        "shares": 1.0,
+        "entry_price": 441.0,
+        "current_price": 434.1600036621094,
+        "target_price": null,
+        "stop_loss": null,
+        "pnl_pct": -1.55,
+        "change_pct": -3.18,
+        "note": "20\u4e07\u5186\u67a0\u3002\u30e6\u30fc\u30b6\u30fc\u7533\u544a\u306b\u3088\u308b\u624b\u52d5\u53cd\u6620\u3002"
+      }
+    ],
+    "alerts": [
+      {
+        "date": "2026-07-03",
+        "ticker": "SMTC",
+        "alert_type": "STOP_BREACH",
+        "severity": "HIGH",
+        "message": "Price $135.27 hit stop loss $148.12",
+        "current_price": 135.27000427246094,
+        "entry_price": 162.5,
+        "unrealized_pnl_pct": -16.76,
+        "stop_loss": 148.12,
+        "target_price": 191.26,
+        "trailing_stop_price": null
+      },
+      {
+        "date": "2026-07-03",
+        "ticker": "SMTC",
+        "alert_type": "DOWN_5PCT",
+        "severity": "MEDIUM",
+        "message": "Unrealized loss -16.8%",
+        "current_price": 135.27000427246094,
+        "entry_price": 162.5,
+        "unrealized_pnl_pct": -16.76,
+        "stop_loss": 148.12,
+        "target_price": 191.26,
+        "trailing_stop_price": null
+      }
+    ],
+    "market_news": {
+      "date": "2026-07-03",
+      "db_path": "data/market_news.sqlite",
+      "disclaimer": "\u53c2\u8003\u30cb\u30e5\u30fc\u30b9\u3002\u672a\u691c\u8a3c\u306e\u305f\u3081\u30d5\u30a1\u30af\u30c8\u6271\u3044\u3057\u306a\u3044\u3002",
+      "collection_limits": {
+        "theme_limit": 3,
+        "active_sources": 3,
+        "candidate_probe_sources": 1,
+        "items_per_source": 2,
+        "report_items": 4
+      },
+      "themes": [
+        {
+          "key": "ai_semiconductors",
+          "label": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e",
+          "query": "AI semiconductors, HBM memory, wafer fab equipment, Nvidia, Micron, Applied Materials, Lam Research market news",
+          "tickers": [
+            "AMAT",
+            "COHR",
+            "INFQ",
+            "MU",
+            "QBTS",
+            "RGTI",
+            "TSM"
+          ],
+          "fallback_etf": "SMH",
+          "priority": 109
+        }
+      ],
+      "items": [
+        {
+          "source": "SMH",
+          "source_label": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e",
+          "title": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e\u306e\u95a2\u9023\u30cb\u30e5\u30fc\u30b9\u30e1\u30e2",
+          "publisher": "Google News RSS",
+          "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNMzBPQW9FTWtLTWVSTHNvUWd4Vi1LMF82MDhNNEl4c29NUVhDSkpYeXhvQjV4b2VYTzBJUzZNUk5FRVlRa1Rva01oblJrZklUTmZJNGdCVEZRRUR5Y084UTJHWWh6ZWN1V08tOWNKazNXZ3F5M0QxUThZR3NaR3BaME55Q2lIc01PeUhYQXRORko5d2M5bjYxS0tmN3VEZkI1Nm5NaFBMMFpieE40bVFFQTJsMjNXc25DaTVhM1RiMA?oc=5",
+          "domain": "news.google.com",
+          "published_at": "Tue, 30 Jun 2026 06:17:21 GMT",
+          "summary": "- \u8981\u7d04: AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e\u3067\u306f\u3001\u5e02\u5834\u5168\u4f53\u306e\u5024\u52d5\u304d\u3001\u534a\u5c0e\u4f53\u30fbAI\u304c\u4e3b\u306a\u8ad6\u70b9\u3002\u53c2\u7167\u898b\u51fa\u3057\u306f \u300cUS semiconductor equipment stocks surge, memory stocks follow suit! What are the 'two major investment opportunities' emerging from South Korea's unprecedented massive AI investments, and which laggard stocks deserve attention?\u300d / \u300cApplied Materials: Equipment Market Surge Priced Into Stock Price\u300d / \u300cThe 2 Hidden Winners in the $9 Trillion Humanoid Robotics Opportunity\u300d\u3002\n- \u95a2\u4fc2: \u95a2\u9023\u9298\u67c4\u306f AMAT, COHR, INFQ, MU, QBTS, RGTI\u3002\u4fdd\u6709\u30fb\u76e3\u8996\u9298\u67c4\u306e\u500b\u5225\u6750\u6599\u3068\u3044\u3046\u3088\u308a\u3001\u540c\u3058\u30c6\u30fc\u30de\u5185\u306e\u5730\u5408\u3044\u3068\u8cc7\u91d1\u306e\u5411\u304d\u3092\u898b\u308b\u53c2\u8003\u6750\u6599\u3002\n- \u6ce8\u610f\u70b9: RSS\u898b\u51fa\u3057\u3068\u77ed\u3044\u8aac\u660e\u304b\u3089\u4f5c\u3063\u305f\u672a\u691c\u8a3c\u30e1\u30e2\u3002\u58f2\u8cb7\u5224\u65ad\u3067\u306f\u3001\u500b\u5225\u9298\u67c4\u306e\u6c7a\u7b97\u3001\u30ac\u30a4\u30c0\u30f3\u30b9\u3001\u4fa1\u683c\u3001\u51fa\u6765\u9ad8\u3067\u518d\u78ba\u8a8d\u3059\u308b\u3002",
+          "key_point": "- \u8981\u7d04: AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e\u3067\u306f\u3001\u5e02\u5834\u5168\u4f53\u306e\u5024\u52d5\u304d\u3001\u534a\u5c0e\u4f53\u30fbAI\u304c\u4e3b\u306a\u8ad6\u70b9\u3002\u53c2\u7167\u898b\u51fa\u3057\u306f \u300cUS semiconductor equipment stocks surge, memory stocks follow suit! What are the 'two major investment opportunities' emerging from South Korea's unprecedented massive AI investments, and which laggard stocks deserve attention?\u300d / \u300cApplied Materials: Equipment Market Surge Priced Into Stock Price\u300d / \u300cThe 2 Hidden Winners in the $9 Trillion Humanoid Robotics Opportunity\u300d\u3002\n- \u95a2\u4fc2: \u95a2\u9023\u9298\u67c4\u306f AMAT, COHR, INFQ, MU, QBTS, RGTI\u3002\u4fdd\u6709\u30fb\u76e3\u8996\u9298\u67c4\u306e\u500b\u5225\u6750\u6599\u3068\u3044\u3046\u3088\u308a\u3001\u540c\u3058\u30c6\u30fc\u30de\u5185\u306e\u5730\u5408\u3044\u3068\u8cc7\u91d1\u306e\u5411\u304d\u3092\u898b\u308b\u53c2\u8003\u6750\u6599\u3002\n- \u6ce8\u610f\u70b9: RSS\u898b\u51fa\u3057\u3068\u77ed\u3044\u8aac\u660e\u304b\u3089\u4f5c\u3063\u305f\u672a\u691c\u8a3c\u30e1\u30e2\u3002\u58f2\u8cb7\u5224\u65ad\u3067\u306f\u3001\u500b\u5225\u9298\u67c4\u306e\u6c7a\u7b97\u3001\u30ac\u30a4\u30c0\u30f3\u30b9\u3001\u4fa1\u683c\u3001\u51fa\u6765\u9ad8\u3067\u518d\u78ba\u8a8d\u3059\u308b\u3002",
+          "source_articles": [
+            {
+              "title": "US semiconductor equipment stocks surge, memory stocks follow suit! What are the 'two major investment opportunities' emerging from South Korea's unprecedented massive AI investments, and which laggard stocks deserve attention? - Moomoo",
+              "source": "Moomoo",
+              "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNMzBPQW9FTWtLTWVSTHNvUWd4Vi1LMF82MDhNNEl4c29NUVhDSkpYeXhvQjV4b2VYTzBJUzZNUk5FRVlRa1Rva01oblJrZklUTmZJNGdCVEZRRUR5Y084UTJHWWh6ZWN1V08tOWNKazNXZ3F5M0QxUThZR3NaR3BaME55Q2lIc01PeUhYQXRORko5d2M5bjYxS0tmN3VEZkI1Nm5NaFBMMFpieE40bVFFQTJsMjNXc25DaTVhM1RiMA?oc=5",
+              "published_at": "Tue, 30 Jun 2026 06:17:21 GMT",
+              "summary": "US semiconductor equipment stocks surge, memory stocks follow suit! What are the 'two major investment opportunities' emerging from South Korea's unprecedented massive AI investments, and which laggard stocks deserve attention? Moomoo"
+            },
+            {
+              "title": "Applied Materials: Equipment Market Surge Priced Into Stock Price - Seeking Alpha",
+              "source": "Seeking Alpha",
+              "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNZC1ZVWc4aExpOVEtYm5xVDlkYVZMNU9aRWdXeGhMRHZvQ21JTlhsWG1FbFEzTFZYcjRNY3p4cWc0dVFnS0FYZXBBWGZfTF9hWkVZR3UwYjNCdlM0WXctZ2ZSZC13cl9FM2U5cHd1eDZBVDdqWFgzdWU5TElJVEFqZGlPbXh1LUNyekJpaVJTWndxeDJpdUt2bU5tNFNCRm1HTVY0dk56WXA?oc=5",
+              "published_at": "Mon, 29 Jun 2026 15:01:51 GMT",
+              "summary": "Applied Materials: Equipment Market Surge Priced Into Stock Price Seeking Alpha"
+            },
+            {
+              "title": "The 2 Hidden Winners in the $9 Trillion Humanoid Robotics Opportunity - 24/7 Wall St.",
+              "source": "24/7 Wall St.",
+              "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPR1kxLXJIOElMeWZ1MGg1VHR2Tmh4aG1rUWdkSkROc3JwcldwYUtuVng1UXNMQWtURkpqRVV4d08wMHBCMFg2OGowNGwtV0N4dnRiOTBiNElnNjBwdUpxSWZ2Z3JrTWNiZmdnSVdYMGVQRC0xeEJIWWFzdUhHMzBrUXhPZzYzZzlUN2lGeXpKM2VjNjV4T0w2R0pEQmJtZ3lFdzh0R056dVMzdVg3QncwWmhn?oc=5",
+              "published_at": "Tue, 30 Jun 2026 12:30:18 GMT",
+              "summary": "The 2 Hidden Winners in the $9 Trillion Humanoid Robotics Opportunity 24/7 Wall St."
+            },
+            {
+              "title": "Micron becomes one of the most profitable companies in the US - Crypto Briefing",
+              "source": "Crypto Briefing",
+              "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5DN1BSOU1fSDFqZjRxckpCWHdMSGFQNDJEcUFPMFBMUkVja19WdTdobG9QN2FKbUs0Vk5zbGl6R2E5UVl5ZTY5QVhDdXRXTEwzdTVBcUdnSzRsT08tM0FlUjVwUlM5d0ZTc3RzaElB?oc=5",
+              "published_at": "Sun, 28 Jun 2026 19:27:25 GMT",
+              "summary": "Micron becomes one of the most profitable companies in the US Crypto Briefing"
+            },
+            {
+              "title": "Applied Materials and Lam Research lead chip equipment rebound on AI memory demand; Super Micro tumbles 8% on Taiwan raids, SOXX +4.1% - StartupHub.ai",
+              "source": "StartupHub.ai",
+              "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNanJlWUlPQ0t0eXRHTTF2eUUwa1FuRTRaNVBhc2d0V0I0bjVHMGQ4dzY1aUVMMGstNVFGVl9rWjVfMTl5UE1hOHI3U2x4Sl80V2V4VjM4VlItVlVlV2dnYzdkLTRHRHdWV1JRV1drZ2tsTkRKNi1CSVA2VHVKUl81UQ?oc=5",
+              "published_at": "Mon, 29 Jun 2026 22:47:18 GMT",
+              "summary": "Applied Materials and Lam Research lead chip equipment rebound on AI memory demand; Super Micro tumbles 8% on Taiwan raids, SOXX +4.1% StartupHub.ai"
+            }
+          ],
+          "relevance_score": 3.0,
+          "theme": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e",
+          "tickers": [
+            "AMAT",
+            "COHR",
+            "INFQ",
+            "MU",
+            "QBTS",
+            "RGTI",
+            "TSM"
+          ]
+        }
+      ],
+      "source_stats": [
+        {
+          "value": "SMH",
+          "label": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e",
+          "status": "active",
+          "priority": 109,
+          "hit_count": 14,
+          "selected_count": 16,
+          "miss_streak": 0,
+          "last_seen_at": "2026-07-03T13:00:02.801530"
+        },
+        {
+          "value": "XLI",
+          "label": "AI\u30c7\u30fc\u30bf\u30bb\u30f3\u30bf\u30fc\u96fb\u529b\u30fb\u51b7\u5374\u30a4\u30f3\u30d5\u30e9",
+          "status": "active",
+          "priority": 93,
+          "hit_count": 6,
+          "selected_count": 6,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-12T11:42:44.411880"
+        },
+        {
+          "value": "IGV",
+          "label": "\u30af\u30e9\u30a6\u30c9\u30fb\u30a8\u30f3\u30bf\u30fc\u30d7\u30e9\u30a4\u30ba\u30bd\u30d5\u30c8\u30a6\u30a7\u30a2",
+          "status": "active",
+          "priority": 83,
+          "hit_count": 7,
+          "selected_count": 7,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-12T11:42:44.864098"
+        },
+        {
+          "value": "SPY",
+          "label": "US broad market",
+          "status": "candidate",
+          "priority": 100,
+          "hit_count": 1,
+          "selected_count": 2,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-06T09:22:33.544666"
+        },
+        {
+          "value": "QQQ",
+          "label": "Nasdaq / growth",
+          "status": "candidate",
+          "priority": 95,
+          "hit_count": 1,
+          "selected_count": 2,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-06T09:22:33.740347"
+        },
+        {
+          "value": "XLK",
+          "label": "technology",
+          "status": "candidate",
+          "priority": 80,
+          "hit_count": 1,
+          "selected_count": 1,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-06T09:22:34.164153"
+        },
+        {
+          "value": "XLF",
+          "label": "financials",
+          "status": "candidate",
+          "priority": 65,
+          "hit_count": 1,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-06T09:22:34.550934"
+        },
+        {
+          "value": "IBB",
+          "label": "biotech / healthcare",
+          "status": "candidate",
+          "priority": 60,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        },
+        {
+          "value": "XLE",
+          "label": "energy",
+          "status": "candidate",
+          "priority": 60,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        },
+        {
+          "value": "XLY",
+          "label": "consumer discretionary",
+          "status": "candidate",
+          "priority": 55,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        },
+        {
+          "value": "ITA",
+          "label": "defense / aerospace",
+          "status": "candidate",
+          "priority": 50,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        },
+        {
+          "value": "ARKK",
+          "label": "disruptive growth",
+          "status": "candidate",
+          "priority": 45,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        }
+      ]
+    }
+  },
+  {
+    "date": "2026-07-04",
+    "position_count": 3,
+    "alert_count": 2,
+    "high_alert_count": 1,
+    "positions": [
+      {
+        "ticker": "SMTC",
+        "shares": 1.0,
+        "entry_price": 162.5,
+        "current_price": 135.27000427246094,
+        "target_price": "191.26",
+        "stop_loss": "148.12",
+        "pnl_pct": -16.76,
+        "change_pct": -8.45,
+        "note": "20\u4e07\u5186\u67a0\u3002\u53d6\u5f97\u65e5: 2026-06-23\u3002Decision 2026-06-23\u63a1\u7528\u3002SMTC score 7.15 / \u78ba\u4fe1\u5ea6LOW-MEDIUM\u3002\u6307\u5024$175\u3001\u8b72\u6e21\u91d1\u984d29,743\u5186\u30011\u682a\u3002RS\u5f37\u3044\u304cMACD hist\u30de\u30a4\u30ca\u30b9\u30fbDebt/Equity\u9ad8\u3081\u306e\u305f\u3081\u8a66\u3057\u7389\u3002 | \u30102026-06-25 \u4fee\u6b63\u3011\u8cb7\u5024\u3092$162.50\u306b\u8a02\u6b63\uff08\u30e6\u30fc\u30b6\u30fc\u7533\u544a\uff09 | \u30102026-06-25 STOP\u518d\u8a2d\u5b9a\u3011\u8cb7\u5024\u4fee\u6b63\u306b\u4f34\u3044ATR1x\u57fa\u6e96\u3078\u518d\u8a2d\u5b9a: stop $148.12 / target $191.26"
+      },
+      {
+        "ticker": "FOUR",
+        "shares": 2.0,
+        "entry_price": 43.51,
+        "current_price": 51.349998474121094,
+        "target_price": null,
+        "stop_loss": "48.44",
+        "pnl_pct": 18.02,
+        "change_pct": 4.8,
+        "note": "20\u4e07\u5186\u67a0\u3002\u30e6\u30fc\u30b6\u30fc\u7533\u544a\u306b\u3088\u308b\u624b\u52d5\u53cd\u6620\u3002 | \u30102026-07-03 STAGE1\u3011$51.35\u306725%\u5229\u78ba\u6761\u4ef6\u5230\u9054\u3002\u305f\u3060\u30572\u682a\u4fdd\u6709\u306e\u305f\u3081\u58f2\u5374\u682a\u65700\u3002\u30b9\u30c8\u30c3\u30d7\u2192\u8cb7\u5024$43.51 | \u30102026-07-03 STAGE2\u3011$51.35\u3067\u8ffd\u52a025%\u5229\u78ba\u6761\u4ef6\u5230\u9054\u3002\u305f\u3060\u30572\u682a\u4fdd\u6709\u306e\u305f\u3081\u58f2\u5374\u682a\u65700\u3002ATR\u00d71.0\u30c8\u30ec\u30fc\u30ea\u30f3\u30b0\u76f8\u5f53: stop $48.44"
+      },
+      {
+        "ticker": "TSM",
+        "shares": 1.0,
+        "entry_price": 441.0,
+        "current_price": 434.1600036621094,
+        "target_price": null,
+        "stop_loss": null,
+        "pnl_pct": -1.55,
+        "change_pct": -3.18,
+        "note": "20\u4e07\u5186\u67a0\u3002\u30e6\u30fc\u30b6\u30fc\u7533\u544a\u306b\u3088\u308b\u624b\u52d5\u53cd\u6620\u3002"
+      }
+    ],
+    "alerts": [
+      {
+        "date": "2026-07-04",
+        "ticker": "SMTC",
+        "alert_type": "STOP_BREACH",
+        "severity": "HIGH",
+        "message": "Price $135.27 hit stop loss $148.12",
+        "current_price": 135.27000427246094,
+        "entry_price": 162.5,
+        "unrealized_pnl_pct": -16.76,
+        "stop_loss": 148.12,
+        "target_price": 191.26,
+        "trailing_stop_price": null
+      },
+      {
+        "date": "2026-07-04",
+        "ticker": "SMTC",
+        "alert_type": "DOWN_5PCT",
+        "severity": "MEDIUM",
+        "message": "Unrealized loss -16.8%",
+        "current_price": 135.27000427246094,
+        "entry_price": 162.5,
+        "unrealized_pnl_pct": -16.76,
+        "stop_loss": 148.12,
+        "target_price": 191.26,
+        "trailing_stop_price": null
+      }
+    ],
+    "market_news": {
+      "date": "2026-07-04",
+      "db_path": "data/market_news.sqlite",
+      "disclaimer": "\u53c2\u8003\u30cb\u30e5\u30fc\u30b9\u3002\u672a\u691c\u8a3c\u306e\u305f\u3081\u30d5\u30a1\u30af\u30c8\u6271\u3044\u3057\u306a\u3044\u3002",
+      "collection_limits": {
+        "theme_limit": 3,
+        "active_sources": 3,
+        "candidate_probe_sources": 1,
+        "items_per_source": 2,
+        "report_items": 4
+      },
+      "themes": [
+        {
+          "key": "ai_semiconductors",
+          "label": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e",
+          "query": "AI semiconductors, HBM memory, wafer fab equipment, Nvidia, Micron, Applied Materials, Lam Research market news",
+          "tickers": [
+            "AMAT",
+            "COHR",
+            "INFQ",
+            "MU",
+            "QBTS",
+            "RGTI",
+            "TSM"
+          ],
+          "fallback_etf": "SMH",
+          "priority": 109
+        },
+        {
+          "key": "cloud_enterprise_software",
+          "label": "\u30af\u30e9\u30a6\u30c9\u30fb\u30a8\u30f3\u30bf\u30fc\u30d7\u30e9\u30a4\u30ba\u30bd\u30d5\u30c8\u30a6\u30a7\u30a2",
+          "query": "enterprise software SaaS cloud stocks Atlassian software spending market news",
+          "tickers": [
+            "FIG",
+            "ORCL"
+          ],
+          "fallback_etf": "IGV",
+          "priority": 82
+        }
+      ],
+      "items": [
+        {
+          "source": "IGV",
+          "source_label": "\u30af\u30e9\u30a6\u30c9\u30fb\u30a8\u30f3\u30bf\u30fc\u30d7\u30e9\u30a4\u30ba\u30bd\u30d5\u30c8\u30a6\u30a7\u30a2",
+          "title": "ORCL: Why Oracle Corporation\u2019s (ORCL) Cloud Outlook Keeps AI Infrastructure at the Center of Its Estimate Story",
+          "publisher": "Insider Monkey",
+          "url": "https://finance.yahoo.com/technology/ai/articles/why-oracle-corporation-orcl-cloud-215200216.html",
+          "domain": "finance.yahoo.com",
+          "published_at": "2026-07-03T21:52:00Z",
+          "summary": "Oracle Corporation (NYSE:ORCL) is one of the stocks with rising earnings estimates and fresh catalysts. The stock has 22 upward EPS revisions and 14 downward revisions for the upcoming fiscal year over the last three mon",
+          "key_point": "Dow/ORCL/AI/NYSE/EPS / \u5e02\u5834\u5168\u4f53\u306e\u5024\u52d5\u304d\u30fb\u30c6\u30c3\u30af\u682a\u30fb\u6c7a\u7b97\u30fb\u30ac\u30a4\u30c0\u30f3\u30b9\u306b\u95a2\u3059\u308b\u8a18\u4e8b\u3002",
+          "source_articles": [],
+          "relevance_score": 5.5,
+          "theme": "\u30af\u30e9\u30a6\u30c9\u30fb\u30a8\u30f3\u30bf\u30fc\u30d7\u30e9\u30a4\u30ba\u30bd\u30d5\u30c8\u30a6\u30a7\u30a2",
+          "tickers": [
+            "FIG",
+            "ORCL"
+          ]
+        },
+        {
+          "source": "SMH",
+          "source_label": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e",
+          "title": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e\u306e\u95a2\u9023\u30cb\u30e5\u30fc\u30b9\u30e1\u30e2",
+          "publisher": "Google News RSS",
+          "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNMzBPQW9FTWtLTWVSTHNvUWd4Vi1LMF82MDhNNEl4c29NUVhDSkpYeXhvQjV4b2VYTzBJUzZNUk5FRVlRa1Rva01oblJrZklUTmZJNGdCVEZRRUR5Y084UTJHWWh6ZWN1V08tOWNKazNXZ3F5M0QxUThZR3NaR3BaME55Q2lIc01PeUhYQXRORko5d2M5bjYxS0tmN3VEZkI1Nm5NaFBMMFpieE40bVFFQTJsMjNXc25DaTVhM1RiMA?oc=5",
+          "domain": "news.google.com",
+          "published_at": "Tue, 30 Jun 2026 06:17:21 GMT",
+          "summary": "- \u8981\u7d04: AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e\u3067\u306f\u3001\u5e02\u5834\u5168\u4f53\u306e\u5024\u52d5\u304d\u3001\u534a\u5c0e\u4f53\u30fbAI\u304c\u4e3b\u306a\u8ad6\u70b9\u3002\u53c2\u7167\u898b\u51fa\u3057\u306f \u300cUS semiconductor equipment stocks surge, memory stocks follow suit! What are the 'two major investment opportunities' emerging from South Korea's unprecedented massive AI investments, and which laggard stocks deserve attention?\u300d / \u300cApplied Materials: Equipment Market Surge Priced Into Stock Price\u300d / \u300cThe 2 Hidden Winners in the $9 Trillion Humanoid Robotics Opportunity\u300d\u3002\n- \u95a2\u4fc2: \u95a2\u9023\u9298\u67c4\u306f AMAT, COHR, INFQ, MU, QBTS, RGTI\u3002\u4fdd\u6709\u30fb\u76e3\u8996\u9298\u67c4\u306e\u500b\u5225\u6750\u6599\u3068\u3044\u3046\u3088\u308a\u3001\u540c\u3058\u30c6\u30fc\u30de\u5185\u306e\u5730\u5408\u3044\u3068\u8cc7\u91d1\u306e\u5411\u304d\u3092\u898b\u308b\u53c2\u8003\u6750\u6599\u3002\n- \u6ce8\u610f\u70b9: RSS\u898b\u51fa\u3057\u3068\u77ed\u3044\u8aac\u660e\u304b\u3089\u4f5c\u3063\u305f\u672a\u691c\u8a3c\u30e1\u30e2\u3002\u58f2\u8cb7\u5224\u65ad\u3067\u306f\u3001\u500b\u5225\u9298\u67c4\u306e\u6c7a\u7b97\u3001\u30ac\u30a4\u30c0\u30f3\u30b9\u3001\u4fa1\u683c\u3001\u51fa\u6765\u9ad8\u3067\u518d\u78ba\u8a8d\u3059\u308b\u3002",
+          "key_point": "- \u8981\u7d04: AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e\u3067\u306f\u3001\u5e02\u5834\u5168\u4f53\u306e\u5024\u52d5\u304d\u3001\u534a\u5c0e\u4f53\u30fbAI\u304c\u4e3b\u306a\u8ad6\u70b9\u3002\u53c2\u7167\u898b\u51fa\u3057\u306f \u300cUS semiconductor equipment stocks surge, memory stocks follow suit! What are the 'two major investment opportunities' emerging from South Korea's unprecedented massive AI investments, and which laggard stocks deserve attention?\u300d / \u300cApplied Materials: Equipment Market Surge Priced Into Stock Price\u300d / \u300cThe 2 Hidden Winners in the $9 Trillion Humanoid Robotics Opportunity\u300d\u3002\n- \u95a2\u4fc2: \u95a2\u9023\u9298\u67c4\u306f AMAT, COHR, INFQ, MU, QBTS, RGTI\u3002\u4fdd\u6709\u30fb\u76e3\u8996\u9298\u67c4\u306e\u500b\u5225\u6750\u6599\u3068\u3044\u3046\u3088\u308a\u3001\u540c\u3058\u30c6\u30fc\u30de\u5185\u306e\u5730\u5408\u3044\u3068\u8cc7\u91d1\u306e\u5411\u304d\u3092\u898b\u308b\u53c2\u8003\u6750\u6599\u3002\n- \u6ce8\u610f\u70b9: RSS\u898b\u51fa\u3057\u3068\u77ed\u3044\u8aac\u660e\u304b\u3089\u4f5c\u3063\u305f\u672a\u691c\u8a3c\u30e1\u30e2\u3002\u58f2\u8cb7\u5224\u65ad\u3067\u306f\u3001\u500b\u5225\u9298\u67c4\u306e\u6c7a\u7b97\u3001\u30ac\u30a4\u30c0\u30f3\u30b9\u3001\u4fa1\u683c\u3001\u51fa\u6765\u9ad8\u3067\u518d\u78ba\u8a8d\u3059\u308b\u3002",
+          "source_articles": [
+            {
+              "title": "US semiconductor equipment stocks surge, memory stocks follow suit! What are the 'two major investment opportunities' emerging from South Korea's unprecedented massive AI investments, and which laggard stocks deserve attention? - Moomoo",
+              "source": "Moomoo",
+              "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNMzBPQW9FTWtLTWVSTHNvUWd4Vi1LMF82MDhNNEl4c29NUVhDSkpYeXhvQjV4b2VYTzBJUzZNUk5FRVlRa1Rva01oblJrZklUTmZJNGdCVEZRRUR5Y084UTJHWWh6ZWN1V08tOWNKazNXZ3F5M0QxUThZR3NaR3BaME55Q2lIc01PeUhYQXRORko5d2M5bjYxS0tmN3VEZkI1Nm5NaFBMMFpieE40bVFFQTJsMjNXc25DaTVhM1RiMA?oc=5",
+              "published_at": "Tue, 30 Jun 2026 06:17:21 GMT",
+              "summary": "US semiconductor equipment stocks surge, memory stocks follow suit! What are the 'two major investment opportunities' emerging from South Korea's unprecedented massive AI investments, and which laggard stocks deserve attention? Moomoo"
+            },
+            {
+              "title": "Applied Materials: Equipment Market Surge Priced Into Stock Price - Seeking Alpha",
+              "source": "Seeking Alpha",
+              "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNZC1ZVWc4aExpOVEtYm5xVDlkYVZMNU9aRWdXeGhMRHZvQ21JTlhsWG1FbFEzTFZYcjRNY3p4cWc0dVFnS0FYZXBBWGZfTF9hWkVZR3UwYjNCdlM0WXctZ2ZSZC13cl9FM2U5cHd1eDZBVDdqWFgzdWU5TElJVEFqZGlPbXh1LUNyekJpaVJTWndxeDJpdUt2bU5tNFNCRm1HTVY0dk56WXA?oc=5",
+              "published_at": "Mon, 29 Jun 2026 15:01:51 GMT",
+              "summary": "Applied Materials: Equipment Market Surge Priced Into Stock Price Seeking Alpha"
+            },
+            {
+              "title": "The 2 Hidden Winners in the $9 Trillion Humanoid Robotics Opportunity - 24/7 Wall St.",
+              "source": "24/7 Wall St.",
+              "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPR1kxLXJIOElMeWZ1MGg1VHR2Tmh4aG1rUWdkSkROc3JwcldwYUtuVng1UXNMQWtURkpqRVV4d08wMHBCMFg2OGowNGwtV0N4dnRiOTBiNElnNjBwdUpxSWZ2Z3JrTWNiZmdnSVdYMGVQRC0xeEJIWWFzdUhHMzBrUXhPZzYzZzlUN2lGeXpKM2VjNjV4T0w2R0pEQmJtZ3lFdzh0R056dVMzdVg3QncwWmhn?oc=5",
+              "published_at": "Tue, 30 Jun 2026 12:30:18 GMT",
+              "summary": "The 2 Hidden Winners in the $9 Trillion Humanoid Robotics Opportunity 24/7 Wall St."
+            },
+            {
+              "title": "Micron becomes one of the most profitable companies in the US - Crypto Briefing",
+              "source": "Crypto Briefing",
+              "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5DN1BSOU1fSDFqZjRxckpCWHdMSGFQNDJEcUFPMFBMUkVja19WdTdobG9QN2FKbUs0Vk5zbGl6R2E5UVl5ZTY5QVhDdXRXTEwzdTVBcUdnSzRsT08tM0FlUjVwUlM5d0ZTc3RzaElB?oc=5",
+              "published_at": "Sun, 28 Jun 2026 19:27:25 GMT",
+              "summary": "Micron becomes one of the most profitable companies in the US Crypto Briefing"
+            },
+            {
+              "title": "Applied Materials and Lam Research lead chip equipment rebound on AI memory demand; Super Micro tumbles 8% on Taiwan raids, SOXX +4.1% - StartupHub.ai",
+              "source": "StartupHub.ai",
+              "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNanJlWUlPQ0t0eXRHTTF2eUUwa1FuRTRaNVBhc2d0V0I0bjVHMGQ4dzY1aUVMMGstNVFGVl9rWjVfMTl5UE1hOHI3U2x4Sl80V2V4VjM4VlItVlVlV2dnYzdkLTRHRHdWV1JRV1drZ2tsTkRKNi1CSVA2VHVKUl81UQ?oc=5",
+              "published_at": "Mon, 29 Jun 2026 22:47:18 GMT",
+              "summary": "Applied Materials and Lam Research lead chip equipment rebound on AI memory demand; Super Micro tumbles 8% on Taiwan raids, SOXX +4.1% StartupHub.ai"
+            }
+          ],
+          "relevance_score": 3.0,
+          "theme": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e",
+          "tickers": [
+            "AMAT",
+            "COHR",
+            "INFQ",
+            "MU",
+            "QBTS",
+            "RGTI",
+            "TSM"
+          ]
+        },
+        {
+          "source": "IGV",
+          "source_label": "\u30af\u30e9\u30a6\u30c9\u30fb\u30a8\u30f3\u30bf\u30fc\u30d7\u30e9\u30a4\u30ba\u30bd\u30d5\u30c8\u30a6\u30a7\u30a2",
+          "title": "FIG: Figma (FIG) Stock After 49% Year-To-Date Fall Is The Price Now Justified",
+          "publisher": "Simply Wall St.",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/figma-fig-stock-49-date-170811865.html",
+          "domain": "finance.yahoo.com",
+          "published_at": "2026-06-30T17:08:11Z",
+          "summary": "With Figma stock on many watchlists, you might be wondering whether the current price reflects its fundamentals or if the market is mispricing the story. Over the short term, the share price has been flat over the last w",
+          "key_point": "Dow/FIG / \u5e02\u5834\u5168\u4f53\u306e\u5024\u52d5\u304d\u30fb\u30c6\u30c3\u30af\u682a / \u4e3b\u306a\u6570\u5b57: 49%\u300125.2%\u300149.3%\u306b\u95a2\u3059\u308b\u8a18\u4e8b\u3002",
+          "source_articles": [],
+          "relevance_score": 1.0,
+          "theme": "\u30af\u30e9\u30a6\u30c9\u30fb\u30a8\u30f3\u30bf\u30fc\u30d7\u30e9\u30a4\u30ba\u30bd\u30d5\u30c8\u30a6\u30a7\u30a2",
+          "tickers": [
+            "FIG",
+            "ORCL"
+          ]
+        }
+      ],
+      "source_stats": [
+        {
+          "value": "SMH",
+          "label": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e",
+          "status": "active",
+          "priority": 109,
+          "hit_count": 15,
+          "selected_count": 17,
+          "miss_streak": 0,
+          "last_seen_at": "2026-07-04T00:23:23.251393"
+        },
+        {
+          "value": "XLI",
+          "label": "AI\u30c7\u30fc\u30bf\u30bb\u30f3\u30bf\u30fc\u96fb\u529b\u30fb\u51b7\u5374\u30a4\u30f3\u30d5\u30e9",
+          "status": "active",
+          "priority": 93,
+          "hit_count": 6,
+          "selected_count": 6,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-12T11:42:44.411880"
+        },
+        {
+          "value": "IGV",
+          "label": "\u30af\u30e9\u30a6\u30c9\u30fb\u30a8\u30f3\u30bf\u30fc\u30d7\u30e9\u30a4\u30ba\u30bd\u30d5\u30c8\u30a6\u30a7\u30a2",
+          "status": "active",
+          "priority": 82,
+          "hit_count": 8,
+          "selected_count": 9,
+          "miss_streak": 0,
+          "last_seen_at": "2026-07-04T00:23:24.777175"
+        },
+        {
+          "value": "SPY",
+          "label": "US broad market",
+          "status": "candidate",
+          "priority": 100,
+          "hit_count": 1,
+          "selected_count": 2,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-06T09:22:33.544666"
+        },
+        {
+          "value": "QQQ",
+          "label": "Nasdaq / growth",
+          "status": "candidate",
+          "priority": 95,
+          "hit_count": 1,
+          "selected_count": 2,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-06T09:22:33.740347"
+        },
+        {
+          "value": "XLK",
+          "label": "technology",
+          "status": "candidate",
+          "priority": 80,
+          "hit_count": 1,
+          "selected_count": 1,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-06T09:22:34.164153"
+        },
+        {
+          "value": "XLF",
+          "label": "financials",
+          "status": "candidate",
+          "priority": 65,
+          "hit_count": 1,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-06T09:22:34.550934"
+        },
+        {
+          "value": "IBB",
+          "label": "biotech / healthcare",
+          "status": "candidate",
+          "priority": 60,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        },
+        {
+          "value": "XLE",
+          "label": "energy",
+          "status": "candidate",
+          "priority": 60,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        },
+        {
+          "value": "XLY",
+          "label": "consumer discretionary",
+          "status": "candidate",
+          "priority": 55,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        },
+        {
+          "value": "ITA",
+          "label": "defense / aerospace",
+          "status": "candidate",
+          "priority": 50,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        },
+        {
+          "value": "ARKK",
+          "label": "disruptive growth",
+          "status": "candidate",
+          "priority": 45,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        }
+      ]
+    }
+  },
+  {
+    "date": "2026-07-12",
+    "position_count": 3,
+    "alert_count": 2,
+    "high_alert_count": 1,
+    "positions": [
+      {
+        "ticker": "SMTC",
+        "shares": 1.0,
+        "entry_price": 162.5,
+        "current_price": 136.1300048828125,
+        "target_price": "191.26",
+        "stop_loss": "148.12",
+        "pnl_pct": -16.23,
+        "change_pct": -1.36,
+        "note": "20\u4e07\u5186\u67a0\u3002\u53d6\u5f97\u65e5: 2026-06-23\u3002Decision 2026-06-23\u63a1\u7528\u3002SMTC score 7.15 / \u78ba\u4fe1\u5ea6LOW-MEDIUM\u3002\u6307\u5024$175\u3001\u8b72\u6e21\u91d1\u984d29,743\u5186\u30011\u682a\u3002RS\u5f37\u3044\u304cMACD hist\u30de\u30a4\u30ca\u30b9\u30fbDebt/Equity\u9ad8\u3081\u306e\u305f\u3081\u8a66\u3057\u7389\u3002 | \u30102026-06-25 \u4fee\u6b63\u3011\u8cb7\u5024\u3092$162.50\u306b\u8a02\u6b63\uff08\u30e6\u30fc\u30b6\u30fc\u7533\u544a\uff09 | \u30102026-06-25 STOP\u518d\u8a2d\u5b9a\u3011\u8cb7\u5024\u4fee\u6b63\u306b\u4f34\u3044ATR1x\u57fa\u6e96\u3078\u518d\u8a2d\u5b9a: stop $148.12 / target $191.26"
+      },
+      {
+        "ticker": "FOUR",
+        "shares": 2.0,
+        "entry_price": 43.51,
+        "current_price": 50.810001373291016,
+        "target_price": null,
+        "stop_loss": "48.44",
+        "pnl_pct": 16.78,
+        "change_pct": 4.19,
+        "note": "20\u4e07\u5186\u67a0\u3002\u30e6\u30fc\u30b6\u30fc\u7533\u544a\u306b\u3088\u308b\u624b\u52d5\u53cd\u6620\u3002 | \u30102026-07-03 STAGE1\u3011$51.35\u306725%\u5229\u78ba\u6761\u4ef6\u5230\u9054\u3002\u305f\u3060\u30572\u682a\u4fdd\u6709\u306e\u305f\u3081\u58f2\u5374\u682a\u65700\u3002\u30b9\u30c8\u30c3\u30d7\u2192\u8cb7\u5024$43.51 | \u30102026-07-03 STAGE2\u3011$51.35\u3067\u8ffd\u52a025%\u5229\u78ba\u6761\u4ef6\u5230\u9054\u3002\u305f\u3060\u30572\u682a\u4fdd\u6709\u306e\u305f\u3081\u58f2\u5374\u682a\u65700\u3002ATR\u00d71.0\u30c8\u30ec\u30fc\u30ea\u30f3\u30b0\u76f8\u5f53: stop $48.44"
+      },
+      {
+        "ticker": "TSM",
+        "shares": 1.0,
+        "entry_price": 441.0,
+        "current_price": 434.1099853515625,
+        "target_price": null,
+        "stop_loss": null,
+        "pnl_pct": -1.56,
+        "change_pct": -1.2,
+        "note": "20\u4e07\u5186\u67a0\u3002\u30e6\u30fc\u30b6\u30fc\u7533\u544a\u306b\u3088\u308b\u624b\u52d5\u53cd\u6620\u3002"
+      }
+    ],
+    "alerts": [
+      {
+        "date": "2026-07-12",
+        "ticker": "SMTC",
+        "alert_type": "STOP_BREACH",
+        "severity": "HIGH",
+        "message": "Price $136.13 hit stop loss $148.12",
+        "current_price": 136.1300048828125,
+        "entry_price": 162.5,
+        "unrealized_pnl_pct": -16.23,
+        "stop_loss": 148.12,
+        "target_price": 191.26,
+        "trailing_stop_price": null
+      },
+      {
+        "date": "2026-07-12",
+        "ticker": "SMTC",
+        "alert_type": "DOWN_5PCT",
+        "severity": "MEDIUM",
+        "message": "Unrealized loss -16.2%",
+        "current_price": 136.1300048828125,
+        "entry_price": 162.5,
+        "unrealized_pnl_pct": -16.23,
+        "stop_loss": 148.12,
+        "target_price": 191.26,
+        "trailing_stop_price": null
+      }
+    ],
+    "market_news": {
+      "date": "2026-07-12",
+      "db_path": "data/market_news.sqlite",
+      "disclaimer": "\u53c2\u8003\u30cb\u30e5\u30fc\u30b9\u3002\u672a\u691c\u8a3c\u306e\u305f\u3081\u30d5\u30a1\u30af\u30c8\u6271\u3044\u3057\u306a\u3044\u3002",
+      "collection_limits": {
+        "theme_limit": 3,
+        "active_sources": 3,
+        "candidate_probe_sources": 1,
+        "items_per_source": 2,
+        "report_items": 4
+      },
+      "themes": [
+        {
+          "key": "ai_semiconductors",
+          "label": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e",
+          "query": "AI semiconductors, HBM memory, wafer fab equipment, Nvidia, Micron, Applied Materials, Lam Research market news",
+          "tickers": [
+            "AMAT",
+            "COHR",
+            "INFQ",
+            "MU",
+            "QBTS",
+            "RGTI",
+            "TSM"
+          ],
+          "fallback_etf": "SMH",
+          "priority": 109
+        },
+        {
+          "key": "cloud_enterprise_software",
+          "label": "\u30af\u30e9\u30a6\u30c9\u30fb\u30a8\u30f3\u30bf\u30fc\u30d7\u30e9\u30a4\u30ba\u30bd\u30d5\u30c8\u30a6\u30a7\u30a2",
+          "query": "enterprise software SaaS cloud stocks Atlassian software spending market news",
+          "tickers": [
+            "FIG",
+            "ORCL"
+          ],
+          "fallback_etf": "IGV",
+          "priority": 82
+        }
+      ],
+      "items": [
+        {
+          "source": "IGV",
+          "source_label": "\u30af\u30e9\u30a6\u30c9\u30fb\u30a8\u30f3\u30bf\u30fc\u30d7\u30e9\u30a4\u30ba\u30bd\u30d5\u30c8\u30a6\u30a7\u30a2",
+          "title": "FIG: Why Figma Stock Lost 52% in the First Half of 2026",
+          "publisher": "Motley Fool",
+          "url": "https://www.fool.com/investing/2026/07/10/why-figma-stock-lost-52-in-the-first-half-of-2026/",
+          "domain": "www.fool.com",
+          "published_at": "2026-07-10T21:33:20Z",
+          "summary": "Figma's stock lost more than half its value in six months. Strong earnings couldn't overcome fears about AI-native competition.",
+          "key_point": "FIG/AI / \u6c7a\u7b97\u30fb\u30ac\u30a4\u30c0\u30f3\u30b9 / \u4e3b\u306a\u6570\u5b57: 52%\u306b\u95a2\u3059\u308b\u8a18\u4e8b\u3002",
+          "source_articles": [],
+          "relevance_score": 4.5,
+          "theme": "\u30af\u30e9\u30a6\u30c9\u30fb\u30a8\u30f3\u30bf\u30fc\u30d7\u30e9\u30a4\u30ba\u30bd\u30d5\u30c8\u30a6\u30a7\u30a2",
+          "tickers": [
+            "FIG",
+            "ORCL"
+          ]
+        },
+        {
+          "source": "IGV",
+          "source_label": "\u30af\u30e9\u30a6\u30c9\u30fb\u30a8\u30f3\u30bf\u30fc\u30d7\u30e9\u30a4\u30ba\u30bd\u30d5\u30c8\u30a6\u30a7\u30a2",
+          "title": "ORCL: Big Tech is paying for the AI boom, and chipmakers are cashing in: Chart of the Day",
+          "publisher": "Yahoo Finance",
+          "url": "https://finance.yahoo.com/markets/article/big-tech-is-paying-for-the-ai-boom-and-chipmakers-are-cashing-in-chart-of-the-day-114043038.html",
+          "domain": "finance.yahoo.com",
+          "published_at": "2026-07-11T11:40:43Z",
+          "summary": "Wall Street knows Big Tech can spend on AI \u2014 the harder question is how fast that spending turns back into cash.",
+          "key_point": "ORCL/AI / \u30c6\u30c3\u30af\u682a\u30fb\u534a\u5c0e\u4f53\u30fbAI\u306b\u95a2\u3059\u308b\u8a18\u4e8b\u3002",
+          "source_articles": [],
+          "relevance_score": 3.0,
+          "theme": "\u30af\u30e9\u30a6\u30c9\u30fb\u30a8\u30f3\u30bf\u30fc\u30d7\u30e9\u30a4\u30ba\u30bd\u30d5\u30c8\u30a6\u30a7\u30a2",
+          "tickers": [
+            "FIG",
+            "ORCL"
+          ]
+        },
+        {
+          "source": "SMH",
+          "source_label": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e",
+          "title": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e\u306e\u95a2\u9023\u30cb\u30e5\u30fc\u30b9\u30e1\u30e2",
+          "publisher": "Google News RSS",
+          "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPR2lNNDJ4dGx2bXk5MFQ3czNmSTFrTU5mNHNfSmVnOXBaclR1cXVzc05ITy1MM1FtRUNtbVBCcmE0SlZEV0dWX3ZSQ2pGQXBrWVhvVTIxbVRwUG1sYmY0UnZjdlhvVjZBZkJza19zdGpWM2hSbms5aDRzMlZYSEdNaXNSMTc3WG4wS3ZLcWJ2SDBjdFlnMWYyNGVncmFXcVR4VGo2bkNqcW1aS0ZGbVhVXzdGUko2NTg?oc=5",
+          "domain": "news.google.com",
+          "published_at": "Fri, 10 Jul 2026 05:56:03 GMT",
+          "summary": "- \u8981\u7d04: AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e\u3067\u306f\u3001\u5e02\u5834\u5168\u4f53\u306e\u5024\u52d5\u304d\u3001\u534a\u5c0e\u4f53\u30fbAI\u304c\u4e3b\u306a\u8ad6\u70b9\u3002\u53c2\u7167\u898b\u51fa\u3057\u306f \u300c[SK Hynix vs. Micron] In-Depth Comparison! Top AI Memory Suppliers \u2013 '20 Japanese & U.S. Stocks' Set to Benefit Significantly from Manufacturing Equipment Demand?\u300d / \u300cApplied Materials CEO says AI investment splurge might extend longer than expected\u300d / \u300cWall Street Thinks AI Is Slowing. Wall Street Is Wrong\u300d\u3002\n- \u95a2\u4fc2: \u95a2\u9023\u9298\u67c4\u306f AMAT, COHR, INFQ, MU, QBTS, RGTI\u3002\u4fdd\u6709\u30fb\u76e3\u8996\u9298\u67c4\u306e\u500b\u5225\u6750\u6599\u3068\u3044\u3046\u3088\u308a\u3001\u540c\u3058\u30c6\u30fc\u30de\u5185\u306e\u5730\u5408\u3044\u3068\u8cc7\u91d1\u306e\u5411\u304d\u3092\u898b\u308b\u53c2\u8003\u6750\u6599\u3002\n- \u6ce8\u610f\u70b9: RSS\u898b\u51fa\u3057\u3068\u77ed\u3044\u8aac\u660e\u304b\u3089\u4f5c\u3063\u305f\u672a\u691c\u8a3c\u30e1\u30e2\u3002\u58f2\u8cb7\u5224\u65ad\u3067\u306f\u3001\u500b\u5225\u9298\u67c4\u306e\u6c7a\u7b97\u3001\u30ac\u30a4\u30c0\u30f3\u30b9\u3001\u4fa1\u683c\u3001\u51fa\u6765\u9ad8\u3067\u518d\u78ba\u8a8d\u3059\u308b\u3002",
+          "key_point": "- \u8981\u7d04: AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e\u3067\u306f\u3001\u5e02\u5834\u5168\u4f53\u306e\u5024\u52d5\u304d\u3001\u534a\u5c0e\u4f53\u30fbAI\u304c\u4e3b\u306a\u8ad6\u70b9\u3002\u53c2\u7167\u898b\u51fa\u3057\u306f \u300c[SK Hynix vs. Micron] In-Depth Comparison! Top AI Memory Suppliers \u2013 '20 Japanese & U.S. Stocks' Set to Benefit Significantly from Manufacturing Equipment Demand?\u300d / \u300cApplied Materials CEO says AI investment splurge might extend longer than expected\u300d / \u300cWall Street Thinks AI Is Slowing. Wall Street Is Wrong\u300d\u3002\n- \u95a2\u4fc2: \u95a2\u9023\u9298\u67c4\u306f AMAT, COHR, INFQ, MU, QBTS, RGTI\u3002\u4fdd\u6709\u30fb\u76e3\u8996\u9298\u67c4\u306e\u500b\u5225\u6750\u6599\u3068\u3044\u3046\u3088\u308a\u3001\u540c\u3058\u30c6\u30fc\u30de\u5185\u306e\u5730\u5408\u3044\u3068\u8cc7\u91d1\u306e\u5411\u304d\u3092\u898b\u308b\u53c2\u8003\u6750\u6599\u3002\n- \u6ce8\u610f\u70b9: RSS\u898b\u51fa\u3057\u3068\u77ed\u3044\u8aac\u660e\u304b\u3089\u4f5c\u3063\u305f\u672a\u691c\u8a3c\u30e1\u30e2\u3002\u58f2\u8cb7\u5224\u65ad\u3067\u306f\u3001\u500b\u5225\u9298\u67c4\u306e\u6c7a\u7b97\u3001\u30ac\u30a4\u30c0\u30f3\u30b9\u3001\u4fa1\u683c\u3001\u51fa\u6765\u9ad8\u3067\u518d\u78ba\u8a8d\u3059\u308b\u3002",
+          "source_articles": [
+            {
+              "title": "[SK Hynix vs. Micron] In-Depth Comparison! Top AI Memory Suppliers \u2013 '20 Japanese & U.S. Stocks' Set to Benefit Significantly from Manufacturing Equipment Demand? - Moomoo",
+              "source": "Moomoo",
+              "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPR2lNNDJ4dGx2bXk5MFQ3czNmSTFrTU5mNHNfSmVnOXBaclR1cXVzc05ITy1MM1FtRUNtbVBCcmE0SlZEV0dWX3ZSQ2pGQXBrWVhvVTIxbVRwUG1sYmY0UnZjdlhvVjZBZkJza19zdGpWM2hSbms5aDRzMlZYSEdNaXNSMTc3WG4wS3ZLcWJ2SDBjdFlnMWYyNGVncmFXcVR4VGo2bkNqcW1aS0ZGbVhVXzdGUko2NTg?oc=5",
+              "published_at": "Fri, 10 Jul 2026 05:56:03 GMT",
+              "summary": "[SK Hynix vs. Micron] In-Depth Comparison! Top AI Memory Suppliers \u2013 '20 Japanese & U.S. Stocks' Set to Benefit Significantly from Manufacturing Equipment Demand? Moomoo"
+            },
+            {
+              "title": "Applied Materials CEO says AI investment splurge might extend longer than expected - Seeking Alpha",
+              "source": "Seeking Alpha",
+              "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNSmpnMjlyTXMtaDRjcU1OTFM5ck4zWnR1MGpGUjZQdkl0RUIxZXBUNUxIczRWbUVRYk9UbENIR29jZHFFNVdnM1JfeV8tNEZVMGJCWHhRbGszaHpaVXZGRG5QWmU3NUdTcTVrM2FDZTY4T1N1TmJnNnBGeU9yd2xOS2hhQTdBWkhhdjJuc2JWamMxZmNlaGcyR3FJVW1hTWVBM0kxclFrT2dlWkNTWms4cVowS1gzOWt0VGpWUA?oc=5",
+              "published_at": "Thu, 09 Jul 2026 16:05:06 GMT",
+              "summary": "Applied Materials CEO says AI investment splurge might extend longer than expected Seeking Alpha"
+            },
+            {
+              "title": "Wall Street Thinks AI Is Slowing. Wall Street Is Wrong - 24/7 Wall St.",
+              "source": "24/7 Wall St.",
+              "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNTU53NVh4djZvTlk2YThwYlZwRDI5MU5uWmE1LXlpOHhVVlZ0SHk1ZWNkb1VhT0lKZ054ZVZUVF9NVFVEb1hpR1VDUzR4bEMzeUE2bERiMTJrRnNlVlc5aUlBNTRvOUVzdGM2ZmNjZmY1UkRGTmZFTjFZcHhPUW82aFpGcmp1dVRFVUw0UmN5Q19YVVczMXZ6S25VSXVkdw?oc=5",
+              "published_at": "Wed, 08 Jul 2026 15:34:14 GMT",
+              "summary": "Wall Street Thinks AI Is Slowing. Wall Street Is Wrong 24/7 Wall St."
+            },
+            {
+              "title": "These 5 Chip Stocks Are Riding the AI Fab Spending Wave - AOL.com",
+              "source": "AOL.com",
+              "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1UcFNYNWQweE9KR2JSOVpBQWZmSEFSSEZyd0RmTmZ3S1IyRzNiMmdRRlA1UFIxUGVON2c5Yk1ZTnFBaGZMdEhVYUpjMjByYmtIUXVRMjFiZmQzamJCZTBqanlLaUtlZm45ZGNqZnhuWmN1OVhIUVE?oc=5",
+              "published_at": "Sat, 11 Jul 2026 12:00:45 GMT",
+              "summary": "These 5 Chip Stocks Are Riding the AI Fab Spending Wave AOL.com"
+            },
+            {
+              "title": "Lam Research Corp Stock (LRCX) Moved Down by 7.54% on Jul 7: What Signal Does It Send? - TradingKey",
+              "source": "TradingKey",
+              "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNSGg5djFqb0dLNWFPYk1yTzNEaWd5ZnE0MmloY25pUWcwbEZNUnBUY0szYTh2alNESTdfcEJQODhHeWN2TURmcDBvYTFZbU1VbVNFaC1rVjBpMk53elptRXZ0QzEtaE83c08zdVNwcnNWYTZ1ck1Sa1dYUlF4WGxRcThTV1kyNWhEbjY0?oc=5",
+              "published_at": "Tue, 07 Jul 2026 16:15:13 GMT",
+              "summary": "Lam Research Corp Stock (LRCX) Moved Down by 7.54% on Jul 7: What Signal Does It Send? TradingKey"
+            }
+          ],
+          "relevance_score": 2.0,
+          "theme": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e",
+          "tickers": [
+            "AMAT",
+            "COHR",
+            "INFQ",
+            "MU",
+            "QBTS",
+            "RGTI",
+            "TSM"
+          ]
+        }
+      ],
+      "source_stats": [
+        {
+          "value": "SMH",
+          "label": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e",
+          "status": "active",
+          "priority": 109,
+          "hit_count": 16,
+          "selected_count": 18,
+          "miss_streak": 0,
+          "last_seen_at": "2026-07-12T05:07:43.506759"
+        },
+        {
+          "value": "XLI",
+          "label": "AI\u30c7\u30fc\u30bf\u30bb\u30f3\u30bf\u30fc\u96fb\u529b\u30fb\u51b7\u5374\u30a4\u30f3\u30d5\u30e9",
+          "status": "active",
+          "priority": 93,
+          "hit_count": 6,
+          "selected_count": 6,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-12T11:42:44.411880"
+        },
+        {
+          "value": "IGV",
+          "label": "\u30af\u30e9\u30a6\u30c9\u30fb\u30a8\u30f3\u30bf\u30fc\u30d7\u30e9\u30a4\u30ba\u30bd\u30d5\u30c8\u30a6\u30a7\u30a2",
+          "status": "active",
+          "priority": 82,
+          "hit_count": 9,
+          "selected_count": 11,
+          "miss_streak": 0,
+          "last_seen_at": "2026-07-12T05:07:45.224767"
+        },
+        {
+          "value": "SPY",
+          "label": "US broad market",
+          "status": "candidate",
+          "priority": 100,
+          "hit_count": 1,
+          "selected_count": 2,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-06T09:22:33.544666"
+        },
+        {
+          "value": "QQQ",
+          "label": "Nasdaq / growth",
+          "status": "candidate",
+          "priority": 95,
+          "hit_count": 1,
+          "selected_count": 2,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-06T09:22:33.740347"
+        },
+        {
+          "value": "XLK",
+          "label": "technology",
+          "status": "candidate",
+          "priority": 80,
+          "hit_count": 1,
+          "selected_count": 1,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-06T09:22:34.164153"
+        },
+        {
+          "value": "XLF",
+          "label": "financials",
+          "status": "candidate",
+          "priority": 65,
+          "hit_count": 1,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-06T09:22:34.550934"
+        },
+        {
+          "value": "IBB",
+          "label": "biotech / healthcare",
+          "status": "candidate",
+          "priority": 60,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        },
+        {
+          "value": "XLE",
+          "label": "energy",
+          "status": "candidate",
+          "priority": 60,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        },
+        {
+          "value": "XLY",
+          "label": "consumer discretionary",
+          "status": "candidate",
+          "priority": 55,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        },
+        {
+          "value": "ITA",
+          "label": "defense / aerospace",
+          "status": "candidate",
+          "priority": 50,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        },
+        {
+          "value": "ARKK",
+          "label": "disruptive growth",
+          "status": "candidate",
+          "priority": 45,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        }
+      ]
+    }
+  },
+  {
+    "date": "2026-07-12",
+    "position_count": 3,
+    "alert_count": 2,
+    "high_alert_count": 1,
+    "positions": [
+      {
+        "ticker": "SMTC",
+        "shares": 1.0,
+        "entry_price": 162.5,
+        "current_price": 136.1300048828125,
+        "target_price": "191.26",
+        "stop_loss": "148.12",
+        "pnl_pct": -16.23,
+        "change_pct": -1.36,
+        "note": "20\u4e07\u5186\u67a0\u3002\u53d6\u5f97\u65e5: 2026-06-23\u3002Decision 2026-06-23\u63a1\u7528\u3002SMTC score 7.15 / \u78ba\u4fe1\u5ea6LOW-MEDIUM\u3002\u6307\u5024$175\u3001\u8b72\u6e21\u91d1\u984d29,743\u5186\u30011\u682a\u3002RS\u5f37\u3044\u304cMACD hist\u30de\u30a4\u30ca\u30b9\u30fbDebt/Equity\u9ad8\u3081\u306e\u305f\u3081\u8a66\u3057\u7389\u3002 | \u30102026-06-25 \u4fee\u6b63\u3011\u8cb7\u5024\u3092$162.50\u306b\u8a02\u6b63\uff08\u30e6\u30fc\u30b6\u30fc\u7533\u544a\uff09 | \u30102026-06-25 STOP\u518d\u8a2d\u5b9a\u3011\u8cb7\u5024\u4fee\u6b63\u306b\u4f34\u3044ATR1x\u57fa\u6e96\u3078\u518d\u8a2d\u5b9a: stop $148.12 / target $191.26"
+      },
+      {
+        "ticker": "FOUR",
+        "shares": 2.0,
+        "entry_price": 43.51,
+        "current_price": 50.810001373291016,
+        "target_price": null,
+        "stop_loss": "48.44",
+        "pnl_pct": 16.78,
+        "change_pct": 4.19,
+        "note": "20\u4e07\u5186\u67a0\u3002\u30e6\u30fc\u30b6\u30fc\u7533\u544a\u306b\u3088\u308b\u624b\u52d5\u53cd\u6620\u3002 | \u30102026-07-03 STAGE1\u3011$51.35\u306725%\u5229\u78ba\u6761\u4ef6\u5230\u9054\u3002\u305f\u3060\u30572\u682a\u4fdd\u6709\u306e\u305f\u3081\u58f2\u5374\u682a\u65700\u3002\u30b9\u30c8\u30c3\u30d7\u2192\u8cb7\u5024$43.51 | \u30102026-07-03 STAGE2\u3011$51.35\u3067\u8ffd\u52a025%\u5229\u78ba\u6761\u4ef6\u5230\u9054\u3002\u305f\u3060\u30572\u682a\u4fdd\u6709\u306e\u305f\u3081\u58f2\u5374\u682a\u65700\u3002ATR\u00d71.0\u30c8\u30ec\u30fc\u30ea\u30f3\u30b0\u76f8\u5f53: stop $48.44"
+      },
+      {
+        "ticker": "TSM",
+        "shares": 1.0,
+        "entry_price": 441.0,
+        "current_price": 434.1099853515625,
+        "target_price": null,
+        "stop_loss": null,
+        "pnl_pct": -1.56,
+        "change_pct": -1.2,
+        "note": "20\u4e07\u5186\u67a0\u3002\u30e6\u30fc\u30b6\u30fc\u7533\u544a\u306b\u3088\u308b\u624b\u52d5\u53cd\u6620\u3002"
+      }
+    ],
+    "alerts": [
+      {
+        "date": "2026-07-12",
+        "ticker": "SMTC",
+        "alert_type": "STOP_BREACH",
+        "severity": "HIGH",
+        "message": "Price $136.13 hit stop loss $148.12",
+        "current_price": 136.1300048828125,
+        "entry_price": 162.5,
+        "unrealized_pnl_pct": -16.23,
+        "stop_loss": 148.12,
+        "target_price": 191.26,
+        "trailing_stop_price": null
+      },
+      {
+        "date": "2026-07-12",
+        "ticker": "SMTC",
+        "alert_type": "DOWN_5PCT",
+        "severity": "MEDIUM",
+        "message": "Unrealized loss -16.2%",
+        "current_price": 136.1300048828125,
+        "entry_price": 162.5,
+        "unrealized_pnl_pct": -16.23,
+        "stop_loss": 148.12,
+        "target_price": 191.26,
+        "trailing_stop_price": null
+      }
+    ],
+    "market_news": {
+      "date": "2026-07-12",
+      "db_path": "data/market_news.sqlite",
+      "disclaimer": "\u53c2\u8003\u30cb\u30e5\u30fc\u30b9\u3002\u672a\u691c\u8a3c\u306e\u305f\u3081\u30d5\u30a1\u30af\u30c8\u6271\u3044\u3057\u306a\u3044\u3002",
+      "collection_limits": {
+        "theme_limit": 3,
+        "active_sources": 3,
+        "candidate_probe_sources": 1,
+        "items_per_source": 2,
+        "report_items": 4
+      },
+      "themes": [
+        {
+          "key": "ai_semiconductors",
+          "label": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e",
+          "query": "AI semiconductors, HBM memory, wafer fab equipment, Nvidia, Micron, Applied Materials, Lam Research market news",
+          "tickers": [
+            "AMAT",
+            "COHR",
+            "MU",
+            "RGTI",
+            "TSM"
+          ],
+          "fallback_etf": "SMH",
+          "priority": 107
+        },
+        {
+          "key": "cloud_enterprise_software",
+          "label": "\u30af\u30e9\u30a6\u30c9\u30fb\u30a8\u30f3\u30bf\u30fc\u30d7\u30e9\u30a4\u30ba\u30bd\u30d5\u30c8\u30a6\u30a7\u30a2",
+          "query": "enterprise software SaaS cloud stocks Atlassian software spending market news",
+          "tickers": [
+            "CCC",
+            "FIG",
+            "ORCL"
+          ],
+          "fallback_etf": "IGV",
+          "priority": 83
+        }
+      ],
+      "items": [
+        {
+          "source": "SMH",
+          "source_label": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e",
+          "title": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e\u306e\u95a2\u9023\u30cb\u30e5\u30fc\u30b9\u30e1\u30e2",
+          "publisher": "Google News RSS",
+          "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPR2lNNDJ4dGx2bXk5MFQ3czNmSTFrTU5mNHNfSmVnOXBaclR1cXVzc05ITy1MM1FtRUNtbVBCcmE0SlZEV0dWX3ZSQ2pGQXBrWVhvVTIxbVRwUG1sYmY0UnZjdlhvVjZBZkJza19zdGpWM2hSbms5aDRzMlZYSEdNaXNSMTc3WG4wS3ZLcWJ2SDBjdFlnMWYyNGVncmFXcVR4VGo2bkNqcW1aS0ZGbVhVXzdGUko2NTg?oc=5",
+          "domain": "news.google.com",
+          "published_at": "Fri, 10 Jul 2026 05:56:03 GMT",
+          "summary": "- \u8981\u7d04: AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e\u3067\u306f\u3001\u5e02\u5834\u5168\u4f53\u306e\u5024\u52d5\u304d\u3001\u534a\u5c0e\u4f53\u30fbAI\u304c\u4e3b\u306a\u8ad6\u70b9\u3002\u53c2\u7167\u898b\u51fa\u3057\u306f \u300c[SK Hynix vs. Micron] In-Depth Comparison! Top AI Memory Suppliers \u2013 '20 Japanese & U.S. Stocks' Set to Benefit Significantly from Manufacturing Equipment Demand?\u300d / \u300cApplied Materials CEO says AI investment splurge might extend longer than expected\u300d / \u300cWall Street Thinks AI Is Slowing. Wall Street Is Wrong\u300d\u3002\n- \u95a2\u4fc2: \u95a2\u9023\u9298\u67c4\u306f AMAT, COHR, MU, RGTI, TSM\u3002\u4fdd\u6709\u30fb\u76e3\u8996\u9298\u67c4\u306e\u500b\u5225\u6750\u6599\u3068\u3044\u3046\u3088\u308a\u3001\u540c\u3058\u30c6\u30fc\u30de\u5185\u306e\u5730\u5408\u3044\u3068\u8cc7\u91d1\u306e\u5411\u304d\u3092\u898b\u308b\u53c2\u8003\u6750\u6599\u3002\n- \u6ce8\u610f\u70b9: RSS\u898b\u51fa\u3057\u3068\u77ed\u3044\u8aac\u660e\u304b\u3089\u4f5c\u3063\u305f\u672a\u691c\u8a3c\u30e1\u30e2\u3002\u58f2\u8cb7\u5224\u65ad\u3067\u306f\u3001\u500b\u5225\u9298\u67c4\u306e\u6c7a\u7b97\u3001\u30ac\u30a4\u30c0\u30f3\u30b9\u3001\u4fa1\u683c\u3001\u51fa\u6765\u9ad8\u3067\u518d\u78ba\u8a8d\u3059\u308b\u3002",
+          "key_point": "- \u8981\u7d04: AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e\u3067\u306f\u3001\u5e02\u5834\u5168\u4f53\u306e\u5024\u52d5\u304d\u3001\u534a\u5c0e\u4f53\u30fbAI\u304c\u4e3b\u306a\u8ad6\u70b9\u3002\u53c2\u7167\u898b\u51fa\u3057\u306f \u300c[SK Hynix vs. Micron] In-Depth Comparison! Top AI Memory Suppliers \u2013 '20 Japanese & U.S. Stocks' Set to Benefit Significantly from Manufacturing Equipment Demand?\u300d / \u300cApplied Materials CEO says AI investment splurge might extend longer than expected\u300d / \u300cWall Street Thinks AI Is Slowing. Wall Street Is Wrong\u300d\u3002\n- \u95a2\u4fc2: \u95a2\u9023\u9298\u67c4\u306f AMAT, COHR, MU, RGTI, TSM\u3002\u4fdd\u6709\u30fb\u76e3\u8996\u9298\u67c4\u306e\u500b\u5225\u6750\u6599\u3068\u3044\u3046\u3088\u308a\u3001\u540c\u3058\u30c6\u30fc\u30de\u5185\u306e\u5730\u5408\u3044\u3068\u8cc7\u91d1\u306e\u5411\u304d\u3092\u898b\u308b\u53c2\u8003\u6750\u6599\u3002\n- \u6ce8\u610f\u70b9: RSS\u898b\u51fa\u3057\u3068\u77ed\u3044\u8aac\u660e\u304b\u3089\u4f5c\u3063\u305f\u672a\u691c\u8a3c\u30e1\u30e2\u3002\u58f2\u8cb7\u5224\u65ad\u3067\u306f\u3001\u500b\u5225\u9298\u67c4\u306e\u6c7a\u7b97\u3001\u30ac\u30a4\u30c0\u30f3\u30b9\u3001\u4fa1\u683c\u3001\u51fa\u6765\u9ad8\u3067\u518d\u78ba\u8a8d\u3059\u308b\u3002",
+          "source_articles": [
+            {
+              "title": "[SK Hynix vs. Micron] In-Depth Comparison! Top AI Memory Suppliers \u2013 '20 Japanese & U.S. Stocks' Set to Benefit Significantly from Manufacturing Equipment Demand? - Moomoo",
+              "source": "Moomoo",
+              "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPR2lNNDJ4dGx2bXk5MFQ3czNmSTFrTU5mNHNfSmVnOXBaclR1cXVzc05ITy1MM1FtRUNtbVBCcmE0SlZEV0dWX3ZSQ2pGQXBrWVhvVTIxbVRwUG1sYmY0UnZjdlhvVjZBZkJza19zdGpWM2hSbms5aDRzMlZYSEdNaXNSMTc3WG4wS3ZLcWJ2SDBjdFlnMWYyNGVncmFXcVR4VGo2bkNqcW1aS0ZGbVhVXzdGUko2NTg?oc=5",
+              "published_at": "Fri, 10 Jul 2026 05:56:03 GMT",
+              "summary": "[SK Hynix vs. Micron] In-Depth Comparison! Top AI Memory Suppliers \u2013 '20 Japanese & U.S. Stocks' Set to Benefit Significantly from Manufacturing Equipment Demand? Moomoo"
+            },
+            {
+              "title": "Applied Materials CEO says AI investment splurge might extend longer than expected - Seeking Alpha",
+              "source": "Seeking Alpha",
+              "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNSmpnMjlyTXMtaDRjcU1OTFM5ck4zWnR1MGpGUjZQdkl0RUIxZXBUNUxIczRWbUVRYk9UbENIR29jZHFFNVdnM1JfeV8tNEZVMGJCWHhRbGszaHpaVXZGRG5QWmU3NUdTcTVrM2FDZTY4T1N1TmJnNnBGeU9yd2xOS2hhQTdBWkhhdjJuc2JWamMxZmNlaGcyR3FJVW1hTWVBM0kxclFrT2dlWkNTWms4cVowS1gzOWt0VGpWUA?oc=5",
+              "published_at": "Thu, 09 Jul 2026 16:05:06 GMT",
+              "summary": "Applied Materials CEO says AI investment splurge might extend longer than expected Seeking Alpha"
+            },
+            {
+              "title": "Wall Street Thinks AI Is Slowing. Wall Street Is Wrong - 24/7 Wall St.",
+              "source": "24/7 Wall St.",
+              "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNTU53NVh4djZvTlk2YThwYlZwRDI5MU5uWmE1LXlpOHhVVlZ0SHk1ZWNkb1VhT0lKZ054ZVZUVF9NVFVEb1hpR1VDUzR4bEMzeUE2bERiMTJrRnNlVlc5aUlBNTRvOUVzdGM2ZmNjZmY1UkRGTmZFTjFZcHhPUW82aFpGcmp1dVRFVUw0UmN5Q19YVVczMXZ6S25VSXVkdw?oc=5",
+              "published_at": "Wed, 08 Jul 2026 15:34:14 GMT",
+              "summary": "Wall Street Thinks AI Is Slowing. Wall Street Is Wrong 24/7 Wall St."
+            },
+            {
+              "title": "These 5 Chip Stocks Are Riding the AI Fab Spending Wave - AOL.com",
+              "source": "AOL.com",
+              "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1UcFNYNWQweE9KR2JSOVpBQWZmSEFSSEZyd0RmTmZ3S1IyRzNiMmdRRlA1UFIxUGVON2c5Yk1ZTnFBaGZMdEhVYUpjMjByYmtIUXVRMjFiZmQzamJCZTBqanlLaUtlZm45ZGNqZnhuWmN1OVhIUVE?oc=5",
+              "published_at": "Sat, 11 Jul 2026 12:00:45 GMT",
+              "summary": "These 5 Chip Stocks Are Riding the AI Fab Spending Wave AOL.com"
+            },
+            {
+              "title": "Lam Research Corp Stock (LRCX) Moved Down by 7.54% on Jul 7: What Signal Does It Send? - TradingKey",
+              "source": "TradingKey",
+              "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNSGg5djFqb0dLNWFPYk1yTzNEaWd5ZnE0MmloY25pUWcwbEZNUnBUY0szYTh2alNESTdfcEJQODhHeWN2TURmcDBvYTFZbU1VbVNFaC1rVjBpMk53elptRXZ0QzEtaE83c08zdVNwcnNWYTZ1ck1Sa1dYUlF4WGxRcThTV1kyNWhEbjY0?oc=5",
+              "published_at": "Tue, 07 Jul 2026 16:15:13 GMT",
+              "summary": "Lam Research Corp Stock (LRCX) Moved Down by 7.54% on Jul 7: What Signal Does It Send? TradingKey"
+            }
+          ],
+          "relevance_score": 2.0,
+          "theme": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e",
+          "tickers": [
+            "AMAT",
+            "COHR",
+            "MU",
+            "RGTI",
+            "TSM"
+          ]
+        },
+        {
+          "source": "IGV",
+          "source_label": "\u30af\u30e9\u30a6\u30c9\u30fb\u30a8\u30f3\u30bf\u30fc\u30d7\u30e9\u30a4\u30ba\u30bd\u30d5\u30c8\u30a6\u30a7\u30a2",
+          "title": "CCC: This Software Stock Jumps on Sale Report and Analysts See a Premium Acquisition Price",
+          "publisher": "Barrons.com",
+          "url": "https://www.barrons.com/articles/ccc-intelligent-software-ai-sale-report-eaac5f7e?siteid=yhoof2&yptr=yahoo",
+          "domain": "www.barrons.com",
+          "published_at": "2026-07-10T14:31:00Z",
+          "summary": "Shares of CCC Intelligent Solutions jumped Friday following a report that said the software provider was mulling a potential sale. The stock rose 6.4% to $5.73 on Friday after Reuters reported late Thursday that CCC Inte",
+          "key_point": "CCC / \u30c6\u30c3\u30af\u682a / \u4e3b\u306a\u6570\u5b57: 6.4%\u3001$5.73\u306b\u95a2\u3059\u308b\u8a18\u4e8b\u3002",
+          "source_articles": [],
+          "relevance_score": 2.0,
+          "theme": "\u30af\u30e9\u30a6\u30c9\u30fb\u30a8\u30f3\u30bf\u30fc\u30d7\u30e9\u30a4\u30ba\u30bd\u30d5\u30c8\u30a6\u30a7\u30a2",
+          "tickers": [
+            "CCC",
+            "FIG",
+            "ORCL"
+          ]
+        },
+        {
+          "source": "IGV",
+          "source_label": "\u30af\u30e9\u30a6\u30c9\u30fb\u30a8\u30f3\u30bf\u30fc\u30d7\u30e9\u30a4\u30ba\u30bd\u30d5\u30c8\u30a6\u30a7\u30a2",
+          "title": "CCC: CCC Intelligent Solutions Jumps on Report of Potential Sale Process (CCC)",
+          "publisher": "InvestorsHub",
+          "url": "https://investorshub.advfn.com/market-news/article/31631/ccc-intelligent-solutions-jumps-on-report-of-potential-sale-process-ccc",
+          "domain": "investorshub.advfn.com",
+          "published_at": "2026-07-10T10:18:43Z",
+          "summary": "CCC Intelligent Solutions Holdings Inc (NASDAQ:CCC) surged about 15% in premarket trading after a Reuters report said the software company is exploring strategic alternatives, including a possible sale. According to sour",
+          "key_point": "Nasdaq/CCC / \u91d1\u5229\u30fbFed\u30fb\u5e02\u5834\u5168\u4f53\u306e\u5024\u52d5\u304d\u30fb\u30c6\u30c3\u30af\u682a / \u4e3b\u306a\u6570\u5b57: 15%\u306b\u95a2\u3059\u308b\u8a18\u4e8b\u3002",
+          "source_articles": [],
+          "relevance_score": 2.0,
+          "theme": "\u30af\u30e9\u30a6\u30c9\u30fb\u30a8\u30f3\u30bf\u30fc\u30d7\u30e9\u30a4\u30ba\u30bd\u30d5\u30c8\u30a6\u30a7\u30a2",
+          "tickers": [
+            "CCC",
+            "FIG",
+            "ORCL"
+          ]
+        }
+      ],
+      "source_stats": [
+        {
+          "value": "SMH",
+          "label": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e",
+          "status": "active",
+          "priority": 107,
+          "hit_count": 17,
+          "selected_count": 19,
+          "miss_streak": 0,
+          "last_seen_at": "2026-07-12T05:43:03.447072"
+        },
+        {
+          "value": "XLI",
+          "label": "AI\u30c7\u30fc\u30bf\u30bb\u30f3\u30bf\u30fc\u96fb\u529b\u30fb\u51b7\u5374\u30a4\u30f3\u30d5\u30e9",
+          "status": "active",
+          "priority": 93,
+          "hit_count": 6,
+          "selected_count": 6,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-12T11:42:44.411880"
+        },
+        {
+          "value": "IGV",
+          "label": "\u30af\u30e9\u30a6\u30c9\u30fb\u30a8\u30f3\u30bf\u30fc\u30d7\u30e9\u30a4\u30ba\u30bd\u30d5\u30c8\u30a6\u30a7\u30a2",
+          "status": "active",
+          "priority": 83,
+          "hit_count": 10,
+          "selected_count": 13,
+          "miss_streak": 0,
+          "last_seen_at": "2026-07-12T05:43:04.063330"
+        },
+        {
+          "value": "SPY",
+          "label": "US broad market",
+          "status": "candidate",
+          "priority": 100,
+          "hit_count": 1,
+          "selected_count": 2,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-06T09:22:33.544666"
+        },
+        {
+          "value": "QQQ",
+          "label": "Nasdaq / growth",
+          "status": "candidate",
+          "priority": 95,
+          "hit_count": 1,
+          "selected_count": 2,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-06T09:22:33.740347"
+        },
+        {
+          "value": "XLK",
+          "label": "technology",
+          "status": "candidate",
+          "priority": 80,
+          "hit_count": 1,
+          "selected_count": 1,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-06T09:22:34.164153"
+        },
+        {
+          "value": "XLF",
+          "label": "financials",
+          "status": "candidate",
+          "priority": 65,
+          "hit_count": 1,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-06T09:22:34.550934"
+        },
+        {
+          "value": "IBB",
+          "label": "biotech / healthcare",
+          "status": "candidate",
+          "priority": 60,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        },
+        {
+          "value": "XLE",
+          "label": "energy",
+          "status": "candidate",
+          "priority": 60,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        },
+        {
+          "value": "XLY",
+          "label": "consumer discretionary",
+          "status": "candidate",
+          "priority": 55,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        },
+        {
+          "value": "ITA",
+          "label": "defense / aerospace",
+          "status": "candidate",
+          "priority": 50,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        },
+        {
+          "value": "ARKK",
+          "label": "disruptive growth",
+          "status": "candidate",
+          "priority": 45,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        }
+      ]
+    }
+  },
+  {
+    "date": "2026-07-18",
+    "position_count": 3,
+    "alert_count": 3,
+    "high_alert_count": 1,
+    "positions": [
+      {
+        "ticker": "SMTC",
+        "shares": 1.0,
+        "entry_price": 162.5,
+        "current_price": 124.95999908447266,
+        "target_price": "191.26",
+        "stop_loss": "148.12",
+        "pnl_pct": -23.1,
+        "change_pct": -1.06,
+        "note": "20\u4e07\u5186\u67a0\u3002\u53d6\u5f97\u65e5: 2026-06-23\u3002Decision 2026-06-23\u63a1\u7528\u3002SMTC score 7.15 / \u78ba\u4fe1\u5ea6LOW-MEDIUM\u3002\u6307\u5024$175\u3001\u8b72\u6e21\u91d1\u984d29,743\u5186\u30011\u682a\u3002RS\u5f37\u3044\u304cMACD hist\u30de\u30a4\u30ca\u30b9\u30fbDebt/Equity\u9ad8\u3081\u306e\u305f\u3081\u8a66\u3057\u7389\u3002 | \u30102026-06-25 \u4fee\u6b63\u3011\u8cb7\u5024\u3092$162.50\u306b\u8a02\u6b63\uff08\u30e6\u30fc\u30b6\u30fc\u7533\u544a\uff09 | \u30102026-06-25 STOP\u518d\u8a2d\u5b9a\u3011\u8cb7\u5024\u4fee\u6b63\u306b\u4f34\u3044ATR1x\u57fa\u6e96\u3078\u518d\u8a2d\u5b9a: stop $148.12 / target $191.26"
+      },
+      {
+        "ticker": "FOUR",
+        "shares": 2.0,
+        "entry_price": 43.51,
+        "current_price": 50.310001373291016,
+        "target_price": null,
+        "stop_loss": "48.44",
+        "pnl_pct": 15.63,
+        "change_pct": -1.74,
+        "note": "20\u4e07\u5186\u67a0\u3002\u30e6\u30fc\u30b6\u30fc\u7533\u544a\u306b\u3088\u308b\u624b\u52d5\u53cd\u6620\u3002 | \u30102026-07-03 STAGE1\u3011$51.35\u306725%\u5229\u78ba\u6761\u4ef6\u5230\u9054\u3002\u305f\u3060\u30572\u682a\u4fdd\u6709\u306e\u305f\u3081\u58f2\u5374\u682a\u65700\u3002\u30b9\u30c8\u30c3\u30d7\u2192\u8cb7\u5024$43.51 | \u30102026-07-03 STAGE2\u3011$51.35\u3067\u8ffd\u52a025%\u5229\u78ba\u6761\u4ef6\u5230\u9054\u3002\u305f\u3060\u30572\u682a\u4fdd\u6709\u306e\u305f\u3081\u58f2\u5374\u682a\u65700\u3002ATR\u00d71.0\u30c8\u30ec\u30fc\u30ea\u30f3\u30b0\u76f8\u5f53: stop $48.44"
+      },
+      {
+        "ticker": "TSM",
+        "shares": 1.0,
+        "entry_price": 441.0,
+        "current_price": 398.3699951171875,
+        "target_price": null,
+        "stop_loss": null,
+        "pnl_pct": -9.67,
+        "change_pct": -1.96,
+        "note": "20\u4e07\u5186\u67a0\u3002\u30e6\u30fc\u30b6\u30fc\u7533\u544a\u306b\u3088\u308b\u624b\u52d5\u53cd\u6620\u3002"
+      }
+    ],
+    "alerts": [
+      {
+        "date": "2026-07-18",
+        "ticker": "SMTC",
+        "alert_type": "STOP_BREACH",
+        "severity": "HIGH",
+        "message": "Price $124.96 hit stop loss $148.12",
+        "current_price": 124.95999908447266,
+        "entry_price": 162.5,
+        "unrealized_pnl_pct": -23.1,
+        "stop_loss": 148.12,
+        "target_price": 191.26,
+        "trailing_stop_price": null
+      },
+      {
+        "date": "2026-07-18",
+        "ticker": "SMTC",
+        "alert_type": "DOWN_5PCT",
+        "severity": "MEDIUM",
+        "message": "Unrealized loss -23.1%",
+        "current_price": 124.95999908447266,
+        "entry_price": 162.5,
+        "unrealized_pnl_pct": -23.1,
+        "stop_loss": 148.12,
+        "target_price": 191.26,
+        "trailing_stop_price": null
+      },
+      {
+        "date": "2026-07-18",
+        "ticker": "TSM",
+        "alert_type": "DOWN_5PCT",
+        "severity": "MEDIUM",
+        "message": "Unrealized loss -9.7%",
+        "current_price": 398.3699951171875,
+        "entry_price": 441.0,
+        "unrealized_pnl_pct": -9.67,
+        "stop_loss": null,
+        "target_price": null,
+        "trailing_stop_price": null
+      }
+    ],
+    "market_news": {
+      "date": "2026-07-18",
+      "db_path": "data/market_news.sqlite",
+      "disclaimer": "\u53c2\u8003\u30cb\u30e5\u30fc\u30b9\u3002\u672a\u691c\u8a3c\u306e\u305f\u3081\u30d5\u30a1\u30af\u30c8\u6271\u3044\u3057\u306a\u3044\u3002",
+      "collection_limits": {
+        "theme_limit": 3,
+        "active_sources": 3,
+        "candidate_probe_sources": 1,
+        "items_per_source": 2,
+        "report_items": 4
+      },
+      "themes": [
+        {
+          "key": "ai_semiconductors",
+          "label": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e",
+          "query": "AI semiconductors, HBM memory, wafer fab equipment, Nvidia, Micron, Applied Materials, Lam Research market news",
+          "tickers": [
+            "AMAT",
+            "COHR",
+            "MU",
+            "RGTI",
+            "TSM"
+          ],
+          "fallback_etf": "SMH",
+          "priority": 107
+        },
+        {
+          "key": "cloud_enterprise_software",
+          "label": "\u30af\u30e9\u30a6\u30c9\u30fb\u30a8\u30f3\u30bf\u30fc\u30d7\u30e9\u30a4\u30ba\u30bd\u30d5\u30c8\u30a6\u30a7\u30a2",
+          "query": "enterprise software SaaS cloud stocks Atlassian software spending market news",
+          "tickers": [
+            "CCC",
+            "FIG",
+            "ORCL"
+          ],
+          "fallback_etf": "IGV",
+          "priority": 83
+        }
+      ],
+      "items": [
+        {
+          "source": "SMH",
+          "source_label": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e",
+          "title": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e\u306e\u95a2\u9023\u30cb\u30e5\u30fc\u30b9\u30e1\u30e2",
+          "publisher": "Google News RSS",
+          "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOSkNuRVd6UkQzb2F3WEdxaEFHemtCQklXV2psNmZoT2ZwTW5NVDNxMTV6cjVWZEx0SEttN293SzBEbkNVNnVLVS1SQjN5RTZpWFFQVVd2M3NZcVU1aTdiRUhvNm12SFBSM2JIdl9sUENUcFFGelB2TDdTbnhWcGx6SmJNaTNtdmNQX2o0ekdZTUduTzZZNWFlbkVNUnZ6N2NxS2Nia3JYZmR1TlE3ZzNoczBLbFVGanQtQmF4cUdLU1pUQQ?oc=5",
+          "domain": "news.google.com",
+          "published_at": "Wed, 15 Jul 2026 20:10:26 GMT",
+          "summary": "- \u8981\u7d04: AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e\u3067\u306f\u3001\u5e02\u5834\u5168\u4f53\u306e\u5024\u52d5\u304d\u3001\u534a\u5c0e\u4f53\u30fbAI\u304c\u4e3b\u306a\u8ad6\u70b9\u3002\u53c2\u7167\u898b\u51fa\u3057\u306f \u300cApplied Materials Vs. KLA Corporation: This AI Infrastructure Play Is A Better Buy\u300d / \u300cThese 5 Chip Stocks Are Riding the AI Fab Spending Wave\u300d / \u300cAfter the AI Sector Pullback, Capital Begins Seeking New Certainty: Could Semiconductor Equipment Stocks Be the Next Major Theme?\u300d\u3002\n- \u95a2\u4fc2: \u95a2\u9023\u9298\u67c4\u306f AMAT, COHR, MU, RGTI, TSM\u3002\u4fdd\u6709\u30fb\u76e3\u8996\u9298\u67c4\u306e\u500b\u5225\u6750\u6599\u3068\u3044\u3046\u3088\u308a\u3001\u540c\u3058\u30c6\u30fc\u30de\u5185\u306e\u5730\u5408\u3044\u3068\u8cc7\u91d1\u306e\u5411\u304d\u3092\u898b\u308b\u53c2\u8003\u6750\u6599\u3002\n- \u6ce8\u610f\u70b9: RSS\u898b\u51fa\u3057\u3068\u77ed\u3044\u8aac\u660e\u304b\u3089\u4f5c\u3063\u305f\u672a\u691c\u8a3c\u30e1\u30e2\u3002\u58f2\u8cb7\u5224\u65ad\u3067\u306f\u3001\u500b\u5225\u9298\u67c4\u306e\u6c7a\u7b97\u3001\u30ac\u30a4\u30c0\u30f3\u30b9\u3001\u4fa1\u683c\u3001\u51fa\u6765\u9ad8\u3067\u518d\u78ba\u8a8d\u3059\u308b\u3002",
+          "key_point": "- \u8981\u7d04: AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e\u3067\u306f\u3001\u5e02\u5834\u5168\u4f53\u306e\u5024\u52d5\u304d\u3001\u534a\u5c0e\u4f53\u30fbAI\u304c\u4e3b\u306a\u8ad6\u70b9\u3002\u53c2\u7167\u898b\u51fa\u3057\u306f \u300cApplied Materials Vs. KLA Corporation: This AI Infrastructure Play Is A Better Buy\u300d / \u300cThese 5 Chip Stocks Are Riding the AI Fab Spending Wave\u300d / \u300cAfter the AI Sector Pullback, Capital Begins Seeking New Certainty: Could Semiconductor Equipment Stocks Be the Next Major Theme?\u300d\u3002\n- \u95a2\u4fc2: \u95a2\u9023\u9298\u67c4\u306f AMAT, COHR, MU, RGTI, TSM\u3002\u4fdd\u6709\u30fb\u76e3\u8996\u9298\u67c4\u306e\u500b\u5225\u6750\u6599\u3068\u3044\u3046\u3088\u308a\u3001\u540c\u3058\u30c6\u30fc\u30de\u5185\u306e\u5730\u5408\u3044\u3068\u8cc7\u91d1\u306e\u5411\u304d\u3092\u898b\u308b\u53c2\u8003\u6750\u6599\u3002\n- \u6ce8\u610f\u70b9: RSS\u898b\u51fa\u3057\u3068\u77ed\u3044\u8aac\u660e\u304b\u3089\u4f5c\u3063\u305f\u672a\u691c\u8a3c\u30e1\u30e2\u3002\u58f2\u8cb7\u5224\u65ad\u3067\u306f\u3001\u500b\u5225\u9298\u67c4\u306e\u6c7a\u7b97\u3001\u30ac\u30a4\u30c0\u30f3\u30b9\u3001\u4fa1\u683c\u3001\u51fa\u6765\u9ad8\u3067\u518d\u78ba\u8a8d\u3059\u308b\u3002",
+          "source_articles": [
+            {
+              "title": "Applied Materials Vs. KLA Corporation: This AI Infrastructure Play Is A Better Buy - 24/7 Wall St.",
+              "source": "24/7 Wall St.",
+              "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOSkNuRVd6UkQzb2F3WEdxaEFHemtCQklXV2psNmZoT2ZwTW5NVDNxMTV6cjVWZEx0SEttN293SzBEbkNVNnVLVS1SQjN5RTZpWFFQVVd2M3NZcVU1aTdiRUhvNm12SFBSM2JIdl9sUENUcFFGelB2TDdTbnhWcGx6SmJNaTNtdmNQX2o0ekdZTUduTzZZNWFlbkVNUnZ6N2NxS2Nia3JYZmR1TlE3ZzNoczBLbFVGanQtQmF4cUdLU1pUQQ?oc=5",
+              "published_at": "Wed, 15 Jul 2026 20:10:26 GMT",
+              "summary": "Applied Materials Vs. KLA Corporation: This AI Infrastructure Play Is A Better Buy 24/7 Wall St."
+            },
+            {
+              "title": "These 5 Chip Stocks Are Riding the AI Fab Spending Wave - AOL.com",
+              "source": "AOL.com",
+              "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1UcFNYNWQweE9KR2JSOVpBQWZmSEFSSEZyd0RmTmZ3S1IyRzNiMmdRRlA1UFIxUGVON2c5Yk1ZTnFBaGZMdEhVYUpjMjByYmtIUXVRMjFiZmQzamJCZTBqanlLaUtlZm45ZGNqZnhuWmN1OVhIUVE?oc=5",
+              "published_at": "Sat, 11 Jul 2026 12:00:45 GMT",
+              "summary": "These 5 Chip Stocks Are Riding the AI Fab Spending Wave AOL.com"
+            },
+            {
+              "title": "After the AI Sector Pullback, Capital Begins Seeking New Certainty: Could Semiconductor Equipment Stocks Be the Next Major Theme? - TradingKey",
+              "source": "TradingKey",
+              "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPdzFVY0FhdUxZMExkYlQ5NlVsVjBxUV9BdWh2c1EwUU5FMDNBeVZOLUFqZ2Z6MElNNU5zZTFpeHoxMFZGUDFxRXdqVVF2M3pJVmJwMWdaR3lMQ0tSdWZseXVkY1BRWVJvX1Q1OVUzbXNBWUxLOVY4R0FJeVBtaUpNejlka0VtaVJMaHFPUURORDFnNnRlOF9zMVdWdThfNmo2bUZvTTlxYXZFMTl3eXgyQ3VKQk8tUzdF?oc=5",
+              "published_at": "Thu, 16 Jul 2026 02:27:08 GMT",
+              "summary": "After the AI Sector Pullback, Capital Begins Seeking New Certainty: Could Semiconductor Equipment Stocks Be the Next Major Theme? TradingKey"
+            },
+            {
+              "title": "Analyst Dan Ives Calls Memory Chips the \u201cGolden Child\u201d of the AI Revolution with \u201c15-to-1\u201d Demand-to-Supply Imbalance - AOL.com",
+              "source": "AOL.com",
+              "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5MVGdvZHpUTWJ3dmZSbDNxbE9iN21SZFJmUnprRmZDbzdWNngzeDhpZS1XV2h3dHVLSkZ0dnVrTHQ4MExfeUJ2azNJd1V5VWRYYjhGZkN3Q3FLbkpQRUlEUnNmTGpXS0htaEF3Mm5aZ1QwSDQ0Vk5Jdmd3em9fUQ?oc=5",
+              "published_at": "Mon, 13 Jul 2026 22:50:20 GMT",
+              "summary": "Analyst Dan Ives Calls Memory Chips the \u201cGolden Child\u201d of the AI Revolution with \u201c15-to-1\u201d Demand-to-Supply Imbalance AOL.com"
+            },
+            {
+              "title": "SK Hynix Joins the Nasdaq. But This Nasdaq-100 Semiconductor Stock Could Be an Even Better Buy for the Second Half of 2026. - AOL.com",
+              "source": "AOL.com",
+              "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1SeDVMemFfRmk1bVNNVHNMRDUxTXZKU1dEdGpoRk5VNi14emhhY05XZFlldDhROTlVY2h5bF9MaldkWS11V2RhbWtSOVdRR185T0hENEVwZ05oTEhrV2RycjZiWEE5Z2tJcVZfRXlYOWIwb2J5OHlmNnZiVXg?oc=5",
+              "published_at": "Sun, 12 Jul 2026 12:57:00 GMT",
+              "summary": "SK Hynix Joins the Nasdaq. But This Nasdaq-100 Semiconductor Stock Could Be an Even Better Buy for the Second Half of 2026. AOL.com"
+            }
+          ],
+          "relevance_score": 4.0,
+          "theme": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e",
+          "tickers": [
+            "AMAT",
+            "COHR",
+            "MU",
+            "RGTI",
+            "TSM"
+          ]
+        },
+        {
+          "source": "IGV",
+          "source_label": "\u30af\u30e9\u30a6\u30c9\u30fb\u30a8\u30f3\u30bf\u30fc\u30d7\u30e9\u30a4\u30ba\u30bd\u30d5\u30c8\u30a6\u30a7\u30a2",
+          "title": "FIG: Can Figma (FIG) Stay the Control Layer for Product Design as Competition Mounts?",
+          "publisher": "Insider Monkey",
+          "url": "https://finance.yahoo.com/technology/articles/figma-fig-stay-control-layer-183014852.html",
+          "domain": "finance.yahoo.com",
+          "published_at": "2026-07-16T18:30:14Z",
+          "summary": "Figma, Inc. (NYSE:FIG) is one of the best low priced technology stocks to invest in. On June 30, Goldman Sachs reiterated its Buy rating on Figma, Inc. (NYSE:FIG) and kept its price target at $30. The rating came after G",
+          "key_point": "FIG/NYSE / \u91d1\u5229\u30fbFed\u30fb\u30c6\u30c3\u30af\u682a / \u4e3b\u306a\u6570\u5b57: $30\u306b\u95a2\u3059\u308b\u8a18\u4e8b\u3002",
+          "source_articles": [],
+          "relevance_score": 1.0,
+          "theme": "\u30af\u30e9\u30a6\u30c9\u30fb\u30a8\u30f3\u30bf\u30fc\u30d7\u30e9\u30a4\u30ba\u30bd\u30d5\u30c8\u30a6\u30a7\u30a2",
+          "tickers": [
+            "CCC",
+            "FIG",
+            "ORCL"
+          ]
+        },
+        {
+          "source": "IGV",
+          "source_label": "\u30af\u30e9\u30a6\u30c9\u30fb\u30a8\u30f3\u30bf\u30fc\u30d7\u30e9\u30a4\u30ba\u30bd\u30d5\u30c8\u30a6\u30a7\u30a2",
+          "title": "CCC: Is CCC Intelligent Solutions Holdings Inc. (CCC) the Next Buyout Target?",
+          "publisher": "Insider Monkey",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/ccc-intelligent-solutions-holdings-inc-084748354.html",
+          "domain": "finance.yahoo.com",
+          "published_at": "2026-07-13T08:47:48Z",
+          "summary": "CCC Intelligent Solutions Holdings Inc. (NASDAQ:CCC) is among the undervalued software stocks to buy now. On July 10, Reuters\u2019 Milana Vinn reported that CCC Intelligent Solutions Holdings Inc. (NASDAQ:CCC) is exploring a",
+          "key_point": "Nasdaq/CCC / \u5e02\u5834\u5168\u4f53\u306e\u5024\u52d5\u304d\u30fb\u30c6\u30c3\u30af\u682a\u306b\u95a2\u3059\u308b\u8a18\u4e8b\u3002",
+          "source_articles": [],
+          "relevance_score": 1.0,
+          "theme": "\u30af\u30e9\u30a6\u30c9\u30fb\u30a8\u30f3\u30bf\u30fc\u30d7\u30e9\u30a4\u30ba\u30bd\u30d5\u30c8\u30a6\u30a7\u30a2",
+          "tickers": [
+            "CCC",
+            "FIG",
+            "ORCL"
+          ]
+        }
+      ],
+      "source_stats": [
+        {
+          "value": "SMH",
+          "label": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e",
+          "status": "active",
+          "priority": 107,
+          "hit_count": 18,
+          "selected_count": 20,
+          "miss_streak": 0,
+          "last_seen_at": "2026-07-18T00:17:49.244846"
+        },
+        {
+          "value": "XLI",
+          "label": "AI\u30c7\u30fc\u30bf\u30bb\u30f3\u30bf\u30fc\u96fb\u529b\u30fb\u51b7\u5374\u30a4\u30f3\u30d5\u30e9",
+          "status": "active",
+          "priority": 93,
+          "hit_count": 6,
+          "selected_count": 6,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-12T11:42:44.411880"
+        },
+        {
+          "value": "IGV",
+          "label": "\u30af\u30e9\u30a6\u30c9\u30fb\u30a8\u30f3\u30bf\u30fc\u30d7\u30e9\u30a4\u30ba\u30bd\u30d5\u30c8\u30a6\u30a7\u30a2",
+          "status": "active",
+          "priority": 83,
+          "hit_count": 11,
+          "selected_count": 15,
+          "miss_streak": 0,
+          "last_seen_at": "2026-07-18T00:17:50.534683"
+        },
+        {
+          "value": "SPY",
+          "label": "US broad market",
+          "status": "candidate",
+          "priority": 100,
+          "hit_count": 1,
+          "selected_count": 2,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-06T09:22:33.544666"
+        },
+        {
+          "value": "QQQ",
+          "label": "Nasdaq / growth",
+          "status": "candidate",
+          "priority": 95,
+          "hit_count": 1,
+          "selected_count": 2,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-06T09:22:33.740347"
+        },
+        {
+          "value": "XLK",
+          "label": "technology",
+          "status": "candidate",
+          "priority": 80,
+          "hit_count": 1,
+          "selected_count": 1,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-06T09:22:34.164153"
+        },
+        {
+          "value": "XLF",
+          "label": "financials",
+          "status": "candidate",
+          "priority": 65,
+          "hit_count": 1,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-06T09:22:34.550934"
+        },
+        {
+          "value": "IBB",
+          "label": "biotech / healthcare",
+          "status": "candidate",
+          "priority": 60,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        },
+        {
+          "value": "XLE",
+          "label": "energy",
+          "status": "candidate",
+          "priority": 60,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        },
+        {
+          "value": "XLY",
+          "label": "consumer discretionary",
+          "status": "candidate",
+          "priority": 55,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        },
+        {
+          "value": "ITA",
+          "label": "defense / aerospace",
+          "status": "candidate",
+          "priority": 50,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        },
+        {
+          "value": "ARKK",
+          "label": "disruptive growth",
+          "status": "candidate",
+          "priority": 45,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        }
+      ]
+    }
+  },
+  {
+    "date": "2026-07-18",
+    "position_count": 3,
+    "alert_count": 3,
+    "high_alert_count": 1,
+    "positions": [
+      {
+        "ticker": "SMTC",
+        "shares": 1.0,
+        "entry_price": 162.5,
+        "current_price": 124.95999908447266,
+        "target_price": "191.26",
+        "stop_loss": "148.12",
+        "pnl_pct": -23.1,
+        "change_pct": -1.06,
+        "note": "20\u4e07\u5186\u67a0\u3002\u53d6\u5f97\u65e5: 2026-06-23\u3002Decision 2026-06-23\u63a1\u7528\u3002SMTC score 7.15 / \u78ba\u4fe1\u5ea6LOW-MEDIUM\u3002\u6307\u5024$175\u3001\u8b72\u6e21\u91d1\u984d29,743\u5186\u30011\u682a\u3002RS\u5f37\u3044\u304cMACD hist\u30de\u30a4\u30ca\u30b9\u30fbDebt/Equity\u9ad8\u3081\u306e\u305f\u3081\u8a66\u3057\u7389\u3002 | \u30102026-06-25 \u4fee\u6b63\u3011\u8cb7\u5024\u3092$162.50\u306b\u8a02\u6b63\uff08\u30e6\u30fc\u30b6\u30fc\u7533\u544a\uff09 | \u30102026-06-25 STOP\u518d\u8a2d\u5b9a\u3011\u8cb7\u5024\u4fee\u6b63\u306b\u4f34\u3044ATR1x\u57fa\u6e96\u3078\u518d\u8a2d\u5b9a: stop $148.12 / target $191.26"
+      },
+      {
+        "ticker": "FOUR",
+        "shares": 2.0,
+        "entry_price": 43.51,
+        "current_price": 50.310001373291016,
+        "target_price": null,
+        "stop_loss": "48.44",
+        "pnl_pct": 15.63,
+        "change_pct": -1.74,
+        "note": "20\u4e07\u5186\u67a0\u3002\u30e6\u30fc\u30b6\u30fc\u7533\u544a\u306b\u3088\u308b\u624b\u52d5\u53cd\u6620\u3002 | \u30102026-07-03 STAGE1\u3011$51.35\u306725%\u5229\u78ba\u6761\u4ef6\u5230\u9054\u3002\u305f\u3060\u30572\u682a\u4fdd\u6709\u306e\u305f\u3081\u58f2\u5374\u682a\u65700\u3002\u30b9\u30c8\u30c3\u30d7\u2192\u8cb7\u5024$43.51 | \u30102026-07-03 STAGE2\u3011$51.35\u3067\u8ffd\u52a025%\u5229\u78ba\u6761\u4ef6\u5230\u9054\u3002\u305f\u3060\u30572\u682a\u4fdd\u6709\u306e\u305f\u3081\u58f2\u5374\u682a\u65700\u3002ATR\u00d71.0\u30c8\u30ec\u30fc\u30ea\u30f3\u30b0\u76f8\u5f53: stop $48.44"
+      },
+      {
+        "ticker": "TSM",
+        "shares": 1.0,
+        "entry_price": 441.0,
+        "current_price": 398.3699951171875,
+        "target_price": null,
+        "stop_loss": null,
+        "pnl_pct": -9.67,
+        "change_pct": -1.96,
+        "note": "20\u4e07\u5186\u67a0\u3002\u30e6\u30fc\u30b6\u30fc\u7533\u544a\u306b\u3088\u308b\u624b\u52d5\u53cd\u6620\u3002"
+      }
+    ],
+    "alerts": [
+      {
+        "date": "2026-07-18",
+        "ticker": "SMTC",
+        "alert_type": "STOP_BREACH",
+        "severity": "HIGH",
+        "message": "Price $124.96 hit stop loss $148.12",
+        "current_price": 124.95999908447266,
+        "entry_price": 162.5,
+        "unrealized_pnl_pct": -23.1,
+        "stop_loss": 148.12,
+        "target_price": 191.26,
+        "trailing_stop_price": null
+      },
+      {
+        "date": "2026-07-18",
+        "ticker": "SMTC",
+        "alert_type": "DOWN_5PCT",
+        "severity": "MEDIUM",
+        "message": "Unrealized loss -23.1%",
+        "current_price": 124.95999908447266,
+        "entry_price": 162.5,
+        "unrealized_pnl_pct": -23.1,
+        "stop_loss": 148.12,
+        "target_price": 191.26,
+        "trailing_stop_price": null
+      },
+      {
+        "date": "2026-07-18",
+        "ticker": "TSM",
+        "alert_type": "DOWN_5PCT",
+        "severity": "MEDIUM",
+        "message": "Unrealized loss -9.7%",
+        "current_price": 398.3699951171875,
+        "entry_price": 441.0,
+        "unrealized_pnl_pct": -9.67,
+        "stop_loss": null,
+        "target_price": null,
+        "trailing_stop_price": null
+      }
+    ],
+    "market_news": {
+      "date": "2026-07-18",
+      "db_path": "data/market_news.sqlite",
+      "disclaimer": "\u53c2\u8003\u30cb\u30e5\u30fc\u30b9\u3002\u672a\u691c\u8a3c\u306e\u305f\u3081\u30d5\u30a1\u30af\u30c8\u6271\u3044\u3057\u306a\u3044\u3002",
+      "collection_limits": {
+        "theme_limit": 3,
+        "active_sources": 3,
+        "candidate_probe_sources": 1,
+        "items_per_source": 2,
+        "report_items": 4
+      },
+      "themes": [
+        {
+          "key": "ai_semiconductors",
+          "label": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e",
+          "query": "AI semiconductors, HBM memory, wafer fab equipment, Nvidia, Micron, Applied Materials, Lam Research market news",
+          "tickers": [
+            "AMAT",
+            "COHR",
+            "MU",
+            "RGTI",
+            "TSM"
+          ],
+          "fallback_etf": "SMH",
+          "priority": 107
+        },
+        {
+          "key": "cloud_enterprise_software",
+          "label": "\u30af\u30e9\u30a6\u30c9\u30fb\u30a8\u30f3\u30bf\u30fc\u30d7\u30e9\u30a4\u30ba\u30bd\u30d5\u30c8\u30a6\u30a7\u30a2",
+          "query": "enterprise software SaaS cloud stocks Atlassian software spending market news",
+          "tickers": [
+            "CCC",
+            "FIG",
+            "ORCL"
+          ],
+          "fallback_etf": "IGV",
+          "priority": 83
+        }
+      ],
+      "items": [
+        {
+          "source": "SMH",
+          "source_label": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e",
+          "title": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e\u306e\u95a2\u9023\u30cb\u30e5\u30fc\u30b9\u30e1\u30e2",
+          "publisher": "Google News RSS",
+          "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOSkNuRVd6UkQzb2F3WEdxaEFHemtCQklXV2psNmZoT2ZwTW5NVDNxMTV6cjVWZEx0SEttN293SzBEbkNVNnVLVS1SQjN5RTZpWFFQVVd2M3NZcVU1aTdiRUhvNm12SFBSM2JIdl9sUENUcFFGelB2TDdTbnhWcGx6SmJNaTNtdmNQX2o0ekdZTUduTzZZNWFlbkVNUnZ6N2NxS2Nia3JYZmR1TlE3ZzNoczBLbFVGanQtQmF4cUdLU1pUQQ?oc=5",
+          "domain": "news.google.com",
+          "published_at": "Wed, 15 Jul 2026 20:10:26 GMT",
+          "summary": "- \u8981\u7d04: AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e\u3067\u306f\u3001\u5e02\u5834\u5168\u4f53\u306e\u5024\u52d5\u304d\u3001\u534a\u5c0e\u4f53\u30fbAI\u304c\u4e3b\u306a\u8ad6\u70b9\u3002\u53c2\u7167\u898b\u51fa\u3057\u306f \u300cApplied Materials Vs. KLA Corporation: This AI Infrastructure Play Is A Better Buy\u300d / \u300cThese 5 Chip Stocks Are Riding the AI Fab Spending Wave\u300d / \u300cAfter the AI Sector Pullback, Capital Begins Seeking New Certainty: Could Semiconductor Equipment Stocks Be the Next Major Theme?\u300d\u3002\n- \u95a2\u4fc2: \u95a2\u9023\u9298\u67c4\u306f AMAT, COHR, MU, RGTI, TSM\u3002\u4fdd\u6709\u30fb\u76e3\u8996\u9298\u67c4\u306e\u500b\u5225\u6750\u6599\u3068\u3044\u3046\u3088\u308a\u3001\u540c\u3058\u30c6\u30fc\u30de\u5185\u306e\u5730\u5408\u3044\u3068\u8cc7\u91d1\u306e\u5411\u304d\u3092\u898b\u308b\u53c2\u8003\u6750\u6599\u3002\n- \u6ce8\u610f\u70b9: RSS\u898b\u51fa\u3057\u3068\u77ed\u3044\u8aac\u660e\u304b\u3089\u4f5c\u3063\u305f\u672a\u691c\u8a3c\u30e1\u30e2\u3002\u58f2\u8cb7\u5224\u65ad\u3067\u306f\u3001\u500b\u5225\u9298\u67c4\u306e\u6c7a\u7b97\u3001\u30ac\u30a4\u30c0\u30f3\u30b9\u3001\u4fa1\u683c\u3001\u51fa\u6765\u9ad8\u3067\u518d\u78ba\u8a8d\u3059\u308b\u3002",
+          "key_point": "- \u8981\u7d04: AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e\u3067\u306f\u3001\u5e02\u5834\u5168\u4f53\u306e\u5024\u52d5\u304d\u3001\u534a\u5c0e\u4f53\u30fbAI\u304c\u4e3b\u306a\u8ad6\u70b9\u3002\u53c2\u7167\u898b\u51fa\u3057\u306f \u300cApplied Materials Vs. KLA Corporation: This AI Infrastructure Play Is A Better Buy\u300d / \u300cThese 5 Chip Stocks Are Riding the AI Fab Spending Wave\u300d / \u300cAfter the AI Sector Pullback, Capital Begins Seeking New Certainty: Could Semiconductor Equipment Stocks Be the Next Major Theme?\u300d\u3002\n- \u95a2\u4fc2: \u95a2\u9023\u9298\u67c4\u306f AMAT, COHR, MU, RGTI, TSM\u3002\u4fdd\u6709\u30fb\u76e3\u8996\u9298\u67c4\u306e\u500b\u5225\u6750\u6599\u3068\u3044\u3046\u3088\u308a\u3001\u540c\u3058\u30c6\u30fc\u30de\u5185\u306e\u5730\u5408\u3044\u3068\u8cc7\u91d1\u306e\u5411\u304d\u3092\u898b\u308b\u53c2\u8003\u6750\u6599\u3002\n- \u6ce8\u610f\u70b9: RSS\u898b\u51fa\u3057\u3068\u77ed\u3044\u8aac\u660e\u304b\u3089\u4f5c\u3063\u305f\u672a\u691c\u8a3c\u30e1\u30e2\u3002\u58f2\u8cb7\u5224\u65ad\u3067\u306f\u3001\u500b\u5225\u9298\u67c4\u306e\u6c7a\u7b97\u3001\u30ac\u30a4\u30c0\u30f3\u30b9\u3001\u4fa1\u683c\u3001\u51fa\u6765\u9ad8\u3067\u518d\u78ba\u8a8d\u3059\u308b\u3002",
+          "source_articles": [
+            {
+              "title": "Applied Materials Vs. KLA Corporation: This AI Infrastructure Play Is A Better Buy - 24/7 Wall St.",
+              "source": "24/7 Wall St.",
+              "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOSkNuRVd6UkQzb2F3WEdxaEFHemtCQklXV2psNmZoT2ZwTW5NVDNxMTV6cjVWZEx0SEttN293SzBEbkNVNnVLVS1SQjN5RTZpWFFQVVd2M3NZcVU1aTdiRUhvNm12SFBSM2JIdl9sUENUcFFGelB2TDdTbnhWcGx6SmJNaTNtdmNQX2o0ekdZTUduTzZZNWFlbkVNUnZ6N2NxS2Nia3JYZmR1TlE3ZzNoczBLbFVGanQtQmF4cUdLU1pUQQ?oc=5",
+              "published_at": "Wed, 15 Jul 2026 20:10:26 GMT",
+              "summary": "Applied Materials Vs. KLA Corporation: This AI Infrastructure Play Is A Better Buy 24/7 Wall St."
+            },
+            {
+              "title": "These 5 Chip Stocks Are Riding the AI Fab Spending Wave - AOL.com",
+              "source": "AOL.com",
+              "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1UcFNYNWQweE9KR2JSOVpBQWZmSEFSSEZyd0RmTmZ3S1IyRzNiMmdRRlA1UFIxUGVON2c5Yk1ZTnFBaGZMdEhVYUpjMjByYmtIUXVRMjFiZmQzamJCZTBqanlLaUtlZm45ZGNqZnhuWmN1OVhIUVE?oc=5",
+              "published_at": "Sat, 11 Jul 2026 12:00:45 GMT",
+              "summary": "These 5 Chip Stocks Are Riding the AI Fab Spending Wave AOL.com"
+            },
+            {
+              "title": "After the AI Sector Pullback, Capital Begins Seeking New Certainty: Could Semiconductor Equipment Stocks Be the Next Major Theme? - TradingKey",
+              "source": "TradingKey",
+              "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPdzFVY0FhdUxZMExkYlQ5NlVsVjBxUV9BdWh2c1EwUU5FMDNBeVZOLUFqZ2Z6MElNNU5zZTFpeHoxMFZGUDFxRXdqVVF2M3pJVmJwMWdaR3lMQ0tSdWZseXVkY1BRWVJvX1Q1OVUzbXNBWUxLOVY4R0FJeVBtaUpNejlka0VtaVJMaHFPUURORDFnNnRlOF9zMVdWdThfNmo2bUZvTTlxYXZFMTl3eXgyQ3VKQk8tUzdF?oc=5",
+              "published_at": "Thu, 16 Jul 2026 02:27:08 GMT",
+              "summary": "After the AI Sector Pullback, Capital Begins Seeking New Certainty: Could Semiconductor Equipment Stocks Be the Next Major Theme? TradingKey"
+            },
+            {
+              "title": "Analyst Dan Ives Calls Memory Chips the \u201cGolden Child\u201d of the AI Revolution with \u201c15-to-1\u201d Demand-to-Supply Imbalance - AOL.com",
+              "source": "AOL.com",
+              "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5MVGdvZHpUTWJ3dmZSbDNxbE9iN21SZFJmUnprRmZDbzdWNngzeDhpZS1XV2h3dHVLSkZ0dnVrTHQ4MExfeUJ2azNJd1V5VWRYYjhGZkN3Q3FLbkpQRUlEUnNmTGpXS0htaEF3Mm5aZ1QwSDQ0Vk5Jdmd3em9fUQ?oc=5",
+              "published_at": "Mon, 13 Jul 2026 22:50:20 GMT",
+              "summary": "Analyst Dan Ives Calls Memory Chips the \u201cGolden Child\u201d of the AI Revolution with \u201c15-to-1\u201d Demand-to-Supply Imbalance AOL.com"
+            },
+            {
+              "title": "SK Hynix Joins the Nasdaq. But This Nasdaq-100 Semiconductor Stock Could Be an Even Better Buy for the Second Half of 2026. - AOL.com",
+              "source": "AOL.com",
+              "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1SeDVMemFfRmk1bVNNVHNMRDUxTXZKU1dEdGpoRk5VNi14emhhY05XZFlldDhROTlVY2h5bF9MaldkWS11V2RhbWtSOVdRR185T0hENEVwZ05oTEhrV2RycjZiWEE5Z2tJcVZfRXlYOWIwb2J5OHlmNnZiVXg?oc=5",
+              "published_at": "Sun, 12 Jul 2026 12:57:00 GMT",
+              "summary": "SK Hynix Joins the Nasdaq. But This Nasdaq-100 Semiconductor Stock Could Be an Even Better Buy for the Second Half of 2026. AOL.com"
+            }
+          ],
+          "relevance_score": 4.0,
+          "theme": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e",
+          "tickers": [
+            "AMAT",
+            "COHR",
+            "MU",
+            "RGTI",
+            "TSM"
+          ]
+        },
+        {
+          "source": "IGV",
+          "source_label": "\u30af\u30e9\u30a6\u30c9\u30fb\u30a8\u30f3\u30bf\u30fc\u30d7\u30e9\u30a4\u30ba\u30bd\u30d5\u30c8\u30a6\u30a7\u30a2",
+          "title": "FIG: Can Figma (FIG) Stay the Control Layer for Product Design as Competition Mounts?",
+          "publisher": "Insider Monkey",
+          "url": "https://finance.yahoo.com/technology/articles/figma-fig-stay-control-layer-183014852.html",
+          "domain": "finance.yahoo.com",
+          "published_at": "2026-07-16T18:30:14Z",
+          "summary": "Figma, Inc. (NYSE:FIG) is one of the best low priced technology stocks to invest in. On June 30, Goldman Sachs reiterated its Buy rating on Figma, Inc. (NYSE:FIG) and kept its price target at $30. The rating came after G",
+          "key_point": "FIG/NYSE / \u91d1\u5229\u30fbFed\u30fb\u30c6\u30c3\u30af\u682a / \u4e3b\u306a\u6570\u5b57: $30\u306b\u95a2\u3059\u308b\u8a18\u4e8b\u3002",
+          "source_articles": [],
+          "relevance_score": 1.0,
+          "theme": "\u30af\u30e9\u30a6\u30c9\u30fb\u30a8\u30f3\u30bf\u30fc\u30d7\u30e9\u30a4\u30ba\u30bd\u30d5\u30c8\u30a6\u30a7\u30a2",
+          "tickers": [
+            "CCC",
+            "FIG",
+            "ORCL"
+          ]
+        },
+        {
+          "source": "IGV",
+          "source_label": "\u30af\u30e9\u30a6\u30c9\u30fb\u30a8\u30f3\u30bf\u30fc\u30d7\u30e9\u30a4\u30ba\u30bd\u30d5\u30c8\u30a6\u30a7\u30a2",
+          "title": "CCC: Is CCC Intelligent Solutions Holdings Inc. (CCC) the Next Buyout Target?",
+          "publisher": "Insider Monkey",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/ccc-intelligent-solutions-holdings-inc-084748354.html",
+          "domain": "finance.yahoo.com",
+          "published_at": "2026-07-13T08:47:48Z",
+          "summary": "CCC Intelligent Solutions Holdings Inc. (NASDAQ:CCC) is among the undervalued software stocks to buy now. On July 10, Reuters\u2019 Milana Vinn reported that CCC Intelligent Solutions Holdings Inc. (NASDAQ:CCC) is exploring a",
+          "key_point": "Nasdaq/CCC / \u5e02\u5834\u5168\u4f53\u306e\u5024\u52d5\u304d\u30fb\u30c6\u30c3\u30af\u682a\u306b\u95a2\u3059\u308b\u8a18\u4e8b\u3002",
+          "source_articles": [],
+          "relevance_score": 1.0,
+          "theme": "\u30af\u30e9\u30a6\u30c9\u30fb\u30a8\u30f3\u30bf\u30fc\u30d7\u30e9\u30a4\u30ba\u30bd\u30d5\u30c8\u30a6\u30a7\u30a2",
+          "tickers": [
+            "CCC",
+            "FIG",
+            "ORCL"
+          ]
+        }
+      ],
+      "source_stats": [
+        {
+          "value": "SMH",
+          "label": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e",
+          "status": "active",
+          "priority": 107,
+          "hit_count": 19,
+          "selected_count": 21,
+          "miss_streak": 0,
+          "last_seen_at": "2026-07-18T00:17:58.415005"
+        },
+        {
+          "value": "XLI",
+          "label": "AI\u30c7\u30fc\u30bf\u30bb\u30f3\u30bf\u30fc\u96fb\u529b\u30fb\u51b7\u5374\u30a4\u30f3\u30d5\u30e9",
+          "status": "active",
+          "priority": 93,
+          "hit_count": 6,
+          "selected_count": 6,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-12T11:42:44.411880"
+        },
+        {
+          "value": "IGV",
+          "label": "\u30af\u30e9\u30a6\u30c9\u30fb\u30a8\u30f3\u30bf\u30fc\u30d7\u30e9\u30a4\u30ba\u30bd\u30d5\u30c8\u30a6\u30a7\u30a2",
+          "status": "active",
+          "priority": 83,
+          "hit_count": 12,
+          "selected_count": 17,
+          "miss_streak": 0,
+          "last_seen_at": "2026-07-18T00:17:58.562778"
+        },
+        {
+          "value": "SPY",
+          "label": "US broad market",
+          "status": "candidate",
+          "priority": 100,
+          "hit_count": 1,
+          "selected_count": 2,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-06T09:22:33.544666"
+        },
+        {
+          "value": "QQQ",
+          "label": "Nasdaq / growth",
+          "status": "candidate",
+          "priority": 95,
+          "hit_count": 1,
+          "selected_count": 2,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-06T09:22:33.740347"
+        },
+        {
+          "value": "XLK",
+          "label": "technology",
+          "status": "candidate",
+          "priority": 80,
+          "hit_count": 1,
+          "selected_count": 1,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-06T09:22:34.164153"
+        },
+        {
+          "value": "XLF",
+          "label": "financials",
+          "status": "candidate",
+          "priority": 65,
+          "hit_count": 1,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-06T09:22:34.550934"
+        },
+        {
+          "value": "IBB",
+          "label": "biotech / healthcare",
+          "status": "candidate",
+          "priority": 60,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        },
+        {
+          "value": "XLE",
+          "label": "energy",
+          "status": "candidate",
+          "priority": 60,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        },
+        {
+          "value": "XLY",
+          "label": "consumer discretionary",
+          "status": "candidate",
+          "priority": 55,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        },
+        {
+          "value": "ITA",
+          "label": "defense / aerospace",
+          "status": "candidate",
+          "priority": 50,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        },
+        {
+          "value": "ARKK",
+          "label": "disruptive growth",
+          "status": "candidate",
+          "priority": 45,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        }
+      ]
+    }
+  },
+  {
+    "date": "2026-07-18",
+    "position_count": 3,
+    "alert_count": 3,
+    "high_alert_count": 1,
+    "positions": [
+      {
+        "ticker": "SMTC",
+        "shares": 1.0,
+        "entry_price": 162.5,
+        "current_price": 124.95999908447266,
+        "target_price": "191.26",
+        "stop_loss": "148.12",
+        "pnl_pct": -23.1,
+        "change_pct": -1.06,
+        "note": "20\u4e07\u5186\u67a0\u3002\u53d6\u5f97\u65e5: 2026-06-23\u3002Decision 2026-06-23\u63a1\u7528\u3002SMTC score 7.15 / \u78ba\u4fe1\u5ea6LOW-MEDIUM\u3002\u6307\u5024$175\u3001\u8b72\u6e21\u91d1\u984d29,743\u5186\u30011\u682a\u3002RS\u5f37\u3044\u304cMACD hist\u30de\u30a4\u30ca\u30b9\u30fbDebt/Equity\u9ad8\u3081\u306e\u305f\u3081\u8a66\u3057\u7389\u3002 | \u30102026-06-25 \u4fee\u6b63\u3011\u8cb7\u5024\u3092$162.50\u306b\u8a02\u6b63\uff08\u30e6\u30fc\u30b6\u30fc\u7533\u544a\uff09 | \u30102026-06-25 STOP\u518d\u8a2d\u5b9a\u3011\u8cb7\u5024\u4fee\u6b63\u306b\u4f34\u3044ATR1x\u57fa\u6e96\u3078\u518d\u8a2d\u5b9a: stop $148.12 / target $191.26"
+      },
+      {
+        "ticker": "FOUR",
+        "shares": 2.0,
+        "entry_price": 43.51,
+        "current_price": 50.310001373291016,
+        "target_price": null,
+        "stop_loss": "48.44",
+        "pnl_pct": 15.63,
+        "change_pct": -1.74,
+        "note": "20\u4e07\u5186\u67a0\u3002\u30e6\u30fc\u30b6\u30fc\u7533\u544a\u306b\u3088\u308b\u624b\u52d5\u53cd\u6620\u3002 | \u30102026-07-03 STAGE1\u3011$51.35\u306725%\u5229\u78ba\u6761\u4ef6\u5230\u9054\u3002\u305f\u3060\u30572\u682a\u4fdd\u6709\u306e\u305f\u3081\u58f2\u5374\u682a\u65700\u3002\u30b9\u30c8\u30c3\u30d7\u2192\u8cb7\u5024$43.51 | \u30102026-07-03 STAGE2\u3011$51.35\u3067\u8ffd\u52a025%\u5229\u78ba\u6761\u4ef6\u5230\u9054\u3002\u305f\u3060\u30572\u682a\u4fdd\u6709\u306e\u305f\u3081\u58f2\u5374\u682a\u65700\u3002ATR\u00d71.0\u30c8\u30ec\u30fc\u30ea\u30f3\u30b0\u76f8\u5f53: stop $48.44"
+      },
+      {
+        "ticker": "TSM",
+        "shares": 1.0,
+        "entry_price": 441.0,
+        "current_price": 398.3699951171875,
+        "target_price": null,
+        "stop_loss": null,
+        "pnl_pct": -9.67,
+        "change_pct": -1.96,
+        "note": "20\u4e07\u5186\u67a0\u3002\u30e6\u30fc\u30b6\u30fc\u7533\u544a\u306b\u3088\u308b\u624b\u52d5\u53cd\u6620\u3002"
+      }
+    ],
+    "alerts": [
+      {
+        "date": "2026-07-18",
+        "ticker": "SMTC",
+        "alert_type": "STOP_BREACH",
+        "severity": "HIGH",
+        "message": "Price $124.96 hit stop loss $148.12",
+        "current_price": 124.95999908447266,
+        "entry_price": 162.5,
+        "unrealized_pnl_pct": -23.1,
+        "stop_loss": 148.12,
+        "target_price": 191.26,
+        "trailing_stop_price": null
+      },
+      {
+        "date": "2026-07-18",
+        "ticker": "SMTC",
+        "alert_type": "DOWN_5PCT",
+        "severity": "MEDIUM",
+        "message": "Unrealized loss -23.1%",
+        "current_price": 124.95999908447266,
+        "entry_price": 162.5,
+        "unrealized_pnl_pct": -23.1,
+        "stop_loss": 148.12,
+        "target_price": 191.26,
+        "trailing_stop_price": null
+      },
+      {
+        "date": "2026-07-18",
+        "ticker": "TSM",
+        "alert_type": "DOWN_5PCT",
+        "severity": "MEDIUM",
+        "message": "Unrealized loss -9.7%",
+        "current_price": 398.3699951171875,
+        "entry_price": 441.0,
+        "unrealized_pnl_pct": -9.67,
+        "stop_loss": null,
+        "target_price": null,
+        "trailing_stop_price": null
+      }
+    ],
+    "market_news": {
+      "date": "2026-07-18",
+      "db_path": "data/market_news.sqlite",
+      "disclaimer": "\u53c2\u8003\u30cb\u30e5\u30fc\u30b9\u3002\u672a\u691c\u8a3c\u306e\u305f\u3081\u30d5\u30a1\u30af\u30c8\u6271\u3044\u3057\u306a\u3044\u3002",
+      "collection_limits": {
+        "theme_limit": 3,
+        "active_sources": 3,
+        "candidate_probe_sources": 1,
+        "items_per_source": 2,
+        "report_items": 4
+      },
+      "themes": [
+        {
+          "key": "ai_semiconductors",
+          "label": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e",
+          "query": "AI semiconductors, HBM memory, wafer fab equipment, Nvidia, Micron, Applied Materials, Lam Research market news",
+          "tickers": [
+            "AMAT",
+            "COHR",
+            "MU",
+            "RGTI",
+            "TSM"
+          ],
+          "fallback_etf": "SMH",
+          "priority": 107
+        },
+        {
+          "key": "cloud_enterprise_software",
+          "label": "\u30af\u30e9\u30a6\u30c9\u30fb\u30a8\u30f3\u30bf\u30fc\u30d7\u30e9\u30a4\u30ba\u30bd\u30d5\u30c8\u30a6\u30a7\u30a2",
+          "query": "enterprise software SaaS cloud stocks Atlassian software spending market news",
+          "tickers": [
+            "CCC",
+            "FIG",
+            "ORCL"
+          ],
+          "fallback_etf": "IGV",
+          "priority": 83
+        }
+      ],
+      "items": [
+        {
+          "source": "SMH",
+          "source_label": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e",
+          "title": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e\u306e\u95a2\u9023\u30cb\u30e5\u30fc\u30b9\u30e1\u30e2",
+          "publisher": "Google News RSS",
+          "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOSkNuRVd6UkQzb2F3WEdxaEFHemtCQklXV2psNmZoT2ZwTW5NVDNxMTV6cjVWZEx0SEttN293SzBEbkNVNnVLVS1SQjN5RTZpWFFQVVd2M3NZcVU1aTdiRUhvNm12SFBSM2JIdl9sUENUcFFGelB2TDdTbnhWcGx6SmJNaTNtdmNQX2o0ekdZTUduTzZZNWFlbkVNUnZ6N2NxS2Nia3JYZmR1TlE3ZzNoczBLbFVGanQtQmF4cUdLU1pUQQ?oc=5",
+          "domain": "news.google.com",
+          "published_at": "Wed, 15 Jul 2026 20:10:26 GMT",
+          "summary": "- \u8981\u7d04: AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e\u3067\u306f\u3001\u5e02\u5834\u5168\u4f53\u306e\u5024\u52d5\u304d\u3001\u534a\u5c0e\u4f53\u30fbAI\u304c\u4e3b\u306a\u8ad6\u70b9\u3002\u53c2\u7167\u898b\u51fa\u3057\u306f \u300cApplied Materials Vs. KLA Corporation: This AI Infrastructure Play Is A Better Buy\u300d / \u300cThese 5 Chip Stocks Are Riding the AI Fab Spending Wave\u300d / \u300cAfter the AI Sector Pullback, Capital Begins Seeking New Certainty: Could Semiconductor Equipment Stocks Be the Next Major Theme?\u300d\u3002\n- \u95a2\u4fc2: \u95a2\u9023\u9298\u67c4\u306f AMAT, COHR, MU, RGTI, TSM\u3002\u4fdd\u6709\u30fb\u76e3\u8996\u9298\u67c4\u306e\u500b\u5225\u6750\u6599\u3068\u3044\u3046\u3088\u308a\u3001\u540c\u3058\u30c6\u30fc\u30de\u5185\u306e\u5730\u5408\u3044\u3068\u8cc7\u91d1\u306e\u5411\u304d\u3092\u898b\u308b\u53c2\u8003\u6750\u6599\u3002\n- \u6ce8\u610f\u70b9: RSS\u898b\u51fa\u3057\u3068\u77ed\u3044\u8aac\u660e\u304b\u3089\u4f5c\u3063\u305f\u672a\u691c\u8a3c\u30e1\u30e2\u3002\u58f2\u8cb7\u5224\u65ad\u3067\u306f\u3001\u500b\u5225\u9298\u67c4\u306e\u6c7a\u7b97\u3001\u30ac\u30a4\u30c0\u30f3\u30b9\u3001\u4fa1\u683c\u3001\u51fa\u6765\u9ad8\u3067\u518d\u78ba\u8a8d\u3059\u308b\u3002",
+          "key_point": "- \u8981\u7d04: AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e\u3067\u306f\u3001\u5e02\u5834\u5168\u4f53\u306e\u5024\u52d5\u304d\u3001\u534a\u5c0e\u4f53\u30fbAI\u304c\u4e3b\u306a\u8ad6\u70b9\u3002\u53c2\u7167\u898b\u51fa\u3057\u306f \u300cApplied Materials Vs. KLA Corporation: This AI Infrastructure Play Is A Better Buy\u300d / \u300cThese 5 Chip Stocks Are Riding the AI Fab Spending Wave\u300d / \u300cAfter the AI Sector Pullback, Capital Begins Seeking New Certainty: Could Semiconductor Equipment Stocks Be the Next Major Theme?\u300d\u3002\n- \u95a2\u4fc2: \u95a2\u9023\u9298\u67c4\u306f AMAT, COHR, MU, RGTI, TSM\u3002\u4fdd\u6709\u30fb\u76e3\u8996\u9298\u67c4\u306e\u500b\u5225\u6750\u6599\u3068\u3044\u3046\u3088\u308a\u3001\u540c\u3058\u30c6\u30fc\u30de\u5185\u306e\u5730\u5408\u3044\u3068\u8cc7\u91d1\u306e\u5411\u304d\u3092\u898b\u308b\u53c2\u8003\u6750\u6599\u3002\n- \u6ce8\u610f\u70b9: RSS\u898b\u51fa\u3057\u3068\u77ed\u3044\u8aac\u660e\u304b\u3089\u4f5c\u3063\u305f\u672a\u691c\u8a3c\u30e1\u30e2\u3002\u58f2\u8cb7\u5224\u65ad\u3067\u306f\u3001\u500b\u5225\u9298\u67c4\u306e\u6c7a\u7b97\u3001\u30ac\u30a4\u30c0\u30f3\u30b9\u3001\u4fa1\u683c\u3001\u51fa\u6765\u9ad8\u3067\u518d\u78ba\u8a8d\u3059\u308b\u3002",
+          "source_articles": [
+            {
+              "title": "Applied Materials Vs. KLA Corporation: This AI Infrastructure Play Is A Better Buy - 24/7 Wall St.",
+              "source": "24/7 Wall St.",
+              "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOSkNuRVd6UkQzb2F3WEdxaEFHemtCQklXV2psNmZoT2ZwTW5NVDNxMTV6cjVWZEx0SEttN293SzBEbkNVNnVLVS1SQjN5RTZpWFFQVVd2M3NZcVU1aTdiRUhvNm12SFBSM2JIdl9sUENUcFFGelB2TDdTbnhWcGx6SmJNaTNtdmNQX2o0ekdZTUduTzZZNWFlbkVNUnZ6N2NxS2Nia3JYZmR1TlE3ZzNoczBLbFVGanQtQmF4cUdLU1pUQQ?oc=5",
+              "published_at": "Wed, 15 Jul 2026 20:10:26 GMT",
+              "summary": "Applied Materials Vs. KLA Corporation: This AI Infrastructure Play Is A Better Buy 24/7 Wall St."
+            },
+            {
+              "title": "These 5 Chip Stocks Are Riding the AI Fab Spending Wave - AOL.com",
+              "source": "AOL.com",
+              "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1UcFNYNWQweE9KR2JSOVpBQWZmSEFSSEZyd0RmTmZ3S1IyRzNiMmdRRlA1UFIxUGVON2c5Yk1ZTnFBaGZMdEhVYUpjMjByYmtIUXVRMjFiZmQzamJCZTBqanlLaUtlZm45ZGNqZnhuWmN1OVhIUVE?oc=5",
+              "published_at": "Sat, 11 Jul 2026 12:00:45 GMT",
+              "summary": "These 5 Chip Stocks Are Riding the AI Fab Spending Wave AOL.com"
+            },
+            {
+              "title": "After the AI Sector Pullback, Capital Begins Seeking New Certainty: Could Semiconductor Equipment Stocks Be the Next Major Theme? - TradingKey",
+              "source": "TradingKey",
+              "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPdzFVY0FhdUxZMExkYlQ5NlVsVjBxUV9BdWh2c1EwUU5FMDNBeVZOLUFqZ2Z6MElNNU5zZTFpeHoxMFZGUDFxRXdqVVF2M3pJVmJwMWdaR3lMQ0tSdWZseXVkY1BRWVJvX1Q1OVUzbXNBWUxLOVY4R0FJeVBtaUpNejlka0VtaVJMaHFPUURORDFnNnRlOF9zMVdWdThfNmo2bUZvTTlxYXZFMTl3eXgyQ3VKQk8tUzdF?oc=5",
+              "published_at": "Thu, 16 Jul 2026 02:27:08 GMT",
+              "summary": "After the AI Sector Pullback, Capital Begins Seeking New Certainty: Could Semiconductor Equipment Stocks Be the Next Major Theme? TradingKey"
+            },
+            {
+              "title": "Analyst Dan Ives Calls Memory Chips the \u201cGolden Child\u201d of the AI Revolution with \u201c15-to-1\u201d Demand-to-Supply Imbalance - AOL.com",
+              "source": "AOL.com",
+              "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5MVGdvZHpUTWJ3dmZSbDNxbE9iN21SZFJmUnprRmZDbzdWNngzeDhpZS1XV2h3dHVLSkZ0dnVrTHQ4MExfeUJ2azNJd1V5VWRYYjhGZkN3Q3FLbkpQRUlEUnNmTGpXS0htaEF3Mm5aZ1QwSDQ0Vk5Jdmd3em9fUQ?oc=5",
+              "published_at": "Mon, 13 Jul 2026 22:50:20 GMT",
+              "summary": "Analyst Dan Ives Calls Memory Chips the \u201cGolden Child\u201d of the AI Revolution with \u201c15-to-1\u201d Demand-to-Supply Imbalance AOL.com"
+            },
+            {
+              "title": "SK Hynix Joins the Nasdaq. But This Nasdaq-100 Semiconductor Stock Could Be an Even Better Buy for the Second Half of 2026. - AOL.com",
+              "source": "AOL.com",
+              "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1SeDVMemFfRmk1bVNNVHNMRDUxTXZKU1dEdGpoRk5VNi14emhhY05XZFlldDhROTlVY2h5bF9MaldkWS11V2RhbWtSOVdRR185T0hENEVwZ05oTEhrV2RycjZiWEE5Z2tJcVZfRXlYOWIwb2J5OHlmNnZiVXg?oc=5",
+              "published_at": "Sun, 12 Jul 2026 12:57:00 GMT",
+              "summary": "SK Hynix Joins the Nasdaq. But This Nasdaq-100 Semiconductor Stock Could Be an Even Better Buy for the Second Half of 2026. AOL.com"
+            }
+          ],
+          "relevance_score": 4.0,
+          "theme": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e",
+          "tickers": [
+            "AMAT",
+            "COHR",
+            "MU",
+            "RGTI",
+            "TSM"
+          ]
+        },
+        {
+          "source": "IGV",
+          "source_label": "\u30af\u30e9\u30a6\u30c9\u30fb\u30a8\u30f3\u30bf\u30fc\u30d7\u30e9\u30a4\u30ba\u30bd\u30d5\u30c8\u30a6\u30a7\u30a2",
+          "title": "FIG: Can Figma (FIG) Stay the Control Layer for Product Design as Competition Mounts?",
+          "publisher": "Insider Monkey",
+          "url": "https://finance.yahoo.com/technology/articles/figma-fig-stay-control-layer-183014852.html",
+          "domain": "finance.yahoo.com",
+          "published_at": "2026-07-16T18:30:14Z",
+          "summary": "Figma, Inc. (NYSE:FIG) is one of the best low priced technology stocks to invest in. On June 30, Goldman Sachs reiterated its Buy rating on Figma, Inc. (NYSE:FIG) and kept its price target at $30. The rating came after G",
+          "key_point": "FIG/NYSE / \u91d1\u5229\u30fbFed\u30fb\u30c6\u30c3\u30af\u682a / \u4e3b\u306a\u6570\u5b57: $30\u306b\u95a2\u3059\u308b\u8a18\u4e8b\u3002",
+          "source_articles": [],
+          "relevance_score": 1.0,
+          "theme": "\u30af\u30e9\u30a6\u30c9\u30fb\u30a8\u30f3\u30bf\u30fc\u30d7\u30e9\u30a4\u30ba\u30bd\u30d5\u30c8\u30a6\u30a7\u30a2",
+          "tickers": [
+            "CCC",
+            "FIG",
+            "ORCL"
+          ]
+        },
+        {
+          "source": "IGV",
+          "source_label": "\u30af\u30e9\u30a6\u30c9\u30fb\u30a8\u30f3\u30bf\u30fc\u30d7\u30e9\u30a4\u30ba\u30bd\u30d5\u30c8\u30a6\u30a7\u30a2",
+          "title": "CCC: Is CCC Intelligent Solutions Holdings Inc. (CCC) the Next Buyout Target?",
+          "publisher": "Insider Monkey",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/ccc-intelligent-solutions-holdings-inc-084748354.html",
+          "domain": "finance.yahoo.com",
+          "published_at": "2026-07-13T08:47:48Z",
+          "summary": "CCC Intelligent Solutions Holdings Inc. (NASDAQ:CCC) is among the undervalued software stocks to buy now. On July 10, Reuters\u2019 Milana Vinn reported that CCC Intelligent Solutions Holdings Inc. (NASDAQ:CCC) is exploring a",
+          "key_point": "Nasdaq/CCC / \u5e02\u5834\u5168\u4f53\u306e\u5024\u52d5\u304d\u30fb\u30c6\u30c3\u30af\u682a\u306b\u95a2\u3059\u308b\u8a18\u4e8b\u3002",
+          "source_articles": [],
+          "relevance_score": 1.0,
+          "theme": "\u30af\u30e9\u30a6\u30c9\u30fb\u30a8\u30f3\u30bf\u30fc\u30d7\u30e9\u30a4\u30ba\u30bd\u30d5\u30c8\u30a6\u30a7\u30a2",
+          "tickers": [
+            "CCC",
+            "FIG",
+            "ORCL"
+          ]
+        }
+      ],
+      "source_stats": [
+        {
+          "value": "SMH",
+          "label": "AI\u534a\u5c0e\u4f53\u30fb\u534a\u5c0e\u4f53\u88fd\u9020\u88c5\u7f6e",
+          "status": "active",
+          "priority": 107,
+          "hit_count": 20,
+          "selected_count": 22,
+          "miss_streak": 0,
+          "last_seen_at": "2026-07-18T00:18:40.041573"
+        },
+        {
+          "value": "XLI",
+          "label": "AI\u30c7\u30fc\u30bf\u30bb\u30f3\u30bf\u30fc\u96fb\u529b\u30fb\u51b7\u5374\u30a4\u30f3\u30d5\u30e9",
+          "status": "active",
+          "priority": 93,
+          "hit_count": 6,
+          "selected_count": 6,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-12T11:42:44.411880"
+        },
+        {
+          "value": "IGV",
+          "label": "\u30af\u30e9\u30a6\u30c9\u30fb\u30a8\u30f3\u30bf\u30fc\u30d7\u30e9\u30a4\u30ba\u30bd\u30d5\u30c8\u30a6\u30a7\u30a2",
+          "status": "active",
+          "priority": 83,
+          "hit_count": 13,
+          "selected_count": 19,
+          "miss_streak": 0,
+          "last_seen_at": "2026-07-18T00:18:40.170049"
+        },
+        {
+          "value": "SPY",
+          "label": "US broad market",
+          "status": "candidate",
+          "priority": 100,
+          "hit_count": 1,
+          "selected_count": 2,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-06T09:22:33.544666"
+        },
+        {
+          "value": "QQQ",
+          "label": "Nasdaq / growth",
+          "status": "candidate",
+          "priority": 95,
+          "hit_count": 1,
+          "selected_count": 2,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-06T09:22:33.740347"
+        },
+        {
+          "value": "XLK",
+          "label": "technology",
+          "status": "candidate",
+          "priority": 80,
+          "hit_count": 1,
+          "selected_count": 1,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-06T09:22:34.164153"
+        },
+        {
+          "value": "XLF",
+          "label": "financials",
+          "status": "candidate",
+          "priority": 65,
+          "hit_count": 1,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": "2026-06-06T09:22:34.550934"
+        },
+        {
+          "value": "IBB",
+          "label": "biotech / healthcare",
+          "status": "candidate",
+          "priority": 60,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        },
+        {
+          "value": "XLE",
+          "label": "energy",
+          "status": "candidate",
+          "priority": 60,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        },
+        {
+          "value": "XLY",
+          "label": "consumer discretionary",
+          "status": "candidate",
+          "priority": 55,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        },
+        {
+          "value": "ITA",
+          "label": "defense / aerospace",
+          "status": "candidate",
+          "priority": 50,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        },
+        {
+          "value": "ARKK",
+          "label": "disruptive growth",
+          "status": "candidate",
+          "priority": 45,
+          "hit_count": 0,
+          "selected_count": 0,
+          "miss_streak": 0,
+          "last_seen_at": null
+        }
+      ]
+    }
   }
 ]

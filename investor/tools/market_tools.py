@@ -51,6 +51,7 @@ def get_technical_indicators(ticker: str) -> str:
     ema_20 = _compute_ema(bars, 20)
     ema_50 = _compute_ema(bars, 50)
     bb = compute_bollinger_bands(bars)
+    atr = compute_atr(bars, window=14)
 
     result = {
         "ticker": ticker.upper(),
@@ -58,8 +59,9 @@ def get_technical_indicators(ticker: str) -> str:
         "macd": macd,
         "ema_20": ema_20,
         "ema_50": ema_50,
+        "atr_14": round(atr, 4) if atr is not None else None,
         "bollinger_bands": bb,
-        "setup_metrics": _compute_setup_metrics(bars, ema_20, ema_50, bb),
+        "setup_metrics": _compute_setup_metrics(bars, ema_20, ema_50, bb, atr),
     }
     return json.dumps(result)
 
@@ -91,6 +93,15 @@ def get_ticker_details(ticker: str) -> str:
     result = _yf.get_ticker_details(ticker)
     if result is None:
         return json.dumps({"error": f"No details for {ticker}"})
+    return json.dumps(result)
+
+
+def get_analyst_revision_history(ticker: str) -> str:
+    """
+    Fetch recent analyst rating / upgrade / downgrade history when yfinance provides it.
+    Use this for sentiment quality and catalyst source confirmation.
+    """
+    result = _yf.get_analyst_revision_history(ticker)
     return json.dumps(result)
 
 
@@ -303,6 +314,7 @@ def _compute_setup_metrics(
     ema_20: float | None,
     ema_50: float | None,
     bollinger_bands: dict[str, Any],
+    atr_14: float | None = None,
 ) -> dict[str, Any]:
     """
     Derive early-vs-chase setup metrics from the same OHLCV data.
@@ -321,6 +333,7 @@ def _compute_setup_metrics(
             return {}
 
         recent_20 = bars[-20:] if len(bars) >= 20 else bars
+        previous = bars[-2] if len(bars) >= 2 else {}
         highs_20 = [bar.get("high") for bar in recent_20 if bar.get("high") is not None]
         lows_20 = [bar.get("low") for bar in recent_20 if bar.get("low") is not None]
         volumes = [bar.get("volume") for bar in bars[-21:-1] if bar.get("volume") is not None]
@@ -346,6 +359,37 @@ def _compute_setup_metrics(
         if high_20 is not None and low_20 is not None:
             range_20d_pct = round((float(high_20) - float(low_20)) / float(close) * 100, 2)
 
+        distance_to_20d_low_pct = _pct_change(close, low_20)
+        distance_to_ema20_pct = _pct_change(close, ema_20)
+        stop_reference = None
+        support_candidates = [v for v in (low_20, ema_20, ema_50) if v not in (None, 0)]
+        if support_candidates:
+            below_or_equal = [float(v) for v in support_candidates if float(v) <= float(close)]
+            stop_reference = max(below_or_equal) if below_or_equal else min(float(v) for v in support_candidates)
+        stop_distance_pct = abs(_pct_change(close, stop_reference) or 0) if stop_reference else None
+        atr_pct = round(float(atr_14) / float(close) * 100, 2) if atr_14 is not None and close else None
+        rr_to_2atr_target = None
+        if atr_pct is not None and stop_distance_pct not in (None, 0):
+            rr_to_2atr_target = round((2 * atr_pct) / stop_distance_pct, 2)
+
+        gap_up_pct = None
+        gap_up_fade = False
+        breakout_failure = False
+        if previous.get("close") not in (None, 0):
+            gap_up_pct = _pct_change(latest.get("open"), previous.get("close"))
+            gap_up_fade = bool(
+                gap_up_pct is not None
+                and gap_up_pct >= 2.0
+                and latest.get("close") is not None
+                and latest.get("open") is not None
+                and float(latest["close"]) < float(latest["open"])
+            )
+        if high_20 is not None and previous.get("close") is not None:
+            breakout_failure = bool(
+                float(previous["close"]) >= float(high_20) * 0.99
+                and float(close) < float(high_20) * 0.97
+            )
+
         metrics: dict[str, Any] = {
             "return_5d_pct": _return_pct(bars, 5),
             "return_20d_pct": _return_pct(bars, 20),
@@ -357,6 +401,15 @@ def _compute_setup_metrics(
             "bb_position": bb_position,
             "range_20d_pct": range_20d_pct,
             "pullback_from_20d_high_pct": _pct_change(close, high_20),
+            "distance_to_20d_low_pct": distance_to_20d_low_pct,
+            "distance_to_ema20_pct": distance_to_ema20_pct,
+            "support_reference_price": round(stop_reference, 4) if stop_reference is not None else None,
+            "stop_distance_pct": stop_distance_pct,
+            "atr_pct": atr_pct,
+            "rr_to_2atr_target": rr_to_2atr_target,
+            "gap_up_pct": gap_up_pct,
+            "gap_up_fade": gap_up_fade,
+            "breakout_failure": breakout_failure,
         }
         return {k: v for k, v in metrics.items() if v is not None}
     except Exception as e:
@@ -478,7 +531,10 @@ MARKET_TOOL_DEFINITIONS: list[dict] = [
         "name": "get_financials",
         "description": (
             "Get the last 4 quarters of financial data for a ticker: "
-            "revenue, net income, EPS, and free cash flow."
+            "revenue, net income, EPS, operating cash flow, free cash flow, FCF margin, "
+            "cash, total debt, shares outstanding, QoQ growth/acceleration fields, and cash runway. "
+            "Use this to grade fundamentals "
+            "quality, cash-flow durability, balance sheet risk, and dilution risk."
         ),
         "input_schema": {
             "type": "object",
@@ -491,10 +547,11 @@ MARKET_TOOL_DEFINITIONS: list[dict] = [
     {
         "name": "get_technical_indicators",
         "description": (
-            "Get technical indicators for a ticker: RSI(14), MACD, EMA(20), EMA(50), "
+            "Get technical indicators for a ticker: RSI(14), MACD, EMA(20), EMA(50), ATR(14), "
             "Bollinger Bands, and setup_metrics (5d/20d/60d returns, EMA distance, "
-            "volume ratio, Bollinger width/position, and pullback from 20d high). "
-            "Use this to assess both early momentum and chase momentum conditions."
+            "volume ratio, Bollinger width/position, pullback from 20d high, support distance, "
+            "risk/reward to a 2×ATR target, gap-up fade, and breakout failure). "
+            "Use this to assess early/chase momentum and technical entry quality."
         ),
         "input_schema": {
             "type": "object",
@@ -527,10 +584,27 @@ MARKET_TOOL_DEFINITIONS: list[dict] = [
         "name": "get_ticker_details",
         "description": (
             "Get company metadata AND forward-looking estimates: full name, sector, market cap, "
-            "forward EPS, forward P/E, PEG ratio, revenue/earnings growth YoY, gross margins, "
-            "debt-to-equity, analyst target price, and analyst recommendation. "
+            "forward EPS, forward P/E, PEG ratio, revenue/earnings growth YoY, margins, "
+            "cash, debt, current ratio, free cash flow, shares, analyst target price, "
+            "recommendation, and analyst count. "
             "Use this to assess valuation (forward_pe, peg_ratio) and growth trajectory "
-            "(revenue_growth_yoy, earnings_growth_yoy) before scoring a candidate."
+            "(revenue_growth_yoy, earnings_growth_yoy), fundamentals quality, and sentiment quality."
+        ),
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "ticker": {"type": "string", "description": "Stock ticker symbol"},
+            },
+            "required": ["ticker"],
+        },
+    },
+    {
+        "name": "get_analyst_revision_history",
+        "description": (
+            "Fetch recent analyst upgrade/downgrade or recommendation history for a ticker. "
+            "Returns revision_count, upgrade_count, downgrade_count, signal "
+            "(POSITIVE_REVISION / NEUTRAL_REVISION / NEGATIVE_REVISION), and recent_revisions. "
+            "Use this to distinguish real analyst revision quality from target-price-only sentiment."
         ),
         "input_schema": {
             "type": "object",
