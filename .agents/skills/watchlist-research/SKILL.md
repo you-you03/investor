@@ -84,7 +84,9 @@ Macro regime: {REGIME}
 | Technical | 15% | RSI position, MACD crossovers, BB squeeze, EMA20/50 alignment |
 | Sentiment | 15% | News tone, analyst_recommendation + count. strong_buy ≥ 10 analysts → 8+ |
 
-Weighted total: `momentum×0.25 + fundamentals×0.20 + catalyst×0.25 + technical×0.15 + sentiment×0.15`
+Weighted total (Strategy V2): `fundamentals×0.60 + momentum×0.25 + catalyst×0.15`.
+Technical/sentimentは加点せず、entry/data-quality gateとして使う。CHASE_MOMENTUM、
+extension_risk HIGH、fundamentals/catalyst grade C/D はESCALATE禁止。
 
 ### Step C: Assign action
 

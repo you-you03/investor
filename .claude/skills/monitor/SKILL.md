@@ -78,8 +78,10 @@ Alert conditions (rule-based, no LLM needed):
 | 条件 | Severity | 判定 |
 |---|---|---|
 | `current_price <= stop_loss` | **HIGH** | STOP_BREACH |
-| `pnl_pct >= +5%` かつ `exit_stage` が null または 0 | **HIGH** | STAGE1_HIT |
-| `pnl_pct >= +15%` かつ `exit_stage == 1` | **HIGH** | STAGE2_HIT |
+| stop/target が欠損 | **HIGH** | RISK_DATA_MISSING |
+| `shares >= 4` かつ `pnl_pct >= +5%` かつ `exit_stage` が0 | **HIGH** | STAGE1_HIT |
+| `shares >= 4` かつ `pnl_pct >= +15%` かつ `exit_stage == 1` | **HIGH** | STAGE2_HIT |
+| `shares < 4` かつ `pnl_pct >= +5%` | INFO/HIGH | SMALL_POSITION_PROFIT_REVIEW / EXIT_REVIEW |
 | `trailing_stop_price` が存在し `current_price <= trailing_stop_price` | **HIGH** | TRAILING_STOP_HIT |
 | `current_price <= stop_loss × 1.03` | MEDIUM | NEAR_STOP |
 | `pnl_pct >= +12%` かつ `exit_stage == 1` | MEDIUM | NEAR_STAGE2 |
@@ -90,11 +92,11 @@ Alert conditions (rule-based, no LLM needed):
 
 ### STAGE1_HIT 処理ルール（第1段階 — 25%利確）
 
-`STAGE1_HIT` を検出した場合（**確認不要、自動実行**）:
+`STAGE1_HIT` は**発注計画**として扱う。ブローカー約定確認なしに売却済みとして記録しない。
 
 - 保有株数の25%を売却（端数切り捨て）
 - `stop_loss` を `entry_price` に更新（リスクゼロ化）
-- `exit_stage` = 1 を portfolio.csv に書き込む
+- 約定確認後のみ `exit_stage` = 1 をportfolioへ書き込む
 - `note` に `【{TODAY} STAGE1】$${current_price}で25%利確。ストップ→買値$${entry_price}` を追記
 
 レポート出力:
@@ -106,11 +108,11 @@ Alert conditions (rule-based, no LLM needed):
 
 ### STAGE2_HIT 処理ルール（第2段階 — 追加25%利確 → トレーリング移行）
 
-`STAGE2_HIT` を検出した場合（**確認不要、自動実行**）:
+`STAGE2_HIT` も発注計画として扱い、約定確認後だけ状態を更新する。
 
 - 保有株数のうち初期の25%分（= 残り株数の1/3相当）を売却（累計50%利確）
 - ATR × 1.0 のトレーリングストップを開始
-- `exit_stage` = 2、`trailing_stop_price` = current_price − 1.0×ATR、`high_water_mark` = current_price を書き込む
+- 約定確認後のみ `exit_stage` = 2、trailing fieldsを更新する
 - `note` に `【{TODAY} STAGE2】$${current_price}で追加25%利確。ATR×1.0トレーリング開始: $${trailing_stop_price}` を追記
 
 レポート出力:
@@ -121,7 +123,12 @@ Alert conditions (rule-based, no LLM needed):
 ```
 
 **TRAILING_STOP_HIT**（`exit_stage == 2` または `partial_exit_pct == 50` のポジション）:
-- 残り全株を売却。`note` に `【{TODAY} TRAILING_STOP】$${current_price}でフルエグジット` を追記。
+- 残り全株の売却計画をHIGH通知。約定確認後のみcloseを記録する。
+
+### 小口ポジション
+
+`shares < 4` は段階利確を行わない。25%売却が実行不能または無意味になるため、
+目標到達時は全株exit review、それ以前の+5%以上はprofit reviewとして扱う。
 
 ---
 

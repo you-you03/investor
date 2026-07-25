@@ -75,7 +75,7 @@ def test_fetch_dashboard_data_reads_all_score_reliability_views():
 def test_fetch_dashboard_data_from_base_tables_shapes_metabase_equivalent_data():
     data = fetch_dashboard_data_from_base_tables(FakeBaseTableStore())
 
-    assert data["summary"][0]["overall_judgement"] == "使える: 4週目線の候補選別に有効"
+    assert data["summary"][0]["overall_judgement"] == "診断シグナルあり: 12週OOS満期までは方針固定"
     assert data["thresholdLatest"][0]["spread_return_pct"] == 6.0
     assert data["factorLatest"][0]["action"] == "BUY根拠として重視"
     assert data["scoreScatter"][0]["ticker"] == "TEST"

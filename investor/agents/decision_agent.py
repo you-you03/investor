@@ -20,6 +20,12 @@ from pathlib import Path
 
 from investor.config import settings
 from investor.notifications.slack import SlackNotifier
+from investor.core.risk import (
+    calculate_position_plan,
+    portfolio_guard_violations,
+    position_heat_usd,
+    safe_float,
+)
 from investor.supabase_sync import sync_local_to_supabase
 from investor.utils.price_parser import normalize_price_range, parse_entry_price
 from investor.utils.logger import get_logger
@@ -30,15 +36,6 @@ HISTORY_PATH = Path("data/research_history.json")
 PORTFOLIO_PATH = Path(settings.default_portfolio_path)
 LEGACY_PORTFOLIO_PATH = Path(settings.legacy_portfolio_path)
 DECISION_HISTORY_PATH = Path("data/decision_history.json")
-
-# Diversified position sizing (not Half Kelly).
-# Max 25% per position to spread risk across 3-5 stocks.
-_CONVICTION_FRACTION: dict[str, float] = {
-    "HIGH": 0.225,  # 20-25% midpoint
-    "MEDIUM": 0.15,
-    "LOW": 0.10,
-}
-
 
 def load_run(run_id: str) -> list[dict]:
     """Load research candidates for a given run_id."""
@@ -79,12 +76,6 @@ def load_open_positions(path: Path | None = None) -> list[dict]:
         return []
 
 
-def compute_position_size(conviction: str) -> float:
-    """Return position size in USD using diversified (non-concentrated) sizing."""
-    fraction = _CONVICTION_FRACTION.get(conviction.upper(), 0.10)
-    return settings.available_capital_usd * fraction
-
-
 def enrich_proposals(raw_proposals: list[dict], candidates: list[dict]) -> list[dict]:
     """
     Enrich raw proposals (from Claude's analysis) with position sizing
@@ -96,53 +87,87 @@ def enrich_proposals(raw_proposals: list[dict], candidates: list[dict]) -> list[
     proposals = []
     for p in raw_proposals:
         ticker = p.get("ticker", "UNKNOWN").upper()
-        conviction = p.get("conviction", "LOW").upper()
+        requested_conviction = p.get("conviction", "LOW").upper()
+        conviction = (
+            "MEDIUM"
+            if requested_conviction == "HIGH" and not settings.high_conviction_enabled
+            else requested_conviction
+        )
         action = p.get("action", "HOLD").upper()
         entry_price_range = normalize_price_range(p.get("entry_price_range", ""))
         entry_price = parse_entry_price(entry_price_range)
-        raw_size = p.get("position_size_usd")
-        try:
-            position_size_usd = float(raw_size) if raw_size not in (None, "") else compute_position_size(conviction)
-        except (TypeError, ValueError):
-            position_size_usd = compute_position_size(conviction)
-
-        raw_shares = p.get("shares_suggested")
-        try:
-            shares_suggested = float(raw_shares) if raw_shares not in (None, "") else None
-        except (TypeError, ValueError):
-            shares_suggested = None
-        if shares_suggested is None:
-            shares_suggested = position_size_usd / entry_price if entry_price else None
-
         research = candidate_map.get(ticker, {})
+        stop_loss = p.get("stop_loss") or research.get("stop_loss")
+        target_price = p.get("target_price") or research.get("target_price")
+        requested_size = safe_float(p.get("position_size_usd"))
+        requested_shares = safe_float(p.get("shares_suggested"))
+        position_size_usd = 0.0
+        shares_suggested = None
+        planned_risk_usd = None
+        risk_pct = None
+        reward_risk_ratio = None
+        sizing_error = None
+        if action == "BUY":
+            try:
+                plan = calculate_position_plan(
+                    entry_price=float(entry_price),
+                    stop_loss=float(stop_loss),
+                    target_price=float(target_price) if target_price not in (None, "") else None,
+                    conviction=conviction,
+                )
+                position_size_usd = plan.notional_usd
+                shares_suggested = plan.shares
+                planned_risk_usd = plan.planned_risk_usd
+                risk_pct = plan.risk_pct_of_capital
+                reward_risk_ratio = plan.reward_risk_ratio
+            except (TypeError, ValueError) as exc:
+                sizing_error = str(exc)
+
         proposals.append({
             "ticker": ticker,
             "action": action,
             "conviction": conviction,
+            "requested_conviction": requested_conviction,
             "entry_price_range": entry_price_range or p.get("entry_price_range"),
-            "target_price": p.get("target_price") or research.get("target_price"),
-            "stop_loss": p.get("stop_loss") or research.get("stop_loss"),
-            "position_size_usd": round(position_size_usd, 0),
-            "shares_suggested": round(shares_suggested, 1) if shares_suggested else None,
+            "target_price": target_price,
+            "stop_loss": stop_loss,
+            "position_size_usd": round(position_size_usd, 2),
+            "shares_suggested": shares_suggested,
+            "planned_risk_usd": planned_risk_usd,
+            "risk_pct_of_capital": risk_pct,
+            "reward_risk_ratio": reward_risk_ratio,
+            "sizing_basis": "entry_to_stop_with_gap_buffer",
+            "sizing_error": sizing_error,
+            "requested_position_size_usd": requested_size,
+            "requested_shares": requested_shares,
+            "strategy_version": settings.strategy_version,
             "rationale": p.get("rationale"),
             "key_catalysts": p.get("key_catalysts", []),
             "risk_factors": p.get("risk_factors", []),
             "time_horizon": p.get("time_horizon"),
             "note": p.get("note"),
             "hypothesis_id": p.get("hypothesis_id"),
-            "expected_hold_weeks": p.get("expected_hold_weeks", 3),
+            "expected_hold_weeks": p.get(
+                "expected_hold_weeks",
+                settings.evaluation_horizon_weeks,
+            ),
             "review_week": p.get("review_week", 3),
             "early_exit_conditions": p.get(
                 "early_exit_conditions",
                 ["stop breach", "thesis broken", "sector reversal"],
             ),
             "signal_type": p.get("signal_type") or research.get("signal_type"),
+            "research_score": p.get("research_score", research.get("score")),
+            "factor_grades": p.get("factor_grades") or research.get("factor_grades") or {},
+            "momentum_profile": p.get("momentum_profile") or research.get("momentum_profile") or {},
+            "data_gap_flag": p.get("data_gap_flag", research.get("data_gap_flag", False)),
+            "data_gap_flags": p.get("data_gap_flags") or research.get("data_gap_flags") or [],
         })
     return proposals
 
 
 _MAX_POSITION_USD = settings.available_capital_usd * settings.max_position_pct
-_MAX_OPEN_POSITIONS = 5
+_MAX_OPEN_POSITIONS = settings.max_open_positions
 
 
 def validate_proposals(proposals: list[dict], is_paper: bool = False) -> list[str]:
@@ -159,6 +184,8 @@ def validate_proposals(proposals: list[dict], is_paper: bool = False) -> list[st
     open_positions = [] if is_paper else load_open_positions()
 
     if not is_paper:
+        if buy_proposals and settings.block_new_buys_on_portfolio_violation:
+            violations.extend(portfolio_guard_violations(open_positions))
         open_count = len(open_positions)
         if open_count + len(buy_proposals) > _MAX_OPEN_POSITIONS:
             violations.append(
@@ -166,7 +193,7 @@ def validate_proposals(proposals: list[dict], is_paper: bool = False) -> list[st
             )
 
     current_total_exposure = 0.0
-    current_shares_by_ticker: dict[str, float] = {}
+    current_heat = 0.0
     for row in open_positions:
         ticker = str(row.get("ticker", "")).upper()
         try:
@@ -174,21 +201,29 @@ def validate_proposals(proposals: list[dict], is_paper: bool = False) -> list[st
             entry_price = float(row.get("entry_price") or 0)
         except (TypeError, ValueError):
             continue
-        current_shares_by_ticker[ticker] = current_shares_by_ticker.get(ticker, 0.0) + shares
         current_total_exposure += shares * entry_price
+        heat = position_heat_usd(row)
+        if heat is not None:
+            current_heat += heat
 
     new_total_exposure = 0.0
+    new_heat = 0.0
 
     for p in buy_proposals:
         ticker = p.get("ticker", "?")
-        size = p.get("position_size_usd", 0) or 0
+        size = safe_float(p.get("position_size_usd")) or 0.0
         if size > _MAX_POSITION_USD:
             violations.append(
                 f"{ticker}: position_size_usd ${size:,.0f} > 上限 ${_MAX_POSITION_USD:,.0f}"
             )
-        new_total_exposure += float(size)
+        new_total_exposure += size
         if not p.get("ticker"):
             violations.append("ticker が未設定のプロポーザルがあります")
+        if p.get("sizing_error"):
+            violations.append(f"{ticker}: sizing failed — {p['sizing_error']}")
+        proposed_shares = safe_float(p.get("shares_suggested"))
+        if proposed_shares is None or proposed_shares <= 0:
+            violations.append(f"{ticker}: executable shares could not be calculated")
         stop = p.get("stop_loss")
         if stop is None or stop == "":
             violations.append(f"{ticker}: stop_loss が未設定です（必須）")
@@ -197,6 +232,59 @@ def validate_proposals(proposals: list[dict], is_paper: bool = False) -> list[st
                 float(stop)
             except (TypeError, ValueError):
                 violations.append(f"{ticker}: stop_loss '{stop}' が数値ではありません")
+        target = p.get("target_price")
+        if target is None or target == "":
+            violations.append(f"{ticker}: target_price が未設定です（必須）")
+
+        entry = parse_entry_price(str(p.get("entry_price_range") or ""))
+        stop_value = safe_float(stop)
+        target_value = safe_float(target)
+        if entry is not None and stop_value is not None and stop_value >= entry:
+            violations.append(f"{ticker}: stop_loss must be below planned entry")
+        if entry is not None and target_value is not None and target_value <= entry:
+            violations.append(f"{ticker}: target_price must be above planned entry")
+        reward_risk = safe_float(p.get("reward_risk_ratio"))
+        if reward_risk is None:
+            violations.append(f"{ticker}: reward/risk could not be calculated")
+        elif reward_risk < settings.min_reward_risk_ratio:
+            violations.append(
+                f"{ticker}: reward/risk {reward_risk:.2f} < "
+                f"{settings.min_reward_risk_ratio:.2f}"
+            )
+        planned_risk = safe_float(p.get("planned_risk_usd"))
+        if planned_risk is not None:
+            new_heat += planned_risk
+        else:
+            violations.append(f"{ticker}: planned risk could not be calculated")
+
+        score = safe_float(p.get("research_score"))
+        if score is None:
+            violations.append(f"{ticker}: research_score is missing")
+        elif score < settings.min_live_score:
+            violations.append(
+                f"{ticker}: score {score:.1f} < live threshold {settings.min_live_score:.1f}"
+            )
+
+        grades = p.get("factor_grades") or {}
+        for factor in ("fundamentals", "catalyst"):
+            grade = str(grades.get(factor) or "").upper()
+            if grade not in {"A", "B"}:
+                violations.append(f"{ticker}: {factor} grade {grade or 'missing'} blocks BUY")
+        for factor in ("technical", "sentiment"):
+            grade = str(grades.get(factor) or "").upper()
+            if grade not in {"A", "B", "C"}:
+                violations.append(f"{ticker}: {factor} grade {grade or 'missing'} blocks BUY")
+
+        momentum_profile = p.get("momentum_profile") or {}
+        primary_mode = str(momentum_profile.get("primary_mode") or "").upper()
+        extension_risk = str(momentum_profile.get("extension_risk") or "").upper()
+        if primary_mode == "CHASE_MOMENTUM" or extension_risk == "HIGH":
+            violations.append(
+                f"{ticker}: chase/extension gate blocks live BUY "
+                f"(mode={primary_mode or 'missing'}, extension={extension_risk or 'missing'})"
+            )
+        if p.get("data_gap_flag") or p.get("data_gap_flags"):
+            violations.append(f"{ticker}: unresolved critical data gap blocks BUY")
 
         current_ticker_exposure = 0.0
         for row in open_positions:
@@ -207,31 +295,25 @@ def validate_proposals(proposals: list[dict], is_paper: bool = False) -> list[st
             except (TypeError, ValueError):
                 continue
 
-        total_exposure = current_ticker_exposure + float(size)
+        total_exposure = current_ticker_exposure + size
         if total_exposure > _MAX_POSITION_USD:
             violations.append(
                 f"{ticker}: 既存保有 ${current_ticker_exposure:,.0f} + 新規 ${size:,.0f} = "
                 f"${total_exposure:,.0f} が上限 ${_MAX_POSITION_USD:,.0f} を超えます"
             )
 
-        if not is_paper and settings.max_same_ticker_shares:
-            try:
-                proposed_shares = float(p.get("shares_suggested") or 0)
-            except (TypeError, ValueError):
-                proposed_shares = 0.0
-            next_shares = current_shares_by_ticker.get(str(ticker).upper(), 0.0) + proposed_shares
-            if next_shares > settings.max_same_ticker_shares:
-                violations.append(
-                    f"{ticker}: 同一銘柄2株上限超過: existing="
-                    f"{current_shares_by_ticker.get(str(ticker).upper(), 0.0):g} + "
-                    f"new={proposed_shares:g} > {settings.max_same_ticker_shares:g}"
-                )
-
     if not is_paper and current_total_exposure + new_total_exposure > settings.available_capital_usd:
         violations.append(
             f"20万円枠の総予算超過: existing=${current_total_exposure:,.0f} + "
             f"new=${new_total_exposure:,.0f} > ${settings.available_capital_usd:,.0f}"
         )
+    if not is_paper:
+        total_heat_pct = (current_heat + new_heat) / settings.available_capital_usd
+        if total_heat_pct > settings.max_portfolio_heat_pct + 1e-9:
+            violations.append(
+                f"portfolio heat {total_heat_pct:.2%} > "
+                f"{settings.max_portfolio_heat_pct:.2%}"
+            )
 
     return violations
 
@@ -350,7 +432,9 @@ def format_research_for_claude(run_id: str, watchlist_run_id: str | None = None)
         f"Date: {date.today().isoformat()}",
         f"Default portfolio: 20万円枠 ({PORTFOLIO_PATH})",
         f"Capital available: ${settings.available_capital_usd:,.0f}",
-        f"Rules: max same ticker shares={settings.max_same_ticker_shares:g}, target cash utilization={settings.target_cash_utilization_pct:.0%}",
+        f"Strategy: {settings.strategy_version}",
+        f"Rules: max positions={settings.max_open_positions}, max position={settings.max_position_pct:.0%}, "
+        f"risk/trade={settings.risk_per_trade_pct:.2%}, portfolio heat={settings.max_portfolio_heat_pct:.1%}",
         "",
         f"## Default 20万円 Open Positions ({len(positions)})",
     ]

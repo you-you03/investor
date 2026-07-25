@@ -4,13 +4,14 @@ No Claude calls — pure Python business logic.
 
 Threshold rules mirror AGENTS.md:
   current_price <= stop_loss          → HIGH   (STOP_BREACH)
-  pnl_pct >= +5%, exit_stage 0        → HIGH   (STAGE1_HIT)
+  pnl_pct >= +5%, exit_stage 0        → HIGH   (STAGE1_HIT; shares >= 4 only)
   pnl_pct >= +15%, exit_stage 1       → HIGH   (STAGE2_HIT)
   current_price <= trailing_stop      → HIGH   (TRAILING_STOP_HIT)
   current_price <= stop_loss * 1.03   → MEDIUM (NEAR_STOP)
   pnl_pct >= +12%, exit_stage 1       → MEDIUM (NEAR_STAGE2)
   pnl_pct <= -5%                      → MEDIUM (DOWN_5PCT)
   pnl_pct >= +25%, exit_stage 2       → INFO   (UP_25PCT_TRAILING)
+  missing stop/target                 → HIGH   (RISK_DATA_MISSING)
 """
 
 from __future__ import annotations
@@ -18,6 +19,8 @@ from __future__ import annotations
 from dataclasses import dataclass
 from datetime import date, datetime
 from typing import Literal
+
+from investor.config import settings
 
 AlertLevel = Literal["HIGH", "MEDIUM", "LOW", "INFO"]
 
@@ -107,6 +110,7 @@ def check_position(position: dict, snapshot: dict) -> list[Alert]:
     target_price = _safe_float(position.get("target_price")) or None
     trailing_stop_price = _safe_float(position.get("trailing_stop_price")) or None
     exit_stage = _exit_stage(position)
+    shares = _safe_float(position.get("shares"))
 
     unrealized_pnl_pct = round((current_price - entry_price) / entry_price * 100, 2)
 
@@ -119,6 +123,19 @@ def check_position(position: dict, snapshot: dict) -> list[Alert]:
         target_price=target_price,
         trailing_stop_price=trailing_stop_price,
     )
+
+    if stop_loss is None or target_price is None:
+        missing = []
+        if stop_loss is None:
+            missing.append("stop_loss")
+        if target_price is None:
+            missing.append("target_price")
+        alerts.append(Alert(
+            alert_type="RISK_DATA_MISSING",
+            severity="HIGH",
+            message=f"Open position missing required risk data: {', '.join(missing)}",
+            **base,
+        ))
 
     # HIGH: hard stop triggered.
     if stop_loss and current_price <= stop_loss:
@@ -138,19 +155,33 @@ def check_position(position: dict, snapshot: dict) -> list[Alert]:
             **base,
         ))
 
-    # HIGH: staged profit-taking rules.
-    if unrealized_pnl_pct >= 5.0 and exit_stage == 0:
+    # Partial exits are only executable for positions large enough to sell a
+    # meaningful lot. Smaller positions use a single-exit/trailing review.
+    staged_exit_supported = shares >= settings.min_shares_for_staged_exit
+    if unrealized_pnl_pct >= 5.0 and exit_stage == 0 and staged_exit_supported:
         alerts.append(Alert(
             alert_type="STAGE1_HIT",
             severity="HIGH",
             message=f"P&L {unrealized_pnl_pct:.1f}% reached Stage 1 profit-taking threshold",
             **base,
         ))
-    if unrealized_pnl_pct >= 15.0 and exit_stage == 1:
+    if unrealized_pnl_pct >= 15.0 and exit_stage == 1 and staged_exit_supported:
         alerts.append(Alert(
             alert_type="STAGE2_HIT",
             severity="HIGH",
             message=f"P&L {unrealized_pnl_pct:.1f}% reached Stage 2 profit-taking threshold",
+            **base,
+        ))
+    if unrealized_pnl_pct >= 5.0 and exit_stage == 0 and not staged_exit_supported:
+        at_target = target_price is not None and current_price >= target_price
+        alerts.append(Alert(
+            alert_type="SMALL_POSITION_EXIT_REVIEW" if at_target else "SMALL_POSITION_PROFIT_REVIEW",
+            severity="HIGH" if at_target else "INFO",
+            message=(
+                f"P&L {unrealized_pnl_pct:.1f}% with {shares:g} shares; "
+                "partial exits are disabled below "
+                f"{settings.min_shares_for_staged_exit:g} shares"
+            ),
             **base,
         ))
 
@@ -162,7 +193,7 @@ def check_position(position: dict, snapshot: dict) -> list[Alert]:
             message=f"Price ${current_price:.2f} is within 3% of stop ${stop_loss:.2f}",
             **base,
         ))
-    if unrealized_pnl_pct >= 12.0 and exit_stage == 1:
+    if unrealized_pnl_pct >= 12.0 and exit_stage == 1 and staged_exit_supported:
         alerts.append(Alert(
             alert_type="NEAR_STAGE2",
             severity="MEDIUM",
@@ -184,17 +215,15 @@ def check_position(position: dict, snapshot: dict) -> list[Alert]:
             **base,
         ))
 
-    # INFO: local calibration shows the 4-7 day window has the strongest alpha.
-    # This is not a sell signal by itself; it prompts tighter review of profit
-    # capture, stop movement, and thesis confirmation while initial momentum is fresh.
+    # Three weeks is the primary review horizon. This is not an automatic exit.
     age_days = _position_age_days(position)
-    if age_days is not None and 4 <= age_days <= 7:
+    if age_days is not None and 19 <= age_days <= 23:
         alerts.append(Alert(
-            alert_type="PRIME_EXIT_WINDOW",
+            alert_type="THREE_WEEK_THESIS_REVIEW",
             severity="INFO",
             message=(
-                f"Entry age {age_days}d is inside the 4-7d high-alpha window; "
-                "review profit capture, stop movement, and thesis progress"
+                f"Entry age {age_days}d reached the 3-week review window; "
+                "review thesis, alpha, and risk without forcing an exit"
             ),
             **base,
         ))

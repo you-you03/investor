@@ -116,8 +116,8 @@ def get_market_context() -> str:
 
 def get_relative_strength(ticker: str, benchmark: str = "SPY") -> str:
     """
-    Compute ticker's price return vs SPY over 1M and 3M.
-    Returns rs_1m, rs_3m (positive = outperforming market), and rs_signal.
+    Compute ticker's price return vs benchmark over 1M, 3M, 6M, and 12-1M.
+    Returns persistent relative-strength metrics and rs_signal.
     """
     result = _yf.get_relative_strength(ticker, benchmark)
     return json.dumps(result)
@@ -617,10 +617,10 @@ MARKET_TOOL_DEFINITIONS: list[dict] = [
     {
         "name": "get_relative_strength",
         "description": (
-            "Compute a stock's price return vs SPY benchmark over 1-month and 3-month periods. "
-            "Returns rs_1m and rs_3m (positive = outperforming SPY) and rs_signal "
+            "Compute a stock's price return vs SPY benchmark over 1M, 3M, 6M, and "
+            "12-minus-1-month periods. Returns rs_1m, rs_3m, rs_6m, rs_12_1m and rs_signal "
             "(STRONG_OUTPERFORM / OUTPERFORM / NEUTRAL / STRONG_UNDERPERFORM). "
-            "Use this to confirm momentum quality — prefer stocks outperforming the market. "
+            "STRONG_OUTPERFORM requires persistent medium-term confirmation; short-term acceleration alone is insufficient. "
             "A stock with STRONG_UNDERPERFORM rs_signal in a DOWNTREND regime is a red flag."
         ),
         "input_schema": {

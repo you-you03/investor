@@ -300,12 +300,28 @@ class TestValidateProposals:
         base = {
             "ticker": "NVDA",
             "action": "BUY",
-            "conviction": "HIGH",
-            "entry_price_range": "800-820",
-            "target_price": 900,
-            "stop_loss": 760,
-            "position_size_usd": 1000,
-            "shares_suggested": 1.9,
+            "conviction": "MEDIUM",
+            "entry_price_range": "100-102",
+            "target_price": 112,
+            "stop_loss": 95,
+            "position_size_usd": 250,
+            "shares_suggested": 2,
+            "planned_risk_usd": 12.5,
+            "reward_risk_ratio": 1.75,
+            "research_score": 8.0,
+            "factor_grades": {
+                "momentum": "B",
+                "fundamentals": "A",
+                "catalyst": "B",
+                "technical": "B",
+                "sentiment": "C",
+            },
+            "momentum_profile": {
+                "primary_mode": "EARLY_MOMENTUM",
+                "extension_risk": "LOW",
+            },
+            "data_gap_flag": False,
+            "data_gap_flags": [],
             "rationale": "test",
             "key_catalysts": [],
             "risk_factors": [],
@@ -352,14 +368,21 @@ class TestValidateProposals:
             violations = validate_proposals(proposals)
         assert any("既存保有" in v and "上限" in v for v in violations)
 
-    def test_default_portfolio_same_ticker_two_share_cap_is_blocked(self):
+    def test_default_portfolio_has_no_arbitrary_share_count_cap(self):
         from investor.agents.decision_agent import validate_proposals
 
-        open_positions = [{"ticker": "NVDA", "shares": "1.5", "entry_price": "200", "status": "open"}]
+        open_positions = [{
+            "ticker": "NVDA",
+            "shares": "0.5",
+            "entry_price": "200",
+            "stop_loss": "190",
+            "target_price": "240",
+            "status": "open",
+        }]
         proposals = [self._make_proposal(position_size_usd=200, shares_suggested=1)]
         with patch("investor.agents.decision_agent.load_open_positions", return_value=open_positions):
             violations = validate_proposals(proposals)
-        assert any("同一銘柄2株上限" in v for v in violations)
+        assert not any("2株上限" in v for v in violations)
 
     def test_default_portfolio_total_budget_cap_is_blocked(self):
         from investor.agents.decision_agent import validate_proposals
@@ -374,12 +397,19 @@ class TestValidateProposals:
         from investor.agents.decision_agent import enrich_proposals
 
         enriched = enrich_proposals(
-            [{"ticker": "NVDA", "action": "BUY", "conviction": "HIGH", "entry_price_range": "150—160"}],
+            [{
+                "ticker": "NVDA",
+                "action": "BUY",
+                "conviction": "HIGH",
+                "entry_price_range": "150—160",
+                "target_price": 180,
+                "stop_loss": 145,
+            }],
             [],
         )
         assert enriched[0]["shares_suggested"] is not None
 
-    def test_enrich_preserves_explicit_small_portfolio_size(self):
+    def test_enrich_overrides_llm_size_with_deterministic_risk_size(self):
         from investor.agents.decision_agent import enrich_proposals
 
         enriched = enrich_proposals(
@@ -390,12 +420,41 @@ class TestValidateProposals:
                 "entry_price_range": "500-520",
                 "position_size_usd": 1020,
                 "shares_suggested": 2,
+                "target_price": 590,
+                "stop_loss": 480,
                 "note": "[H-3] 20万円枠",
                 "hypothesis_id": "H-3",
             }],
             [],
         )
-        assert enriched[0]["position_size_usd"] == 1020
-        assert enriched[0]["shares_suggested"] == 2
+        assert enriched[0]["position_size_usd"] < 1020
+        assert enriched[0]["shares_suggested"] < 2
+        assert enriched[0]["requested_position_size_usd"] == 1020
+        assert enriched[0]["requested_shares"] == 2
+        assert enriched[0]["conviction"] == "MEDIUM"
         assert enriched[0]["note"] == "[H-3] 20万円枠"
         assert enriched[0]["hypothesis_id"] == "H-3"
+
+    def test_quality_and_chase_gates_block_buy(self):
+        from investor.agents.decision_agent import validate_proposals
+
+        proposal = self._make_proposal(
+            research_score=7.4,
+            factor_grades={
+                "momentum": "B",
+                "fundamentals": "C",
+                "catalyst": "B",
+                "technical": "B",
+                "sentiment": "C",
+            },
+            momentum_profile={
+                "primary_mode": "CHASE_MOMENTUM",
+                "extension_risk": "HIGH",
+            },
+        )
+        with patch("investor.agents.decision_agent.load_open_positions", return_value=[]):
+            violations = validate_proposals([proposal])
+
+        assert any("live threshold" in v for v in violations)
+        assert any("fundamentals" in v for v in violations)
+        assert any("chase/extension" in v for v in violations)

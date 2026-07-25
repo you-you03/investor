@@ -22,9 +22,16 @@ PORTFOLIO_FIELDNAMES = [
     "conviction",
     "hypothesis_id",
     "exit_stage",
+    "trailing_stop_price",
+    "high_water_mark",
     "mae_pct",
     "mfe_pct",
     "mfe_capture_pct",
+    "planned_risk_usd",
+    "risk_pct_of_capital",
+    "strategy_version",
+    "order_status",
+    "broker_stop_order_id",
     "rule_adherence_score",
 ]
 

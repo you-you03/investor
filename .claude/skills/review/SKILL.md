@@ -1,150 +1,80 @@
 ---
-description: スコア予測精度・勝率・確信度校正を分析し、スコアリングウェイトの調整提案を出す
+description: Strategy V2のOOS予測精度・alpha・ドローダウン・ルール遵守を検証する
 argument-hint: ""
 allowed-tools: Bash(.venv/bin/python *) Bash(cat *) Read
 ---
 
-Analyze investment performance: compare predicted scores vs actual returns, compute win rates by score bucket and conviction level, and identify which scoring factors are most predictive.
+# Review — Strategy V2
 
-All Bash commands must be run from the `investor/` subdirectory:
-```
-cd "/Users/yutaobayashi/PERSONAL DEV/1_now/investor"
-```
+`quality_momentum_v2_2026-07-25` の検証を行う。pool済み観測へ繰り返し適合して
+ウェイトを動かさない。
 
----
-
-## Step 1: Update outcome records
+## 1. Outcomes更新
 
 ```bash
 .venv/bin/python scripts/record_outcomes.py
-```
-
-Read the output to see how many outcomes were newly recorded or updated.
-
----
-
-## Step 2: Load enriched research history
-
-Read `data/research_history.json`. For analysis, only consider candidates that have an `outcome` key with a non-null `realized_return_pct` or `unrealized_return_pct`.
-
----
-
-## Step 3: Performance analysis
-
-Perform each of the following analyses using only data from the JSON. Do not estimate or fabricate numbers.
-
-### 3a. Overall summary
-
-| Metric | Value |
-|--------|-------|
-| Total candidates with outcomes | — |
-| Closed positions | — |
-| Open positions | — |
-| Overall win rate (return > 0%) | — |
-| Average realized return | — |
-| Average alpha vs SPY | — |
-
-### 3b. Win rate by score bucket
-
-Group candidates by their composite `score`:
-
-| Score bucket | Count | Win rate | Avg return | Avg alpha |
-|---|---|---|---|---|
-| ≥ 8.5 (exceptional) | — | — | — | — |
-| 8.0–8.4 (high) | — | — | — | — |
-| 7.5–7.9 (medium-high) | — | — | — | — |
-| 7.0–7.4 (medium) | — | — | — | — |
-| < 7.0 (below threshold) | — | — | — | — |
-
-### 3c. Win rate by conviction level
-
-| Conviction | Count | Win rate | Avg return | Avg alpha |
-|---|---|---|---|---|
-| HIGH | — | — | — | — |
-| MEDIUM | — | — | — | — |
-| LOW | — | — | — | — |
-
-### 3d. Outcome type breakdown
-
-| Outcome type | Count | Avg return |
-|---|---|---|
-| TARGET_HIT | — | — |
-| STOP_HIT | — | — |
-| TIME_EXIT | — | — |
-| OPEN / AT_TARGET / AT_STOP | — | — |
-
-### 3e. Factor correlation analysis (if score_breakdown is available)
-
-For each score factor (momentum, fundamentals, catalyst, technical, sentiment), compute:
-- Pearson correlation between factor score and actual return_pct
-- Note which factors had the strongest / weakest predictive power
-
-| Factor | Avg score (winners) | Avg score (losers) | Correlation with return |
-|---|---|---|---|
-
-### 3f. Score calibration check
-
-For positions that have `score_evidence` recorded, note whether the evidence cited in the research actually materialized. Flag specific cases where:
-- Score was HIGH but outcome was STOP_HIT → potential overconfidence in that factor
-- Score was LOW but outcome was TARGET_HIT → potential underconfidence
-
----
-
-## Step 4: Key findings and calibration recommendations
-
-Synthesize the analysis into 3–5 bullet points:
-
-- **What's working**: which score buckets / factors are reliably predicting good outcomes
-- **What's not**: where the model is overconfident or underconfident
-- **Calibration suggestion**: specific weight or threshold adjustments for `investor/prompts/research_prompts.py`
-  - Example: "Catalyst weight should be reduced from 25% to 20% — it shows weak correlation with outcomes in this sample"
-  - Example: "Consider raising the minimum score threshold from 7.0 to 7.5"
-
----
-
-## Step 5: Output
-
-Print the full analysis as a readable Markdown report. End with a section titled **## Calibration Recommendations** containing any suggested changes to scoring weights or thresholds — ready to be applied if the user approves.
-
----
-
-## Step 6: Spearman 相関検証（score_snapshots から）
-
-```bash
 .venv/bin/python scripts/fetch_returns.py
 .venv/bin/python scripts/validate_scores.py
 ```
 
-先に `fetch_returns.py` が `score_snapshots.json` の満期済み `week1`〜`week8` を取得・更新する。
-その後、`validate_scores.py` が `reports/validation/validation_{date}.md` を出力し、同時に stdout にも内容を表示する。
+`week1`〜`week12` を追跡する。
 
-出力を読み込み、以下をキャリブレーション提案に統合する:
+## 2. データ分離
 
-- **IC（Spearman ρ）が 0.2 未満の週がある場合**: 「スコアの予測力が低い（week{N}）」と注記し、スコアを超短期トレードの根拠として使わないよう注意を促す
-- **IC が 0.4 以上の週がある場合**: 「スコアは良好な予測力を持っている（week{N}）」と評価する
-- **ファクター別 ρ が最も弱いファクター**（`week4` ρ < 0.15）→ ウェイト引き下げを `Calibration Recommendations` に追記
-- **ファクター別 ρ が最も強いファクター**（`week4` ρ > 0.3）→ ウェイト引き上げを `Calibration Recommendations` に追記
-- **データ不足（N < 30）の週は「計測継続中」**と表示してスキップする
+- `strategy_version` ごとに集計する
+- legacyとStrategy V2を混ぜた数字は移行参考値としてだけ表示する
+- 同一run・同一tickerのretry/backfillを1観測へ重複排除する
+- ライブ方針の主指標はrun別12週SPY alpha IC
+- pooled IC、単一tickerの反復観測、1〜3週結果は診断用
 
-Step 5 の **## Calibration Recommendations** に以下を追加:
+## 3. 必須評価
+
+1. 12週SPY alpha、勝率、中央値、P10
+2. 最大ドローダウンとportfolio heat
+3. stop/target、サイズ、約定確認のrule adherence
+4. score ≥7.5 と <7.5 の12週alpha差
+5. fundamentals/catalyst grade別の12週alpha
+6. CHASE/HIGH extensionを回避した機会損失とdownside回避
+7. BUY、WAIT、PASSのcounterfactual
+
+## 4. 変更禁止条件
+
+- Strategy V2の独立した満期runが10未満ならウェイトを変更しない
+- 最初の12週間はウェイトを固定する
+- pooled factor correlationだけを理由に重みを変えない
+- HIGH convictionは独立した満期OOS観測30件まで有効化しない
+
+データ不足時は「計測継続」と結論し、具体的な次回判定日と必要run数を示す。
+
+## 5. 転換条件
+
+次のいずれかなら、ライブサイズ縮小または新規BUY停止を提案する。
+
+- 最大DD > 6%
+- rule adherence < 100%
+- 独立runが10以上あり、12週run別alpha IC中央値 ≤ 0
+- score ≥7.5群の12週SPY alphaが≤0
+
+## 6. 出力
 
 ```markdown
-### スコア予測力検証（score_snapshots より）
+# Strategy V2 Review — YYYY-MM-DD
 
-| ホライゾン | Spearman ρ | 判定 |
-|---|---|---|
-| 1週後 | ... | ... |
-| 2週後 | ... | ... |
-| 3週後 | ... | ... |
-| 4週後 | ... | ... |
-| 5週後 | ... | ... |
-| 6週後 | ... | ... |
-| 7週後 | ... | ... |
-| 8週後 | ... | ... |
+## 判定
+継続 / 縮小 / 停止 / 再設計
 
-**ファクター調整提案**（week4 ρ 基準）:
-- {最強ファクター}: ρ={value} → ウェイト引き上げ検討
-- {最弱ファクター}: ρ={value} → ウェイト引き下げ検討
+## 独立OOS
+| 指標 | 値 | 必要水準 | 判定 |
+
+## リスクと遵守
+| 最大DD | Heat | Stop/Target欠損 | 未確認約定 | 遵守率 |
+
+## 最も弱い仮説
+...
+
+## 次回まで固定するもの
+...
+
+## 転換条件
+...
 ```
-
-`score_snapshots.json` にデータがない場合は Step 6 全体をスキップし、「スナップショットデータ蓄積中 — /research を継続実行してください」と表示する。

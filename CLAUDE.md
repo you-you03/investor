@@ -4,14 +4,15 @@
 
 | 項目 | 値 |
 |---|---|
-| **予算** | ¥1,000,000（約 $6,700 USD） |
-| **週次目標リターン** | +2.5%（¥25,000/週、年換算+130%） |
-| **戦略スタイル** | バランスモメンタム — リスク管理優先、分散投資 |
-| **最大同時ポジション数** | 5銘柄 |
-| **1銘柄最大配分** | 予算の25%（¥250,000 / 約$1,675） |
-| **ストップロス** | 厳格遵守（ATR 1×またはリサーチ指定値） |
+| **ライブ予算** | ¥200,000（約 $1,340。¥1,000,000枠は検証用） |
+| **評価目標** | 12週ローリングでSPY超過、最大DD 6%以内、ルール遵守100% |
+| **戦略スタイル** | Quality Momentum — ファンダ60%・中期RS25%・検証済み材料15% |
+| **最大同時ポジション数** | 3銘柄 |
+| **1銘柄最大配分** | ライブ予算の25%（約$335） |
+| **リスク上限** | 1トレード0.75%、portfolio heat 2.0% |
+| **ストップ/目標** | 新規ポジションでは両方必須。欠損時は新規BUY停止 |
 
-ポジションサイジング: ケリー基準（リスク2%固定）で計算後、25%上限キャップ → VIXレジーム乗数。1銘柄50%以上は禁止。
+ポジションサイジング: entry-stop間の損失 + 0.25% gap bufferからPythonが決定し、25%上限を適用。LLMの裁量サイズ、株数上限、キャッシュ稼働率ノルマは使わない。
 
 ---
 
@@ -127,7 +128,7 @@ docs/
 
 ```
 /monitor
-  ↓ STAGE1_HIT / STAGE2_HIT → 自動利確処理
+  ↓ STAGE1_HIT / STAGE2_HIT → 発注計画（約定確認後のみ台帳更新）
   ↓ STOP_BREACH             → /decision --mode exit --ticker {TICKER}
 ```
 
@@ -135,7 +136,7 @@ docs/
 
 ```
 /research
-  ↓ スコア ≥ 7.0 の候補が出たら
+  ↓ スコア ≥ 7.5 の候補が出たら
 /decision
   ↓ BUY 採用
 (human が portfolio.csv に追加)
@@ -213,7 +214,7 @@ B枠を使うケース:
   1. python scripts/tool.py get_stock_snapshot --ticker {TICKER} (各ポジション)
      python scripts/tool.py get_technical_indicators --ticker {TICKER}
        → Claude がアラート判定 (STOP_BREACH / STAGE1_HIT / STAGE2_HIT 等)
-       → 自動処理: portfolio.csv 更新（利確記録・ストップ移動）
+       → 発注計画を通知。ブローカー約定確認後のみportfolioを更新
   2. ウォッチリスト監視 → フラグ判定 → watchlist.json 更新
   3. python scripts/run_monitor.py → Slack 送信
 ```

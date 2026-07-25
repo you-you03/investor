@@ -27,19 +27,19 @@ Read `investor/investor/prompts/personas.py` in full. Internalize the 5 persona 
 
 ---
 
-## Step 0.5: 確信度校正 + VIXレジーム確認
+## Step 0.5: 固定戦略の検証 + 市場レジーム確認
 
 ```bash
 .venv/bin/python scripts/record_outcomes.py
 .venv/bin/python scripts/fetch_returns.py
 .venv/bin/python scripts/show_calibration_stats.py
 .venv/bin/python scripts/tool.py get_market_context
+.venv/bin/python scripts/audit_portfolio_risk.py
 ```
 
-VIX → regime multiplier (used in Step 6 sizing):
-- VIX < 18 → **リスクオン** (× 1.0)
-- 18–24 → **中立** (× 0.7)
-- VIX ≥ 25 → **リスクオフ** (× 0.5)
+検証統計はStrategy V2の監視に使う。12週間の評価窓が満期になる前に、同じデータへ
+ウェイトを再適合しない。VIXは新規BUYの環境リスクとして議論するが、LLMの裁量サイズ計算には使わない。
+portfolio auditがexit 2なら、そのrunの新規BUYは中止し、違反解消を優先する。
 
 ---
 
@@ -47,7 +47,7 @@ VIX → regime multiplier (used in Step 6 sizing):
 
 ```bash
 cat data/research_history.json   # extract run_id, macro_regime, candidates
-cat data/portfolio_20man.csv     # default 20万円 portfolio: count open positions and sector concentration
+cat data/portfolio_20man.csv     # default 20万円 portfolio: count open positions and audit risk fields
 cat data/portfolio_100man.csv    # parallel 100万円 simulation: learning/data collection, not real execution
 cat data/watchlist.json          # check priority_8plus candidates
 ```
@@ -95,13 +95,13 @@ Run adversary pairs where stances differed. Pairs, turn templates: [reference/de
 PM role. Full checklist, RSI gate, sizing formula, JSON output format: [reference/pm-synthesis.md](reference/pm-synthesis.md).
 
 **Key rules (non-negotiable):**
-- `catalyst_quality == WEAK` → instant PASS
-- RSI ≥ 85 → WAIT, no exceptions
+- score ≥ 7.5、fundamentals/catalyst grade A/B
+- CHASE_MOMENTUM または extension_risk HIGH → ライブBUY禁止
+- stop/target/data gapに不備 → BUY禁止
 - Default portfolio: 20万円枠 (~$1,340)
-- Same ticker max: 2 shares across open + new positions
-- Total default portfolio exposure must stay within ~$1,340
-- Target cash utilization: 85%+ only when qualified candidates exist
-- Max open positions: 5
+- 1銘柄上限25% (~$335)、Max open positions: 3
+- risk/trade 0.75%、portfolio heat 2.0%
+- HIGH conviction は独立した満期OOS 30件まで無効
 - Parallel 100万円 simulation is not real capital. When explicitly updating it, keep the same quality gates but target high budget utilization for better decision-learning data.
 
 ---
@@ -113,7 +113,7 @@ After PM synthesis:
 - **WAIT** → `pipeline_status: "researched"`（条件待ち。次回 /monitor でエントリー条件を再チェック）
 - **PASS** → `pipeline_status: "watching"`（リセット。監視継続）
 - **PASS/WAIT, existing** → update `last_score`, `reference_price`, `reason`
-- **PASS/WAIT, new, score ≥ 7.0** → add as `status: "active"`, `pipeline_status: "researched"`
+- **PASS/WAIT, new, score ≥ 7.5** → add as `status: "active"`, `pipeline_status: "researched"`
 - **priority_8plus BUY adopted** → remove `priority_8plus` flag
 
 pipeline_status の変更をレポートに明示する:
@@ -171,7 +171,8 @@ SlackNotifier().send_text(':white_check_mark: Decision complete — no actionabl
 | エントリーゾーン | ${entry_price_range} |
 | 目標値 | ${target_price:,.2f} |
 | ストップ | ${stop_loss:,.2f} |
-| ポジションサイズ | ~${position_size_usd:,.0f} |
+| ポジションサイズ | Python risk engine算出: ~${position_size_usd:,.2f} |
+| 計画損失 | ${planned_risk_usd:,.2f} |
 | 期間 | {time_horizon} |
 
 **判断根拠**: {rationale}
@@ -179,7 +180,7 @@ SlackNotifier().send_text(':white_check_mark: Decision complete — no actionabl
 **リスク**: {risk_factors}
 
 **Slack**: 送信済み ✅
-> **Next step**: 承認する場合は `scripts/add_position.py` でポジション追加
+> **Next step**: 実際の約定値で `skills/portfolio.py add --target ... --stop ...` を実行
 ```
 
 Conviction icons: HIGH → ✅ | MEDIUM → 🟡 | LOW → 🔵 | PASS → ❌
@@ -224,9 +225,9 @@ print(format_active_hypotheses_for_claude())
 **100万円シミュレーションルール:**
 - 総予算: ¥1,000,000 ≒ $6,700
 - 最大5銘柄、1銘柄上限25%（約 $1,675）
-- 品質ゲートは20万円枠と同じ: `catalyst_quality == WEAK`、score < 7.0、stop未設定、CRITICAL data gap はBUY禁止
-- 有資格候補がある場合は、学習データ収集のためキャッシュ稼働率90〜100%を目指す
-- 無理に弱い銘柄で現金を埋めない。候補不足で稼働率未達なら理由を明記する
+- 品質ゲートは20万円枠と同じ: score < 7.5、fundamentals/catalyst grade C/D、stop未設定、CRITICAL data gap はBUY禁止
+- シミュレーションでもキャッシュ稼働率ノルマを設けない。候補がなければHOLD_CASHを記録する
+- サイズは`skills/portfolio.py`のdeterministic risk engineに従う
 
 記録する場合:
 ```bash

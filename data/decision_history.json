@@ -801,5 +801,199 @@
       "hold_cash_count": 0
     },
     "no_trade_week": false
+  },
+  {
+    "date": "2026-07-20",
+    "run_id": "3c97e9aa-2acd-4c05-a29b-a55ff4ee046d",
+    "candidates_evaluated": [
+      "NEE",
+      "REZI",
+      "WDFC",
+      "CCC",
+      "DNTH",
+      "SLS",
+      "ORKA",
+      "SAIC"
+    ],
+    "buy_decisions": [
+      "REZI"
+    ],
+    "pass_decisions": [
+      "NEE",
+      "WDFC",
+      "CCC",
+      "DNTH",
+      "SLS",
+      "ORKA",
+      "SAIC"
+    ],
+    "hold_cash_decisions": [],
+    "proposal_records": [
+      {
+        "ticker": "REZI",
+        "action": "BUY",
+        "conviction": "MEDIUM",
+        "position_size_usd": 36.0,
+        "signal_type": "watchlist_escalate"
+      }
+    ],
+    "pass_records": [
+      {
+        "ticker": "NEE",
+        "score": 7.6,
+        "conviction": "MEDIUM",
+        "entry_price_range": null,
+        "signal_type": null
+      },
+      {
+        "ticker": "WDFC",
+        "score": 7.5,
+        "conviction": "MEDIUM",
+        "entry_price_range": null,
+        "signal_type": null
+      },
+      {
+        "ticker": "CCC",
+        "score": 7.5,
+        "conviction": "MEDIUM",
+        "entry_price_range": null,
+        "signal_type": null
+      },
+      {
+        "ticker": "DNTH",
+        "score": 7.2,
+        "conviction": "MEDIUM",
+        "entry_price_range": null,
+        "signal_type": null
+      },
+      {
+        "ticker": "SLS",
+        "score": 7.1,
+        "conviction": "MEDIUM",
+        "entry_price_range": null,
+        "signal_type": null
+      },
+      {
+        "ticker": "ORKA",
+        "score": 7.05,
+        "conviction": "MEDIUM",
+        "entry_price_range": null,
+        "signal_type": null
+      },
+      {
+        "ticker": "SAIC",
+        "score": 7.0,
+        "conviction": "MEDIUM",
+        "entry_price_range": null,
+        "signal_type": null
+      }
+    ],
+    "proposal_summary": {
+      "buy_count": 1,
+      "pass_count": 7,
+      "hold_cash_count": 0
+    },
+    "no_trade_week": false
+  },
+  {
+    "date": "2026-07-25",
+    "run_id": "bbc15c7b-82b4-4c80-a9be-f6686abf9ad9",
+    "candidates_evaluated": [
+      "ENVA",
+      "NEE",
+      "RNG",
+      "CCC",
+      "DNTH"
+    ],
+    "buy_decisions": [
+      "NEE"
+    ],
+    "pass_decisions": [
+      "ENVA",
+      "RNG",
+      "CCC",
+      "DNTH"
+    ],
+    "hold_cash_decisions": [],
+    "proposal_records": [
+      {
+        "ticker": "NEE",
+        "action": "BUY",
+        "conviction": "MEDIUM",
+        "position_size_usd": 179.0,
+        "signal_type": "earnings_beat"
+      },
+      {
+        "ticker": "ENVA",
+        "action": "WAIT",
+        "conviction": "MEDIUM",
+        "position_size_usd": 0.0,
+        "signal_type": "earnings_beat"
+      },
+      {
+        "ticker": "RNG",
+        "action": "WAIT",
+        "conviction": "MEDIUM",
+        "position_size_usd": 0.0,
+        "signal_type": "earnings_beat"
+      },
+      {
+        "ticker": "CCC",
+        "action": "WAIT",
+        "conviction": "MEDIUM",
+        "position_size_usd": 0.0,
+        "signal_type": "event_driven"
+      },
+      {
+        "ticker": "DNTH",
+        "action": "WAIT",
+        "conviction": "LOW",
+        "position_size_usd": 0.0,
+        "signal_type": "clinical_catalyst"
+      },
+      {
+        "ticker": "WDFC",
+        "action": "PASS",
+        "conviction": "LOW",
+        "position_size_usd": 0.0,
+        "signal_type": "watchlist_escalate"
+      }
+    ],
+    "pass_records": [
+      {
+        "ticker": "ENVA",
+        "score": 8.2,
+        "conviction": "HIGH",
+        "entry_price_range": null,
+        "signal_type": null
+      },
+      {
+        "ticker": "RNG",
+        "score": 7.4,
+        "conviction": "MEDIUM",
+        "entry_price_range": null,
+        "signal_type": null
+      },
+      {
+        "ticker": "CCC",
+        "score": 7.3,
+        "conviction": "MEDIUM",
+        "entry_price_range": null,
+        "signal_type": null
+      },
+      {
+        "ticker": "DNTH",
+        "score": 7.2,
+        "conviction": "MEDIUM",
+        "entry_price_range": null,
+        "signal_type": null
+      }
+    ],
+    "proposal_summary": {
+      "buy_count": 1,
+      "pass_count": 4,
+      "hold_cash_count": 0
+    },
+    "no_trade_week": false
   }
 ]

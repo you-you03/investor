@@ -18,6 +18,7 @@ from datetime import date, datetime
 from pathlib import Path
 
 from investor.data.yfinance_client import SCREEN_UNIVERSE
+from investor.config import settings
 from investor.tools.market_tools import (
     get_52w_breakouts,
     get_atr_targets,
@@ -70,19 +71,43 @@ def _load_watchlist_tickers() -> list[str]:
 
 
 def save_run(run_id: str, candidates: list[dict]) -> None:
-    """Save a completed research run to data/research_history.json."""
+    """Save eligible candidates while retaining every score for validation."""
     HISTORY_PATH.parent.mkdir(parents=True, exist_ok=True)
     today = date.today().isoformat()
     history = load_history()
+    versioned_candidates = []
+    for candidate in candidates:
+        row = dict(candidate)
+        row.setdefault("strategy_version", settings.strategy_version)
+        versioned_candidates.append(row)
+    eligible_candidates = []
+    for candidate in versioned_candidates:
+        try:
+            score = float(candidate.get("score"))
+        except (TypeError, ValueError):
+            continue
+        if score >= settings.min_live_score:
+            eligible_candidates.append(candidate)
     history["runs"].append({
         "run_id": run_id,
         "date": today,
-        "candidates": candidates,
+        "strategy_version": settings.strategy_version,
+        "candidates": eligible_candidates,
     })
     HISTORY_PATH.write_text(json.dumps(history, indent=2))
-    logger.info(f"Saved {len(candidates)} candidates | run_id={run_id}")
-    add_score_snapshots(run_id=run_id, source="research", results=candidates, scored_at=date.fromisoformat(today))
-    _save_research_markdown(run_id, today, candidates)
+    logger.info(
+        "Saved %d/%d eligible candidates | run_id=%s",
+        len(eligible_candidates),
+        len(versioned_candidates),
+        run_id,
+    )
+    add_score_snapshots(
+        run_id=run_id,
+        source="research",
+        results=versioned_candidates,
+        scored_at=date.fromisoformat(today),
+    )
+    _save_research_markdown(run_id, today, eligible_candidates)
     sync_local_to_supabase("research", "report_artifacts")
 
 

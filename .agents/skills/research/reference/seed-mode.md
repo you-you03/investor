@@ -93,8 +93,8 @@ Then update `data/watchlist.json` for `{TICKER}`:
 - Set `last_research_run_id` = new run_id
 - Set `reference_price` = current_price (reset reference to today's price)
 - **pipeline_status の更新**:
-  - スコア ≥ 7.0 → `pipeline_status = "researched"`（/decision 候補として準備完了）
-  - スコア < 7.0 → `pipeline_status = "watching"`（条件未達、リセット）
+  - スコア ≥ 7.5 → `pipeline_status = "researched"`（/decision 候補として準備完了）
+  - スコア < 7.5 → `pipeline_status = "watching"`（条件未達、リセット）
 
 ```bash
 cat data/watchlist.json
@@ -106,7 +106,7 @@ Report:
 ```
 ✅ Seed research complete:
   TICKER: {TICKER} | score: {score}
-  pipeline_status: research_queued → researched  ← (score >= 7.0 の場合)
+  pipeline_status: research_queued → researched  ← (score >= 7.5 の場合)
   → Next: /decision でペルソナディベートへ
 ```
 

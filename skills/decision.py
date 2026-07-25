@@ -147,9 +147,16 @@ def _log_paper_proposals(proposals: list[dict]) -> None:
             "conviction": p.get("conviction", ""),
             "hypothesis_id": hypothesis_id,
             "exit_stage": "0",
+            "trailing_stop_price": "",
+            "high_water_mark": "",
             "mae_pct": "",
             "mfe_pct": "",
             "mfe_capture_pct": "",
+            "planned_risk_usd": p.get("planned_risk_usd", ""),
+            "risk_pct_of_capital": p.get("risk_pct_of_capital", ""),
+            "strategy_version": p.get("strategy_version", ""),
+            "order_status": "paper",
+            "broker_stop_order_id": "",
             "rule_adherence_score": "",
         })
 

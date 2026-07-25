@@ -7,6 +7,7 @@ from datetime import date, timedelta
 from pathlib import Path
 from typing import Any
 
+from investor.config import settings
 from investor.tools.market_tools import get_stock_snapshot
 from investor.supabase_sync import sync_local_to_supabase
 from investor.utils.logger import get_logger
@@ -14,7 +15,7 @@ from investor.utils.logger import get_logger
 logger = get_logger(__name__)
 
 SNAPSHOTS_PATH = Path("data/score_snapshots.json")
-TRACKING_HORIZON_WEEKS = (1, 2, 3, 4, 5, 6, 7, 8)
+TRACKING_HORIZON_WEEKS = tuple(range(1, settings.evaluation_horizon_weeks + 1))
 WEEK_KEYS = tuple(f"week{week}" for week in TRACKING_HORIZON_WEEKS)
 
 CONVICTION_SCORE = {
@@ -287,6 +288,7 @@ def add_score_snapshots(
         snapshot = {
             "run_id": run_id,
             "source": source,
+            "strategy_version": result.get("strategy_version") or settings.strategy_version,
             "scored_at": scored_date.isoformat(),
             "ticker": ticker,
             "company_name": company_name,
@@ -310,7 +312,7 @@ def add_score_snapshots(
             "rank_in_run": rank,
             "total_scored_in_run": total,
             "price_at_score": round(price_at_score, 4),
-            "passed_threshold": score >= 7.0,
+            "passed_threshold": score >= 7.5,
             "sector_etf": sector_etf_for_ticker(ticker),
             "macro_regime": result.get("macro_regime") or "",
         }

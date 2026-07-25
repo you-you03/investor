@@ -1,5 +1,5 @@
 ---
-description: スコアの信頼性を振り返り、1〜8週リターンを使ってモメンタムモード別・因子別の予測力を評価し、researchの重み調整提案を出す
+description: スコアの信頼性を振り返り、1〜12週リターンとrun別alpha ICでStrategy V2を評価する
 argument-hint: ""
 allowed-tools: Bash(.venv/bin/python *) Bash(cat *) Read
 ---
@@ -33,7 +33,7 @@ Run these in order:
 
 Read the command outputs. Do not fabricate counts or dates.
 
-If `fetch_returns.py` says 5〜8週データがまだ `N/A` なら、そのまま分析を続けつつ「満期データ不足」と明記する。
+If `fetch_returns.py` says 長期データがまだ `N/A` なら、そのまま分析を続けつつ「満期データ不足」と明記する。
 
 ---
 
@@ -60,9 +60,9 @@ Use the validation report for summary numbers, but inspect raw JSON when the use
 
 Summarize:
 
-- sample count by horizon (`week1` ... `week8`)
-- Spearman ρ by horizon
-- threshold split (`score >= 7.0` vs `< 7.0`)
+- sample count by horizon (`week1` ... `week12`)
+- pool済みSpearman ρ（診断用）とrun別SPY alpha IC（主指標）
+- threshold split (`score >= 7.5` vs `< 7.5`)
 - conviction summary (`HIGH / MEDIUM / LOW`)
 
 Interpretation rules:
@@ -96,7 +96,7 @@ Then state:
 
 - which horizon looks best for each mode
 - whether the mode degrades or improves as holding period extends
-- whether 5〜8週 materially changes the conclusion vs 1〜4週
+- whether 9〜12週 materially changes the conclusion vs shorter horizons
 
 ### 3c. Mode × factor reliability
 
@@ -135,10 +135,10 @@ Produce explicit guidance for `investor/prompts/research_prompts.py`.
 
 Focus on:
 
-- weight changes by factor
+- Strategy V2ウェイトを変更すべき十分な独立OOSがあるか
 - whether a factor should be treated differently in `EARLY_MOMENTUM` vs `CHASE_MOMENTUM`
-- whether 5〜8週 data suggests longer holding periods for certain modes
-- whether the `7.0` threshold should change
+- whether 9〜12週 data suggests longer holding periods for certain modes
+- whether the `7.5` threshold should change
 - whether conviction mapping (`HIGH / MEDIUM / LOW`) is too loose or too strict
 
 Examples of the type of recommendation expected:
@@ -148,7 +148,8 @@ Examples of the type of recommendation expected:
 - "Technical is only useful as an entry-timing filter; keep its weight low."
 - "If CHASE_MOMENTUM + extension_risk=HIGH underperforms beyond week2, tighten the penalty or lower conviction ceiling."
 
-Be specific. If you recommend a weight change, name the current factor and direction of change. If evidence is immature, say so instead of guessing.
+独立した満期runが10未満、またはStrategy V2開始から12週間未満なら、ウェイト変更は禁止。
+pooled factor相関だけで変更を勧めない。証拠が未成熟なら計測継続とする。
 
 ---
 
@@ -171,8 +172,8 @@ Return a concise Markdown report with these sections:
 Requirements:
 
 - Put findings first, not process narration
-- Use concrete horizons (`1週後` ... `8週後`)
+- Use concrete horizons (`1週後` ... `12週後`)
 - Separate `evidence-backed changes` from `watchlist / needs more data`
-- If data is immature for 5〜8週 or for mode-specific analysis, say that explicitly
+- If long-horizon or mode-specific data is immature, say that explicitly
 
 The final section, **## Calibration Recommendations**, must be directly actionable for future `/research` runs.

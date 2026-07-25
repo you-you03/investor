@@ -491,7 +491,7 @@ class MonitorAgent:
                 flags.append("high_score_rsi_cooled")
             trigger_flags, trigger_detail = _decision_wait_trigger_flags(item, price)
             flags.extend(trigger_flags)
-            if _safe_bool(item.get("pre_qualified")) and last_score is not None and 6.5 <= last_score < 7.0:
+            if _safe_bool(item.get("pre_qualified")) and last_score is not None and 7.0 <= last_score < 7.5:
                 if any(flag in flags for flag in ("breakout", "setup", "earnings_soon")):
                     flags.append("prequalified_setup")
 

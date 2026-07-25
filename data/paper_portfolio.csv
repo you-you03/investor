@@ -1,3 +1,4 @@
 position_id,ticker,shares,entry_price,entry_date,proposal_date,exit_price,exit_date,status,target_price,stop_loss,note,signal_type,conviction,hypothesis_id,exit_stage,mae_pct,mfe_pct,mfe_capture_pct,rule_adherence_score
 pos-001,DECK,2.0,106.47,2026-07-18,2026-07-18,,,open,117.58,105.96,[B枠] HIGH確信。Oracle/Tenbaggerはforward PE 12.8、FCF $858.7M、低負債を評価し、Tape ReaderはEMA近辺の初動とMACD改善,analyst_upgrade,HIGH,,0,,,,
 pos-002,WAY,2.0,22.13,2026-07-18,2026-07-18,,,open,25.7,21.76,[B枠] MEDIUM確信。Oracle/Tenbaggerは売上+22.4%、利益+37.5%、forward PE 12.04、FCF $328Mを高評価し、InnovatorはAI型,earnings_beat,MEDIUM,,0,,,,
+pos-003,REZI,1.0,35.35,2026-07-20,2026-07-20,,,open,39.65,33.92,[H-2] RSI<70のためstrict WAIT差分は発動せず、A枠と同じBUY。,watchlist_escalate,MEDIUM,H-2,0,,,,

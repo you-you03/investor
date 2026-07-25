@@ -19,6 +19,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from investor.core.score_snapshots import WEEK_KEYS
+from investor.config import settings
 from investor.supabase_store import sync_validation_stats
 from investor.supabase_sync import sync_local_to_supabase
 
@@ -26,7 +27,7 @@ SNAPSHOTS_PATH = Path(__file__).parent.parent / "data" / "score_snapshots.json"
 REPORTS_DIR = Path(__file__).parent.parent / "reports" / "validation"
 MIN_SAMPLES = 30
 WEEK_LABELS = {wk: f"{wk.removeprefix('week')}週後" for wk in WEEK_KEYS}
-PRIMARY_WEEK = "week3"
+PRIMARY_WEEK = f"week{settings.evaluation_horizon_weeks}"
 FACTORS = ["momentum", "fundamentals", "catalyst", "technical", "sentiment"]
 MOMENTUM_MODES = ["EARLY_MOMENTUM", "CHASE_MOMENTUM", "BALANCED", "NONE"]
 QUALITY_GRADES = ["A", "B", "C", "D"]
@@ -223,6 +224,17 @@ def analyze(snapshots: list[dict]) -> dict:
             rho, p = spearman(list(scores), list(returns))
             ic[wk] = {"n": n, "rho": rho, "p": p, "label": _significance_label(rho, p)}
     result["ic"] = ic
+    result["run_ic"] = build_run_level_ic(snapshots)
+    result["strategy_versions"] = {
+        version: sum(
+            1 for snapshot in snapshots
+            if str(snapshot.get("strategy_version") or "legacy_unversioned") == version
+        )
+        for version in sorted({
+            str(snapshot.get("strategy_version") or "legacy_unversioned")
+            for snapshot in snapshots
+        })
+    }
 
     # ── スコアバケット別 × 週別平均リターン ──
     buckets: dict[str, dict] = {}
@@ -261,8 +273,14 @@ def analyze(snapshots: list[dict]) -> dict:
     result["factor_ic"] = dict(factor_ic)
 
     # ── passed_threshold 比較 ──
-    passed = [s for s in snapshots if s.get("passed_threshold")]
-    rejected = [s for s in snapshots if not s.get("passed_threshold")]
+    passed = [
+        s for s in snapshots
+        if s.get("score") is not None and float(s["score"]) >= 7.5
+    ]
+    rejected = [
+        s for s in snapshots
+        if s.get("score") is not None and float(s["score"]) < 7.5
+    ]
 
     def avg_return_for_group(group: list[dict], wk: str) -> str:
         rets = [
@@ -294,7 +312,72 @@ def analyze(snapshots: list[dict]) -> dict:
     result["mode_summary"] = build_mode_summary(snapshots)
     result["mode_factor_reliability"] = build_mode_factor_reliability(snapshots)
     result["factor_grade_reliability"] = build_factor_grade_reliability(snapshots)
-    result["calibration"] = build_calibration(ic, factor_ic)
+    result["calibration"] = build_calibration(ic, factor_ic, result["run_ic"])
+    return result
+
+
+def build_run_level_ic(snapshots: list[dict]) -> dict:
+    """Compute cross-sectional score IC inside each run using SPY alpha.
+
+    Pooled rows repeatedly observe the same names and market dates. Run-level IC
+    measures whether the score ranked contemporaneous candidates correctly,
+    then summarizes those independent decision occasions.
+    """
+    result: dict[str, dict] = {}
+    for wk in WEEK_KEYS:
+        grouped: dict[str, dict[str, tuple[float, float]]] = defaultdict(dict)
+        for snapshot in snapshots:
+            score = snapshot.get("score")
+            week = snapshot.get(wk, {})
+            alpha = week.get("alpha_vs_spy", week.get("alpha_pct"))
+            run_id = str(snapshot.get("run_id") or "")
+            ticker = str(snapshot.get("ticker") or "").upper()
+            if (
+                not run_id
+                or not ticker
+                or score is None
+                or alpha is None
+                or week.get("fetched_at") is None
+            ):
+                continue
+            # The same ticker can be written more than once by retries/backfills.
+            # Treat it as one observation inside a decision occasion.
+            grouped[run_id][ticker] = (float(score), float(alpha))
+
+        run_rows = []
+        for run_id, ticker_pairs in grouped.items():
+            pairs = list(ticker_pairs.values())
+            if len(pairs) < 3:
+                continue
+            scores, alphas = zip(*pairs)
+            rho, p = spearman(list(scores), list(alphas))
+            if math.isnan(rho):
+                continue
+            first = next(
+                (row for row in snapshots if str(row.get("run_id") or "") == run_id),
+                {},
+            )
+            run_rows.append({
+                "run_id": run_id,
+                "scored_at": first.get("scored_at"),
+                "strategy_version": first.get("strategy_version") or "legacy_unversioned",
+                "n": len(pairs),
+                "rho": rho,
+                "p": p,
+            })
+
+        rhos = [row["rho"] for row in run_rows]
+        result[wk] = {
+            "n_runs": len(run_rows),
+            "n_observations": sum(row["n"] for row in run_rows),
+            "mean_rho": _mean(rhos),
+            "median_rho": _median(rhos),
+            "positive_run_pct": (
+                round(sum(rho > 0 for rho in rhos) / len(rhos) * 100, 1)
+                if rhos else None
+            ),
+            "runs": sorted(run_rows, key=lambda row: (str(row["scored_at"]), row["run_id"])),
+        }
     return result
 
 
@@ -668,34 +751,29 @@ def build_mode_factor_reliability(snapshots: list[dict]) -> dict:
     return reliability
 
 
-def build_calibration(ic: dict, factor_ic: dict) -> list[str]:
+def build_calibration(ic: dict, factor_ic: dict, run_ic: dict) -> list[str]:
     suggestions = []
 
-    # IC に基づく総評。運用上は3週を主指標、4-8週を補助指標として見る。
-    primary = ic.get(PRIMARY_WEEK, {})
-    primary_rho = primary.get("rho", float("nan"))
-    if not math.isnan(primary_rho):
+    # Only independent run-level alpha IC may change live policy. Pooled
+    # ticker/date rows remain diagnostic because retries and repeated names are
+    # not independent observations.
+    primary = run_ic.get(PRIMARY_WEEK, {})
+    primary_rho = primary.get("median_rho")
+    n_runs = int(primary.get("n_runs") or 0)
+    if primary_rho is not None and n_runs >= 10:
         if primary_rho >= 0.4:
-            suggestions.append("3週後ICが高い（ρ≥0.4）：スコアは良好な予測力を持っている")
+            suggestions.append(f"{WEEK_LABELS[PRIMARY_WEEK]}run別alpha IC中央値が高い（ρ≥0.4）：run内ランキングは良好")
         elif primary_rho >= 0.2:
-            suggestions.append("3週後IC（ρ≥0.2）：スコアの予測力は中程度。3週後alphaを主指標として継続観測")
+            suggestions.append(f"{WEEK_LABELS[PRIMARY_WEEK]}run別alpha IC中央値（ρ≥0.2）：run内ランキングは中程度")
         else:
-            suggestions.append("3週後ICが低い（ρ<0.2）：スコアの予測力が不十分。ウェイト見直しを検討")
-
-    # ファクター別ウェイト提案（3週後ρ基準）
-    factor_rhos = {}
-    for factor in FACTORS:
-        rho = factor_ic.get(factor, {}).get(PRIMARY_WEEK, {}).get("rho", float("nan"))
-        if not math.isnan(rho):
-            factor_rhos[factor] = rho
-
-    if factor_rhos:
-        best = max(factor_rhos, key=factor_rhos.get)
-        worst = min(factor_rhos, key=factor_rhos.get)
-        if factor_rhos[best] > 0.3:
-            suggestions.append(f"{best}（ρ={factor_rhos[best]:.2f}）は最も予測力が高い → ウェイト引き上げを検討")
-        if factor_rhos[worst] < 0.15:
-            suggestions.append(f"{worst}（ρ={factor_rhos[worst]:.2f}）は予測力が弱い → ウェイト引き下げを検討")
+            suggestions.append(f"{WEEK_LABELS[PRIMARY_WEEK]}run別alpha IC中央値が低い（ρ<0.2）：独立した判断機会での予測力が不十分")
+    else:
+        suggestions.append(
+            f"{WEEK_LABELS[PRIMARY_WEEK]}の独立run数は{n_runs}。10 run未満のため、スコアウェイトを再調整しない"
+        )
+    suggestions.append(
+        "pool済みファクター相関は診断専用。次の固定12週間はStrategy V2のウェイトを凍結する"
+    )
 
     return suggestions
 
@@ -721,13 +799,20 @@ def generate_report(stats: dict) -> str:
     lines.append("|---|---|")
     lines.append(f"| 検証期間 | {stats['period_start']} 〜 {stats['period_end']} |")
     lines.append(f"| スナップショット総数 | {stats['total']} 件 |")
+    versions = ", ".join(
+        f"{version}: {count}"
+        for version, count in stats.get("strategy_versions", {}).items()
+    )
+    lines.append(f"| Strategy version | {versions or 'legacy_unversioned'} |")
     for wk in WEEK_KEYS:
         lines.append(f"| {WEEK_LABELS[wk]} リターン取得済み | {stats['counts'][wk]} 件 |")
 
     lines.append("")
     lines.append("---")
     lines.append("")
-    lines.append("## 週次 IC（Spearman ρ）— スコア vs 累積リターン")
+    lines.append("## Pool済み週次 IC（診断用）— スコア vs 累積リターン")
+    lines.append("")
+    lines.append("同一銘柄・同一runの重複を含み得るため、ライブ戦略変更の根拠には使わない。")
     lines.append("")
     lines.append("| ホライゾン | サンプル数 | Spearman ρ | p値 | 判定 |")
     lines.append("|---|---|---|---|---|")
@@ -735,6 +820,27 @@ def generate_report(stats: dict) -> str:
         d = stats["ic"][wk]
         lines.append(
             f"| {WEEK_LABELS[wk]} | {d['n']} | {format_rho(d['rho'])} | {format_p(d['p'])} | {d['label']} |"
+        )
+
+    lines.append("")
+    lines.append("## Run別クロスセクション Alpha IC（主指標）")
+    lines.append("")
+    lines.append("同一run・同一tickerを1観測に重複排除し、候補順位とSPY超過リターンの相関をrunごとに測る。")
+    lines.append("")
+    lines.append("| ホライゾン | 独立run数 | 重複排除後n | 平均ρ | 中央値ρ | 正のrun比率 |")
+    lines.append("|---|---:|---:|---:|---:|---:|")
+    for wk in WEEK_KEYS:
+        row = stats["run_ic"][wk]
+        positive = (
+            "N/A"
+            if row["positive_run_pct"] is None
+            else f"{row['positive_run_pct']:.1f}%"
+        )
+        mean_rho = "N/A" if row["mean_rho"] is None else f"{row['mean_rho']:+.2f}"
+        median_rho = "N/A" if row["median_rho"] is None else f"{row['median_rho']:+.2f}"
+        lines.append(
+            f"| {WEEK_LABELS[wk]} | {row['n_runs']} | {row['n_observations']} | "
+            f"{mean_rho} | {median_rho} | {positive} |"
         )
 
     lines.append("")
@@ -785,7 +891,7 @@ def generate_report(stats: dict) -> str:
     lines.append("")
     lines.append("## ホライゾン別 確信度サマリー")
     lines.append("")
-    lines.append("3週後を主指標、4〜8週後を補助指標として見る。QQQ/セクターalphaはデータがある場合のみ表示。")
+    lines.append("12週後をStrategy V2の主指標とし、途中経過は診断用に見る。QQQ/セクターalphaはデータがある場合のみ表示。")
     lines.append("")
     lines.append("| ホライゾン | 確信度 | n | 平均リターン | 中央値 | SPY alpha | QQQ alpha | Sector alpha |")
     lines.append("|---|---|---:|---:|---:|---:|---:|---:|")
@@ -978,7 +1084,7 @@ def generate_report(stats: dict) -> str:
         for grade in QUALITY_GRADES
     )
     lines.append("")
-    lines.append("### Factor Grade Reliability（3週後）")
+    lines.append(f"### Factor Grade Reliability（{WEEK_LABELS[PRIMARY_WEEK]}）")
     lines.append("")
     lines.append("新しい `factor_grades`（A/B/C/D）の検証。改善後のresearch結果が蓄積されるほど有効になる。")
     lines.append("")
@@ -1005,10 +1111,10 @@ def generate_report(stats: dict) -> str:
     lines.append("")
     lines.append("---")
     lines.append("")
-    lines.append("## スコア閾値（7.0）の妥当性検証")
+    lines.append("## スコア閾値（7.5）の妥当性検証")
     lines.append("")
-    lines.append(f"- 閾値通過（≥7.0）: {stats['passed_n']} 件")
-    lines.append(f"- 閾値未満（<7.0）: {stats['rejected_n']} 件")
+    lines.append(f"- 閾値通過（≥7.5）: {stats['passed_n']} 件")
+    lines.append(f"- 閾値未満（<7.5）: {stats['rejected_n']} 件")
     lines.append("")
     lines.append("| ホライゾン | 通過銘柄 avg | 除外銘柄 avg |")
     lines.append("|---|---|---|")

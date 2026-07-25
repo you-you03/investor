@@ -20,6 +20,7 @@ import typer
 from rich.console import Console
 from rich.table import Table
 from investor.config import settings
+from investor.core.risk import calculate_position_plan, portfolio_guard_violations
 from investor.utils.portfolio_contract import (
     build_position_id,
     read_portfolio_rows,
@@ -54,10 +55,15 @@ def list(portfolio: str = typer.Option("default", "--portfolio", help="default/2
         return
 
     table = Table(title=f"Open Positions — {path}")
-    for col in ["position_id", "ticker", "shares", "entry_price", "entry_date", "target_price", "stop_loss", "signal_type", "note"]:
+    columns = [
+        "position_id", "ticker", "shares", "entry_price", "entry_date",
+        "target_price", "stop_loss", "planned_risk_usd", "strategy_version",
+        "signal_type", "note",
+    ]
+    for col in columns:
         table.add_column(col)
     for r in open_rows:
-        table.add_row(*[str(r.get(c, "")) for c in ["position_id", "ticker", "shares", "entry_price", "entry_date", "target_price", "stop_loss", "signal_type", "note"]])
+        table.add_row(*[str(r.get(c, "")) for c in columns])
     console.print(table)
 
 
@@ -74,9 +80,58 @@ def add(
     proposal_date: Optional[str] = typer.Option(None, "--proposal-date"),
     portfolio: str = typer.Option("default", "--portfolio", help="default/20man or 100man"),
 ) -> None:
-    """Add a new position to portfolio.csv."""
+    """Add an executed position after deterministic risk validation."""
     path = _resolve_portfolio_path(portfolio)
     rows = read_portfolio_rows(path)
+    open_rows = [row for row in rows if row.get("status") == "open"]
+
+    if target is None or stop is None:
+        raise typer.BadParameter("--target and --stop are required for every new position")
+    if not (0 < stop < price < target):
+        raise typer.BadParameter("required price relationship: 0 < stop < price < target")
+
+    if path == PORTFOLIO_PATH:
+        guard_issues = portfolio_guard_violations(open_rows)
+        if guard_issues and settings.block_new_buys_on_portfolio_violation:
+            console.print("[red]New BUY blocked by existing portfolio violations:[/red]")
+            for issue in guard_issues:
+                console.print(f"  - {issue}")
+            raise typer.Exit(code=2)
+        if len(open_rows) >= settings.max_open_positions:
+            raise typer.BadParameter(
+                f"open position limit reached ({len(open_rows)}/{settings.max_open_positions})"
+            )
+
+    plan = calculate_position_plan(
+        entry_price=price,
+        stop_loss=stop,
+        target_price=target,
+        conviction=conviction or "MEDIUM",
+        capital_usd=(
+            settings.available_capital_usd
+            if path == PORTFOLIO_PATH
+            else settings.legacy_capital_usd
+        ),
+    )
+    if shares > plan.shares + 1e-9:
+        raise typer.BadParameter(
+            f"{shares:g} shares exceeds risk-sized maximum {plan.shares:g} "
+            f"(${plan.planned_risk_usd:.2f} planned risk)"
+        )
+    exposure = shares * price
+    portfolio_capital = (
+        settings.available_capital_usd
+        if path == PORTFOLIO_PATH
+        else settings.legacy_capital_usd
+    )
+    max_exposure = portfolio_capital * settings.max_position_pct
+    if path == PORTFOLIO_PATH and exposure > max_exposure + 1e-9:
+        raise typer.BadParameter(
+            f"position exposure ${exposure:.2f} exceeds {settings.max_position_pct:.0%} "
+            f"limit (${max_exposure:.2f})"
+        )
+    actual_risk = shares * plan.buffered_risk_per_share_usd
+
     rows.append({
         "position_id": build_position_id(rows),
         "ticker": ticker.upper(),
@@ -92,9 +147,21 @@ def add(
         "note": note,
         "signal_type": signal,
         "conviction": conviction.upper(),
+        "exit_stage": "0",
+        "trailing_stop_price": "",
+        "high_water_mark": "",
+        "planned_risk_usd": round(actual_risk, 2),
+        "risk_pct_of_capital": round(actual_risk / portfolio_capital, 6),
+        "strategy_version": settings.strategy_version,
+        "order_status": "executed",
+        "broker_stop_order_id": "",
     })
     write_portfolio_rows(path, rows)
-    console.print(f"[green]Added {shares} shares of {ticker.upper()} @ ${price} to {path}[/green]")
+    console.print(
+        f"[green]Added {shares:g} shares of {ticker.upper()} @ ${price} to {path}[/green] "
+        f"| planned risk ${actual_risk:.2f} "
+        f"({actual_risk / portfolio_capital:.2%} of capital)"
+    )
 
 
 @app.command()

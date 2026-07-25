@@ -21,11 +21,12 @@ if str(ROOT_DIR) not in sys.path:
     sys.path.insert(0, str(ROOT_DIR))
 
 from investor.supabase_store import SupabaseStore, get_store
+from investor.config import settings
 
 
 DEFAULT_OUTPUT_PATH = Path("reports/score_reliability_dashboard.html")
 CONVICTIONS = ("HIGH", "MEDIUM", "LOW")
-WEEK_KEYS = tuple(f"week{i}" for i in range(1, 9))
+WEEK_KEYS = tuple(f"week{i}" for i in range(1, settings.evaluation_horizon_weeks + 1))
 FACTORS = ("momentum", "fundamentals", "catalyst", "technical", "sentiment")
 SCORE_BUCKETS: tuple[tuple[str, float | None, float | None], ...] = (
     ("≥ 8.5", 8.5, None),
@@ -353,22 +354,16 @@ def _shape_summary(latest: dict, horizons: list[dict], thresholds: list[dict]) -
 
 def _overall_judgement(week4_ic: float | None, week8_ic: float | None, week4_spread: float | None, week8_spread: float | None) -> str:
     if week4_ic is not None and week4_ic >= 0.20 and week4_spread is not None and week4_spread > 0:
-        return "使える: 4週目線の候補選別に有効"
+        return "診断シグナルあり: 12週OOS満期までは方針固定"
     if week8_ic is not None and week8_ic >= 0.20 and week8_spread is not None and week8_spread > 0:
-        return "条件付きで使える: 長めの保有期間では有効"
+        return "診断シグナルあり: 12週OOS満期までは方針固定"
     if week4_spread is not None and week4_spread > 0:
-        return "足切りには使える: ランキング精度は弱い"
-    return "要見直し: スコア閾値または配点の再検証が必要"
+        return "診断シグナルのみ: Strategy V2の変更根拠にはしない"
+    return "計測継続: Strategy V2の変更根拠は未成熟"
 
 
 def _recommended_action(snapshot_count: float, week4_ic: float | None, week4_spread: float | None) -> str:
-    if snapshot_count < 30:
-        return "判断保留: 検証データを蓄積"
-    if week4_ic is not None and week4_ic >= 0.20 and week4_spread is not None and week4_spread > 0:
-        return "score>=7.0を候補順位付けに使う"
-    if week4_spread is not None and week4_spread > 0:
-        return "score>=7.0を足切りに使い、順位付けは補助扱い"
-    return "次回/reviewで配点と閾値を見直す"
+    return "score>=7.5をhard gateに使用。独立12週OOSが満期になるまでウェイトを固定"
 
 
 def _to_float(value: Any) -> float | None:
@@ -576,8 +571,14 @@ def _build_local_summary(snapshots: list[dict], horizons: list[dict], thresholds
         "period_start": min((s.get("scored_at") for s in snapshots if s.get("scored_at")), default=None),
         "period_end": max((s.get("scored_at") for s in snapshots if s.get("scored_at")), default=None),
         "snapshot_count": len(snapshots),
-        "passed_threshold_count": sum(1 for snapshot in snapshots if snapshot.get("passed_threshold")),
-        "rejected_threshold_count": sum(1 for snapshot in snapshots if not snapshot.get("passed_threshold")),
+        "passed_threshold_count": sum(
+            1 for snapshot in snapshots
+            if (_to_float(snapshot.get("score")) or 0) >= settings.min_live_score
+        ),
+        "rejected_threshold_count": sum(
+            1 for snapshot in snapshots
+            if (_to_float(snapshot.get("score")) or 0) < settings.min_live_score
+        ),
     }
     return _shape_summary(latest, horizons, thresholds)
 
@@ -1113,7 +1114,7 @@ def build_html(data: dict[str, Any]) -> str:
 	      </section>
 
 	      <section class="section grid two">
-	        <div class="card"><h2>7.0閾値差分</h2><div class="chart"><canvas id="thresholdChart"></canvas></div></div>
+	        <div class="card"><h2>7.5閾値差分</h2><div class="chart"><canvas id="thresholdChart"></canvas></div></div>
 	        <div class="card"><h2>ファクター別IC 推移</h2><div class="chart"><canvas id="factorIcChart"></canvas></div></div>
 	      </section>
 
@@ -1218,7 +1219,7 @@ def build_html(data: dict[str, Any]) -> str:
         `<div class="card"><div class="label">検証データ</div><div class="value">${{fmt.n(s.snapshot_count)}}</div><div class="sub">passed ${{fmt.n(s.passed_threshold_count)}} / rejected ${{fmt.n(s.rejected_threshold_count)}}</div></div>`,
         `<div class="card"><div class="label">4週IC</div><div class="value ${{colorByNumber(s.week4_ic)}}">${{fmt.rho(s.week4_ic)}}</div><div class="sub">n=${{fmt.n(s.week4_sample_count)}} / p=${{fmt.rho(s.week4_p_value)}}</div></div>`,
         `<div class="card"><div class="label">8週IC</div><div class="value ${{colorByNumber(s.week8_ic)}}">${{fmt.rho(s.week8_ic)}}</div><div class="sub">n=${{fmt.n(s.week8_sample_count)}} / p=${{fmt.rho(s.week8_p_value)}}</div></div>`,
-        `<div class="card"><div class="label">4週閾値差分</div><div class="value ${{colorByNumber(s.week4_threshold_spread)}}">${{fmt.pct(s.week4_threshold_spread)}}</div><div class="sub">score>=7.0 - score&lt;7.0</div></div>`,
+        `<div class="card"><div class="label">4週閾値差分</div><div class="value ${{colorByNumber(s.week4_threshold_spread)}}">${{fmt.pct(s.week4_threshold_spread)}}</div><div class="sub">score>=7.5 - score&lt;7.5（診断用）</div></div>`,
       ];
       document.getElementById("kpis").innerHTML = kpis.join("");
     }}
@@ -1236,7 +1237,7 @@ def build_html(data: dict[str, Any]) -> str:
       const action = s.recommended_action || "データを蓄積してから判断";
       const titleClass = /要見直し|無効|効いていない/.test(judgement) ? "neg" : /条件付き|足切り|保留/.test(judgement) ? "warn" : "pos";
       const bullets = [
-        {{cls:"pos", text:`4週ICは ${{fmt.rho(s.week4_ic ?? week4.spearman_rho)}}、score>=7.0の4週差分は ${{fmt.pct(s.week4_threshold_spread)}}。現時点では4週目線の足切りと候補順位付けに使える。`}},
+        {{cls:"warn", text:`4週ICは ${{fmt.rho(s.week4_ic ?? week4.spearman_rho)}}、score>=7.5の4週差分は ${{fmt.pct(s.week4_threshold_spread)}}。診断用であり、独立12週OOS満期前のウェイト変更には使わない。`}},
         {{cls:"pos", text: bestFactor ? `最も効いているファクターは ${{bestFactor.factor}}（4週ρ=${{fmt.rho(bestFactor.spearman_rho)}}）。BUY根拠として重視する。` : "ファクター別データは蓄積中。"}},
         {{cls:"warn", text: weakFactor ? `弱いファクターは ${{weakFactor.factor}}（4週ρ=${{fmt.rho(weakFactor.spearman_rho)}}）。単独の買い理由にしない。` : "弱いファクターはまだ判定保留。"}},
         {{cls:"warn", text: shortTermWeak.length ? `${{shortTermWeak.join("・")}}のICは0.20未満。短期トレードの根拠としてスコアを単独使用しない。` : "短期ホライゾンも最低限の予測力を維持。"}},

@@ -45,3 +45,31 @@ def test_analyze_builds_mode_reliability_for_extended_horizons(monkeypatch):
     assert reliability["rho"] == 1.0
     assert reliability["high_score_avg_alpha"] == 9.0
     assert reliability["low_score_avg_alpha"] == 1.0
+
+
+def test_run_level_ic_deduplicates_ticker_retries():
+    snapshots = []
+    for run_id, alphas in (("run-a", [1.0, 2.0, 3.0]), ("run-b", [3.0, 2.0, 1.0])):
+        for idx, alpha in enumerate(alphas):
+            snapshots.append({
+                "run_id": run_id,
+                "ticker": f"T{idx}",
+                "score": float(idx + 1),
+                "scored_at": "2026-07-01",
+                "week3": _week_payload(return_pct=alpha, alpha_pct=alpha),
+            })
+
+    # Retry/backfill duplicate: it must replace, not increase, the sample count.
+    snapshots.append({
+        "run_id": "run-a",
+        "ticker": "T0",
+        "score": 1.0,
+        "scored_at": "2026-07-01",
+        "week3": _week_payload(return_pct=1.0, alpha_pct=1.0),
+    })
+
+    row = validate_scores.build_run_level_ic(snapshots)["week3"]
+
+    assert row["n_runs"] == 2
+    assert row["n_observations"] == 6
+    assert row["mean_rho"] == 0.0

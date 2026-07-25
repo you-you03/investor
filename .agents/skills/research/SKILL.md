@@ -158,11 +158,11 @@ Check `.env` for `PERPLEXITY_API_KEY` / `XAI_API_KEY`. If present, also run:
 
 | Axis | Weight | Signals |
 |---|---|---|
-| Momentum | 25% | **EARLY_MOMENTUM と CHASE_MOMENTUM を両方評価**。`STRONG_OUTPERFORM` rs_signal → chase +1pt; `STRONG_UNDERPERFORM` → −2pt |
-| Fundamentals | 20% | revenue_growth_yoy, earnings_growth_yoy, forward_pe. forward_pe > 50 → add "高バリュエーションリスク"; peg_ratio > 3 → add "成長織り込み済みリスク" |
-| Catalyst | 25% | Upcoming events, analyst upside %. days_until_earnings ≤ 14 → +1pt + "決算前カタリスト" + "決算ギャップリスク". No catalyst → cap at 6. DOWNTREND/HIGH_FEAR → −1~2pts |
-| Technical | 15% | RSI positioning, MACD crossovers, BB squeeze, EMA20/50 alignment. **`tf_warning=true` → −1pt** (上位足逆向きペナルティ) |
-| Sentiment | 15% | News tone, analyst_recommendation + count. `strong_buy` ≥ 10 analysts → 8+. Exception: `rs_signal == STRONG_OUTPERFORM` かつ `analyst_upside_pct < 0` → アナリスト目標乖離を減点しない |
+| Fundamentals | 60% | 収益/EPS/FCFの持続性、バランスシート、希薄化、valuation。A/B以外はライブBUY禁止 |
+| Medium-term Momentum | 25% | SPY対比3M/6M/12-1Mの持続的RS。1日/5日急騰を高得点理由にしない |
+| Verified Catalyst | 15% | 日付・一次情報・業績インパクトを確認できる材料。A/B以外はライブBUY禁止 |
+| Technical | 0% | entry/stop/RRのgateのみ。総合点を加点しない |
+| Sentiment | 0% | contradiction/data-quality gateのみ。総合点を加点しない |
 
 **タイムフレーム整合ルール (`get_timeframe_alignment` の出力を使用):**
 - `tf_warning: false` → 減点なし。スコアリングへの影響なし
@@ -170,7 +170,7 @@ Check `.env` for `PERPLEXITY_API_KEY` / `XAI_API_KEY`. If present, also run:
 - `alignment == "ALIGNED_DOWN"` → Momentum スコアに −2pt を追加で適用（全タイムフレーム下降）
 - `alignment == "ERROR"` または `"unknown"` が含まれる場合 → ペナルティなし。`tf_alignment` フィールドに `"DATA_UNAVAILABLE"` を記入
 
-Weighted total: `momentum×0.25 + fundamentals×0.20 + catalyst×0.25 + technical×0.15 + sentiment×0.15`
+Weighted total: `fundamentals×0.60 + momentum×0.25 + catalyst×0.15`
 
 ### Dual momentum mode evaluation
 
@@ -183,10 +183,10 @@ Weighted total: `momentum×0.25 + fundamentals×0.20 + catalyst×0.25 + technica
 
 判定ルール:
 - `early_momentum_score` と `chase_momentum_score` をそれぞれ1–10で出す
-- `score_breakdown.momentum` は原則 `max(early, chase)`。ただし `extension_risk=HIGH` かつ catalyst がSTRONGでない場合は chase 側を最大7にキャップ
+- `score_breakdown.momentum` は持続的な3M/6M/12-1M RSを主成分にする
 - `primary_mode`: `EARLY_MOMENTUM` / `CHASE_MOMENTUM` / `BALANCED` / `NONE`
-- 初動が完璧なら、追いかけが未発生でもGO候補にできる。追いかけが完璧なら、初動でなくてもGO候補にできる
-- `conviction` は `HIGH` / `MEDIUM` / `LOW` で明示する
+- `CHASE_MOMENTUM` または `extension_risk=HIGH` は観察対象には残せるがライブBUY禁止
+- `conviction` は当面 `MEDIUM` / `LOW`。HIGHは独立した満期OOS 30件まで無効
 - `conviction_rationale` では、二つのモードのどちらが確信度を上げ/下げしたかを明示する
 
 ATR target: use `get_atr_targets` as base. Imminent earnings ≤14d + strong fundamentals → 3.0×ATR. No catalyst → 1.5×ATR. Default → 2.0×ATR, stop = entry−1.0×ATR. Clear support closer than 1×ATR → use that as stop_loss.
@@ -215,7 +215,9 @@ ATR target: use `get_atr_targets` as base. Imminent earnings ≤14d + strong fun
   "rs_signal": "...", "rs_1m": 0.0, "rs_3m": 0.0,
   "days_until_earnings": 0,
   "atr_multiplier_used": 2.0, "atr_multiplier_reason": "...",
-  "analyst_upside_pct": 0.0, "conviction_floor": "MEDIUM",
+  "analyst_upside_pct": 0.0, "conviction_ceiling": "MEDIUM",
+  "strategy_version": "quality_momentum_v2_2026-07-25",
+  "factor_grades": {"momentum": "B", "fundamentals": "A", "catalyst": "B", "technical": "B", "sentiment": "C"},
   "tf_alignment": "ALIGNED_UP",
   "contrarian_tag": false,
   "macro_regime": "{REGIME}", "data_notes": ""
@@ -226,11 +228,11 @@ ATR target: use `get_atr_targets` as base. Imminent earnings ≤14d + strong fun
 `contrarian_tag`: `get_contrarian_screener` 由来の候補なら `true`、それ以外は `false`
 ---
 
-Collect all Agent JSON results. **スコアに関わらず全結果を保持する。** Proceed to Step 6a with candidates where `score >= 7.0`; all results go to Step 6b.
+Collect all Agent JSON results. **スコアに関わらず全結果を保持する。** Proceed to Step 6a with candidates where `score >= 7.5`; all results go to Step 6b.
 
 ---
 
-## Step 6a: Save to research_history.json（スコア ≥ 7.0 のみ）
+## Step 6a: Save to research_history.json（スコア ≥ 7.5 のみ）
 
 Generate a UUID4 as `run_id`. Read `data/research_history.json` if it exists (preserve prior runs), then append this run and write back.
 
@@ -240,7 +242,7 @@ Output format for each candidate:
   "ticker": "NVDA",
   "company_name": "NVIDIA Corporation",
   "score": 8.2,
-  "conviction": "HIGH",
+  "conviction": "MEDIUM",
   "current_price": 875.00,
   "score_breakdown": {"momentum": 9, "fundamentals": 8, "catalyst": 9, "technical": 7, "sentiment": 8},
   "score_evidence": {
@@ -260,7 +262,7 @@ Output format for each candidate:
     "chase_view": "RSは改善中だが出来高急増や大幅上昇は未発生。",
     "score_implication": "初動モメンタム主導でMomentum 9。追いかけ未発生は減点ではなく、早期エントリー余地として評価。"
   },
-  "conviction_rationale": "HIGH: 初動モメンタムが強く、ファンダ/カタリストも高評価。追いかけモメンタム未発生でもGO候補。",
+  "conviction_rationale": "Strategy V2のOOS件数不足によりMEDIUM ceiling。",
   "thesis": "2–3 sentence thesis explaining why this is compelling right now.",
   "key_catalysts": ["GTC conference", "H200 ramp"],
   "key_risks": ["Stretched valuation", "China export risk"],
@@ -301,7 +303,7 @@ Full file structure:
 
 Read `data/score_snapshots.json` (if not exists, start with `{"snapshots": []}`).
 
-**スコアに関わらず全銘柄**（スコア < 7.0 含む）を追記する。各エントリーのフォーマット:
+**スコアに関わらず全銘柄**（スコア < 7.5 含む）を追記する。各エントリーのフォーマット:
 
 ```json
 {
@@ -346,8 +348,8 @@ Score snapshot saved:
 | 指標 | 値 |
 |---|---|
 | スキャン銘柄数 | {N} 銘柄 |
-| 候補（スコア ≥ 7.0） | {N} 銘柄 |
-| 除外（スコア < 7.0） | {N} 銘柄（score_snapshots.json に記録済み） |
+| 候補（スコア ≥ 7.5） | {N} 銘柄 |
+| 除外（スコア < 7.5） | {N} 銘柄（score_snapshots.json に記録済み） |
 | マクロレジーム | {regime} |
 
 ---
@@ -362,7 +364,7 @@ Score snapshot saved:
 
 ---
 
-## 除外銘柄（スコア < 7.0）
+## 除外銘柄（スコア < 7.5）
 
 | Ticker | スコア | 主な除外理由 |
 |--------|-------|------------|
@@ -440,16 +442,16 @@ Do **not** change `reference_price` here — that is only reset by `/decision` (
 
 | 現在の pipeline_status | スコア結果 | 更新後 |
 |---|---|---|
-| `research_queued` | ≥ 7.0 | `researched` |
-| `research_queued` | < 7.0 | `watching`（条件未達、リセット） |
-| `watching` | ≥ 7.0 | `researched` |
+| `research_queued` | ≥ 7.5 | `researched` |
+| `research_queued` | < 7.5 | `watching`（条件未達、リセット） |
+| `watching` | ≥ 7.5 | `researched` |
 | その他 | - | 変更しない |
 
 Write back the updated `data/watchlist.json` and report:
 ```
 Watchlist score update:
 🔄 ALAB — last_score updated: null → 8.1 (run: c9ac08aa) | pipeline_status: research_queued → researched
-⬅️ SOME — score 6.5 < 7.0, pipeline_status: research_queued → watching
+⬅️ SOME — score 6.5 < 7.5, pipeline_status: research_queued → watching
 ```
 
 ---
@@ -522,7 +524,7 @@ Count rows where `status == "open"`. Call this `open_count`.
 ⚠️ MANDATORY NEXT STEP
 ────────────────────────────────────────────────────────────────
 ポジション: {open_count}/5（空き {5 - open_count}枠）
-候補銘柄: {スコア ≥ 7.0 の銘柄数}件
+候補銘柄: {スコア ≥ 7.5 の銘柄数}件
 
 空きスロットがある状態でリサーチを完了しました。
 必ず次のコマンドを実行してください:

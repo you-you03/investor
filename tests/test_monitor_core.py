@@ -8,6 +8,7 @@ def _position(**overrides):
         "stop_loss": 90,
         "target_price": 130,
         "exit_stage": "0",
+        "shares": "4",
     }
     base.update(overrides)
     return base
@@ -49,3 +50,17 @@ def test_info_alert_for_large_gain_while_trailing():
     alerts = check_position(_position(exit_stage="2", trailing_stop_price="120"), {"price": 126})
 
     assert "UP_25PCT_TRAILING" in _types(alerts)
+
+
+def test_small_position_does_not_trigger_partial_exit():
+    alerts = check_position(_position(shares="2"), {"price": 105})
+
+    assert "STAGE1_HIT" not in _types(alerts)
+    assert "SMALL_POSITION_PROFIT_REVIEW" in _types(alerts)
+
+
+def test_missing_stop_or_target_is_high_risk_alert():
+    alerts = check_position(_position(stop_loss="", target_price=""), {"price": 101})
+
+    alert = next(a for a in alerts if a.alert_type == "RISK_DATA_MISSING")
+    assert alert.severity == "HIGH"

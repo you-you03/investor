@@ -20,7 +20,7 @@ from investor.notifications.slack import SlackNotifier
 from investor.utils.logger import get_logger
 
 logger = get_logger(__name__)
-VALIDATION_HORIZONS = ("week1", "week2", "week3", "week4", "week5", "week6", "week7", "week8")
+VALIDATION_HORIZONS = tuple(f"week{week}" for week in range(1, settings.evaluation_horizon_weeks + 1))
 
 
 def _is_blank(value: str | None) -> bool:

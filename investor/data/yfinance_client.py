@@ -460,10 +460,11 @@ class YFinanceClient:
 
     def get_relative_strength(self, ticker: str, benchmark: str = "SPY") -> dict:
         """
-        Compute ticker's return vs benchmark over 1M and 3M periods.
+        Compute ticker's return vs benchmark over 1M, 3M, 6M, and
+        conventional 12-minus-1-month momentum periods.
         RS > 0 means outperforming the market.
         """
-        cache_key = f"rs_{ticker.upper()}_{benchmark.upper()}"
+        cache_key = f"rs_v3_{ticker.upper()}_{benchmark.upper()}"
         cached = cache_store.get(cache_key)
         if cached is not None:
             return cached
@@ -471,8 +472,10 @@ class YFinanceClient:
         result: dict = {"ticker": ticker.upper(), "benchmark": benchmark.upper()}
 
         try:
-            ticker_bars = self.get_ohlcv_bars(ticker, days=65)
-            bench_bars = self.get_ohlcv_bars(benchmark, days=65)
+            # get_ohlcv_bars receives calendar days. Use enough history to
+            # obtain roughly 252 trading sessions for 12-minus-1 momentum.
+            ticker_bars = self.get_ohlcv_bars(ticker, days=380)
+            bench_bars = self.get_ohlcv_bars(benchmark, days=380)
 
             if not ticker_bars or not bench_bars:
                 return {"error": f"Insufficient data for {ticker} or {benchmark}"}
@@ -484,30 +487,65 @@ class YFinanceClient:
                 end = bars[-1]["close"]
                 return round((end - start) / start * 100, 2) if start else None
 
+            def _period_return_excluding_recent(
+                bars: list[dict],
+                lookback_days: int,
+                skip_recent_days: int,
+            ) -> float | None:
+                if len(bars) < lookback_days or len(bars) <= skip_recent_days:
+                    return None
+                start = bars[-lookback_days]["close"]
+                end = bars[-skip_recent_days - 1]["close"]
+                return round((end - start) / start * 100, 2) if start else None
+
             t_1m = _period_return(ticker_bars, 21)
             t_3m = _period_return(ticker_bars, 63)
+            t_6m = _period_return(ticker_bars, 126)
+            t_12_1m = _period_return_excluding_recent(ticker_bars, 252, 21)
             b_1m = _period_return(bench_bars, 21)
             b_3m = _period_return(bench_bars, 63)
+            b_6m = _period_return(bench_bars, 126)
+            b_12_1m = _period_return_excluding_recent(bench_bars, 252, 21)
 
             result["return_1m_pct"] = t_1m
             result["return_3m_pct"] = t_3m
+            result["return_6m_pct"] = t_6m
+            result["return_12_1m_pct"] = t_12_1m
             result["benchmark_return_1m_pct"] = b_1m
             result["benchmark_return_3m_pct"] = b_3m
+            result["benchmark_return_6m_pct"] = b_6m
+            result["benchmark_return_12_1m_pct"] = b_12_1m
             result["rs_1m"] = round(t_1m - b_1m, 2) if t_1m is not None and b_1m is not None else None
             result["rs_3m"] = round(t_3m - b_3m, 2) if t_3m is not None and b_3m is not None else None
+            result["rs_6m"] = round(t_6m - b_6m, 2) if t_6m is not None and b_6m is not None else None
+            result["rs_12_1m"] = (
+                round(t_12_1m - b_12_1m, 2)
+                if t_12_1m is not None and b_12_1m is not None
+                else None
+            )
 
-            # Classify relative strength
+            # Classify persistent relative strength. Short-term RS alone cannot
+            # produce STRONG_OUTPERFORM under Strategy V2.
             rs_1m = result["rs_1m"]
             rs_3m = result["rs_3m"]
-            if rs_1m is not None and rs_3m is not None:
-                if rs_1m > 5 and rs_3m > 10:
+            rs_6m = result["rs_6m"]
+            rs_12_1m = result["rs_12_1m"]
+            if rs_3m is not None and rs_6m is not None:
+                long_term_confirmed = rs_12_1m is None or rs_12_1m > 0
+                if rs_3m > 5 and rs_6m > 10 and long_term_confirmed:
                     result["rs_signal"] = "STRONG_OUTPERFORM"
-                elif rs_1m > 0 and rs_3m > 0:
+                elif rs_3m > 0 and rs_6m > 0:
                     result["rs_signal"] = "OUTPERFORM"
-                elif rs_1m < -5 and rs_3m < -10:
+                elif rs_3m < -5 and rs_6m < -10:
                     result["rs_signal"] = "STRONG_UNDERPERFORM"
                 else:
                     result["rs_signal"] = "NEUTRAL"
+            elif rs_1m is not None and rs_3m is not None:
+                result["rs_signal"] = (
+                    "OUTPERFORM" if rs_1m > 0 and rs_3m > 0
+                    else "STRONG_UNDERPERFORM" if rs_1m < -5 and rs_3m < -10
+                    else "NEUTRAL"
+                )
             else:
                 result["rs_signal"] = "UNKNOWN"
 
