@@ -6133,5 +6133,90 @@
         }
       ]
     }
+  },
+  {
+    "date": "2026-10-25",
+    "book": "data/portfolio_20man.csv",
+    "price_as_of": "2026-10-23 US regular close",
+    "observed_at": "2026-10-24 05:00 JST",
+    "source": "findings_monitor_2026-10-25",
+    "slack_sent": false,
+    "position_count": 1,
+    "alert_count": 3,
+    "high_alert_count": 2,
+    "positions": [
+      {
+        "ticker": "TSM",
+        "shares": 1.0,
+        "entry_price": 441.0,
+        "current_price": 418.51,
+        "target_price": "434.19",
+        "stop_loss": "388.02",
+        "pnl_pct": -5.1,
+        "change_pct": null,
+        "note": "20\u4e07\u5186\u67a0\u3002\u30e6\u30fc\u30b6\u30fc\u7533\u544a\u306b\u3088\u308b\u624b\u52d5\u53cd\u6620\u3002 | \u30102026-07-25 RISK\u518d\u8a2d\u5b9a\u3011\u73fe\u5024$403.41\u57fa\u6e96\u306eATR\u30d7\u30e9\u30f3: target $434.19 / stop $388.02\u3002\u65e7research\u6c34\u6e96target $478.19 / stop $412.14\u306f\u672a\u53cd\u6620\u306e\u307e\u307e\u4e0b\u629c\u3051\u305f\u305f\u3081\u73fe\u72b6\u304b\u3089\u518d\u8a2d\u5b9a\u3002 | \u30102026-10-25 MONITOR\u3011\u73fe\u5024$418.51\uff082026-10-23\u7c73\u56fd\u5f15\u3051\u3001\u6240\u898b\u6642\u70b92026-10-24 05:00 JST\uff09\u3002\u672a\u5b9f\u73fe-$22.49\uff08-5.1%\uff09\u3002DOWN_5PCT\u3002\u53f0\u5e33\u30b9\u30c8\u30c3\u30d7$388.02\u306f2026-07-28\u5b89\u5024$381.30\u30682026-07-29\u7d42\u5024$374.67\u3067\u5272\u308c\uff08STOP_BREACH\u5c65\u6b74\uff09\u3002\u6240\u898b\u539f\u6587\u306e\u5e74\u306f2025\u3002entry 2026-06-24\u3068\u5f53\u8a72stop\u306e\u8a2d\u5b9a\u65e52026-07-25\u3088\u308a\u524d\u306b\u306f\u306a\u308a\u5f97\u306a\u3044\u305f\u30812026\u3068\u3057\u3066\u8a18\u9332\u3002Yahoo\u518d\u53d6\u5f97\u306f429\u3067\u4fa1\u683c\u306f\u6240\u898b\u306e\u307e\u307e\u3002status=open\u304b\u3064shares=1\u306e\u307e\u307e\u3002exit_price\u3068exit_date\u306f\u7a7a\u3002pending Yuta broker confirm / exit review\u3002\u76ee\u6a19$434.19\u306f2026-08-13\u4ee5\u964d\u306b\u5230\u9054\uff082026-10-05\u9ad8\u5024$487.47\uff09\u3002\u73fe\u5024\u306e\u30b9\u30c8\u30c3\u30d7\u4f59\u88d5\u306f+7.3%\uff08(\u73fe\u5024-stop)/\u73fe\u5024\u3002\u6240\u898b\u306e+7.9%\u306f\u540c\u3058$30.49\u3092stop\u3067\u5272\u3063\u305f\u5024\uff09\u3002\u76ee\u6a19\u307e\u3067+3.7%\u3002\u5c0f\u53e31\u682a\u306e\u305f\u3081\u6bb5\u968e\u5229\u78ba\u306a\u3057\u3002\u30eb\u30fc\u30eb\u9055\u53cd: \u6642\u4fa1$418.51\u306f\u8cc7\u91d1$1340\u306e31.2%\uff08\u4e0a\u965025%=$335\uff09\u3002\u30b9\u30c8\u30c3\u30d7\u307e\u3067$30.49\u306f\u8cc7\u91d1\u306e2.3%\uff081\u30c8\u30ec\u30fc\u30c90.75%\u3068heat 2.0%\u3092\u8d85\u904e\uff09\u3002\u7aef\u6570\u682a\u4e0d\u53ef\u30671\u682a\u306e\u307e\u307e\u3067\u306f\u30eb\u30fc\u30eb\u5185\u4e0d\u53ef\u3002MAE/MFE\u306f2026-07-25\u4ee5\u964d\u306e\u65e5\u6b21\u76e3\u8996\u304c\u7121\u3044\u305f\u3081\u6240\u898b\u306e\u7d42\u5024\u3068\u9ad8\u5024\u3067\u88dc\u5b8c\uff08mae -15.04 / mfe +10.54\uff09\u3002\u5f53\u65e5\u7d42\u5024-5.1%\u3060\u3051\u3067\u306f\u3069\u3061\u3089\u3082\u52d5\u304b\u306a\u3044\u3002\u65b0\u898fBUY\u306a\u3057\u3002",
+        "status": "open",
+        "exit_price": null,
+        "exit_date": null,
+        "pending_action": "Yuta broker confirm / exit review"
+      }
+    ],
+    "alerts": [
+      {
+        "date": "2026-10-25",
+        "ticker": "TSM",
+        "alert_type": "STOP_BREACH",
+        "severity": "HIGH",
+        "message": "Historical STOP_BREACH, not a 2026-10-23 fill: ledger stop $388.02 was breached on 2026-07-28 low $381.30 and 2026-07-29 close $374.67 (findings wrote 2025; recorded as 2026 because entry is 2026-06-24 and this stop was set 2026-07-25). Current $418.51 is back above the stop. Position left open pending Yuta broker confirm / exit review. No exit_price or exit_date recorded.",
+        "current_price": 418.51,
+        "entry_price": 441.0,
+        "unrealized_pnl_pct": -5.1,
+        "stop_loss": 388.02,
+        "target_price": 434.19,
+        "trailing_stop_price": null,
+        "historical_breach_low": 381.3,
+        "historical_breach_close": 374.67,
+        "fill_recorded": false
+      },
+      {
+        "date": "2026-10-25",
+        "ticker": "TSM",
+        "alert_type": "DOWN_5PCT",
+        "severity": "MEDIUM",
+        "message": "Unrealized loss -5.1%",
+        "current_price": 418.51,
+        "entry_price": 441.0,
+        "unrealized_pnl_pct": -5.1,
+        "stop_loss": 388.02,
+        "target_price": 434.19,
+        "trailing_stop_price": null
+      },
+      {
+        "date": "2026-10-25",
+        "ticker": "TSM",
+        "alert_type": "RULE_BREACH",
+        "severity": "HIGH",
+        "message": "TSM notional $418.51 is 31.2% of $1340 (cap 25% / $335). Distance from $418.51 to ledger stop $388.02 is $30.49, 2.3% of capital (caps 0.75% per trade and 2.0% portfolio heat). Fractional shares are disabled, so 1 share cannot be sized inside the rule. New BUY stays blocked. Exit review pending Yuta broker confirm.",
+        "current_price": 418.51,
+        "entry_price": 441.0,
+        "unrealized_pnl_pct": -5.1,
+        "stop_loss": 388.02,
+        "target_price": 434.19,
+        "trailing_stop_price": null
+      }
+    ],
+    "market_news": {
+      "date": "2026-10-25",
+      "disclaimer": "\u53c2\u8003\u30cb\u30e5\u30fc\u30b9\u3002\u672a\u53ce\u96c6\u3002\u4eca\u56de\u306f monitor \u30b9\u30af\u30ea\u30d7\u30c8\u3068 Slack \u3092\u5b9f\u884c\u3057\u3066\u3044\u306a\u3044\u3002",
+      "items": []
+    },
+    "regime": {
+      "vix": 19.45,
+      "label": "\u4e2d\u7acb",
+      "new_entry_size_multiplier": 0.7,
+      "spy": 759.97,
+      "spy_ema20": 768.8,
+      "spy_ema50": 765.8
+    }
   }
 ]

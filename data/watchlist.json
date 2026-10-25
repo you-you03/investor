@@ -804,10 +804,10 @@
       "last_research_run_id": "bbc15c7b-82b4-4c80-a9be-f6686abf9ad9",
       "last_score": 7.7,
       "reference_price": 89.78,
-      "reason": "2026-07-18 Decision WAIT/PASS: 条件確認待ち | 2026-07-18 2026-07-18 DECISION_WAIT継続: AI電力需要と業績は強いが需給改善条件待ち。 | 2026-07-20 /decision WAIT。4日後決算のギャップリスクと負のFCF。決算通過待ち。 | 2026-07-25 /decision BUY/MEDIUM。Q2 EPS beat通過で決算ギャップリスク低下。2株提案。",
+      "reason": "2026-07-18 Decision WAIT/PASS: 条件確認待ち | 2026-07-18 2026-07-18 DECISION_WAIT継続: AI電力需要と業績は強いが需給改善条件待ち。 | 2026-07-20 /decision WAIT。4日後決算のギャップリスクと負のFCF。決算通過待ち。 | 2026-07-25 /decision BUY/MEDIUM。Q2 EPS beat通過で決算ギャップリスク低下。2株提案。 | 【2026-10-25 MONITOR】7/25 BUY/MEDIUM（2株、stop $88.65）は未執行で、どの台帳にも無い。現値$82.10は参照$89.78比-8.6%でWATCHLIST_DROPPED（-10%）未満。提案ストップは現値の上にありプランは失効。再提案しない。pipeline_status=promotedはterminalのため変更しない。last_monitor_flagは2026-07-25のWATCHLIST_SETUPのまま（RSI/MACDは未再計算）。",
       "status": "promoted",
       "last_monitor_flag": "WATCHLIST_SETUP",
-      "last_monitor_date": "2026-07-25",
+      "last_monitor_date": "2026-10-25",
       "consecutive_drops": 0,
       "pipeline_status": "promoted",
       "pre_qualified": true,
@@ -910,10 +910,10 @@
       "last_research_run_id": "bbc15c7b-82b4-4c80-a9be-f6686abf9ad9",
       "last_score": 7.3,
       "reference_price": 5.82,
-      "reason": "スコア6.34（2026-07-12）。CCC Intelligent Solutions Holdings Inc.はSoftware - Application領域で、現在値 $5.92。主要カタリスト: options BULLISH。エントリーゾーン 5.80-6.04、目標 $6.56。 | 【2026-07-12 DECISION_WAIT】Score 7.07 with catalyst_grade A from sale/acquisition reports, positive revisions, and options bullish. But the setup is already extended: 20d +26%, price +15% above EMA20, gap-up fade, and RR_to_2ATR only 0.73. Fundamentals grade C and high leverage also argue against chasing. WAIT for pullback toward $5.15-$5.60 or confirmed sale process momentum with better risk/reward. Entry condition: 5.15-5.60. | 2026-07-18 2026-07-18: 買収テーゼは維持するが指定押し目ゾーン未到達、公式進展待ち。 | 2026-07-20 /decision WAIT。売却・決算材料は強いが20日+37.8%、EMA20乖離+9.6%で過熱。 | 2026-07-25 /decision WAIT/MEDIUM。公式イベント確認または決算通過待ち。",
+      "reason": "スコア6.34（2026-07-12）。CCC Intelligent Solutions Holdings Inc.はSoftware - Application領域で、現在値 $5.92。主要カタリスト: options BULLISH。エントリーゾーン 5.80-6.04、目標 $6.56。 | 【2026-07-12 DECISION_WAIT】Score 7.07 with catalyst_grade A from sale/acquisition reports, positive revisions, and options bullish. But the setup is already extended: 20d +26%, price +15% above EMA20, gap-up fade, and RR_to_2ATR only 0.73. Fundamentals grade C and high leverage also argue against chasing. WAIT for pullback toward $5.15-$5.60 or confirmed sale process momentum with better risk/reward. Entry condition: 5.15-5.60. | 2026-07-18 2026-07-18: 買収テーゼは維持するが指定押し目ゾーン未到達、公式進展待ち。 | 2026-07-20 /decision WAIT。売却・決算材料は強いが20日+37.8%、EMA20乖離+9.6%で過熱。 | 2026-07-25 /decision WAIT/MEDIUM。公式イベント確認または決算通過待ち。 | 【2026-10-25 WATCHLIST_MOVED】参照$5.82→$7.67（+31.8%）。7/25目標$6.78を上回り追いかけ不可。WAITトリガー$5.15-$5.60（期限2026-08-02）は失効。再提案しない。",
       "status": "active",
-      "last_monitor_flag": "WATCHLIST_EARNINGS",
-      "last_monitor_date": "2026-07-25",
+      "last_monitor_flag": "WATCHLIST_MOVED",
+      "last_monitor_date": "2026-10-25",
       "consecutive_drops": 0,
       "pipeline_status": "researched",
       "decision_wait_trigger": {
@@ -962,10 +962,10 @@
       "last_research_run_id": "bbc15c7b-82b4-4c80-a9be-f6686abf9ad9",
       "last_score": 5.4,
       "reference_price": 231.33,
-      "reason": "スコア6.14（2026-07-12）。WD-40 CompanyはSpecialty Chemicals領域で、現在値 $264.91。主要カタリスト: options NEUTRAL_BULLISH。エントリーゾーン 259.61-270.21、目標 $286.13。 | 【2026-07-12 DECISION_WAIT】Score 7.25 with catalyst_grade A from raised guidance, buyback authorization, positive revisions, and STRONG_OUTPERFORM RS. PM gate allows consideration, but RSI 73.5, price +11.1% above EMA20, 22% gap-up followed by fade, and RR_to_2ATR only 0.72 make the entry quality unacceptable. WAIT for a pullback toward EMA20/support around $238-$254 or a clean re-break above the gap high with volume. Entry condition: 238.50-254.30. | 2026-07-18 2026-07-18: DECISION_WAIT押し目ゾーン到達、過熱解消、業績・上方修正カタリスト継続。 | 2026-07-20 /decision WAIT。質は高いが中立VIX乗数後の実行株数が0株。反転確認継続。 | 【2026-07-25 RSI_COOLED】RSI=44.91 < 65 に冷却。last_score=7.5。エントリー条件成立。/decision 最優先候補。 | 2026-07-25 /decision PASS/LOW。RSI冷却より最新モメンタム悪化を優先。",
+      "reason": "スコア6.14（2026-07-12）。WD-40 CompanyはSpecialty Chemicals領域で、現在値 $264.91。主要カタリスト: options NEUTRAL_BULLISH。エントリーゾーン 259.61-270.21、目標 $286.13。 | 【2026-07-12 DECISION_WAIT】Score 7.25 with catalyst_grade A from raised guidance, buyback authorization, positive revisions, and STRONG_OUTPERFORM RS. PM gate allows consideration, but RSI 73.5, price +11.1% above EMA20, 22% gap-up followed by fade, and RR_to_2ATR only 0.72 make the entry quality unacceptable. WAIT for a pullback toward EMA20/support around $238-$254 or a clean re-break above the gap high with volume. Entry condition: 238.50-254.30. | 2026-07-18 2026-07-18: DECISION_WAIT押し目ゾーン到達、過熱解消、業績・上方修正カタリスト継続。 | 2026-07-20 /decision WAIT。質は高いが中立VIX乗数後の実行株数が0株。反転確認継続。 | 【2026-07-25 RSI_COOLED】RSI=44.91 < 65 に冷却。last_score=7.5。エントリー条件成立。/decision 最優先候補。 | 2026-07-25 /decision PASS/LOW。RSI冷却より最新モメンタム悪化を優先。 | 【2026-10-25 STALE】7/25 PASS/LOWを維持。今回の所見に現値はない。フラグは再計算していない。再提案しない。",
       "status": "active",
       "last_monitor_flag": "ESCALATE_TO_DECISION",
-      "last_monitor_date": "2026-07-25",
+      "last_monitor_date": "2026-10-25",
       "consecutive_drops": 0,
       "pipeline_status": "watching",
       "decision_wait_trigger": {
@@ -1043,10 +1043,10 @@
       "last_research_run_id": "9da077ce-cf1f-4442-ba3f-17f3aa14e239",
       "last_score": 5.0,
       "reference_price": 103.87,
-      "reason": "2026-07-20 /decision WAIT。臨床カタリストは強いが52週高値圏、低出来高、二値リスク。 | 2026-07-25 /decision WAIT/LOW。プレレベニューかつ臨床二値リスク。",
+      "reason": "2026-07-20 /decision WAIT。臨床カタリストは強いが52週高値圏、低出来高、二値リスク。 | 2026-07-25 /decision WAIT/LOW。プレレベニューかつ臨床二値リスク。 | 【2026-10-25 STALE】7/25 WAIT/LOWのまま。今回の所見は「弱い」のみで現値がない。フラグは再計算していない。再提案しない。",
       "status": "active",
       "last_monitor_flag": "WATCHLIST_SETUP",
-      "last_monitor_date": "2026-07-25",
+      "last_monitor_date": "2026-10-25",
       "consecutive_drops": 0,
       "pipeline_status": "researched"
     },
@@ -1115,7 +1115,10 @@
       "last_score": 8.3,
       "reference_price": 237.27,
       "last_research_run_id": "9da077ce-cf1f-4442-ba3f-17f3aa14e239",
-      "reason": "2026-07-25 /decision WAIT/MEDIUM。強い業績だがVIX調整後の実行株数0株。"
+      "reason": "2026-07-25 /decision WAIT/MEDIUM。強い業績だがVIX調整後の実行株数0株。 | 【2026-10-25 WATCHLIST_DROPPED】参照$237.27→$165.07（-30.4%）。WAITの見送りを維持。consecutive_drops=1。2回連続ではないのでexitedにしない。再提案しない。",
+      "last_monitor_date": "2026-10-25",
+      "consecutive_drops": 1,
+      "last_monitor_flag": "WATCHLIST_DROPPED"
     },
     {
       "ticker": "RNG",
@@ -1126,7 +1129,10 @@
       "last_score": 7.4,
       "reference_price": 48.31,
       "last_research_run_id": "bbc15c7b-82b4-4c80-a9be-f6686abf9ad9",
-      "reason": "2026-07-25 /decision WAIT/MEDIUM。急騰・EMA20乖離の正常化待ち。"
+      "reason": "2026-07-25 /decision WAIT/MEDIUM。急騰・EMA20乖離の正常化待ち。 | 【2026-10-25 WATCHLIST_MOVED】参照$48.31→$83.39（+72.6%）。押し目ゾーンを上抜け、機会は逃した。last_scoreはnullではないため未リサーチ用のseed追記条件には当たらない。追いかけも再提案もしない。",
+      "last_monitor_date": "2026-10-25",
+      "consecutive_drops": 0,
+      "last_monitor_flag": "WATCHLIST_MOVED"
     },
     {
       "ticker": "NOC",

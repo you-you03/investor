@@ -858,5 +858,47 @@
     "stop_loss": null,
     "target_price": null,
     "trailing_stop_price": null
+  },
+  {
+    "date": "2026-10-25",
+    "ticker": "TSM",
+    "alert_type": "STOP_BREACH",
+    "severity": "HIGH",
+    "message": "Historical STOP_BREACH, not a 2026-10-23 fill: ledger stop $388.02 was breached on 2026-07-28 low $381.30 and 2026-07-29 close $374.67 (findings wrote 2025; recorded as 2026 because entry is 2026-06-24 and this stop was set 2026-07-25). Current $418.51 is back above the stop. Position left open pending Yuta broker confirm / exit review. No exit_price or exit_date recorded.",
+    "current_price": 418.51,
+    "entry_price": 441.0,
+    "unrealized_pnl_pct": -5.1,
+    "stop_loss": 388.02,
+    "target_price": 434.19,
+    "trailing_stop_price": null,
+    "historical_breach_low": 381.3,
+    "historical_breach_close": 374.67,
+    "fill_recorded": false
+  },
+  {
+    "date": "2026-10-25",
+    "ticker": "TSM",
+    "alert_type": "DOWN_5PCT",
+    "severity": "MEDIUM",
+    "message": "Unrealized loss -5.1%",
+    "current_price": 418.51,
+    "entry_price": 441.0,
+    "unrealized_pnl_pct": -5.1,
+    "stop_loss": 388.02,
+    "target_price": 434.19,
+    "trailing_stop_price": null
+  },
+  {
+    "date": "2026-10-25",
+    "ticker": "TSM",
+    "alert_type": "RULE_BREACH",
+    "severity": "HIGH",
+    "message": "TSM notional $418.51 is 31.2% of $1340 (cap 25% / $335). Distance from $418.51 to ledger stop $388.02 is $30.49, 2.3% of capital (caps 0.75% per trade and 2.0% portfolio heat). Fractional shares are disabled, so 1 share cannot be sized inside the rule. New BUY stays blocked. Exit review pending Yuta broker confirm.",
+    "current_price": 418.51,
+    "entry_price": 441.0,
+    "unrealized_pnl_pct": -5.1,
+    "stop_loss": 388.02,
+    "target_price": 434.19,
+    "trailing_stop_price": null
   }
 ]
