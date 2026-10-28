@@ -70,6 +70,32 @@ def _load_watchlist_tickers() -> list[str]:
         return []
 
 
+def apply_portfolio_risk_tags(candidates: list[dict]) -> list[str]:
+    """Tag candidates when the live book would block a new BUY.
+
+    Candidates stay in the research run and in score snapshots. The tag is a
+    record for later review, not a deletion and not a broker action.
+    """
+    from investor.core.risk import portfolio_guard_violations
+    from investor.utils.portfolio_contract import read_portfolio_rows
+
+    open_rows = [
+        row for row in read_portfolio_rows(Path(settings.default_portfolio_path))
+        if str(row.get("status") or "").lower() == "open"
+    ]
+    reasons: list[str] = []
+    if settings.block_new_buys_on_portfolio_violation:
+        reasons.extend(portfolio_guard_violations(open_rows))
+    if len(open_rows) >= settings.max_open_positions:
+        reasons.append(
+            f"open positions {len(open_rows)} reached max {settings.max_open_positions}"
+        )
+    for candidate in candidates:
+        candidate["blocked_by_risk"] = bool(reasons)
+        candidate["blocked_by_risk_reasons"] = list(reasons)
+    return reasons
+
+
 def save_run(run_id: str, candidates: list[dict]) -> None:
     """Save eligible candidates while retaining every score for validation."""
     HISTORY_PATH.parent.mkdir(parents=True, exist_ok=True)
@@ -80,6 +106,7 @@ def save_run(run_id: str, candidates: list[dict]) -> None:
         row = dict(candidate)
         row.setdefault("strategy_version", settings.strategy_version)
         versioned_candidates.append(row)
+    risk_reasons = apply_portfolio_risk_tags(versioned_candidates)
     eligible_candidates = []
     for candidate in versioned_candidates:
         try:
@@ -92,6 +119,8 @@ def save_run(run_id: str, candidates: list[dict]) -> None:
         "run_id": run_id,
         "date": today,
         "strategy_version": settings.strategy_version,
+        "blocked_by_risk": bool(risk_reasons),
+        "blocked_by_risk_reasons": risk_reasons,
         "candidates": eligible_candidates,
     })
     HISTORY_PATH.write_text(json.dumps(history, indent=2))

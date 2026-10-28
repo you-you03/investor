@@ -900,5 +900,20 @@
     "stop_loss": 388.02,
     "target_price": 434.19,
     "trailing_stop_price": null
+  },
+  {
+    "date": "2026-10-28",
+    "ticker": "TSM",
+    "alert_type": "LEDGER_RECONCILE",
+    "severity": "HIGH",
+    "reconcile_kind": "unresolved_stop_alert",
+    "message": "TSM still open after STOP_BREACH on 2026-10-25. No broker fill is recorded. Leave the row open for exit review.",
+    "ledger_status": "open",
+    "pending_exit_review": true,
+    "auto_closed": false,
+    "source": "reconcile_monitor_ledger",
+    "current_price": 418.51,
+    "stop_loss": 388.02,
+    "target_price": 434.19
   }
 ]

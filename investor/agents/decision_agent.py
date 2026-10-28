@@ -359,6 +359,7 @@ def log_decision_history(
             "conviction": candidate_map.get(ticker, {}).get("conviction"),
             "entry_price_range": candidate_map.get(ticker, {}).get("entry_price_range"),
             "signal_type": candidate_map.get(ticker, {}).get("signal_type"),
+            "research_run_id": run_id,
         }
         for ticker in pass_tickers
     ]
@@ -369,6 +370,7 @@ def log_decision_history(
             "conviction": p.get("conviction"),
             "position_size_usd": p.get("position_size_usd"),
             "signal_type": p.get("signal_type"),
+            "research_run_id": run_id,
         }
         for p in proposals
     ]
@@ -376,6 +378,7 @@ def log_decision_history(
     history.append({
         "date": date.today().isoformat(),
         "run_id": run_id,
+        "research_run_id": run_id,
         "candidates_evaluated": all_tickers,
         "buy_decisions": buy_tickers,
         "pass_decisions": pass_tickers,

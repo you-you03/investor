@@ -79,6 +79,7 @@ def add(
     conviction: str = typer.Option("", "--conviction"),
     proposal_date: Optional[str] = typer.Option(None, "--proposal-date"),
     portfolio: str = typer.Option("default", "--portfolio", help="default/20man or 100man"),
+    run_id: str = typer.Option("", "--run-id", help="Optional research run_id for lineage"),
 ) -> None:
     """Add an executed position after deterministic risk validation."""
     path = _resolve_portfolio_path(portfolio)
@@ -155,6 +156,7 @@ def add(
         "strategy_version": settings.strategy_version,
         "order_status": "executed",
         "broker_stop_order_id": "",
+        "research_run_id": run_id,
     })
     write_portfolio_rows(path, rows)
     console.print(

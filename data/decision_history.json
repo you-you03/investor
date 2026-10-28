@@ -16,7 +16,8 @@
       "NVDA",
       "RDDT"
     ],
-    "no_trade_week": false
+    "no_trade_week": false,
+    "research_run_id": "aec305c5-7fb9-469a-a7a2-e3fe8cdd16ee"
   },
   {
     "date": "2026-05-06",
@@ -32,7 +33,8 @@
       "WAT",
       "STRL"
     ],
-    "no_trade_week": false
+    "no_trade_week": false,
+    "research_run_id": "ce3b44d4-a83e-4832-a8bc-6649ecb95576"
   },
   {
     "date": "2026-05-09",
@@ -51,7 +53,8 @@
       "INTC",
       "RKLB"
     ],
-    "no_trade_week": false
+    "no_trade_week": false,
+    "research_run_id": "59e29cdb-cf2b-4582-aad2-cfd1f566a95f"
   },
   {
     "date": "2026-05-09",
@@ -71,7 +74,8 @@
       "INTC",
       "RKLB"
     ],
-    "no_trade_week": false
+    "no_trade_week": false,
+    "research_run_id": "59e29cdb-cf2b-4582-aad2-cfd1f566a95f"
   },
   {
     "date": "2026-05-16",
@@ -93,7 +97,8 @@
       "MRVL",
       "INOD"
     ],
-    "no_trade_week": false
+    "no_trade_week": false,
+    "research_run_id": "4105f34b-119f-478d-bebb-cc9a64525e1e"
   },
   {
     "date": "2026-05-24",
@@ -112,7 +117,8 @@
       "MU"
     ],
     "no_trade_week": false,
-    "note": "AVGO FULL_EXIT同日。セクター集中考慮でNVDA 5株(縮小)のみ採用。MRVL=5/28決算待ち、MU=MACD回復待ち。"
+    "note": "AVGO FULL_EXIT同日。セクター集中考慮でNVDA 5株(縮小)のみ採用。MRVL=5/28決算待ち、MU=MACD回復待ち。",
+    "research_run_id": "1c812073-444d-48f0-b667-37946f9e9a45"
   },
   {
     "date": "2026-06-03",
@@ -138,7 +144,8 @@
         "action": "BUY",
         "conviction": "MEDIUM",
         "position_size_usd": 1005.0,
-        "signal_type": "watchlist_escalate"
+        "signal_type": "watchlist_escalate",
+        "research_run_id": "0f77866d-252a-45db-943a-e9bb89b18886"
       }
     ],
     "pass_records": [
@@ -147,21 +154,24 @@
         "score": 7.4,
         "conviction": "MEDIUM",
         "entry_price_range": null,
-        "signal_type": null
+        "signal_type": null,
+        "research_run_id": "0f77866d-252a-45db-943a-e9bb89b18886"
       },
       {
         "ticker": "MRVL",
         "score": 7.1,
         "conviction": "LOW",
         "entry_price_range": null,
-        "signal_type": null
+        "signal_type": null,
+        "research_run_id": "0f77866d-252a-45db-943a-e9bb89b18886"
       },
       {
         "ticker": "MU",
         "score": 7.0,
         "conviction": "LOW",
         "entry_price_range": null,
-        "signal_type": null
+        "signal_type": null,
+        "research_run_id": "0f77866d-252a-45db-943a-e9bb89b18886"
       }
     ],
     "proposal_summary": {
@@ -169,7 +179,8 @@
       "pass_count": 3,
       "hold_cash_count": 0
     },
-    "no_trade_week": false
+    "no_trade_week": false,
+    "research_run_id": "0f77866d-252a-45db-943a-e9bb89b18886"
   },
   {
     "date": "2026-06-06",
@@ -198,7 +209,8 @@
         "action": "NO_TRADE",
         "conviction": "LOW",
         "position_size_usd": 670.0,
-        "signal_type": null
+        "signal_type": null,
+        "research_run_id": "901745d3-090e-4ada-b5df-e3f4d59b145d"
       }
     ],
     "pass_records": [
@@ -207,35 +219,40 @@
         "score": 8.1,
         "conviction": "HIGH",
         "entry_price_range": null,
-        "signal_type": null
+        "signal_type": null,
+        "research_run_id": "901745d3-090e-4ada-b5df-e3f4d59b145d"
       },
       {
         "ticker": "PLMR",
         "score": 7.7,
         "conviction": "HIGH",
         "entry_price_range": null,
-        "signal_type": null
+        "signal_type": null,
+        "research_run_id": "901745d3-090e-4ada-b5df-e3f4d59b145d"
       },
       {
         "ticker": "TXRH",
         "score": 7.4,
         "conviction": "MEDIUM",
         "entry_price_range": null,
-        "signal_type": null
+        "signal_type": null,
+        "research_run_id": "901745d3-090e-4ada-b5df-e3f4d59b145d"
       },
       {
         "ticker": "COO",
         "score": 7.2,
         "conviction": "MEDIUM",
         "entry_price_range": null,
-        "signal_type": null
+        "signal_type": null,
+        "research_run_id": "901745d3-090e-4ada-b5df-e3f4d59b145d"
       },
       {
         "ticker": "COKE",
         "score": 7.0,
         "conviction": "MEDIUM",
         "entry_price_range": null,
-        "signal_type": null
+        "signal_type": null,
+        "research_run_id": "901745d3-090e-4ada-b5df-e3f4d59b145d"
       }
     ],
     "proposal_summary": {
@@ -243,7 +260,8 @@
       "pass_count": 5,
       "hold_cash_count": 1
     },
-    "no_trade_week": true
+    "no_trade_week": true,
+    "research_run_id": "901745d3-090e-4ada-b5df-e3f4d59b145d"
   },
   {
     "date": "2026-06-12",
@@ -273,28 +291,32 @@
         "action": "NO_TRADE",
         "conviction": "HIGH",
         "position_size_usd": 1508.0,
-        "signal_type": "watchlist_escalate"
+        "signal_type": "watchlist_escalate",
+        "research_run_id": "91278354-9178-4dbb-b21d-6c398d0c0683"
       },
       {
         "ticker": "MRVL",
         "action": "NO_TRADE",
         "conviction": "MEDIUM",
         "position_size_usd": 1005.0,
-        "signal_type": "watchlist_maintain"
+        "signal_type": "watchlist_maintain",
+        "research_run_id": "91278354-9178-4dbb-b21d-6c398d0c0683"
       },
       {
         "ticker": "ACMR",
         "action": "NO_TRADE",
         "conviction": "MEDIUM",
         "position_size_usd": 1005.0,
-        "signal_type": "research_candidate"
+        "signal_type": "research_candidate",
+        "research_run_id": "91278354-9178-4dbb-b21d-6c398d0c0683"
       },
       {
         "ticker": "ATRO",
         "action": "NO_TRADE",
         "conviction": "MEDIUM",
         "position_size_usd": 1005.0,
-        "signal_type": "research_candidate"
+        "signal_type": "research_candidate",
+        "research_run_id": "91278354-9178-4dbb-b21d-6c398d0c0683"
       }
     ],
     "pass_records": [
@@ -303,28 +325,32 @@
         "score": 8.4,
         "conviction": "HIGH",
         "entry_price_range": null,
-        "signal_type": null
+        "signal_type": null,
+        "research_run_id": "91278354-9178-4dbb-b21d-6c398d0c0683"
       },
       {
         "ticker": "MRVL",
         "score": 7.4,
         "conviction": "MEDIUM",
         "entry_price_range": null,
-        "signal_type": null
+        "signal_type": null,
+        "research_run_id": "91278354-9178-4dbb-b21d-6c398d0c0683"
       },
       {
         "ticker": "ACMR",
         "score": 7.1,
         "conviction": "MEDIUM",
         "entry_price_range": null,
-        "signal_type": null
+        "signal_type": null,
+        "research_run_id": "91278354-9178-4dbb-b21d-6c398d0c0683"
       },
       {
         "ticker": "ATRO",
         "score": 7.0,
         "conviction": "MEDIUM",
         "entry_price_range": null,
-        "signal_type": null
+        "signal_type": null,
+        "research_run_id": "91278354-9178-4dbb-b21d-6c398d0c0683"
       }
     ],
     "proposal_summary": {
@@ -332,7 +358,8 @@
       "pass_count": 4,
       "hold_cash_count": 4
     },
-    "no_trade_week": true
+    "no_trade_week": true,
+    "research_run_id": "91278354-9178-4dbb-b21d-6c398d0c0683"
   },
   {
     "date": "2026-06-12",
@@ -359,42 +386,48 @@
         "action": "SELL",
         "conviction": "HIGH",
         "position_size_usd": 1508.0,
-        "signal_type": "monitor_stop_loss"
+        "signal_type": "monitor_stop_loss",
+        "research_run_id": "91278354-9178-4dbb-b21d-6c398d0c0683"
       },
       {
         "ticker": "LRCX",
         "action": "SELL",
         "conviction": "HIGH",
         "position_size_usd": 1508.0,
-        "signal_type": "monitor_target_reached"
+        "signal_type": "monitor_target_reached",
+        "research_run_id": "91278354-9178-4dbb-b21d-6c398d0c0683"
       },
       {
         "ticker": "NVDA",
         "action": "SELL",
         "conviction": "HIGH",
         "position_size_usd": 1508.0,
-        "signal_type": "monitor_stop_loss"
+        "signal_type": "monitor_stop_loss",
+        "research_run_id": "91278354-9178-4dbb-b21d-6c398d0c0683"
       },
       {
         "ticker": "AMAT",
         "action": "SELL",
         "conviction": "HIGH",
         "position_size_usd": 1508.0,
-        "signal_type": "monitor_target_reached"
+        "signal_type": "monitor_target_reached",
+        "research_run_id": "91278354-9178-4dbb-b21d-6c398d0c0683"
       },
       {
         "ticker": "VRT",
         "action": "HOLD",
         "conviction": "MEDIUM",
         "position_size_usd": 1005.0,
-        "signal_type": "monitor_drawdown"
+        "signal_type": "monitor_drawdown",
+        "research_run_id": "91278354-9178-4dbb-b21d-6c398d0c0683"
       },
       {
         "ticker": "MU",
         "action": "NO_TRADE",
         "conviction": "HIGH",
         "position_size_usd": 1508.0,
-        "signal_type": "watchlist_escalate"
+        "signal_type": "watchlist_escalate",
+        "research_run_id": "91278354-9178-4dbb-b21d-6c398d0c0683"
       }
     ],
     "pass_records": [
@@ -403,28 +436,32 @@
         "score": 8.4,
         "conviction": "HIGH",
         "entry_price_range": null,
-        "signal_type": null
+        "signal_type": null,
+        "research_run_id": "91278354-9178-4dbb-b21d-6c398d0c0683"
       },
       {
         "ticker": "MRVL",
         "score": 7.4,
         "conviction": "MEDIUM",
         "entry_price_range": null,
-        "signal_type": null
+        "signal_type": null,
+        "research_run_id": "91278354-9178-4dbb-b21d-6c398d0c0683"
       },
       {
         "ticker": "ACMR",
         "score": 7.1,
         "conviction": "MEDIUM",
         "entry_price_range": null,
-        "signal_type": null
+        "signal_type": null,
+        "research_run_id": "91278354-9178-4dbb-b21d-6c398d0c0683"
       },
       {
         "ticker": "ATRO",
         "score": 7.0,
         "conviction": "MEDIUM",
         "entry_price_range": null,
-        "signal_type": null
+        "signal_type": null,
+        "research_run_id": "91278354-9178-4dbb-b21d-6c398d0c0683"
       }
     ],
     "proposal_summary": {
@@ -432,7 +469,8 @@
       "pass_count": 4,
       "hold_cash_count": 1
     },
-    "no_trade_week": true
+    "no_trade_week": true,
+    "research_run_id": "91278354-9178-4dbb-b21d-6c398d0c0683"
   },
   {
     "date": "2026-06-20",
@@ -459,7 +497,8 @@
         "action": "BUY",
         "conviction": "MEDIUM",
         "position_size_usd": 537.0,
-        "signal_type": "watchlist_escalate"
+        "signal_type": "watchlist_escalate",
+        "research_run_id": "9a546d35-e5db-407d-a605-341e02f771d8"
       }
     ],
     "pass_records": [
@@ -468,28 +507,32 @@
         "score": 8.4,
         "conviction": "HIGH",
         "entry_price_range": null,
-        "signal_type": null
+        "signal_type": null,
+        "research_run_id": "9a546d35-e5db-407d-a605-341e02f771d8"
       },
       {
         "ticker": "MRVL",
         "score": 7.3,
         "conviction": "MEDIUM",
         "entry_price_range": null,
-        "signal_type": null
+        "signal_type": null,
+        "research_run_id": "9a546d35-e5db-407d-a605-341e02f771d8"
       },
       {
         "ticker": "AMAT",
         "score": 7.1,
         "conviction": "MEDIUM",
         "entry_price_range": null,
-        "signal_type": null
+        "signal_type": null,
+        "research_run_id": "9a546d35-e5db-407d-a605-341e02f771d8"
       },
       {
         "ticker": "COHR",
         "score": 7.0,
         "conviction": "MEDIUM",
         "entry_price_range": null,
-        "signal_type": null
+        "signal_type": null,
+        "research_run_id": "9a546d35-e5db-407d-a605-341e02f771d8"
       }
     ],
     "proposal_summary": {
@@ -497,7 +540,8 @@
       "pass_count": 4,
       "hold_cash_count": 0
     },
-    "no_trade_week": false
+    "no_trade_week": false,
+    "research_run_id": "9a546d35-e5db-407d-a605-341e02f771d8"
   },
   {
     "date": "2026-06-25",
@@ -521,7 +565,8 @@
         "action": "BUY",
         "conviction": "MEDIUM",
         "position_size_usd": 88.0,
-        "signal_type": "technical_breakout"
+        "signal_type": "technical_breakout",
+        "research_run_id": "5ab4978e-0f6e-4479-a635-b76825097f52"
       }
     ],
     "pass_records": [
@@ -530,14 +575,16 @@
         "score": 7.3,
         "conviction": "MEDIUM",
         "entry_price_range": null,
-        "signal_type": "analyst_upgrade"
+        "signal_type": "analyst_upgrade",
+        "research_run_id": "5ab4978e-0f6e-4479-a635-b76825097f52"
       },
       {
         "ticker": "VICR",
         "score": 7.29,
         "conviction": "MEDIUM",
         "entry_price_range": null,
-        "signal_type": "technical_breakout"
+        "signal_type": "technical_breakout",
+        "research_run_id": "5ab4978e-0f6e-4479-a635-b76825097f52"
       }
     ],
     "proposal_summary": {
@@ -545,7 +592,8 @@
       "pass_count": 2,
       "hold_cash_count": 0
     },
-    "no_trade_week": false
+    "no_trade_week": false,
+    "research_run_id": "5ab4978e-0f6e-4479-a635-b76825097f52"
   },
   {
     "date": "2026-06-25",
@@ -564,7 +612,8 @@
         "action": "BUY",
         "conviction": "HIGH",
         "position_size_usd": 882.0,
-        "signal_type": "watchlist_escalate"
+        "signal_type": "watchlist_escalate",
+        "research_run_id": "da69af89-30e9-4556-8d2a-9c76e8d2dc12"
       }
     ],
     "pass_records": [],
@@ -574,7 +623,8 @@
       "hold_cash_count": 0
     },
     "no_trade_week": false,
-    "scope": "single_ticker:TSM"
+    "scope": "single_ticker:TSM",
+    "research_run_id": "da69af89-30e9-4556-8d2a-9c76e8d2dc12"
   },
   {
     "date": "2026-07-05",
@@ -605,7 +655,8 @@
         "action": "HOLD_CASH",
         "conviction": "MEDIUM",
         "position_size_usd": 0.0,
-        "signal_type": null
+        "signal_type": null,
+        "research_run_id": "c0842ab5-ffd3-46da-9c55-5a9f1cce3654"
       }
     ],
     "pass_records": [
@@ -614,42 +665,48 @@
         "score": 7.2,
         "conviction": "MEDIUM",
         "entry_price_range": null,
-        "signal_type": null
+        "signal_type": null,
+        "research_run_id": "c0842ab5-ffd3-46da-9c55-5a9f1cce3654"
       },
       {
         "ticker": "BWIN",
         "score": 7.05,
         "conviction": "MEDIUM",
         "entry_price_range": null,
-        "signal_type": null
+        "signal_type": null,
+        "research_run_id": "c0842ab5-ffd3-46da-9c55-5a9f1cce3654"
       },
       {
         "ticker": "AMAT",
         "score": 7.05,
         "conviction": "MEDIUM",
         "entry_price_range": null,
-        "signal_type": null
+        "signal_type": null,
+        "research_run_id": "c0842ab5-ffd3-46da-9c55-5a9f1cce3654"
       },
       {
         "ticker": "AVAV",
         "score": 7.0,
         "conviction": "MEDIUM",
         "entry_price_range": null,
-        "signal_type": null
+        "signal_type": null,
+        "research_run_id": "c0842ab5-ffd3-46da-9c55-5a9f1cce3654"
       },
       {
         "ticker": "GPC",
         "score": 7.0,
         "conviction": "MEDIUM",
         "entry_price_range": null,
-        "signal_type": null
+        "signal_type": null,
+        "research_run_id": "c0842ab5-ffd3-46da-9c55-5a9f1cce3654"
       },
       {
         "ticker": "MRNA",
         "score": 7.0,
         "conviction": "LOW",
         "entry_price_range": null,
-        "signal_type": null
+        "signal_type": null,
+        "research_run_id": "c0842ab5-ffd3-46da-9c55-5a9f1cce3654"
       }
     ],
     "proposal_summary": {
@@ -657,7 +714,8 @@
       "pass_count": 6,
       "hold_cash_count": 1
     },
-    "no_trade_week": true
+    "no_trade_week": true,
+    "research_run_id": "c0842ab5-ffd3-46da-9c55-5a9f1cce3654"
   },
   {
     "date": "2026-07-12",
@@ -680,21 +738,24 @@
         "action": "WAIT",
         "conviction": "MEDIUM",
         "position_size_usd": 0.0,
-        "signal_type": "earnings_beat"
+        "signal_type": "earnings_beat",
+        "research_run_id": "bc5863ae-b769-420d-8069-6dacc57a678f"
       },
       {
         "ticker": "MU",
         "action": "WAIT",
         "conviction": "MEDIUM",
         "position_size_usd": 0.0,
-        "signal_type": "watchlist_escalate"
+        "signal_type": "watchlist_escalate",
+        "research_run_id": "bc5863ae-b769-420d-8069-6dacc57a678f"
       },
       {
         "ticker": "CCC",
         "action": "WAIT",
         "conviction": "MEDIUM",
         "position_size_usd": 0.0,
-        "signal_type": "analyst_upgrade"
+        "signal_type": "analyst_upgrade",
+        "research_run_id": "bc5863ae-b769-420d-8069-6dacc57a678f"
       }
     ],
     "pass_records": [
@@ -703,21 +764,24 @@
         "score": 7.25,
         "conviction": "MEDIUM",
         "entry_price_range": null,
-        "signal_type": null
+        "signal_type": null,
+        "research_run_id": "bc5863ae-b769-420d-8069-6dacc57a678f"
       },
       {
         "ticker": "MU",
         "score": 7.1,
         "conviction": "MEDIUM",
         "entry_price_range": null,
-        "signal_type": null
+        "signal_type": null,
+        "research_run_id": "bc5863ae-b769-420d-8069-6dacc57a678f"
       },
       {
         "ticker": "CCC",
         "score": 7.07,
         "conviction": "MEDIUM",
         "entry_price_range": null,
-        "signal_type": null
+        "signal_type": null,
+        "research_run_id": "bc5863ae-b769-420d-8069-6dacc57a678f"
       }
     ],
     "proposal_summary": {
@@ -725,7 +789,8 @@
       "pass_count": 3,
       "hold_cash_count": 0
     },
-    "no_trade_week": true
+    "no_trade_week": true,
+    "research_run_id": "bc5863ae-b769-420d-8069-6dacc57a678f"
   },
   {
     "date": "2026-07-18",
@@ -755,14 +820,16 @@
         "action": "BUY",
         "conviction": "HIGH",
         "position_size_usd": 213.0,
-        "signal_type": "analyst_upgrade"
+        "signal_type": "analyst_upgrade",
+        "research_run_id": "70a23feb-adb1-46b4-bfa0-e99dd049be66"
       },
       {
         "ticker": "WAY",
         "action": "BUY",
         "conviction": "MEDIUM",
         "position_size_usd": 45.0,
-        "signal_type": "earnings_beat"
+        "signal_type": "earnings_beat",
+        "research_run_id": "70a23feb-adb1-46b4-bfa0-e99dd049be66"
       }
     ],
     "pass_records": [
@@ -771,28 +838,32 @@
         "score": 8.2,
         "conviction": "HIGH",
         "entry_price_range": null,
-        "signal_type": null
+        "signal_type": null,
+        "research_run_id": "70a23feb-adb1-46b4-bfa0-e99dd049be66"
       },
       {
         "ticker": "SAIC",
         "score": 7.5,
         "conviction": "MEDIUM",
         "entry_price_range": null,
-        "signal_type": null
+        "signal_type": null,
+        "research_run_id": "70a23feb-adb1-46b4-bfa0-e99dd049be66"
       },
       {
         "ticker": "REZI",
         "score": 7.3,
         "conviction": "MEDIUM",
         "entry_price_range": null,
-        "signal_type": null
+        "signal_type": null,
+        "research_run_id": "70a23feb-adb1-46b4-bfa0-e99dd049be66"
       },
       {
         "ticker": "SLS",
         "score": 7.2,
         "conviction": "MEDIUM",
         "entry_price_range": null,
-        "signal_type": null
+        "signal_type": null,
+        "research_run_id": "70a23feb-adb1-46b4-bfa0-e99dd049be66"
       }
     ],
     "proposal_summary": {
@@ -800,7 +871,8 @@
       "pass_count": 4,
       "hold_cash_count": 0
     },
-    "no_trade_week": false
+    "no_trade_week": false,
+    "research_run_id": "70a23feb-adb1-46b4-bfa0-e99dd049be66"
   },
   {
     "date": "2026-07-20",
@@ -834,7 +906,8 @@
         "action": "BUY",
         "conviction": "MEDIUM",
         "position_size_usd": 36.0,
-        "signal_type": "watchlist_escalate"
+        "signal_type": "watchlist_escalate",
+        "research_run_id": "3c97e9aa-2acd-4c05-a29b-a55ff4ee046d"
       }
     ],
     "pass_records": [
@@ -843,49 +916,56 @@
         "score": 7.6,
         "conviction": "MEDIUM",
         "entry_price_range": null,
-        "signal_type": null
+        "signal_type": null,
+        "research_run_id": "3c97e9aa-2acd-4c05-a29b-a55ff4ee046d"
       },
       {
         "ticker": "WDFC",
         "score": 7.5,
         "conviction": "MEDIUM",
         "entry_price_range": null,
-        "signal_type": null
+        "signal_type": null,
+        "research_run_id": "3c97e9aa-2acd-4c05-a29b-a55ff4ee046d"
       },
       {
         "ticker": "CCC",
         "score": 7.5,
         "conviction": "MEDIUM",
         "entry_price_range": null,
-        "signal_type": null
+        "signal_type": null,
+        "research_run_id": "3c97e9aa-2acd-4c05-a29b-a55ff4ee046d"
       },
       {
         "ticker": "DNTH",
         "score": 7.2,
         "conviction": "MEDIUM",
         "entry_price_range": null,
-        "signal_type": null
+        "signal_type": null,
+        "research_run_id": "3c97e9aa-2acd-4c05-a29b-a55ff4ee046d"
       },
       {
         "ticker": "SLS",
         "score": 7.1,
         "conviction": "MEDIUM",
         "entry_price_range": null,
-        "signal_type": null
+        "signal_type": null,
+        "research_run_id": "3c97e9aa-2acd-4c05-a29b-a55ff4ee046d"
       },
       {
         "ticker": "ORKA",
         "score": 7.05,
         "conviction": "MEDIUM",
         "entry_price_range": null,
-        "signal_type": null
+        "signal_type": null,
+        "research_run_id": "3c97e9aa-2acd-4c05-a29b-a55ff4ee046d"
       },
       {
         "ticker": "SAIC",
         "score": 7.0,
         "conviction": "MEDIUM",
         "entry_price_range": null,
-        "signal_type": null
+        "signal_type": null,
+        "research_run_id": "3c97e9aa-2acd-4c05-a29b-a55ff4ee046d"
       }
     ],
     "proposal_summary": {
@@ -893,7 +973,8 @@
       "pass_count": 7,
       "hold_cash_count": 0
     },
-    "no_trade_week": false
+    "no_trade_week": false,
+    "research_run_id": "3c97e9aa-2acd-4c05-a29b-a55ff4ee046d"
   },
   {
     "date": "2026-07-25",
@@ -921,42 +1002,48 @@
         "action": "BUY",
         "conviction": "MEDIUM",
         "position_size_usd": 179.0,
-        "signal_type": "earnings_beat"
+        "signal_type": "earnings_beat",
+        "research_run_id": "bbc15c7b-82b4-4c80-a9be-f6686abf9ad9"
       },
       {
         "ticker": "ENVA",
         "action": "WAIT",
         "conviction": "MEDIUM",
         "position_size_usd": 0.0,
-        "signal_type": "earnings_beat"
+        "signal_type": "earnings_beat",
+        "research_run_id": "bbc15c7b-82b4-4c80-a9be-f6686abf9ad9"
       },
       {
         "ticker": "RNG",
         "action": "WAIT",
         "conviction": "MEDIUM",
         "position_size_usd": 0.0,
-        "signal_type": "earnings_beat"
+        "signal_type": "earnings_beat",
+        "research_run_id": "bbc15c7b-82b4-4c80-a9be-f6686abf9ad9"
       },
       {
         "ticker": "CCC",
         "action": "WAIT",
         "conviction": "MEDIUM",
         "position_size_usd": 0.0,
-        "signal_type": "event_driven"
+        "signal_type": "event_driven",
+        "research_run_id": "bbc15c7b-82b4-4c80-a9be-f6686abf9ad9"
       },
       {
         "ticker": "DNTH",
         "action": "WAIT",
         "conviction": "LOW",
         "position_size_usd": 0.0,
-        "signal_type": "clinical_catalyst"
+        "signal_type": "clinical_catalyst",
+        "research_run_id": "bbc15c7b-82b4-4c80-a9be-f6686abf9ad9"
       },
       {
         "ticker": "WDFC",
         "action": "PASS",
         "conviction": "LOW",
         "position_size_usd": 0.0,
-        "signal_type": "watchlist_escalate"
+        "signal_type": "watchlist_escalate",
+        "research_run_id": "bbc15c7b-82b4-4c80-a9be-f6686abf9ad9"
       }
     ],
     "pass_records": [
@@ -965,28 +1052,32 @@
         "score": 8.2,
         "conviction": "HIGH",
         "entry_price_range": null,
-        "signal_type": null
+        "signal_type": null,
+        "research_run_id": "bbc15c7b-82b4-4c80-a9be-f6686abf9ad9"
       },
       {
         "ticker": "RNG",
         "score": 7.4,
         "conviction": "MEDIUM",
         "entry_price_range": null,
-        "signal_type": null
+        "signal_type": null,
+        "research_run_id": "bbc15c7b-82b4-4c80-a9be-f6686abf9ad9"
       },
       {
         "ticker": "CCC",
         "score": 7.3,
         "conviction": "MEDIUM",
         "entry_price_range": null,
-        "signal_type": null
+        "signal_type": null,
+        "research_run_id": "bbc15c7b-82b4-4c80-a9be-f6686abf9ad9"
       },
       {
         "ticker": "DNTH",
         "score": 7.2,
         "conviction": "MEDIUM",
         "entry_price_range": null,
-        "signal_type": null
+        "signal_type": null,
+        "research_run_id": "bbc15c7b-82b4-4c80-a9be-f6686abf9ad9"
       }
     ],
     "proposal_summary": {
@@ -994,6 +1085,7 @@
       "pass_count": 4,
       "hold_cash_count": 0
     },
-    "no_trade_week": false
+    "no_trade_week": false,
+    "research_run_id": "bbc15c7b-82b4-4c80-a9be-f6686abf9ad9"
   }
 ]

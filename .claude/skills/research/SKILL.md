@@ -332,6 +332,23 @@ Score snapshot saved:
   weekly checkpoints: week1={week1_date}, week2={week2_date}, week3={week3_date}, week4={week4_date}
 ```
 
+### Portfolio risk block（候補は残す）
+
+新規BUYが portfolio guard（heat、集中、stop/target 欠損、未解消の STOP_BREACH）または最大同時ポジション数で止まるときも、スコア済み候補は捨てない。
+
+保存は `python skills/research.py --save` を使う。`save_run` はスコア ≥ 7.5 を `research_history.json` に残し、スコア未満も含めて `score_snapshots.json` に残す。ガードが理由を返した run では各候補に次を付ける。
+
+- `blocked_by_risk`: `true`
+- `blocked_by_risk_reasons`: ガード理由の配列
+
+これは執行停止の記録であり、約定でも自動クローズでもない。ガードが空なら `blocked_by_risk` は `false`。フィールドが無い古いスナップショットは未タグであり、`false` とは読まない。
+
+`CHASE_MOMENTUM` または `extension_risk=HIGH` はライブBUYにしない。代わりに `gate_pass_counterfactual` と `data/gate_pass_counterfactuals.json` へ残し、week4 / week12 のリターンでゲートを後から評価する。
+
+カタリストは `catalyst_data_status` = `present` / `weak` / `missing`。ニュースやアナリストデータが無いときは `catalyst_data_missing: true`。grade D の弱いカタリストとは分ける。`validate_scores.py` の catalyst IC は missing を除外する。
+
+`run_id` は research run、score snapshot、decision history で共有する。`record_outcomes.py` は outcome と、空いている journal 行へ `research_run_id` を足す。既存の値は上書きしない。
+
 ---
 
 ## Step 7: Report (display to user in Markdown)

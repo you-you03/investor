@@ -15,6 +15,7 @@ from investor.utils.logger import get_logger
 logger = get_logger(__name__)
 
 SNAPSHOTS_PATH = Path("data/score_snapshots.json")
+GATE_COUNTERFACTUAL_PATH = Path("data/gate_pass_counterfactuals.json")
 TRACKING_HORIZON_WEEKS = tuple(range(1, settings.evaluation_horizon_weeks + 1))
 WEEK_KEYS = tuple(f"week{week}" for week in TRACKING_HORIZON_WEEKS)
 
@@ -103,6 +104,167 @@ def factor_grades_from_result(result: dict[str, Any]) -> dict[str, str]:
             grade = grade or evidence[factor].get(f"{factor}_grade") or evidence[factor].get("grade")
         grades[factor] = _normalize_grade(grade)
     return grades
+
+
+_CATALYST_MISSING_MARKERS = (
+    "data missing",
+    "data_missing",
+    "no news",
+    "news unavailable",
+    "news missing",
+    "analyst data missing",
+    "catalyst data missing",
+    "catalyst missing",
+    "insufficient catalyst",
+    "missing catalyst",
+    "データ不足",
+    "ニュースなし",
+    "材料不明",
+    "材料データなし",
+)
+
+
+def classify_catalyst_data(result: dict[str, Any]) -> tuple[str, bool]:
+    """Separate a real weak catalyst from missing news or analyst data.
+
+    Returns ``(status, missing)`` where status is ``present``, ``weak``, or
+    ``missing``. Missing means the catalyst score must not enter IC aggregation.
+    """
+    status = str(result.get("catalyst_data_status") or "").strip().lower()
+    if result.get("catalyst_data_missing") is True or status == "missing":
+        return "missing", True
+    if status == "weak":
+        return "weak", False
+    if status == "present":
+        return "present", False
+
+    grades = factor_grades_from_result(result)
+    grade = grades.get("catalyst") or ""
+    breakdown = result.get("score_breakdown") or {}
+    has_score = breakdown.get("catalyst") is not None
+    evidence = result.get("score_evidence") or {}
+    catalyst_evidence = evidence.get("catalyst")
+    if isinstance(catalyst_evidence, dict):
+        evidence_text = " ".join(str(value) for value in catalyst_evidence.values())
+    else:
+        evidence_text = str(catalyst_evidence or "")
+    gap_flags = [str(flag) for flag in (result.get("data_gap_flags") or [])]
+    blob = " ".join(
+        [
+            evidence_text,
+            str(result.get("data_notes") or ""),
+            str(result.get("catalyst_quality") or ""),
+            " ".join(gap_flags),
+        ]
+    ).lower()
+    gap_hit = any(
+        any(token in flag.lower() for token in ("catalyst", "news", "analyst"))
+        and any(token in flag.lower() for token in ("missing", "gap", "unavailable", "不足"))
+        for flag in gap_flags
+    )
+    if gap_hit or any(marker in blob for marker in _CATALYST_MISSING_MARKERS):
+        return "missing", True
+
+    quality = str(result.get("catalyst_quality") or "").strip().upper()
+    if quality == "WEAK" or grade == "D":
+        return "weak", False
+    if grade in {"A", "B", "C"} or has_score or evidence_text.strip():
+        return "present", False
+    return "missing", True
+
+
+def gate_pass_counterfactual_from_fields(
+    primary_mode: str | None,
+    extension_risk: str | None,
+) -> dict[str, Any] | None:
+    """Record a chase/extension block so later week returns can grade the gate."""
+    mode = str(primary_mode or "").strip().upper()
+    extension = str(extension_risk or "").strip().upper()
+    if mode != "CHASE_MOMENTUM" and extension != "HIGH":
+        return None
+    return {
+        "gate": "CHASE_OR_EXTENSION",
+        "primary_mode": mode,
+        "extension_risk": extension,
+        "recorded": True,
+        "evaluate_horizons": ["week4", "week12"],
+        "note": (
+            "Scored while the live chase/extension gate would block a BUY. "
+            "Week returns on the linked snapshot are the counterfactual path."
+        ),
+    }
+
+
+def gate_pass_counterfactual_from_result(result: dict[str, Any]) -> dict[str, Any] | None:
+    explicit = result.get("gate_pass_counterfactual")
+    if isinstance(explicit, dict) and explicit.get("gate"):
+        return explicit
+    profile = result.get("momentum_profile") or {}
+    return gate_pass_counterfactual_from_fields(
+        profile.get("primary_mode") or result.get("momentum_primary_mode"),
+        profile.get("extension_risk") or result.get("extension_risk"),
+    )
+
+
+def _counterfactual_entry(snapshot: dict[str, Any]) -> dict[str, Any] | None:
+    counterfactual = snapshot.get("gate_pass_counterfactual")
+    if not isinstance(counterfactual, dict) or not counterfactual.get("gate"):
+        profile = snapshot.get("momentum_profile") or {}
+        counterfactual = gate_pass_counterfactual_from_fields(
+            snapshot.get("momentum_primary_mode") or profile.get("primary_mode"),
+            snapshot.get("extension_risk") or profile.get("extension_risk"),
+        )
+    if not counterfactual:
+        return None
+    return {
+        "run_id": snapshot.get("run_id") or "",
+        "ticker": str(snapshot.get("ticker") or "").upper(),
+        "source": snapshot.get("source") or "research",
+        "scored_at": snapshot.get("scored_at") or "",
+        "score": snapshot.get("score"),
+        "strategy_version": snapshot.get("strategy_version") or "",
+        "gate": counterfactual.get("gate"),
+        "primary_mode": counterfactual.get("primary_mode") or "",
+        "extension_risk": counterfactual.get("extension_risk") or "",
+        "evaluate_horizons": counterfactual.get("evaluate_horizons") or ["week4", "week12"],
+        "note": counterfactual.get("note") or "",
+    }
+
+
+def rebuild_gate_counterfactual_index(
+    *,
+    snapshots_path: Path | None = None,
+    index_path: Path | None = None,
+) -> int:
+    """Write the chase/extension counterfactual index without changing scores.
+
+    Historical snapshots are indexed from ``momentum_primary_mode`` and
+    ``extension_risk``. The index is the join key for week4/week12 outcomes.
+    """
+    data = _load_snapshots(snapshots_path)
+    entries: list[dict[str, Any]] = []
+    seen: set[tuple[str, str, str]] = set()
+    for snapshot in data.get("snapshots", []):
+        entry = _counterfactual_entry(snapshot)
+        if entry is None or not entry["ticker"]:
+            continue
+        key = (str(entry["run_id"]), entry["ticker"], str(entry["source"]))
+        if key in seen:
+            continue
+        seen.add(key)
+        entries.append(entry)
+    payload = {
+        "description": (
+            "Tickers scored while CHASE_MOMENTUM or extension_risk=HIGH would "
+            "block a live BUY. Join to score_snapshots on run_id+ticker+source "
+            "and read week4/week12 returns. This file does not authorize trades."
+        ),
+        "entries": entries,
+    }
+    target = index_path or GATE_COUNTERFACTUAL_PATH
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text(json.dumps(payload, indent=2, ensure_ascii=False))
+    return len(entries)
 
 
 def sector_etf_for_ticker(ticker: str) -> str:
@@ -285,6 +447,12 @@ def add_score_snapshots(
         momentum_profile = result.get("momentum_profile") or {}
         factor_grades = factor_grades_from_result(result)
         score_evidence = result.get("score_evidence") or {}
+        catalyst_status, catalyst_missing = classify_catalyst_data(result)
+        risk_reasons = result.get("blocked_by_risk_reasons") or []
+        if isinstance(risk_reasons, str):
+            risk_reasons = [risk_reasons]
+        elif not isinstance(risk_reasons, list):
+            risk_reasons = [str(risk_reasons)]
         snapshot = {
             "run_id": run_id,
             "source": source,
@@ -308,6 +476,11 @@ def add_score_snapshots(
             "early_momentum_score": momentum_profile.get("early_momentum_score"),
             "chase_momentum_score": momentum_profile.get("chase_momentum_score"),
             "extension_risk": momentum_profile.get("extension_risk") or "",
+            "blocked_by_risk": bool(result.get("blocked_by_risk")) or bool(risk_reasons),
+            "blocked_by_risk_reasons": [str(reason) for reason in risk_reasons],
+            "gate_pass_counterfactual": gate_pass_counterfactual_from_result(result),
+            "catalyst_data_status": catalyst_status,
+            "catalyst_data_missing": catalyst_missing,
             "conviction_rationale": result.get("conviction_rationale") or "",
             "rank_in_run": rank,
             "total_scored_in_run": total,
@@ -325,6 +498,7 @@ def add_score_snapshots(
 
     if added:
         _save_snapshots(data)
+        rebuild_gate_counterfactual_index(snapshots_path=SNAPSHOTS_PATH)
         logger.info("Added %d score snapshot(s) from %s | run_id=%s", added, source, run_id)
         sync_local_to_supabase("score_snapshots")
     return added

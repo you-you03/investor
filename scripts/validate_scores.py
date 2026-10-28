@@ -259,7 +259,8 @@ def analyze(snapshots: list[dict]) -> dict:
             pairs = [
                 (s["score_breakdown"][factor], s[wk]["return_pct"])
                 for s in snapshots
-                if s.get("score_breakdown", {}).get(factor) is not None
+                if _factor_observation_included(s, factor)
+                and s.get("score_breakdown", {}).get(factor) is not None
                 and s.get(wk, {}).get("fetched_at") is not None
                 and s[wk].get("return_pct") is not None
             ]
@@ -313,6 +314,7 @@ def analyze(snapshots: list[dict]) -> dict:
     result["mode_factor_reliability"] = build_mode_factor_reliability(snapshots)
     result["factor_grade_reliability"] = build_factor_grade_reliability(snapshots)
     result["calibration"] = build_calibration(ic, factor_ic, result["run_ic"])
+    result["catalyst_missing_excluded"] = sum(1 for snap in snapshots if _catalyst_data_missing(snap))
     return result
 
 
@@ -381,6 +383,20 @@ def build_run_level_ic(snapshots: list[dict]) -> dict:
     return result
 
 
+def _catalyst_data_missing(snapshot: dict) -> bool:
+    return (
+        snapshot.get("catalyst_data_missing") is True
+        or str(snapshot.get("catalyst_data_status") or "").strip().lower() == "missing"
+    )
+
+
+def _factor_observation_included(snapshot: dict, factor: str) -> bool:
+    """Drop catalyst rows whose news/analyst input was missing, not merely weak."""
+    if factor == "catalyst" and _catalyst_data_missing(snapshot):
+        return False
+    return True
+
+
 def _snapshot_factor_grade(snapshot: dict, factor: str) -> str:
     direct = str(snapshot.get(f"{factor}_grade") or "").strip().upper()
     if direct in QUALITY_GRADES:
@@ -412,6 +428,8 @@ def build_factor_grade_reliability(snapshots: list[dict]) -> dict:
                 returns = []
                 alphas = []
                 for snap in snapshots:
+                    if not _factor_observation_included(snap, factor):
+                        continue
                     if _snapshot_factor_grade(snap, factor) != grade:
                         continue
                     week = snap.get(wk, {})
@@ -706,6 +724,8 @@ def build_mode_factor_reliability(snapshots: list[dict]) -> dict:
                 low_alpha = []
                 for snap in snapshots:
                     if _extract_mode(snap) != mode:
+                        continue
+                    if not _factor_observation_included(snap, factor):
                         continue
                     factor_score = (snap.get("score_breakdown") or {}).get(factor)
                     week = snap.get(wk, {})
@@ -1076,6 +1096,13 @@ def generate_report(stats: dict) -> str:
             rho = stats["factor_ic"].get(factor, {}).get(wk, {}).get("rho", float("nan"))
             row.append(format_rho(rho))
         lines.append("| " + " | ".join(row) + " |")
+    excluded = stats.get("catalyst_missing_excluded") or 0
+    if excluded:
+        lines.append("")
+        lines.append(
+            f"catalyst IC から `catalyst_data_missing` {excluded} 件を除外。"
+            "弱いカタリスト（weak / grade D）は残す。欠損は予測力の推定に混ぜない。"
+        )
 
     grade_stats = stats.get("factor_grade_reliability") or {}
     has_grade_rows = any(

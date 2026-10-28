@@ -30,6 +30,8 @@ SNAPSHOTS_PATH = Path(__file__).parent.parent / "data" / "score_snapshots.json"
 
 def fetch_close_on_or_before(ticker: str, target: date) -> float | None:
     """target_date の終値を取得。週末・祝日は直前営業日を使う。"""
+    if ticker in _PRICE_FRAMES:
+        return _frame_close_on_or_before(_PRICE_FRAMES.get(ticker), target)
     t = yf.Ticker(ticker)
     # target から最大7営業日前まで遡って取得
     start = target - timedelta(days=7)
@@ -46,6 +48,12 @@ def fetch_close_on_or_before(ticker: str, target: date) -> float | None:
 
 def fetch_symbol_return(symbol: str, scored_at: date, target: date) -> float | None:
     """scored_at → target 間の symbol 累積リターン（%）を返す。"""
+    if symbol in _PRICE_FRAMES:
+        price_start = _frame_close_on_or_before(_PRICE_FRAMES.get(symbol), scored_at)
+        price_end = _frame_close_on_or_before(_PRICE_FRAMES.get(symbol), target)
+        if price_start is None or price_end is None or price_start == 0:
+            return None
+        return round((price_end - price_start) / price_start * 100, 4)
     ticker = yf.Ticker(symbol)
     start = scored_at - timedelta(days=7)
     end = target + timedelta(days=1)
@@ -71,6 +79,12 @@ def fetch_tnx_change_bps(scored_at: date, target: date) -> float | None:
     ^TNX is quoted as 10x the 10-year yield.
     A 1.0 move in ^TNX is roughly 10 bps.
     """
+    if "^TNX" in _PRICE_FRAMES:
+        start_value = _frame_close_on_or_before(_PRICE_FRAMES.get("^TNX"), scored_at)
+        end_value = _frame_close_on_or_before(_PRICE_FRAMES.get("^TNX"), target)
+        if start_value is None or end_value is None:
+            return None
+        return round((end_value - start_value) * 10, 2)
     tnx = yf.Ticker("^TNX")
     start = scored_at - timedelta(days=7)
     end = target + timedelta(days=1)
@@ -84,6 +98,145 @@ def fetch_tnx_change_bps(scored_at: date, target: date) -> float | None:
     start_value = float(before["Close"].iloc[-1])
     end_value = float(after["Close"].iloc[-1])
     return round((end_value - start_value) * 10, 2)
+
+
+_PRICE_FRAMES: dict[str, object] = {}
+
+
+def _frame_has_close(frame) -> bool:
+    if frame is None or getattr(frame, "empty", True) or "Close" not in getattr(frame, "columns", []):
+        return False
+    try:
+        return bool(frame["Close"].notna().any())
+    except Exception:
+        return True
+
+
+def _frame_close_on_or_before(frame, target: date) -> float | None:
+    """Last non-null close on or before target from a prefetched history frame."""
+    if frame is None or getattr(frame, "empty", True):
+        return None
+    if "Close" not in getattr(frame, "columns", []):
+        return None
+    chosen = None
+    for ts, close in zip(frame.index, frame["Close"]):
+        try:
+            ts_date = ts.date()
+        except Exception:
+            continue
+        if ts_date > target:
+            break
+        try:
+            value = float(close)
+        except (TypeError, ValueError):
+            continue
+        if value != value:
+            continue
+        chosen = value
+    return chosen
+
+
+def _extract_symbol_frame(data, symbol: str, batch_size: int):
+    if data is None or batch_size == 1:
+        return data
+    columns = getattr(data, "columns", None)
+    if columns is None:
+        return None
+    try:
+        import pandas as pd
+
+        if isinstance(columns, pd.MultiIndex):
+            if symbol in set(columns.get_level_values(0)):
+                return data[symbol]
+            if symbol in set(columns.get_level_values(1)):
+                return data.xs(symbol, axis=1, level=1)
+    except Exception:
+        return None
+    return None
+
+
+def _download_one(symbol: str, start: date, end: date):
+    try:
+        return yf.Ticker(symbol).history(start=start.isoformat(), end=end.isoformat(), auto_adjust=True)
+    except Exception as exc:
+        print(f"WARNING: price download failed for {symbol}: {exc}", file=sys.stderr)
+        return None
+
+
+def prefetch_price_frames(snapshots: list[dict], today: date) -> None:
+    """Download each symbol once so week1–week12 fills do not repeat HTTP calls."""
+    ranges: dict[str, tuple[date, date]] = {}
+
+    def cover(symbol: str, start: date, end: date) -> None:
+        symbol = str(symbol or "").strip()
+        if not symbol:
+            return
+        current = ranges.get(symbol)
+        if current is None:
+            ranges[symbol] = (start, end)
+        else:
+            ranges[symbol] = (min(current[0], start), max(current[1], end))
+
+    for snap in snapshots:
+        ticker = str(snap.get("ticker") or "").strip()
+        scored_at_str = snap.get("scored_at") or ""
+        if not ticker or not scored_at_str or snap.get("price_at_score") is None:
+            continue
+        try:
+            scored_at = date.fromisoformat(str(scored_at_str))
+        except ValueError:
+            continue
+        for wk_key in WEEK_KEYS:
+            wk = snap.get(wk_key) or {}
+            target_str = wk.get("target_date")
+            if not target_str:
+                continue
+            try:
+                target = date.fromisoformat(str(target_str))
+            except ValueError:
+                continue
+            if target > today:
+                continue
+            if wk.get("fetched_at") is not None and not _needs_backfill(wk):
+                continue
+            start = scored_at - timedelta(days=10)
+            end = target + timedelta(days=1)
+            cover(ticker, start, end)
+            sector = wk.get("sector_etf") or snap.get("sector_etf") or sector_etf_for_ticker(ticker)
+            for symbol in ("SPY", "QQQ", sector, "^VIX", "^TNX"):
+                cover(str(symbol), start, end)
+
+    if not ranges:
+        print("No due milestones need a price prefetch.")
+        return
+
+    symbols = sorted(ranges)
+    global_start = min(item[0] for item in ranges.values())
+    global_end = max(item[1] for item in ranges.values())
+    print(f"Prefetching prices for {len(symbols)} symbols ({global_start} → {global_end})")
+    chunk_size = 40
+    for offset in range(0, len(symbols), chunk_size):
+        batch = symbols[offset:offset + chunk_size]
+        data = None
+        try:
+            data = yf.download(
+                batch,
+                start=global_start.isoformat(),
+                end=global_end.isoformat(),
+                auto_adjust=True,
+                group_by="ticker",
+                threads=True,
+                progress=False,
+            )
+        except Exception as exc:
+            print(f"WARNING: batch price download failed ({batch[0]}…): {exc}", file=sys.stderr)
+        for symbol in batch:
+            frame = _extract_symbol_frame(data, symbol, len(batch))
+            if not _frame_has_close(frame):
+                start, end = ranges[symbol]
+                frame = _download_one(symbol, start, end)
+            _PRICE_FRAMES[symbol] = frame
+        print(f"  prefetched {min(offset + chunk_size, len(symbols))}/{len(symbols)}")
 
 
 def _needs_backfill(wk: dict) -> bool:
@@ -124,6 +277,9 @@ def process_snapshots() -> None:
     for snap in snapshots:
         if ensure_tracking_horizons(snap):
             normalized += 1
+    prefetch_price_frames(snapshots, today)
+
+    for snap in snapshots:
         ticker = snap.get("ticker", "?")
         scored_at_str = snap.get("scored_at", "")
         price_at_score = snap.get("price_at_score")

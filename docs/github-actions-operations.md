@@ -43,6 +43,43 @@ Manual run:
 3. 初回確認は `dry_run=true`
 4. `max_research_candidates` は通常 `5`
 
+### Investor score validation
+
+File: `.github/workflows/score-validation.yml`
+
+目的:
+- `scripts/fetch_returns.py`
+- `scripts/record_outcomes.py`
+- `scripts/validate_scores.py`
+- 差分が `data/` と `reports/` だけなら commit して PR を開く
+- Slack は送らない
+- ライブのスコアウェイトは変えない
+
+Schedule:
+- 22:30 UTC Monday（米国市場クローズ後。ET 17:30 / JST 火曜 07:30）
+
+Record PR は差分確認のあと auto-merge してよい。対象は `data/**` と `reports/**` に限る。ウェイト変更ゲート（満期 run 10 未満は変更しない、HIGH conviction は満期 OOS 30 まで無効）はこのジョブでは動かさない。
+
+Manual run:
+1. GitHub repo > Actions > `Investor score validation`
+2. `Run workflow`
+
+### Investor ledger reconcile
+
+File: `.github/workflows/ledger-reconcile.yml`
+
+目的:
+- `scripts/reconcile_monitor_ledger.py --update-alerts`
+- ライブ台帳 `data/portfolio_20man.csv` の stop / target / status と monitor alert を突合する
+- STOP / TARGET が `open` のままなら `reports/monitor/reconcile_{date}.md` に出す
+- ブローカー約定は作らない。`status=closed` にもしない
+- Slack は送らない
+
+`data/portfolio.csv` は以前の A枠台帳であり、ライブ執行ブックではない。同じ銘柄でも株数・stop・target・status が違い得る。`portfolio_100man.csv` はシミュレーション、`paper_portfolio.csv` は B枠で、この突合の対象外。
+
+Schedule:
+- 23:15 UTC Monday（score validation の後）
+
 ### Investor research data
 
 File: `.github/workflows/research-data.yml`

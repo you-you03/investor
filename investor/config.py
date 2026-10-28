@@ -41,6 +41,8 @@ class Settings(BaseSettings):
     supports_fractional_shares: bool = False
     max_same_ticker_shares: Optional[float] = None  # Share-count caps distort risk across different stock prices.
     target_cash_utilization_pct: float = 0.0  # Cash is an output of qualified opportunities, not a quota.
+    # When true, a portfolio-guard violation blocks new BUY execution.
+    # Research still keeps the scored names and tags them blocked_by_risk.
     block_new_buys_on_portfolio_violation: bool = True
     min_shares_for_staged_exit: float = 4.0
 
