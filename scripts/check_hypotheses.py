@@ -32,6 +32,7 @@ HYPOTHESIS_RE = re.compile(r"H-\d+")
 
 
 def parse_hypotheses(text: str) -> list[dict]:
+    decided_at = text.find("## 完了済み仮説")
     matches = list(HEADING_RE.finditer(text))
     rows = []
     for index, match in enumerate(matches):
@@ -52,11 +53,15 @@ def parse_hypotheses(text: str) -> list[dict]:
         elif start_only:
             row["start"] = start_only.group(1)
             row["due_state"] = "end_date_missing"
+        if decided_at >= 0 and match.start() > decided_at:
+            row["due_state"] = "decided"
         rows.append(row)
     return rows
 
 
 def classify(row: dict, today: date) -> str:
+    if row.get("due_state") == "decided":
+        return "decided"
     if row["due_state"] != "dated" or not row.get("end"):
         return "end_date_missing"
     end = date.fromisoformat(row["end"])
@@ -92,7 +97,8 @@ def render(hypotheses: list[dict], paper_lines: list[str], today: date) -> str:
         f"# Hypothesis due check — {today.isoformat()}",
         "",
         "Verdicts in `docs/hypothesis-tracker.md` were not rewritten.",
-        "Overdue means the written end date is before today. A missing end date is reported as missing.",
+        "Overdue means the written end date is before today and the heading is still outside `## 完了済み仮説`.",
+        "`decided` means that heading sits in the completed section. This script does not close paper rows.",
         "",
         "## Hypotheses",
         "",

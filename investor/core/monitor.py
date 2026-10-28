@@ -12,6 +12,8 @@ Threshold rules mirror AGENTS.md:
   pnl_pct <= -5%                      → MEDIUM (DOWN_5PCT)
   pnl_pct >= +25%, exit_stage 2       → INFO   (UP_25PCT_TRAILING)
   missing stop/target                 → HIGH   (RISK_DATA_MISSING)
+  current_price >= target_price       → HIGH   (TARGET_HIT; review only)
+  entry age 4-7 calendar days         → INFO   (PRIME_EXIT_WINDOW; review only)
 """
 
 from __future__ import annotations
@@ -215,8 +217,34 @@ def check_position(position: dict, snapshot: dict) -> list[Alert]:
             **base,
         ))
 
-    # Three weeks is the primary review horizon. This is not an automatic exit.
+    # Target touch is an exit review, including when the stored target is below entry.
+    # Do not close the ledger from this alert.
+    if target_price and current_price >= target_price:
+        alerts.append(Alert(
+            alert_type="TARGET_HIT",
+            severity="HIGH",
+            message=(
+                f"Price ${current_price:.2f} reached target ${target_price:.2f}. "
+                "Exit review only; do not close the ledger without a confirmed fill."
+            ),
+            **base,
+        ))
+
+    # H-7: days 4-7 are a review window, not an order. Calendar days, same
+    # clock as the 3-week thesis review below.
     age_days = _position_age_days(position)
+    if age_days is not None and 4 <= age_days <= 7:
+        alerts.append(Alert(
+            alert_type="PRIME_EXIT_WINDOW",
+            severity="INFO",
+            message=(
+                f"Entry age {age_days}d is inside the 4-7 day prime exit review. "
+                "Propose HOLD, take-profit, or a higher stop. This is not an order."
+            ),
+            **base,
+        ))
+
+    # Three weeks is the primary review horizon. This is not an automatic exit.
     if age_days is not None and 19 <= age_days <= 23:
         alerts.append(Alert(
             alert_type="THREE_WEEK_THESIS_REVIEW",

@@ -15,6 +15,8 @@
 
 ポジションサイジング: entry-stop間の損失 + 0.25% gap bufferからPythonが決定し、25%上限を適用。LLMの裁量サイズ、株数上限、キャッシュ稼働率ノルマは使わない。
 
+運用の正本: [docs/profit-continuity-ops.md](docs/profit-continuity-ops.md)、解禁条件 [docs/live-buy-unlock.md](docs/live-buy-unlock.md)、出口 [docs/exit-sop.md](docs/exit-sop.md)（dual gate とは別ファイル）、次回レビュー [docs/review-calendar.md](docs/review-calendar.md)（2026-11-25）。
+
 ---
 
 ## Critical Design Rule: Claude Code IS the Agent
@@ -82,6 +84,11 @@ reports/
   decision/exit_{date}_{ticker}.md
 docs/
   hypothesis-tracker.md       ← A/B枠 仮説定義・判定基準
+  profit-continuity-ops.md    ← 利益継続の週次1枚
+  live-buy-unlock.md          ← 新規ライブBUYを出してよい条件
+  exit-sop.md                 ← 出口（dual gate とは別）
+  live-buy-dual-gate.md       ← 暫定ライブBUY
+  review-calendar.md          ← 次回 /review は 2026-11-25
 ```
 
 ---

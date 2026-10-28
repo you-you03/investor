@@ -46,6 +46,7 @@ TechnicalとSentimentは加点軸ではなく、entry・risk・矛盾検知のga
 - 1銘柄最大: 25%
 - 1トレード基準リスク: 0.75%
 - portfolio heat上限: 2.0%
+- ライブのサイズ上限は MEDIUM のまま。HIGH conviction は独立した満期 OOS 観測 30件まで有効化しない（2026-10-28 に再確認。解禁しない）
 - gap/slippage buffer: entryの0.25%
 - stopとtargetは新規記録時に必須
 - 株価に依存して意味が変わる「同一ticker 2株上限」は廃止

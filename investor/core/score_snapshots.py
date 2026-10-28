@@ -228,7 +228,33 @@ def _counterfactual_entry(snapshot: dict[str, Any]) -> dict[str, Any] | None:
         "extension_risk": counterfactual.get("extension_risk") or "",
         "evaluate_horizons": counterfactual.get("evaluate_horizons") or ["week4", "week12"],
         "note": counterfactual.get("note") or "",
+        "week4": _horizon_outcome(snapshot, "week4"),
+        "week12": _horizon_outcome(snapshot, "week12"),
     }
+
+
+def _horizon_outcome(snapshot: dict[str, Any], week: str) -> dict[str, Any] | None:
+    """Copy a fetched week outcome onto the gate index. None means not due yet."""
+    payload = snapshot.get(week) or {}
+    if not isinstance(payload, dict) or payload.get("fetched_at") is None:
+        return None
+    alpha = payload.get("alpha_vs_spy", payload.get("alpha_pct"))
+    if alpha is None and payload.get("return_pct") is None:
+        return None
+    return {
+        "return_pct": payload.get("return_pct"),
+        "alpha_vs_spy": alpha,
+        "fetched_at": payload.get("fetched_at"),
+    }
+
+
+def _merge_counterfactual_entry(existing: dict[str, Any], incoming: dict[str, Any]) -> dict[str, Any]:
+    """Keep the first index row and fill week outcomes from a later duplicate."""
+    merged = dict(existing)
+    for week in ("week4", "week12"):
+        if merged.get(week) is None and incoming.get(week) is not None:
+            merged[week] = incoming[week]
+    return merged
 
 
 def rebuild_gate_counterfactual_index(
@@ -243,22 +269,27 @@ def rebuild_gate_counterfactual_index(
     """
     data = _load_snapshots(snapshots_path)
     entries: list[dict[str, Any]] = []
-    seen: set[tuple[str, str, str]] = set()
+    seen: dict[tuple[str, str, str], int] = {}
     for snapshot in data.get("snapshots", []):
         entry = _counterfactual_entry(snapshot)
         if entry is None or not entry["ticker"]:
             continue
         key = (str(entry["run_id"]), entry["ticker"], str(entry["source"]))
         if key in seen:
+            index = seen[key]
+            entries[index] = _merge_counterfactual_entry(entries[index], entry)
             continue
-        seen.add(key)
+        seen[key] = len(entries)
         entries.append(entry)
+    entries.sort(key=lambda row: (str(row.get("scored_at") or ""), row["ticker"], str(row.get("run_id") or "")))
     payload = {
         "description": (
             "Tickers scored while CHASE_MOMENTUM or extension_risk=HIGH would "
-            "block a live BUY. Join to score_snapshots on run_id+ticker+source "
-            "and read week4/week12 returns. This file does not authorize trades."
+            "block a live BUY. week4 and week12 are copied from the linked "
+            "score snapshot when fetched. Null means the horizon is not in yet. "
+            "This file does not authorize trades."
         ),
+        "as_of": date.today().isoformat(),
         "entries": entries,
     }
     target = index_path or GATE_COUNTERFACTUAL_PATH

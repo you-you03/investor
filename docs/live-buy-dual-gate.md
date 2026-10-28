@@ -86,3 +86,37 @@ PM 合成でライブBUYを出す前に、次を上から確認する。一つ�
 ## コードとの境界
 
 既存の送信前チェック（`investor/agents/decision_agent.py`）は `CHASE_MOMENTUM` と `extension_risk=HIGH` をライブ送信から拒否する。スコアが 7.5 以上でも十分ではないこと、モードを `EARLY_MOMENTUM` / `BALANCED` に限ること、ファンダの相対比較は、この文書と `/decision` の PM 合成が適用する。この規則の追加では、スコアウェイトもその Python ゲートも変えない。
+
+出口の手順は [exit-sop.md](exit-sop.md)。このファイルには書かない。
+
+## 核と暫定オプション
+
+運用上の核は次の二つ。ここは緩和の議題にしない。
+
+- `CHASE_MOMENTUM` をライブBUYに使わない
+- `extension_risk=HIGH` をライブBUYに使わない
+
+次は暫定オプション。OOS が小さいあいだの置き方であり、新しい数値閾値ではない。
+
+- fundamentals grade A/B を床にし、同じ候補の中でファンダが相対的に強いかを言葉で見る
+- `BALANCED` を `EARLY_MOMENTUM` と並べてライブモードに含める
+
+`/review` の議題は、核を守ったまま暫定オプションを残すか絞るか、である。60/25/15、スコア 7.5、HIGH の解禁条件は議題にしない。
+
+## 成功条件・失敗条件・再判定日
+
+再判定日は **2026-11-25**（Asia/Tokyo）。正本は [review-calendar.md](review-calendar.md)。この日に数値を自動で変えない。条件が当たっていても、変えるなら文書の改訂として別途決める。
+
+成功（暫定オプションを維持する側）:
+
+- デュアルゲート通過群の12週SPY alphaが、CHASE / extension HIGH の反実仮想より良く、かつプラスである
+- 解禁条件を満たした週に、CHASE でも extension HIGH でもない通過候補が出る
+- ライブの最大DDが6%以内に戻っている
+
+失敗（緩和、または EARLY のみへの絞りを議題にする側）:
+
+- ライブ通過候補が4週連続で0
+- 通過群の12週SPY alphaが、paper または反実仮想の CHASE より悪い
+- `BALANCED` が損失の主導である
+
+2026-10-28 の観測は [reports/validation/gate_counterfactual_2026-10-28.md](../reports/validation/gate_counterfactual_2026-10-28.md)。粗い「スコア≥7.5 かつ EARLY/BALANCED かつ extension 非HIGH」は12週alpha平均 -9.90%（n=16）で、CHASE -9.35%（n=62）よりわずかに悪い。ファンダ grade A/B まで切ると n=2、平均 +5.72%で、失敗とも成功ともまだ言えない。`BALANCED` 全体の12週alphaは -19.09%（n=18）で、損失主導の観測がある。いずれも本日のゲート文言は変えない。2026-11-25 に「EARLY のみへ絞るか」を議題にする。
