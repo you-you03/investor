@@ -18,6 +18,8 @@ Python スクリプトがデータを収集し、Claude が分析・判断し、
 | ストップ/目標 | 新規ポジションでは両方必須。未設定時は新規BUYを停止 |
 | ライブBUY（暫定） | スコア ≥ 7.5 は必要だが十分ではない。モードは EARLY_MOMENTUM または BALANCED、かつファンダがその候補の他ファクターと比べて相対的に強いこと。CHASE はライブBUY禁止（原則 WAIT）。正本は [docs/live-buy-dual-gate.md](docs/live-buy-dual-gate.md)。60/25/15 は凍結 |
 
+運用の正本: [docs/profit-continuity-ops.md](docs/profit-continuity-ops.md)（週次の1枚）、[docs/live-buy-unlock.md](docs/live-buy-unlock.md)（新規BUYを出してよい条件）、[docs/exit-sop.md](docs/exit-sop.md)（出口。dual gate とは別）、[docs/review-calendar.md](docs/review-calendar.md)（次回判定 2026-11-25）。
+
 ---
 
 ## システム概要

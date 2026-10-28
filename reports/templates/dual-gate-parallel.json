@@ -1,0 +1,17 @@
+{
+  "date": "YYYY-MM-DD",
+  "ticker": "TICKER",
+  "run_id": "",
+  "book": "paper",
+  "score": null,
+  "mode": "EARLY_MOMENTUM",
+  "fundamentals_grade": "A",
+  "extension_risk": "LOW",
+  "chase": false,
+  "with_gate": "通過",
+  "without_gate": "仮想BUY",
+  "order_status": "not_an_order",
+  "week4_alpha_vs_spy": null,
+  "week12_alpha_vs_spy": null,
+  "note": "テンプレ。注文ではない。Slack しない。portfolio_20man.csv を更新しない。"
+}

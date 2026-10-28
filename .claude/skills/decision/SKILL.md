@@ -182,6 +182,7 @@ SlackNotifier().send_text(':white_check_mark: Decision complete — no actionabl
 | 期間 | {time_horizon} |
 
 **判断根拠**: {rationale}
+**Dual gate**: `score={score} / mode={primary_mode} / funda={grade} / chase={yes|no} / extension={risk} / {通過|見送り:理由}`
 **カタリスト**: {key_catalysts}
 **リスク**: {risk_factors}
 

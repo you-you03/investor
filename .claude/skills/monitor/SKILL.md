@@ -32,10 +32,13 @@ cd "/Users/yutaobayashi/PERSONAL DEV/1_now/investor"
 ## Step 1: Load open positions
 
 ```bash
-cat data/portfolio.csv
+cat data/portfolio_20man.csv
 ```
 
+ライブ台帳は `data/portfolio_20man.csv`。`data/portfolio.csv` は過去のA枠で、ここから開いたり更新したりしない。
+
 Extract all rows where `status == "open"` **and `shares > 0`**.
+出口の見方は [docs/exit-sop.md](../../../docs/exit-sop.md)。`PRIME_EXIT_WINDOW` と `TARGET_HIT` は提案であり、約定前に `status` を変えない。
 Zero-share entries are treated as closed — skip them silently.
 
 If no open positions, output:
@@ -140,7 +143,7 @@ Alert conditions (rule-based, no LLM needed):
 2. 以下を計算:
    - `new_high_water_mark` = max(`high_water_mark`, `current_price`)
    - `new_trailing_stop_price` = `new_high_water_mark` − 1.0 × ATR
-3. `new_trailing_stop_price` が前日より上昇した場合のみ portfolio.csv を更新:
+3. `new_trailing_stop_price` が前日より上昇した場合のみ portfolio_20man.csv を更新:
    - `high_water_mark` ← `new_high_water_mark`
    - `trailing_stop_price` ← `new_trailing_stop_price`
    - `note` に `【{TODAY} TRAILING_UPDATED】HWM $X → TS $Y` を追記
@@ -158,7 +161,7 @@ Alert conditions (rule-based, no LLM needed):
 
 - `mae_pct` = min(既存の `mae_pct` または 0, 当日の `pnl_pct`)
 - `mfe_pct` = max(既存の `mfe_pct` または 0, 当日の `pnl_pct`)
-- 前日値から変化があった場合のみ portfolio.csv に書き込む（毎日書かない）
+- 前日値から変化があった場合のみ portfolio_20man.csv に書き込む（毎日書かない）
 
 ---
 
@@ -175,7 +178,7 @@ Step 3d で MAE/MFE を更新した後、**エントリー初期**のポジシ�
 
 条件を満たした場合:
 
-- `note` に以下を追記（portfolio.csv に書き込む）:
+- `note` に以下を追記（portfolio_20man.csv に書き込む）:
   ```
   【{TODAY} テーゼ不発】{N}営業日経過でMFE={mfe_pct:+.2f}%。テーゼが市場に認識されていない可能性。次のバウンスで出口機会を検討。
   ```

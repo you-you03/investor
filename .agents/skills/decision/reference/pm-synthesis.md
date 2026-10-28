@@ -69,6 +69,10 @@ fractional share対応は設定値に従う。LLMが出した `position_size_usd
 
 ## Output
 
+ライブ提案の各オブジェクトに、次の1行を `dual_gate` として必須で入れる。欠けている提案と、末尾が `見送り` の提案はライブBUYにしない。
+
+`score={score} / mode={primary_mode} / funda={grade} / chase={yes|no} / extension={risk} / {通過|見送り:理由}`
+
 ```json
 [
   {
@@ -95,7 +99,8 @@ fractional share対応は設定値に従う。LLMが出した `position_size_usd
     "rationale": "検証可能な根拠と最大の反証を記載",
     "key_catalysts": [],
     "risk_factors": [],
-    "time_horizon": "3-12 weeks"
+    "time_horizon": "3-12 weeks",
+    "dual_gate": "score=8.1 / mode=EARLY_MOMENTUM / funda=A / chase=no / extension=LOW / 通過"
   }
 ]
 ```

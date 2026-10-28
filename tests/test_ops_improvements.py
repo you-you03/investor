@@ -69,7 +69,9 @@ def test_save_run_keeps_candidates_when_risk_blocks(tmp_path, monkeypatch):
     assert "LOW" in {row["ticker"] for row in snapshots}
 
     index = json.loads(gate_path.read_text())
-    assert any(row["ticker"] == "NVDA" and row["run_id"] == "run-risk" for row in index["entries"])
+    nvda = next(row for row in index["entries"] if row["ticker"] == "NVDA" and row["run_id"] == "run-risk")
+    assert nvda["week4"] is None
+    assert nvda["week12"] is None
 
 
 def test_catalyst_missing_is_excluded_from_factor_ic(monkeypatch):
@@ -185,6 +187,22 @@ def test_hypothesis_parser_reports_overdue_without_editing_tracker(tmp_path, mon
     assert "H-2" in report
     assert "end_date_missing" in report
     assert "Left open" in report
+
+
+def test_completed_section_is_decided_not_overdue():
+    from datetime import date
+
+    from scripts import check_hypotheses
+
+    text = (
+        "### H-6: open\n\n**検証開始日**: 2026-07-12\n\n"
+        "## 完了済み仮説\n\n"
+        "### H-1: closed\n\n**検証期間**: 2026-05-10 〜 2026-08-10\n"
+    )
+    parsed = check_hypotheses.parse_hypotheses(text)
+    states = {row["hypothesis_id"]: check_hypotheses.classify(row, date(2026, 10, 28)) for row in parsed}
+    assert states["H-1"] == "decided"
+    assert states["H-6"] == "end_date_missing"
 
 
 def test_weight_sensitivity_is_diagnostic_only():

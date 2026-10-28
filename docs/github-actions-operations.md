@@ -60,6 +60,8 @@ Schedule:
 
 Record PR は差分確認のあと auto-merge してよい。対象は `data/**` と `reports/**` に限る。ウェイト変更ゲート（満期 run 10 未満は変更しない、HIGH conviction は満期 OOS 30 まで無効）はこのジョブでは動かさない。
 
+2026-10-28 確認: workflow は active。実行履歴はまだ無い。初回 cron は 2026-11-02 22:30 UTC。詳細は [reports/validation/workflow_check_2026-10-28.md](../reports/validation/workflow_check_2026-10-28.md)。
+
 Manual run:
 1. GitHub repo > Actions > `Investor score validation`
 2. `Run workflow`

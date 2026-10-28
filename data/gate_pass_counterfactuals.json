@@ -1,4 +1,5 @@
 {
-  "description": "Tickers scored while CHASE_MOMENTUM or extension_risk=HIGH would block a live BUY. Join to score_snapshots on run_id+ticker+source and read week4/week12 returns. This file does not authorize trades.",
+  "description": "Tickers scored while CHASE_MOMENTUM or extension_risk=HIGH would block a live BUY. week4 and week12 are copied from the linked score snapshot when fetched. Null means the horizon is not in yet. This file does not authorize trades.",
+  "as_of": "2026-10-28",
   "entries": []
 }

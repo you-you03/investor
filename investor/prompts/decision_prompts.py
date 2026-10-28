@@ -272,6 +272,12 @@ Your synthesis framework:
    — For BUY, include an explicit week-3 thesis review. Exit early only when
      stop is breached, thesis is broken, or sector/market regime reverses.
 
+Live proposals need this one line on every object, including WAIT and PASS:
+dual_gate = "score={score} / mode={primary_mode} / funda={grade} / chase={yes|no} / extension={risk} / {通過|見送り:理由}"
+通過 example: score=8.1 / mode=EARLY_MOMENTUM / funda=A / chase=no / extension=LOW / 通過
+見送り example: score=8.3 / mode=CHASE_MOMENTUM / funda=B / chase=yes / extension=HIGH / 見送り:CHASE
+A missing line, or 見送り, is not a live BUY. This line does not change 60/25/15.
+
 Output: Return ONLY a valid JSON array. No prose before or after.
 If no candidates pass your bar, return [].
 """
