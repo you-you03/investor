@@ -98154,6 +98154,1006 @@
         "market_regime": null,
         "fetched_at": null
       }
+    },
+    {
+      "run_id": "b8dce6ee-e97e-4c0c-99ac-1618d305268f",
+      "scored_at": "2026-10-28",
+      "ticker": "KNSA",
+      "score": 8.15,
+      "score_breakdown": {
+        "momentum": 8,
+        "fundamentals": 8,
+        "catalyst": 9,
+        "technical": 4,
+        "sentiment": 8
+      },
+      "rank_in_run": 1,
+      "total_scored_in_run": 20,
+      "price_at_score": 89.2,
+      "passed_threshold": true,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-11-04",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-11-11",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-11-18",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-11-25",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "b8dce6ee-e97e-4c0c-99ac-1618d305268f",
+      "scored_at": "2026-10-28",
+      "ticker": "RNG",
+      "score": 7.65,
+      "score_breakdown": {
+        "momentum": 9,
+        "fundamentals": 7,
+        "catalyst": 8,
+        "technical": 6,
+        "sentiment": 7
+      },
+      "rank_in_run": 2,
+      "total_scored_in_run": 20,
+      "price_at_score": 85.6,
+      "passed_threshold": true,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-11-04",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-11-11",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-11-18",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-11-25",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "b8dce6ee-e97e-4c0c-99ac-1618d305268f",
+      "scored_at": "2026-10-28",
+      "ticker": "OXY",
+      "score": 6.75,
+      "score_breakdown": {
+        "momentum": 6,
+        "fundamentals": 7,
+        "catalyst": 7,
+        "technical": 7,
+        "sentiment": 6
+      },
+      "rank_in_run": 3,
+      "total_scored_in_run": 20,
+      "price_at_score": 62.73,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-11-04",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-11-11",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-11-18",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-11-25",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "b8dce6ee-e97e-4c0c-99ac-1618d305268f",
+      "scored_at": "2026-10-28",
+      "ticker": "GTLB",
+      "score": 6.65,
+      "score_breakdown": {
+        "momentum": 8,
+        "fundamentals": 6,
+        "catalyst": 7,
+        "technical": 6,
+        "sentiment": 5
+      },
+      "rank_in_run": 4,
+      "total_scored_in_run": 20,
+      "price_at_score": 56.82,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-11-04",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-11-11",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-11-18",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-11-25",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "b8dce6ee-e97e-4c0c-99ac-1618d305268f",
+      "scored_at": "2026-10-28",
+      "ticker": "MNDY",
+      "score": 6.6,
+      "score_breakdown": {
+        "momentum": 6,
+        "fundamentals": 7,
+        "catalyst": 6,
+        "technical": 6,
+        "sentiment": 6
+      },
+      "rank_in_run": 5,
+      "total_scored_in_run": 20,
+      "price_at_score": 99.61,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-11-04",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-11-11",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-11-18",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-11-25",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "b8dce6ee-e97e-4c0c-99ac-1618d305268f",
+      "scored_at": "2026-10-28",
+      "ticker": "HRI",
+      "score": 6.2,
+      "score_breakdown": {
+        "momentum": 5,
+        "fundamentals": 6,
+        "catalyst": 9,
+        "technical": 3,
+        "sentiment": 6
+      },
+      "rank_in_run": 6,
+      "total_scored_in_run": 20,
+      "price_at_score": 156.06,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-11-04",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-11-11",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-11-18",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-11-25",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "b8dce6ee-e97e-4c0c-99ac-1618d305268f",
+      "scored_at": "2026-10-28",
+      "ticker": "ENVA",
+      "score": 6.2,
+      "score_breakdown": {
+        "momentum": 2,
+        "fundamentals": 8,
+        "catalyst": 6,
+        "technical": 3,
+        "sentiment": 6
+      },
+      "rank_in_run": 7,
+      "total_scored_in_run": 20,
+      "price_at_score": 171.31,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-11-04",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-11-11",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-11-18",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-11-25",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "b8dce6ee-e97e-4c0c-99ac-1618d305268f",
+      "scored_at": "2026-10-28",
+      "ticker": "AFRM",
+      "score": 6.1,
+      "score_breakdown": {
+        "momentum": 4,
+        "fundamentals": 7,
+        "catalyst": 6,
+        "technical": 4,
+        "sentiment": 7
+      },
+      "rank_in_run": 8,
+      "total_scored_in_run": 20,
+      "price_at_score": 72.68,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-11-04",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-11-11",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-11-18",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-11-25",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "b8dce6ee-e97e-4c0c-99ac-1618d305268f",
+      "scored_at": "2026-10-28",
+      "ticker": "CCC",
+      "score": 6.1,
+      "score_breakdown": {
+        "momentum": 7,
+        "fundamentals": 6,
+        "catalyst": 5,
+        "technical": 6,
+        "sentiment": 4
+      },
+      "rank_in_run": 9,
+      "total_scored_in_run": 20,
+      "price_at_score": 7.7,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-11-04",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-11-11",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-11-18",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-11-25",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "b8dce6ee-e97e-4c0c-99ac-1618d305268f",
+      "scored_at": "2026-10-28",
+      "ticker": "SCHW",
+      "score": 5.65,
+      "score_breakdown": {
+        "momentum": 1,
+        "fundamentals": 8,
+        "catalyst": 4,
+        "technical": 3,
+        "sentiment": 6
+      },
+      "rank_in_run": 10,
+      "total_scored_in_run": 20,
+      "price_at_score": 89.3,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-11-04",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-11-11",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-11-18",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-11-25",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "b8dce6ee-e97e-4c0c-99ac-1618d305268f",
+      "scored_at": "2026-10-28",
+      "ticker": "WEX",
+      "score": 5.6,
+      "score_breakdown": {
+        "momentum": 5,
+        "fundamentals": 6,
+        "catalyst": 5,
+        "technical": 7,
+        "sentiment": 5
+      },
+      "rank_in_run": 11,
+      "total_scored_in_run": 20,
+      "price_at_score": 186.38,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-11-04",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-11-11",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-11-18",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-11-25",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "b8dce6ee-e97e-4c0c-99ac-1618d305268f",
+      "scored_at": "2026-10-28",
+      "ticker": "GEHC",
+      "score": 5.35,
+      "score_breakdown": {
+        "momentum": 4,
+        "fundamentals": 6,
+        "catalyst": 5,
+        "technical": 5,
+        "sentiment": 6
+      },
+      "rank_in_run": 12,
+      "total_scored_in_run": 20,
+      "price_at_score": 71.11,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-11-04",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-11-11",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-11-18",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-11-25",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "b8dce6ee-e97e-4c0c-99ac-1618d305268f",
+      "scored_at": "2026-10-28",
+      "ticker": "HWKN",
+      "score": 5.35,
+      "score_breakdown": {
+        "momentum": 4,
+        "fundamentals": 6,
+        "catalyst": 5,
+        "technical": 2,
+        "sentiment": 5
+      },
+      "rank_in_run": 13,
+      "total_scored_in_run": 20,
+      "price_at_score": 153.85,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-11-04",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-11-11",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-11-18",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-11-25",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "b8dce6ee-e97e-4c0c-99ac-1618d305268f",
+      "scored_at": "2026-10-28",
+      "ticker": "NOC",
+      "score": 5.1,
+      "score_breakdown": {
+        "momentum": 3,
+        "fundamentals": 6,
+        "catalyst": 5,
+        "technical": 6,
+        "sentiment": 6
+      },
+      "rank_in_run": 14,
+      "total_scored_in_run": 20,
+      "price_at_score": 551.23,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-11-04",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-11-11",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-11-18",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-11-25",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "b8dce6ee-e97e-4c0c-99ac-1618d305268f",
+      "scored_at": "2026-10-28",
+      "ticker": "FIG",
+      "score": 4.75,
+      "score_breakdown": {
+        "momentum": 4,
+        "fundamentals": 5,
+        "catalyst": 5,
+        "technical": 4,
+        "sentiment": 6
+      },
+      "rank_in_run": 15,
+      "total_scored_in_run": 20,
+      "price_at_score": 22.98,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-11-04",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-11-11",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-11-18",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-11-25",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "b8dce6ee-e97e-4c0c-99ac-1618d305268f",
+      "scored_at": "2026-10-28",
+      "ticker": "HON",
+      "score": 4.5,
+      "score_breakdown": {
+        "momentum": 3,
+        "fundamentals": 5,
+        "catalyst": 5,
+        "technical": 4,
+        "sentiment": 6
+      },
+      "rank_in_run": 16,
+      "total_scored_in_run": 20,
+      "price_at_score": 218.81,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-11-04",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-11-11",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-11-18",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-11-25",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "b8dce6ee-e97e-4c0c-99ac-1618d305268f",
+      "scored_at": "2026-10-28",
+      "ticker": "PNR",
+      "score": 4.25,
+      "score_breakdown": {
+        "momentum": 2,
+        "fundamentals": 5,
+        "catalyst": 5,
+        "technical": 2,
+        "sentiment": 5
+      },
+      "rank_in_run": 17,
+      "total_scored_in_run": 20,
+      "price_at_score": 62.29,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-11-04",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-11-11",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-11-18",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-11-25",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "b8dce6ee-e97e-4c0c-99ac-1618d305268f",
+      "scored_at": "2026-10-28",
+      "ticker": "LULU",
+      "score": 3.95,
+      "score_breakdown": {
+        "momentum": 2,
+        "fundamentals": 5,
+        "catalyst": 3,
+        "technical": 3,
+        "sentiment": 3
+      },
+      "rank_in_run": 18,
+      "total_scored_in_run": 20,
+      "price_at_score": 104.59,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-11-04",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-11-11",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-11-18",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-11-25",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "b8dce6ee-e97e-4c0c-99ac-1618d305268f",
+      "scored_at": "2026-10-28",
+      "ticker": "ORKA",
+      "score": 3.9,
+      "score_breakdown": {
+        "momentum": 6,
+        "fundamentals": 3,
+        "catalyst": 4,
+        "technical": 3,
+        "sentiment": 7
+      },
+      "rank_in_run": 19,
+      "total_scored_in_run": 20,
+      "price_at_score": 95.81,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-11-04",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-11-11",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-11-18",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-11-25",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "run_id": "b8dce6ee-e97e-4c0c-99ac-1618d305268f",
+      "scored_at": "2026-10-28",
+      "ticker": "ABG",
+      "score": 3.65,
+      "score_breakdown": {
+        "momentum": 2,
+        "fundamentals": 4,
+        "catalyst": 5,
+        "technical": 3,
+        "sentiment": 4
+      },
+      "rank_in_run": 20,
+      "total_scored_in_run": 20,
+      "price_at_score": 194.99,
+      "passed_threshold": false,
+      "macro_regime": "NORMAL",
+      "week1": {
+        "target_date": "2026-11-04",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week2": {
+        "target_date": "2026-11-11",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week3": {
+        "target_date": "2026-11-18",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      },
+      "week4": {
+        "target_date": "2026-11-25",
+        "price": null,
+        "return_pct": null,
+        "spy_return_pct": null,
+        "alpha_pct": null,
+        "fetched_at": null
+      }
     }
   ]
 }
