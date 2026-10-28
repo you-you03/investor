@@ -1,5 +1,1852 @@
 {
   "description": "Tickers scored while CHASE_MOMENTUM or extension_risk=HIGH would block a live BUY. week4 and week12 are copied from the linked score snapshot when fetched. Null means the horizon is not in yet. This file does not authorize trades.",
   "as_of": "2026-10-28",
-  "entries": []
+  "entries": [
+    {
+      "run_id": "da69af89-30e9-4556-8d2a-9c76e8d2dc12",
+      "ticker": "AMAT",
+      "source": "research",
+      "scored_at": "2026-06-25",
+      "score": 7.01,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "BALANCED",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": -4.4434,
+        "alpha_vs_spy": -4.9718,
+        "fetched_at": "2026-07-25T12:04:29"
+      },
+      "week12": {
+        "return_pct": -29.1305,
+        "alpha_vs_spy": -32.9845,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "da69af89-30e9-4556-8d2a-9c76e8d2dc12",
+      "ticker": "BE",
+      "source": "research",
+      "scored_at": "2026-06-25",
+      "score": 5.99,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": -33.3824,
+        "alpha_vs_spy": -33.9108,
+        "fetched_at": "2026-07-25T12:04:30"
+      },
+      "week12": {
+        "return_pct": -13.9275,
+        "alpha_vs_spy": -17.7815,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "da69af89-30e9-4556-8d2a-9c76e8d2dc12",
+      "ticker": "BLDR",
+      "source": "research",
+      "scored_at": "2026-06-25",
+      "score": 6.01,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "MEDIUM",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": -17.3984,
+        "alpha_vs_spy": -17.9268,
+        "fetched_at": "2026-07-25T12:04:30"
+      },
+      "week12": {
+        "return_pct": -32.4669,
+        "alpha_vs_spy": -36.3209,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "da69af89-30e9-4556-8d2a-9c76e8d2dc12",
+      "ticker": "BWIN",
+      "source": "research",
+      "scored_at": "2026-06-25",
+      "score": 6.34,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": 4.1013,
+        "alpha_vs_spy": 3.5729,
+        "fetched_at": "2026-07-25T12:04:30"
+      },
+      "week12": {
+        "return_pct": 28.468,
+        "alpha_vs_spy": 24.614,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "da69af89-30e9-4556-8d2a-9c76e8d2dc12",
+      "ticker": "RUN",
+      "source": "research",
+      "scored_at": "2026-06-25",
+      "score": 7.11,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "MEDIUM",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": -28.0166,
+        "alpha_vs_spy": -28.545,
+        "fetched_at": "2026-07-25T12:04:27"
+      },
+      "week12": {
+        "return_pct": -39.4938,
+        "alpha_vs_spy": -43.3478,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "d6cf9ade-25b7-4742-89f6-e3d410aab2bd",
+      "ticker": "AVAV",
+      "source": "research",
+      "scored_at": "2026-07-03",
+      "score": 7.2,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": -21.7507,
+        "alpha_vs_spy": -22.0528,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": -20.3468,
+        "alpha_vs_spy": -24.1715,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "d6cf9ade-25b7-4742-89f6-e3d410aab2bd",
+      "ticker": "BWIN",
+      "source": "research",
+      "scored_at": "2026-07-03",
+      "score": 6.8,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": -2.3583,
+        "alpha_vs_spy": -2.6604,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": 12.1084,
+        "alpha_vs_spy": 8.2837,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "d6cf9ade-25b7-4742-89f6-e3d410aab2bd",
+      "ticker": "CRSP",
+      "source": "research",
+      "scored_at": "2026-07-03",
+      "score": 6.1,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": -20.1232,
+        "alpha_vs_spy": -20.4253,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": -9.737,
+        "alpha_vs_spy": -13.5617,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "d6cf9ade-25b7-4742-89f6-e3d410aab2bd",
+      "ticker": "FIG",
+      "source": "research",
+      "scored_at": "2026-07-03",
+      "score": 6.6,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": 13.9644,
+        "alpha_vs_spy": 13.6623,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": -2.2962,
+        "alpha_vs_spy": -6.1209,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "d6cf9ade-25b7-4742-89f6-e3d410aab2bd",
+      "ticker": "FOUR",
+      "source": "research",
+      "scored_at": "2026-07-03",
+      "score": 7.6,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": 3.2132,
+        "alpha_vs_spy": 2.9111,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": -25.1217,
+        "alpha_vs_spy": -28.9464,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "d6cf9ade-25b7-4742-89f6-e3d410aab2bd",
+      "ticker": "ORCL",
+      "source": "research",
+      "scored_at": "2026-07-03",
+      "score": 6.5,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "NONE",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": -7.7554,
+        "alpha_vs_spy": -8.0575,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": -2.6201,
+        "alpha_vs_spy": -6.4448,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "d6cf9ade-25b7-4742-89f6-e3d410aab2bd",
+      "ticker": "OUST",
+      "source": "research",
+      "scored_at": "2026-07-03",
+      "score": 6.2,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": -21.7295,
+        "alpha_vs_spy": -22.0316,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": -12.2793,
+        "alpha_vs_spy": -16.104,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "d6cf9ade-25b7-4742-89f6-e3d410aab2bd",
+      "ticker": "RIVN",
+      "source": "research",
+      "scored_at": "2026-07-03",
+      "score": 5.8,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": -18.3038,
+        "alpha_vs_spy": -18.6059,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": -16.9619,
+        "alpha_vs_spy": -20.7866,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "d6cf9ade-25b7-4742-89f6-e3d410aab2bd",
+      "ticker": "VIAV",
+      "source": "research",
+      "scored_at": "2026-07-03",
+      "score": 5.7,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "NONE",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": -11.3058,
+        "alpha_vs_spy": -11.6079,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": -2.3524,
+        "alpha_vs_spy": -6.1771,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "d6cf9ade-25b7-4742-89f6-e3d410aab2bd",
+      "ticker": "WAY",
+      "source": "research",
+      "scored_at": "2026-07-03",
+      "score": 7.3,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": -10.017,
+        "alpha_vs_spy": -10.3191,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": 5.2856,
+        "alpha_vs_spy": 1.4609,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "c0842ab5-ffd3-46da-9c55-5a9f1cce3654",
+      "ticker": "AVAV",
+      "source": "research",
+      "scored_at": "2026-07-05",
+      "score": 7.0,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": -21.7507,
+        "alpha_vs_spy": -22.0528,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": -20.3468,
+        "alpha_vs_spy": -24.1715,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "c0842ab5-ffd3-46da-9c55-5a9f1cce3654",
+      "ticker": "BWIN",
+      "source": "research",
+      "scored_at": "2026-07-05",
+      "score": 7.05,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": -2.3583,
+        "alpha_vs_spy": -2.6604,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": 12.1084,
+        "alpha_vs_spy": 8.2837,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "c0842ab5-ffd3-46da-9c55-5a9f1cce3654",
+      "ticker": "CRSP",
+      "source": "research",
+      "scored_at": "2026-07-05",
+      "score": 6.35,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": -20.1232,
+        "alpha_vs_spy": -20.4253,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": -9.737,
+        "alpha_vs_spy": -13.5617,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "c0842ab5-ffd3-46da-9c55-5a9f1cce3654",
+      "ticker": "FIG",
+      "source": "research",
+      "scored_at": "2026-07-05",
+      "score": 6.1,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "NONE",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": 13.9644,
+        "alpha_vs_spy": 13.6623,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": -2.2962,
+        "alpha_vs_spy": -6.1209,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "c0842ab5-ffd3-46da-9c55-5a9f1cce3654",
+      "ticker": "GPC",
+      "source": "research",
+      "scored_at": "2026-07-05",
+      "score": 7.0,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": -6.91,
+        "alpha_vs_spy": -7.2121,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": -2.2328,
+        "alpha_vs_spy": -6.0575,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "c0842ab5-ffd3-46da-9c55-5a9f1cce3654",
+      "ticker": "MRNA",
+      "source": "research",
+      "scored_at": "2026-07-05",
+      "score": 7.0,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": -31.2688,
+        "alpha_vs_spy": -31.5709,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": 149.3481,
+        "alpha_vs_spy": 145.5234,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "c0842ab5-ffd3-46da-9c55-5a9f1cce3654",
+      "ticker": "OUST",
+      "source": "research",
+      "scored_at": "2026-07-05",
+      "score": 7.2,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": -21.7295,
+        "alpha_vs_spy": -22.0316,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": -12.2793,
+        "alpha_vs_spy": -16.104,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "c0842ab5-ffd3-46da-9c55-5a9f1cce3654",
+      "ticker": "RIVN",
+      "source": "research",
+      "scored_at": "2026-07-05",
+      "score": 6.4,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": -18.3038,
+        "alpha_vs_spy": -18.6059,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": -16.9619,
+        "alpha_vs_spy": -20.7866,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "c0842ab5-ffd3-46da-9c55-5a9f1cce3654",
+      "ticker": "WAY",
+      "source": "research",
+      "scored_at": "2026-07-05",
+      "score": 6.45,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": -10.017,
+        "alpha_vs_spy": -10.3191,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": 5.2856,
+        "alpha_vs_spy": 1.4609,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "bc5863ae-b769-420d-8069-6dacc57a678f",
+      "ticker": "ACMR",
+      "source": "research_rescore_all",
+      "scored_at": "2026-07-12",
+      "score": 6.22,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": -18.6408,
+        "alpha_vs_spy": -21.0661,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": -19.0485,
+        "alpha_vs_spy": -21.2475,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "b4abfc61-ca98-435d-aa84-35bef6cb86ce",
+      "ticker": "AMAT",
+      "source": "research_rejected",
+      "scored_at": "2026-07-12",
+      "score": 6.03,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "BALANCED",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": -10.6118,
+        "alpha_vs_spy": -13.0371,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": -10.3668,
+        "alpha_vs_spy": -12.5658,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "bc5863ae-b769-420d-8069-6dacc57a678f",
+      "ticker": "AMAT",
+      "source": "research_rescore_all",
+      "scored_at": "2026-07-12",
+      "score": 6.94,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": -10.6118,
+        "alpha_vs_spy": -13.0371,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": -10.3668,
+        "alpha_vs_spy": -12.5658,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "b4abfc61-ca98-435d-aa84-35bef6cb86ce",
+      "ticker": "BBAR",
+      "source": "research_rejected",
+      "scored_at": "2026-07-12",
+      "score": 5.49,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": -19.1399,
+        "alpha_vs_spy": -21.5652,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": -41.4934,
+        "alpha_vs_spy": -43.6924,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "bc5863ae-b769-420d-8069-6dacc57a678f",
+      "ticker": "BBAR",
+      "source": "research_rescore_all",
+      "scored_at": "2026-07-12",
+      "score": 5.36,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": -19.1399,
+        "alpha_vs_spy": -21.5652,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": -41.4934,
+        "alpha_vs_spy": -43.6924,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "bc5863ae-b769-420d-8069-6dacc57a678f",
+      "ticker": "BWIN",
+      "source": "research_rescore_all",
+      "scored_at": "2026-07-12",
+      "score": 6.91,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": 11.4717,
+        "alpha_vs_spy": 9.0464,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": 19.8868,
+        "alpha_vs_spy": 17.6878,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "b4abfc61-ca98-435d-aa84-35bef6cb86ce",
+      "ticker": "CCC",
+      "source": "research_rejected",
+      "scored_at": "2026-07-12",
+      "score": 6.34,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": 16.8919,
+        "alpha_vs_spy": 14.4666,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": 10.8108,
+        "alpha_vs_spy": 8.6118,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "bc5863ae-b769-420d-8069-6dacc57a678f",
+      "ticker": "CCC",
+      "source": "research",
+      "scored_at": "2026-07-12",
+      "score": 7.07,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": 16.8919,
+        "alpha_vs_spy": 14.4666,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": 10.8108,
+        "alpha_vs_spy": 8.6118,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "bc5863ae-b769-420d-8069-6dacc57a678f",
+      "ticker": "CCC",
+      "source": "research_rescore_all",
+      "scored_at": "2026-07-12",
+      "score": 7.07,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": 16.8919,
+        "alpha_vs_spy": 14.4666,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": 10.8108,
+        "alpha_vs_spy": 8.6118,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "b4abfc61-ca98-435d-aa84-35bef6cb86ce",
+      "ticker": "GGAL",
+      "source": "research_rejected",
+      "scored_at": "2026-07-12",
+      "score": 6.25,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "LOW",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": -14.2576,
+        "alpha_vs_spy": -16.6829,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": -33.2031,
+        "alpha_vs_spy": -35.4021,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "bc5863ae-b769-420d-8069-6dacc57a678f",
+      "ticker": "GGAL",
+      "source": "research_rescore_all",
+      "scored_at": "2026-07-12",
+      "score": 6.15,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "LOW",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": -14.2576,
+        "alpha_vs_spy": -16.6829,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": -33.2031,
+        "alpha_vs_spy": -35.4021,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "bc5863ae-b769-420d-8069-6dacc57a678f",
+      "ticker": "MRNA",
+      "source": "research_rescore_all",
+      "scored_at": "2026-07-12",
+      "score": 6.39,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": -13.3294,
+        "alpha_vs_spy": -15.7547,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": 178.3214,
+        "alpha_vs_spy": 176.1224,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "bc5863ae-b769-420d-8069-6dacc57a678f",
+      "ticker": "MU",
+      "source": "research",
+      "scored_at": "2026-07-12",
+      "score": 7.1,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "LOW",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": -10.4021,
+        "alpha_vs_spy": -12.8274,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": 9.7438,
+        "alpha_vs_spy": 7.5448,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "bc5863ae-b769-420d-8069-6dacc57a678f",
+      "ticker": "MU",
+      "source": "research_rescore_all",
+      "scored_at": "2026-07-12",
+      "score": 7.1,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "LOW",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": -10.4021,
+        "alpha_vs_spy": -12.8274,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": 9.7438,
+        "alpha_vs_spy": 7.5448,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "b4abfc61-ca98-435d-aa84-35bef6cb86ce",
+      "ticker": "PLBL",
+      "source": "research_rejected",
+      "scored_at": "2026-07-12",
+      "score": 5.62,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": -29.803,
+        "alpha_vs_spy": -32.2283,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": -30.4187,
+        "alpha_vs_spy": -32.6177,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "bc5863ae-b769-420d-8069-6dacc57a678f",
+      "ticker": "PLBL",
+      "source": "research_rescore_all",
+      "scored_at": "2026-07-12",
+      "score": 5.49,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": -29.803,
+        "alpha_vs_spy": -32.2283,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": -30.4187,
+        "alpha_vs_spy": -32.6177,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "b4abfc61-ca98-435d-aa84-35bef6cb86ce",
+      "ticker": "REZI",
+      "source": "research_rejected",
+      "scored_at": "2026-07-12",
+      "score": 6.42,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": -23.1585,
+        "alpha_vs_spy": -25.5838,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": -45.934,
+        "alpha_vs_spy": -48.133,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "bc5863ae-b769-420d-8069-6dacc57a678f",
+      "ticker": "REZI",
+      "source": "research_rescore_all",
+      "scored_at": "2026-07-12",
+      "score": 6.61,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": -23.1585,
+        "alpha_vs_spy": -25.5838,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": -45.934,
+        "alpha_vs_spy": -48.133,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "bc5863ae-b769-420d-8069-6dacc57a678f",
+      "ticker": "RIVN",
+      "source": "research_rescore_all",
+      "scored_at": "2026-07-12",
+      "score": 6.69,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "LOW",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": -8.4668,
+        "alpha_vs_spy": -10.8921,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": -18.1922,
+        "alpha_vs_spy": -20.3912,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "bc5863ae-b769-420d-8069-6dacc57a678f",
+      "ticker": "UCTT",
+      "source": "research_rescore_all",
+      "scored_at": "2026-07-12",
+      "score": 6.01,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "LOW",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": -17.8978,
+        "alpha_vs_spy": -20.3231,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": -31.5988,
+        "alpha_vs_spy": -33.7978,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "b4abfc61-ca98-435d-aa84-35bef6cb86ce",
+      "ticker": "VOD",
+      "source": "research_rejected",
+      "scored_at": "2026-07-12",
+      "score": 6.28,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": 9.9864,
+        "alpha_vs_spy": 7.5611,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": 14.2663,
+        "alpha_vs_spy": 12.0673,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "bc5863ae-b769-420d-8069-6dacc57a678f",
+      "ticker": "VOD",
+      "source": "research_rescore_all",
+      "scored_at": "2026-07-12",
+      "score": 6.44,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": 9.9864,
+        "alpha_vs_spy": 7.5611,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": 14.2663,
+        "alpha_vs_spy": 12.0673,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "bc5863ae-b769-420d-8069-6dacc57a678f",
+      "ticker": "VSAT",
+      "source": "research_rescore_all",
+      "scored_at": "2026-07-12",
+      "score": 6.65,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "LOW",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": 9.2713,
+        "alpha_vs_spy": 6.846,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": -2.1207,
+        "alpha_vs_spy": -4.3197,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "b4abfc61-ca98-435d-aa84-35bef6cb86ce",
+      "ticker": "WDFC",
+      "source": "research_rejected",
+      "scored_at": "2026-07-12",
+      "score": 6.14,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": -11.7691,
+        "alpha_vs_spy": -14.1944,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": -23.7533,
+        "alpha_vs_spy": -25.9523,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "bc5863ae-b769-420d-8069-6dacc57a678f",
+      "ticker": "WDFC",
+      "source": "research",
+      "scored_at": "2026-07-12",
+      "score": 7.25,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": -11.7691,
+        "alpha_vs_spy": -14.1944,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": -23.7533,
+        "alpha_vs_spy": -25.9523,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "bc5863ae-b769-420d-8069-6dacc57a678f",
+      "ticker": "WDFC",
+      "source": "research_rescore_all",
+      "scored_at": "2026-07-12",
+      "score": 7.25,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": -11.7691,
+        "alpha_vs_spy": -14.1944,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": -23.7533,
+        "alpha_vs_spy": -25.9523,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "70a23feb-adb1-46b4-bfa0-e99dd049be66",
+      "ticker": "REZI",
+      "source": "research",
+      "scored_at": "2026-07-18",
+      "score": 7.3,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "MEDIUM",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": -42.7854,
+        "alpha_vs_spy": -47.2319,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": -52.3584,
+        "alpha_vs_spy": -57.365,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "70a23feb-adb1-46b4-bfa0-e99dd049be66",
+      "ticker": "SLS",
+      "source": "research",
+      "scored_at": "2026-07-18",
+      "score": 7.2,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": -3.1084,
+        "alpha_vs_spy": -7.5549,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": -11.6755,
+        "alpha_vs_spy": -16.6821,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "70a23feb-adb1-46b4-bfa0-e99dd049be66",
+      "ticker": "WAY",
+      "source": "research",
+      "scored_at": "2026-07-18",
+      "score": 7.9,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "EARLY_MOMENTUM",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": 11.2708,
+        "alpha_vs_spy": 6.8243,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": 19.8024,
+        "alpha_vs_spy": 14.7958,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "3c97e9aa-2acd-4c05-a29b-a55ff4ee046d",
+      "ticker": "CCC",
+      "source": "research",
+      "scored_at": "2026-07-20",
+      "score": 7.5,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": 10.5785,
+        "alpha_vs_spy": 6.4577,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": 25.4545,
+        "alpha_vs_spy": 20.3416,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "3c97e9aa-2acd-4c05-a29b-a55ff4ee046d",
+      "ticker": "DNTH",
+      "source": "research",
+      "scored_at": "2026-07-20",
+      "score": 7.2,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": 8.7689,
+        "alpha_vs_spy": 4.6481,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": -22.7557,
+        "alpha_vs_spy": -27.8686,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "3c97e9aa-2acd-4c05-a29b-a55ff4ee046d",
+      "ticker": "FIG",
+      "source": "research",
+      "scored_at": "2026-07-20",
+      "score": 6.7,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": 4.3424,
+        "alpha_vs_spy": 0.2216,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": -8.309,
+        "alpha_vs_spy": -13.4219,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "3c97e9aa-2acd-4c05-a29b-a55ff4ee046d",
+      "ticker": "LCID",
+      "source": "research",
+      "scored_at": "2026-07-20",
+      "score": 5.2,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": -15.4891,
+        "alpha_vs_spy": -19.6099,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": -53.3288,
+        "alpha_vs_spy": -58.4417,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "3c97e9aa-2acd-4c05-a29b-a55ff4ee046d",
+      "ticker": "ORKA",
+      "source": "research",
+      "scored_at": "2026-07-20",
+      "score": 7.05,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": 21.5318,
+        "alpha_vs_spy": 17.411,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": -13.3225,
+        "alpha_vs_spy": -18.4354,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "3c97e9aa-2acd-4c05-a29b-a55ff4ee046d",
+      "ticker": "REZI",
+      "source": "research",
+      "scored_at": "2026-07-20",
+      "score": 7.5,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "MEDIUM",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": -42.3946,
+        "alpha_vs_spy": -46.5154,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": -53.5864,
+        "alpha_vs_spy": -58.6993,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "3c97e9aa-2acd-4c05-a29b-a55ff4ee046d",
+      "ticker": "SLS",
+      "source": "research",
+      "scored_at": "2026-07-20",
+      "score": 7.1,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": -1.4405,
+        "alpha_vs_spy": -5.5613,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": -9.5527,
+        "alpha_vs_spy": -14.6656,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "bbc15c7b-82b4-4c80-a9be-f6686abf9ad9",
+      "ticker": "BAH",
+      "source": "research",
+      "scored_at": "2026-07-25",
+      "score": 6.0,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": 6.2319,
+        "alpha_vs_spy": 2.6064,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": 2.3852,
+        "alpha_vs_spy": -1.1625,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "bbc15c7b-82b4-4c80-a9be-f6686abf9ad9",
+      "ticker": "CCC",
+      "source": "research",
+      "scored_at": "2026-07-25",
+      "score": 7.3,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": 28.1787,
+        "alpha_vs_spy": 24.5532,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": 30.756,
+        "alpha_vs_spy": 27.2083,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "bbc15c7b-82b4-4c80-a9be-f6686abf9ad9",
+      "ticker": "CLF",
+      "source": "research",
+      "scored_at": "2026-07-25",
+      "score": 6.4,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": -5.5323,
+        "alpha_vs_spy": -9.1578,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": 1.5926,
+        "alpha_vs_spy": -1.9551,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "9da077ce-cf1f-4442-ba3f-17f3aa14e239",
+      "ticker": "DNTH",
+      "source": "research",
+      "scored_at": "2026-07-25",
+      "score": 5.0,
+      "strategy_version": "quality_momentum_v2_2026-07-25",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "MEDIUM",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": 6.9606,
+        "alpha_vs_spy": 3.3351,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": -30.5959,
+        "alpha_vs_spy": -34.1436,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "9da077ce-cf1f-4442-ba3f-17f3aa14e239",
+      "ticker": "ENVA",
+      "source": "research",
+      "scored_at": "2026-07-25",
+      "score": 8.3,
+      "strategy_version": "quality_momentum_v2_2026-07-25",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": 2.3855,
+        "alpha_vs_spy": -1.24,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": -25.0263,
+        "alpha_vs_spy": -28.574,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "9da077ce-cf1f-4442-ba3f-17f3aa14e239",
+      "ticker": "LUNR",
+      "source": "research",
+      "scored_at": "2026-07-25",
+      "score": 2.8,
+      "strategy_version": "quality_momentum_v2_2026-07-25",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "NONE",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": 41.7957,
+        "alpha_vs_spy": 38.1702,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": -16.5635,
+        "alpha_vs_spy": -20.1112,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "bbc15c7b-82b4-4c80-a9be-f6686abf9ad9",
+      "ticker": "OII",
+      "source": "research",
+      "scored_at": "2026-07-25",
+      "score": 6.7,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": 0.512,
+        "alpha_vs_spy": -3.1135,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": -16.9543,
+        "alpha_vs_spy": -20.502,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "bbc15c7b-82b4-4c80-a9be-f6686abf9ad9",
+      "ticker": "RNG",
+      "source": "research",
+      "scored_at": "2026-07-25",
+      "score": 7.4,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": 38.7083,
+        "alpha_vs_spy": 35.0828,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": 56.1582,
+        "alpha_vs_spy": 52.6105,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "bbc15c7b-82b4-4c80-a9be-f6686abf9ad9",
+      "ticker": "SLS",
+      "source": "research",
+      "scored_at": "2026-07-25",
+      "score": 5.4,
+      "strategy_version": "",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "NONE",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": 36.5724,
+        "alpha_vs_spy": 32.9469,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": -11.8375,
+        "alpha_vs_spy": -15.3852,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "9da077ce-cf1f-4442-ba3f-17f3aa14e239",
+      "ticker": "SMCI",
+      "source": "research",
+      "scored_at": "2026-07-25",
+      "score": 3.4,
+      "strategy_version": "quality_momentum_v2_2026-07-25",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "CHASE_MOMENTUM",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": 23.7209,
+        "alpha_vs_spy": 20.0954,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": 5.0831,
+        "alpha_vs_spy": 1.5354,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    },
+    {
+      "run_id": "9da077ce-cf1f-4442-ba3f-17f3aa14e239",
+      "ticker": "VSAT",
+      "source": "research",
+      "scored_at": "2026-07-25",
+      "score": 6.3,
+      "strategy_version": "quality_momentum_v2_2026-07-25",
+      "gate": "CHASE_OR_EXTENSION",
+      "primary_mode": "BALANCED",
+      "extension_risk": "HIGH",
+      "evaluate_horizons": [
+        "week4",
+        "week12"
+      ],
+      "note": "Scored while the live chase/extension gate would block a BUY. Week returns on the linked snapshot are the counterfactual path.",
+      "week4": {
+        "return_pct": 4.212,
+        "alpha_vs_spy": 0.5865,
+        "fetched_at": "2026-10-28T11:02:27"
+      },
+      "week12": {
+        "return_pct": -17.9498,
+        "alpha_vs_spy": -21.4975,
+        "fetched_at": "2026-10-28T11:02:27"
+      }
+    }
+  ]
 }

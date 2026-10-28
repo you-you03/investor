@@ -6,6 +6,7 @@ def test_add_score_snapshots_tracks_watchlist_results(tmp_path, monkeypatch):
 
     path = tmp_path / "score_snapshots.json"
     monkeypatch.setattr(score_snapshots, "SNAPSHOTS_PATH", path)
+    monkeypatch.setattr(score_snapshots, "GATE_COUNTERFACTUAL_PATH", tmp_path / "gates.json")
     monkeypatch.setattr(score_snapshots, "_fetch_price", lambda ticker: (100.0, f"{ticker} Inc."))
 
     added = score_snapshots.add_score_snapshots(
@@ -48,6 +49,7 @@ def test_add_score_snapshots_is_idempotent(tmp_path, monkeypatch):
 
     path = tmp_path / "score_snapshots.json"
     monkeypatch.setattr(score_snapshots, "SNAPSHOTS_PATH", path)
+    monkeypatch.setattr(score_snapshots, "GATE_COUNTERFACTUAL_PATH", tmp_path / "gates.json")
     monkeypatch.setattr(score_snapshots, "_fetch_price", lambda ticker: (100.0, "Test Inc."))
 
     kwargs = {
