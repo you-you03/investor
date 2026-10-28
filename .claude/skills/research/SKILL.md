@@ -185,7 +185,8 @@ Weighted total: `fundamentals×0.60 + momentum×0.25 + catalyst×0.15`
 - `early_momentum_score` と `chase_momentum_score` をそれぞれ1–10で出す
 - `score_breakdown.momentum` は持続的な3M/6M/12-1M RSを主成分にする
 - `primary_mode`: `EARLY_MOMENTUM` / `CHASE_MOMENTUM` / `BALANCED` / `NONE`
-- `CHASE_MOMENTUM` または `extension_risk=HIGH` は観察対象には残せるがライブBUY禁止
+- ライブBUYは暫定デュアルゲート（[docs/live-buy-dual-gate.md](../../../docs/live-buy-dual-gate.md)）に従う。`primary_mode` は `EARLY_MOMENTUM` または `BALANCED`、ファンダはその候補の他ファクターと比べて相対的に強いこと。スコア ≥ 7.5 は必要だが十分ではない
+- `CHASE_MOMENTUM` は原則ライブBUY禁止（WAIT を優先。paper / 100万円シミュレーションのみ）。`extension_risk=HIGH` もライブBUY禁止。観察対象には残せる
 - `conviction` は当面 `MEDIUM` / `LOW`。HIGHは独立した満期OOS 30件まで無効
 - `conviction_rationale` では、二つのモードのどちらが確信度を上げ/下げしたかを明示する
 
@@ -343,7 +344,7 @@ Score snapshot saved:
 
 これは執行停止の記録であり、約定でも自動クローズでもない。ガードが空なら `blocked_by_risk` は `false`。フィールドが無い古いスナップショットは未タグであり、`false` とは読まない。
 
-`CHASE_MOMENTUM` または `extension_risk=HIGH` はライブBUYにしない。代わりに `gate_pass_counterfactual` と `data/gate_pass_counterfactuals.json` へ残し、week4 / week12 のリターンでゲートを後から評価する。
+`CHASE_MOMENTUM` または `extension_risk=HIGH` はライブBUYにしない（暫定規則の正本は [docs/live-buy-dual-gate.md](../../../docs/live-buy-dual-gate.md)。CHASE は原則 WAIT）。代わりに `gate_pass_counterfactual` と `data/gate_pass_counterfactuals.json` へ残し、week4 / week12 のリターンでゲートを後から評価する。
 
 カタリストは `catalyst_data_status` = `present` / `weak` / `missing`。ニュースやアナリストデータが無いときは `catalyst_data_missing: true`。grade D の弱いカタリストとは分ける。`validate_scores.py` の catalyst IC は missing を除外する。
 

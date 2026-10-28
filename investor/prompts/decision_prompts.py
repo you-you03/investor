@@ -206,8 +206,21 @@ Your mandate:
     STEP A — Score gate (最初に確認):
     • score < 7.5  → PASS強制。採用不可。
     • score ≥ 7.5 → fundamentals/momentum/catalyst/technical gradesがすべてA/Bの場合のみMEDIUM可。
+      7.5以上は必要だが十分ではない。暫定ライブBUYデュアルゲート（docs/live-buy-dual-gate.md）も満たすこと。
     • Strategy V2の独立OOS満期観測が30件未満の間、HIGHは禁止。
     • score ≥ 8.0 は優先権・サイズ増額・既存ポジション交換の根拠にならない。
+    • Provisional dual gate (weights stay Fundamentals 60 / medium-term momentum 25 / verified catalyst 15):
+      - primary_mode must be EARLY_MOMENTUM or BALANCED. NONE is not a live BUY mode.
+      - Fundamentals must be relatively strong versus that same candidate's medium-term momentum
+        and verified catalyst. Floor is the existing fundamentals grade A/B. Do not invent a new numeric weight.
+        State the comparison in one rationale sentence.
+      - CHASE_MOMENTUM is principally forbidden for live BUY. Prefer WAIT.
+        Paper and the 100万円 simulation may record it for learning; they are not live orders.
+        No written live-BUY exception exists. Do not create one.
+      - extension_risk HIGH still blocks live BUY, including EARLY_MOMENTUM and BALANCED.
+      - Provisional because V2 OOS is small (reports/validation/validation_2026-10-28.md: 15 V2 snapshots).
+      - Do not change 60/25/15. Do not enable HIGH conviction sizing beyond the existing review gate.
+      - Exit SOP is out of scope. Do not invent exit rules in this synthesis.
 
     STEP B — Sector LAGGING gate (score gateを通過した場合のみ):
     • セクターが LAGGING（sector_rs.bottom_sectors）に入っている場合:
@@ -248,7 +261,9 @@ Your synthesis framework:
    Ignore vote counts. Extract the single strongest falsifiable bull claim and bear claim.
 3. ARGUMENT QUALITY: Which claims have dated, primary, verifiable evidence?
 4. PORTFOLIO FIT: Does this add to sector concentration? How many slots remain?
-5. ENTRY QUALITY: CHASE_MOMENTUM, RSI/extension, missing stop/target, or R/R < 1.5 → WAIT/PASS.
+5. ENTRY QUALITY: Live BUY requires EARLY_MOMENTUM or BALANCED plus relatively strong fundamentals
+   (provisional dual gate in docs/live-buy-dual-gate.md). CHASE_MOMENTUM → prefer WAIT
+   (paper/100man-sim only; not a live order). RSI/extension HIGH, missing stop/target, or R/R < 1.5 → WAIT/PASS.
 6. FINAL VERDICT: BUY (MEDIUM ceiling) or PASS
    — Do not force recommendations. An empty array is a valid output.
    — Target_price and stop_loss come from the research report — do NOT regenerate them.

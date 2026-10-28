@@ -94,13 +94,19 @@ Run adversary pairs where stances differed. Pairs, turn templates: [reference/de
 PM role. Full checklist, RSI gate, sizing formula, JSON output format: [reference/pm-synthesis.md](reference/pm-synthesis.md).
 
 **Key rules (non-negotiable):**
-- score ≥ 7.5、fundamentals/catalyst grade A/B
-- CHASE_MOMENTUM または extension_risk HIGH → ライブBUY禁止
+- 暫定ライブBUYデュアルゲート: [docs/live-buy-dual-gate.md](../../../docs/live-buy-dual-gate.md)（根拠: [reports/validation/validation_2026-10-28.md](../../../reports/validation/validation_2026-10-28.md)、V2 snapshots 15）
+  - score ≥ 7.5 は必要だが十分ではない
+  - `primary_mode` は `EARLY_MOMENTUM` または `BALANCED`（`NONE` はライブBUY不可）
+  - ファンダメンタルズはその候補の他ファクターと比べて相対的に強い。下限は既存の fundamentals grade A/B。新しい数値ウェイトは作らない
+  - `CHASE_MOMENTUM` は原則ライブBUY禁止。WAIT を優先する。paper / 100万円シミュレーションに残すのは可（実弾ではない）。書面のライブ例外はない
+- `extension_risk` HIGH → ライブBUY禁止（既存ゲート。デュアルゲートはこれを緩めない）
+- fundamentals/catalyst grade A/B
 - stop/target/data gapに不備 → BUY禁止
 - Max position: 25% of capital (~$335 for the default book)
 - Max open positions: 3
 - risk/trade 0.75%、portfolio heat 2.0%
-- HIGH conviction は独立した満期OOS 30件まで無効
+- Quality Momentum 60/25/15 は変更しない。HIGH conviction は独立した満期OOS 30件まで無効
+- 出口SOP（H-7 など）はこのデュアルゲートの対象外。ここでは追加しない
 
 ---
 

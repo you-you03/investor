@@ -180,6 +180,7 @@ python skills/paper_portfolio.py compare
 - 追いかけモメンタムが強い場合、初動ではなくても高スコア・高確信度を許容する
 - ただし `extension_risk=HIGH` の追いかけ候補は、強いカタリストがない限り chase 側スコアを最大7にキャップし、WAIT/PASSを検討する
 - 弱い値動きを「初動」と誤認しない。初動モメンタムにはファンダメンタルズまたはカタリストの裏付けが必要
+- ライブBUYの暫定規則は [live-buy-dual-gate.md](live-buy-dual-gate.md)。CHASE はライブ採用せず WAIT を優先する。下の「CHASE が高 alpha なら排除せず extension risk で選別」は仮説の判定基準であり、ライブBUYの書面例外ではない
 
 **検証方法**:
 - `/review` または `score_snapshots.json` から `momentum_primary_mode` 別に集計する

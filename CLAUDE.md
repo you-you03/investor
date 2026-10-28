@@ -11,6 +11,7 @@
 | **1銘柄最大配分** | ライブ予算の25%（約$335） |
 | **リスク上限** | 1トレード0.75%、portfolio heat 2.0% |
 | **ストップ/目標** | 新規ポジションでは両方必須。欠損時は新規BUY停止 |
+| **ライブBUY（暫定）** | スコア ≥ 7.5 は必要だが十分ではない。モードは `EARLY_MOMENTUM` または `BALANCED`、かつファンダメンタルズがその候補の他ファクターと比べて相対的に強いこと（既存の fundamentals grade A/B。新しい数値ウェイトは作らない）。`CHASE_MOMENTUM` は原則ライブBUY禁止で、WAIT を優先する（paper / 100万円シミュレーションのみ可）。正本は [docs/live-buy-dual-gate.md](docs/live-buy-dual-gate.md)。根拠は [reports/validation/validation_2026-10-28.md](reports/validation/validation_2026-10-28.md)（V2 snapshots 15）。Quality Momentum 60/25/15 と HIGH conviction の既存レビューゲートは変えない。出口SOPは対象外 |
 
 ポジションサイジング: entry-stop間の損失 + 0.25% gap bufferからPythonが決定し、25%上限を適用。LLMの裁量サイズ、株数上限、キャッシュ稼働率ノルマは使わない。
 
