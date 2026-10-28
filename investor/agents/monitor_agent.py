@@ -149,6 +149,8 @@ def _save_daily_summary(positions: list[dict], alerts: list[dict], market_news: 
             history = json.loads(HISTORY_PATH.read_text())
         except Exception:
             pass
+    from investor.core.lineage import latest_research_run_ids
+
     record = {
         "date": date.today().isoformat(),
         "position_count": len(positions),
@@ -157,6 +159,9 @@ def _save_daily_summary(positions: list[dict], alerts: list[dict], market_news: 
         "positions": positions,
         "alerts": alerts,
         "market_news": market_news or {},
+        "research_run_ids": latest_research_run_ids(
+            [str(position.get("ticker") or "") for position in positions]
+        ),
     }
     history.append(record)
     HISTORY_PATH.write_text(json.dumps(history, indent=2))

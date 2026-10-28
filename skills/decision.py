@@ -115,7 +115,7 @@ def _validate_h3_small_portfolio(proposals: list[dict]) -> list[str]:
     return violations
 
 
-def _log_paper_proposals(proposals: list[dict]) -> None:
+def _log_paper_proposals(proposals: list[dict], research_run_id: str = "") -> None:
     """Write BUY proposals to paper_portfolio.csv (B枠) as hypothesis trades."""
     existing = read_portfolio_rows(PAPER_PATH)
 
@@ -158,6 +158,7 @@ def _log_paper_proposals(proposals: list[dict]) -> None:
             "order_status": "paper",
             "broker_stop_order_id": "",
             "rule_adherence_score": "",
+            "research_run_id": research_run_id,
         })
 
     write_portfolio_rows(PAPER_PATH, existing)
@@ -221,7 +222,7 @@ def main(
             return
 
         if paper:
-            _log_paper_proposals(proposals)
+            _log_paper_proposals(proposals, research_run_id=target_run_id or "")
             console.print(
                 f"[cyan][B枠] Logged {len([p for p in proposals if p.get('action')=='BUY'])} "
                 "paper hypothesis position(s) to data/paper_portfolio.csv[/cyan]"

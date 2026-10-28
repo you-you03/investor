@@ -1,0 +1,78 @@
+name: Investor ledger reconcile
+
+on:
+  workflow_dispatch:
+  schedule:
+    # After the Monday score-validation slot. Same US-close day.
+    # 23:15 UTC Monday is 18:15 ET Monday and 08:15 JST Tuesday.
+    - cron: "15 23 * * 1"
+
+concurrency:
+  group: investor-ledger-reconcile
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      DEFAULT_PORTFOLIO_PATH: data/portfolio_20man.csv
+      SLACK_WEBHOOK_URL: ""
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+          cache-dependency-path: pyproject.toml
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .
+
+      - name: Reconcile live book and monitor alerts
+        run: python scripts/reconcile_monitor_ledger.py --update-alerts
+
+      - name: Open data PR
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git add data/monitor_alerts.json reports/monitor reports/validation
+          if git diff --cached --quiet; then
+            echo "No reconciliation changes."
+            exit 0
+          fi
+          git diff --cached --name-only > /tmp/changed-paths.txt
+          if grep -v -E '^(data/monitor_alerts.json|reports/monitor/|reports/validation/)' /tmp/changed-paths.txt; then
+            echo "::error::ledger reconcile tried to commit an unexpected path"
+            exit 1
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          BRANCH="automation/ledger-reconcile-${GITHUB_RUN_ID}"
+          git checkout -b "${BRANCH}"
+          git commit -m "data: reconcile monitor alerts with the live book"
+          git push origin "HEAD:${BRANCH}"
+          gh pr create \
+            --base "${GITHUB_REF_NAME}" \
+            --head "${BRANCH}" \
+            --title "data: ledger reconcile ${GITHUB_RUN_ID}" \
+            --body "$(cat <<'EOF'
+          ## Summary
+          - Compares `data/portfolio_20man.csv` with monitor alerts.
+          - Does not auto-close positions and does not invent broker fills.
+          - No Slack notification.
+
+          `data/portfolio.csv` is the historical A-frame ledger, not the live book. Record PRs may be auto-merged when the diff stays on the alert JSON and the reconciliation report.
+
+          EOF
+          )"

@@ -1,0 +1,4 @@
+{
+  "description": "Tickers scored while CHASE_MOMENTUM or extension_risk=HIGH would block a live BUY. Join to score_snapshots on run_id+ticker+source and read week4/week12 returns. This file does not authorize trades.",
+  "entries": []
+}

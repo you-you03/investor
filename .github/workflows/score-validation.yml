@@ -1,0 +1,85 @@
+name: Investor score validation
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Monday after the US cash close, year-round.
+    # 22:30 UTC Monday is 17:30 ET Monday (after 16:00 ET) and 07:30 JST Tuesday.
+    - cron: "30 22 * * 1"
+
+concurrency:
+  group: investor-score-validation
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      DEFAULT_PORTFOLIO_PATH: data/portfolio_20man.csv
+      # Do not send Slack from this record job.
+      SLACK_WEBHOOK_URL: ""
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+          cache-dependency-path: pyproject.toml
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .
+
+      - name: Refresh outcomes and validation report
+        run: |
+          python scripts/fetch_returns.py
+          python scripts/record_outcomes.py
+          python scripts/validate_scores.py
+
+      - name: Open data PR
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git add data reports
+          if git diff --cached --quiet; then
+            echo "No data or report changes."
+            exit 0
+          fi
+          git diff --cached --name-only > /tmp/changed-paths.txt
+          if grep -v -E '^(data|reports)/' /tmp/changed-paths.txt; then
+            echo "::error::score validation tried to commit a path outside data/ and reports/"
+            exit 1
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          BRANCH="automation/score-validation-${GITHUB_RUN_ID}"
+          git checkout -b "${BRANCH}"
+          git commit -m "data: weekly score validation"
+          git push origin "HEAD:${BRANCH}"
+          gh pr create \
+            --base "${GITHUB_REF_NAME}" \
+            --head "${BRANCH}" \
+            --title "data: weekly score validation ${GITHUB_RUN_ID}" \
+            --body "$(cat <<'EOF'
+          ## Summary
+          - Automated `fetch_returns` → `record_outcomes` → `validate_scores`.
+          - This PR is limited to `data/` and `reports/`.
+          - No Slack notification. No live score-weight change. No broker fills.
+
+          ## Auto-merge
+          Record PRs of this class may be auto-merged after a quick diff check.
+          Enable auto-merge on the PR when the repository allows it and the diff stays inside `data/**` and `reports/**`.
+          The weight-change gates are unchanged: no weight change below 10 matured runs, and HIGH conviction stays off until 30 matured OOS observations.
+
+          EOF
+          )"

@@ -109,6 +109,7 @@ def add(
     conviction: str = typer.Option("MEDIUM", "--conviction"),
     signal: str = typer.Option("", "--signal"),
     note: str = typer.Option("", "--note"),
+    run_id: str = typer.Option("", "--run-id", help="Optional research run_id for lineage"),
 ) -> None:
     """Record a virtual paper trade entry."""
     rows = read_portfolio_rows(PAPER_PATH)
@@ -133,6 +134,7 @@ def add(
         "mfe_pct": "",
         "mfe_capture_pct": "",
         "rule_adherence_score": "",
+        "research_run_id": run_id,
     })
     write_portfolio_rows(PAPER_PATH, rows)
     console.print(f"[green][B枠] Added {ticker.upper()} {shares}shares @ ${price}[/green]")

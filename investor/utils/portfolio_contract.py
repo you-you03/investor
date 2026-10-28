@@ -33,6 +33,7 @@ PORTFOLIO_FIELDNAMES = [
     "order_status",
     "broker_stop_order_id",
     "rule_adherence_score",
+    "research_run_id",
 ]
 
 

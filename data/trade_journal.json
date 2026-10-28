@@ -14,7 +14,8 @@
     "decision_quality": 2,
     "outcome_quality": 1,
     "would_take_again": false,
-    "what_i_missed": "Healthcare SECTORがLAGGING(-8.22% 1m)でセクター逆風を過小評価。Options BULLISHは正しかったが単一指標への過信。MFE +0.04%はテーゼが市場に受け入れられなかった証拠。期待内の損失: ルールに従った正しい判断。プロセスを変えない。"
+    "what_i_missed": "Healthcare SECTORがLAGGING(-8.22% 1m)でセクター逆風を過小評価。Options BULLISHは正しかったが単一指標への過信。MFE +0.04%はテーゼが市場に受け入れられなかった証拠。期待内の損失: ルールに従った正しい判断。プロセスを変えない。",
+    "research_run_id": "ce3b44d4-a83e-4832-a8bc-6649ecb95576"
   },
   {
     "trade_id": "UAL_2026-04-26",
@@ -32,8 +33,7 @@
     "outcome_quality": 2,
     "would_take_again": true,
     "what_i_missed": "STAGE1で.58(+7.08%)の最高値を一時達成。残株はブレークイーブンで損切り。目標.45まで達せず。EMA20/50下抜けとOptions悪化のサインを早期察知できた可能性。STAGE1利確の仕組みが機能した良トレード。"
-  }
-,
+  },
   {
     "trade_id": "AVGO_2026-05-09",
     "signal_type": "technical_breakout",
@@ -49,7 +49,8 @@
     "decision_quality": 2,
     "outcome_quality": 1,
     "would_take_again": false,
-    "what_i_missed": "$430ブレイクアウト後に即$430割れ→エントリー根拠が初日から不安定だった。Options BULLISH(pc=0.355)→NEUTRAL_BEARISH(pc=1.042)への急速悪化を過小評価。ストップを$418に締めた判断は正しかったがエントリー自体の確信度が過大だった。期待内の損失: ルールに従ったSTOP遵守。プロセスを変えない。"
+    "what_i_missed": "$430ブレイクアウト後に即$430割れ→エントリー根拠が初日から不安定だった。Options BULLISH(pc=0.355)→NEUTRAL_BEARISH(pc=1.042)への急速悪化を過小評価。ストップを$418に締めた判断は正しかったがエントリー自体の確信度が過大だった。期待内の損失: ルールに従ったSTOP遵守。プロセスを変えない。",
+    "research_run_id": "59e29cdb-cf2b-4582-aad2-cfd1f566a95f"
   },
   {
     "trade_id": "TSM_2026-06-24_pending_exit_review_2026-10-25",
@@ -92,6 +93,7 @@
     "would_take_again": null,
     "pending_action": "Yuta broker confirm / exit review",
     "fill_recorded": false,
-    "what_i_missed": "2026-10-25のmonitor。TSMはライブ台帳でopenのまま。ストップ$388.02は所見上、2026-07-28安値$381.30と2026-07-29終値$374.67で割れている（所見原文は2025。entry 2026-06-24とstop設定2026-07-25から2026として記録）。ブローカー約定は未確認なのでexit_priceとexit_dateは空。現値$418.51（2026-10-23引け）はストップの上に戻り、未実現-$22.49（-5.1%）でDOWN_5PCT。目標$434.19は2026-08-13以降に到達し、2026-10-05高値は$487.47。1株の時価は資金$1340の31.2%で25%上限を超え、ストップまでの$30.49は資金の2.3%で1トレード0.75%とheat 2.0%を超える。端数株不可のため1株のままではルール内に収まらない。数値のrule_adherence_scoreは確定決済まで空欄（未実現のままEV統計に入れない）。新規BUYは出さない。出口はYutaの実保有確認後。選択肢はA全株手仕舞い、またはBストップ再設定（目安約$409.5でも25%上限は解消しない）。exit reviewの確信度はMEDIUM-LOW。この記録は売却執行済みではない。"
+    "what_i_missed": "2026-10-25のmonitor。TSMはライブ台帳でopenのまま。ストップ$388.02は所見上、2026-07-28安値$381.30と2026-07-29終値$374.67で割れている（所見原文は2025。entry 2026-06-24とstop設定2026-07-25から2026として記録）。ブローカー約定は未確認なのでexit_priceとexit_dateは空。現値$418.51（2026-10-23引け）はストップの上に戻り、未実現-$22.49（-5.1%）でDOWN_5PCT。目標$434.19は2026-08-13以降に到達し、2026-10-05高値は$487.47。1株の時価は資金$1340の31.2%で25%上限を超え、ストップまでの$30.49は資金の2.3%で1トレード0.75%とheat 2.0%を超える。端数株不可のため1株のままではルール内に収まらない。数値のrule_adherence_scoreは確定決済まで空欄（未実現のままEV統計に入れない）。新規BUYは出さない。出口はYutaの実保有確認後。選択肢はA全株手仕舞い、またはBストップ再設定（目安約$409.5でも25%上限は解消しない）。exit reviewの確信度はMEDIUM-LOW。この記録は売却執行済みではない。",
+    "research_run_id": "da69af89-30e9-4556-8d2a-9c76e8d2dc12"
   }
 ]

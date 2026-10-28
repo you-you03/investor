@@ -252,8 +252,14 @@ def record_outcomes(dry_run: bool = False) -> dict:
 
             # Don't overwrite a closed outcome with an open one
             if existing_outcome and existing_outcome.get("status") == "closed":
+                run_link = run.get("run_id")
+                if run_link and not existing_outcome.get("research_run_id"):
+                    existing_outcome["research_run_id"] = run_link
                 skipped_count += 1
                 continue
+
+            if outcome is not None and run.get("run_id"):
+                outcome["research_run_id"] = run.get("run_id")
 
             if existing_outcome:
                 updated_count += 1
@@ -263,6 +269,9 @@ def record_outcomes(dry_run: bool = False) -> dict:
             candidate["outcome"] = outcome
 
     if not dry_run:
+        from investor.core.lineage import propagate_run_links
+
+        propagate_run_links(history, save=True)
         _save_history(history)
 
     return {
