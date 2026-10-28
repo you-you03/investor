@@ -16,6 +16,7 @@ Python スクリプトがデータを収集し、Claude が分析・判断し、
 | 1銘柄最大配分 | ライブ予算の25%（約$335） |
 | リスク上限 | 1トレード0.75%、portfolio heat 2.0% |
 | ストップ/目標 | 新規ポジションでは両方必須。未設定時は新規BUYを停止 |
+| ライブBUY（暫定） | スコア ≥ 7.5 は必要だが十分ではない。モードは EARLY_MOMENTUM または BALANCED、かつファンダがその候補の他ファクターと比べて相対的に強いこと。CHASE はライブBUY禁止（原則 WAIT）。正本は [docs/live-buy-dual-gate.md](docs/live-buy-dual-gate.md)。60/25/15 は凍結 |
 
 ---
 

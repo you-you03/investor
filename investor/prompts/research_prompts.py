@@ -123,7 +123,14 @@ Your research process:
                D = jump-chasing, weak RS, bad volume quality, or failure signal.
 	             - score_breakdown.momentum reflects only persistent 3m/6m/12-1m relative strength.
 	             Gates: STRONG_UNDERPERFORM → momentum_grade D unless a clear reversal setup is documented.
-	             CHASE_MOMENTUM, extension_risk HIGH, breakout_failure, or gap_up_fade → live BUY prohibited.
+	             Live BUY provisional dual gate (docs/live-buy-dual-gate.md; do not change 60/25/15):
+	             score ≥ 7.5 is necessary but not sufficient; primary_mode must be EARLY_MOMENTUM or BALANCED;
+	             fundamentals must be relatively strong versus that candidate's other factors
+	             (existing A/B grade, no new numeric weight).
+	             CHASE_MOMENTUM is principally forbidden for live BUY (prefer WAIT; paper/100man-sim only;
+	             no written live exception). Provisional while V2 OOS is small
+	             (reports/validation/validation_2026-10-28.md: 15 V2 snapshots).
+	             extension_risk HIGH, breakout_failure, or gap_up_fade → live BUY prohibited.
              Explain in score_evidence.momentum why one mode dominates, volume confirmation,
              RS persistence, extension risk, and any failure signal.
    Step 3 — Catalyst:

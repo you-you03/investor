@@ -26,6 +26,8 @@ Version: `quality_momentum_v2_2026-07-25`
 - fundamentals/catalyst grade C/D
 - critical data gap、stop/target欠損、reward/risk 1.5未満
 
+ライブBUYの暫定デュアルゲートは [live-buy-dual-gate.md](live-buy-dual-gate.md)。スコア ≥ 7.5 は必要だが十分ではない。モードは `EARLY_MOMENTUM` または `BALANCED`、ファンダメンタルズはその候補の他ファクターと比べて相対的に強いこと。CHASE は原則 WAIT（paper / 100万円シミュレーションのみ。書面のライブ例外はない）。`extension_risk=HIGH` の禁止は維持する。下のウェイト式は変えない。出口SOPはこの規則の対象外。
+
 ## スコア
 
 ```text
@@ -35,7 +37,7 @@ total = fundamentals * 0.60
 ```
 
 TechnicalとSentimentは加点軸ではなく、entry・risk・矛盾検知のgateとして扱う。
-ライブ候補閾値は7.5。HIGH convictionは独立した満期OOS観測30件まで無効。
+ライブ候補閾値は7.5。これは必要だが十分ではない（[live-buy-dual-gate.md](live-buy-dual-gate.md)）。HIGH convictionは独立した満期OOS観測30件まで無効。
 
 ## リスク
 

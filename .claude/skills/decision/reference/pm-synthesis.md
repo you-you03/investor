@@ -11,20 +11,25 @@
 
 ## Live BUY hard gates
 
-次を上から順に確認し、1つでも不合格ならBUY禁止。
+次を上から順に確認し、1つでも不合格ならBUY禁止。暫定デュアルゲートの正本は
+[docs/live-buy-dual-gate.md](../../../../docs/live-buy-dual-gate.md)。
+根拠は [reports/validation/validation_2026-10-28.md](../../../../reports/validation/validation_2026-10-28.md)
+（`quality_momentum_v2_2026-07-25` のスナップショット 15件）。OOS が小さいあいだの暫定規則であり、
+60/25/15 は変えない。出口SOPはここでは追加しない。
 
-1. `score >= 7.5`
-2. `factor_grades.fundamentals` が A/B
+1. `score >= 7.5`（必要だが十分ではない）
+2. `factor_grades.fundamentals` が A/B、かつその候補の中期モメンタム・検証済みカタリストと比べてファンダメンタルズが相対的に強い（新しい数値ウェイトは作らない。rationale に一文で書く）
 3. `factor_grades.catalyst` が A/B
 4. `factor_grades.technical` と `sentiment` が D ではない
 5. `data_gap_flag` / `data_gap_flags` にCRITICAL未解決がない
-6. `momentum_profile.primary_mode != CHASE_MOMENTUM`
-7. `momentum_profile.extension_risk != HIGH`
+6. `momentum_profile.primary_mode` は `EARLY_MOMENTUM` または `BALANCED`。`CHASE_MOMENTUM` と `NONE` はライブBUY不可。CHASE は原則 WAIT。paper / 100万円シミュレーションへの記録は実弾ではない。書面のライブ例外はない
+7. `momentum_profile.extension_risk != HIGH`（EARLY / BALANCED でも HIGH ならライブBUY不可）
 8. `0 < stop_loss < planned_entry < target_price`
 9. gap buffer込み reward/risk が1.5以上
 10. 既存ポジションにstop/target欠損、未解決STOP_BREACH、25%集中超過がない
 
 HIGH conviction は独立した満期OOS観測が30件に達するまで無効。入力がHIGHでもMEDIUMへ落とす。
+この暫定ゲートを理由に HIGH を開かない。Quality Momentum 60/25/15 も変更しない。
 
 ## Debate usage
 
