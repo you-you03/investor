@@ -3901,16 +3901,16 @@
           "data_notes": "Prices may be delayed. get_news in collect_ticker_data returned a limit-argument error; web/X supplemental searches were attempted separately.",
           "outcome": {
             "status": "open",
-            "outcome_type": "AT_TARGET",
+            "outcome_type": "AT_STOP",
             "entry_price": 441.0,
             "entry_date": "2026-06-24",
-            "current_price": 436.8699951171875,
-            "days_held": 126,
-            "unrealized_return_pct": -0.94,
-            "pnl_usd": -4.13,
-            "spy_return_pct": 5.23,
-            "alpha_pct": -6.17,
-            "recorded_at": "2026-10-28",
+            "current_price": 388.6199951171875,
+            "days_held": 139,
+            "unrealized_return_pct": -11.88,
+            "pnl_usd": -52.38,
+            "spy_return_pct": 2.91,
+            "alpha_pct": -14.79,
+            "recorded_at": "2026-11-10",
             "research_run_id": "da69af89-30e9-4556-8d2a-9c76e8d2dc12"
           }
         },
@@ -4647,16 +4647,16 @@
           "data_notes": "Batch data lacked relative_strength, earnings_calendar, and timeframe_alignment; no penalty applied for missing fields.",
           "outcome": {
             "status": "open",
-            "outcome_type": "AT_TARGET",
+            "outcome_type": "AT_STOP",
             "entry_price": 441.0,
             "entry_date": "2026-06-24",
-            "current_price": 436.8699951171875,
-            "days_held": 126,
-            "unrealized_return_pct": -0.94,
-            "pnl_usd": -4.13,
-            "spy_return_pct": 5.23,
-            "alpha_pct": -6.17,
-            "recorded_at": "2026-10-28",
+            "current_price": 388.6199951171875,
+            "days_held": 139,
+            "unrealized_return_pct": -11.88,
+            "pnl_usd": -52.38,
+            "spy_return_pct": 2.91,
+            "alpha_pct": -14.79,
+            "recorded_at": "2026-11-10",
             "research_run_id": "d6cf9ade-25b7-4742-89f6-e3d410aab2bd"
           }
         },
@@ -6778,43 +6778,43 @@
             "sentiment": 8
           },
           "score_evidence": {
-            "fundamentals": "Q3 ARCALYST\u58f2\u4e0a$286.0M(+58% YoY)\u3001\u7d14\u5229\u76ca$47.3M\uff08\u524d\u5e74$18.4M\uff09\u3001\u73fe\u91d1\u7b49$568.8M\u30fb\u5b9f\u8cea\u7121\u501f\u91d1\u3001\u901a\u671f\u58f2\u4e0a\u30ac\u30a4\u30c0\u30f3\u30b9$1.045\u20131.050B\u3078\u5f15\u304d\u4e0a\u3052\u3002fwd PE 47\u3068\u5272\u9ad8\u3001Regeneron\u3068\u5229\u76ca\u6298\u534a\u21928/A",
-            "momentum": "rs_3m +10.0 / rs_6m +59.6 / rs_12-1m STRONG_OUTPERFORM\u21928",
-            "catalyst": "2026-10-27 Q3\u6c7a\u7b97\uff08IR/8-K\u4e00\u6b21\u60c5\u5831\uff09\u3067beat & raise\u3001\u5f53\u65e5+22%\uff08\u51fa\u6765\u9ad83.5x\uff09\u3002KPL-387 Ph3\u30c7\u30fc\u30bf\u306f2H2027\u21929/A",
-            "technical": "EMA20\u4e56\u96e2+12.7%\u3001BB\u4f4d\u7f6e>1\u300120\u65e5+17.8%\u300152\u9031\u9ad8\u5024$90.8\u307e\u3067\u7d042%\u2192\u8ffd\u3044\u304b\u3051\u904e\u71b1\u3002\u62bc\u3057\u76ee\u5f85\u3061\u21924",
-            "sentiment": "strong_buy\u3001\u76ee\u6a19$103.6(+16%)\u3002\u30cb\u30e5\u30fc\u30b9/X\u53d6\u5f97\u4e0d\u53ef\u21928"
+            "fundamentals": "Q3 ARCALYST売上$286.0M(+58% YoY)、純利益$47.3M（前年$18.4M）、現金等$568.8M・実質無借金、通期売上ガイダンス$1.045–1.050Bへ引き上げ。fwd PE 47と割高、Regeneronと利益折半→8/A",
+            "momentum": "rs_3m +10.0 / rs_6m +59.6 / rs_12-1m STRONG_OUTPERFORM→8",
+            "catalyst": "2026-10-27 Q3決算（IR/8-K一次情報）でbeat & raise、当日+22%（出来高3.5x）。KPL-387 Ph3データは2H2027→9/A",
+            "technical": "EMA20乖離+12.7%、BB位置>1、20日+17.8%、52週高値$90.8まで約2%→追いかけ過熱。押し目待ち→4",
+            "sentiment": "strong_buy、目標$103.6(+16%)。ニュース/X取得不可→8"
           },
           "momentum_profile": {
             "primary_mode": "CHASE_MOMENTUM",
             "early_momentum_score": 3,
             "chase_momentum_score": 7,
             "extension_risk": "HIGH",
-            "early_view": "5\u65e5\u30fbEMA20\u4e56\u96e2\u304c\u521d\u52d5\u30ec\u30f3\u30b8\u3092\u5927\u304d\u304f\u8d85\u904e\u3002\u521d\u52d5\u306e\u8a55\u4fa1\u4f59\u5730\u306a\u3057\u3002",
-            "chase_view": "\u6750\u6599\u78ba\u8a8d\u6e08\u307f\u30fb\u51fa\u6765\u9ad83.5x\u30fbRS\u5f37\u3067\u8ffd\u3044\u304b\u3051\u6761\u4ef6\u306f\u6e80\u305f\u3059\u304c\u3001EMA20\u4e56\u96e2\u22658%\u3067\u6e1b\u70b9\u3002",
-            "score_implication": "\u30d5\u30a1\u30f3\u30c0\u30fb\u6750\u6599\u306fA\u3002\u3060\u304cCHASE/extension HIGH\u306e\u305f\u3081\u30e9\u30a4\u30d6BUY\u7981\u6b62\u3001\u62bc\u3057\u76ee\uff08EMA20\u4ed8\u8fd1\u301c80\u201384\uff09\u307e\u3067\u89b3\u5bdf\u3002"
+            "early_view": "5日・EMA20乖離が初動レンジを大きく超過。初動の評価余地なし。",
+            "chase_view": "材料確認済み・出来高3.5x・RS強で追いかけ条件は満たすが、EMA20乖離≥8%で減点。",
+            "score_implication": "ファンダ・材料はA。だがCHASE/extension HIGHのためライブBUY禁止、押し目（EMA20付近〜80–84）まで観察。"
           },
-          "conviction_rationale": "Strategy V2\u306eOOS\u4ef6\u6570\u4e0d\u8db3\u3067MEDIUM\u4e0a\u9650\u3002CHASE/\u904e\u71b1HIGH\u306e\u305f\u3081\u30e9\u30a4\u30d6BUY\u4e0d\u53ef\u3001\u62bc\u3057\u76ee\u5f85\u3061\u3002",
-          "thesis": "\u518d\u767a\u6027\u5fc3\u819c\u708e\u85acARCALYST\u304c+58%\u6210\u9577\u3067\u901a\u671f\u30ac\u30a4\u30c0\u30f3\u30b9\u3092\u518d\u5ea6\u4e0a\u65b9\u4fee\u6b63\u3001\u9ed2\u5b57\u304b\u3064\u7121\u501f\u91d1\u3002\u305f\u3060\u3057\u6c7a\u7b97\u30ae\u30e3\u30c3\u30d7\u76f4\u5f8c\u3067\u904e\u71b1\u3057\u3066\u304a\u308a\u62bc\u3057\u76ee\u5f85\u3061\u3002",
+          "conviction_rationale": "Strategy V2のOOS件数不足でMEDIUM上限。CHASE/過熱HIGHのためライブBUY不可、押し目待ち。",
+          "thesis": "再発性心膜炎薬ARCALYSTが+58%成長で通期ガイダンスを再度上方修正、黒字かつ無借金。ただし決算ギャップ直後で過熱しており押し目待ち。",
           "key_catalysts": [
-            "2026-10-27 Q3 beat & \u901a\u671f\u30ac\u30a4\u30c0\u30f3\u30b9\u4e0a\u65b9\u4fee\u6b63",
-            "ARCALYST\u6d78\u900f\u738723%\u2192\u62e1\u5927\u4f59\u5730",
-            "KPL-1161 Ph1\u5e74\u5185\u958b\u59cb"
+            "2026-10-27 Q3 beat & 通期ガイダンス上方修正",
+            "ARCALYST浸透率23%→拡大余地",
+            "KPL-1161 Ph1年内開始"
           ],
           "key_risks": [
-            "\u6c7a\u7b97\u30ae\u30e3\u30c3\u30d7\u5f8c\u306e\u904e\u71b1\uff08\u4e56\u96e2+12.7%\uff09",
-            "\u5358\u4e00\u88fd\u54c1\u4f9d\u5b58\u30fbRegeneron\u5229\u76ca\u6298\u534a",
+            "決算ギャップ後の過熱（乖離+12.7%）",
+            "単一製品依存・Regeneron利益折半",
             "fwd PE 47"
           ],
-          "entry_zone": "80\u201384",
+          "entry_zone": "80–84",
           "target_price": 90.9,
           "stop_loss": 77.55,
-          "time_horizon": "4\u20136 weeks",
+          "time_horizon": "4–6 weeks",
           "rs_signal": "STRONG_OUTPERFORM",
           "rs_1m": 17.08,
           "rs_3m": 10.04,
           "days_until_earnings": -1,
           "atr_multiplier_used": 2.0,
-          "atr_multiplier_reason": "\u30c7\u30d5\u30a9\u30eb\u30c82\u00d7ATR\uff08\u62bc\u3057\u76ee\u30be\u30fc\u30f3\u4e2d\u592e\u57fa\u6e96\uff09",
+          "atr_multiplier_reason": "デフォルト2×ATR（押し目ゾーン中央基準）",
           "analyst_upside_pct": 16.2,
           "conviction_ceiling": "MEDIUM",
           "strategy_version": "quality_momentum_v2_2026-07-25",
@@ -6828,7 +6828,7 @@
           "tf_alignment": "ALIGNED_UP",
           "contrarian_tag": false,
           "macro_regime": "NORMAL",
-          "data_notes": "ATR\u76ee\u6a19/\u30b9\u30c8\u30c3\u30d7\u306f\u62bc\u3057\u76ee\u30be\u30fc\u30f3\u4e2d\u592e$82\u57fa\u6e96\u3067\u518d\u8a08\u7b97\uff08ATR 4.45\uff09\u3002 \u4fa1\u683c\u306f2026-10-27\uff08\u6708\uff09\u7c73\u56fd\u5f15\u3051\u3001\u53d6\u5f97\u306f2026-10-28 19:37 JST\u9803\u3002get_news/get_analyst_ratings(Perplexity)/X\u53d6\u5f97\u4e0d\u53ef\u3001get_52w_breakouts/get_earnings_surprises\u672a\u5b9f\u88c5\u3002\u30ab\u30bf\u30ea\u30b9\u30c8\u306fWebSearch\u3067\u4e00\u6b21\u60c5\u5831\uff08IR/SEC\uff09\u78ba\u8a8d\u3067\u304d\u305f\u3082\u306e\u306e\u307fA/B\u8a55\u4fa1\u3002"
+          "data_notes": "ATR目標/ストップは押し目ゾーン中央$82基準で再計算（ATR 4.45）。 価格は2026-10-27（月）米国引け、取得は2026-10-28 19:37 JST頃。get_news/get_analyst_ratings(Perplexity)/X取得不可、get_52w_breakouts/get_earnings_surprises未実装。カタリストはWebSearchで一次情報（IR/SEC）確認できたもののみA/B評価。"
         },
         {
           "ticker": "RNG",
@@ -6844,44 +6844,44 @@
             "sentiment": 7
           },
           "score_evidence": {
-            "fundamentals": "Q3\u58f2\u4e0a$676M(+5.9%)\u3001\u975eGAAP\u55b6\u696d\u5229\u76ca\u738724.7%\uff08\u904e\u53bb\u6700\u9ad8\uff09\u3001FCF $157M(+21%)\u3001TTM FCF $685M\uff08\u6642\u4fa1\u7dcf\u984d$7.15B\u306b\u5bfe\u3057FCF\u5229\u56de\u308a\u7d049.6%\uff09\u3001fwd PE 15.5\u3001PEG 0.43\u3001\u7dcf\u8ca0\u50b5\u7d04$1.05B\u3078\u524a\u6e1b\u3001\u81ea\u793e\u682a\u8cb7\u3044\u3067\u682a\u6570\u6e1b\u3002\u6210\u9577\u7387\u4e00\u6841\u30fbD/E 563\uff08\u81ea\u5df1\u8cc7\u672c\u8584\u3044\uff09\u3067\u6e1b\u70b9\u21927/B\u3002GAAP EPS $6.50\u306f\u8a55\u4fa1\u6027\u5f15\u5f53\u91d1\u623b\u5165\u306e\u4e00\u904e\u6027\uff08\u9664\u304f\u3068$0.28\uff09",
-            "momentum": "rs_3m +56.4 / rs_6m +105.0 / rs_12-1m +139.6\u3001STRONG_OUTPERFORM\u3001TF ALIGNED_UP\u21929",
-            "catalyst": "2026-10-22 Q3\u6c7a\u7b97\uff08IR\u4e00\u6b21\u60c5\u5831\uff09: \u30b5\u30d6\u30b9\u30af\u58f2\u4e0a\u304c\u30ac\u30a4\u30c0\u30f3\u30b9\u4e0a\u9650\u8d85\u3048\u3001\u901a\u671f\u58f2\u4e0a\u30fb\u30de\u30fc\u30b8\u30f3\u30fbFCF\u30ac\u30a4\u30c0\u30f3\u30b9\u4e0a\u65b9\u4fee\u6b63\u3001\u975eGAAP EPS\u901a\u671f$5.07\u20135.12\u300290\u65e5\u30ea\u30d3\u30b8\u30e7\u30f3\u4e0a\u65b95/\u4e0b\u65b90\u3002\u30a2\u30ca\u30ea\u30b9\u30c8\u76ee\u6a19$97.86(+14.3%)\u21928/A",
-            "technical": "RSI 62.6\u3001EMA20\u4e56\u96e2+7.25%\u3001BB\u4f4d\u7f6e1.01\uff08\u4e0a\u9650\uff09\u300120\u65e5\u9ad8\u5024$98.14\u304b\u3089-12.8%\u3067\u6c7a\u7b97\u5f8c\u306e\u6025\u9a30\u3092\u4e00\u90e8\u5410\u304d\u51fa\u3057\u6e08\u307f\u3001\u51fa\u6765\u9ad81.08x\u3002RR(2ATR)=2.0\u3002\u30b5\u30dd\u30fc\u30c8$79.81\u306f1ATR\u3088\u308a\u9060\u3044\u2192ATR\u30b9\u30c8\u30c3\u30d7\u63a1\u7528\u21926",
-            "sentiment": "consensus buy\uff08mean 2.36, 14\u540d\uff09\u3001\u30ea\u30d3\u30b8\u30e7\u30f3 POSITIVE\u3002\u30cb\u30e5\u30fc\u30b9/X/Perplexity\u306f\u53d6\u5f97\u4e0d\u53ef\u21927"
+            "fundamentals": "Q3売上$676M(+5.9%)、非GAAP営業利益率24.7%（過去最高）、FCF $157M(+21%)、TTM FCF $685M（時価総額$7.15Bに対しFCF利回り約9.6%）、fwd PE 15.5、PEG 0.43、総負債約$1.05Bへ削減、自社株買いで株数減。成長率一桁・D/E 563（自己資本薄い）で減点→7/B。GAAP EPS $6.50は評価性引当金戻入の一過性（除くと$0.28）",
+            "momentum": "rs_3m +56.4 / rs_6m +105.0 / rs_12-1m +139.6、STRONG_OUTPERFORM、TF ALIGNED_UP→9",
+            "catalyst": "2026-10-22 Q3決算（IR一次情報）: サブスク売上がガイダンス上限超え、通期売上・マージン・FCFガイダンス上方修正、非GAAP EPS通期$5.07–5.12。90日リビジョン上方5/下方0。アナリスト目標$97.86(+14.3%)→8/A",
+            "technical": "RSI 62.6、EMA20乖離+7.25%、BB位置1.01（上限）、20日高値$98.14から-12.8%で決算後の急騰を一部吐き出し済み、出来高1.08x。RR(2ATR)=2.0。サポート$79.81は1ATRより遠い→ATRストップ採用→6",
+            "sentiment": "consensus buy（mean 2.36, 14名）、リビジョン POSITIVE。ニュース/X/Perplexityは取得不可→7"
           },
           "momentum_profile": {
             "primary_mode": "BALANCED",
             "early_momentum_score": 5,
             "chase_momentum_score": 6,
             "extension_risk": "MEDIUM",
-            "early_view": "RSI 62.6\u306f\u7bc4\u56f2\u5185\u30015\u65e5+4.9%\u3082\u7bc4\u56f2\u5185\u3060\u304c20\u65e5+15%\u30fbEMA20\u4e56\u96e2+7.25%\u304c\u521d\u52d5\u30ec\u30f3\u30b8\u8d85\u904e\u3002",
-            "chase_view": "\u8ffd\u3044\u304b\u3051\u6e1b\u70b9\u6761\u4ef6\uff08RSI\u226570/5\u65e5\u226510%/20\u65e5\u226520%/\u4e56\u96e2\u22658%\uff09\u306f\u672a\u767a\u52d5\u3002\u51fa\u6765\u9ad81.08x\u3067\u8ffd\u968f\u8cb7\u3044\u78ba\u8a8d\u306f\u5f31\u3044\u3002",
-            "score_implication": "\u6301\u7d9aRS\u304cMomentum 9\u306e\u4e3b\u56e0\u3002\u77ed\u671f\u306f\u521d\u52d5\u3067\u3082\u8ffd\u3044\u304b\u3051\u3067\u3082\u306a\u3044BALANCED\u3001\u904e\u71b1MEDIUM\u306e\u305f\u3081\u78ba\u4fe1\u5ea6\u306fMEDIUM\u6b62\u307e\u308a\u3002"
+            "early_view": "RSI 62.6は範囲内、5日+4.9%も範囲内だが20日+15%・EMA20乖離+7.25%が初動レンジ超過。",
+            "chase_view": "追いかけ減点条件（RSI≥70/5日≥10%/20日≥20%/乖離≥8%）は未発動。出来高1.08xで追随買い確認は弱い。",
+            "score_implication": "持続RSがMomentum 9の主因。短期は初動でも追いかけでもないBALANCED、過熱MEDIUMのため確信度はMEDIUM止まり。"
           },
-          "conviction_rationale": "Strategy V2\u306eOOS\u4ef6\u6570\u4e0d\u8db3\u3067MEDIUM\u4e0a\u9650\u3002BALANCED\uff08\u521d\u52d5\u3067\u3082\u8ffd\u3044\u304b\u3051\u3067\u3082\u306a\u3044\uff09\u3067\u78ba\u4fe1\u5ea6\u306f\u4e0a\u3052\u306a\u3044\u3002",
-          "thesis": "\u6c7a\u7b97\u3067\u30ac\u30a4\u30c0\u30f3\u30b9\u4e0a\u65b9\u4fee\u6b63\u3068FCF\u62e1\u5927\u3092\u793a\u3057\u3001fwd PE 15.5\u30fbFCF\u5229\u56de\u308a\u7d0410%\u3068\u5272\u5b89\u306a\u307e\u307e\u4e2d\u671fRS\u304c\u6975\u3081\u3066\u5f37\u3044\u3002\u6c7a\u7b97\u5f8c\u30b9\u30d1\u30a4\u30af\u304b\u3089\u62bc\u3057\u305f\u4f4d\u7f6e\u3067RR 2.0\u3092\u78ba\u4fdd\u3067\u304d\u308b\u3002",
+          "conviction_rationale": "Strategy V2のOOS件数不足でMEDIUM上限。BALANCED（初動でも追いかけでもない）で確信度は上げない。",
+          "thesis": "決算でガイダンス上方修正とFCF拡大を示し、fwd PE 15.5・FCF利回り約10%と割安なまま中期RSが極めて強い。決算後スパイクから押した位置でRR 2.0を確保できる。",
           "key_catalysts": [
-            "2026-10-22 Q3 beat & \u901a\u671f\u30ac\u30a4\u30c0\u30f3\u30b9\u4e0a\u65b9\u4fee\u6b63",
-            "\u8ca0\u50b5\u524a\u6e1b\u30fb\u81ea\u793e\u682a\u8cb7\u3044\uff08\u6b8b\u67a0$309M\uff09",
-            "AI\u88fd\u54c1ARR\u6bd4\u7387~15%\uff08\u524d\u5e74\u6bd4\u500d\u5897\uff09"
+            "2026-10-22 Q3 beat & 通期ガイダンス上方修正",
+            "負債削減・自社株買い（残枠$309M）",
+            "AI製品ARR比率~15%（前年比倍増）"
           ],
           "key_risks": [
-            "\u58f2\u4e0a\u6210\u9577\u306f+6%\u3068\u4f4e\u3044",
-            "D/E 563\u30fb\u73fe\u91d1$110M\u3068\u8584\u3044\u30d0\u30e9\u30f3\u30b9\u30b7\u30fc\u30c8",
-            "EMA20\u4e56\u96e27%\u53f0\u3067\u77ed\u671f\u306e\u623b\u308a\u58f2\u308a\u4f59\u5730",
-            "ATR 6%\u3068\u5024\u5e45\u304c\u5927\u304d\u3044"
+            "売上成長は+6%と低い",
+            "D/E 563・現金$110Mと薄いバランスシート",
+            "EMA20乖離7%台で短期の戻り売り余地",
+            "ATR 6%と値幅が大きい"
           ],
-          "entry_zone": "83.89\u201385.60",
+          "entry_zone": "83.89–85.60",
           "target_price": 95.86,
           "stop_loss": 80.47,
-          "time_horizon": "4\u20136 weeks",
+          "time_horizon": "4–6 weeks",
           "rs_signal": "STRONG_OUTPERFORM",
           "rs_1m": 14.3,
           "rs_3m": 56.36,
           "days_until_earnings": -5,
           "atr_multiplier_used": 2.0,
-          "atr_multiplier_reason": "\u30c7\u30d5\u30a9\u30eb\u30c82\u00d7ATR",
+          "atr_multiplier_reason": "デフォルト2×ATR",
           "analyst_upside_pct": 14.3,
           "conviction_ceiling": "MEDIUM",
           "strategy_version": "quality_momentum_v2_2026-07-25",
@@ -6895,7 +6895,7 @@
           "tf_alignment": "ALIGNED_UP",
           "contrarian_tag": false,
           "macro_regime": "NORMAL",
-          "data_notes": "financials\u306e2026-Q3\u884c\u306f\u58f2\u4e0a\u7b49\u304cnull\uff08yfinance\u90e8\u5206\u30c7\u30fc\u30bf\uff09\u2192IR/10-Q\u3067\u88dc\u5b8c\u3002 \u4fa1\u683c\u306f2026-10-27\uff08\u6708\uff09\u7c73\u56fd\u5f15\u3051\u3001\u53d6\u5f97\u306f2026-10-28 19:37 JST\u9803\u3002get_news/get_analyst_ratings(Perplexity)/X\u53d6\u5f97\u4e0d\u53ef\u3001get_52w_breakouts/get_earnings_surprises\u672a\u5b9f\u88c5\u3002\u30ab\u30bf\u30ea\u30b9\u30c8\u306fWebSearch\u3067\u4e00\u6b21\u60c5\u5831\uff08IR/SEC\uff09\u78ba\u8a8d\u3067\u304d\u305f\u3082\u306e\u306e\u307fA/B\u8a55\u4fa1\u3002"
+          "data_notes": "financialsの2026-Q3行は売上等がnull（yfinance部分データ）→IR/10-Qで補完。 価格は2026-10-27（月）米国引け、取得は2026-10-28 19:37 JST頃。get_news/get_analyst_ratings(Perplexity)/X取得不可、get_52w_breakouts/get_earnings_surprises未実装。カタリストはWebSearchで一次情報（IR/SEC）確認できたもののみA/B評価。"
         }
       ]
     }
